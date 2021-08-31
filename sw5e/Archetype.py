@@ -38,7 +38,9 @@ class Archetype(sw5e.sw5e.Item):
 	def getImg(self, capitalized=True, index=""):
 		if index: index = f'_{index}'
 		name = self.name if capitalized else self.name.lower()
-		return f'systems/sw5e/packs/Icons/Archetypes/{re.sub(r"[ /]", r"%20", name)}{index}.webp'
+		name = re.sub(r'[ /]', r'%20', name)
+		name = re.sub(r' (.*?)', r'-\1', name)
+		return f'systems/sw5e/packs/Icons/Archetypes/{name}{index}.webp'
 
 	def getData(self, importer):
 		data = super().getData(importer)

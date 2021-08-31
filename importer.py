@@ -49,9 +49,11 @@ class Importer:
 			self.update(silent=True)
 
 	def __del__(self):
-		with open(self.__pickle_path, 'wb+') as pickle_file:
-			data = { item_type: getattr(self, item_type) for item_type in self.__item_types }
-			pickle.dump(data, pickle_file)
+		# TODO: uncomment this when done editing the importer
+		# with open(self.__pickle_path, 'wb+') as pickle_file:
+		# 	data = { item_type: getattr(self, item_type) for item_type in self.__item_types }
+		# 	pickle.dump(data, pickle_file)
+		pass
 
 	def __getData(self, file_name):
 		r = requests.get(self.__base_url + '/' + file_name)
