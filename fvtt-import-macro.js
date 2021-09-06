@@ -1,4 +1,28 @@
-let types = [ 'archetype', 'class', 'feature' ]
+let types = [
+    'archetype',
+    // // 'armorProperty',
+    // 'background',
+    'class',
+    // // 'conditions',
+    // // 'deployment',
+    // 'enhancedItem',
+    'equipment',
+    'feat',
+    'feature',
+    // 'fightingMastery',
+    // 'fightingStyle',
+    // 'lightsaberForm',
+    // 'monster',
+    // 'power',
+    // 'referenceTable',
+    // // 'skills',
+    'species',
+    // // 'starshipEquipment',
+    // // 'starshipModification',
+    // // 'starshipSizes',
+    // // 'venture',
+    // // 'weaponProperty',
+]
 for (let type of types){
     let packName = `sw5eImporter-${type}`
     let pack = game.packs.get(`world.${packName}`);

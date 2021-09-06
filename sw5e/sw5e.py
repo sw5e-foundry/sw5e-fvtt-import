@@ -1,4 +1,4 @@
-import re
+import re, json
 
 class Item:
 	def __init__(self, raw_item, old_item, importer):
@@ -18,47 +18,6 @@ class Item:
 			}
 		}
 
-	@staticmethod
-	def cleanStr(string):
-		if string:
-			string = ' '.join(string.split(' '))
-			string = re.sub(r'\ufffd', r'—', string)
-			string = re.sub(r'\r', r'', string)
-			string = re.sub(r'\n\n', r'\n', string)
-			return string
-
-	@staticmethod
-	def markdownToHtml(lines):
-		if lines:
-			if type(lines) == str: lines = lines.split('\n')
-			lines = list(filter(None, lines))
-
-			inList = False
-			for i in range(len(lines)):
-				lines[i] = Item.cleanStr(lines[i])
-
-				if lines[i].startswith(r'- '):
-					lines[i] = f'<li>{lines[i][2:]}</li>'
-
-					if not inList:
-						lines[i] = f'<ul>\n{lines[i]}'
-						inList = True
-				else:
-					if lines[i].startswith(r'#'):
-						count = lines[i].find(' ')
-						lines[i] = f'<h{count-1}>{lines[i][count+1:]}</h{count-1}>'
-					elif not lines[i].startswith(r'<'):
-						lines[i] = f'<p>{lines[i]}</p>'
-
-					if inList:
-						lines[i] = f'</ul>\n{lines[i]}'
-						inList = False
-
-				lines[i] = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', lines[i])
-				lines[i] = re.sub(r'\*(.*?)\*', r'<em>\1</em>', lines[i])
-				lines[i] = re.sub(r'_(.*?)_', r'<em>\1</em>', lines[i])
-			return '\r\n'.join(lines)
-
 	def matches(self, *args, **kwargs):
 		if len(args) >= 1:
 			new_item = args[0]
@@ -67,3 +26,11 @@ class Item:
 			if getattr(self, kw) != kwargs[kw]:
 				return False
 		return True
+
+	@classmethod
+	def getClass(cls, raw_item):
+		return cls
+
+	@classmethod
+	def build(cls, raw_item, old_item, importer):
+		return cls(raw_item, old_item, importer)

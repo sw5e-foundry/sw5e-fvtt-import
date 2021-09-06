@@ -1,5 +1,5 @@
 import pickle, json, requests, os.path
-import sw5e.Class, sw5e.Archetype, sw5e.Feature
+import sw5e.Class, sw5e.Archetype, sw5e.Feature, sw5e.Species, sw5e.Feat, sw5e.Equipment
 
 def withItemTypes(cls):
 	for item_type in cls._Importer__item_types:
@@ -19,8 +19,8 @@ class Importer:
 		# # 'conditions',
 		# # 'deployment',
 		# 'enhancedItem',
-		# 'equipment',
-		# 'feat',
+		'equipment',
+		'feat',
 		'feature',
 		# 'fightingMastery',
 		# 'fightingStyle',
@@ -29,13 +29,14 @@ class Importer:
 		# 'power',
 		# 'referenceTable',
 		# # 'skills',
-		# 'species',
+		'species',
 		# # 'starshipEquipment',
 		# # 'starshipModification',
 		# # 'starshipSizes',
 		# # 'venture',
 		# # 'weaponProperty',
 	]
+	# __item_types = [ 'equipment' ]
 	__base_url = "https://sw5eapi.azurewebsites.net/api"
 	version = 1
 
@@ -46,7 +47,7 @@ class Importer:
 				for item_type in self.__item_types:
 					setattr(self, item_type, old_data[item_type])
 		else:
-			self.update(silent=True)
+			self.update(msg='Loading...')
 
 	def __del__(self):
 		# TODO: uncomment this when done editing the importer
@@ -61,8 +62,8 @@ class Importer:
 		return data
 
 	def __saveData(self, file_name, data):
-		with open(f'{self.__raw_path}{file_name}.json', 'w+') as raw_file:
-			json.dump(data, raw_file, indent=4, sort_keys=False)
+		with open(f'{self.__raw_path}{file_name}.json', 'w+', encoding='utf8') as raw_file:
+			json.dump(data, raw_file, indent=4, sort_keys=False, ensure_ascii=False)
 
 	def __getItemList(self, item_type):
 		if item_type in self.__item_types:
@@ -74,27 +75,41 @@ class Importer:
 			if item.matches(*args, **kwargs):
 				return item
 
-	def update(self, silent=False):
+	def update(self, msg='Updating...'):
+		print(msg)
 		for item_type in self.__item_types:
-			if not silent: print(f'Updating {item_type}')
+			print(f'	{item_type}')
+
 			data = self.__getData(item_type)
-			storage = self.__getItemList(item_type)
-			klass = getattr(getattr(sw5e, item_type.capitalize()),item_type.capitalize())
-
-			for item in data:
-				old_item = self.get(item_type, item)
-				if (not old_item) or (old_item.timestamp != item["timestamp"]) or (old_item.importer_version != self.version) or (old_item.brokenLinks):
-					new_item = klass(item, old_item, self)
-					if old_item: storage.remove(old_item)
-					storage.append(new_item)
-
 			self.__saveData(item_type, data)
 
+			storage = self.__getItemList(item_type)
+			klass = getattr(getattr(sw5e, item_type.capitalize()), item_type.capitalize())
+
+			for raw_item in data:
+				try:
+					old_item = self.get(item_type, raw_item)
+					if (not old_item) or (old_item.timestamp != raw_item["timestamp"]) or (old_item.importer_version != self.version) or (old_item.brokenLinks):
+						kklass = klass.getClass(raw_item)
+						new_item = kklass(raw_item, old_item, self)
+						if old_item: storage.remove(old_item)
+						storage.append(new_item)
+				except:
+					print(f'			{raw_item["name"]}')
+					raise
+
+
 	def output(self):
+		print('Output...')
 		for item_type in self.__item_types:
+			print(f'	{item_type}')
 			items = self.__getItemList(item_type)
-			with open(f'{self.__output_path}{item_type}.json', 'w+') as output_file:
+			with open(f'{self.__output_path}{item_type}.json', 'w+', encoding='utf8') as output_file:
 				data = []
 				for item in items:
-					data.append(item.getData(self))
-				json.dump(data, output_file, indent=4, sort_keys=False)
+					try:
+						data += item.getData(self)
+					except:
+						print(f'			{item.name}')
+						raise
+				json.dump(data, output_file, indent=4, sort_keys=False, ensure_ascii=False)

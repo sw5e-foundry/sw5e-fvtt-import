@@ -1,5 +1,5 @@
-import sw5e.sw5e
-import re
+import sw5e.sw5e, utils.text
+import re, json
 
 class Archetype(sw5e.sw5e.Item):
 	def __init__(self, raw_item, old_item, importer):
@@ -7,33 +7,29 @@ class Archetype(sw5e.sw5e.Item):
 
 		self.type = "archetype"
 
-		def raw(attr): return attr and raw_item[attr]
-		def clean(attr): return attr and self.cleanStr(raw_item[attr])
-		def cleanJson(attr): return attr and (clean(attr+"Json") or '  ')[2:-2].split('","')
-
-		self.className = clean("className")
-		self.text = clean("text")
-		self.text2 = raw("text2")
-		self.leveledTableHeaders = cleanJson("leveledTableHeaders")
-		self.leveledTable = cleanJson("leveledTable")
-		self.imageUrls = cleanJson("imageUrls")
-		self.casterRatio = raw("casterRatio")
-		self.casterTypeEnum = raw("casterTypeEnum")
-		self.casterType = clean("casterType")
-		self.classCasterTypeEnum = raw("classCasterTypeEnum")
-		self.classCasterType = clean("classCasterType")
-		self.features = raw("features")
-		self.featureRowKeysJson = cleanJson("featureRowKeys")
-		self.contentTypeEnum = raw("contentTypeEnum")
-		self.contentType = clean("contentType")
-		self.contentSourceEnum = raw("contentSourceEnum")
-		self.contentSource = clean("contentSource")
-		self.partitionKey = clean("partitionKey")
-		self.rowKey = clean("rowKey")
+		self.className = utils.text.clean(raw_item, "className")
+		self.text = utils.text.clean(raw_item, "text")
+		self.text2 = utils.text.raw(raw_item, "text2")
+		self.leveledTableHeaders = utils.text.cleanJson(raw_item, "leveledTableHeaders")
+		self.leveledTable = utils.text.cleanJson(raw_item, "leveledTable")
+		self.imageUrls = utils.text.cleanJson(raw_item, "imageUrls")
+		self.casterRatio = utils.text.raw(raw_item, "casterRatio")
+		self.casterTypeEnum = utils.text.raw(raw_item, "casterTypeEnum")
+		self.casterType = utils.text.clean(raw_item, "casterType")
+		self.classCasterTypeEnum = utils.text.raw(raw_item, "classCasterTypeEnum")
+		self.classCasterType = utils.text.clean(raw_item, "classCasterType")
+		self.features = utils.text.raw(raw_item, "features")
+		self.featureRowKeysJson = utils.text.cleanJson(raw_item, "featureRowKeys")
+		self.contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")
+		self.contentType = utils.text.clean(raw_item, "contentType")
+		self.contentSourceEnum = utils.text.raw(raw_item, "contentSourceEnum")
+		self.contentSource = utils.text.clean(raw_item, "contentSource")
+		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
+		self.rowKey = utils.text.clean(raw_item, "rowKey")
 
 	def getDescription(self):
 		md_str = f'## {self.name}\n' + self.text
-		return self.markdownToHtml(md_str)
+		return utils.text.markdownToHtml(md_str)
 
 	def getImg(self, capitalized=True, index=""):
 		if index: index = f'_{index}'
@@ -51,4 +47,5 @@ class Archetype(sw5e.sw5e.Item):
 		data["data"]["source"] = self.contentSource
 		data["data"]["className"] = self.className
 		data["data"]["classCasterType"] = self.classCasterType if self.classCasterType != "None" else "",
-		return data
+
+		return [data]

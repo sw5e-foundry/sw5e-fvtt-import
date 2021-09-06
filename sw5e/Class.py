@@ -1,4 +1,5 @@
-import sw5e.sw5e
+import sw5e.sw5e, utils.text
+import re, json
 
 class Class(sw5e.sw5e.Item):
 	def __init__(self, raw_item, old_item, importer):
@@ -6,52 +7,48 @@ class Class(sw5e.sw5e.Item):
 
 		self.type = "class"
 
-		def raw(attr): return attr and raw_item[attr]
-		def clean(attr): return attr and self.cleanStr(raw_item[attr])
-		def cleanJson(attr): return attr and (clean(attr+"Json") or '  ')[2:-2].split('","')
-
-		self.summary = clean("summary")
-		self.primaryAbility = clean("primaryAbility")
-		self.flavorText = clean("flavorText")
-		self.creatingText = clean("creatingText")
-		self.quickBuildText = clean("quickBuildText")
-		self.levelChangeHeaders = cleanJson("levelChangeHeaders")
-		self.levelChanges = raw("levelChanges")
-		self.hitDiceDieType = raw("hitDiceDieType")
-		self.hitPointsAtFirstLevelNumber = raw("hitPointsAtFirstLevelNumber")
-		self.hitPointsAtHigherLevelsNumber = raw("hitPointsAtHigherLevelsNumber")
-		self.armorProficiencies = cleanJson("armorProficiencies")
-		self.weaponProficiencies = cleanJson("weaponProficiencies")
-		self.toolProficiencies = cleanJson("toolProficiencies")
-		self.savingThrows = cleanJson("savingThrows")
-		self.skillChoices = clean("skillChoices")
-		self.numSkillChoices = raw("numSkillChoices")
-		self.skillChoicesList = cleanJson("skillChoicesList")
-		self.equipmentLines = cleanJson("equipmentLines")
-		self.startingWealthVariant = clean("startingWealthVariant")
-		self.archetypeFlavorText = clean("archetypeFlavorText")
-		self.archetypeFlavorName = clean("archetypeFlavorName")
-		self.imageUrls = cleanJson("imageUrls")
-		self.classFeatureText = clean("classFeatureText")
-		self.classFeatureText2 = raw("classFeatureText2")
-		self.archetypeFlavorText = clean("archetypeFlavorText")
-		self.archetypeFlavorName = clean("archetypeFlavorName")
-		self.archetypes = raw("archetypes")
-		self.imageUrls = cleanJson("imageUrls")
-		self.casterRatio = raw("casterRatio")
-		self.casterTypeEnum = raw("casterTypeEnum")
+		self.summary = utils.text.clean(raw_item, "summary")
+		self.primaryAbility = utils.text.clean(raw_item, "primaryAbility")
+		self.flavorText = utils.text.clean(raw_item, "flavorText")
+		self.creatingText = utils.text.clean(raw_item, "creatingText")
+		self.quickBuildText = utils.text.clean(raw_item, "quickBuildText")
+		self.levelChangeHeaders = utils.text.cleanJson(raw_item, "levelChangeHeaders")
+		self.levelChanges = utils.text.raw(raw_item, "levelChanges")
+		self.hitDiceDieType = utils.text.raw(raw_item, "hitDiceDieType")
+		self.hitPointsAtFirstLevelNumber = utils.text.raw(raw_item, "hitPointsAtFirstLevelNumber")
+		self.hitPointsAtHigherLevelsNumber = utils.text.raw(raw_item, "hitPointsAtHigherLevelsNumber")
+		self.armorProficiencies = utils.text.cleanJson(raw_item, "armorProficiencies")
+		self.weaponProficiencies = utils.text.cleanJson(raw_item, "weaponProficiencies")
+		self.toolProficiencies = utils.text.cleanJson(raw_item, "toolProficiencies")
+		self.savingThrows = utils.text.cleanJson(raw_item, "savingThrows")
+		self.skillChoices = utils.text.clean(raw_item, "skillChoices")
+		self.numSkillChoices = utils.text.raw(raw_item, "numSkillChoices")
+		self.skillChoicesList = utils.text.cleanJson(raw_item, "skillChoicesList")
+		self.equipmentLines = utils.text.cleanJson(raw_item, "equipmentLines")
+		self.startingWealthVariant = utils.text.clean(raw_item, "startingWealthVariant")
+		self.archetypeFlavorText = utils.text.clean(raw_item, "archetypeFlavorText")
+		self.archetypeFlavorName = utils.text.clean(raw_item, "archetypeFlavorName")
+		self.imageUrls = utils.text.cleanJson(raw_item, "imageUrls")
+		self.classFeatureText = utils.text.clean(raw_item, "classFeatureText")
+		self.classFeatureText2 = utils.text.raw(raw_item, "classFeatureText2")
+		self.archetypeFlavorText = utils.text.clean(raw_item, "archetypeFlavorText")
+		self.archetypeFlavorName = utils.text.clean(raw_item, "archetypeFlavorName")
+		self.archetypes = utils.text.raw(raw_item, "archetypes")
+		self.imageUrls = utils.text.cleanJson(raw_item, "imageUrls")
+		self.casterRatio = utils.text.raw(raw_item, "casterRatio")
+		self.casterTypeEnum = utils.text.raw(raw_item, "casterTypeEnum")
 		self.powerCasting = self.getPowerCasting()
-		self.casterType = clean("casterType")
-		self.multiClassProficiencies = cleanJson("multiClassProficiencies")
-		self.features = raw("features")
-		self.featureRowKeys = raw("featureRowKeys")
-		self.featureRowKeysJson = clean("featureRowKeysJson")
-		self.contentTypeEnum = raw("contentTypeEnum")
-		self.contentType = clean("contentType")
-		self.contentSourceEnum = raw("contentSourceEnum")
-		self.contentSource = clean("contentSource")
-		self.partitionKey = clean("partitionKey")
-		self.rowKey = clean("rowKey")
+		self.casterType = utils.text.clean(raw_item, "casterType")
+		self.multiClassProficiencies = utils.text.cleanJson(raw_item, "multiClassProficiencies")
+		self.features = utils.text.raw(raw_item, "features")
+		self.featureRowKeys = utils.text.raw(raw_item, "featureRowKeys")
+		self.featureRowKeysJson = utils.text.clean(raw_item, "featureRowKeysJson")
+		self.contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")
+		self.contentType = utils.text.clean(raw_item, "contentType")
+		self.contentSourceEnum = utils.text.raw(raw_item, "contentSourceEnum")
+		self.contentSource = utils.text.clean(raw_item, "contentSource")
+		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
+		self.rowKey = utils.text.clean(raw_item, "rowKey")
 
 	def getDescription(self):
 		out_str = f'<img style="float:right;margin:5px;border:0px" src="{self.getImg(capitalized=False, index="01")}"/>\n'
@@ -60,7 +57,7 @@ class Class(sw5e.sw5e.Item):
 		out_str += '#### Quick Build\n'
 		out_str += self.quickBuildText
 
-		out_str = self.markdownToHtml(out_str)
+		out_str = utils.text.markdownToHtml(out_str)
 
 		return out_str
 
@@ -80,7 +77,7 @@ class Class(sw5e.sw5e.Item):
 			for header in self.levelChangeHeaders:
 				element = self.levelChanges[str(level)][header]
 				if header == 'Features' and importer:
-					features = self.cleanStr(element).split(', ')
+					features = utils.text.cleanStr(element).split(', ')
 					for i in range(len(features)):
 						feature = importer.get('feature', name=features[i], class_name=self.name, level=level)
 						if feature:
@@ -136,7 +133,7 @@ class Class(sw5e.sw5e.Item):
 		lines += ['<tr>', f'<td style="width: 150px;">{self.name}</td>', f'<td style="width: 150px;">[[/r {self.startingWealthVariant[:-3]}]] cr</td>', '</tr>']
 		lines += ['</tbody>', '</table>']
 
-		return self.markdownToHtml(lines)
+		return utils.text.markdownToHtml(lines)
 
 	def getArchetypesFlavor(self, importer):
 		output = [f'<h1>{self.archetypeFlavorName}</h1>']
@@ -184,4 +181,5 @@ class Class(sw5e.sw5e.Item):
 		data["data"]["archetypes"] = ""
 		data["data"]["classFeatures"] = { "value": self.getFeatures(table, importer) }
 		data["data"]["atFlavorText"] = { "value": self.getArchetypesFlavor(importer) }
-		return data
+
+		return [data]
