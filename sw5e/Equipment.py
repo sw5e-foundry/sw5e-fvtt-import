@@ -79,10 +79,10 @@ class Equipment(sw5e.sw5e.Item):
 		data["data"]["identified"] = True
 
 		data["data"]["activation"] = {
-			"type": self.action if self.action else None,
-			"cost": 1 if self.action else 0,
+			"type": self.action,
+			"cost": 1,
 			"condition": ''
-		}
+		} if self.action != 'none' else {}
 
 		#TODO: extract duration, target, range, uses, consume, damage and other rolls
 		data["data"]["duration"] = {
@@ -108,7 +108,7 @@ class Equipment(sw5e.sw5e.Item):
 		}
 		data["data"]["formula"] = ''
 		data["data"]["save"] = {}
-		data["data"]["armor"] = { "value": 10 }
+		data["data"]["armor"] = {}
 		data["data"]["hp"] = {
 			"value": 0,
 			"max": 0,

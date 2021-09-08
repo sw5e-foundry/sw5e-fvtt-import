@@ -252,3 +252,19 @@ def clean(raw_item, attr, default=''):
 def cleanJson(raw_item, attr):
 	item = clean(raw_item, attr+'Json', default='[]')
 	return json.loads(item)
+
+def getProperty(prop_name, props):
+	if prop_name not in props: return None
+
+	def opt(p): return f'(?:{p})?'
+	def capt(p, name): return f'(?P<{name}>{p})'
+
+	prop = props[prop_name]
+
+	if re.search('special', prop): return 'special'
+
+	it = re.finditer(r'(\d+(?:,\d+)?)|(\d+d\d+)', prop)
+	vals = [int(re.sub(',', '', val.group(1))) or val.group(2) for val in it]
+	if len(vals) == 0: return True
+	if len(vals) == 1: return vals[0]
+	return vals

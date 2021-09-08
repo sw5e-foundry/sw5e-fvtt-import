@@ -31,11 +31,11 @@ class Weapon(sw5e.Equipment.Equipment):
 
 	def getRange(self):
 		short_range, long_range = None, None
-		if rang := (self.getProperty('Ammunition') or self.getProperty('Range')):
+		if rang := (utils.text.getProperty('Ammunition', self.propertiesMap) or utils.text.getProperty('Range', self.propertiesMap)):
 			if rang == 'special': short_range = 'special'
 			elif type(rang) == list: short_range, long_range = rang
 			else: short_range = rang
-		elif self.getProperty('Reach'):
+		elif utils.text.getProperty('Reach', self.propertiesMap):
 			short_range = 10
 		return {
 			'value': short_range,
@@ -45,7 +45,7 @@ class Weapon(sw5e.Equipment.Equipment):
 
 	def getUses(self):
 		if self.ammo_type and self.ammo_type != 'Power Cell':
-			rload = self.getProperty('Reload')
+			rload = utils.text.getProperty('Reload', self.propertiesMap)
 			return {
 				"value": rload,
 				"max": rload,
@@ -57,7 +57,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		if self.ammo_type == 'Power Cell': return {
 			"type": 'charges',
 			"target": '',
-			"amount": 480 // self.getProperty('Reload')
+			"amount": 480 // utils.text.getProperty('Reload', self.propertiesMap)
 		}
 		elif self.ammo_type: return {
 			"type": 'ammo',
@@ -78,7 +78,7 @@ class Weapon(sw5e.Equipment.Equipment):
 
 		die = f'{self.damageNumberOfDice}d{self.damageDieType} + @mod'
 		damage_type = self.damageType.lower() if self.damageType != 'Unknown' else ''
-		versatile = self.getProperty('Versatile') or ''
+		versatile = utils.text.getProperty('Versatile', self.propertiesMap) or ''
 		return {
 			"parts": [[ die, damage_type ]],
 			"versatile": versatile
@@ -90,7 +90,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		simple = w_class.startswith('Simple')
 		martial = not simple and w_class.startswith('Martial')
 
-		blaster = w_class.endswith('Blaster') or self.getProperty('Ammunition') or self.getProperty('Reload')
+		blaster = w_class.endswith('Blaster') or utils.text.getProperty('Ammunition', self.propertiesMap) or utils.text.getProperty('Reload', self.propertiesMap)
 		vibro = (not blaster) and w_class.endswith('Vibroweapon')
 		light = (not blaster) and (not vibro) and w_class.endswith('Lightweapon')
 
@@ -105,7 +105,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		return weapon_types[self.weaponClassificationEnum]
 
 	def getAmmoType(self):
-		if not self.getProperty('Reload'): return None
+		if not utils.text.getProperty('Reload', self.propertiesMap): return None
 		if self.damageType in ('Energy', 'Ion', 'Acid', 'Fire', 'Sonic', 'Lightning'): return 'Power Cell'
 		else: return 'Cartridge' #TODO: detect other types of ammo (flechete, missile...)
 
@@ -157,24 +157,8 @@ class Weapon(sw5e.Equipment.Equipment):
 		}
 		return { prop: weapon_properties[prop] in self.propertiesMap for prop in weapon_properties }
 
-	def getProperty(self, prop_name):
-		if prop_name not in self.propertiesMap: return None
-
-		def opt(p): return f'(?:{p})?'
-		def capt(p, name): return f'(?P<{name}>{p})'
-
-		prop = self.propertiesMap[prop_name]
-
-		if re.search('special', prop): return 'special'
-
-		it = re.finditer(r'(\d+(?:,\d+)?)|(\d+d\d+)', prop)
-		vals = [int(re.sub(',', '', val.group(1))) or val.group(2) for val in it]
-		if len(vals) == 0: return True
-		if len(vals) == 1: return vals[0]
-		return vals
-
 	def getAutoTargetData(self, data):
-		if type(auto := self.getProperty('Auto')) == list:
+		if type(auto := utils.text.getProperty('Auto', self.propertiesMap)) == list:
 			mod = (auto[0] - 10) // 2
 			prof = auto[1]
 			data["data"]["ability"] = 'str'
@@ -219,8 +203,8 @@ class Weapon(sw5e.Equipment.Equipment):
 				wpn_data["name"] = f'{self.name} ({mode["Name"]})'
 				data.append(wpn_data)
 		else:
-			if not (self.getProperty('Auto') == True): data.append(original_data)
-			if burst := self.getProperty('Burst'):
+			if not (utils.text.getProperty('Auto', self.propertiesMap) == True): data.append(original_data)
+			if burst := utils.text.getProperty('Burst', self.propertiesMap):
 				burst_data = copy.deepcopy(original_data)
 				burst_data["name"] = f'{self.name} (Burst)'
 
@@ -240,7 +224,7 @@ class Weapon(sw5e.Equipment.Equipment):
 					"scaling": 'dex'
 				}
 				data.append(burst_data)
-			if rapid := self.getProperty('Rapid'):
+			if rapid := utils.text.getProperty('Rapid', self.propertiesMap):
 				rapid_data = copy.deepcopy(original_data)
 				rapid_data["name"] = f'{self.name} (Rapid)'
 

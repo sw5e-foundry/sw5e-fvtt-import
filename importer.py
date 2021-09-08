@@ -42,6 +42,7 @@ class Importer:
 
 	def __init__(self):
 		if os.path.isfile(self.__pickle_path):
+			print('Loading...')
 			with open(self.__pickle_path, 'rb') as pickle_file:
 				old_data = pickle.load(pickle_file)
 				for item_type in self.__item_types:
@@ -52,6 +53,7 @@ class Importer:
 	def __del__(self):
 		# TODO: uncomment this when done editing the importer
 		# with open(self.__pickle_path, 'wb+') as pickle_file:
+		# 	print('Saving...')
 		# 	data = { item_type: getattr(self, item_type) for item_type in self.__item_types }
 		# 	pickle.dump(data, pickle_file)
 		pass
@@ -95,12 +97,11 @@ class Importer:
 						if old_item: storage.remove(old_item)
 						storage.append(new_item)
 				except:
-					print(f'			{raw_item["name"]}')
+					print(f'		{raw_item["name"]}')
 					raise
 
-
-	def output(self):
-		print('Output...')
+	def output(self, msg='Output...'):
+		print(msg)
 		for item_type in self.__item_types:
 			print(f'	{item_type}')
 			items = self.__getItemList(item_type)
@@ -110,6 +111,6 @@ class Importer:
 					try:
 						data += item.getData(self)
 					except:
-						print(f'			{item.name}')
+						print(f'		{item.name}')
 						raise
 				json.dump(data, output_file, indent=4, sort_keys=False, ensure_ascii=False)
