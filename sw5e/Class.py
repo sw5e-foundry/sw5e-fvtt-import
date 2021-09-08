@@ -2,8 +2,8 @@ import sw5e.sw5e, utils.text
 import re, json
 
 class Class(sw5e.sw5e.Item):
-	def __init__(self, raw_item, old_item, importer):
-		super().__init__(raw_item, old_item, importer)
+	def __init__(self, raw_item, old_item, uid, importer):
+		super().__init__(raw_item, old_item, uid, importer)
 
 		self.type = "class"
 
@@ -13,42 +13,43 @@ class Class(sw5e.sw5e.Item):
 		self.creatingText = utils.text.clean(raw_item, "creatingText")
 		self.quickBuildText = utils.text.clean(raw_item, "quickBuildText")
 		self.levelChangeHeaders = utils.text.cleanJson(raw_item, "levelChangeHeaders")
-		self.levelChanges = utils.text.raw(raw_item, "levelChanges")
+		self.levelChanges = utils.text.cleanJson(raw_item, "levelChanges")
+		self.hitDiceDieTypeEnum = utils.text.raw(raw_item, "hitDiceDieTypeEnum")
 		self.hitDiceDieType = utils.text.raw(raw_item, "hitDiceDieType")
+		self.hitPointsAtFirstLevel = utils.text.clean(raw_item, "hitPointsAtFirstLevel")
+		self.hitPointsAtHigherLevels = utils.text.clean(raw_item, "hitPointsAtHigherLevels")
 		self.hitPointsAtFirstLevelNumber = utils.text.raw(raw_item, "hitPointsAtFirstLevelNumber")
 		self.hitPointsAtHigherLevelsNumber = utils.text.raw(raw_item, "hitPointsAtHigherLevelsNumber")
 		self.armorProficiencies = utils.text.cleanJson(raw_item, "armorProficiencies")
 		self.weaponProficiencies = utils.text.cleanJson(raw_item, "weaponProficiencies")
 		self.toolProficiencies = utils.text.cleanJson(raw_item, "toolProficiencies")
+		self.toolProficienciesList = utils.text.cleanJson(raw_item, "toolProficienciesList")
 		self.savingThrows = utils.text.cleanJson(raw_item, "savingThrows")
 		self.skillChoices = utils.text.clean(raw_item, "skillChoices")
 		self.numSkillChoices = utils.text.raw(raw_item, "numSkillChoices")
 		self.skillChoicesList = utils.text.cleanJson(raw_item, "skillChoicesList")
 		self.equipmentLines = utils.text.cleanJson(raw_item, "equipmentLines")
 		self.startingWealthVariant = utils.text.clean(raw_item, "startingWealthVariant")
-		self.archetypeFlavorText = utils.text.clean(raw_item, "archetypeFlavorText")
-		self.archetypeFlavorName = utils.text.clean(raw_item, "archetypeFlavorName")
-		self.imageUrls = utils.text.cleanJson(raw_item, "imageUrls")
 		self.classFeatureText = utils.text.clean(raw_item, "classFeatureText")
-		self.classFeatureText2 = utils.text.raw(raw_item, "classFeatureText2")
+		self.classFeatureText2 = utils.text.clean(raw_item, "classFeatureText2")
 		self.archetypeFlavorText = utils.text.clean(raw_item, "archetypeFlavorText")
 		self.archetypeFlavorName = utils.text.clean(raw_item, "archetypeFlavorName")
-		self.archetypes = utils.text.raw(raw_item, "archetypes")
+		self.archetypes = utils.text.clean(raw_item, "archetypes")
 		self.imageUrls = utils.text.cleanJson(raw_item, "imageUrls")
 		self.casterRatio = utils.text.raw(raw_item, "casterRatio")
 		self.casterTypeEnum = utils.text.raw(raw_item, "casterTypeEnum")
-		self.powerCasting = self.getPowerCasting()
 		self.casterType = utils.text.clean(raw_item, "casterType")
 		self.multiClassProficiencies = utils.text.cleanJson(raw_item, "multiClassProficiencies")
-		self.features = utils.text.raw(raw_item, "features")
-		self.featureRowKeys = utils.text.raw(raw_item, "featureRowKeys")
-		self.featureRowKeysJson = utils.text.clean(raw_item, "featureRowKeysJson")
+		self.features = utils.text.clean(raw_item, "features")
+		self.featureRowKeys = utils.text.cleanJson(raw_item, "featureRowKeys")
 		self.contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")
 		self.contentType = utils.text.clean(raw_item, "contentType")
 		self.contentSourceEnum = utils.text.raw(raw_item, "contentSourceEnum")
 		self.contentSource = utils.text.clean(raw_item, "contentSource")
 		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
+
+		self.powerCasting = self.getPowerCasting()
 
 	def getDescription(self):
 		out_str = f'<img style="float:right;margin:5px;border:0px" src="{self.getImg(capitalized=False, index="01")}"/>\n'
@@ -79,12 +80,23 @@ class Class(sw5e.sw5e.Item):
 				if header == 'Features' and importer:
 					features = utils.text.cleanStr(element).split(', ')
 					for i in range(len(features)):
-						feature = importer.get('feature', name=features[i], class_name=self.name, level=level)
-						if feature:
-							if feature.id:
-								features[i] = f'@Compendium[sw5e.classFeatures.{feature.id}{{{feature.name.capitalize()}}}]'
-						else:
-							self.brokenLinks = True
+						if not re.search(r'\w+ feature|—', features[i]):
+							feature_data = {
+								"name": features[i],
+								"source": 'Class',
+								"sourceName": self.name,
+								"level": level
+							}
+							if features[i] != 'Ability Score Improvement':
+								feature_data["name"] = re.sub(r'(.*?) (?:\(.*?\)|Improvement)', r'\1', features[i])
+
+							feature = importer.get('feature', data=feature_data)
+							if feature and feature.foundry_id:
+								features[i] = f'@Compendium[world.sw5eImporter-feature.{feature.foundry_id}]{{{feature.name.capitalize()}}}'
+							else:
+								self.broken_links = True
+								if self.foundry_id:
+									print(f'		Unable to find feature {feature_data=}')
 					element = ', '.join(features)
 				table += [f'<td align="center">{element}</td>']
 			table += ['</tr>']
@@ -111,7 +123,7 @@ class Class(sw5e.sw5e.Item):
 
 		lines =  ['&nbsp;']
 		lines += ['## Class Features']
-		lines += [f'As a {self.name}, you gain the following class features.']
+		lines += [f'As a {self.name}, you gain the following:']
 		lines += ['#### Hit Points']
 		lines += [f'**Hit Dice:** 1d{self.hitDiceDieType} per {self.name} level']
 		lines += [f'**Hit Points at 1st Level:** {self.hitPointsAtFirstLevelNumber}']
@@ -133,7 +145,7 @@ class Class(sw5e.sw5e.Item):
 		lines += ['<tr>', f'<td style="width: 150px;">{self.name}</td>', f'<td style="width: 150px;">[[/r {self.startingWealthVariant[:-3]}]] cr</td>', '</tr>']
 		lines += ['</tbody>', '</table>']
 
-		return utils.text.markdownToHtml(lines)
+		return ''.join(table) + utils.text.markdownToHtml(lines)
 
 	def getArchetypesFlavor(self, importer):
 		output = [f'<h1>{self.archetypeFlavorName}</h1>']
@@ -142,14 +154,15 @@ class Class(sw5e.sw5e.Item):
 		if importer:
 			output += ['<ul>']
 			if importer.archetype:
-				for arch in importer.archetype:
+				for uid in importer.archetype:
+					arch = importer.archetype[uid]
 					if arch.className == self.name:
-						if arch.id:
-							output += [f'<li>@Compendium[sw5e.archetypes.{arch.id}]{{{arch.name.capitalize()}}}</li>']
+						if arch.foundry_id:
+							output += [f'<li>@Compendium[world.sw5eImporter-archetype.{arch.foundry_id}]{{{arch.name.capitalize()}}}</li>']
 						else:
 							output += [f'<li>{arch.name}</li>']
 			else:
-				self.brokenLinks = True
+				self.broken_links = True
 			output += ['</ul>']
 
 		return "\n".join(output)

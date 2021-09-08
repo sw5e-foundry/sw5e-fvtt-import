@@ -2,8 +2,8 @@ import sw5e.sw5e, utils.text
 import re, json
 
 class Equipment(sw5e.sw5e.Item):
-	def __init__(self, raw_item, old_item, importer):
-		super().__init__(raw_item, old_item, importer)
+	def __init__(self, raw_item, old_item, uid, importer):
+		super().__init__(raw_item, old_item, uid, importer)
 
 		# print(self.name)
 
@@ -158,15 +158,6 @@ class Equipment(sw5e.sw5e.Item):
 		data["data"]["proficient"] = False
 
 		return [data]
-
-	def matches(self, *args, **kwargs):
-		if not super().matches(*args, **kwargs): return False
-
-		if len(args) >= 1:
-			new_item = args[0]
-			if self.getClass(new_item) != type(self): return False
-
-		return True
 
 	@classmethod
 	def getClass(cls, raw_item):

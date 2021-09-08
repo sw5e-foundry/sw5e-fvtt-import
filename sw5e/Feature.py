@@ -2,8 +2,8 @@ import sw5e.sw5e, utils.text
 import re, json
 
 class Feature(sw5e.sw5e.Item):
-	def __init__(self, raw_item, old_item, importer):
-		super().__init__(raw_item, old_item, importer)
+	def __init__(self, raw_item, old_item, uid, importer):
+		super().__init__(raw_item, old_item, uid, importer)
 
 		self.text = utils.text.clean(raw_item, "text")
 		self.level = utils.text.raw(raw_item, "level")
@@ -25,14 +25,11 @@ class Feature(sw5e.sw5e.Item):
 
 	def getClassName(self, importer):
 		if self.source == 'Archetype':
-			archetype = importer.get('archetype', name=self.sourceName)
+			archetype = importer.get('archetype', data={ "name": self.sourceName })
 			if archetype:
 				return archetype.className
 			else:
-				self.brokenLinks = True
-				return ''
-		elif self.source == 'Class':
-			return self.sourceName
+				self.broken_links = True
 
 	def getImg(self):
 		if self.source in ['Class', 'Archetype']:
@@ -47,7 +44,7 @@ class Feature(sw5e.sw5e.Item):
 				'Scholar': 'SCLR',
 				'Scout': 'SCT',
 				'Sentinel': 'SNTL',
-			}[self.class_name] or 'BSKR'
+			}[self.class_name or self.sourceName] or 'BSKR'
 			action = {
 				'bonus': 'Bonus',
 				'action': 'Action',
@@ -62,15 +59,15 @@ class Feature(sw5e.sw5e.Item):
 			return f'systems/sw5e/packs/Icons/Species/{name}.webp'
 
 	def getRequirements(self):
-		if self.level and self.level > 1: return f'{self.class_name} {self.level}'
+		if self.level and self.level > 1: return f'{self.class_name or self.sourceName} {self.level}'
 		return self.sourceName
 
 	def getContentSource(self, importer):
-		sourceItem = importer.get(self.source.lower(), name=self.sourceName)
+		sourceItem = importer.get(self.source.lower(), data={ "name": self.sourceName} )
 		if sourceItem:
 			return sourceItem.contentSource
 		else:
-			self.brokenLinks = True
+			self.broken_links = True
 			return ''
 
 	def getData(self, importer):
@@ -114,14 +111,3 @@ class Feature(sw5e.sw5e.Item):
 		data["data"]["className"] = self.class_name
 
 		return [data]
-
-	def matches(self, *args, **kwargs):
-		if not super().matches(*args, **kwargs): return False
-
-		if len(args) >= 1:
-			new_item = args[0]
-			if new_item["level"] != self.level: return False
-			if new_item["source"] != self.source: return False
-			if new_item["sourceName"] != self.sourceName: return False
-
-		return True

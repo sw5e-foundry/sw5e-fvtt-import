@@ -2,8 +2,8 @@ import sw5e.sw5e, utils.text
 import re, json
 
 class Feat(sw5e.sw5e.Item):
-	def __init__(self, raw_item, old_item, importer):
-		super().__init__(raw_item, old_item, importer)
+	def __init__(self, raw_item, old_item, uid, importer):
+		super().__init__(raw_item, old_item, uid, importer)
 
 		self.type = 'feat'
 
@@ -25,14 +25,6 @@ class Feat(sw5e.sw5e.Item):
 		name = re.sub(r'[ /]', r'%20', name)
 		return f'systems/sw5e/packs/Icons/Feats/{name}.webp'
 
-	# def getContentSource(self, importer):
-	# 	sourceItem = importer.get(self.source.lower(), name=self.sourceName)
-	# 	if sourceItem:
-	# 		return sourceItem.contentSource
-	# 	else:
-	# 		self.brokenLinks = True
-	# 		return ''
-
 	def getData(self, importer):
 		data = super().getData(importer)
 		data["type"] = self.type
@@ -43,16 +35,10 @@ class Feat(sw5e.sw5e.Item):
 		data["data"]["requirements"] = self.prerequisite
 		data["data"]["source"] = self.contentSource
 
-		if self.action != 'none':
-			data["data"]["activation"] = {
-				"type": self.action,
-				"cost": 1
-			}
-		else:
-			data["data"]["activation"] = {
-				"type": None,
-				"cost": 0
-			}
+		data["data"]["activation"] = {
+			"type": self.action,
+			"cost": 1
+		} if self.action != 'none' else {}
 
 		#TODO: extract duration, target, range, uses, consume, damage and other rolls
 		data["data"]["duration"] = {}
@@ -78,12 +64,3 @@ class Feat(sw5e.sw5e.Item):
 		data["data"]["recharge"] = ''
 
 		return [data]
-
-	def matches(self, *args, **kwargs):
-		if not super().matches(*args, **kwargs): return False
-
-		if len(args) >= 1:
-			new_item = args[0]
-			if new_item["contentSource"] != self.contentSource: return False
-
-		return True

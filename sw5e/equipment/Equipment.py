@@ -2,8 +2,8 @@ import sw5e.Equipment, utils.text
 import re, json
 
 class Equipment(sw5e.Equipment.Equipment):
-	def __init__(self, raw_item, old_item, importer):
-		super().__init__(raw_item, old_item, importer)
+	def __init__(self, raw_item, old_item, uid, importer):
+		super().__init__(raw_item, old_item, uid, importer)
 
 		self.type = 'equipment'
 
