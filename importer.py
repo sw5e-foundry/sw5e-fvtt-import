@@ -1,5 +1,6 @@
-import pickle, json, requests, os.path
+import pickle, json, requests, os.path, re
 import sw5e.Class, sw5e.Archetype, sw5e.Feature, sw5e.Species, sw5e.Feat, sw5e.Equipment
+import utils.text
 
 def withItemTypes(cls):
 	for item_type in cls._Importer__item_types:
@@ -11,6 +12,7 @@ class Importer:
 	__pickle_path = "importer.pickle"
 	__output_path = "output/"
 	__foundry_ids_path = "foundry_ids.json"
+	__foundry_effects_path = "foundry_effects.json"
 	__raw_path = "raw/"
 	__item_types = [
 		'archetype',
@@ -49,28 +51,89 @@ class Importer:
 				for item_type in self.__item_types:
 					setattr(self, item_type, old_data[item_type])
 		else:
+			print('Unable to locate pickle file, loading from API')
 			self.update(msg='Loading...')
 
+		print('Loading foundry ids...')
 		if os.path.isfile(self.__foundry_ids_path):
-			print('Loading foundry ids...')
+			missing = 0
 			with open(self.__foundry_ids_path, 'r') as ids_file:
 				data = json.load(ids_file)
 				for uid in data:
 					item_type = uid.split('.')[0].lower()
 					item = self.get(item_type, uid=uid)
-					if item: item.foundry_id = data[uid]
+					if item:
+						item.foundry_id = data[uid]
+					else:
+						## Don't print an error for alternate weapon modes, as those are only generated on the output method
+						if re.search(r'((?:\w+-\w+\.)+)mode-(\w+)', uid):
+							continue
+						elif missing < 10:
+							print(f'	Foundry id for uid {uid}, but no such item exists')
+							missing += 1
+			missing = 0
+			for item_type in self.__item_types:
+				storage = self.__getItemList(item_type)
+				for uid in storage:
+					item = storage[uid]
+					if not item.foundry_id:
+						## TODO: Find a way to set the foundry_ids of the weapon modes
+						if item.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', item.propertiesMap): continue
+						if item.__class__.__name__ == 'Weapon' and item.modes: continue
+						if missing < 10:
+							print(f'	Item missing it\'s foundry_id: {uid}')
+							missing += 1
+		else:
+			print('	Unable to open foundry ids file')
+
+		print('Loading active effects...')
+		if os.path.isfile(self.__foundry_effects_path):
+			missing = 0
+			with open(self.__foundry_effects_path, 'r') as effects_file:
+				data = json.load(effects_file)
+				for uid in data:
+					item_type = uid.split('.')[0].lower()
+					item = self.get(item_type, uid=uid)
+					if item:
+						item.effects = data[uid]
+					else:
+						## Don't print an error for alternate weapon modes, as those are only generated on the output method
+						if re.search(r'((?:\w+-\w+\.)+)mode-(\w+)', uid):
+							continue
+						elif missing < 10:
+							print(f'	Active effect for uid {uid}, but no such item exists')
+							missing += 1
+			missing = 0
+			for item_type in self.__item_types:
+				storage = self.__getItemList(item_type)
+				for uid in storage:
+					item = storage[uid]
+					if item.effects == None:
+						## TODO: Find a way to set the active effects of the weapon modes
+						if item.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', item.propertiesMap): continue
+						if item.__class__.__name__ == 'Weapon' and item.modes: continue
+						if missing < 10:
+							print(f'	Item missing it\'s active effects: {uid}')
+							missing += 1
+		else:
+			print('	Unable to open active effects file')
+
 
 	def __del__(self):
-		# TODO: uncomment this when done editing the importer
-		# with open(self.__pickle_path, 'wb+') as pickle_file:
-		# 	print('Saving...')
-		# 	data = { item_type: getattr(self, item_type) for item_type in self.__item_types }
-		# 	pickle.dump(data, pickle_file)
+		with open(self.__pickle_path, 'wb+') as pickle_file:
+			print('Saving...')
+			data = { item_type: getattr(self, item_type) for item_type in self.__item_types }
+			pickle.dump(data, pickle_file)
 		pass
 
-	def __getData(self, file_name):
-		r = requests.get(self.__base_url + '/' + file_name)
-		data = json.loads(r.text)
+	def __getData(self, file_name, online=False):
+		data = None
+		if online:
+			r = requests.get(self.__base_url + '/' + file_name)
+			data = json.loads(r.text)
+		else:
+			with open(f'{self.__raw_path}{file_name}.json', 'r+', encoding='utf8') as raw_file:
+				data = json.load(raw_file)
 		return data
 
 	def __saveData(self, file_name, data):
@@ -100,13 +163,12 @@ class Importer:
 		else:
 			return None
 
-	def update(self, msg='Updating...'):
+	def update(self, msg='Updating...', online=False):
 		print(msg)
 		for item_type in self.__item_types:
 			print(f'	{item_type}')
-
-			data = self.__getData(item_type)
-			self.__saveData(item_type, data)
+			data = self.__getData(item_type, online)
+			if online: self.__saveData(item_type, data)
 
 			storage = self.__getItemList(item_type)
 			klass = self.__getClass(item_type)
@@ -125,28 +187,23 @@ class Importer:
 
 	def output(self, msg='Output...'):
 		print(msg)
+		data = {}
 		for item_type in self.__item_types:
 			print(f'	{item_type}')
 			storage = self.__getItemList(item_type)
-			with open(f'{self.__output_path}{item_type}.json', 'w+', encoding='utf8') as output_file:
-				# data = []
-				# for uid in storage:
-				# 	item = storage[uid]
-				# 	try:
-				# 		data += item.getData(self)
-				# 	except:
-				# 		print(f'		{item.name}')
-				# 		raise
-				# if data:
-				# 	json.dump(data, output_file, indent=4, sort_keys=False, ensure_ascii=False)
+			for uid in storage:
+				item = storage[uid]
+				try:
+					item_data, file = item.getData(self), item.getFile(self)
+					if file not in data:
+						data[file] = {}
+					for mode in item_data:
+						data[file][mode["flags"]["uid"]] = mode
+				except:
+					print(f'		{item.name}')
+					raise
 
-				data = {}
-				for uid in storage:
-					item = storage[uid]
-					try:
-						data[uid] = item.getData(self)
-					except:
-						print(f'		{item.name}')
-						raise
-				if data:
-					json.dump(data, output_file, indent=4, sort_keys=False, ensure_ascii=False)
+		for file in data:
+			with open(f'{self.__output_path}{file}.json', 'w+', encoding='utf8') as output_file:
+				if data[file]:
+					json.dump(data[file], output_file, indent=4, sort_keys=False, ensure_ascii=False)

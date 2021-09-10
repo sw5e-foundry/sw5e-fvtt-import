@@ -7,7 +7,6 @@ class Tool(sw5e.Equipment.Equipment):
 
 		self.type = 'tool'
 
-		self.uses, self.recharge = 'none', 0
 		self.action = 'action'
 
 	def getImg(self):
@@ -67,12 +66,3 @@ class Tool(sw5e.Equipment.Equipment):
 		data["data"]["toolType"], data["data"]["ability"] = self.getToolType()
 
 		return [data]
-
-	def matches(self, *args, **kwargs):
-		if not super().matches(*args, **kwargs): return False
-
-		# if len(args) >= 1:
-		# 	new_item = args[0]
-		# 	if new_item["type"] != 'tool': return False
-
-		return True

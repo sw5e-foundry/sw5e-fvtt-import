@@ -38,6 +38,8 @@ class Equipment(sw5e.sw5e.Item):
 		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
 
+		self.uses, self.uses_value, self.recharge = 0, 0, ''
+
 	def getImg(self, item_type=None, no_img=('Unknown',), default_img='systems/sw5e/packs/Icons/Storage/Crate.webp', plural=False):
 		if item_type == None: item_type = self.equipmentCategory
 
@@ -62,11 +64,10 @@ class Equipment(sw5e.sw5e.Item):
 		else: return int(self.weight)
 
 	def getData(self, importer):
-		data = super().getData(importer)
-		data["type"] = self.type
+		data = super().getData(importer)[0]
+
 		data["img"] = self.getImg() #will call the child's getImg
 
-		data["data"] = {}
 		data["data"]["description"] = { "value": self.getDescription() } #will call the child's getDescription
 		data["data"]["requirements"] = ''
 		data["data"]["source"] = self.contentSource
@@ -92,7 +93,7 @@ class Equipment(sw5e.sw5e.Item):
 		data["data"]["target"] = {}
 		data["data"]["range"] = {}
 		data["data"]["uses"] = {
-			"value": 0,
+			"value": self.uses_value,
 			"max": self.uses,
 			"per": self.recharge
 		}
@@ -116,48 +117,13 @@ class Equipment(sw5e.sw5e.Item):
 			"conditions": ''
 		}
 		data["data"]["weaponType"] = ''
-		data["data"]["properties"] = {
-			"amm": False,
-			"aut": False,
-			"bur": False,
-			"def": False,
-			"dex": False,
-			"dir": False,
-			"drm": False,
-			"dgd": False,
-			"dis": False,
-			"dpt": False,
-			"dou": False,
-			"fin": False,
-			"fix": False,
-			"foc": False,
-			"hvy": False,
-			"hid": False,
-			"ken": False,
-			"lgt": False,
-			"lum": False,
-			"mig": False,
-			"pic": False,
-			"rap": False,
-			"rch": False,
-			"rel": False,
-			"ret": False,
-			"shk": False,
-			"sil": False,
-			"spc": False,
-			"str": False,
-			"thr": False,
-			"two": False,
-			"ver": False,
-			"vic": False,
-			"mgc": False,
-			"nodam": False,
-			"faulldam": False,
-			"fulldam": False
-		}
+		data["data"]["properties"] = {}
 		data["data"]["proficient"] = False
 
 		return [data]
+
+	def getFile(self, importer):
+		return self.equipmentCategory
 
 	@classmethod
 	def getClass(cls, raw_item):

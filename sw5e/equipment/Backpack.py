@@ -22,12 +22,3 @@ class Backpack(sw5e.Equipment.Equipment):
 	def getDescription(self):
 		text = self.description
 		return utils.text.markdownToHtml(text)
-
-	def matches(self, *args, **kwargs):
-		if not super().matches(*args, **kwargs): return False
-
-		# if len(args) >= 1:
-		# 	new_item = args[0]
-		# 	if new_item["type"] != 'backpack': return False
-
-		return True

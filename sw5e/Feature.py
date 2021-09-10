@@ -70,12 +70,14 @@ class Feature(sw5e.sw5e.Item):
 			self.broken_links = True
 			return ''
 
+	def getFile(self, importer):
+		return f'{self.source}Feature'
+
 	def getData(self, importer):
-		data = super().getData(importer)
-		data["type"] = self.type
+		data = super().getData(importer)[0]
+
 		data["img"] = self.getImg()
 
-		data["data"] = {}
 		data["data"]["description"] = { "value": utils.text.markdownToHtml(self.text) }
 		data["data"]["requirements"] = self.getRequirements()
 		data["data"]["source"] = self.content_source

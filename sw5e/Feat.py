@@ -26,11 +26,10 @@ class Feat(sw5e.sw5e.Item):
 		return f'systems/sw5e/packs/Icons/Feats/{name}.webp'
 
 	def getData(self, importer):
-		data = super().getData(importer)
-		data["type"] = self.type
+		data = super().getData(importer)[0]
+
 		data["img"] = self.getImg()
 
-		data["data"] = {}
 		data["data"]["description"] = { "value": utils.text.markdownToHtml(self.text) }
 		data["data"]["requirements"] = self.prerequisite
 		data["data"]["source"] = self.contentSource

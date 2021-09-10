@@ -92,7 +92,7 @@ class Class(sw5e.sw5e.Item):
 
 							feature = importer.get('feature', data=feature_data)
 							if feature and feature.foundry_id:
-								features[i] = f'@Compendium[world.sw5eImporter-feature.{feature.foundry_id}]{{{feature.name.capitalize()}}}'
+								features[i] = f'@Compendium[sw5e.classfeatures.{feature.foundry_id}]{{{feature.name.capitalize()}}}'
 							else:
 								self.broken_links = True
 								if self.foundry_id:
@@ -158,7 +158,7 @@ class Class(sw5e.sw5e.Item):
 					arch = importer.archetype[uid]
 					if arch.className == self.name:
 						if arch.foundry_id:
-							output += [f'<li>@Compendium[world.sw5eImporter-archetype.{arch.foundry_id}]{{{arch.name.capitalize()}}}</li>']
+							output += [f'<li>@Compendium[sw5e.archetypes.{arch.foundry_id}]{{{arch.name.capitalize()}}}</li>']
 						else:
 							output += [f'<li>{arch.name}</li>']
 			else:
@@ -168,10 +168,10 @@ class Class(sw5e.sw5e.Item):
 		return "\n".join(output)
 
 	def getData(self, importer):
-		data = super().getData(importer)
-		data["type"] = self.type
+		data = super().getData(importer)[0]
+
 		data["img"] = self.getImg()
-		data["data"] = {}
+
 		data["data"]["description"] = { "value": self.getDescription() }
 		data["data"]["className"] = self.name
 		data["data"]["levels"] = 1

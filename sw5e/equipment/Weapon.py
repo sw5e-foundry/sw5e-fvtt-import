@@ -7,7 +7,6 @@ class Weapon(sw5e.Equipment.Equipment):
 
 		self.type = 'weapon'
 
-		self.uses, self.recharge = 0, ''
 		self.action = 'action'
 
 		self.weapon_type = self.getWeaponType()
@@ -201,6 +200,7 @@ class Weapon(sw5e.Equipment.Equipment):
 
 				wpn_data = wpn.getData(importer)[0]
 				wpn_data["name"] = f'{self.name} ({mode["Name"]})'
+				wpn_data["flags"]["uid"] = f'{self.uid}.mode-{mode["Name"]}'
 				data.append(wpn_data)
 		else:
 			if not (utils.text.getProperty('Auto', self.propertiesMap) == True): data.append(original_data)
@@ -223,6 +223,7 @@ class Weapon(sw5e.Equipment.Equipment):
 					"dc": None,
 					"scaling": 'dex'
 				}
+				burst_data["flags"]["uid"] = f'{self.uid}.mode-burst'
 				data.append(burst_data)
 			if rapid := utils.text.getProperty('Rapid', self.propertiesMap):
 				rapid_data = copy.deepcopy(original_data)
@@ -241,6 +242,7 @@ class Weapon(sw5e.Equipment.Equipment):
 					"dc": None,
 					"scaling": 'dex'
 				}
+				rapid_data["flags"]["uid"] = f'{self.uid}.mode-rapid'
 				data.append(rapid_data)
 
 		return data
@@ -264,11 +266,5 @@ class Weapon(sw5e.Equipment.Equipment):
 		data = self.getAutoTargetData(data)
 		return self.getItemVariations(data, importer)
 
-	def matches(self, *args, **kwargs):
-		if not super().matches(*args, **kwargs): return False
-
-		# if len(args) >= 1:
-		# 	new_item = args[0]
-		# 	if new_item["type"] != 'weapon': return False
-
-		return True
+	def getFile(self, importer):
+		return self.weaponClassification

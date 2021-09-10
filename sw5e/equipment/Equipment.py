@@ -94,12 +94,3 @@ class Equipment(sw5e.Equipment.Equipment):
 		data["data"]["properties"] = self.getProperties()
 
 		return [data]
-
-	def matches(self, *args, **kwargs):
-		if not super().matches(*args, **kwargs): return False
-
-		# if len(args) >= 1:
-		# 	new_item = args[0]
-		# 	if new_item["type"] != 'weapon': return False
-
-		return True

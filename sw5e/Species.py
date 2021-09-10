@@ -47,11 +47,10 @@ class Species(sw5e.sw5e.Item):
 		return '\n'.join(traits)
 
 	def getData(self, importer):
-		data = super().getData(importer)
+		data = super().getData(importer)[0]
 
-		data["type"] = self.type
 		data["img"] = self.getImg()
-		data["data"] = {}
+
 		data["data"]["description"] = { "value": self.getDescription() }
 		data["data"]["source"] = self.contentSource
 		data["data"]["traits"] = { "value": self.getTraits() }

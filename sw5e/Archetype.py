@@ -27,8 +27,28 @@ class Archetype(sw5e.sw5e.Item):
 		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
 
-	def getDescription(self):
+	def getFeature(self, feature_name, feature_level, importer):
+		text = feature_name
+		if importer:
+			feature_data = { "name": feature_name, "source": "archetype", "sourceName": self.name, "level": feature_level }
+			feature = importer.get('feature', data=feature_data)
+			if feature and feature.foundry_id:
+				text = f'@Compendium[sw5e.archetypefeatures.{feature.foundry_id}]{{{text}}}'
+			else:
+				self.broken_links = True
+				if self.foundry_id:
+					print(f'		Unable to find feature {feature_data=}')
+		return text
+
+	def getDescription(self, importer):
 		md_str = f'## {self.name}\n' + self.text
+
+		patt = r'### (?P<name>\w+(?: \w+)*)(?P<after>' # '### Fast and Agile'
+		patt += r'\s*'
+		patt += r'_\*\*' + self.name + r':\*\* (?P<lvl>\d+))' # '_**Acquisitions Practice:** 3rd'
+
+		md_str = re.sub(patt, lambda x: f'### {self.getFeature(x.group("name"), x.group("lvl"), importer)}{x.group("after")}', md_str)
+
 		return utils.text.markdownToHtml(md_str)
 
 	def getImg(self, capitalized=True, index=""):
@@ -39,11 +59,11 @@ class Archetype(sw5e.sw5e.Item):
 		return f'systems/sw5e/packs/Icons/Archetypes/{name}{index}.webp'
 
 	def getData(self, importer):
-		data = super().getData(importer)
-		data["type"] = self.type
+		data = super().getData(importer)[0]
+
 		data["img"] = self.getImg()
-		data["data"] = {}
-		data["data"]["description"] = { "value": self.getDescription() }
+
+		data["data"]["description"] = { "value": self.getDescription(importer) }
 		data["data"]["source"] = self.contentSource
 		data["data"]["className"] = self.className
 		data["data"]["classCasterType"] = self.classCasterType if self.classCasterType != "None" else "",

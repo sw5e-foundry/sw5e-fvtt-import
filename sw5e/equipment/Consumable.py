@@ -10,6 +10,12 @@ class Consumable(sw5e.Equipment.Equipment):
 		self.uses, self.recharge = utils.text.getUses(self.description, self.name)
 		self.action = utils.text.getAction(self.description, self.uses, self.recharge)
 
+		if self.name == 'Power cell' or (self.description or '').startswith(f'A {self.name.lower()} is a specializard power cell'):
+			self.action = 'bonus'
+			self.uses_value = 480
+			self.uses = 480
+			self.recharge = 'charges'
+
 	def getImg(self):
 		kwargs = {
 			# 'item_type': self.equipmentCategory,
@@ -22,12 +28,3 @@ class Consumable(sw5e.Equipment.Equipment):
 	def getDescription(self):
 		text = self.description
 		return utils.text.markdownToHtml(text)
-
-	def matches(self, *args, **kwargs):
-		if not super().matches(*args, **kwargs): return False
-
-		# if len(args) >= 1:
-		# 	new_item = args[0]
-		# 	if new_item["type"] != 'consumable': return False
-
-		return True
