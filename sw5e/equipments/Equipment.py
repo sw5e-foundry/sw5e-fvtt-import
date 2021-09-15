@@ -20,10 +20,25 @@ class Equipment(sw5e.Equipment.Equipment):
 		if self.equipmentCategory == 'Armor': kwargs["item_type"] += '/' + self.contentSource
 		return super().getImg(**kwargs)
 
-	def getDescription(self):
-		properties = map(lambda prop: prop.capitalize(), self.properties)
-		text = ', '.join(properties)
-		if self.description: text += '\n' + self.description
+	def getDescription(self, importer):
+		properties = self.propertiesMap
+		properties = {prop: properties[prop] for prop in self.propertiesMap if prop != 'Special'}
+
+		text = ''
+
+		if importer:
+			def getContent(prop_name):
+				prop = importer.get('armorProperty', data={'name': prop_name})
+				if prop: return prop.getContent(val=properties[prop_name])
+				else: return properties[prop_name].capitalize()
+			text = '\n'.join([getContent(prop) for prop in properties])
+		else:
+			text = ', '.join([properties[prop].capitalize() for prop in properties])
+
+		if self.description:
+			if text: text += '\n<hr/>\n'
+			text += self.description
+
 		return utils.text.markdownToHtml(text)
 
 	def getArmor(self):

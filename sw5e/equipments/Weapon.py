@@ -21,11 +21,25 @@ class Weapon(sw5e.Equipment.Equipment):
 		}
 		return super().getImg(**kwargs)
 
-	def getDescription(self):
-		properties = map(lambda prop: prop.capitalize(), self.properties)
-		properties = list(filter(lambda prop: not prop.startswith('Ammunition'), properties))
-		text = ', '.join(properties)
-		if 'Special' in self.properties: text += '\n' + self.description
+	def getDescription(self, importer):
+		properties = self.propertiesMap
+		properties = {prop: properties[prop] for prop in self.propertiesMap if prop != 'Special'}
+
+		text = ''
+
+		if importer:
+			def getContent(prop_name):
+				prop = importer.get('weaponProperty', data={'name': prop_name})
+				if prop: return prop.getContent(val=properties[prop_name])
+				else: return properties[prop_name].capitalize()
+			text = '\n'.join([getContent(prop) for prop in properties])
+		else:
+			text = ', '.join([properties[prop].capitalize() for prop in properties if prop != 'Ammunition'])
+
+		if 'Special' in self.propertiesMap:
+			if text: text += '\n'
+			text += '#### Special\n' + self.description
+
 		return utils.text.markdownToHtml(text)
 
 	def getRange(self):

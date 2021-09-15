@@ -4,8 +4,8 @@ def cleanStr(string):
 	if string:
 		string = ' '.join(string.split(' ')) or ''
 		string = re.sub(r'\ufffd', r'—', string) or ''
-		string = re.sub(r'\r', r'', string) or ''
-		string = re.sub(r'\n\n', r'\n', string) or ''
+		string = re.sub(r'(\\+r|\\*\r)+', r'', string) or ''
+		string = re.sub(r'(\\+n|\\*\n)+', r'\n', string) or ''
 		return string
 
 def markdownToHtml(lines):
@@ -37,7 +37,7 @@ def markdownToHtml(lines):
 			lines[i] = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', lines[i])
 			lines[i] = re.sub(r'\*(.*?)\*', r'<em>\1</em>', lines[i])
 			lines[i] = re.sub(r'_(.*?)_', r'<em>\1</em>', lines[i])
-		return '\r\n'.join(lines)
+		return '\n'.join(lines)
 
 def getAction(text, uses, recharge):
 	src = text
@@ -251,7 +251,12 @@ def clean(raw_item, attr, default=''):
 
 def cleanJson(raw_item, attr):
 	item = clean(raw_item, attr+'Json', default='[]')
-	return json.loads(item)
+	try:
+		item = json.loads(item)
+	except:
+		print(item)
+		raise
+	return item
 
 def getProperty(prop_name, props):
 	if prop_name not in props: return None

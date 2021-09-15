@@ -1,7 +1,7 @@
-import sw5e.sw5e, utils.text
+import sw5e.Entity, utils.text
 import re, json
 
-class Equipment(sw5e.sw5e.Item):
+class Equipment(sw5e.Entity.Item):
 	def __init__(self, raw_item, old_item, uid, importer):
 		super().__init__(raw_item, old_item, uid, importer)
 
@@ -68,7 +68,7 @@ class Equipment(sw5e.sw5e.Item):
 
 		data["img"] = self.getImg() #will call the child's getImg
 
-		data["data"]["description"] = { "value": self.getDescription() } #will call the child's getDescription
+		data["data"]["description"] = { "value": self.getDescription(importer) } #will call the child's getDescription
 		data["data"]["requirements"] = ''
 		data["data"]["source"] = self.contentSource
 		data["data"]["quantity"] = 1
@@ -127,7 +127,7 @@ class Equipment(sw5e.sw5e.Item):
 
 	@classmethod
 	def getClass(cls, raw_item):
-		from sw5e.equipment import Backpack, Consumable, Equipment, Loot, Tool, Weapon
+		from sw5e.equipments import Backpack, Consumable, Equipment, Loot, Tool, Weapon
 		equipment_type = [
 			None, #Unknown
 			'Consumable', #Ammunition
@@ -162,5 +162,5 @@ class Equipment(sw5e.sw5e.Item):
 			if re.search('prosthesis', name): equipment_type = 'Equipment'
 			else: equipment_type = 'Consumable'
 
-		klass = getattr(getattr(sw5e.equipment, equipment_type.capitalize()), equipment_type.capitalize())
+		klass = getattr(getattr(sw5e.equipments, equipment_type.capitalize()), equipment_type.capitalize())
 		return klass

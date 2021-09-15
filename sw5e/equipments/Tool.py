@@ -18,7 +18,7 @@ class Tool(sw5e.Equipment.Equipment):
 		}
 		return super().getImg(**kwargs)
 
-	def getDescription(self):
+	def getDescription(self, importer):
 		text = self.description
 		return utils.text.markdownToHtml(text)
 

@@ -1,5 +1,6 @@
 import pickle, json, requests, os.path, re
-import sw5e.Class, sw5e.Archetype, sw5e.Feature, sw5e.Species, sw5e.Feat, sw5e.Equipment
+import sw5e.Class, sw5e.Archetype, sw5e.Feature, sw5e.Species, sw5e.Feat, sw5e.Equipment, sw5e.Power
+import sw5e.ArmorProperty, sw5e.WeaponProperty, sw5e.Conditions
 import utils.text
 
 def withItemTypes(cls):
@@ -16,10 +17,10 @@ class Importer:
 	__raw_path = "raw/"
 	__item_types = [
 		'archetype',
-		# # 'armorProperty',
+		'armorProperty',
 		# 'background',
 		'class',
-		# # 'conditions',
+		'conditions',
 		# # 'deployment',
 		# 'enhancedItem',
 		'equipment',
@@ -29,15 +30,14 @@ class Importer:
 		# 'fightingStyle',
 		# 'lightsaberForm',
 		# 'monster',
-		# 'power',
+		'power',
 		# 'referenceTable',
-		# # 'skills',
 		'species',
 		# # 'starshipEquipment',
 		# # 'starshipModification',
 		# # 'starshipSizes',
 		# # 'venture',
-		# # 'weaponProperty',
+		'weaponProperty',
 	]
 	# __item_types = [ 'equipment' ]
 	__base_url = "https://sw5eapi.azurewebsites.net/api"
@@ -60,7 +60,8 @@ class Importer:
 			with open(self.__foundry_ids_path, 'r') as ids_file:
 				data = json.load(ids_file)
 				for uid in data:
-					item_type = uid.split('.')[0].lower()
+					item_type = uid.split('.')[0]
+					item_type = item_type[:1].lower() + item_type[1:]
 					item = self.get(item_type, uid=uid)
 					if item:
 						item.foundry_id = data[uid]
@@ -108,7 +109,7 @@ class Importer:
 				storage = self.__getItemList(item_type)
 				for uid in storage:
 					item = storage[uid]
-					if item.effects == None:
+					if hasattr(item, 'effects') and item.effects == None:
 						## TODO: Find a way to set the active effects of the weapon modes
 						if item.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', item.propertiesMap): continue
 						if item.__class__.__name__ == 'Weapon' and item.modes: continue
@@ -118,12 +119,11 @@ class Importer:
 		else:
 			print('	Unable to open active effects file')
 
-
 	def __del__(self):
-		with open(self.__pickle_path, 'wb+') as pickle_file:
-			print('Saving...')
-			data = { item_type: getattr(self, item_type) for item_type in self.__item_types }
-			pickle.dump(data, pickle_file)
+		# with open(self.__pickle_path, 'wb+') as pickle_file:
+		# 	print('Saving...')
+		# 	data = { item_type: getattr(self, item_type) for item_type in self.__item_types }
+		# 	pickle.dump(data, pickle_file)
 		pass
 
 	def __getData(self, file_name, online=False):
@@ -145,7 +145,8 @@ class Importer:
 			return getattr(self, item_type)
 
 	def __getClass(self, item_type):
-		return getattr(getattr(sw5e, item_type.capitalize()), item_type.capitalize())
+		item_type = item_type[:1].upper() + item_type[1:]
+		return getattr(getattr(sw5e, item_type), item_type)
 
 	def get(self, item_type, uid=None, data=None):
 		if item_type in ('backpack', 'consumable', 'equipment', 'loot', 'tool', 'weapon'):
@@ -164,6 +165,7 @@ class Importer:
 			return None
 
 	def update(self, msg='Updating...', online=False):
+		msg += ' (Online)' if online else ' (Offline)'
 		print(msg)
 		for item_type in self.__item_types:
 			print(f'	{item_type}')

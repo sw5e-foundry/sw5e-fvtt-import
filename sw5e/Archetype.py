@@ -1,7 +1,7 @@
-import sw5e.sw5e, utils.text
+import sw5e.Entity, utils.text
 import re, json
 
-class Archetype(sw5e.sw5e.Item):
+class Archetype(sw5e.Entity.Item):
 	def __init__(self, raw_item, old_item, uid, importer):
 		super().__init__(raw_item, old_item, uid, importer)
 
