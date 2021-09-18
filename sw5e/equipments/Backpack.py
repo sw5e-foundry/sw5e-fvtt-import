@@ -8,7 +8,7 @@ class Backpack(sw5e.Equipment.Equipment):
 		self.type = 'backpack'
 
 		self.uses, self.recharge = utils.text.getUses(self.description, self.name)
-		self.action = utils.text.getAction(self.description, self.uses, self.recharge)
+		self.action = utils.text.getActivation(self.description, self.uses, self.recharge)
 
 	def getImg(self):
 		kwargs = {

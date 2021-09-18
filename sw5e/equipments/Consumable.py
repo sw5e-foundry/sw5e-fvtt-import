@@ -8,7 +8,7 @@ class Consumable(sw5e.Equipment.Equipment):
 		self.type = 'consumable'
 
 		self.uses, self.recharge = utils.text.getUses(self.description, self.name)
-		self.action = utils.text.getAction(self.description, self.uses, self.recharge)
+		self.action = utils.text.getActivation(self.description, self.uses, self.recharge)
 
 		if self.name == 'Power cell' or (self.description or '').startswith(f'A {self.name.lower()} is a specializard power cell'):
 			self.action = 'bonus'

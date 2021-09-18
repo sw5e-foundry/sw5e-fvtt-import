@@ -1,5 +1,9 @@
 import re, json
 
+def ncapt(patt): return f'(?:{patt})'
+def capt(patt, name=None): return f'(?P<{name}>{patt})' if name else f'({patt})'
+
+
 def cleanStr(string):
 	if string:
 		string = ' '.join(string.split(' ')) or ''
@@ -39,23 +43,22 @@ def markdownToHtml(lines):
 			lines[i] = re.sub(r'_(.*?)_', r'<em>\1</em>', lines[i])
 		return '\n'.join(lines)
 
-def getAction(text, uses, recharge):
-	src = text
+def getActivation(text, uses, recharge):
 	if text:
-		if re.search(r'bonus action', src):
+		if re.search(r'bonus action', text):
 			return 'bonus'
-		elif re.search(r'as an action|can take an action', src):
+		elif re.search(r'as an action|can take an action', text):
 			return 'action'
-		elif re.search(r'you can use your reaction|using your reaction|you can use this special reaction', src):
+		elif re.search(r'you can use your reaction|using your reaction|you can use this special reaction', text):
 			return 'reaction'
-		elif uses or (recharge != 'none'):
+		elif uses or (recharge and recharge != 'none'):
 			return 'special'
-		else:
-			return 'none'
 	return 'none'
 
 def getUses(text, name):
 	uses, recharge = 0, 'none'
+
+	found = False
 
 	if text:
 		patSR = r'(finish|finishes|complete) a short(?: rest)?(?: or(?: a)? long rest)'
@@ -65,12 +68,58 @@ def getUses(text, name):
 		patRC = r'until you move 0 feet on one of your turns'
 		patRC += r'|until you store'
 
-		isSR = re.search(patSR, text)
-		isLR = (not isSR) and re.search(patLR, text)
-		isRC = (not isSR) and (not isLR) and re.search(patRC, text)
+		if re.search(patSR, text): recharge = 'sr'
+		elif re.search(patLR, text): recharge = 'lr'
+		elif re.search(patRC, text): recharge = 'charges'
 
-		def ncapt(patt): return f'(?:{patt})'
-		def capt(patt): return f'({patt})'
+		if not found: ## BASE +/* ABILITY modifier times, min of MIN
+			pattern = r'a (?:combined |maximum )?number of (?:power surges |(?P<times>times?) )?equal to (?:(?P<base>\d+) \+ )?(?P<half>half )?your '
+			pattern += r'(?P<ability1>Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma|Critical Analysis)'
+			pattern += r'(?: or (?P<ability2>Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma))? modifier'
+			pattern += r'(?: \((?:your choice, )?(?:rounded (?P<rounded>down|up) )?(?:a )?minimum of (?P<min>\d+|once)\))?'
+
+			if match := re.search(pattern, text):
+				found = True
+
+				if match['times'] == 'time':
+					print(f'		Possible typo detected on {name}, count using "time" instead of "times"')
+
+				uses_ability1 = match['ability1'] or ''
+				uses_ability2 = match['ability2'] or ''
+				if uses_ability1 == 'Critical Analysis': uses_ability1 = 'int'
+				else: uses_ability1 = uses_ability1[:3].lower()
+				if uses_ability2: uses_ability2 = uses_ability2[:3].lower()
+
+				uses_base = int(match['base'] or 0)
+				uses_half = match['half']
+				uses_rounded = match['rounded']
+				uses_min = 1 if match['min'] == 'once' else int(match['min'] or 0)
+
+				#TODO: Change this when foundry supports ability mod on max uses
+				uses = f'@abilities.{uses_ability1}.score'
+				if uses_ability2: uses = f'max({uses}, @abilities.{uses_ability2}.score)'
+				uses = f'floor(({uses} - 10) / 2)'
+				# uses = f'@abilities.{uses_ability1}.mod'
+				# if uses_ability2: uses = f'max({uses}, @abilities.{uses_ability2}.mod)'
+
+				if uses_base: uses = f'{uses_base} + {uses}'
+				if uses_min: uses = f'max({uses}, {uses_min})'
+				if uses_half:
+					if uses_rounded == 'up':
+						uses = f'ceil(({uses})/2)'
+					else:
+						uses = f'floor(({uses})/2)'
+
+		if not found: ## PROF times
+			pattern = r'a (?:combined )?number of times equal to (?P<half>half )?your proficiency bonus'
+			pattern += r'|in excess of (?P<half2>half )?your proficiency bonus \(resetting on a long rest\)'
+
+			if match := re.search(pattern, text):
+				found = True
+
+				uses = '@details.prof'
+				if match['half'] or match['half2']:
+					uses = f'floor({uses}/2)'
 
 		sp_action = r'use (?:it|(?:this|each|the chosen) (?:feature|trait|ability))'
 		sp_action += r'|initiate playing an enhanced song'
@@ -88,159 +137,240 @@ def getUses(text, name):
 		sp_action_past += r'|manifest(?:ed)? your ideals'
 		sp_action_past += r'|(?:cast|do(?:ne)?) (?:it|so)'
 
-		pat_modifier = r'a (?:combined |maximum )?number of (?:power surges |(?P<times>times?) )?equal to (?:(?P<base>\d+) \+ )?(?P<half>half )?your '
-		pat_modifier += r'(?P<ability1>Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma|Critical Analysis)'
-		pat_modifier += r'(?: or (?P<ability2>Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma))? modifier'
-		pat_modifier += r'(?: \((?:your choice, )?(?:rounded (?P<rounded>down|up) )?(?:a )?minimum of (?P<min>\d+|once)\))?'
-
 		sp_n = r'one|two|three|four|five|six|seven|eight|nine|ten|\d+'
 		sp_n_times = capt(sp_n) + r' times|(once|twice|thrice)'
-		pat_number = r'[Yy]ou can ' + ncapt(sp_action) + r' (?:a (?:combined )?total of )?' + ncapt(sp_n_times)
-		pat_number += r'|[Yy]ou have ' + capt(sp_n) + r' (?:superiority dice|amplified shots|(?:\w+ )?points)'
 
-		pat_prof = r'a (?:combined )?number of times equal to (?P<half>half )?your proficiency bonus'
-		pat_prof += r'|in excess of (?P<half2>half )?your proficiency bonus \(resetting on a long rest\)'
+		if not found: ## NUMBER times
+			pattern = r'[Yy]ou can ' + ncapt(sp_action) + r' (?:a (?:combined )?total of )?' + ncapt(sp_n_times)
+			pattern += r'|[Yy]ou have ' + capt(sp_n) + r' (?:superiority dice|amplified shots|(?:\w+ )?points)'
 
-		pat_once = r'[Oo]nce you(?:[\'—]ve| have)? ' + ncapt(sp_action_past)
-		pat_once += r'|[Yy]ou (?:can[\'—]t|cannot|can not) ' + ncapt(sp_action) + r' (?:again )?until'
-		pat_once += r'|[Ii]f you ' + ncapt(sp_action) + r' again before'
+			if match := re.search(pattern, text):
+				found = True
 
-		pat_custom = r'(?P<twiceScoutLevelPlusInt>That barrier has hit points equal to twice your scout level \+ your Intelligence modifier)'
-		pat_custom += r'|(?P<twiceConsularLevelPlusWisOrCha>The barrier has hit points equal to twice your consular level \+ your Wisdom or Charisma modifier \(your choice\))'
-		pat_custom += r'|(?P<fiveTimesEngineerLevel>has a number of hit points equal to 5 x your engineer level)'
-		pat_custom += r'|(?P<moreUses>[Yy]ou have ' + ncapt(sp_n) + r' (?:superiority dice|amplified shots|(?:\w+ )?points), instead of)'
-		pat_custom += r'|(?P<roll2d20>[Ww]hen you finish a long rest, roll two d20s)'
-		pat_custom += r'|(?P<borrowedLuck>borrowed luck roll)'
-		pat_custom += r'|(?P<powercasting>[Yy]ou regain all expended (?:force|tech) points when you)'
-		pat_custom += r'|(?P<limitPerTarget>you can[\'—]t use this feature on them again until|they (?:cannot|can not|can[\'—]t) do so again until|creature can[\'—]t (?:regain hit points|receive it) again (?:in this way )?until)'
-		pat_custom += r'|(?P<quickThinking>You regain all of your expended uses of Potent Aptitude when you finish a short or long rest)'
-		pat_custom += r'|(?P<rage>You can enter a rage a number of times)'
-		pat_custom += r'|(?P<focusPoints>Your monk level determines the number of points you have)'
-		pat_custom += r'|(?P<increasingDC>use this feature after the first, the DC)'
-		pat_custom += r'|(?P<lastsUntilRest>it lasts until you (?:complete|finish))'
-		pat_custom += r'|(?P<chooseOnRest>rest, you can (?:choose|replace))'
+				number = match[1] or match[2] or match[3]
+				try:
+					uses = int(number)
+				except ValueError:
+					uses = {
+						'once': 1,
+						'twice': 2,
+						'thrice': 3,
+						'one': 1,
+						'two': 2,
+						'three': 3,
+						'four': 4,
+						'five': 5,
+						'six': 6,
+						'seven': 7,
+						'eight': 8,
+						'nine': 9,
+						'ten': 10
+					}[number]
 
-		m_mod = re.search(pat_modifier, text)
-		m_number = re.search(pat_number, text)
-		m_prof = re.search(pat_prof, text)
-		m_once = re.search(pat_once, text)
-		m_custom = re.search(pat_custom, text)
-		if m_mod:
-			# print(f'{m_mod.group(0)=}')
-			# print(f'{m_mod.groups()=}')
+		if not found: ## ONCE
+			pattern = r'[Oo]nce you(?:[\'—]ve| have)? ' + ncapt(sp_action_past)
+			pattern += r'|[Yy]ou (?:can[\'—]t|cannot|can not) ' + ncapt(sp_action) + r' (?:again )?until'
+			pattern += r'|[Ii]f you ' + ncapt(sp_action) + r' again before'
 
-			if m_mod.group('times') == 'time':
-				print(f'		Possible typo detected on {name}, count using "time" instead of "times"')
+			if match := re.search(pattern, text):
+				found = True
 
-			uses_ability1 = m_mod.group('ability1') or ''
-			uses_ability2 = m_mod.group('ability2') or ''
-			if uses_ability1 == 'Critical Analysis': uses_ability1 = 'int'
-			else: uses_ability1 = uses_ability1[:3].lower()
-			if uses_ability2: uses_ability2 = uses_ability2[:3].lower()
+				uses = 1
 
-			uses_base = int(m_mod.group('base') or 0)
-			uses_half = m_mod.group('half')
-			uses_rounded = m_mod.group('rounded')
-			uses_min = 1 if m_mod.group('min') == 'once' else int(m_mod.group('min') or 0)
-
-			#TODO: Change this when foundry supports ability mod on max uses
-			uses = f'@abilities.{uses_ability1}.score'
-			if uses_ability2: uses = f'max({uses}, @abilities.{uses_ability2}.score)'
-			uses = f'floor(({uses} - 10) / 2)'
-			# uses = f'@abilities.{uses_ability1}.mod'
-			# if uses_ability2: uses = f'max({uses}, @abilities.{uses_ability2}.mod)'
-
-			if uses_base: uses = f'{uses_base} + {uses}'
-			if uses_min: uses = f'max({uses}, {uses_min})'
-			if uses_half:
-				if uses_rounded == 'up':
-					uses = f'ceil(({uses})/2)'
-				else:
-					uses = f'floor(({uses})/2)'
-		elif m_number:
-			number = m_number.group(1) or m_number.group(2) or m_number.group(3)
-			try:
-				uses = int(number)
-			except ValueError:
-				uses = {
-					'once': 1,
-					'twice': 2,
-					'thrice': 3,
-					'one': 1,
-					'two': 2,
-					'three': 3,
-					'four': 4,
-					'five': 5,
-					'six': 6,
-					'seven': 7,
-					'eight': 8,
-					'nine': 9,
-					'ten': 10
-				}[number]
-		elif m_prof:
-			uses = '@details.prof'
-			if m_prof.group('half') or m_prof.group('half2'): uses = f'floor({uses}/2)'
-		elif m_once:
-			uses = 1
-		if m_custom:
-			if m_custom.group('twiceScoutLevelPlusInt'):
+		if not found: ## CUSTOM (twiceScoutLevelPlusInt)
+			pattern = r'That barrier has hit points equal to twice your scout level \+ your Intelligence modifier'
+			if match := re.search(pattern, text):
+				found = True
 				uses = '2 * @classes.scout.levels + floor((@abilities.int.score - 10) / 2)'
-				#TODO: Change this when foundry supports ability mod on max uses
-				# uses = '2 * @classes.scout.levels + @abilities.int.mod'
-			if m_custom.group('twiceConsularLevelPlusWisOrCha'):
+
+		if not found: ## CUSTOM (twiceConsularLevelPlusWisOrCha)
+			pattern = r'The barrier has hit points equal to twice your consular level \+ your Wisdom or Charisma modifier \(your choice\)'
+			if match := re.search(pattern, text):
+				found = True
 				uses = '2 * @classes.consular.levels + floor((max(@abilities.wis.score, @abilities.cha.score) - 10) / 2)'
-				#TODO: Change this when foundry supports ability mod on max uses
-				# uses = '2 * @classes.consular.levels + max(@abilities.wis.mod, @abilities.cha.mod)'
-			if m_custom.group('fiveTimesEngineerLevel'):
+
+		if not found: ## CUSTOM (fiveTimesEngineerLevel)
+			pattern = r'has a number of hit points equal to 5 x your engineer level'
+			if match := re.search(pattern, text):
+				found = True
 				uses = '5 * @classes.engineer.levels'
-			elif m_custom.group('rage'):
+
+		if not found: ## CUSTOM (monkLevel)
+			pattern = r'Your monk level determines the number of points you have'
+			if match := re.search(pattern, text):
+				found = True
+				uses = '@classes.monk.levels'
+
+		if not found: ## CUSTOM (rage)
+			pattern = r'You can enter a rage a number of times'
+			if match := re.search(pattern, text):
+				found = True
 				lvl = '@classes.berserker.levels'
 				uses = f'{lvl} < 3 ? 2 : {lvl} < 6 ? 3 : {lvl} < 12 ? 4 : {lvl} < 17 ? 5 : {lvl} < 20 ? 6 : 999'
-			elif m_custom.group('focusPoints'):
-				uses = '@classes.monk.levels'
-			elif m_custom.group('borrowedLuck') or \
-				m_custom.group('powercasting') or \
-				m_custom.group('limitPerTarget') or \
-				m_custom.group('increasingDC') or \
-				m_custom.group('quickThinking') or \
-				m_custom.group('lastsUntilRest') or \
-				m_custom.group('roll2d20') or \
-				m_custom.group('moreUses') or \
-				m_custom.group('chooseOnRest'):
-				isSR, isLR, isRC, uses = False, False, False, 0
 
-		if (isSR or isLR or isRC) and not (m_mod or m_number or m_prof or m_once or m_custom):
-			pat_modifier = re.sub(r'\(\?P<\w+>', r'\(', pat_modifier)
-			print(f'{pat_modifier=}\n')
-			pat_number = re.sub(r'\(\?P<\w+>', r'\(', pat_number)
-			print(f'{pat_number=}\n')
-			pat_prof = re.sub(r'\(\?P<\w+>', r'\(', pat_prof)
-			print(f'{pat_prof=}\n')
-			pat_once = re.sub(r'\(\?P<\w+>', r'\(', pat_once)
-			print(f'{pat_once=}\n')
-			pat_custom = re.sub(r'\(\?P<\w+>', r'\(', pat_custom)
-			print(f'{pat_custom=}\n')
+		if True: ## CUSTOM, should not have uses
+			pattern = r'[Yy]ou have ' + ncapt(sp_n) + r' (?:superiority dice|amplified shots|(?:\w+ )?points), instead of'
+			pattern += r'|[Yy]ou regain all expended (?:force|tech) points when you'
+			pattern += r'|you can[\'—]t use this feature on them again until'
+			pattern += r'|they (?:cannot|can not|can[\'—]t) do so again until'
+			pattern += r'|creature can[\'—]t (?:regain hit points|receive it) again (?:in this way )?until'
+			pattern += r'|[Ww]hen you finish a long rest, roll two d20s'
+			pattern += r'|borrowed luck roll'
+			pattern += r'|You regain all of your expended uses of Potent Aptitude when you finish a short or long rest'
+			pattern += r'|use this feature after the first, the DC'
+			pattern += r'|it lasts until you (?:complete|finish)'
+			pattern += r'|rest, you can (?:choose|replace)'
+			if match := re.search(pattern, text):
+				found = False
+
+				recharge, uses = 'none', 0
+
+		if (recharge != 'none') and not found:
 			print(f'Failed to recognize uses count: on {name}')
 			# print(f'{=}')
 			for line in text.split('\n'):
 				print(line)
 			print('\n')
-			x = exitaaa
-		if uses and not (isSR or isLR or isRC):
+			raise ValueError
+		if (recharge == 'none') and found:
 			print(f'Recognized {uses=}, but failed to recognize recharge on {name}')
 			# print(f'{=}')
 			for line in text.split('\n'):
 				print(line)
 			print('\n')
-			x = exitaaa
-		if (isSR and isSR.group(1) == 'finishes') or (isLR and isLR.group(1) == 'finishes'):
-			print(f'		Possible typo detected on {name}, recharge using "finishes" instead of "finish"')
-
-		if isSR: recharge = 'sr'
-		if isLR: recharge = 'lr'
-		if isRC: recharge = 'charges'
+			raise ValueError
 
 	return uses, recharge
+
+def getTarget(text, name):
+	if not text: return
+
+	pattern = r'exhales [^.]*a (?P<size>\d+)-foot[- ](?P<shape>cone|line)'
+	if match := re.search(pattern, text):
+		return match['size'], 'ft', match['shape']
+
+	pattern = r'(?P<size>\d+)-foot-radius,? \d+-foot-tall cylinder'
+	if match := re.search(pattern, text):
+		return match['size'], 'ft', 'cylinder'
+
+	pattern = r'(?P<size>\d+)-foot[- ]radius(?P<sphere> sphere)?'
+	if match := re.search(pattern, text):
+		return match['size'], 'ft', ('sphere' if match['sphere'] else 'radius')
+
+	pattern = r'(?P<size>\d+)-foot[- ](?P<shape>cube|square|line|cone)'
+	if match := re.search(pattern, text):
+		return match['size'], 'ft', match['shape']
+
+def getAction(text, name):
+	action_type, damage, formula, save = '', { "parts": [], "versatile": '' }, '', ''
+
+	## Power Attack
+	pattern = r'[Mm]ake a (ranged|melee) (force|tech) attack'
+	if (match := re.search(pattern, text)):
+		if match.group(0) == 'ranged': action_type = 'rpak'
+		else: action_type = 'mpak'
+
+	## Saving Throw
+	sp_ability = r'Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma'
+	pattern = r'(?:must (?:first )?|can )?(?:succeed on|make|makes|if it fails) an? '
+	pattern += r'(?P<save1>' + sp_ability + r')(?: or (?P<save2>' + sp_ability + r'))? saving throw'
+	if (match := re.search(pattern, text)):
+		action_type = action_type or 'save'
+		#TODO find a way to use save1 or save2
+		save = match.group('save1')[:3].lower()
+
+	## Dice formula
+	p_formula = r'(?P<dice>\d*d\d+)?\s*\+?\s*(?P<flat>\d+)?\s*(?:\+ your (?P<ability_mod>(?:\w+ ){,5})(?:ability )?modifier)?'
+
+	## Healing
+	#TODO: temporary hit points
+	pattern = r'(?:(?:re)?gains? (?:a number of )?(?P<temp>temporary )?hit points equal to |hit points increase by )' + p_formula
+	pattern2 = r'(?:(?:re)?gains?|restores?) ' + p_formula + r' (?P<temp>temporary )?hit points'
+	def foo(match):
+		nonlocal action_type
+		nonlocal damage
+		dice, flat, ability_mod, temp = match.group('dice', 'flat', 'ability_mod', 'temp')
+
+		if dice or flat or ability_mod:
+			action_type = action_type or 'heal'
+			formula = dice
+			if flat:
+				if formula: formula = f'{formula} + {flat}'
+				else: formula = flat
+			if ability_mod:
+				formula = f'{formula or ""} + @mod'
+			damage["parts"].append([ formula, 'temphp' if temp else 'healing' ])
+			return 'FORMULA'
+		else:
+			return match.group(0)
+	text = re.sub(pattern, foo, text)
+	text = re.sub(pattern2, foo, text)
+
+	## Damage
+	pattern = r'(?:(?:takes?|taking|deals?|dealing) (?:an (?:extra|additional) |up to )?|, | (?:and|plus) (?:another )?)' + p_formula + r'(?: of)?(?: (?P<type>\w+)(?:, (?:or )?\w+)*)?(?: damage|(?= [^\n]+ damage))'
+	pattern2 = r'(?:[Tt]he (?P<type>\w+ )?damage (?:also )?increases by|base damage is|damage die becomes a) ' + p_formula
+	def foo(match):
+		nonlocal action_type
+		nonlocal damage
+		dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
+		dmg_type = match.group('type') or '' if 'type' in match.groupdict() else ''
+
+		if dice or flat or ability_mod:
+			action_type = action_type or 'other'
+			formula = dice
+			if flat:
+				if formula: formula = f'{formula} + {flat}'
+				else: formula = flat
+			if ability_mod:
+				formula = f'{formula or ""} + @mod'
+			damage["parts"].append([ formula, dmg_type ])
+			return 'FORMULA'
+		else:
+			return match.group(0)
+	text = re.sub(pattern, foo, text)
+	text = re.sub(pattern2, foo, text)
+
+	## 'Versatile' dice
+	pattern = r'[Oo]therwise, it takes ' + p_formula
+	if (match := re.search(pattern, text)):
+		dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
+
+		formula = dice
+		if flat:
+			if formula: formula = f'{formula} + {flat}'
+			else: formula = flat
+		if ability_mod:
+			formula = f'{formula or ""} + @mod'
+		damage["versatile"] = formula
+	text = re.sub(pattern, r'FORMULA', text)
+
+	## Other dice
+	pattern = r'[Rr]oll (?:a )?' + p_formula
+	text = re.sub(pattern, foo, text)
+
+	## Check for unprocessed dice
+	pattern = r'\d*d\d+'
+	def foo(match):
+		nonlocal text
+		nonlocal name
+
+		match2 = re.search(r'is reduced by ' + match[0], text)
+		if name in ('Alter Self', 'Spectrum Bolt'):
+			return 'FORMULA'
+		## TODO: Rework this to not use a hardcoded list
+		elif match2 or name in ('Earthquake', 'Preparedness', 'Whirlwind', 'Will of the Force', 'Energetic Burst', 'Force Vision', 'Greater Feedback', 'Insanity'):
+			damage["parts"].append([ match[0], '' ])
+		else:
+			print(f'Unprocessed dice {match[0]} in {name}')
+			print(f'{text=}')
+			raise ValueError
+
+		return 'FORMULA'
+	re.sub(pattern, foo, text)
+
+	action_type = action_type or 'other'
+
+	return action_type, damage, formula, save
 
 def raw(raw_item, attr):
 	return raw_item[attr] if (attr and attr in raw_item) else None
@@ -269,7 +399,7 @@ def getProperty(prop_name, props):
 	if re.search('special', prop): return 'special'
 
 	it = re.finditer(r'(\d+(?:,\d+)?)|(\d+d\d+)', prop)
-	vals = [int(re.sub(',', '', val.group(1))) or val.group(2) for val in it]
+	vals = [int(re.sub(',', '', val[1])) or val[2] for val in it]
 	if len(vals) == 0: return True
 	if len(vals) == 1: return vals[0]
 	return vals

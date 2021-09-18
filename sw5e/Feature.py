@@ -21,7 +21,7 @@ class Feature(sw5e.Entity.Item):
 		self.content_source = self.getContentSource(importer)
 		self.class_name = self.getClassName(importer)
 		self.uses, self.recharge = utils.text.getUses(self.text, self.name)
-		self.action = utils.text.getAction(self.text, self.uses, self.recharge)
+		self.action = utils.text.getActivation(self.text, self.uses, self.recharge)
 
 	def getClassName(self, importer):
 		if self.source == 'Archetype':

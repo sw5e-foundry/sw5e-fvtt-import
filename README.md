@@ -12,3 +12,7 @@ Currently imports:
 - Feats
 - Features
 - Species
+
+Credits:
+- Speedreeder for help with the sw5e api
+- Giddy for help with regexes for feature extractions

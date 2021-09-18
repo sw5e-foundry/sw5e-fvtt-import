@@ -18,7 +18,7 @@ class Feat(sw5e.Entity.Item):
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
 
 		self.uses, self.recharge = utils.text.getUses(self.text, self.name)
-		self.action = utils.text.getAction(self.text, self.uses, self.recharge)
+		self.action = utils.text.getActivation(self.text, self.uses, self.recharge)
 
 	def getImg(self):
 		name = self.name
