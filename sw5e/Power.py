@@ -64,14 +64,24 @@ class Power(sw5e.Entity.Item):
 			'range': (None, '')
 		}
 
-		if match := re.search(r'(?P<r_val>\d+) (?P<r_unit>\w+)|(?P<self>[Ss]elf)', self.range or ''):
+		if match := re.search(r'(?P<r_val>\d+) (?P<r_unit>\w+?)s?|(?P<self>[Ss]elf)', self.range or ''):
 			if match['self']:
 				target_range['range'] = (None, 'self')
+				if target := utils.text.getTarget(self.range, self.name):
+					target_range['target'] = target
 			else:
-				target_range['range'] = match['r_val'], match['r_unit']
+				units = {
+					'feet': 'ft',
+					'mile': 'mi',
+					'meter': 'm',
+					'kilometer': 'km'
+				}
+				if match['r_unit'] in units: match['r_unit'] = units[match['r_unit']]
 
-		if target := utils.text.getTarget(self.range, self.name):
-			target_range['target'] = target
+				target_range['range'] = match['r_val'], match['r_unit']
+				if target := utils.text.getTarget(self.description, self.name):
+					target_range['target'] = target
+
 
 		return target_range
 
