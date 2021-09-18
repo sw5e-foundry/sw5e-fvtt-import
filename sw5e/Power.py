@@ -35,7 +35,7 @@ class Power(sw5e.Entity.Item):
 		self.range_val, self.range_unit = target_range["range"]
 		self.uses, self.recharge = 0, ''
 		self.action_type, self.damage, self.formula, self.save, self.ability = self.getAction()
-		## TODO: Get action type, ability, damage, formula, save
+
 		self.school = self.getSchool()
 
 	def getActivation(self):
@@ -161,17 +161,16 @@ class Power(sw5e.Entity.Item):
 			"long": None,
 			"units": self.range_unit
 		}
-		data["data"]["uses"] = {}
-		data["data"]["consume"] = {}
+		# data["data"]["uses"] = {}
+		# data["data"]["consume"] = {}
 
-		#TODO: extract ability, damage and other rolls
 		data["data"]["ability"] = self.ability
 		data["data"]["actionType"] = self.action_type
-		data["data"]["attackBonus"] = 0
-		data["data"]["chatFlavor"] = ''
-		data["data"]["critical"] = None
+		# data["data"]["attackBonus"] = 0
+		# data["data"]["chatFlavor"] = ''
+		# data["data"]["critical"] = None
 		data["data"]["damage"] = self.damage
-		data["data"]["formula"] = ''
+		data["data"]["formula"] = self.formula
 		data["data"]["save"] = {
 			"ability": self.save,
 			"dc": None,

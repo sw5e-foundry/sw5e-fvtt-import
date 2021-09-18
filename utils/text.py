@@ -45,9 +45,11 @@ def markdownToHtml(lines):
 
 def getActivation(text, uses, recharge):
 	if text:
+		text = text.lower()
+
 		if re.search(r'bonus action', text):
 			return 'bonus'
-		elif re.search(r'as an action|can take an action', text):
+		elif re.search(r'as an action|can take an action|you can use your action', text):
 			return 'action'
 		elif re.search(r'you can use your reaction|using your reaction|you can use this special reaction', text):
 			return 'reaction'
@@ -61,6 +63,8 @@ def getUses(text, name):
 	found = False
 
 	if text:
+		text = text.lower()
+
 		patSR = r'(finish|finishes|complete) a short(?: rest)?(?: or(?: a)? long rest)'
 		patSR += r'|regain all expended uses on a short(?: or long)? rest'
 		patLR = r'(finish|finishes|complete) a long rest'
@@ -74,8 +78,8 @@ def getUses(text, name):
 
 		if not found: ## BASE +/* ABILITY modifier times, min of MIN
 			pattern = r'a (?:combined |maximum )?number of (?:power surges |(?P<times>times?) )?equal to (?:(?P<base>\d+) \+ )?(?P<half>half )?your '
-			pattern += r'(?P<ability1>Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma|Critical Analysis)'
-			pattern += r'(?: or (?P<ability2>Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma))? modifier'
+			pattern += r'(?P<ability1>strength|dexterity|constitution|intelligence|wisdom|charisma|critical analysis)'
+			pattern += r'(?: or (?P<ability2>strength|dexterity|constitution|intelligence|wisdom|charisma))? modifier'
 			pattern += r'(?: \((?:your choice, )?(?:rounded (?P<rounded>down|up) )?(?:a )?minimum of (?P<min>\d+|once)\))?'
 
 			if match := re.search(pattern, text):
@@ -141,8 +145,8 @@ def getUses(text, name):
 		sp_n_times = capt(sp_n) + r' times|(once|twice|thrice)'
 
 		if not found: ## NUMBER times
-			pattern = r'[Yy]ou can ' + ncapt(sp_action) + r' (?:a (?:combined )?total of )?' + ncapt(sp_n_times)
-			pattern += r'|[Yy]ou have ' + capt(sp_n) + r' (?:superiority dice|amplified shots|(?:\w+ )?points)'
+			pattern = r'you can ' + ncapt(sp_action) + r' (?:a (?:combined )?total of )?' + ncapt(sp_n_times)
+			pattern += r'|you have ' + capt(sp_n) + r' (?:superiority dice|amplified shots|(?:\w+ )?points)'
 
 			if match := re.search(pattern, text):
 				found = True
@@ -168,9 +172,9 @@ def getUses(text, name):
 					}[number]
 
 		if not found: ## ONCE
-			pattern = r'[Oo]nce you(?:[\'—]ve| have)? ' + ncapt(sp_action_past)
-			pattern += r'|[Yy]ou (?:can[\'—]t|cannot|can not) ' + ncapt(sp_action) + r' (?:again )?until'
-			pattern += r'|[Ii]f you ' + ncapt(sp_action) + r' again before'
+			pattern = r'once you(?:[\'—]ve| have)? ' + ncapt(sp_action_past)
+			pattern += r'|you (?:can[\'—]t|cannot|can not) ' + ncapt(sp_action) + r' (?:again )?until'
+			pattern += r'|if you ' + ncapt(sp_action) + r' again before'
 
 			if match := re.search(pattern, text):
 				found = True
@@ -178,13 +182,13 @@ def getUses(text, name):
 				uses = 1
 
 		if not found: ## CUSTOM (twiceScoutLevelPlusInt)
-			pattern = r'That barrier has hit points equal to twice your scout level \+ your Intelligence modifier'
+			pattern = r'that barrier has hit points equal to twice your scout level \+ your intelligence modifier'
 			if match := re.search(pattern, text):
 				found = True
 				uses = '2 * @classes.scout.levels + floor((@abilities.int.score - 10) / 2)'
 
 		if not found: ## CUSTOM (twiceConsularLevelPlusWisOrCha)
-			pattern = r'The barrier has hit points equal to twice your consular level \+ your Wisdom or Charisma modifier \(your choice\)'
+			pattern = r'the barrier has hit points equal to twice your consular level \+ your wisdom or charisma modifier \(your choice\)'
 			if match := re.search(pattern, text):
 				found = True
 				uses = '2 * @classes.consular.levels + floor((max(@abilities.wis.score, @abilities.cha.score) - 10) / 2)'
@@ -196,28 +200,28 @@ def getUses(text, name):
 				uses = '5 * @classes.engineer.levels'
 
 		if not found: ## CUSTOM (monkLevel)
-			pattern = r'Your monk level determines the number of points you have'
+			pattern = r'your monk level determines the number of points you have'
 			if match := re.search(pattern, text):
 				found = True
 				uses = '@classes.monk.levels'
 
 		if not found: ## CUSTOM (rage)
-			pattern = r'You can enter a rage a number of times'
+			pattern = r'you can enter a rage a number of times'
 			if match := re.search(pattern, text):
 				found = True
 				lvl = '@classes.berserker.levels'
 				uses = f'{lvl} < 3 ? 2 : {lvl} < 6 ? 3 : {lvl} < 12 ? 4 : {lvl} < 17 ? 5 : {lvl} < 20 ? 6 : 999'
 
 		if True: ## CUSTOM, should not have uses
-			pattern = r'[Yy]ou have ' + ncapt(sp_n) + r' (?:superiority dice|amplified shots|(?:\w+ )?points), instead of'
-			pattern += r'|[Yy]ou regain all expended (?:force|tech) points when you'
+			pattern = r'you have ' + ncapt(sp_n) + r' (?:superiority dice|amplified shots|(?:\w+ )?points), instead of'
+			pattern += r'|you regain all expended (?:force|tech) points when you'
 			pattern += r'|you can[\'—]t use this feature on them again until'
 			pattern += r'|they (?:cannot|can not|can[\'—]t) do so again until'
 			pattern += r'|creature can[\'—]t (?:regain hit points|receive it) again (?:in this way )?until'
-			pattern += r'|[Ww]hen you finish a long rest, roll two d20s'
+			pattern += r'|when you finish a long rest, roll two d20s'
 			pattern += r'|borrowed luck roll'
-			pattern += r'|You regain all of your expended uses of Potent Aptitude when you finish a short or long rest'
-			pattern += r'|use this feature after the first, the DC'
+			pattern += r'|you regain all of your expended uses of potent aptitude when you finish a short or long rest'
+			pattern += r'|use this feature after the first, the dc'
 			pattern += r'|it lasts until you (?:complete|finish)'
 			pattern += r'|rest, you can (?:choose|replace)'
 			if match := re.search(pattern, text):
@@ -243,134 +247,190 @@ def getUses(text, name):
 	return uses, recharge
 
 def getTarget(text, name):
-	if not text: return
+	if text:
+		text = text.lower()
 
-	pattern = r'exhales [^.]*a (?P<size>\d+)-foot[- ](?P<shape>cone|line)'
-	if match := re.search(pattern, text):
-		return match['size'], 'ft', match['shape']
+		pattern = r'exhales [^.]*a (?P<size>\d+)-foot[- ](?P<shape>cone|line)'
+		if match := re.search(pattern, text):
+			return match['size'], 'ft', match['shape']
 
-	pattern = r'(?P<size>\d+)-foot-radius,? \d+-foot-tall cylinder'
-	if match := re.search(pattern, text):
-		return match['size'], 'ft', 'cylinder'
+		pattern = r'(?P<size>\d+)-foot-radius,? \d+-foot-tall cylinder'
+		if match := re.search(pattern, text):
+			return match['size'], 'ft', 'cylinder'
 
-	pattern = r'(?P<size>\d+)-foot[- ]radius(?P<sphere> sphere)?'
-	if match := re.search(pattern, text):
-		return match['size'], 'ft', ('sphere' if match['sphere'] else 'radius')
+		pattern = r'(?P<size>\d+)-foot[- ]radius(?P<sphere> sphere)?'
+		if match := re.search(pattern, text):
+			return match['size'], 'ft', ('sphere' if match['sphere'] else 'radius')
 
-	pattern = r'(?P<size>\d+)-foot[- ](?P<shape>cube|square|line|cone)'
-	if match := re.search(pattern, text):
-		return match['size'], 'ft', match['shape']
+		pattern = r'(?P<size>\d+)-foot[- ](?P<shape>cube|square|line|cone)'
+		if match := re.search(pattern, text):
+			return match['size'], 'ft', match['shape']
+
+	return None, '', ''
 
 def getAction(text, name):
 	action_type, damage, formula, save = '', { "parts": [], "versatile": '' }, '', ''
 
-	## Power Attack
-	pattern = r'[Mm]ake a (ranged|melee) (force|tech) attack'
-	if (match := re.search(pattern, text)):
-		if match.group(0) == 'ranged': action_type = 'rpak'
-		else: action_type = 'mpak'
+	if text:
+		text = text.lower()
 
-	## Saving Throw
-	sp_ability = r'Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma'
-	pattern = r'(?:must (?:first )?|can )?(?:succeed on|make|makes|if it fails) an? '
-	pattern += r'(?P<save1>' + sp_ability + r')(?: or (?P<save2>' + sp_ability + r'))? saving throw'
-	if (match := re.search(pattern, text)):
-		action_type = action_type or 'save'
-		#TODO find a way to use save1 or save2
-		save = match.group('save1')[:3].lower()
+		## Power Attack
+		pattern = r'make a (ranged|melee) (force|tech) attack'
+		if (match := re.search(pattern, text)):
+			if match.group(0) == 'ranged': action_type = 'rpak'
+			else: action_type = 'mpak'
 
-	## Dice formula
-	p_formula = r'(?P<dice>\d*d\d+)?\s*\+?\s*(?P<flat>\d+)?\s*(?:\+ your (?P<ability_mod>(?:\w+ ){,5})(?:ability )?modifier)?'
+		## Saving Throw
+		sp_ability = r'strength|dexterity|constitution|intelligence|wisdom|charisma'
+		pattern = r'(?:must (?:first )?|can )?(?:succeed on|make|makes|if it fails) an? '
+		pattern += r'(?P<save1>' + sp_ability + r')(?: or (?P<save2>' + sp_ability + r'))? saving throw'
+		if (match := re.search(pattern, text)):
+			action_type = action_type or 'save'
+			#TODO find a way to use save1 or save2
+			save = match.group('save1')[:3].lower()
 
-	## Healing
-	#TODO: temporary hit points
-	pattern = r'(?:(?:re)?gains? (?:a number of )?(?P<temp>temporary )?hit points equal to |hit points increase by )' + p_formula
-	pattern2 = r'(?:(?:re)?gains?|restores?) ' + p_formula + r' (?P<temp>temporary )?hit points'
-	def foo(match):
-		nonlocal action_type
-		nonlocal damage
-		dice, flat, ability_mod, temp = match.group('dice', 'flat', 'ability_mod', 'temp')
+		## Dice formula
+		p_formula = r'(?P<dice>\d*d\d+)?\s*?\+?\s*?(?P<flat>\d+)?\s*?(?:\+ your (?P<ability_mod>(?:\w+ ){,5})(?:ability )?modifier)?'
 
-		if dice or flat or ability_mod:
-			action_type = action_type or 'heal'
+		## Healing
+		#TODO: temporary hit points
+		pattern = r'(?:(?:(?:re)?gains?|restores|gaining|a number of) (?P<temp>temporary )?hit points equal to |hit points increase by )' + p_formula
+		pattern2 = r'(?:(?:re)?gains?|restores?|gaining) (?:an extra )?' + p_formula + r' (?P<temp>temporary )?hit points'
+		def foo(match):
+			nonlocal action_type
+			nonlocal damage
+			dice, flat, ability_mod, temp = match.group('dice', 'flat', 'ability_mod', 'temp')
+
+			if dice or flat or ability_mod:
+				action_type = action_type or 'heal'
+				formula = dice
+				if flat:
+					if formula: formula = f'{formula} + {flat}'
+					else: formula = flat
+				if ability_mod:
+					formula = f'{formula or ""} + @mod'
+				damage["parts"].append([ formula, 'temphp' if temp else 'healing' ])
+				return 'FORMULA'
+			else:
+				return match.group(0)
+		text = re.sub(pattern, foo, text)
+		text = re.sub(pattern2, foo, text)
+
+		## Damage
+		pattern = r'(?:(?:takes?|taking|deals?|dealing) (?:(?:an )?(?:extra|additional) |up to )?|, | (?:and|plus) (?:another )?)(?:damage equal to )?' + p_formula + r'(?: of)?(?: (?P<type>\w+)(?:, (?:or )?\w+)*)?(?: damage|(?= [^\n]+ damage))'
+		pattern2 = r'(?:the (?P<type>\w+ )?damage (?:also )?increases by|increase the damage by|(?:base|the additional) damage is|damage die becomes a) ' + p_formula
+		def foo(match):
+			nonlocal action_type
+			nonlocal damage
+			dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
+			dmg_type = match.group('type') or '' if 'type' in match.groupdict() else ''
+
+			if dice or flat or ability_mod:
+				action_type = action_type or 'other'
+				formula = dice
+				if flat:
+					if formula: formula = f'{formula} + {flat}'
+					else: formula = flat
+				if ability_mod:
+					formula = f'{formula or ""} + @mod'
+				damage["parts"].append([ formula, dmg_type ])
+				return 'FORMULA'
+			else:
+				return match.group(0)
+		text = re.sub(pattern, foo, text)
+		text = re.sub(pattern2, foo, text)
+
+		## 'Versatile' dice
+		pattern = r'otherwise, it takes ' + p_formula
+		if (match := re.search(pattern, text)):
+			dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
+
 			formula = dice
 			if flat:
 				if formula: formula = f'{formula} + {flat}'
 				else: formula = flat
 			if ability_mod:
 				formula = f'{formula or ""} + @mod'
-			damage["parts"].append([ formula, 'temphp' if temp else 'healing' ])
+			damage["versatile"] = formula
+		text = re.sub(pattern, r'FORMULA', text)
+
+		## Other dice
+		pattern = r'(?:roll(?:ing)?(?: a| two)?|choose to add|is reduced by(?: an amount equal to)?|which are|die(?:, a)?) ' + p_formula + r'(?<! )'
+		pattern2 = r'for ' + p_formula + r' turns'
+		text = re.sub(pattern, foo, text)
+		text = re.sub(pattern2, foo, text)
+
+		## Check for unprocessed dice
+		pattern = r'\d*d\d+'
+		def foo(match):
+			nonlocal text
+			nonlocal name
+
+			pattern_ignore = r'on the d20|d20 roll|rolls? the d20'
+			pattern_ignore += r'|uses a ' + match[0]
+			pattern_ignore += r'|\|\s*' + match[0] + r'\s*\|' ## |d20|
+			pattern_ignore += r'|\d*(?:d\d+)? to ' + match[0] ## 1 to d4, d4 to d6
+			pattern_ignore += r'|' + match[0] + r' to \d*d\d+' ## d4 to d6
+			pattern_ignore += r'|' + match[0] + r' at \d+th level' ## 4d8 at 11th level
+			pattern_ignore += r'|th level \(' + match[0] + r'\)' ## 11th level (4d8)
+			pattern_ignore += r'|increases by ' + match[0] + r' when you reach \d+th level' ## increases by 1d8 when you reach 11th level
+
+			## TODO: Rework this to not use a hardcoded list
+			if re.search(pattern_ignore, text) or name in ('Alter Self', 'Spectrum Bolt', 'Flow-Walking', 'Intercept'):
+				return match[0]
+			## TODO: Rework this to not use a hardcoded list
+			elif name in ('Earthquake', 'Preparedness', 'Whirlwind', 'Will of the Force', 'Energetic Burst', 'Force Vision', 'Greater Feedback', 'Insanity', 'Climber', 'Lucky', 'Promising Commander', 'Polearm Specialist'):
+				damage["parts"].append([ match[0], '' ])
+			else:
+				print(f'Unprocessed dice {match[0]} in {name}')
+				print(f'{text=}')
+				raise ValueError
+
 			return 'FORMULA'
-		else:
-			return match.group(0)
-	text = re.sub(pattern, foo, text)
-	text = re.sub(pattern2, foo, text)
+		re.sub(pattern, foo, text)
 
-	## Damage
-	pattern = r'(?:(?:takes?|taking|deals?|dealing) (?:an (?:extra|additional) |up to )?|, | (?:and|plus) (?:another )?)' + p_formula + r'(?: of)?(?: (?P<type>\w+)(?:, (?:or )?\w+)*)?(?: damage|(?= [^\n]+ damage))'
-	pattern2 = r'(?:[Tt]he (?P<type>\w+ )?damage (?:also )?increases by|base damage is|damage die becomes a) ' + p_formula
-	def foo(match):
-		nonlocal action_type
-		nonlocal damage
-		dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
-		dmg_type = match.group('type') or '' if 'type' in match.groupdict() else ''
-
-		if dice or flat or ability_mod:
-			action_type = action_type or 'other'
-			formula = dice
-			if flat:
-				if formula: formula = f'{formula} + {flat}'
-				else: formula = flat
-			if ability_mod:
-				formula = f'{formula or ""} + @mod'
-			damage["parts"].append([ formula, dmg_type ])
-			return 'FORMULA'
-		else:
-			return match.group(0)
-	text = re.sub(pattern, foo, text)
-	text = re.sub(pattern2, foo, text)
-
-	## 'Versatile' dice
-	pattern = r'[Oo]therwise, it takes ' + p_formula
-	if (match := re.search(pattern, text)):
-		dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
-
-		formula = dice
-		if flat:
-			if formula: formula = f'{formula} + {flat}'
-			else: formula = flat
-		if ability_mod:
-			formula = f'{formula or ""} + @mod'
-		damage["versatile"] = formula
-	text = re.sub(pattern, r'FORMULA', text)
-
-	## Other dice
-	pattern = r'[Rr]oll (?:a )?' + p_formula
-	text = re.sub(pattern, foo, text)
-
-	## Check for unprocessed dice
-	pattern = r'\d*d\d+'
-	def foo(match):
-		nonlocal text
-		nonlocal name
-
-		match2 = re.search(r'is reduced by ' + match[0], text)
-		if name in ('Alter Self', 'Spectrum Bolt'):
-			return 'FORMULA'
-		## TODO: Rework this to not use a hardcoded list
-		elif match2 or name in ('Earthquake', 'Preparedness', 'Whirlwind', 'Will of the Force', 'Energetic Burst', 'Force Vision', 'Greater Feedback', 'Insanity'):
-			damage["parts"].append([ match[0], '' ])
-		else:
-			print(f'Unprocessed dice {match[0]} in {name}')
-			print(f'{text=}')
-			raise ValueError
-
-		return 'FORMULA'
-	re.sub(pattern, foo, text)
-
-	action_type = action_type or 'other'
+		action_type = action_type or 'other'
 
 	return action_type, damage, formula, save
+
+def getDuration(text, name):
+	if text:
+		text = text.lower()
+
+		sp_units = r'(?P<unit>minute|hour|day|month|year|turn|round)s?'
+
+		## "lasts for 1 minute"
+		## "lasts for 8 hours"
+		pattern = r'(?:^|\W)lasts for (?P<val>\d+) ' + sp_units + r'(?:\W|$)'
+		if match := re.search(pattern, text):
+			return match['val'], match['unit']
+
+		## "for the next 8 hours"
+		pattern = r'(?:^|\W)for the next (?P<val>\d+) ' + sp_units + r'(?:\W|$)'
+		if match := re.search(pattern, text):
+			return match['val'], match['unit']
+
+		## "turned for 1 minute" (e.g. channel divinity)
+		pattern = r'(?:^|\W)turned for (?P<val>\d+) ' + sp_units + r'(?:\W|$)'
+		if match := re.search(pattern, text):
+			return match['val'], match['unit']
+
+		## "it is charmed by you for 1 minute"
+		pattern = r'(?:^|\W)is \w+ by you for (?P<val>\d+) ' + sp_units + r'(?:\W|$)'
+		if match := re.search(pattern, text):
+			return match['val'], match['unit']
+
+		## "For one minute"
+		pattern = r'(?:^|\W)for one ' + sp_units + r'(?:\W|$)'
+		if match := re.search(pattern, text):
+			return 1, match['unit']
+
+		## "until the end of your next turn"
+		pattern = r'(?:^|\W)until the end of your next turn(?:\W|$)'
+		if match := re.search(pattern, text):
+			return 1, 'turn'
+
+	return None, 'inst'
 
 def raw(raw_item, attr):
 	return raw_item[attr] if (attr and attr in raw_item) else None
