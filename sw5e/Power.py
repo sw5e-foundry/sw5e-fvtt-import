@@ -2,10 +2,8 @@ import sw5e.Entity, utils.text
 import re, json
 
 class Power(sw5e.Entity.Item):
-	def __init__(self, raw_item, old_item, uid, importer):
-		super().__init__(raw_item, old_item, uid, importer)
-
-		self.type = "power"
+	def load(self, raw_item):
+		super().load(raw_item)
 
 		self.powerTypeEnum = utils.text.raw(raw_item, "powerTypeEnum")
 		self.powerType = utils.text.clean(raw_item, "powerType")
@@ -27,6 +25,9 @@ class Power(sw5e.Entity.Item):
 		self.contentSource = utils.text.clean(raw_item, "contentSource")
 		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
+
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
 
 		self.activation_type, self.activation_num, self.activation_condition = self.getActivation()
 		self.duration_value, self.duration_unit, self.concentration = self.getDuration()
@@ -135,8 +136,6 @@ class Power(sw5e.Entity.Item):
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
-
-		data["img"] = self.getImg()
 
 		data["data"]["description"] = { "value": self.getDescription() }
 		data["data"]["requirements"] = self.prerequisite or ''

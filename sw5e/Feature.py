@@ -2,18 +2,21 @@ import sw5e.Entity, utils.text
 import re, json
 
 class BaseFeature(sw5e.Entity.Item):
-	def __init__(self, raw_item, old_item, uid, importer):
-		super().__init__(raw_item, old_item, uid, importer)
+	def load(self, raw_item):
+		super().load(raw_item)
 
-		self.text = self.getText(raw_item, importer)
+		self.text = utils.text.clean(raw_item, "text") or utils.text.clean(raw_item, "description")
+		self.requirements = utils.text.clean(raw_item, "requirements") or utils.text.clean(raw_item, "prerequisite")
 		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
 
-		self.contentSource, self.contentSourceEnum = self.getContentSource(raw_item, importer)
-		self.contentType, self.contentTypeEnum = self.getContentType(raw_item, importer)
-		self.requirements = self.getRequirements(raw_item, importer)
+		self.contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")
+		self.contentType = utils.text.clean(raw_item, "contentType")
+		self.contentSourceEnum = utils.text.raw(raw_item, "contentSourceEnum")
+		self.contentSource = utils.text.clean(raw_item, "contentSource")
 
-		self.type = self.getType()
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
 
 		self.duration_value, self.duration_unit = self.getDuration()
 		self.target_val, self.target_unit, self.target_type = self.getTarget()
@@ -21,25 +24,6 @@ class BaseFeature(sw5e.Entity.Item):
 		self.uses, self.recharge = self.getUses()
 		self.action_type, self.damage, self.formula, self.save = self.getAction()
 		self.activation = self.getActivation()
-
-	def getType(self):
-		raise NotImplementedError
-
-	def getText(self, raw_item, importer):
-		return utils.text.clean(raw_item, "text") or utils.text.clean(raw_item, "description")
-
-	def getContentType(self, raw_item, importer):
-		contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")
-		contentType = utils.text.clean(raw_item, "contentType")
-		return contentType, contentTypeEnum
-
-	def getContentSource(self, raw_item, importer):
-		contentSourceEnum = utils.text.raw(raw_item, "contentSourceEnum")
-		contentSource = utils.text.clean(raw_item, "contentSource")
-		return contentSource, contentSourceEnum
-
-	def getRequirements(self, raw_item, importer):
-		return utils.text.clean(raw_item, "requirements") or utils.text.clean(raw_item, "prerequisite")
 
 	def getActivation(self):
 		return utils.text.getActivation(self.text, self.uses, self.recharge)
@@ -64,8 +48,6 @@ class BaseFeature(sw5e.Entity.Item):
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
-
-		data["img"] = self.getImg()
 
 		data["data"]["description"] = { "value": utils.text.markdownToHtml(self.text) }
 		data["data"]["requirements"] = self.requirements
@@ -111,20 +93,25 @@ class BaseFeature(sw5e.Entity.Item):
 		return [data]
 
 class Feature(BaseFeature):
-	def __init__(self, raw_item, old_item, uid, importer):
+	def load(self, raw_item):
+		super().load(raw_item)
+
 		self.level = utils.text.raw(raw_item, "level")
 		self.sourceEnum = utils.text.raw(raw_item, "sourceEnum")
 		self.source = utils.text.clean(raw_item, "source")
 		self.sourceName = utils.text.clean(raw_item, "sourceName")
 		self.metadata = utils.text.raw(raw_item, "metadata")
 
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
+
 		#TODO: Remove this once the typo is fixed
 		if self.sourceName == 'Juyo/Vapaad Form': self.sourceName = 'Juyo/Vaapad Form'
 
 		self.class_name = self.getClassName(importer)
-
-		super().__init__(raw_item, old_item, uid, importer)
-
+		self.requirements = self.getRequirements(importer)
+		self.contentType, self.contentTypeEnum = self.getContentType(importer)
+		self.contentSource, self.contentSourceEnum = self.getContentSource(importer)
 
 	def getType(self):
 		return "classfeature" if self.source in ["Class", "Archetype"] else "feat"
@@ -164,14 +151,14 @@ class Feature(BaseFeature):
 			else:
 				self.broken_links = True
 
-	def getRequirements(self, raw_item, importer):
+	def getRequirements(self, importer):
 		if self.level and self.level > 1: return f'{self.class_name or self.sourceName} {self.level}'
 		return self.sourceName
 
 	def getFile(self, importer):
 		return f'{self.source}Feature'
 
-	def getContentType(self, raw_item, importer):
+	def getContentType(self, importer):
 		sourceItem = importer.get(self.source.lower(), data={ "name": self.sourceName} )
 		if sourceItem:
 			return sourceItem.contentType, sourceItem.contentTypeEnum
@@ -179,7 +166,7 @@ class Feature(BaseFeature):
 			self.broken_links = True
 			return '', 0
 
-	def getContentSource(self, raw_item, importer):
+	def getContentSource(self, importer):
 		sourceItem = importer.get(self.source.lower(), data={ "name": self.sourceName} )
 		if sourceItem:
 			return sourceItem.contentSource, sourceItem.contentSourceEnum

@@ -2,10 +2,8 @@ import sw5e.Entity, utils.text
 import re, json
 
 class Archetype(sw5e.Entity.Item):
-	def __init__(self, raw_item, old_item, uid, importer):
-		super().__init__(raw_item, old_item, uid, importer)
-
-		self.type = "archetype"
+	def load(self, raw_item):
+		super().load(raw_item)
 
 		self.className = utils.text.clean(raw_item, "className")
 		self.text = utils.text.clean(raw_item, "text")
@@ -26,6 +24,9 @@ class Archetype(sw5e.Entity.Item):
 		self.contentSource = utils.text.clean(raw_item, "contentSource")
 		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
+
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
 
 	def getFeature(self, feature_name, feature_level, importer):
 		text = feature_name
@@ -60,8 +61,6 @@ class Archetype(sw5e.Entity.Item):
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
-
-		data["img"] = self.getImg()
 
 		data["data"]["description"] = { "value": self.getDescription(importer) }
 		data["data"]["source"] = self.contentSource

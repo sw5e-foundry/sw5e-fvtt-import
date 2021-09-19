@@ -2,13 +2,13 @@ import sw5e.Feature, utils.text
 import re, json
 
 class Feat(sw5e.Feature.BaseFeature):
-	def __init__(self, raw_item, old_item, uid, importer):
+	def load(self, raw_item):
+		super().load(raw_item)
+
 		self.attributesIncreased = utils.text.cleanJson(raw_item, "attributesIncreased")
 
-		super().__init__(raw_item, old_item, uid, importer)
-
-	def getType(self):
-		return 'feat'
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
 
 	def getImg(self):
 		name = self.name

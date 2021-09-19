@@ -2,10 +2,8 @@ import sw5e.Entity, utils.text
 import re, json
 
 class Species(sw5e.Entity.Item):
-	def __init__(self, raw_item, old_item, uid, importer):
-		super().__init__(raw_item, old_item, uid, importer)
-
-		self.type = "species"
+	def load(self, raw_item):
+		super().load(raw_item)
 
 		self.skinColorOptions = utils.text.clean(raw_item, "skinColorOptions")
 		self.hairColorOptions = utils.text.clean(raw_item, "hairColorOptions")
@@ -33,6 +31,9 @@ class Species(sw5e.Entity.Item):
 		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
 
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
+
 	def getImg(self):
 		name = self.name
 		name = re.sub(r'[ /]', r'%20', name)
@@ -48,8 +49,6 @@ class Species(sw5e.Entity.Item):
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
-
-		data["img"] = self.getImg()
 
 		data["data"]["description"] = { "value": self.getDescription() }
 		data["data"]["source"] = self.contentSource

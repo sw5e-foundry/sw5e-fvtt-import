@@ -2,10 +2,8 @@ import sw5e.Entity, utils.text
 import re, json
 
 class Background(sw5e.Entity.Item):
-	def __init__(self, raw_item, old_item, uid, importer):
-		super().__init__(raw_item, old_item, uid, importer)
-
-		self.type = "background"
+	def load(self, raw_item):
+		super().load(raw_item)
 
 		self.flavorText = utils.text.clean(raw_item, "flavorText")
 		self.flavorName = utils.text.clean(raw_item, "flavorName")
@@ -31,6 +29,9 @@ class Background(sw5e.Entity.Item):
 		self.contentSource = utils.text.clean(raw_item, "contentSource")
 		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
+
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
 
 	def getImg(self):
 		name = self.name
@@ -82,8 +83,6 @@ class Background(sw5e.Entity.Item):
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
-
-		data["img"] = self.getImg()
 
 		data["data"]["flavorText"] = { "value": self.getFlavorText() }
 		data["data"]["flavorName"] = { "value": self.flavorName }

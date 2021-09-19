@@ -105,7 +105,7 @@ class Importer:
 						if re.search(r'((?:\w+-\w+\.)+)mode-(\w+)', uid):
 							continue
 						elif missing < 10:
-							print(f'	Active effect for uid {uid}, but no such item exists')
+							print(f'	Active effects for uid {uid}, but no such item exists')
 							missing += 1
 			missing = 0
 			for entity_type in self.__entity_types:

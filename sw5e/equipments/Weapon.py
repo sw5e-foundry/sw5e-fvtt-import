@@ -2,10 +2,11 @@ import sw5e.Equipment, utils.text
 import re, json, copy
 
 class Weapon(sw5e.Equipment.Equipment):
-	def __init__(self, raw_item, old_item, uid, importer):
-		super().__init__(raw_item, old_item, uid, importer)
+	def load(self, raw_item):
+		super().load(raw_item)
 
-		self.type = 'weapon'
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
 
 		self.action = 'action'
 

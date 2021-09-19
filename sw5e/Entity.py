@@ -3,11 +3,16 @@ import utils.text
 
 class Entity:
 	def __init__(self, raw_item, old_item, uid, importer):
-		self.name = raw_item["name"]
 		self.uid = uid
-		self.foundry_id = None
+		self.load(raw_item)
+		self.process(old_item, importer)
 
+	def load(self, raw_item):
+		self.name = raw_item["name"]
 		self.timestamp = raw_item["timestamp"]
+
+	def process(self, old_item, importer):
+		self.foundry_id = None
 		self.importer_version = importer.version
 		self.broken_links = False
 
@@ -49,17 +54,28 @@ class Entity:
 		return uid
 
 class Item(Entity):
-	def __init__(self, raw_item, old_item, uid, importer):
-		super().__init__(raw_item, old_item, uid, importer)
+	def load(self, raw_item):
+		super().load(raw_item)
+
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
 
 		self.effects = []
-		self.type = None
+
+	def getType(self, name=None):
+		if name == None:
+			name = type(self).__name__.lower()
+		name = re.sub(r'[ /]', r'%20', name)
+		return name
+
+	def getImg(self):
+		return 'icons/svg/item-bag.svg'
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["type"] = self.type
-		data["img"] = 'icons/svg/item-bag.svg'
+		data["type"] = self.getType()
+		data["img"] = self.getImg()
 		data["data"] = {}
 		data["effects"] = self.effects
 
@@ -80,8 +96,8 @@ class JournalEntry(Entity):
 		raise NotImplementedError()
 
 class Property(JournalEntry):
-	def __init__(self, raw_item, old_item, uid, importer):
-		super().__init__(raw_item, old_item, uid, importer)
+	def load(self, raw_item):
+		super().load(raw_item)
 
 		self.content = utils.text.clean(raw_item, 'content')
 		self.contentTypeEnum = utils.text.raw(raw_item, 'contentTypeEnum')
@@ -90,6 +106,9 @@ class Property(JournalEntry):
 		self.contentSource = utils.text.clean(raw_item, 'contentSource')
 		self.partitionKey = utils.text.clean(raw_item, 'partitionKey')
 		self.rowKey = utils.text.clean(raw_item, 'rowKey')
+
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
 
 	def getContent(self, val=None):
 		content = self.content

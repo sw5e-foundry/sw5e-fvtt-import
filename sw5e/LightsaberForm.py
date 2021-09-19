@@ -2,13 +2,13 @@ import sw5e.Feature, utils.text
 import re, json
 
 class LightsaberForm(sw5e.Feature.BaseFeature):
-	def __init__(self, raw_item, old_item, uid, importer):
+	def load(self, raw_item):
+		super().load(raw_item)
+
 		self.metadata = utils.text.cleanJson(raw_item, "metadata")
 
-		super().__init__(raw_item, old_item, uid, importer)
-
-	def getType(self):
-		return 'lightsaberform'
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
 
 	def getImg(self):
 		name = self.name

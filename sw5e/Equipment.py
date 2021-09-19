@@ -2,12 +2,8 @@ import sw5e.Entity, utils.text
 import re, json
 
 class Equipment(sw5e.Entity.Item):
-	def __init__(self, raw_item, old_item, uid, importer):
-		super().__init__(raw_item, old_item, uid, importer)
-
-		# print(self.name)
-
-		self.type = 'loot'
+	def load(self, raw_item):
+		super().load(raw_item)
 
 		self.name = utils.text.clean(raw_item, "name")
 		self.description = utils.text.clean(raw_item, "description")
@@ -38,6 +34,9 @@ class Equipment(sw5e.Entity.Item):
 		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
 
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
+
 		self.uses, self.uses_value, self.recharge = 0, 0, ''
 
 	def getImg(self, item_type=None, no_img=('Unknown',), default_img='systems/sw5e/packs/Icons/Storage/Crate.webp', plural=False):
@@ -65,8 +64,6 @@ class Equipment(sw5e.Entity.Item):
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
-
-		data["img"] = self.getImg() #will call the child's getImg
 
 		data["data"]["description"] = { "value": self.getDescription(importer) } #will call the child's getDescription
 		data["data"]["requirements"] = ''

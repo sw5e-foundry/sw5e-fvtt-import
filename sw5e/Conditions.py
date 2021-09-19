@@ -2,8 +2,8 @@ import sw5e.Entity, utils.text
 import re, json
 
 class Conditions(sw5e.Entity.JournalEntry):
-	def __init__(self, raw_item, old_item, uid, importer):
-		super().__init__(raw_item, old_item, uid, importer)
+	def load(self, raw_item):
+		super().load(raw_item)
 
 		self.description = utils.text.clean(raw_item, 'description')
 		self.contentTypeEnum = utils.text.raw(raw_item, 'contentTypeEnum')
@@ -12,6 +12,9 @@ class Conditions(sw5e.Entity.JournalEntry):
 		self.contentSource = utils.text.clean(raw_item, 'contentSource')
 		self.partitionKey = utils.text.clean(raw_item, 'partitionKey')
 		self.rowKey = utils.text.clean(raw_item, 'rowKey')
+
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
 
 	def getContent(self, val=None):
 		content = self.description

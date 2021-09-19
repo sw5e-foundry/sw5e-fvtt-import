@@ -2,10 +2,11 @@ import sw5e.Equipment, utils.text
 import re, json
 
 class Equipment(sw5e.Equipment.Equipment):
-	def __init__(self, raw_item, old_item, uid, importer):
-		super().__init__(raw_item, old_item, uid, importer)
+	def load(self, raw_item):
+		super().load(raw_item)
 
-		self.type = 'equipment'
+	def process(self, old_item, importer):
+		super().process(old_item, importer)
 
 		self.uses, self.recharge = utils.text.getUses(self.description, self.name)
 		self.action = utils.text.getActivation(self.description, self.uses, self.recharge)
