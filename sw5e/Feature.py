@@ -5,7 +5,7 @@ class BaseFeature(sw5e.Entity.Item):
 	def __init__(self, raw_item, old_item, uid, importer):
 		super().__init__(raw_item, old_item, uid, importer)
 
-		self.text = utils.text.clean(raw_item, "text")
+		self.text = self.getText(raw_item, importer)
 		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
 
@@ -24,6 +24,9 @@ class BaseFeature(sw5e.Entity.Item):
 
 	def getType(self):
 		raise NotImplementedError
+
+	def getText(self, raw_item, importer):
+		return utils.text.clean(raw_item, "text") or utils.text.clean(raw_item, "description")
 
 	def getContentType(self, raw_item, importer):
 		contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")

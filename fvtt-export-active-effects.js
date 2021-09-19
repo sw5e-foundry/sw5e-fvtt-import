@@ -19,9 +19,9 @@ let types = [
 	"techpowers",
 	"weapons"
 ]
-// types = [
-// 	"species"
-// ]
+types = [
+	"backgrounds"
+]
 
 let verbose = false;
 
@@ -37,6 +37,8 @@ function clean(str){
 
 function getUID(item){
 	uid = clean(item.type)
+	uid = uid.charAt(0).toUpperCase() + uid.substr(1)
+
 	uid += `.name-${clean(item.name)}`
 
 	category = item.data.weaponType || item.data.consumableType || item.data.armor?.type;

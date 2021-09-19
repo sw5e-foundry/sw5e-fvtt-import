@@ -368,6 +368,7 @@ def getAction(text, name):
 
 			pattern_ignore = r'on the d20|d20 roll|rolls? the d20'
 			pattern_ignore += r'|uses a ' + match[0]
+			pattern_ignore += r'|versatile \(' + match[0] + r'\) property' ## versatile (2d4) property
 			pattern_ignore += r'|\|\s*' + match[0] + r'\s*\|' ## |d20|
 			pattern_ignore += r'|\d*(?:d\d+)? to ' + match[0] ## 1 to d4, d4 to d6
 			pattern_ignore += r'|' + match[0] + r' to \d*d\d+' ## d4 to d6
@@ -463,3 +464,35 @@ def getProperty(prop_name, props):
 	if len(vals) == 0: return True
 	if len(vals) == 1: return vals[0]
 	return vals
+
+def lowerCase(word):
+	return word[:1].lower() + word[1:]
+
+def makeTable(content, header=None, align=None):
+	table = ''
+	if header:
+		line = ''
+		for x in range(len(header)):
+			part = header[x]
+			if align and align[x]: part = f'<th align="{align[x]}">{part}</th>'
+			else: part = f'<th>{part}</th>'
+			line += part
+		line = f'<thead><tr>{line}</tr></thead>'
+		table += line
+
+	if content:
+		contents = ''
+		for y in range(len(content)):
+			line = ''
+			for x in range(len(content[y])):
+				part = content[y][x]
+				if align and align[x]: part = f'<th align="{align[x]}">{part}</th>'
+				else: part = f'<th>{part}</th>'
+				line += part
+			line = f'<tr class="rows">{line}</tr>'
+			contents += line
+		contents = f'<tbody>{contents}</tbody>'
+		table += contents
+
+	table = f'<table>{table}</table>'
+	return table

@@ -47,7 +47,12 @@ let item_types = {
 	'species': ['Species'],
 	'speciesfeatures': ['SpeciesFeature'],
 
-	'feats': ['Feat']
+	'backgrounds': ['Background'],
+
+	'feats': ['Feat'],
+	'fightingstyles': ['FightingStyle'],
+	'fightingmasteries': ['FightingMastery'],
+	'lightsaberform': ['LightsaberForm'],
 }
 // item_types = {
 // 	'classes': ['Class']
