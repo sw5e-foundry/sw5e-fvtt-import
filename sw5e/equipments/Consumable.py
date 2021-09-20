@@ -29,3 +29,20 @@ class Consumable(sw5e.Equipment.Equipment):
 	def getDescription(self, importer):
 		text = self.description
 		return utils.text.markdownToHtml(text)
+
+	def getData(self, importer):
+		data = super().getData(importer)[0]
+
+		mapping = {
+			"Ammunition": 'ammo',
+			"Explosive": 'explosive',
+			"AlcoholicBeverage": 'adrenal',
+			"Spice": 'adrenal',
+			"Medical": 'medpac',
+		}
+		if self.equipmentCategory in mapping:
+			data["data"]["consumableType"] = mapping[self.equipmentCategory]
+		else:
+			raise ValueError(self.name, self.equipmentCategory)
+
+		return [data]

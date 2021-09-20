@@ -22,7 +22,7 @@ class BaseFeature(sw5e.Entity.Item):
 		self.target_val, self.target_unit, self.target_type = self.getTarget()
 		self.range = self.getRange()
 		self.uses, self.recharge = self.getUses()
-		self.action_type, self.damage, self.formula, self.save = self.getAction()
+		self.action_type, self.damage, self.formula, self.save, self.save_dc = self.getAction()
 		self.activation = self.getActivation()
 
 	def getActivation(self):
@@ -55,7 +55,7 @@ class BaseFeature(sw5e.Entity.Item):
 
 		data["data"]["activation"] = {
 			"type": self.activation,
-			"cost": 1 if self.activation else None
+			"cost": 1 if self.activation != 'none' else None
 		}
 		data["data"]["duration"] = {
 			"value": self.duration_value,
@@ -84,8 +84,8 @@ class BaseFeature(sw5e.Entity.Item):
 		data["data"]["formula"] = self.formula
 		data["data"]["save"] = {
 			"ability": self.save,
-			"dc": None,
-			"scaling": "power"
+			"dc": self.save_dc,
+			"scaling": "flat" if self.save_dc else "power"
 		}
 
 		# data["data"]["recharge"] = ''

@@ -35,12 +35,13 @@ class Equipment(sw5e.Equipment.Equipment):
 			text = '\n'.join([getContent(prop) for prop in properties])
 		else:
 			text = ', '.join([properties[prop].capitalize() for prop in properties])
+			text = utils.text.markdownToHtml(text)
 
 		if self.description:
 			if text: text += '\n<hr/>\n'
-			text += self.description
+			text += utils.text.markdownToHtml(self.description)
 
-		return utils.text.markdownToHtml(text)
+		return text
 
 	def getArmor(self):
 		ac = None

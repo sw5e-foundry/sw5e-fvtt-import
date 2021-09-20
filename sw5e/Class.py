@@ -143,7 +143,7 @@ class Class(sw5e.Entity.Item):
 		lines += ['In lieu of the equipment granted by your class and background, you can elect to purchase your starting gear. If you do so, you receive no equipment from your class and background, and instead roll for your starting wealthusing the criteria below:']
 		lines += ['<table style="width: 300px; border: 0px;">', '<tbody>']
 		lines += ['<tr>', '<td style="width: 150px;">**Class**</td>', '<td style="width: 150px;"><strong class="text-right">Funds**</td>', '</tr>']
-		lines += ['<tr>', f'<td style="width: 150px;">{self.name}</td>', f'<td style="width: 150px;">[[/r {self.startingWealthVariant[:-3]}]] cr</td>', '</tr>']
+		lines += ['<tr>', f'<td style="width: 150px;">{self.name}</td>', f'<td style="width: 150px;">{self.startingWealthVariant[:-3]} cr</td>', '</tr>']
 		lines += ['</tbody>', '</table>']
 
 		return ''.join(table) + utils.text.markdownToHtml(lines)

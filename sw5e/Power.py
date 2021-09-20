@@ -35,7 +35,7 @@ class Power(sw5e.Entity.Item):
 		self.target_val, self.target_unit, self.target_type = target_range["target"]
 		self.range_val, self.range_unit = target_range["range"]
 		self.uses, self.recharge = 0, ''
-		self.action_type, self.damage, self.formula, self.save, self.ability = self.getAction()
+		self.action_type, self.damage, self.formula, self.save, self.save_dc, self.ability = self.getAction()
 
 		self.school = self.getSchool()
 
@@ -109,13 +109,9 @@ class Power(sw5e.Entity.Item):
 
 		#TODO: Process the power's scaling
 
-		action_type, damage, formula, save = utils.text.getAction(description, self.name)
+		action_type, damage, formula, save, save_dc = utils.text.getAction(description, self.name)
 
-		## Change the actual description to have dice rolls
-		self.description = re.sub(r'(\d*d\d+\s*)x(\s*\d+)', r'\1*\2', self.description)
-		self.description = re.sub(r'(\d*d\d+(?:\s*(?:\+|\*)\s*\d+)?)', r'[[/r \1]]', self.description)
-
-		return action_type, damage, formula, save, ability
+		return action_type, damage, formula, save, save_dc, ability
 
 	def getSchool(self):
 		if self.powerType == 'Tech': return 'tec'
@@ -172,8 +168,8 @@ class Power(sw5e.Entity.Item):
 		data["data"]["formula"] = self.formula
 		data["data"]["save"] = {
 			"ability": self.save,
-			"dc": None,
-			"scaling": "power"
+			"dc": self.save_dc,
+			"scaling": "flat" if self.save_dc else "power"
 		}
 
 		data["data"]["level"] = self.level

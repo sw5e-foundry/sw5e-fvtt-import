@@ -36,12 +36,13 @@ class Weapon(sw5e.Equipment.Equipment):
 			text = '\n'.join([getContent(prop) for prop in properties])
 		else:
 			text = ', '.join([properties[prop].capitalize() for prop in properties if prop != 'Ammunition'])
+			text = utils.text.markdownToHtml(text)
 
 		if 'Special' in self.propertiesMap:
 			if text: text += '\n'
-			text += '#### Special\n' + self.description
+			text += utils.text.markdownToHtml('#### Special\n' + self.description)
 
-		return utils.text.markdownToHtml(text)
+		return text
 
 	def getRange(self):
 		short_range, long_range = None, None
@@ -95,7 +96,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		versatile = utils.text.getProperty('Versatile', self.propertiesMap) or ''
 		return {
 			"parts": [[ die, damage_type ]],
-			"versatile": versatile
+			"versatile": f'{versatile} +  @mod' if versatile else ''
 		}
 
 	def getWeaponType(self):

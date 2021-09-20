@@ -125,32 +125,33 @@ class Equipment(sw5e.Entity.Item):
 	@classmethod
 	def getClass(cls, raw_item):
 		from sw5e.equipments import Backpack, Consumable, Equipment, Loot, Tool, Weapon
-		equipment_type = [
-			None, #Unknown
-			'Consumable', #Ammunition
-			'Consumable', #Explosive
-			'Weapon', #Weapon
-			'Equipment', #Armor
-			'Backpack', #Storage
-			None, #None
-			'Loot', #Communications
-			'Loot', #DataRecordingAndStorage
-			'Equipment', #LifeSupport
-			'MEDICAL', #Medical
-			'Equipment', #WeaponOrArmorAccessory
-			'Tool', #Tool
-			None, #None
-			None, #None
-			None, #None
-			'Loot', #Utility
-			'Tool', #GamingSet
-			'Tool', #MusicalInstrument
-			None, #None
-			'Equipment', #Clothing
-			'Tool', #Kit
-			'Consumable', #AlcoholicBeverage
-			'Consumable', #Spice
-		][raw_item["equipmentCategoryEnum"]]
+		mapping = {
+			"Unknown": None,
+			"None": None,
+			"Ammunition": 'Consumable',
+			"Explosive": 'Consumable',
+			"Weapon": 'Weapon',
+			"Armor": 'Equipment',
+			"Storage": 'Backpack',
+			"Communications": 'Loot',
+			"DataRecordingAndStorage": 'Loot',
+			"LifeSupport": 'Equipment',
+			"Medical": 'MEDICAL',
+			"WeaponOrArmorAccessory": 'Equipment',
+			"Tool": 'Tool',
+			"Utility": 'Loot',
+			"GamingSet": 'Tool',
+			"MusicalInstrument": 'Tool',
+			"Clothing": 'Equipment',
+			"Kit": 'Tool',
+			"AlcoholicBeverage": 'Consumable',
+			"Spice": 'Consumable',
+
+			"Loot": 'Loot',
+			"Equipment": 'Equipment',
+			"Consumable": 'Consumable',
+		}
+		equipment_type = mapping[raw_item["equipmentCategory"]] if raw_item["equipmentCategory"] in mapping else None
 		if equipment_type == None:
 			print(f'Unexpected item type, {raw_item=}')
 			return cls

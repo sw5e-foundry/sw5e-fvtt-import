@@ -1,7 +1,7 @@
 import pickle, json, requests, os.path, re
 import sw5e.Class, sw5e.Archetype, sw5e.Species, sw5e.Background
 import sw5e.Feature, sw5e.Feat, sw5e.FightingStyle, sw5e.FightingMastery, sw5e.LightsaberForm
-import sw5e.Equipment, sw5e.Power
+import sw5e.Equipment, sw5e.Power, sw5e.EnhancedItem
 import sw5e.ArmorProperty, sw5e.WeaponProperty, sw5e.Conditions
 import utils.text
 
@@ -24,7 +24,7 @@ class Importer:
 		'class',
 		'conditions',
 		# # 'deployment',
-		# 'enhancedItem',
+		'enhancedItem',
 		'equipment',
 		'feat',
 		'feature',
@@ -203,7 +203,8 @@ class Importer:
 					if file not in data:
 						data[file] = {}
 					for mode in item_data:
-						data[file][mode["flags"]["uid"]] = mode
+						mode_uid = mode["flags"]["uid"]
+						data[file][mode_uid] = mode
 				except:
 					print(f'		{item.name}')
 					raise

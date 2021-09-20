@@ -43,7 +43,7 @@ class Entity:
 	def getUID(cls, raw_item):
 		uid = f'{cls.__name__}'
 
-		for key in ('name', 'source', 'sourceName', 'equipmentCategory', 'level'):
+		for key in ('name', 'source', 'sourceName', 'equipmentCategory', 'level', 'subtype'):
 			if key in raw_item:
 				value = raw_item[key]
 				if type(value) == str:
