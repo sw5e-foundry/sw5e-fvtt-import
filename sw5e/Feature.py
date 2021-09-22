@@ -55,7 +55,7 @@ class BaseFeature(sw5e.Entity.Item):
 
 		data["data"]["activation"] = {
 			"type": self.activation,
-			"cost": 1 if self.activation != 'none' else None
+			"cost": 1 if self.activation else None
 		}
 		data["data"]["duration"] = {
 			"value": self.duration_value,
@@ -135,7 +135,8 @@ class Feature(BaseFeature):
 				'action': 'Action',
 				'reaction': 'Reaction',
 				'special': 'Action',
-				'none': 'Passive'
+				'none': 'Passive',
+				None: 'Passive',
 			}[self.activation] or 'Passive'
 			return f'systems/sw5e/packs/Icons/Class%20Features/{class_abbr}{"-ARCH" if self.source == "Archetype" else ""}-{activation}.webp'
 		else:

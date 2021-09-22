@@ -9,10 +9,10 @@ class Consumable(sw5e.Equipment.Equipment):
 		super().process(old_item, importer)
 
 		self.uses, self.recharge = utils.text.getUses(self.description, self.name)
-		self.action = utils.text.getActivation(self.description, self.uses, self.recharge)
+		self.activation = utils.text.getActivation(self.description, self.uses, self.recharge)
 
 		if self.name == 'Power cell' or (self.description or '').startswith(f'A {self.name.lower()} is a specializard power cell'):
-			self.action = 'bonus'
+			self.activation = 'bonus'
 			self.uses_value = 480
 			self.uses = 480
 			self.recharge = 'charges'

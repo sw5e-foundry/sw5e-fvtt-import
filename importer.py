@@ -1,4 +1,4 @@
-import pickle, json, requests, os.path, re
+import pickle, json, requests, os.path, re, sys
 import sw5e.Class, sw5e.Archetype, sw5e.Species, sw5e.Background
 import sw5e.Feature, sw5e.Feat, sw5e.FightingStyle, sw5e.FightingMastery, sw5e.LightsaberForm
 import sw5e.Equipment, sw5e.Power, sw5e.EnhancedItem
@@ -45,7 +45,14 @@ class Importer:
 	__base_url = "https://sw5eapi.azurewebsites.net/api"
 	version = 1
 
-	def __init__(self):
+	def __init__(self, mode='offline'):
+		self.online = (mode == 'online')
+
+		if mode == 'raw':
+			for entity_type in self.__entity_types:
+				data = self.__getData(entity_type, True)
+				self.__saveData(entity_type, data)
+
 		if os.path.isfile(self.__pickle_path):
 			print('Loading...')
 			with open(self.__pickle_path, 'rb') as pickle_file:
@@ -129,7 +136,7 @@ class Importer:
 		# 	pickle.dump(data, pickle_file)
 		pass
 
-	def __getData(self, file_name, online=False):
+	def __getData(self, file_name, online):
 		data = None
 		if online:
 			r = requests.get(self.__base_url + '/' + file_name)
@@ -167,13 +174,18 @@ class Importer:
 		else:
 			return None
 
-	def update(self, msg='Updating...', online=False):
-		msg += ' (Online)' if online else ' (Offline)'
+	def update(self, msg='Updating...'):
+		msg += ' (Online)' if self.online else ' (Offline)'
 		print(msg)
+
+		if self.online:
+			for entity_type in self.__entity_types:
+				data = self.__getData(entity_type, True)
+				self.__saveData(entity_type, data)
+
 		for entity_type in self.__entity_types:
 			print(f'	{entity_type}')
-			data = self.__getData(entity_type, online)
-			if online: self.__saveData(entity_type, data)
+			data = self.__getData(entity_type, False)
 
 			storage = self.__getItemList(entity_type)
 			klass = self.__getClass(entity_type)

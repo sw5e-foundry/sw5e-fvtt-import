@@ -8,7 +8,7 @@ class Tool(sw5e.Equipment.Equipment):
 	def process(self, old_item, importer):
 		super().process(old_item, importer)
 
-		self.action = 'action'
+		self.activation = 'action'
 
 	def getImg(self):
 		kwargs = {

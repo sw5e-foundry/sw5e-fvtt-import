@@ -59,7 +59,7 @@ def getActivation(text, uses, recharge):
 			return 'reaction'
 		elif uses or (recharge and recharge != 'none'):
 			return 'special'
-	return 'none'
+	return None
 
 def getUses(text, name):
 	uses, recharge = None, 'none'

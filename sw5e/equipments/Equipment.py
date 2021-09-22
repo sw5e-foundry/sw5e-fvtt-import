@@ -9,7 +9,7 @@ class Equipment(sw5e.Equipment.Equipment):
 		super().process(old_item, importer)
 
 		self.uses, self.recharge = utils.text.getUses(self.description, self.name)
-		self.action = utils.text.getActivation(self.description, self.uses, self.recharge)
+		self.activation = utils.text.getActivation(self.description, self.uses, self.recharge)
 
 	def getImg(self):
 		kwargs = {
@@ -87,7 +87,6 @@ class Equipment(sw5e.Equipment.Equipment):
 			'Lightweight',
 			'Magnetic',
 			'Obscured',
-			'Obtrusive',
 			'Powered',
 			'Reactive',
 			'Regulated',
@@ -96,8 +95,8 @@ class Equipment(sw5e.Equipment.Equipment):
 			'Rigid',
 			'Silent',
 			'Spiked',
-			'Strength',
 			'Steadfast',
+			'Strength',
 			'Versatile'
 		]
 		return { prop: prop in self.propertiesMap for prop in armor_properties }

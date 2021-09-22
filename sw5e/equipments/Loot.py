@@ -9,7 +9,7 @@ class Loot(sw5e.Equipment.Equipment):
 		super().process(old_item, importer)
 
 		self.uses, self.recharge = utils.text.getUses(self.description, self.name)
-		self.action = utils.text.getActivation(self.description, self.uses, self.recharge)
+		self.activation = utils.text.getActivation(self.description, self.uses, self.recharge)
 
 	def getImg(self):
 		kwargs = {

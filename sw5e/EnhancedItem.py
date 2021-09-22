@@ -26,27 +26,6 @@ class EnhancedItem(sw5e.Entity.Item):
 			utils.text.raw(raw_item, f'{utils.text.lowerCase(self.type)}TypeEnum') or \
 			utils.text.raw(raw_item, f'enhanced{self.type}TypeEnum') or 0
 
-		# self.cyberneticAugmentationTypeEnum = utils.text.raw(raw_item, "cyberneticAugmentationTypeEnum")
-		# self.cyberneticAugmentationType = utils.text.clean(raw_item, "cyberneticAugmentationType")
-		# self.droidCustomizationTypeEnum = utils.text.raw(raw_item, "droidCustomizationTypeEnum")
-		# self.droidCustomizationType = utils.text.clean(raw_item, "droidCustomizationType")
-		# self.adventuringGearTypeEnum = utils.text.raw(raw_item, "adventuringGearTypeEnum")
-		# self.adventuringGearType = utils.text.clean(raw_item, "adventuringGearType")
-		# self.enhancedArmorTypeEnum = utils.text.raw(raw_item, "enhancedArmorTypeEnum")
-		# self.enhancedArmorType = utils.text.clean(raw_item, "enhancedArmorType")
-		# self.consumableTypeEnum = utils.text.raw(raw_item, "consumableTypeEnum")
-		# self.consumableType = utils.text.clean(raw_item, "consumableType")
-		# self.focusTypeEnum = utils.text.raw(raw_item, "focusTypeEnum")
-		# self.focusType = utils.text.clean(raw_item, "focusType")
-		# self.enhancedShieldTypeEnum = utils.text.raw(raw_item, "enhancedShieldTypeEnum")
-		# self.enhancedShieldType = utils.text.clean(raw_item, "enhancedShieldType")
-		# self.enhancedWeaponTypeEnum = utils.text.raw(raw_item, "enhancedWeaponTypeEnum")
-		# self.enhancedWeaponType = utils.text.clean(raw_item, "enhancedWeaponType")
-		# self.itemModificationTypeEnum = utils.text.raw(raw_item, "itemModificationTypeEnum")
-		# self.itemModificationType = utils.text.clean(raw_item, "itemModificationType")
-		# self.valuableTypeEnum = utils.text.raw(raw_item, "valuableTypeEnum")
-		# self.valuableType = utils.text.clean(raw_item, "valuableType")
-
 		self.contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")
 		self.contentType = utils.text.clean(raw_item, "contentType")
 		self.contentSourceEnum = utils.text.raw(raw_item, "contentSourceEnum")
@@ -108,16 +87,14 @@ class EnhancedItem(sw5e.Entity.Item):
 				"value": None,
 				"dex": None,
 			}
-			if self.subtypeType == 'Body' or self.subtype in ('waist', 'feet', 'shoulders', 'head', 'hands', 'wrists', 'legs'):
+			if self.subtype in ('body', 'feet', 'hands', 'head', 'shoulders', 'waist', 'wrists', 'legs'):
 				data["data"]["armor"]["type"] = 'clothing'
-			elif self.subtype in (None, '', 'finger', 'neck', 'back', 'wrist'):
+			elif self.subtype in (None, '', 'finger', 'other', 'neck', 'back', 'wrist'):
 				data["data"]["armor"]["type"] = 'trinket'
 			else:
 				raise ValueError(self.name, self.type, self.subtype, self.subtypeType)
 		elif self.type == 'Armor':
-			if self.subtypeType == 'Any':
-				pass
-			elif self.subtypeType == 'AnyHeavy':
+			if self.subtypeType in ('AnyHeavy', 'Any'):
 				data["data"]["armor"] = {
 					"value": 16,
 					"type": 'heavy',
@@ -144,7 +121,7 @@ class EnhancedItem(sw5e.Entity.Item):
 				'explosive', ## Explosives
 				'poison', ## Poisons
 				## Change to stimpac once that type exists
-				'adrenal', ## Stimpac
+				'adrenal', ## Stimpacs
 				'CUSTOM', ## Other
 				'technology', ## Barriers
 			]
@@ -189,36 +166,50 @@ class EnhancedItem(sw5e.Entity.Item):
 			}
 			if self.subtypeType == 'Light':
 				data["data"]["armor"]["value"] = 1
-			elif self.subtypeType == 'Medium':
+			elif self.subtypeType in ('Medium', 'Any'):
 				data["data"]["armor"]["value"] = 2
 			elif self.subtypeType == 'Heavy':
 				data["data"]["armor"]["value"] = 3
-			elif self.subtypeType == 'Any':
-				pass
 			else:
 				raise ValueError(self.name, self.type, self.subtype, self.subtypeType)
 		elif self.type == 'Weapon':
-			if data["data"]["activation"]["type"] == 'none':
+			if not data["data"]["activation"]["type"]:
 				data["data"]["activation"] = { "type": 'action', "cost": 1 }
-			if data["data"]["target"]["type"] == '':
+			if not data["data"]["target"]["type"]:
 				data["data"]["target"] = { "value": 1, "type": 'enemy' }
 
-			if self.subtypeType == 'Any':
+			if self.subtypeType in ('AnyWithProperty', 'AnyBlasterWithProperty', 'AnyVibroweaponWithProperty', 'AnyLightweaponWithProperty'):
+				print(f"	'{self.subtypeType}' enhanced weapon detected. This kind of item is not supported since there currently no examples to know what they should look like.")
+				print(f'{self.name=}')
+				print(f'{self.type=}')
+				print(f'{self.subtype=}')
+				print(f'{self.subtypeType=}')
+				print(f'{self.text=}')
+
+			if self.subtypeType in ('Any', 'AnyWithProperty'):
 				if data["data"]["actionType"] == 'other':
 					data["data"]["actionType"] = 'mwak'
 				if ("weaponType" not in data["data"]) or (not data["data"]["weaponType"]):
 					data["data"]["weaponType"] = 'improv'
-			elif self.subtypeType == 'AnyBlaster':
+			elif self.subtypeType in ('AnyBlaster', 'AnyBlasterWithProperty'):
 				data["data"]["actionType"] = 'rwak'
 				data["data"]["weaponType"] = 'simpleB'
-			elif self.subtypeType == 'AnyVibroweapon':
+			elif self.subtypeType in ('AnyVibroweapon', 'AnyVibroweaponWithProperty'):
 				data["data"]["actionType"] = 'mwak'
 				data["data"]["weaponType"] = 'simpleVW'
-			elif self.subtypeType == 'AnyLightweapon':
+			elif self.subtypeType in ('AnyLightweapon', 'AnyLightweaponWithProperty'):
 				data["data"]["actionType"] = 'mwak'
 				data["data"]["weaponType"] = 'simpleLW'
 			else:
 				raise ValueError(self.name, self.type, self.subtype, self.subtypeType)
+		elif self.type == 'Valuable':
+			print("	'Valuable' enhanced item detected. This kind of item is not supported since there currently no examples to know what they should look like.")
+			print(f'{self.name=}')
+			print(f'{self.type=}')
+			print(f'{self.subtype=}')
+			print(f'{self.subtypeType=}')
+			print(f'{self.text=}')
+			pass
 		elif self.type == 'ShipArmor':
 			## TODO: change this one ships are supported
 			pass

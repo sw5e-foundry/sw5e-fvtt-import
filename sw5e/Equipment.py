@@ -77,10 +77,10 @@ class Equipment(sw5e.Entity.Item):
 		data["data"]["identified"] = True
 
 		data["data"]["activation"] = {
-			"type": self.action,
+			"type": self.activation,
 			"cost": 1,
 			"condition": ''
-		} if self.action != 'none' else {}
+		} if self.activation != 'none' else {}
 
 		#TODO: extract duration, target, range, uses, consume, damage and other rolls
 		data["data"]["duration"] = {
@@ -127,34 +127,34 @@ class Equipment(sw5e.Entity.Item):
 		from sw5e.equipments import Backpack, Consumable, Equipment, Loot, Tool, Weapon
 		mapping = {
 			"Unknown": None,
-			"None": None,
 			"Ammunition": 'Consumable',
 			"Explosive": 'Consumable',
 			"Weapon": 'Weapon',
 			"Armor": 'Equipment',
 			"Storage": 'Backpack',
+			"AdventurePack": 'Backpack',
 			"Communications": 'Loot',
 			"DataRecordingAndStorage": 'Loot',
 			"LifeSupport": 'Equipment',
 			"Medical": 'MEDICAL',
 			"WeaponOrArmorAccessory": 'Equipment',
 			"Tool": 'Tool',
+			"Mount": 'Loot',
+			"Vehicle": 'Loot',
+			"TradeGood": 'Loot',
 			"Utility": 'Loot',
 			"GamingSet": 'Tool',
 			"MusicalInstrument": 'Tool',
+			"Droid": 'Loot',
 			"Clothing": 'Equipment',
 			"Kit": 'Tool',
 			"AlcoholicBeverage": 'Consumable',
 			"Spice": 'Consumable',
-
-			"Loot": 'Loot',
-			"Equipment": 'Equipment',
-			"Consumable": 'Consumable',
 		}
-		equipment_type = mapping[raw_item["equipmentCategory"]] if raw_item["equipmentCategory"] in mapping else None
-		if equipment_type == None:
+		equipment_type = mapping[raw_item["equipmentCategory"]]
+		if not equipment_type:
 			print(f'Unexpected item type, {raw_item=}')
-			return cls
+			raise ValueError(cls, raw_item["name"], raw_item["equipmentCategory"], raw_item)
 		elif equipment_type == 'MEDICAL':
 			name = raw_item["name"]
 			if re.search('prosthesis', name): equipment_type = 'Equipment'

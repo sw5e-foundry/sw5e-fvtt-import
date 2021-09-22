@@ -8,7 +8,7 @@ class Weapon(sw5e.Equipment.Equipment):
 	def process(self, old_item, importer):
 		super().process(old_item, importer)
 
-		self.action = 'action'
+		self.activation = 'action'
 
 		self.weapon_type = self.getWeaponType()
 		self.ammo_type = self.getAmmoType()
@@ -132,43 +132,34 @@ class Weapon(sw5e.Equipment.Equipment):
 			"con": "Constitution",
 			"def": "Defensive",
 			"dex": "Dexterity",
-			"dgd": "Disguised",
 			"dir": "Dire",
-			"dis": "Disintegrate",
-			"dou": "Double",
-			"dpt": "Disruptive",
 			"drm": "Disarming",
-			"exp": "Explosive",
+			"dgd": "Disguised",
+			"dis": "Disintegrate",
+			"dpt": "Disruptive",
+			"dou": "Double",
 			"fin": "Finesse",
 			"fix": "Fixed",
-			"foc": "Focus",
-			"hid": "Hidden",
-			"hom": "Homing",
 			"hvy": "Heavy",
-			"ion": "Ionizing",
+			"hid": "Hidden",
 			"ken": "Keen",
 			"lgt": "Light",
 			"lum": "Luminous",
 			"mig": "Mighty",
-			"mlt": "Melt",
-			"ovr": "Overheat",
 			"pic": "Piercing",
-			"pow": "Power",
 			"ran": "Range",
 			"rap": "Rapid",
 			"rch": "Reach",
 			"rel": "Reload",
 			"ret": "Returning",
-			"sat": "Saturate",
 			"shk": "Shocking",
 			"sil": "Silent",
 			"spc": "Special",
 			"str": "Strength",
 			"thr": "Thrown",
 			"two": "Two-Handed",
-			"ver": "Versatile",
 			"vic": "Vicious",
-			"zon": "Zone",
+			"ver": "Versatile",
 		}
 		return { prop: weapon_properties[prop] in self.propertiesMap for prop in weapon_properties }
 
