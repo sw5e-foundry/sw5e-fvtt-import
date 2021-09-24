@@ -69,10 +69,10 @@ def getUses(text, name):
 	if text:
 		text = text.lower()
 
-		patSR = r'(finish|finishes|complete) a short(?: rest)?(?: or(?: a)? long rest)'
-		patSR += r'|regain all expended uses on a short(?: or long)? rest'
+		patSR = r'(finish|finishes|complete|after) a short(?: rest)?(?: or(?: a)? long rest)'
+		patSR += r'|regains? all expended (?:uses|charges) (?:on|after) a short(?: or long)? rest'
 		patLR = r'(finish|finishes|complete) a long rest'
-		patSR += r'|regain all expended uses on a long rest'
+		patLR += r'|regains? all expended (?:uses|charges) (?:on|after) a long rest'
 		patRC = r'until you move 0 feet on one of your turns'
 		patRC += r'|until you (?:store|reload|recover)'
 
@@ -81,7 +81,7 @@ def getUses(text, name):
 		elif re.search(patRC, text): recharge = 'charges'
 
 		if not found: ## BASE +/* ABILITY modifier times, min of MIN
-			pattern = r'a (?:combined |maximum )?number of (?:power surges |(?P<times>times?) )?equal to (?:(?P<base>\d+) \+ )?(?P<half>half )?your '
+			pattern = r'(?<!gain )a (?:combined |maximum )?number of (?:power surges |sentries |(?P<times>times?) )?equal to (?:(?P<base>\d+) \+ )?(?P<half>half )?your '
 			pattern += r'(?P<ability1>strength|dexterity|constitution|intelligence|wisdom|charisma|critical analysis)'
 			pattern += r'(?: or (?P<ability2>strength|dexterity|constitution|intelligence|wisdom|charisma))? modifier'
 			pattern += r'(?: \((?:your choice, )?(?:rounded (?P<rounded>down|up) )?(?:a )?minimum of (?P<min>\d+|once)\))?'
@@ -149,6 +149,7 @@ def getUses(text, name):
 		sp_action += r'|create a panacea'
 		sp_action += r'|manifest your ideals'
 		sp_action += r'|(?:cast|do) (?:it|so)'
+		sp_action += r'|activate'
 
 		sp_action_past = r'used? (?:it|(?:this|each|the chosen) (?:feature|trait|ability))'
 		sp_action_past += r'|initiated? playing an enhanced song'
@@ -157,13 +158,14 @@ def getUses(text, name):
 		sp_action_past += r'|created? a panacea'
 		sp_action_past += r'|manifest(?:ed)? your ideals'
 		sp_action_past += r'|(?:cast|do(?:ne)?) (?:it|so)'
+		sp_action_past += r'|activated?'
 
 		sp_n = r'one|two|three|four|five|six|seven|eight|nine|ten|\d+'
 		sp_n_times = capt(sp_n) + r' times|(once|twice|thrice)'
 
 		if not found: ## NUMBER times
 			pattern = r'you can ' + ncapt(sp_action) + r' (?:a (?:combined )?total of )?' + ncapt(sp_n_times)
-			pattern += r'|(?:you have|this \w+ has) ' + capt(sp_n) + r' (?:superiority dice|amplified shots|(?:\w+ )?points|charges)'
+			pattern += r'|(?:you have|(?:this|the) \w+ has) ' + capt(sp_n) + r' (?:superiority dice|amplified shots|(?!hit)(?:\w+ )?points|charges)'
 
 			if match := re.search(pattern, text):
 				found = True
@@ -189,9 +191,10 @@ def getUses(text, name):
 					}[number]
 
 		if not found: ## ONCE
-			pattern = r'once you(?:[\'—]ve| have)? ' + ncapt(sp_action_past)
+			pattern = r'once (you(?:[\'—]ve| have)?|the \w+ (?:has|have) been) ' + ncapt(sp_action_past)
 			pattern += r'|you (?:can[\'—]t|cannot|can not) ' + ncapt(sp_action) + r' (?:again )?until'
 			pattern += r'|if you ' + ncapt(sp_action) + r' again before'
+			pattern += r'|rest before you can ' + ncapt(sp_action) + r' again'
 
 			if match := re.search(pattern, text):
 				found = True
@@ -210,11 +213,12 @@ def getUses(text, name):
 				found = True
 				uses = '2 * @classes.consular.levels + floor((max(@abilities.wis.score, @abilities.cha.score) - 10) / 2)'
 
-		if not found: ## CUSTOM (fiveTimesEngineerLevel)
-			pattern = r'has a number of hit points equal to 5 x your engineer level'
+		if not found: ## CUSTOM (EngineerLevel)
+			pattern = r'has (?:a number of )?hit points equal to (?P<five>5 x )?your engineer level'
 			if match := re.search(pattern, text):
 				found = True
-				uses = '5 * @classes.engineer.levels'
+				uses = '@classes.engineer.levels'
+				if match["five"]: uses = f'5 * {uses}'
 
 		if not found: ## CUSTOM (monkLevel)
 			pattern = r'your monk level determines the number of points you have'
@@ -235,6 +239,7 @@ def getUses(text, name):
 			pattern += r'|you can[\'—]t use this feature on them again until'
 			pattern += r'|they (?:cannot|can not|can[\'—]t) do so again until'
 			pattern += r'|creature can[\'—]t (?:regain hit points|receive it) again (?:in this way )?until'
+			pattern += r'|rest before they can do so again'
 			pattern += r'|when you finish a long rest, roll two d20s'
 			pattern += r'|borrowed luck roll'
 			pattern += r'|you regain all of your expended uses of potent aptitude when you finish a short or long rest'
@@ -242,10 +247,11 @@ def getUses(text, name):
 			pattern += r'|it lasts until you (?:complete|finish)'
 			pattern += r'|rest, you can (?:choose|replace|change)'
 			pattern += r'|rest, you must make a '
+			pattern += r'|rest, you gain'
 			if match := re.search(pattern, text):
 				found = False
 
-				recharge, uses = 'none', 0
+				recharge, uses = 'none', None
 
 		if (recharge != 'none') and not found:
 			print(f'Failed to recognize uses count: on {name}')
@@ -321,7 +327,7 @@ def getAction(text, name):
 
 		## Healing
 		pattern = r'(?:(?:(?:re)?gains?|restores|gaining|a number of) (?P<temp>temporary )?hit points equal to |hit points increase by )' + p_formula
-		pattern2 = r'(?:(?:re)?gains?|restores?|gaining) (?:an extra )?' + p_formula + r' (?P<temp>temporary )?hit points'
+		pattern2 = r'(?:(?:re)?gains?|restores?|gaining) (?:an extra )?' + p_formula + r' (?:extra |additional )?(?P<temp>temporary )?hit points'
 		def foo(match):
 			nonlocal action_type
 			nonlocal damage
@@ -343,8 +349,8 @@ def getAction(text, name):
 		text = re.sub(pattern2, foo, text)
 
 		## Damage
-		pattern = r'(?:(?:takes?|taking|deals?|dealing) (?:(?:an )?(?:extra|additional) |up to )?|, | (?:and|plus) (?:another )?)(?:damage equal to )?' + p_formula + r'(?: of)?(?: (?P<type>\w+)(?:, (?:or )?\w+)*)?(?: damage|(?= [^.]+ damage))'
-		pattern2 = r'(?:the (?P<type>\w+ )?damage (?:also )?increases by|increase the damage by|(?:base|the additional) damage is|damage die becomes a) ' + p_formula
+		pattern = r'(?:(?:takes?|taking|deals?|dealing|do) (?:(?:an )?(?:extra|additional) |up to )?|, | (?:and|plus) (?:another |an extra )?)(?:damage equal to )?' + p_formula + r'(?: of)?(?: (?P<type>\w+)(?:, (?:or )?\w+)*)?(?: damage|(?= [^.]+ damage))'
+		pattern2 = r'(?:the (?P<type>\w+ )?damage (?:also )?increases by|increase the damage by|(?:base|the additional|the extra) damage is|damage die becomes a) ' + p_formula
 		def foo(match):
 			nonlocal action_type
 			nonlocal damage
@@ -394,9 +400,9 @@ def getAction(text, name):
 			nonlocal text
 			nonlocal name
 
-			pattern_ignore = r'on the d20|d20 roll|rolls? the d20'
+			pattern_ignore = r'on the d20|d20 roll|rolls? the d20|roll of the d20'
 			pattern_ignore += r'|uses a ' + match[0]
-			pattern_ignore += r'|(?:versatile|barbed|gauntleted|spiked) \(' + match[0] + r'\)(?: and \w+(?: \d+)?)? propert(?:y|ies)' ## versatile (2d4) property
+			pattern_ignore += r'|(?:versatile|barbed|gauntleted|spiked|double) \(' + match[0] + r'\)(?: and \w+(?: \d+)?)? propert(?:y|ies)' ## versatile (2d4) property
 			pattern_ignore += r'|\|\s*' + match[0] + r'\s*\|' ## |d20|
 			pattern_ignore += r'|\d*(?:d\d+)? to (?:a )?' + match[0] ## 1 to d4, d4 to d6
 			pattern_ignore += r'|' + match[0] + r' to (?:a )?\d*d\d+' ## d4 to d6
@@ -405,6 +411,8 @@ def getAction(text, name):
 			pattern_ignore += r'|increases by ' + match[0] + r' when you reach \d+th level' ## increases by 1d8 when you reach 11th level
 			pattern_ignore += r'|(?:recovers|regains) ' + match[0] + r' charges'
 			pattern_ignore += r'|it contains ' + match[0] + r'(?: [+-] \d+)? levels'
+			pattern_ignore += r'|plus ' + match[0] + ' for each slot level'
+			pattern_ignore += r'|to a maximum of ' + match[0]
 
 			## TODO: Rework this to not use a hardcoded list
 			if re.search(pattern_ignore, text) or name in ('Alter Self', 'Spectrum Bolt', 'Flow-Walking', 'Intercept', 'Goggles of the Tinkerer'):
@@ -432,24 +440,24 @@ def getDuration(text, name):
 
 		## "lasts for 1 minute"
 		## "lasts for 8 hours"
-		pattern = r'(?:^|\W)lasts (?:for )?(?P<val>\d+) ' + sp_units + r'(?:\W|$)'
+		pattern = r'(?:^|\W)lasts (?:for )?(?:(?P<val>\d+) )?' + sp_units + r'(?:\W|$)'
 		if match := re.search(pattern, text):
-			return match['val'], match['unit']
+			return match['val'] or 1, match['unit']
 
 		## "for the next 8 hours"
-		pattern = r'(?:^|\W)for the next (?P<val>\d+) ' + sp_units + r'(?:\W|$)'
+		pattern = r'(?:^|\W)for the next (?:(?P<val>\d+) )?' + sp_units + r'(?:\W|$)'
 		if match := re.search(pattern, text):
-			return match['val'], match['unit']
+			return match['val'] or 1, match['unit']
 
 		## "turned for 1 minute" (e.g. channel divinity)
-		pattern = r'(?:^|\W)turned for (?P<val>\d+) ' + sp_units + r'(?:\W|$)'
+		pattern = r'(?:^|\W)turned for (?:(?P<val>\d+) )?' + sp_units + r'(?:\W|$)'
 		if match := re.search(pattern, text):
-			return match['val'], match['unit']
+			return match['val'] or 1, match['unit']
 
 		## "it is charmed by you for 1 minute"
-		pattern = r'(?:^|\W)is \w+ by you for (?P<val>\d+) ' + sp_units + r'(?:\W|$)'
+		pattern = r'(?:^|\W)is \w+ by you for (?:(?P<val>\d+) )?' + sp_units + r'(?:\W|$)'
 		if match := re.search(pattern, text):
-			return match['val'], match['unit']
+			return match['val'] or 1, match['unit']
 
 		## "For one minute"
 		pattern = r'(?:^|\W)for one ' + sp_units + r'(?:\W|$)'

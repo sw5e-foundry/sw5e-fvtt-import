@@ -69,7 +69,7 @@ class BaseFeature(sw5e.Entity.Item):
 		}
 		data["data"]["range"] = self.range
 		data["data"]["uses"] = {
-			"value": 0,
+			"value": None,
 			"max": self.uses,
 			"per": self.recharge
 		}
@@ -114,10 +114,10 @@ class Feature(BaseFeature):
 		self.contentSource, self.contentSourceEnum = self.getContentSource(importer)
 
 	def getType(self):
-		return "classfeature" if self.source in ["Class", "Archetype"] else "feat"
+		return "classfeature" if self.source in ['Class', 'Archetype', 'ClassInvocation', 'ArchetypeInvocation'] else "feat"
 
 	def getImg(self):
-		if self.source in ['Class', 'Archetype']:
+		if self.source in ['Class', 'Archetype', 'ClassInvocation', 'ArchetypeInvocation']:
 			class_abbr = {
 				'Berserker': 'BSKR',
 				'Consular': 'CSLR',
@@ -145,7 +145,7 @@ class Feature(BaseFeature):
 			return f'systems/sw5e/packs/Icons/Species/{name}.webp'
 
 	def getClassName(self, importer):
-		if self.source == 'Archetype':
+		if self.source in ('Archetype', 'ArchetypeInvocation'):
 			archetype = importer.get('archetype', data={ "name": self.sourceName })
 			if archetype:
 				return archetype.className
@@ -153,13 +153,20 @@ class Feature(BaseFeature):
 				self.broken_links = True
 
 	def getRequirements(self, importer):
-		if self.level and self.level > 1: return f'{self.class_name or self.sourceName} {self.level}'
-		return self.sourceName
+		req = self.sourceName
+		if self.level and self.level > 1: req = f'{self.class_name or self.sourceName} {self.level}'
+
+		if self.requirements: req += f', {self.requirements}'
+
+		return req
 
 	def getFile(self, importer):
+		if self.source in ('ClassInvocation', 'ArchetypeInvocation'): return 'ClassInvocation'
 		return f'{self.source}Feature'
 
 	def getContentType(self, importer):
+		if self.contentType and self.contentTypeEnum: return self.contentType, self.contentTypeEnum
+
 		sourceItem = importer.get(self.source.lower(), data={ "name": self.sourceName} )
 		if sourceItem:
 			return sourceItem.contentType, sourceItem.contentTypeEnum
@@ -168,6 +175,8 @@ class Feature(BaseFeature):
 			return '', 0
 
 	def getContentSource(self, importer):
+		if self.contentSource and self.contentSourceEnum: return self.contentSource, self.contentSourceEnum
+
 		sourceItem = importer.get(self.source.lower(), data={ "name": self.sourceName} )
 		if sourceItem:
 			return sourceItem.contentSource, sourceItem.contentSourceEnum

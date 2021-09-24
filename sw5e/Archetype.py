@@ -68,3 +68,41 @@ class Archetype(sw5e.Entity.Item):
 		data["data"]["classCasterType"] = self.classCasterType if self.classCasterType != "None" else "",
 
 		return [data]
+
+	def getSubItems(self, importer):
+		text = self.text
+
+		sub_items = []
+
+		name = self.name
+		if match := re.search(r' \(Companion\)', name): name = name[:match.start()]
+
+		for match in re.finditer(r'\s### ([^\n]*)\n(?!\s*_\*\*' + name + ')', text):
+			text = text[match.start():]
+
+			expected = (self.className == 'Engineer') or (self.className == 'Scholar') or (self.className == 'Fighter') or (self.name == 'Deadeye Technique')
+			if not expected:
+				print(f'Possible error detected: searching for subitems of {name} which is not a scholar, engineer, or fighter archetype.')
+				print(f'{self.className=}')
+
+			pattern = r'#### (?P<name>[^\n]*\n)'
+			pattern += r'(?P<text>(?:\s*_\*\*Prerequisite:\*\*(?: (?P<level>\d+)\w+(?:, \d+\w+| and \d+\w+)* level)?(?:,? (?P<prerequisite>[^_]+))?_\n)?'
+			pattern += r'\s*[^#]*)\n'
+			for sub_item in re.finditer(pattern, text):
+				if not expected:
+					print(f'	{sub_item["name"]=}')
+
+				data = {}
+
+				for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):
+					data[key] = getattr(self, key)
+				data["name"] = sub_item["name"]
+				data["text"] = sub_item["text"]
+
+				data["prerequisite"] = sub_item["prerequisite"]
+				data["level"] = int(sub_item["level"]) if sub_item["level"] else None
+				data["source"] = 'ArchetypeInvocation'
+				data["sourceName"] = self.name
+				sub_items.append((data, 'feature'))
+
+		return sub_items

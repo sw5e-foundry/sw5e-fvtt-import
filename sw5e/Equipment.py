@@ -37,7 +37,7 @@ class Equipment(sw5e.Entity.Item):
 	def process(self, old_item, importer):
 		super().process(old_item, importer)
 
-		self.uses, self.uses_value, self.recharge = 0, 0, ''
+		self.uses, self.uses_value, self.recharge = None, None, ''
 
 	def getImg(self, item_type=None, no_img=('Unknown',), default_img='systems/sw5e/packs/Icons/Storage/Crate.webp', plural=False):
 		if item_type == None: item_type = self.equipmentCategory

@@ -1,7 +1,7 @@
 import importer, sys
 
 def main():
-	mode = 'offline'
+	mode = ''
 	if len(sys.argv) >= 2: mode = sys.argv[1].lower()
 
 	print(mode)

@@ -35,6 +35,9 @@ class Entity:
 	def getFile(self, importer):
 		return self.__class__.__name__
 
+	def getSubItems(self, importer):
+		return []
+
 	@classmethod
 	def getClass(cls, raw_item):
 		return cls

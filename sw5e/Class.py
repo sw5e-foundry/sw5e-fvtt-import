@@ -195,3 +195,29 @@ class Class(sw5e.Entity.Item):
 		data["data"]["atFlavorText"] = { "value": self.getArchetypesFlavor(importer) }
 
 		return [data]
+
+	def getSubItems(self, importer):
+		text = self.classFeatureText
+
+		sub_items = []
+		for match in re.finditer(r'\s### ([^\n]*)\n(?!\s*_\*\*' + self.name + ')', text):
+			text = text[match.start():]
+
+			pattern = r'#### (?P<name>[^\n]*\n)'
+			pattern += r'(?P<text>'
+			pattern += r'(?:\s*_\*\*Prerequisite:\*\* (?P<level>\d+)\w+(?:, \d+\w+| and \d+\w+)* level_\n)?'
+			pattern += r'[^#]*)\n'
+			for sub_item in re.finditer(pattern, text):
+				data = {}
+
+				for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):
+					data[key] = getattr(self, key)
+				data["name"] = sub_item["name"]
+				data["text"] = sub_item["text"]
+
+				data["level"] = int(sub_item["level"]) if sub_item["level"] else None
+				data["source"] = 'ClassInvocation'
+				data["sourceName"] = self.name
+				sub_items.append((data, 'feature'))
+
+		return sub_items

@@ -45,12 +45,11 @@ class Importer:
 	__base_url = "https://sw5eapi.azurewebsites.net/api"
 	version = 1
 
-	def __init__(self, mode='offline'):
-		self.online = (mode == 'online')
+	def __init__(self, mode=''):
 
 		if mode == 'raw':
 			for entity_type in self.__entity_types:
-				data = self.__getData(entity_type, True)
+				data = self.__getData(entity_type, online=True)
 				self.__saveData(entity_type, data)
 
 		if os.path.isfile(self.__pickle_path):
@@ -78,9 +77,12 @@ class Importer:
 						## Don't print an error for alternate weapon modes, as those are only generated on the output method
 						if re.search(r'((?:\w+-\w+\.)+)mode-(\w+)', uid):
 							continue
-						elif missing < 10:
-							print(f'	Foundry id for uid {uid}, but no such item exists')
+						else:
+							if missing <= 5:
+								print(f'	Foundry id for uid {uid}, but no such item exists')
 							missing += 1
+			if missing > 5: print(f'	And {missing-5} more...')
+
 			missing = 0
 			for entity_type in self.__entity_types:
 				storage = self.__getItemList(entity_type)
@@ -90,9 +92,10 @@ class Importer:
 						## TODO: Find a way to set the foundry_ids of the weapon modes
 						if item.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', item.propertiesMap): continue
 						if item.__class__.__name__ == 'Weapon' and item.modes: continue
-						if missing < 10:
+						if missing <= 5:
 							print(f'	Item missing it\'s foundry_id: {uid}')
-							missing += 1
+						missing += 1
+			if missing > 5: print(f'	And {missing-5} more...')
 		else:
 			print('	Unable to open foundry ids file')
 
@@ -111,9 +114,12 @@ class Importer:
 						## Don't print an error for alternate weapon modes, as those are only generated on the output method
 						if re.search(r'((?:\w+-\w+\.)+)mode-(\w+)', uid):
 							continue
-						elif missing < 10:
-							print(f'	Active effects for uid {uid}, but no such item exists')
+						else:
+							if missing <= 5:
+								print(f'	Active effects for uid {uid}, but no such item exists')
 							missing += 1
+			if missing > 5: print(f'	And {missing-5} more...')
+
 			missing = 0
 			for entity_type in self.__entity_types:
 				storage = self.__getItemList(entity_type)
@@ -123,9 +129,10 @@ class Importer:
 						## TODO: Find a way to set the active effects of the weapon modes
 						if item.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', item.propertiesMap): continue
 						if item.__class__.__name__ == 'Weapon' and item.modes: continue
-						if missing < 10:
+						if missing <= 5:
 							print(f'	Item missing it\'s active effects: {uid}')
-							missing += 1
+						missing += 1
+			if missing > 5: print(f'	And {missing-5} more...')
 		else:
 			print('	Unable to open active effects file')
 
@@ -136,7 +143,7 @@ class Importer:
 		# 	pickle.dump(data, pickle_file)
 		pass
 
-	def __getData(self, file_name, online):
+	def __getData(self, file_name, online=False):
 		data = None
 		if online:
 			r = requests.get(self.__base_url + '/' + file_name)
@@ -174,33 +181,39 @@ class Importer:
 		else:
 			return None
 
-	def update(self, msg='Updating...'):
-		msg += ' (Online)' if self.online else ' (Offline)'
-		print(msg)
-
-		if self.online:
-			for entity_type in self.__entity_types:
-				data = self.__getData(entity_type, True)
-				self.__saveData(entity_type, data)
-
-		for entity_type in self.__entity_types:
-			print(f'	{entity_type}')
-			data = self.__getData(entity_type, False)
-
+	def __processItem(self, raw_item, entity_type, depth=0):
+		if depth > 10:
+			raise RecursionError(raw_item["name"])
+		try:
 			storage = self.__getItemList(entity_type)
 			klass = self.__getClass(entity_type)
 
+			kklass = klass.getClass(raw_item)
+			uid = kklass.getUID(raw_item)
+
+			old_item = self.get(entity_type, uid=uid)
+
+			if (not old_item) or (old_item.timestamp != raw_item["timestamp"]) or (old_item.importer_version != self.version) or (old_item.broken_links):
+				new_item = kklass(raw_item, old_item, uid, self)
+				storage[uid] = new_item
+				sub_items = new_item.getSubItems(self)
+				for sub_item, entity_type in sub_items:
+					self.__processItem(sub_item, entity_type, depth+1)
+		except:
+			print(f'		{raw_item["name"]}')
+			raise
+
+	def update(self, msg='Updating...'):
+		print(msg)
+
+		for entity_type in self.__entity_types:
+			print(f'	{entity_type}')
+			data = self.__getData(entity_type)
+
 			for raw_item in data:
-				try:
-					kklass = klass.getClass(raw_item)
-					uid = kklass.getUID(raw_item)
-					old_item = self.get(entity_type, uid=uid)
-					if (not old_item) or (old_item.timestamp != raw_item["timestamp"]) or (old_item.importer_version != self.version) or (old_item.broken_links):
-						new_item = kklass(raw_item, old_item, uid, self)
-						storage[uid] = new_item
-				except:
-					print(f'		{raw_item["name"]}')
-					raise
+				self.__processItem(raw_item, entity_type)
+
+
 
 	def output(self, msg='Output...'):
 		print(msg)

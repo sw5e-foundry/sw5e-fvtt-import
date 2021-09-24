@@ -43,8 +43,13 @@ class Species(sw5e.Entity.Item):
 	def getDescription(self):
 		return utils.text.markdownToHtml(self.flavorText)
 
-	def getTraits(self):
-		traits = [f'<p><em><strong>{trait["Name"]}.</strong></em> {trait["Description"]}</p>' for trait in self.traits]
+	def getTraits(self, importer):
+		def link(name):
+			link = name
+			if importer and (trait := importer.get('feature', data={"name": name, "source": 'Species', "sourceName": self.name, "level": None})):
+				link = f'@Compendium[sw5e.speciesfeatures.{trait.foundry_id}]{{{name}}}'
+			return link
+		traits = [f'<p><em><strong>{link(trait["Name"])}.</strong></em> {trait["Description"]}</p>' for trait in self.traits]
 		return '\n'.join(traits)
 
 	def getData(self, importer):
@@ -52,7 +57,7 @@ class Species(sw5e.Entity.Item):
 
 		data["data"]["description"] = { "value": self.getDescription() }
 		data["data"]["source"] = self.contentSource
-		data["data"]["traits"] = { "value": self.getTraits() }
+		data["data"]["traits"] = { "value": self.getTraits(importer) }
 		data["data"]["skinColorOptions"] = { "value": self.skinColorOptions}
 		data["data"]["hairColorOptions"] = { "value": self.hairColorOptions}
 		data["data"]["eyeColorOptions"] = { "value": self.eyeColorOptions}

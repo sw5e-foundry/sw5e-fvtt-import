@@ -66,6 +66,7 @@ let item_types = {
 
 	'classes': ['Class'],
 	'classfeatures': ['ClassFeature'],
+	'invocations': ['ClassInvocation'],
 
 	'species': ['Species'],
 	'speciesfeatures': ['SpeciesFeature'],
