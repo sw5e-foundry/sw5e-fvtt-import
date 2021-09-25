@@ -1,5 +1,6 @@
 import pickle, json, requests, os.path, re, sys
 import sw5e.Class, sw5e.Archetype, sw5e.Species, sw5e.Background
+import sw5e.ClassImprovement, sw5e.MulticlassImprovement, sw5e.SplashclassImprovement, sw5e.WeaponFocus, sw5e.WeaponSupremacy
 import sw5e.Feature, sw5e.Feat, sw5e.FightingStyle, sw5e.FightingMastery, sw5e.LightsaberForm
 import sw5e.Equipment, sw5e.Power, sw5e.EnhancedItem
 import sw5e.ArmorProperty, sw5e.WeaponProperty, sw5e.Conditions
@@ -23,7 +24,6 @@ class Importer:
 		'background',
 		'class',
 		'conditions',
-		# # 'deployment',
 		'enhancedItem',
 		'equipment',
 		'feat',
@@ -34,20 +34,28 @@ class Importer:
 		# 'monster',
 		'power',
 		# 'referenceTable',
+		# 'skills',
 		'species',
+		# # 'starshipDeployment',
 		# # 'starshipEquipment',
 		# # 'starshipModification',
-		# # 'starshipSizes',
-		# # 'venture',
+		# # 'starshipBaseSize',
+		# # 'starshipVenture',
 		'weaponProperty',
+		'ClassImprovement',
+		'MulticlassImprovement',
+		'SplashclassImprovement',
+		'WeaponFocus',
+		'WeaponSupremacy',
 	]
+
 	# __entity_types = [ 'background' ]
 	__base_url = "https://sw5eapi.azurewebsites.net/api"
 	version = 1
 
 	def __init__(self, mode=''):
 
-		if mode == 'raw':
+		if mode == 'refresh':
 			for entity_type in self.__entity_types:
 				data = self.__getData(entity_type, online=True)
 				self.__saveData(entity_type, data)
@@ -69,7 +77,8 @@ class Importer:
 				data = json.load(ids_file)
 				for uid in data:
 					entity_type = uid.split('.')[0]
-					entity_type = utils.text.lowerCase(entity_type)
+					if entity_type not in self.__entity_types:
+						entity_type = utils.text.lowerCase(entity_type)
 					item = self.get(entity_type, uid=uid)
 					if item:
 						item.foundry_id = data[uid]
@@ -92,6 +101,9 @@ class Importer:
 						## TODO: Find a way to set the foundry_ids of the weapon modes
 						if item.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', item.propertiesMap): continue
 						if item.__class__.__name__ == 'Weapon' and item.modes: continue
+						if uid.startswith('EnhancedItem'):
+							## TODO remove this after modifications are finished
+							continue
 						if missing <= 5:
 							print(f'	Item missing it\'s foundry_id: {uid}')
 						missing += 1
@@ -106,7 +118,8 @@ class Importer:
 				data = json.load(effects_file)
 				for uid in data:
 					entity_type = uid.split('.')[0]
-					entity_type = utils.text.lowerCase(entity_type)
+					if entity_type not in self.__entity_types:
+						entity_type = utils.text.lowerCase(entity_type)
 					item = self.get(entity_type, uid=uid)
 					if item:
 						item.effects = data[uid]
@@ -149,7 +162,12 @@ class Importer:
 			r = requests.get(self.__base_url + '/' + file_name)
 			data = json.loads(r.text)
 		else:
-			with open(f'{self.__raw_path}{file_name}.json', 'r+', encoding='utf8') as raw_file:
+			path = f'{self.__raw_path}{file_name}.json'
+			if not os.path.isfile(path): 
+				data = self.__getData(file_name, online=True)
+				self.__saveData(file_name, data)
+				return data
+			with open(path, 'r+', encoding='utf8') as raw_file:
 				data = json.load(raw_file)
 		return data
 
@@ -173,7 +191,6 @@ class Importer:
 			klass = self.__getClass(entity_type)
 			kklass = klass.getClass(data)
 			uid = kklass.getUID(data)
-			# print(f'{uid=}')
 
 		storage = self.__getItemList(entity_type) or {}
 		if uid in storage:

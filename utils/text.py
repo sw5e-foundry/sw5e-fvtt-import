@@ -43,8 +43,8 @@ def markdownToHtml(lines):
 			lines[i] = re.sub(r'_(.*?)_', r'<em>\1</em>', lines[i])
 
 			## Add inline rolls
-			lines[i] = re.sub(r'(\d+\s*)x(\s*\d+)', r'\1\*\2', lines[i])
-			lines[i] = re.sub(r'(\d*d\d+(?:\s*[+*]\s*\d+)?)', r'[[/r \1]]', lines[i])
+			lines[i] = re.sub(r'\b((?:\d*d)?\d+\s*)x(\s*\d+)\b', r'\1*\2', lines[i])
+			lines[i] = re.sub(r'\b(\d*d\d+(?:\s*[+*]\s*\d+)?)\b', r'[[/r \1]]', lines[i])
 		return '\n'.join(lines)
 
 def getActivation(text, uses, recharge):
@@ -119,7 +119,7 @@ def getUses(text, name):
 						uses = f'floor(({uses})/2)'
 
 		if not found: ## PROF times
-			pattern = r'a (?:combined )?number of (?:times|charges) equal to (?P<half>half )?your proficiency bonus'
+			pattern = r'a (?:combined )?number of (?:times|charges|superiority dice|force points in this way) equal to (?P<half>half )?your proficiency bonus'
 			pattern += r'|in excess of (?P<half2>half )?your proficiency bonus \(resetting on a long rest\)'
 
 			if match := re.search(pattern, text):
@@ -413,6 +413,7 @@ def getAction(text, name):
 			pattern_ignore += r'|it contains ' + match[0] + r'(?: [+-] \d+)? levels'
 			pattern_ignore += r'|plus ' + match[0] + ' for each slot level'
 			pattern_ignore += r'|to a maximum of ' + match[0]
+			pattern_ignore += r'|more than ' + match[0] + ' additional damage'
 
 			## TODO: Rework this to not use a hardcoded list
 			if re.search(pattern_ignore, text) or name in ('Alter Self', 'Spectrum Bolt', 'Flow-Walking', 'Intercept', 'Goggles of the Tinkerer'):
@@ -534,3 +535,15 @@ def makeTable(content, header=None, align=None):
 
 	table = f'<table>{table}</table>'
 	return table
+
+def getPlural(Text):
+	text = Text.lower()
+	if text in ('sheep', 'series', 'species', 'deer'): return Text
+	elif re.search('[^aeiou]y$', text): return Text[:-1]+'ies'
+	elif re.search('us$', text): return Text[:-2]+'i'
+	elif re.search('is$', text): return Text[:-2]+'es'
+	elif re.search('on$', text): return Text[:-2]+'a'
+	elif re.search('(s|ss|sh|ch|x|z|o)$', text): return Text+'es'
+	elif re.search('f$', text): return Text[:-1]+'ves'
+	elif re.search('fe$', text): return Text[:-2]+'ves'
+	return Text+'s'

@@ -68,7 +68,7 @@ class Item(Entity):
 	def getType(self, name=None):
 		if name == None:
 			name = type(self).__name__.lower()
-		name = re.sub(r'[ /]', r'%20', name)
+		name = re.sub(r'[ /]', r'', name)
 		return name
 
 	def getImg(self):

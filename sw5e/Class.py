@@ -50,7 +50,8 @@ class Class(sw5e.Entity.Item):
 	def process(self, old_item, importer):
 		super().process(old_item, importer)
 
-		self.powerCasting = self.getPowerCasting()
+		self.power_casting = self.getPowerCasting()
+		self.sub_item_features = self.getSubItemFeatures()
 
 	def getDescription(self):
 		out_str = f'<img style="float:right;margin:5px;border:0px" src="{self.getImg(capitalized=False, index="01")}"/>\n'
@@ -99,6 +100,10 @@ class Class(sw5e.Entity.Item):
 								if self.foundry_id:
 									print(f'		Unable to find feature {feature_data=}')
 					element = ', '.join(features)
+				else:
+					## Add inline rolls
+					element = re.sub(r'\b((?:\d*d)?\d+\s*)x(\s*\d+)\b', r'\1*\2', element)
+					element = re.sub(r'\b(\d*d\d+(?:\s*[+*]\s*\d+)?)\b', r'[[/r \1]]', element)
 				table += [f'<td align="center">{element}</td>']
 			table += ['</tr>']
 
@@ -107,17 +112,41 @@ class Class(sw5e.Entity.Item):
 		return table
 
 	def getPowerCasting(self):
-		if self.casterTypeEnum == 0: return "none", ""
-		if self.casterTypeEnum == 1:
+		if self.casterType == 'Tech':
 			if self.casterRatio == 0.0: raise ValueError("Invalid power casting progression, techcaster with 0 caster ratio.")
 			if self.casterRatio == 0.5: return "scout", "int"
 			if self.casterRatio == 0.6666666666666666: return "sentinel", "int"
 			if self.casterRatio == 1.0: return "engineer", "int"
-		if self.casterTypeEnum == 2:
+		elif self.casterType == 'Force':
 			if self.casterRatio == 0.0: raise ValueError("Invalid power casting progression, forcecaster with 0 caster ratio.")
 			if self.casterRatio == 0.5: return "guardian", "wis"
 			if self.casterRatio == 0.6666666666666666: return "sentinel", "wis"
 			if self.casterRatio == 1.0: return "consular", "wis"
+		else: return "none", ""
+
+	def getSubItemFeatures(self):
+		text = self.classFeatureText
+
+		features = {}
+		for match in re.finditer(r'\s### (?P<name>[^\n]*)\n(?!\s*_\*\*' + self.name + ')', text):
+			text = text[match.start():]
+			feature = []
+
+			pattern = r'#### (?P<name>[^\n]*)\n'
+			pattern += r'(?P<text>'
+			pattern += r'(?:\s*_\*\*Prerequisite:\*\* (?P<level>\d+)\w+(?:, \d+\w+| and \d+\w+)* level)?'
+			pattern += r'[^#]*)(?:\n|$)'
+
+			for invocation in re.finditer(pattern, text):
+				feature.append({
+					"name": invocation["name"],
+					"text": invocation["text"],
+					"level": int(invocation["level"]) if invocation["level"] else None,
+				})
+
+			features[match["name"]] = feature
+
+		return features
 
 	def getFeatures(self, table, importer):
 		table = ['<div class="classtable">', '<blockquote>'] + table + ['</blockquote>', '</div>']
@@ -184,9 +213,9 @@ class Class(sw5e.Entity.Item):
 			"value": []
 		}
 		data["data"]["source"] = self.contentSource
-		data["data"]["powerCasting"] = {
-			"progression": self.powerCasting[0],
-			"ability": self.powerCasting[1],
+		data["data"]["powercasting"] = {
+			"progression": self.power_casting[0],
+			"ability": self.power_casting[1],
 		}
 		table = self.getLevelsTable(importer)
 		data["data"]["levelsTable"] = ''.join(table)
@@ -197,25 +226,19 @@ class Class(sw5e.Entity.Item):
 		return [data]
 
 	def getSubItems(self, importer):
-		text = self.classFeatureText
-
 		sub_items = []
-		for match in re.finditer(r'\s### ([^\n]*)\n(?!\s*_\*\*' + self.name + ')', text):
-			text = text[match.start():]
 
-			pattern = r'#### (?P<name>[^\n]*\n)'
-			pattern += r'(?P<text>'
-			pattern += r'(?:\s*_\*\*Prerequisite:\*\* (?P<level>\d+)\w+(?:, \d+\w+| and \d+\w+)* level_\n)?'
-			pattern += r'[^#]*)\n'
-			for sub_item in re.finditer(pattern, text):
+		for feature_name in self.sub_item_features:
+			for invocation in self.sub_item_features[feature_name]:
 				data = {}
 
 				for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):
 					data[key] = getattr(self, key)
-				data["name"] = sub_item["name"]
-				data["text"] = sub_item["text"]
 
-				data["level"] = int(sub_item["level"]) if sub_item["level"] else None
+				data["name"] = invocation["name"]
+				data["text"] = invocation["text"]
+				data["level"] = invocation["level"]
+
 				data["source"] = 'ClassInvocation'
 				data["sourceName"] = self.name
 				sub_items.append((data, 'feature'))

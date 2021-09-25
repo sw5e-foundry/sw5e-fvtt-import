@@ -73,14 +73,18 @@ let item_types = {
 
 	'backgrounds': ['Background'],
 
-	'feats': ['Feat'],
+	'feats': [
+		'Feat',
+		'ClassImprovement',
+		'MulticlassImprovement',
+		'SplashclassImprovement',
+		'WeaponFocus',
+		'WeaponSupremacy',
+	],
 	'fightingstyles': ['FightingStyle'],
 	'fightingmasteries': ['FightingMastery'],
 	'lightsaberform': ['LightsaberForm'],
 }
-// item_types = {
-// 	'classes': ['Class']
-// }
 
 let journal_entry_types = {
 	'weaponproperties': ['WeaponProperty'],
@@ -95,6 +99,11 @@ let allow_delete = true;
 let allow_update = true;
 let allow_create = true;
 let verbose = false;
+
+
+// item_types = { 'invocations': ['ClassInvocation'] }
+// journal_entry_types = {}
+// verbose = true
 
 for (let type of Object.keys(item_types)){
 	console.log(`Updating ${type} compendium`);
@@ -130,7 +139,7 @@ for (let type of Object.keys(item_types)){
 		let importer_item = null;
 		if (uid) importer_item = importer_data[uid];
 		if (uid && importer_item) {
-			if (verbose) console.log(`Should update ${pack_item.name}, foundry_id ${pack_item._id}`);
+			if (verbose) console.log(`Should update ${pack_item.name}, foundry_id ${pack_item._id}, uid ${uid}`);
 
 			foundry_ids[uid] = pack_item._id;
 			foundry_effects[uid] = pack_item.effects;
@@ -141,7 +150,7 @@ for (let type of Object.keys(item_types)){
 			importer_data[uid] = null;
 		}
 		else {
-			if (verbose) console.log(`Should delete ${pack_item.name}, foundry_id ${pack_item._id}`);
+			if (verbose) console.log(`Should delete ${pack_item.name}, foundry_id ${pack_item._id}, uid ${uid}`);
 			to_delete.push(pack_item._id);
 		}
 	}
