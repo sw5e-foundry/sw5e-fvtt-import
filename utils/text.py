@@ -125,7 +125,7 @@ def getUses(text, name):
 			if match := re.search(pattern, text):
 				found = True
 
-				uses = '@details.prof'
+				uses = '@attributes.prof'
 				if match['half'] or match['half2']:
 					uses = f'floor({uses}/2)'
 
@@ -322,8 +322,8 @@ def getAction(text, name):
 			save_dc = int(match["dc"]) if match["dc"] else None
 
 		## Dice formula
-		p_formula = r'(?P<dice>\d*d\d+)?\s*?\+?\s*?(?P<flat>\d+)?\s*?(?:\+ your (?P<ability_mod>(?:\w+ ){,5})(?:ability )?modifier)?'
-		p_dformula = r'(?P<dice>\d*d\d+)\s*?\+?\s*?(?P<flat>\d+)?\s*?(?:\+ your (?P<ability_mod>(?:\w+ ){,5})(?:ability )?modifier)?'
+		p_formula = r'(?P<dice>\d*d\d+)?(?:(?:\s*\+\s*)?(?P<flat>\d+))?(?:\s*\+ your(?P<ability_mod> [\w ]+?)(?: ability)? modifier)?'
+		p_dformula = r'(?P<dice>\d*d\d+)(?:(?:\s*\+\s*)?(?P<flat>\d+))?(?:\s*\+ your(?P<ability_mod> [\w ]+?)(?: ability)? modifier)?'
 
 		## Healing
 		pattern = r'(?:(?:(?:re)?gains?|restores|gaining|a number of) (?P<temp>temporary )?hit points equal to |hit points increase by )' + p_formula
@@ -339,7 +339,9 @@ def getAction(text, name):
 				if flat:
 					if formula: formula = f'{formula} + {flat}'
 					else: formula = flat
-				if ability_mod:
+				if ability_mod in ('strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'):
+					formula = f'{formula or ""} + @abilities.{ability_mod[:3]}.mod'
+				elif ability_mod:
 					formula = f'{formula or ""} + @mod'
 				damage["parts"].append([ formula, 'temphp' if temp else 'healing' ])
 				return 'FORMULA'

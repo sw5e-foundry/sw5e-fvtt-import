@@ -51,12 +51,14 @@ class Power(sw5e.Entity.Item):
 		return activation_type, activation_num, activation_condition
 
 	def getDuration(self):
-		pattern = r'(?P<inst>Instantaneous)|(?P<conc>up to )?(?P<val>\d+) (?P<unit>\w+?)s?'
+		pattern = r'(?P<inst>Instantaneous)|(?P<perm>Permanent)|(?P<spec>Special)|(?P<conc>up to )?(?P<val>\d+) (?P<unit>turn|round|minute|hour|day|month|year)s?'
 
 		if (match := re.search(pattern, self.duration or '')):
-			if match['inst']: return None, "", False
+			if match['inst']: return None, 'inst', False
+			elif match['perm']: return None, 'perm', False
+			elif match['spec']: return None, 'spec', False
 			else:
-				match.group('val', 'unit', 'conc')
+				return match.group('val', 'unit', 'conc')
 		return None, "", False
 
 	def getTargetRange(self):
@@ -156,7 +158,11 @@ class Power(sw5e.Entity.Item):
 			"long": None,
 			"units": self.range_unit
 		}
-		# data["data"]["uses"] = {}
+		data["data"]["uses"] = {
+			"value": None,
+			"max": None,
+			"per": ''
+		}
 		# data["data"]["consume"] = {}
 
 		data["data"]["ability"] = self.ability
