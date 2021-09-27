@@ -114,8 +114,10 @@ class Archetype(sw5e.Entity.Item):
 	def getImg(self, capitalized=True, index=""):
 		if index: index = f'_{index}'
 		name = self.full_name if capitalized else self.full_name.lower()
-		name = re.sub(r'[ /]', r'%20', name)
-		name = re.sub(r' (.*?)', r'-\1', name)
+		name = re.sub(r'[/,]', r'-', name)
+		name = re.sub(r'[\s]', r'', name)
+		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
+		name = re.sub(r'-*\(([^)]*)\)', r'-\1', name)
 		return f'systems/sw5e/packs/Icons/Archetypes/{name}{index}.webp'
 
 	def getData(self, importer):

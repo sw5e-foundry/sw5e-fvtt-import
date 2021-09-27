@@ -46,8 +46,10 @@ class Equipment(sw5e.Entity.Item):
 		if item_type in no_img: return default_img
 
 		name = self.name
-		name = re.sub(r'[ /]', r'%20', name)
-		name = re.sub(r'\'', r'_', name)
+		name = re.sub(r'[/,]', r'-', name)
+		name = re.sub(r'[\s]', r'', name)
+		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
+		name = re.sub(r'-*\(([^)]*)\)', r'-\1', name)
 
 		item_type = re.sub(r'([a-z])([A-Z])', r'\1%20\2', item_type)
 		item_type = re.sub(r'\'', r'_', item_type)

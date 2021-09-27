@@ -36,8 +36,10 @@ class Species(sw5e.Entity.Item):
 
 	def getImg(self):
 		name = self.name
-		name = re.sub(r'[ /]', r'%20', name)
-		name = re.sub(r'[,]', r'', name)
+		name = re.sub(r'[/,]', r'-', name)
+		name = re.sub(r'[\s]', r'', name)
+		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
+		name = re.sub(r'-*\(([^)]*)\)', r'-\1', name)
 		return f'systems/sw5e/packs/Icons/Species/{name}.webp'
 
 	def getDescription(self):

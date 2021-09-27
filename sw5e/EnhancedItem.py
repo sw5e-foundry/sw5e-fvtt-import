@@ -263,8 +263,10 @@ class EnhancedItem(sw5e.Entity.Item):
 			return 'icons/svg/item-bag.svg'
 
 		name = self.name
-		name = re.sub(r'[ /]', r'%20', name)
-		name = re.sub(r'\'', r'_', name)
+		name = re.sub(r'[/,]', r'-', name)
+		name = re.sub(r'[\s]', r'', name)
+		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
+		name = re.sub(r'-*\(([^)]*)\)', r'-\1', name)
 		return f'systems/sw5e/packs/Icons/Enhanced%20Items/{name}.webp'
 
 	def getType(self):

@@ -32,5 +32,8 @@ class Feat(sw5e.Feature.BaseFeature):
 
 	def getImg(self):
 		name = self.name
-		name = re.sub(r'[ /]', r'%20', name)
+		name = re.sub(r'[/,]', r'-', name)
+		name = re.sub(r'[\s]', r'', name)
+		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
+		name = re.sub(r'-*\(([^)]*)\)', r'-\1', name)
 		return f'systems/sw5e/packs/Icons/Feats/{name}.webp'

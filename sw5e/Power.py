@@ -121,9 +121,10 @@ class Power(sw5e.Entity.Item):
 
 	def getImg(self):
 		name = self.name
-		name = re.sub(r'\s', r'', name)
-		name = re.sub(r'\\', r'_', name)
-
+		name = re.sub(r'[/,]', r'-', name)
+		name = re.sub(r'[\s]', r'', name)
+		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
+		name = re.sub(r'-*\(([^)]*)\)', r'-\1', name)
 		return f'systems/sw5e/packs/Icons/{self.powerType}%20Powers/{name}.webp'
 
 	def getDescription(self):

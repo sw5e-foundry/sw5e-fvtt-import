@@ -1,0 +1,139 @@
+# Missing Icons
+
+- Adventuring Gear
+  - "Ammo-feedBelt"
+  - All Prosthesis
+  - "Bottle"
+  - "Bucket"
+  - "Chest"
+  - All Clothes
+  - "ComputerSpike"
+  - "CreditChip"
+  - "EmergencyRaft"
+  - "EmergencyRation-oneday's"
+  - "EmergencyShelter"
+  - "FireExtinguiser"
+  - "Flask"
+  - "GravityGenerator"
+  - "Holocron" need to decide to use either sith or jedi version
+  - "Jug"
+  - "PersonalTranslator"
+  - "Pitcher"
+  - "Pot"
+  - "Ram-portable"
+  - "Rocketpack"
+  - "Sack"
+  - "SecuritySpike"
+  - "Tankard"
+  - "Tent-two-person"
+  - "UnderwaterRespirator"
+  - "Vial"
+  - "VocoderMask"
+  - "WaterSuit"
+- Ammo
+  - Cartridge
+    - Corrosive
+    - Electrifying
+    - Gas
+  - Power Cell
+    - Cryo
+    - Deafening
+    - Incendiary
+  - Calibrator
+    - Deafening
+    - Electrifying
+    - Oscillation
+    - Panic
+  - Collimator
+    - Deafening
+    - Electrifying
+    - Flux
+    - Panic
+  - Dart
+    - Deafening
+    - Electrifying
+    - Panic
+  - Flechette Clip
+    - Fragmentation
+    - Ion
+    - Plasma
+  - Flechette Mag
+    - Fragmentation
+    - Ion
+    - Plasma
+  - Missile
+    - Incendiary
+    - Ion
+  - "PowerGenerator"
+  - Projector Cannister
+    - Corrosive
+  - Projector Tank
+    - Corrosive
+    - Cryo
+    - Incendiary
+  - Rocket
+    - Fragmentation
+    - Incendiary
+    - Ion
+  - "Snare"
+  - Torpedo
+    - Fragmentation
+    - Plasma
+- Archetypes
+  - "MechanistTechnique-Companion"
+- Consumables
+  - "Deuterium-Pyro"
+  - "Mummergy"
+  - "NovanianGrog"
+  - "Raava"
+  - "Spicebrew"
+  - "Tihaar"
+  - "Tsiraki"
+  - "Vayerbok"
+- Enhanced Items
+- Explosives
+  - Charge
+    - Plasma
+  - Grenade
+    - Corrosive
+    - Cryo
+    - Deafening
+    - Electrifying
+    - Flash
+    - Incendiary
+    - Panic
+    - Plasma
+  - Mine
+    - Corrosive
+    - Cryo
+    - Deafening
+    - Electrifying
+    - Flash
+    - Gas
+    - Incendiary
+    - Ion
+    - Panic
+    - Stun
+- Feats
+  - "ArmorExpert"
+  - "ClassImprovement"
+  - "Commando"
+  - "FormfightingDabbler"
+  - "MulticlassImprovement"
+  - "PowerChanneling"
+  - "SplashclassImprovement"
+  - "SupremeAptitude"
+  - "SupremeDurability"
+  - "WeaponFocused"
+  - "WeaponSupremacist"
+- Implements
+- Kits
+  - "Archaeologist'sKit"
+  - "Artillerist'sKit"
+  - "BioanalysisKit"
+  - "Brewer'sKit"
+  - "MunitionsKit"
+  - "ScavengingKit"
+  - "Spicer'sKit"
+- Lightsaber Forms
+  - "AqinosForm"
