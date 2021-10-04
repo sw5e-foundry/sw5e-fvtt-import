@@ -21,7 +21,7 @@ class Consumable(sw5e.Equipment.Equipment):
 		kwargs = {
 			# 'item_type': self.equipmentCategory,
 			'no_img': ('Unknown', 'AlcoholicBeverage'),
-			'default_img': 'systems/sw5e/packs/Icons/Utility/Canteen.webp',
+			'default_img': 'systems/sw5e/packs/Icons/Storage/Canteen.webp',
 			# 'plural': False
 		}
 		return super().getImg(**kwargs)

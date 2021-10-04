@@ -15,7 +15,7 @@ class Equipment(sw5e.Equipment.Equipment):
 		kwargs = {
 			'item_type': self.equipmentCategory,
 			'no_img': ('Unknown', 'Clothing'),
-			'default_img': 'systems/sw5e/packs/Icons/Armor/PHB/Assault%20Armor.webp',
+			'default_img': 'systems/sw5e/packs/Icons/Armor/PHB/AssaultArmor.webp',
 			# 'plural': False
 		}
 		if self.equipmentCategory == 'Armor': kwargs["item_type"] += '/' + self.contentSource

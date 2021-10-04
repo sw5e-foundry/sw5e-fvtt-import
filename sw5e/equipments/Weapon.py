@@ -17,7 +17,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		kwargs = {
 			'item_type': self.weaponClassification,
 			# 'no_img': ('Unknown',),
-			'default_img': 'systems/sw5e/packs/Icons/Simple%20Blasters/Holdout%20Blaster.webp',
+			'default_img': 'systems/sw5e/packs/Icons/Simple%20Blasters/Hold-out.webp',
 			'plural': True
 		}
 		return super().getImg(**kwargs)
@@ -129,6 +129,7 @@ class Weapon(sw5e.Equipment.Equipment):
 			"amm": "Ammunition",
 			"aut": "Auto",
 			"bur": "Burst",
+			"bru": "Brutal",
 			"con": "Constitution",
 			"def": "Defensive",
 			"dex": "Dexterity",
@@ -154,6 +155,7 @@ class Weapon(sw5e.Equipment.Equipment):
 			"ret": "Returning",
 			"shk": "Shocking",
 			"sil": "Silent",
+			"son": "Sonorous",
 			"spc": "Special",
 			"str": "Strength",
 			"thr": "Thrown",
@@ -161,7 +163,18 @@ class Weapon(sw5e.Equipment.Equipment):
 			"vic": "Vicious",
 			"ver": "Versatile",
 		}
-		return { prop: weapon_properties[prop] in self.propertiesMap for prop in weapon_properties }
+		props = {};
+		for prop in self.propertiesMap:
+			if prop == 'Special': continue
+			if prop == '' and (prop2 := re.search(r'^(?P<prop>[\w-]+)', self.propertiesMap[prop])):
+				prop2 = prop2['prop'].capitalize()
+				props[prop2] = True
+				continue
+
+			for prop2 in weapon_properties:
+				if prop == weapon_properties[prop2]: break
+			else: raise ValueError(self.name, prop)
+		return {**props, **{ prop: weapon_properties[prop] in self.propertiesMap for prop in weapon_properties }}
 
 	def getAutoTargetData(self, data):
 		if type(auto := utils.text.getProperty('Auto', self.propertiesMap)) == list:
