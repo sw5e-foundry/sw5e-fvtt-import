@@ -2,6 +2,55 @@ import sw5e.Entity, utils.text
 import re, json, copy
 
 class EnhancedItem(sw5e.Entity.Item):
+	modification_slots = {
+		"armor": {
+			"overlay": 'slot1',
+			"underlay": 'slot2',
+			"reinforcement": 'slot3',
+			"armoring": 'slot4',
+			"shielding": 'slot4',
+		},
+		"blaster": {
+			"targeting": 'slot1',
+			"barrel": 'slot2',
+			"core": 'slot3',
+			"attachment": 'slot4',
+		},
+		"clothing": {
+			"weave": 'slot1',
+			"inlay": 'slot2',
+			"pattern": 'slot3',
+			"stitching": 'slot4',
+		},
+		"focusgenerator": {
+			"emitter": 'slot1',
+			"conductor": 'slot2',
+			"channel": 'slot3',
+			"cycler": 'slot4',
+		},
+		"lightweapon": {
+			"lens": 'slot1',
+			"crystal": 'slot2',
+			"cell": 'slot3',
+			"hilt": 'slot4',
+		},
+		"vibroweapon": {
+			"grip": 'slot1',
+			"edge": 'slot2',
+			"oscillator": 'slot3',
+			"guard": 'slot4',
+		},
+		"wristpad": {
+			"processor": 'slot1',
+			"motherboard": 'slot2',
+			"amplifier": 'slot3',
+			"dataport": 'slot4',
+		},
+		"item": {
+			"augment": 'augment',
+		},
+	}
+
 	def load(self, raw_item):
 		super().load(raw_item)
 
@@ -21,10 +70,12 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		self.subtypeType = \
 			utils.text.clean(raw_item, utils.text.lowerCase(self.type)+'Type') or \
-			utils.text.clean(raw_item, f'enhanced{self.type}Type') or 'None'
+			utils.text.clean(raw_item, f'enhanced{self.type}Type') or \
+			utils.text.clean(raw_item, f'itemModificationType') or 'None'
 		self.subtypeTypeEnum = \
 			utils.text.raw(raw_item, f'{utils.text.lowerCase(self.type)}TypeEnum') or \
-			utils.text.raw(raw_item, f'enhanced{self.type}TypeEnum') or 0
+			utils.text.raw(raw_item, f'enhanced{self.type}TypeEnum') or \
+			utils.text.raw(raw_item, f'itemModificationTypeEnum') or 0
 
 		self.contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")
 		self.contentType = utils.text.clean(raw_item, "contentType")
@@ -45,6 +96,11 @@ class EnhancedItem(sw5e.Entity.Item):
 		self.activation = self.getActivation()
 		self.rarity = self.getRarity()
 
+		self.is_modification = self.type.endswith('Modification')
+		if (self.is_modification):
+			self.modification_type = self.type[:-12].lower()
+			self.modification_slot = self.modification_slots[self.modification_type][self.subtype]
+
 	def getActivation(self):
 		return utils.text.getActivation(self.text, self.uses, self.recharge)
 
@@ -64,8 +120,10 @@ class EnhancedItem(sw5e.Entity.Item):
 		return utils.text.getAction(self.text, self.name)
 
 	def getAttackBonus(self):
-		if match := re.search(r'You (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<attack>attack)?(?: and )?(?P<dmg>damage)? rolls (?:made )?with this', self.text):
-			return match["bonus"] if match["attack"] else 0, match["bonus"] if match["dmg"] else 0
+		if match := re.search(r'You (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<atk>attack)?(?: and )?(?P<dmg>damage)? rolls (?:made )?with this', self.text):
+			return (match["bonus"] if match[opt] else 0 for opt in ('atk', 'dmg'))
+		if match := re.search(r'You (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<up>attack|damage) rolls and a -(?P<penalty>\d+) penalty to (?:attack|damage) rolls (?:made )?with this', self.text):
+			return (match["bonus"] if match["up"] == opt else "-"+match["penalty"] for opt in ('attack', 'damage'))
 		return 0, 0
 
 	def getRarity(self):
@@ -258,6 +316,9 @@ class EnhancedItem(sw5e.Entity.Item):
 		return text
 
 	def getImg(self):
+		if self.is_modification:
+			return f'systems/sw5e/packs/Icons/Modifications/{self.subtype}.svg'
+
 		# TODO: Remove this once there are icons for Enhanced Items
 		if self.name not in ('Alacrity Adrenal', 'Battle Adrenal', 'Stamina Adrenal', 'Strength Adrenal', 'Mandalorian Beskar\'gam', 'Mandalorian Helmet', 'Mandalorian Shuk\'orok'):
 			return 'icons/svg/item-bag.svg'
@@ -278,116 +339,111 @@ class EnhancedItem(sw5e.Entity.Item):
 			'loot', ## 4 = CyberneticAugmentation
 			'loot', ## 5 = DroidCustomization
 			'equipment', ## 6 = Focus
-			'loot', ## 7 = ItemModification
+			'modification', ## 7 = ItemModification
 			'equipment', ## 8 = Shield
 			'weapon', ## 9 = Weapon
 			None, ## 10 = ?
 			'loot', ## 11 = ShipArmor
 			'loot', ## 12 = ShipShield
 			'loot', ## 13 = ShipWeapon
-			'loot', ## 14 = BlasterModification
-			'loot', ## 15 = ClothingModification
-			'loot', ## 16 = WristpadModification
-			'loot', ## 17 = ArmorModification
-			'loot', ## 18 = VibroweaponModification
-			'loot', ## 19 = LightweaponModification
-			'loot', ## 20 = FocusGeneratorModification
+			'modification', ## 14 = BlasterModification
+			'modification', ## 15 = ClothingModification
+			'modification', ## 16 = WristpadModification
+			'modification', ## 17 = ArmorModification
+			'modification', ## 18 = VibroweaponModification
+			'modification', ## 19 = LightweaponModification
+			'modification', ## 20 = FocusGeneratorModification
 		]
 		item_type = mapping[self.typeEnum]
 		return item_type or 'loot'
 
-	def getData(self, importer):
-		superdata = super().getData(importer)[0]
-
-		data = superdata
-
+	def getDataSpecific(self, importer, base_item):
 		def choose(base, enhanced, field, default):
 			if field in base and base[field] != default: return base[field]
 			if enhanced != default: return enhanced
 			return default
 
-		if self.subtypeType == 'Specific':
-			get_data = { 'name': self.subtype.title(), 'equipmentCategory': self.type.title() }
-			base_item = importer.get(self.getType(), data=get_data)
+		superdata = super().getData(importer)[0]
+		data = base_item.getData(importer)
 
-			if base_item:
-				data = base_item.getData(importer)
+		for item in data:
+			mode = (re.search(r'\.mode-(.*)', item["flags"]["uid"]) or [None,None])[1]
 
-				for item in data:
-					mode = (re.search(r'\.mode-(.*)', item["flags"]["uid"]) or [None,None])[1]
+			for key in superdata:
+				if key in ("data", "img"): continue
+				item[key] = copy.deepcopy(superdata[key])
 
-					for key in superdata:
-						if key in ("data", "img"): continue
-						item[key] = copy.deepcopy(superdata[key])
+			if self.getImg() != 'icons/svg/item-bag.svg':
+				item["img"] = self.getImg()
 
-					if self.getImg() != 'icons/svg/item-bag.svg':
-						item["img"] = self.getImg()
+			if mode:
+				item["name"] += f' ({mode.title()})'
+				item["flags"]["uid"] += f'.mode-{mode}'
 
-					if mode:
-						item["name"] += f' ({mode.title()})'
-						item["flags"]["uid"] += f'.mode-{mode}'
+			item["data"]["description"] = {
+				"value": self.getDescription(base_text = (base_item.name, item["data"]["description"]["value"]))
+			}
+			item["data"]["source"] = self.contentSource
+			item["data"]["attunement"] = 1 if self.requiresAttunement else 0
+			item["data"]["rarity"] = self.rarity
 
-					item["data"]["description"] = {
-						"value": self.getDescription(base_text = (base_item.name, item["data"]["description"]["value"]))
-					}
-					item["data"]["source"] = self.contentSource
-					item["data"]["attunement"] = 1 if self.requiresAttunement else 0
-					item["data"]["rarity"] = self.rarity
+			activation = choose(item["data"]["activation"], self.activation, "type", 'none')
+			item["data"]["activation"] = {
+				"type": activation,
+				"cost": 1 if activation != 'none' else None
+			}
+			item["data"]["duration"] = {
+				"value": choose(item["data"]["duration"], self.duration_value, "value", None),
+				"units": choose(item["data"]["duration"], self.duration_unit, "units", 'inst'),
+			}
+			item["data"]["target"] = {
+				"value": choose(item["data"]["target"], self.target_value, "value", None),
+				"width": None,
+				"units": choose(item["data"]["target"], self.target_unit, "units", ''),
+				"type": choose(item["data"]["target"], self.target_type, "type", ''),
+			}
+			item["data"]["range"] = {
+				"value": choose(item["data"]["range"], self.range_value, "value", None),
+				"long": choose(item["data"]["range"], None, "long", None),
+				"units": choose(item["data"]["range"], self.range_unit, "units", ''),
+			}
+			if "per" not in item["data"]["uses"] or item["data"]["uses"]["per"] == None:
+				item["data"]["uses"] = {
+					"value": None,
+					"max": self.uses,
+					"per": self.recharge
+				}
+			#	item["data"]["consume"] = {}
+			#	item["data"]["ability"] = ''
 
-					activation = choose(item["data"]["activation"], self.activation, "type", 'none')
-					item["data"]["activation"] = {
-						"type": activation,
-						"cost": 1 if activation != 'none' else None
-					}
-					item["data"]["duration"] = {
-						"value": choose(item["data"]["duration"], self.duration_value, "value", None),
-						"units": choose(item["data"]["duration"], self.duration_unit, "units", 'inst'),
-					}
-					item["data"]["target"] = {
-						"value": choose(item["data"]["target"], self.target_value, "value", None),
-						"width": None,
-						"units": choose(item["data"]["target"], self.target_unit, "units", ''),
-						"type": choose(item["data"]["target"], self.target_type, "type", ''),
-					}
-					item["data"]["range"] = {
-						"value": choose(item["data"]["range"], self.range_value, "value", None),
-						"long": choose(item["data"]["range"], None, "long", None),
-						"units": choose(item["data"]["range"], self.range_unit, "units", ''),
-					}
-					if "per" not in item["data"]["uses"] or item["data"]["uses"]["per"] == None:
-						item["data"]["uses"] = {
-							"value": None,
-							"max": self.uses,
-							"per": self.recharge
-						}
-					#	item["data"]["consume"] = {}
-					#	item["data"]["ability"] = ''
+			item["data"]["actionType"] = choose(item["data"], self.action_type, "actionType", 'other')
+			item["data"]["attackBonus"] = self.attack_bonus
+			#	item["data"]["chatFlavor"] = ''
+			#	item["data"]["critical"] = None
+			item["data"]["damage"] = {
+				"parts": (item["data"]["damage"]["parts"] if "parts" in item["data"]["damage"] else []) + self.damage["parts"],
+				"versatile": choose(item["data"]["damage"], self.damage["versatile"], "versatile", '')
+			}
 
-					item["data"]["actionType"] = choose(item["data"], self.action_type, "actionType", 'other')
-					item["data"]["attackBonus"] = self.attack_bonus
-					#	item["data"]["chatFlavor"] = ''
-					#	item["data"]["critical"] = None
-					item["data"]["damage"] = {
-						"parts": (item["data"]["damage"]["parts"] if "parts" in item["data"]["damage"] else []) + self.damage["parts"],
-						"versatile": choose(item["data"]["damage"], self.damage["versatile"], "versatile", '')
-					}
+			if self.damage_bonus and item["data"]["damage"]["parts"]:
+				item["data"]["damage"]["parts"][0][0] += f' + {self.damage_bonus}'
+				if item["data"]["damage"]["versatile"]: item["data"]["damage"]["versatile"] += f' + {self.damage_bonus}'
 
-					if self.damage_bonus and item["data"]["damage"]["parts"]:
-						item["data"]["damage"]["parts"][0][0] += f' + {self.damage_bonus}'
-						if item["data"]["damage"]["versatile"]: item["data"]["damage"]["versatile"] += f' + {self.damage_bonus}'
+			item["data"]["formula"] = choose(item["data"], self.formula, "formula", '')
+			item["data"]["save"] = {
+				"ability": choose(item["data"]["save"], self.save, "ability", ''),
+				"dc": None,
+				"scaling": "none"
+			}
 
-					item["data"]["formula"] = choose(item["data"], self.formula, "formula", '')
-					item["data"]["save"] = {
-						"ability": choose(item["data"]["save"], self.save, "ability", ''),
-						"dc": None,
-						"scaling": "none"
-					}
+			item = self.applySubtype(item)
 
-					item = self.applySubtype(item)
+			#	item["data"]["recharge"] = ''
 
-					#	item["data"]["recharge"] = ''
+		return data
 
-				return data
+	def getDataStandard(self, importer):
+		data = super().getData(importer)[0]
 
 		data["data"]["description"] = { "value": self.getDescription() }
 		data["data"]["source"] = self.contentSource
@@ -441,6 +497,61 @@ class EnhancedItem(sw5e.Entity.Item):
 		#	data["data"]["recharge"] = ''
 
 		return [data]
+
+	def getDataModification(self, importer):
+		data = super().getData(importer)[0]
+
+		if self.modification_type in ('armor', 'clothing', 'focusgenerator', 'wristpad'): data["data"]["modificationItemType"] = 'equipment'
+		elif self.modification_type in ('blaster', 'vibroweapon', 'lightweapon'): data["data"]["modificationItemType"] = 'weapon'
+
+		data["data"]["modificationType"] = self.modification_type
+		data["data"]["modificationSlot"] = self.modification_slot
+
+
+		data["data"]["description"] = { "value": self.getDescription() }
+		data["data"]["source"] = self.contentSource
+		data["data"]["rarity"] = self.rarity
+
+		if self.attack_bonus: data["data"]["attackBonus"] = self.attack_bonus
+		if self.damage_bonus: data["data"]["damageBonus"] = self.damage_bonus
+		if self.damage: data["data"]["damage"] = {
+			"parts": self.damage["parts"],
+			"versatile": self.damage["versatile"]
+		}
+
+		data["data"]["properties"] = { "indeterminate": {} }
+		s_prop = r'\w+(?: (?:\d+|\(\d*d\d+\)))?'
+		s_props = f'{s_prop}(?:, {s_prop})*(?:,? and {s_prop})?'
+		s_prop = r'(?P<prop>\w+)(?: (?P<val>\d+|\(\d*d\d+\)))?'
+		for match in re.finditer(r'(?P<op>gains|removes) the (?P<props>' + s_props + r') propert(?:y|ies)', self.text):
+			for match2 in re.finditer(f'{s_prop}(?:, | and )?', match["props"]):
+				prop_id = None
+				if data["data"]["modificationItemType"] == 'equipment':
+					prop_id = match2["prop"].title()
+				if data["data"]["modificationItemType"] == 'weapon':
+					from sw5e.equipments.Weapon import Weapon
+					for prop in Weapon.weapon_properties:
+						if Weapon.weapon_properties[prop].lower() == match2["prop"].lower():
+							prop_id = prop
+							break
+				if prop_id:
+					data["data"]["properties"][prop_id] = (match["op"] == "gains")
+					data["data"]["properties"]["indeterminate"][prop_id] = False
+				else:
+					raise ValueError(self.name, data["data"]["modificationItemType"], match.groups(), match[0], match2.groups(), match2[0])
+
+		return [data]
+
+	def getData(self, importer):
+		if self.is_modification: return self.getDataModification(importer)
+
+		if self.subtypeType == 'Specific':
+			get_data = { 'name': self.subtype.title(), 'equipmentCategory': self.type.title() }
+			base_item = importer.get(self.getType(), data=get_data)
+
+			if base_item: return self.getDataSpecific(importer, base_item)
+
+		return self.getDataStandard(importer)
 
 	def getFile(self, importer):
 		return f'Enhanced{self.type}'

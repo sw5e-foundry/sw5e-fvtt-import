@@ -2,6 +2,55 @@ import sw5e.Equipment, utils.text
 import re, json, copy
 
 class Weapon(sw5e.Equipment.Equipment):
+	weapon_properties = {
+		"amm": 'Ammunition',
+		"aut": 'Auto',
+		"bur": 'Burst',
+		"bru": 'Brutal',
+		"con": 'Constitution',
+		"def": 'Defensive',
+		"dex": 'Dexterity',
+		"dir": 'Dire',
+		"drm": 'Disarming',
+		"dgd": 'Disguised',
+		"dis": 'Disintegrate',
+		"dpt": 'Disruptive',
+		"dou": 'Double',
+		"exp": 'Explosive',
+		"fin": 'Finesse',
+		"fix": 'Fixed',
+		"foc": 'Focus',
+		"hvy": 'Heavy',
+		"hid": 'Hidden',
+		"hom": 'Homing',
+		"ion": 'Ionizing',
+		"ken": 'Keen',
+		"lgt": 'Light',
+		"lum": 'Luminous',
+		"mlt": 'Melt',
+		"mig": 'Mighty',
+		"neu": 'Neuralizing',
+		"ovr": 'Overheat',
+		"pic": 'Piercing',
+		"pow": 'Power',
+		"ran": 'Range',
+		"rap": 'Rapid',
+		"rch": 'Reach',
+		"rel": 'Reload',
+		"ret": 'Returning',
+		"sat": 'Saturate',
+		"shk": 'Shocking',
+		"sil": 'Silent',
+		"son": 'Sonorous',
+		"spc": 'Special',
+		"str": 'Strength',
+		"thr": 'Thrown',
+		"two": 'Two-Handed',
+		"ver": 'Versatile',
+		"vic": 'Vicious',
+		"zon": 'Zone',
+	}
+
 	def load(self, raw_item):
 		super().load(raw_item)
 
@@ -125,44 +174,6 @@ class Weapon(sw5e.Equipment.Equipment):
 		else: return 'Cartridge' #TODO: detect other types of ammo (flechete, missile...)
 
 	def getProperties(self):
-		weapon_properties = {
-			"amm": "Ammunition",
-			"aut": "Auto",
-			"bur": "Burst",
-			"bru": "Brutal",
-			"con": "Constitution",
-			"def": "Defensive",
-			"dex": "Dexterity",
-			"dir": "Dire",
-			"drm": "Disarming",
-			"dgd": "Disguised",
-			"dis": "Disintegrate",
-			"dpt": "Disruptive",
-			"dou": "Double",
-			"fin": "Finesse",
-			"fix": "Fixed",
-			"hvy": "Heavy",
-			"hid": "Hidden",
-			"ken": "Keen",
-			"lgt": "Light",
-			"lum": "Luminous",
-			"mig": "Mighty",
-			"pic": "Piercing",
-			"ran": "Range",
-			"rap": "Rapid",
-			"rch": "Reach",
-			"rel": "Reload",
-			"ret": "Returning",
-			"shk": "Shocking",
-			"sil": "Silent",
-			"son": "Sonorous",
-			"spc": "Special",
-			"str": "Strength",
-			"thr": "Thrown",
-			"two": "Two-Handed",
-			"vic": "Vicious",
-			"ver": "Versatile",
-		}
 		props = {};
 		for prop in self.propertiesMap:
 			if prop == 'Special': continue
@@ -171,10 +182,10 @@ class Weapon(sw5e.Equipment.Equipment):
 				props[prop2] = True
 				continue
 
-			for prop2 in weapon_properties:
-				if prop == weapon_properties[prop2]: break
+			for prop2 in self.weapon_properties:
+				if prop == self.weapon_properties[prop2]: break
 			else: raise ValueError(self.name, prop)
-		return {**props, **{ prop: weapon_properties[prop] in self.propertiesMap for prop in weapon_properties }}
+		return {**props, **{ prop: self.weapon_properties[prop] in self.propertiesMap for prop in self.weapon_properties }}
 
 	def getAutoTargetData(self, data):
 		if type(auto := utils.text.getProperty('Auto', self.propertiesMap)) == list:

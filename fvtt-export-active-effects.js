@@ -20,7 +20,7 @@ let types = [
 	"weapons"
 ]
 types = [
-	"backgrounds"
+	"feats"
 ]
 
 let verbose = false;
@@ -50,7 +50,7 @@ function getUID(item){
 }
 
 for (let type of types){
-	let foundry_effects = {};
+	let foundry_data = {};
 
 	console.log(`Extracting AEs from ${type} compendium`)
 
@@ -68,14 +68,15 @@ for (let type of types){
 		let pack_item = pack_doc.data;
 
 		uid = getUID(pack_item);
-		if (pack_item.effects && pack_item.effects.size) foundry_effects[uid] = pack_item.effects;
+		foundry_data[uid] = {
+			id: uid,
+			effects: pack_item.effects
+		}
 	}
 
 	await pack.configure({locked: was_locked})
 
-	if (Object.keys(foundry_effects).length) {
-		console.log('Foundry Effects:')
-		console.log(foundry_effects);
-	}
+	console.log('Foundry Data:')
+	console.log(foundry_data);
 }
 

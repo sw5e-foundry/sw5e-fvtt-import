@@ -38,7 +38,7 @@ let item_types = {
 		// 'EnhancedShipWeapon',
 		'EnhancedWeapon',
 	],
-	// 'itemmodifications': [
+	// 'modifications': [
 	// 	'EnhancedArmorModification',
 	// 	'EnhancedBlasterModification',
 	// 	'EnhancedClothingModification',
@@ -92,8 +92,7 @@ let journal_entry_types = {
 	'conditions': ['Conditions']
 }
 
-let foundry_ids = {};
-let foundry_effects = {};
+let foundry_data = {};
 
 let allow_delete = true;
 let allow_update = true;
@@ -141,8 +140,10 @@ for (let type of Object.keys(item_types)){
 		if (uid && importer_item) {
 			if (verbose) console.log(`Should update ${pack_item.name}, foundry_id ${pack_item._id}, uid ${uid}`);
 
-			foundry_ids[uid] = pack_item._id;
-			foundry_effects[uid] = pack_item.effects;
+			foundry_data[uid] = {
+				id: pack_item._id,
+				effects: pack_item.effects
+			}
 
 			importer_item._id = pack_item._id;
 			to_update.push(importer_item);
@@ -168,9 +169,11 @@ for (let type of Object.keys(item_types)){
 		items = await Item.createDocuments(to_create, { pack: `sw5e.${type}` });
 		for (let item of items) {
 			uid = item.data.flags.uid;
-			foundry_id = item.data._id;
-			foundry_ids[uid] = foundry_id;
-			foundry_effects[uid] = item.data.effects;
+
+			foundry_data[uid] = {
+				id: item.data._id,
+				effects: item.data.effects
+			}
 		}
 	}
 
@@ -213,7 +216,7 @@ for (let type of Object.keys(journal_entry_types)){
 		if (uid && importer_entry) {
 			if (verbose) console.log(`Should update ${pack_entry.name}, foundry_id ${pack_entry._id}`);
 
-			foundry_ids[uid] = pack_entry._id;
+			foundry_data[uid] = { id: pack_entry._id };
 
 			importer_entry._id = pack_entry._id;
 			to_update.push(importer_entry);
@@ -239,8 +242,7 @@ for (let type of Object.keys(journal_entry_types)){
 		entries = await JournalEntry.createDocuments(to_create, { pack: `sw5e.${type}` });
 		for (let entry of entries) {
 			uid = entry.data.flags.uid;
-			foundry_id = entry.data._id;
-			foundry_ids[uid] = foundry_id;
+			foundry_data[uid] = { id: entry.data._id };
 		}
 	}
 
@@ -248,7 +250,5 @@ for (let type of Object.keys(journal_entry_types)){
 }
 
 
-console.log('Foundry IDs:');
-console.log(foundry_ids);
-console.log('Foundry Effects:');
-console.log(foundry_effects);
+console.log('Foundry Data:');
+console.log(foundry_data);

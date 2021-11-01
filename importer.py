@@ -15,8 +15,7 @@ def withEntityTypes(cls):
 class Importer:
 	__pickle_path = "importer.pickle"
 	__output_path = "output/"
-	__foundry_ids_path = "foundry_ids.json"
-	__foundry_effects_path = "foundry_effects.json"
+	__foundry_data_path = "foundry_data.json"
 	__raw_path = "raw/"
 	__entity_types = [
 		'archetype',
@@ -53,6 +52,8 @@ class Importer:
 	__base_url = "https://sw5eapi.azurewebsites.net/api"
 	version = 1
 
+	warn_limit = 15
+
 	def __init__(self, mode=''):
 
 		if mode == 'refresh':
@@ -70,27 +71,25 @@ class Importer:
 			print('Unable to locate pickle file, loading from API')
 			self.update(msg='Loading...')
 
-		print('Loading foundry ids...')
-		if os.path.isfile(self.__foundry_ids_path):
+		print('Loading foundry data...')
+		if os.path.isfile(self.__foundry_data_path):
 			missing = 0
-			with open(self.__foundry_ids_path, 'r') as ids_file:
-				data = json.load(ids_file)
+			with open(self.__foundry_data_path, 'r') as foundry_data_file:
+				data = json.load(foundry_data_file)
 				for uid in data:
 					entity_type = uid.split('.')[0]
 					if entity_type not in self.__entity_types:
 						entity_type = utils.text.lowerCase(entity_type)
-					item = self.get(entity_type, uid=uid)
+					new_uid = re.sub(r'\.mode-\w+$', '', uid)
+					item = self.get(entity_type, uid=new_uid)
 					if item:
-						item.foundry_id = data[uid]
+						item.foundry_id = data[uid]["id"]
+						if "effects" in data[uid]: item.effects = data[uid]["effects"]
 					else:
-						## Don't print an error for alternate weapon modes, as those are only generated on the output method
-						if re.search(r'((?:\w+-\w+\.)+)mode-(\w+)', uid):
-							continue
-						else:
-							if missing <= 5:
-								print(f'	Foundry id for uid {uid}, but no such item exists')
-							missing += 1
-			if missing > 5: print(f'	And {missing-5} more...')
+						if missing <= self.warn_limit:
+							print(f'	Foundry data for uid {uid}, but no such item exists')
+						missing += 1
+			if missing > self.warn_limit: print(f'	And {missing-self.warn_limit} more...')
 
 			missing = 0
 			for entity_type in self.__entity_types:
@@ -98,56 +97,17 @@ class Importer:
 				for uid in storage:
 					item = storage[uid]
 					if not item.foundry_id:
+						## TODO: Remove this once starship items are done
+						if re.search(r'EnhancedItem\.name-ship', uid): continue
 						## TODO: Find a way to set the foundry_ids of the weapon modes
 						if item.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', item.propertiesMap): continue
 						if item.__class__.__name__ == 'Weapon' and item.modes: continue
-						if uid.startswith('EnhancedItem'):
-							## TODO remove this after modifications are finished
-							continue
-						if missing <= 5:
-							print(f'	Item missing it\'s foundry_id: {uid}')
+						if missing <= self.warn_limit:
+							print(f'	Item missing it\'s foundry data: {uid}')
 						missing += 1
-			if missing > 5: print(f'	And {missing-5} more...')
+			if missing > self.warn_limit: print(f'	And {missing-self.warn_limit} more...')
 		else:
-			print('	Unable to open foundry ids file')
-
-		print('Loading active effects...')
-		if os.path.isfile(self.__foundry_effects_path):
-			missing = 0
-			with open(self.__foundry_effects_path, 'r') as effects_file:
-				data = json.load(effects_file)
-				for uid in data:
-					entity_type = uid.split('.')[0]
-					if entity_type not in self.__entity_types:
-						entity_type = utils.text.lowerCase(entity_type)
-					item = self.get(entity_type, uid=uid)
-					if item:
-						item.effects = data[uid]
-					else:
-						## Don't print an error for alternate weapon modes, as those are only generated on the output method
-						if re.search(r'((?:\w+-\w+\.)+)mode-(\w+)', uid):
-							continue
-						else:
-							if missing <= 5:
-								print(f'	Active effects for uid {uid}, but no such item exists')
-							missing += 1
-			if missing > 5: print(f'	And {missing-5} more...')
-
-			missing = 0
-			for entity_type in self.__entity_types:
-				storage = self.__getItemList(entity_type)
-				for uid in storage:
-					item = storage[uid]
-					if hasattr(item, 'effects') and item.effects == None:
-						## TODO: Find a way to set the active effects of the weapon modes
-						if item.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', item.propertiesMap): continue
-						if item.__class__.__name__ == 'Weapon' and item.modes: continue
-						if missing <= 5:
-							print(f'	Item missing it\'s active effects: {uid}')
-						missing += 1
-			if missing > 5: print(f'	And {missing-5} more...')
-		else:
-			print('	Unable to open active effects file')
+			print('	Unable to open foundry data file')
 
 	def __del__(self):
 		# with open(self.__pickle_path, 'wb+') as pickle_file:

@@ -104,8 +104,8 @@ def getUses(text, name):
 				uses_min = 1 if match['min'] == 'once' else int(match['min'] or 0)
 
 				#TODO: Change this when foundry supports ability mod on max uses
-				uses = f'@abilities.{uses_ability1}.score'
-				if uses_ability2: uses = f'max({uses}, @abilities.{uses_ability2}.score)'
+				uses = f'@abilities.{uses_ability1}.value'
+				if uses_ability2: uses = f'max({uses}, @abilities.{uses_ability2}.value)'
 				uses = f'floor(({uses} - 10) / 2)'
 				# uses = f'@abilities.{uses_ability1}.mod'
 				# if uses_ability2: uses = f'max({uses}, @abilities.{uses_ability2}.mod)'
@@ -205,13 +205,13 @@ def getUses(text, name):
 			pattern = r'that barrier has hit points equal to twice your scout level \+ your intelligence modifier'
 			if match := re.search(pattern, text):
 				found = True
-				uses = '2 * @classes.scout.levels + floor((@abilities.int.score - 10) / 2)'
+				uses = '2 * @classes.scout.levels + floor((@abilities.int.value - 10) / 2)'
 
 		if not found: ## CUSTOM (twiceConsularLevelPlusWisOrCha)
 			pattern = r'the barrier has hit points equal to twice your consular level \+ your wisdom or charisma modifier \(your choice\)'
 			if match := re.search(pattern, text):
 				found = True
-				uses = '2 * @classes.consular.levels + floor((max(@abilities.wis.score, @abilities.cha.score) - 10) / 2)'
+				uses = '2 * @classes.consular.levels + floor((max(@abilities.wis.value, @abilities.cha.value) - 10) / 2)'
 
 		if not found: ## CUSTOM (EngineerLevel)
 			pattern = r'has (?:a number of )?hit points equal to (?P<five>5 x )?your engineer level'

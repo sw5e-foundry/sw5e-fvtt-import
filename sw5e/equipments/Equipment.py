@@ -2,6 +2,38 @@ import sw5e.Equipment, utils.text
 import re, json
 
 class Equipment(sw5e.Equipment.Equipment):
+	armor_properties = [
+			'Absorptive',
+			'Agile',
+			'Anchor',
+			'Avoidant',
+			'Barbed',
+			'Bulky',
+			'Charging',
+			'Concealing',
+			'Cumbersome',
+			'Gauntleted',
+			'Imbalanced',
+			'Impermeable',
+			'Insulated',
+			'Interlocking',
+			'Lambent',
+			'Lightweight',
+			'Magnetic',
+			'Obscured',
+			'Powered',
+			'Reactive',
+			'Regulated',
+			'Reinforced',
+			'Responsive',
+			'Rigid',
+			'Silent',
+			'Spiked',
+			'Steadfast',
+			'Strength',
+			'Versatile'
+	]
+
 	def load(self, raw_item):
 		super().load(raw_item)
 
@@ -68,38 +100,7 @@ class Equipment(sw5e.Equipment.Equipment):
 		}
 
 	def getProperties(self):
-		armor_properties = [
-			'Absorptive',
-			'Agile',
-			'Anchor',
-			'Avoidant',
-			'Barbed',
-			'Bulky',
-			'Charging',
-			'Concealing',
-			'Cumbersome',
-			'Gauntleted',
-			'Imbalanced',
-			'Impermeable',
-			'Insulated',
-			'Interlocking',
-			'Lambent',
-			'Lightweight',
-			'Magnetic',
-			'Obscured',
-			'Powered',
-			'Reactive',
-			'Regulated',
-			'Reinforced',
-			'Responsive',
-			'Rigid',
-			'Silent',
-			'Spiked',
-			'Steadfast',
-			'Strength',
-			'Versatile'
-		]
-		return { prop: prop in self.propertiesMap for prop in armor_properties }
+		return { prop: prop in self.propertiesMap for prop in self.armor_properties }
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
