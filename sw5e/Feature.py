@@ -110,9 +110,6 @@ class Feature(BaseFeature):
 	def process(self, old_item, importer):
 		super().process(old_item, importer)
 
-		#TODO: Remove this once the typo is fixed
-		if self.sourceName == 'Juyo/Vapaad Form': self.sourceName = 'Juyo/Vaapad Form'
-
 		self.class_name = self.getClassName(importer)
 		self.requirements = self.getRequirements(importer)
 		self.contentType, self.contentTypeEnum = self.getContentType(importer)
@@ -134,7 +131,7 @@ class Feature(BaseFeature):
 				'Scholar': 'SCLR',
 				'Scout': 'SCT',
 				'Sentinel': 'SNTL',
-			}[self.class_name or self.sourceName] or 'BSKR'
+			}.get(self.class_name or self.sourceName, 'BSKR')
 			activation = {
 				'bonus': 'Bonus',
 				'action': 'Action',
@@ -142,7 +139,7 @@ class Feature(BaseFeature):
 				'special': 'Action',
 				'none': 'Passive',
 				None: 'Passive',
-			}[self.activation] or 'Passive'
+			}.get(self.activation, 'Passive')
 			return f'systems/sw5e/packs/Icons/Class%20Features/{class_abbr}{"-ARCH" if self.source == "Archetype" else ""}-{activation}.webp'
 		else:
 			name = self.sourceName

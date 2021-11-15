@@ -103,12 +103,8 @@ def getUses(text, name):
 				uses_rounded = match['rounded']
 				uses_min = 1 if match['min'] == 'once' else int(match['min'] or 0)
 
-				#TODO: Change this when foundry supports ability mod on max uses
-				uses = f'@abilities.{uses_ability1}.value'
-				if uses_ability2: uses = f'max({uses}, @abilities.{uses_ability2}.value)'
-				uses = f'floor(({uses} - 10) / 2)'
-				# uses = f'@abilities.{uses_ability1}.mod'
-				# if uses_ability2: uses = f'max({uses}, @abilities.{uses_ability2}.mod)'
+				uses = f'@abilities.{uses_ability1}.mod'
+				if uses_ability2: uses = f'max({uses}, @abilities.{uses_ability2}.mod)'
 
 				if uses_base: uses = f'{uses_base} + {uses}'
 				if uses_min: uses = f'max({uses}, {uses_min})'
@@ -164,7 +160,7 @@ def getUses(text, name):
 		sp_n_times = capt(sp_n) + r' times|(once|twice|thrice)'
 
 		if not found: ## NUMBER times
-			pattern = r'you can ' + ncapt(sp_action) + r' (?:a (?:combined )?total of )?' + ncapt(sp_n_times)
+			pattern = r'you (?:can|may) ' + ncapt(sp_action) + r' (?:a (?:combined )?total of )?' + ncapt(sp_n_times)
 			pattern += r'|(?:you have|(?:this|the) \w+ has) ' + capt(sp_n) + r' (?:superiority dice|amplified shots|(?!hit)(?:\w+ )?points|charges)'
 
 			if match := re.search(pattern, text):
@@ -191,8 +187,8 @@ def getUses(text, name):
 					}[number]
 
 		if not found: ## ONCE
-			pattern = r'once (you(?:[\'—]ve| have)?|the \w+ (?:has|have) been) ' + ncapt(sp_action_past)
-			pattern += r'|you (?:can[\'—]t|cannot|can not) ' + ncapt(sp_action) + r' (?:again )?until'
+			pattern = r'once (you([\'—]ve| have)?|the \w+ (has|have) been|your companion has) ' + ncapt(sp_action_past)
+			pattern += r'|you (can[\'—]t|cannot|can not) ' + ncapt(sp_action) + r' (again )?until'
 			pattern += r'|if you ' + ncapt(sp_action) + r' again before'
 			pattern += r'|rest before you can ' + ncapt(sp_action) + r' again'
 
@@ -205,13 +201,13 @@ def getUses(text, name):
 			pattern = r'that barrier has hit points equal to twice your scout level \+ your intelligence modifier'
 			if match := re.search(pattern, text):
 				found = True
-				uses = '2 * @classes.scout.levels + floor((@abilities.int.value - 10) / 2)'
+				uses = '2 * @classes.scout.levels + @abilities.int.mod'
 
 		if not found: ## CUSTOM (twiceConsularLevelPlusWisOrCha)
 			pattern = r'the barrier has hit points equal to twice your consular level \+ your wisdom or charisma modifier \(your choice\)'
 			if match := re.search(pattern, text):
 				found = True
-				uses = '2 * @classes.consular.levels + floor((max(@abilities.wis.value, @abilities.cha.value) - 10) / 2)'
+				uses = '2 * @classes.consular.levels + max(@abilities.wis.mod, @abilities.cha.mod)'
 
 		if not found: ## CUSTOM (EngineerLevel)
 			pattern = r'has (?:a number of )?hit points equal to (?P<five>5 x )?your engineer level'
@@ -248,6 +244,7 @@ def getUses(text, name):
 			pattern += r'|rest, you can (?:choose|replace|change)'
 			pattern += r'|rest, you must make a '
 			pattern += r'|rest, you gain'
+			pattern += r'|feature after you complete a short or long rest'
 			if match := re.search(pattern, text):
 				found = False
 
@@ -306,9 +303,9 @@ def getAction(text, name):
 		text = text.lower()
 
 		## Power Attack
-		pattern = r'make a (ranged|melee) (force|tech) attack'
+		pattern = r'(make|making) a (?P<range>ranged|melee) (force|tech) attack'
 		if (match := re.search(pattern, text)):
-			if match.group(0) == 'ranged': action_type = 'rpak'
+			if match['range'] == 'ranged': action_type = 'rpak'
 			else: action_type = 'mpak'
 
 		## Saving Throw
@@ -402,7 +399,7 @@ def getAction(text, name):
 			nonlocal text
 			nonlocal name
 
-			pattern_ignore = r'on the d20|d20 roll|rolls? the d20|roll of the d20'
+			pattern_ignore = r'on the d20|d20 roll|rolls? the d20|roll of the d20|d20s'
 			pattern_ignore += r'|uses a ' + match[0]
 			pattern_ignore += r'|(?:versatile|barbed|gauntleted|spiked|double) \(' + match[0] + r'\)(?: and \w+(?: \d+)?)? propert(?:y|ies)' ## versatile (2d4) property
 			pattern_ignore += r'|\|\s*' + match[0] + r'\s*\|' ## |d20|
@@ -416,6 +413,7 @@ def getAction(text, name):
 			pattern_ignore += r'|plus ' + match[0] + ' for each slot level'
 			pattern_ignore += r'|to a maximum of ' + match[0]
 			pattern_ignore += r'|more than ' + match[0] + ' additional damage'
+			pattern_ignore += r'|instead of restoring ' + match[0] + ' hit points'
 
 			## TODO: Rework this to not use a hardcoded list
 			if re.search(pattern_ignore, text) or name in ('Alter Self', 'Spectrum Bolt', 'Flow-Walking', 'Intercept', 'Goggles of the Tinkerer'):

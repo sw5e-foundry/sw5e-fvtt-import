@@ -47,8 +47,8 @@ class Background(sw5e.Entity.Item):
 
 	def getFlavorDescription(self):
 		text = self.flavorDescription
-		if text and (match := re.search(r'\.\s*\|\s*d\d+\s*\|', text)):
-			text = text[:match.start()+1]
+		if text and (match := re.search(r'\s*\|\s*d\d+\s*\|', text)):
+			text = text[:match.start()]
 		return utils.text.markdownToHtml(text)
 
 	def getTable(self, table, name):

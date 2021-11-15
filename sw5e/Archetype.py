@@ -38,12 +38,12 @@ class Archetype(sw5e.Entity.Item):
 		if importer:
 			feature_data = { "name": feature_name, "source": 'archetype', "sourceName": self.full_name, "level": feature_level }
 			feature = importer.get('feature', data=feature_data)
-			if feature and feature.foundry_id:
-				text = f'@Compendium[sw5e.archetypefeatures.{feature.foundry_id}]{{{text}}}'
+			if feature:
+				if feature.foundry_id: text = f'@Compendium[sw5e.archetypefeatures.{feature.foundry_id}]{{{text}}}'
+				else: self.broken_links = True
 			else:
 				self.broken_links = True
-				if self.foundry_id:
-					print(f'		Unable to find feature {feature_data=}')
+				if self.foundry_id: print(f'		Unable to find feature {feature_data=}')
 		return text
 
 	def getSubItemFeatures(self):
@@ -84,7 +84,7 @@ class Archetype(sw5e.Entity.Item):
 	def getDescription(self, importer):
 		text = f'## {self.full_name}\n'
 
-		patt = r'### (?P<name>\w+(?: \w+)*)' # '### Fast and Agile'
+		patt = r'### (?P<name>[^\n]+)' # '### Fast and Agile'
 		patt += r'(?P<after>\s*'
 		patt += r'_\*\*' + self.name + r':\*\* (?P<lvl>\d+)' # '_**Acquisitions Practice:** 3rd'
 		patt += r'[^#]*)'

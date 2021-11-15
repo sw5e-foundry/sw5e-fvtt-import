@@ -1,4 +1,4 @@
-import pickle, json, requests, os.path, re, sys
+import pickle, json, requests, os, re, sys
 import sw5e.Class, sw5e.Archetype, sw5e.Species, sw5e.Background
 import sw5e.ClassImprovement, sw5e.MulticlassImprovement, sw5e.SplashclassImprovement, sw5e.WeaponFocus, sw5e.WeaponSupremacy
 import sw5e.Feature, sw5e.Feat, sw5e.FightingStyle, sw5e.FightingMastery, sw5e.LightsaberForm
@@ -17,6 +17,7 @@ class Importer:
 	__output_path = "output/"
 	__foundry_data_path = "foundry_data.json"
 	__raw_path = "raw/"
+	__extras_path = "extras/"
 	__entity_types = [
 		'archetype',
 		'armorProperty',
@@ -131,6 +132,14 @@ class Importer:
 				data = json.load(raw_file)
 		return data
 
+	def __getExtraData(self, file_name):
+		data = None
+		path = f'{self.__extras_path}{file_name}'
+		if os.path.isfile(path): 
+			with open(path, 'r+', encoding='utf8') as raw_file:
+				data = json.load(raw_file)
+		return data
+
 	def __saveData(self, file_name, data):
 		with open(f'{self.__raw_path}{file_name}.json', 'w+', encoding='utf8') as raw_file:
 			json.dump(data, raw_file, indent=4, sort_keys=False, ensure_ascii=False)
@@ -143,7 +152,7 @@ class Importer:
 		entity_type = entity_type[:1].upper() + entity_type[1:]
 		return getattr(getattr(sw5e, entity_type), entity_type)
 
-	def get(self, entity_type, uid=None, data=None):
+	def get(self, entity_type, uid=None, data=None, loud=False):
 		if entity_type in ('backpack', 'consumable', 'equipment', 'loot', 'tool', 'weapon'):
 			entity_type = 'equipment'
 
@@ -153,6 +162,9 @@ class Importer:
 			uid = kklass.getUID(data)
 
 		storage = self.__getItemList(entity_type) or {}
+
+		if loud: print(f'Importer.get | {uid=}')
+
 		if uid in storage:
 			return storage[uid]
 		else:
@@ -184,13 +196,21 @@ class Importer:
 		print(msg)
 
 		for entity_type in self.__entity_types:
-			print(f'	{entity_type}')
-			data = self.__getData(entity_type)
+			if data := self.__getData(entity_type):
+				print(f'	{entity_type}')
+				for raw_item in data:
+					self.__processItem(raw_item, entity_type)
 
-			for raw_item in data:
-				self.__processItem(raw_item, entity_type)
-
-
+		extra_files = os.listdir(self.__extras_path)
+		if extra_files:
+			print("Extras...")
+			for file_name in extra_files:
+				if data := self.__getExtraData(file_name):
+					for entity_type in self.__entity_types:
+						if entity_type in data:
+							print(f'	{file_name} ({entity_type})')
+							for raw_item in data[entity_type]:
+								self.__processItem(raw_item, entity_type)
 
 	def output(self, msg='Output...'):
 		print(msg)

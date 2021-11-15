@@ -99,11 +99,6 @@ let allow_update = true;
 let allow_create = true;
 let verbose = false;
 
-
-// item_types = { 'invocations': ['ClassInvocation'] }
-// journal_entry_types = {}
-// verbose = true
-
 for (let type of Object.keys(item_types)){
 	console.log(`Updating ${type} compendium`);
 
@@ -138,8 +133,6 @@ for (let type of Object.keys(item_types)){
 		let importer_item = null;
 		if (uid) importer_item = importer_data[uid];
 		if (uid && importer_item) {
-			if (verbose) console.log(`Should update ${pack_item.name}, foundry_id ${pack_item._id}, uid ${uid}`);
-
 			foundry_data[uid] = {
 				id: pack_item._id,
 				effects: pack_item.effects
@@ -150,17 +143,19 @@ for (let type of Object.keys(item_types)){
 
 			importer_data[uid] = null;
 		}
-		else {
-			if (verbose) console.log(`Should delete ${pack_item.name}, foundry_id ${pack_item._id}, uid ${uid}`);
-			to_delete.push(pack_item._id);
-		}
+		else to_delete.push(pack_item._id);
 	}
 
 	for (let uid of Object.keys(importer_data)) {
 		if (importer_data[uid] == null) continue;
 		let importer_item = importer_data[uid];
-		if (verbose) console.log(`Should create ${importer_item.name}, uid ${uid}`);
 		to_create.push(importer_item);
+	}
+
+	if (verbose) {
+		console.debug(`to_delete: ${to_delete}`);
+		console.debug(`to_update: ${to_update}`);
+		console.debug(`to_create: ${to_create}`);
 	}
 
 	if (allow_delete) await Item.deleteDocuments(to_delete, {pack: `sw5e.${type}`});
@@ -214,8 +209,6 @@ for (let type of Object.keys(journal_entry_types)){
 		let importer_entry = null;
 		if (uid) importer_entry = importer_data[uid];
 		if (uid && importer_entry) {
-			if (verbose) console.log(`Should update ${pack_entry.name}, foundry_id ${pack_entry._id}`);
-
 			foundry_data[uid] = { id: pack_entry._id };
 
 			importer_entry._id = pack_entry._id;
@@ -223,17 +216,19 @@ for (let type of Object.keys(journal_entry_types)){
 
 			importer_data[uid] = null;
 		}
-		else {
-			if (verbose) console.log(`Should delete ${pack_entry.name}, foundry_id ${pack_entry._id}`);
-			to_delete.push(pack_entry._id);
-		}
+		else to_delete.push(pack_entry._id);
 	}
 
 	for(let uid of Object.keys(importer_data)){
 		if (importer_data[uid] == null) continue;
 		let importer_entry = importer_data[uid];
-		if (verbose) console.log(`Should create ${importer_entry.name}, uid ${uid}`);
 		to_create.push(importer_entry);
+	}
+
+	if (verbose) {
+		console.debug(`to_delete: ${to_delete}`);
+		console.debug(`to_update: ${to_update}`);
+		console.debug(`to_create: ${to_create}`);
 	}
 
 	if (allow_delete) await JournalEntry.deleteDocuments(to_delete, {pack: `sw5e.${type}`});

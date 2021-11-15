@@ -84,7 +84,7 @@ class Equipment(sw5e.Entity.Item):
 			"condition": ''
 		} if self.activation != 'none' else {}
 
-		#TODO: extract duration, target, range, uses, consume, damage and other rolls
+		#TODO: extract duration, target, range, consume, damage and other rolls
 		data["data"]["duration"] = {
 			"value": None,
 			"units": ''

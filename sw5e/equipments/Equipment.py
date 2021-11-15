@@ -86,7 +86,7 @@ class Equipment(sw5e.Equipment.Equipment):
 			else:
 				equipment_type = 'trinket'
 		else:
-			ac = re.search(r'^(\d+)', self.ac)
+			ac = re.search(r'^\+?(\d+)', self.ac)
 			if ac != None: ac = int(ac.group(1))
 			equipment_type = self.armorClassification.lower()
 

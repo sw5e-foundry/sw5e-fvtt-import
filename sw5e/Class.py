@@ -98,10 +98,10 @@ class Class(sw5e.Entity.Item):
 
 							feature = importer.get('feature', data=feature_data)
 							if feature and feature.foundry_id:
-								features[i] = f'@Compendium[sw5e.classfeatures.{feature.foundry_id}]{{{feature.name.capitalize()}}}'
+									features[i] = f'@Compendium[sw5e.classfeatures.{feature.foundry_id}]{{{feature.name.capitalize()}}}'
 							else:
 								self.broken_links = True
-								if self.foundry_id:
+								if self.foundry_id and not feature:
 									print(f'		Unable to find feature {feature_data=}')
 					element = ', '.join(features)
 				else:
