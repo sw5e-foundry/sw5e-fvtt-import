@@ -10,7 +10,7 @@ class FightingStyle(sw5e.Feature.BaseFeature):
 	def process(self, old_item, importer):
 		super().process(old_item, importer)
 
-	def getImg(self):
+	def getImg(self, importer=None):
 		name = self.name
 		name = re.sub(r'[/,]', r'-', name)
 		name = re.sub(r'[\s]', r'', name)

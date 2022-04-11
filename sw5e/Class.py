@@ -64,7 +64,7 @@ class Class(sw5e.Entity.Item):
 
 		return out_str
 
-	def getImg(self, capitalized=True, index=""):
+	def getImg(self, importer=None, capitalized=True, index=""):
 		if index: index = f'_{index}'
 		name = self.name if capitalized else self.name.lower()
 		name = re.sub(r'[/,]', r'-', name)
@@ -208,7 +208,7 @@ class Class(sw5e.Entity.Item):
 		data["data"]["className"] = self.name
 		data["data"]["levels"] = 1
 		data["data"]["archetype"] = ""
-		data["data"]["hitDice"] = self.hitDiceDieType
+		data["data"]["hitDice"] = f'd{self.hitDiceDieType}'
 		data["data"]["hitDiceUsed"] = 0
 		data["data"]["saves"] = [save[:3].lower() for save in self.savingThrows]
 		data["data"]["skills"] = {

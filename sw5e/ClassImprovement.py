@@ -2,7 +2,7 @@ import sw5e.Feature, utils.text
 import re, json
 
 class ClassImprovement(sw5e.Feature.CustomizationOption):
-	def getImg(self):
+	def getImg(self, importer=None):
 		name = self.name
 		name = re.sub(r'[/,]', r'-', name)
 		name = re.sub(r'[\s]', r'', name)

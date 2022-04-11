@@ -98,8 +98,12 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		self.is_modification = self.type.endswith('Modification')
 		if (self.is_modification):
-			self.modification_type = self.type[:-12].lower()
-			self.modification_slot = self.modification_slots[self.modification_type][self.subtype]
+			if (self.subtype == "augment"):
+				self.modification_type = "augment"
+				self.modification_slot = ""
+			else:
+				self.modification_type = self.type[:-12].lower()
+				self.modification_slot = self.modification_slots[self.modification_type][self.subtype]
 
 	def getActivation(self):
 		return utils.text.getActivation(self.text, self.uses, self.recharge)
@@ -127,15 +131,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		return 0, 0
 
 	def getRarity(self):
-		mapping = {
-			"standard": 'common',
-			"premium": 'uncommon',
-			"prototype": 'rare',
-			"advanced": 'veryRare',
-			"legendary": 'legendary',
-			"artifact": 'artifact',
-		}
-		return mapping[self.rarityText]
+		return self.rarityText
 
 	def applySubtype(self, data):
 		if self.subtypeType == 'Specific': return data
@@ -315,15 +311,26 @@ class EnhancedItem(sw5e.Entity.Item):
 			text = f'{utils.text.markdownToHtml(header)}\n {text}'
 		return text
 
-	def getImg(self):
+	def getImg(self, importer=None):
 		if self.is_modification:
 			return f'systems/sw5e/packs/Icons/Modifications/{self.subtype}.svg'
 
+		# Try to find the base item and use it's item
+		name = re.sub(r'\s*\([^()]*\)$', '', self.name)
+		if name != self.name and self.type != 'CyberneticAugmentation':
+			data = {
+				'name': name,
+				'equipment_type': self.getType().capitalize(),
+				'equipmentCategory': self.subtype
+			}
+			if importer and (base := importer.get('equipment', data=data)):
+				return base.getImg(importer=importer)
+
 		# TODO: Remove this once there are icons for Enhanced Items
-		if self.name not in ('Alacrity Adrenal', 'Battle Adrenal', 'Stamina Adrenal', 'Strength Adrenal', 'Mandalorian Beskar\'gam', 'Mandalorian Helmet', 'Mandalorian Shuk\'orok'):
+		if name not in ('Alacrity Adrenal', 'Battle Adrenal', 'Stamina Adrenal', 'Strength Adrenal', 'Mandalorian Beskar\'gam', 'Mandalorian Helmet', 'Mandalorian Shuk\'orok'):
 			return 'icons/svg/item-bag.svg'
 
-		name = self.name
+		# Otherwise use the custom icon
 		name = re.sub(r'[/,]', r'-', name)
 		name = re.sub(r'[\s]', r'', name)
 		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
@@ -373,8 +380,8 @@ class EnhancedItem(sw5e.Entity.Item):
 				if key in ("data", "img"): continue
 				item[key] = copy.deepcopy(superdata[key])
 
-			if self.getImg() != 'icons/svg/item-bag.svg':
-				item["img"] = self.getImg()
+			if self.getImg(importer=importer) != 'icons/svg/item-bag.svg':
+				item["img"] = self.getImg(importer=importer)
 
 			if mode:
 				item["name"] += f' ({mode.title()})'
@@ -535,7 +542,7 @@ class EnhancedItem(sw5e.Entity.Item):
 							prop_id = prop
 							break
 				if prop_id:
-					data["data"]["properties"][prop_id] = (match["op"] == "gains")
+					data["data"]["properties"][prop_id] = match2["val"] or True if (match["op"] == "gains") else False;
 					data["data"]["properties"]["indeterminate"][prop_id] = False
 				else:
 					raise ValueError(self.name, data["data"]["modificationItemType"], match.groups(), match[0], match2.groups(), match2[0])

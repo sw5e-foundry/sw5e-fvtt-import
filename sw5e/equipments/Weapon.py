@@ -44,6 +44,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		"son": 'Sonorous',
 		"spc": 'Special',
 		"str": 'Strength',
+		"swi": 'Switch',
 		"thr": 'Thrown',
 		"two": 'Two-Handed',
 		"ver": 'Versatile',
@@ -62,18 +63,17 @@ class Weapon(sw5e.Equipment.Equipment):
 		self.weapon_type = self.getWeaponType()
 		self.ammo_type = self.getAmmoType()
 
-	def getImg(self):
+	def getImg(self, importer=None):
 		kwargs = {
 			'item_type': self.weaponClassification,
 			# 'no_img': ('Unknown',),
 			'default_img': 'systems/sw5e/packs/Icons/Simple%20Blasters/Hold-out.webp',
 			'plural': True
 		}
-		return super().getImg(**kwargs)
+		return super().getImg(importer=importer, **kwargs)
 
 	def getDescription(self, importer):
-		properties = self.propertiesMap
-		properties = {prop: properties[prop] for prop in self.propertiesMap if prop != 'Special'}
+		properties = {prop: self.propertiesMap[prop] for prop in self.propertiesMap if prop != 'Special'}
 
 		text = ''
 
@@ -175,17 +175,24 @@ class Weapon(sw5e.Equipment.Equipment):
 
 	def getProperties(self):
 		props = {};
-		for prop in self.propertiesMap:
-			if prop == 'Special': continue
-			if prop == '' and (prop2 := re.search(r'^(?P<prop>[\w-]+)', self.propertiesMap[prop])):
-				prop2 = prop2['prop'].capitalize()
-				props[prop2] = True
-				continue
 
-			for prop2 in self.weapon_properties:
-				if prop == self.weapon_properties[prop2]: break
-			else: raise ValueError(self.name, prop)
-		return {**props, **{ prop: self.weapon_properties[prop] in self.propertiesMap for prop in self.weapon_properties }}
+		pattern = r'^(?P<property>' + (r'|'.join(self.weapon_properties.values())).lower() + r')'
+
+		for prop in self.propertiesMap.values():
+			prop = prop.lower()
+			if prop == 'special': continue
+
+
+			if (name := re.search(pattern, prop)):
+				name = name['property']
+				key = [key for key in self.weapon_properties if self.weapon_properties[key].lower() == name][0]
+				if (value := re.search(r'(\d*d\d+)|((?<!d)\d+(?!d))', prop)):
+					if value[1]: props[key] = value[1]
+					else: props[key] = int(value[2])
+				else:
+					props[key] = True
+			else: raise ValueError(self.name, prop, pattern)
+		return props
 
 	def getAutoTargetData(self, data):
 		if type(auto := utils.text.getProperty('Auto', self.propertiesMap)) == list:

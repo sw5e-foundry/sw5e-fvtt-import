@@ -71,14 +71,14 @@ class Item(Entity):
 		name = re.sub(r'[ /]', r'', name)
 		return name
 
-	def getImg(self):
+	def getImg(self, importer=None):
 		return 'icons/svg/item-bag.svg'
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
 		data["type"] = self.getType()
-		data["img"] = self.getImg()
+		data["img"] = self.getImg(importer=importer)
 		data["data"] = {}
 		data["effects"] = self.effects
 
@@ -115,5 +115,5 @@ class Property(JournalEntry):
 
 	def getContent(self, val=None):
 		content = self.content
-		if val: content = re.sub(r'#### \w+', f'#### {val.capitalize()}', content)
+		if val: content = re.sub(r'#### [\w-]+', f'#### {val.capitalize()}', content)
 		return utils.text.markdownToHtml(content)

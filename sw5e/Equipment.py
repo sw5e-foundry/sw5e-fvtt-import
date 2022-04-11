@@ -37,15 +37,17 @@ class Equipment(sw5e.Entity.Item):
 	def process(self, old_item, importer):
 		super().process(old_item, importer)
 
-		self.uses, self.uses_value, self.recharge = None, None, ''
+		self.uses, self.uses_value, self.recharge = None, None, None
+		self.baseItem = self.getBaseItem()
 
-	def getImg(self, item_type=None, no_img=('Unknown',), default_img='systems/sw5e/packs/Icons/Storage/Crate.webp', plural=False):
+	def getImg(self, importer=None, item_type=None, no_img=('Unknown',), default_img='systems/sw5e/packs/Icons/Storage/Crate.webp', plural=False):
 		if item_type == None: item_type = self.equipmentCategory
 
 		#TODO: Remove this once there are icons for those categories
 		if item_type in no_img: return default_img
 
 		name = self.name
+		name = re.sub(r'(\b\w+\b)', lambda w: w[0].capitalize(), name)
 		name = re.sub(r'[/,]', r'-', name)
 		name = re.sub(r'[\s]', r'', name)
 		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
@@ -64,6 +66,9 @@ class Equipment(sw5e.Entity.Item):
 		if div: return int(div.group(1)) / int(div.group(2))
 		else: return int(self.weight)
 
+	def getBaseItem(self):
+		return re.sub(r'\'|\s+|\([^)]*\)', '', self.name.lower());
+
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
@@ -74,9 +79,11 @@ class Equipment(sw5e.Entity.Item):
 		data["data"]["weight"] = self.getWeight()
 		data["data"]["price"] = self.cost
 		data["data"]["attunement"] = 0
-		data["data"]["equiped"] = False
+		data["data"]["equipped"] = False
 		data["data"]["rarity"] = ''
 		data["data"]["identified"] = True
+
+		data["data"]["baseItem"] = self.baseItem
 
 		data["data"]["activation"] = {
 			"type": self.activation,
@@ -153,7 +160,12 @@ class Equipment(sw5e.Entity.Item):
 			"AlcoholicBeverage": 'Consumable',
 			"Spice": 'Consumable',
 		}
-		equipment_type = mapping[raw_item["equipmentCategory"]]
+		equipment_type = None
+		if "equipmentCategory" in raw_item and raw_item["equipmentCategory"] in mapping:
+			equipment_type = mapping[raw_item["equipmentCategory"]]
+		elif "equipment_type" in raw_item:
+			equipment_type = raw_item["equipment_type"]
+
 		if not equipment_type:
 			print(f'Unexpected item type, {raw_item=}')
 			raise ValueError(cls, raw_item["name"], raw_item["equipmentCategory"], raw_item)

@@ -48,7 +48,7 @@ class BaseFeature(sw5e.Entity.Item):
 		text = utils.text.markdownToHtml(self.text)
 		return { "value": text }
 
-	def getImg(self):
+	def getImg(self, importer=None):
 		raise NotImplementedError
 
 	def getData(self, importer):
@@ -118,7 +118,7 @@ class Feature(BaseFeature):
 	def getType(self):
 		return "classfeature" if self.source in ['Class', 'Archetype', 'ClassInvocation', 'ArchetypeInvocation'] else "feat"
 
-	def getImg(self):
+	def getImg(self, importer=None):
 		if self.source in ['Class', 'Archetype', 'ClassInvocation', 'ArchetypeInvocation']:
 			class_abbr = {
 				'Berserker': 'BSKR',
@@ -232,7 +232,7 @@ class CustomizationOption(BaseFeature):
 	def getType(self):
 		return 'feat'
 
-	def getImg(self):
+	def getImg(self, importer=None):
 		return 'icons/svg/item-bag.svg'
 
 	def getData(self, importer):

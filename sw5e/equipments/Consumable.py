@@ -17,14 +17,14 @@ class Consumable(sw5e.Equipment.Equipment):
 			self.uses = 480
 			self.recharge = 'charges'
 
-	def getImg(self):
+	def getImg(self, importer=None):
 		kwargs = {
 			# 'item_type': self.equipmentCategory,
 			'no_img': ('Unknown', 'AlcoholicBeverage'),
 			'default_img': 'systems/sw5e/packs/Icons/Storage/Canteen.webp',
 			# 'plural': False
 		}
-		return super().getImg(**kwargs)
+		return super().getImg(importer=importer, **kwargs)
 
 	def getDescription(self, importer):
 		text = self.description

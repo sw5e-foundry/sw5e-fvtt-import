@@ -57,12 +57,12 @@ def getActivation(text, uses, recharge):
 			return 'action'
 		elif re.search(r'you can use your reaction|using your reaction|you can use this special reaction', text):
 			return 'reaction'
-		elif uses or (recharge and recharge != 'none'):
+		elif uses or recharge:
 			return 'special'
 	return None
 
 def getUses(text, name):
-	uses, recharge = None, 'none'
+	uses, recharge = None, None
 
 	found = False
 
@@ -245,19 +245,20 @@ def getUses(text, name):
 			pattern += r'|rest, you must make a '
 			pattern += r'|rest, you gain'
 			pattern += r'|feature after you complete a short or long rest'
+			pattern += r'|until you complete a (?:short|long) rest'
 			if match := re.search(pattern, text):
 				found = False
 
-				recharge, uses = 'none', None
+				recharge, uses = None, None
 
-		if (recharge != 'none') and not found:
+		if recharge and not found:
 			print(f'Failed to recognize uses count: on {name}')
 			# print(f'{=}')
 			for line in text.split('\n'):
 				print(line)
 			print('\n')
 			raise ValueError
-		if (recharge == 'none') and found:
+		if not recharge and found:
 			print(f'Recognized {uses=}, but failed to recognize recharge on {name}')
 			# print(f'{=}')
 			for line in text.split('\n'):
@@ -319,8 +320,8 @@ def getAction(text, name):
 			save_dc = int(match["dc"]) if match["dc"] else None
 
 		## Dice formula
-		p_formula = r'(?P<dice>\d*d\d+)?(?:(?:\s*\+\s*)?(?P<flat>\d+))?(?:\s*\+ your(?P<ability_mod> [\w ]+?)(?: ability)? modifier)?'
-		p_dformula = r'(?P<dice>\d*d\d+)(?:(?:\s*\+\s*)?(?P<flat>\d+))?(?:\s*\+ your(?P<ability_mod> [\w ]+?)(?: ability)? modifier)?'
+		p_formula = r'(?P<dice>\d*d\d+(?:\s*\+\s*\d*d\d+)*)?(?:(?:\s*\+\s*)?(?P<flat>\d+))?(?:\s*\+ your(?P<ability_mod> [\w ]+?)(?: ability)? modifier)?'
+		p_dformula = r'(?P<dice>\d*d\d+(?:\s*\+\s*\d*d\d+)*)(?:(?:\s*\+\s*)?(?P<flat>\d+))?(?:\s*\+ your(?P<ability_mod> [\w ]+?)(?: ability)? modifier)?'
 
 		## Healing
 		pattern = r'(?:(?:(?:re)?gains?|restores|gaining|a number of) (?P<temp>temporary )?hit points equal to |hit points increase by )' + p_formula
@@ -332,7 +333,7 @@ def getAction(text, name):
 
 			if dice or flat or ability_mod:
 				action_type = action_type or 'heal'
-				formula = dice
+				formula = ('1'+dice if (dice.startswith('d')) else dice) if dice else None
 				if flat:
 					if formula: formula = f'{formula} + {flat}'
 					else: formula = flat
@@ -358,7 +359,7 @@ def getAction(text, name):
 
 			if dice or flat or ability_mod:
 				action_type = action_type or 'other'
-				formula = dice
+				formula = ('1'+dice if (dice.startswith('d')) else dice) if dice else None
 				if flat:
 					if formula: formula = f'{formula} + {flat}'
 					else: formula = flat
@@ -376,12 +377,12 @@ def getAction(text, name):
 		if (match := re.search(pattern, text)):
 			dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
 
-			formula = dice
+			formula = ('1'+dice if (dice.startswith('d')) else dice) if dice else None
 			if flat:
 				if formula: formula = f'{formula} + {flat}'
 				else: formula = flat
 			if ability_mod:
-				formula = f'{formula or ""} + @mod'
+				formula = f'{(formula + " + ") or ""}@mod'
 			damage["versatile"] = formula
 		text = re.sub(pattern, r'FORMULA', text)
 
@@ -399,32 +400,46 @@ def getAction(text, name):
 			nonlocal text
 			nonlocal name
 
+			dice = match[0]
+
 			pattern_ignore = r'on the d20|d20 roll|rolls? the d20|roll of the d20|d20s'
-			pattern_ignore += r'|uses a ' + match[0]
-			pattern_ignore += r'|(?:versatile|barbed|gauntleted|spiked|double) \(' + match[0] + r'\)(?: and \w+(?: \d+)?)? propert(?:y|ies)' ## versatile (2d4) property
-			pattern_ignore += r'|\|\s*' + match[0] + r'\s*\|' ## |d20|
-			pattern_ignore += r'|\d*(?:d\d+)? to (?:a )?' + match[0] ## 1 to d4, d4 to d6
-			pattern_ignore += r'|' + match[0] + r' to (?:a )?\d*d\d+' ## d4 to d6
-			pattern_ignore += r'|' + match[0] + r' at \d+th level' ## 4d8 at 11th level
-			pattern_ignore += r'|th level \(' + match[0] + r'\)' ## 11th level (4d8)
-			pattern_ignore += r'|increases by ' + match[0] + r' when you reach \d+th level' ## increases by 1d8 when you reach 11th level
-			pattern_ignore += r'|(?:recovers|regains) ' + match[0] + r' charges'
-			pattern_ignore += r'|it contains ' + match[0] + r'(?: [+-] \d+)? levels'
-			pattern_ignore += r'|plus ' + match[0] + ' for each slot level'
-			pattern_ignore += r'|to a maximum of ' + match[0]
-			pattern_ignore += r'|more than ' + match[0] + ' additional damage'
-			pattern_ignore += r'|instead of restoring ' + match[0] + ' hit points'
+			pattern_ignore += r'|uses a ' + dice
+			pattern_ignore += r'|(?:versatile|barbed|gauntleted|spiked|double) \(' + dice + r'\)(?: and \w+(?: \d+)?)? propert(?:y|ies)' ## versatile (2d4) property
+			pattern_ignore += r'|\|\s*' + dice + r'\s*\|' ## |d20|
+			pattern_ignore += r'|\d*(?:d\d+)? to (?:a )?' + dice ## 1 to d4, d4 to d6
+			pattern_ignore += r'|' + dice + r' to (?:a )?\d*d\d+' ## d4 to d6
+			pattern_ignore += r'|' + dice + r' at \d+th level' ## 4d8 at 11th level
+			pattern_ignore += r'|th level \(' + dice + r'\)' ## 11th level (4d8)
+			pattern_ignore += r'|increasing by ' + dice + r' for each round' ## increasing by 1d8 for each round you do not detonate it
+			pattern_ignore += r'|increases by ' + dice + r' when you reach \d+th level' ## increases by 1d8 when you reach 11th level
+			pattern_ignore += r'|(?:recovers|regains) ' + dice + r' charges'
+			pattern_ignore += r'|it contains ' + dice + r'(?: [+-] \d+)? levels'
+			pattern_ignore += r'|plus ' + dice + ' for each slot level'
+			pattern_ignore += r'|to a maximum of ' + dice
+			pattern_ignore += r'|more than ' + dice + ' additional damage'
+			pattern_ignore += r'|instead of restoring ' + dice + ' hit points'
+			pattern_ignore += r'|a ' + dice + r' instead of expending'
+			pattern_ignore += r'|add(?: a)? ' + dice + r' to (?:a|an|any|its|the) (?:ability checks)?(?: or )?(?:saving throws?)?(?:rolls?)?'
+			pattern_ignore += r'|rolls(?: a)? ' + dice + r' and subtracts the number rolled'
+			pattern_ignore += r'|instead of its ' + dice + r'\.'
+
+			pattern_recognize = dice + r'(?: tiny projectiles| such fissures|(?:\s*x\s*\d+\s+)?feet)'
+			pattern_recognize += r'|\|\s*' + dice + r'\s*\|'
+			pattern_recognize += r'|for ' + dice + r' days'
+
+
+			formula = ('1'+dice if (dice.startswith('d')) else dice) if dice else None
 
 			## TODO: Rework this to not use a hardcoded list
-			if re.search(pattern_ignore, text) or name in ('Alter Self', 'Spectrum Bolt', 'Flow-Walking', 'Intercept', 'Goggles of the Tinkerer'):
-				return match[0]
+			if re.search(pattern_ignore, text):
+			# if re.search(pattern_ignore, text) or name in ('Alter Self', 'Spectrum Bolt', 'Flow-Walking', 'Intercept', 'Goggles of the Tinkerer'):
+				return formula
 			## TODO: Rework this to not use a hardcoded list
-			elif name in ('Earthquake', 'Preparedness', 'Whirlwind', 'Will of the Force', 'Energetic Burst', 'Force Vision', 'Greater Feedback', 'Insanity', 'Climber', 'Lucky', 'Promising Commander', 'Polearm Specialist'):
-				damage["parts"].append([ match[0], '' ])
+			elif re.search(pattern_recognize, text):
+			# elif name in ('Earthquake', 'Preparedness', 'Whirlwind', 'Will of the Force', 'Energetic Burst', 'Force Vision', 'Greater Feedback', 'Insanity', 'Climber', 'Lucky', 'Promising Commander', 'Polearm Specialist'):
+				damage["parts"].append([ formula, '' ])
 			else:
-				print(f'Unprocessed dice {match[0]} in {name}')
-				print(f'{text=}')
-				raise ValueError
+				raise ValueError(f'Unprocessed dice {formula} in {name}', text)
 
 			return 'FORMULA'
 		re.sub(pattern, foo, text)

@@ -111,7 +111,7 @@ class Archetype(sw5e.Entity.Item):
 
 		return utils.text.markdownToHtml(text)
 
-	def getImg(self, capitalized=True, index=""):
+	def getImg(self, importer=None, capitalized=True, index=""):
 		if index: index = f'_{index}'
 		name = self.full_name if capitalized else self.full_name.lower()
 		name = re.sub(r'[/,]', r'-', name)
@@ -127,7 +127,7 @@ class Archetype(sw5e.Entity.Item):
 		data["data"]["description"] = { "value": self.getDescription(importer) }
 		data["data"]["source"] = self.contentSource
 		data["data"]["className"] = self.className
-		data["data"]["classCasterType"] = self.classCasterType if self.classCasterType != "None" else "",
+		data["data"]["classCasterType"] = self.classCasterType if self.classCasterType != "None" else ""
 
 		return [data]
 

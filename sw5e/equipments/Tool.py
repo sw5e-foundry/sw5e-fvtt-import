@@ -10,14 +10,14 @@ class Tool(sw5e.Equipment.Equipment):
 
 		self.activation = 'action'
 
-	def getImg(self):
+	def getImg(self, importer=None):
 		kwargs = {
 			# 'item_type': self.equipmentCategory,
 			'no_img': ('Unknown', 'Tool'),
 			'default_img': 'systems/sw5e/packs/Icons/Kit/DemolitionsKit.webp',
 			# 'plural': False
 		}
-		return super().getImg(**kwargs)
+		return super().getImg(importer=importer, **kwargs)
 
 	def getDescription(self, importer):
 		text = self.description
@@ -25,42 +25,11 @@ class Tool(sw5e.Equipment.Equipment):
 
 	def getToolType(self):
 		tools = {
-			"Antitoxkit": 'ant',
-			"Archaeologist kit": 'arc',
-			"Armormech's implements": 'armor',
-			"Armstech's implements": 'arms',
-			"Artificer's implements": 'arti',
-			"Artillerist's kit": 'artl',
-			"Artist's implements": 'art',
-			"Astrotech's implements": 'astro',
-			"Audiotech's implements": 'aud',
-			"Bioanalysis kit": 'bioa',
-			"Biochemist's kit": 'bioc',
-			"Biotech's implements": 'bio',
-			"Brewer's kit": 'brew',
-			"Chef's kit": 'chef',
-			"Constructor's implements": 'con',
-			"Cybertech's implements": 'cyb',
-			"Gadgeteer's implements": 'gad',
-			"Geneticist's implements": 'gen',
-			"Demolitions kit": 'demo',
-			"Disguise kit": 'disg',
-			"Forgery kit": 'forg',
 			"GamingSet": 'game',
-			"Jeweler's implements": 'jew',
-			"Mechanic's kit": 'mech',
-			"Munitions kit": 'ammo',
 			"MusicalInstrument": 'music',
-			"Poisoner's kit": 'poi',
-			"Scavenging kit": 'scav',
-			"Security kit": 'secur',
-			"Slicer's kit": 'slic',
-			"Spicer's kit": 'spice',
-			"Surveyor's implements": 'sur',
-			"Synthweaver's implements": 'syn',
-			"Tinker's implements": 'tin'
 		}
-		if self.name in tools: return tools[self.name], 'int'
+		if self.name.find('implements') != -1: return 'artisan', 'int'
+		elif self.name.find('kit') != -1: return 'specialist', 'int'
 		elif self.equipmentCategory in tools: return tools[self.equipmentCategory], 'cha'
 		print(f'		Unable to recognize tool type for {self.name}, {self.equipmentCategory}')
 		return '', 'int'

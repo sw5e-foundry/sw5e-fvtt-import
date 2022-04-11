@@ -30,7 +30,7 @@ class Feat(sw5e.Feature.BaseFeature):
 			else:
 				self.broken_links = True
 
-	def getImg(self):
+	def getImg(self, importer=None):
 		name = self.name
 		name = re.sub(r'[/,]', r'-', name)
 		name = re.sub(r'[\s]', r'', name)

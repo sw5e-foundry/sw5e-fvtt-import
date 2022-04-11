@@ -34,7 +34,7 @@ class Power(sw5e.Entity.Item):
 		target_range = self.getTargetRange()
 		self.target_val, self.target_unit, self.target_type = target_range["target"]
 		self.range_val, self.range_unit = target_range["range"]
-		self.uses, self.recharge = None, ''
+		self.uses, self.recharge = None, None
 		self.action_type, self.damage, self.formula, self.save, self.save_dc, self.ability = self.getAction()
 
 		self.school = self.getSchool()
@@ -119,7 +119,7 @@ class Power(sw5e.Entity.Item):
 		if self.powerType == 'Tech': return 'tec'
 		return ('', 'uni', 'drk', 'lgt')[self.forceAlignmentEnum]
 
-	def getImg(self):
+	def getImg(self, importer=None):
 		name = self.name
 		name = re.sub(r'[/,]', r'-', name)
 		name = re.sub(r'[\s]', r'', name)

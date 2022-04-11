@@ -43,7 +43,7 @@ class Equipment(sw5e.Equipment.Equipment):
 		self.uses, self.recharge = utils.text.getUses(self.description, self.name)
 		self.activation = utils.text.getActivation(self.description, self.uses, self.recharge)
 
-	def getImg(self):
+	def getImg(self, importer=None):
 		kwargs = {
 			'item_type': self.equipmentCategory,
 			'no_img': ('Unknown', 'Clothing'),
@@ -51,7 +51,7 @@ class Equipment(sw5e.Equipment.Equipment):
 			# 'plural': False
 		}
 		if self.equipmentCategory == 'Armor': kwargs["item_type"] += '/' + self.contentSource
-		return super().getImg(**kwargs)
+		return super().getImg(importer=importer, **kwargs)
 
 	def getDescription(self, importer):
 		properties = self.propertiesMap
@@ -101,6 +101,26 @@ class Equipment(sw5e.Equipment.Equipment):
 
 	def getProperties(self):
 		return { prop: prop in self.propertiesMap for prop in self.armor_properties }
+
+	def getBaseItem(self):
+		override = {
+			"Bone light shield": 'lightphysicalshield',
+			"Crystadium medium shield": 'mediumphysicalshield',
+			"Quadanium heavy shield": 'heavyphysicalshield',
+
+			"Durafiber combat suit": 'combatsuit',
+			"Duravlex fiber armor": 'fiberarmor',
+			"Fleximetal fiber armor": 'fiberarmor',
+
+			"Beskar weave armor": 'weavearmor',
+			"Neutronium mesh": 'mesharmor',
+			"Plastoid composite": 'compositearmor',
+
+			"Duranium battle armor": 'battlearmor',
+			"Durasteel exoskeleton": 'heavyexoskeleton',
+			"Laminanium assault": 'assaultarmor',
+		}
+		return override.get(self.name, super().getBaseItem())
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
