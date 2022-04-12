@@ -62,7 +62,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		self.activation = 'action'
 
 		self.weapon_type = self.getWeaponType()
-		self.ammo_type = self.getAmmoType()
+		self.ammo_types = self.getAmmoTypes()
 		self.p_properties = self.getProperties()
 
 	def getImg(self, importer=None):
@@ -109,29 +109,6 @@ class Weapon(sw5e.Equipment.Equipment):
 			'units': 'ft'
 		}
 
-	def getUses(self):
-		if self.ammo_type and self.ammo_type != 'Power Cell':
-			rload = utils.text.getProperty('Reload', self.propertiesMap)
-			return {
-				"value": rload,
-				"max": rload,
-				"per": 'charges'
-			}
-		return {}
-
-	def getConsume(self):
-		if self.ammo_type == 'Power Cell': return {
-			"type": 'charges',
-			"target": '',
-			"amount": 480 // utils.text.getProperty('Reload', self.propertiesMap)
-		}
-		elif self.ammo_type: return {
-			"type": 'ammo',
-			"target": '',
-			"amount": 1
-		}
-		return {}
-
 	def getActionType(self):
 		if self.weapon_type in ('simpleB', 'martialB'):
 			return 'rwak'
@@ -170,10 +147,15 @@ class Weapon(sw5e.Equipment.Equipment):
 
 		return weapon_types[self.weaponClassificationEnum]
 
-	def getAmmoType(self):
-		if not utils.text.getProperty('Reload', self.propertiesMap): return None
-		if self.damageType in ('Energy', 'Ion', 'Acid', 'Fire', 'Sonic', 'Lightning'): return 'Power Cell'
-		else: return 'Cartridge' #TODO: detect other types of ammo (flechete, missile...)
+	def getAmmoTypes(self):
+		if not utils.text.getProperty('Reload', self.propertiesMap): return []
+		if self.damageType == "Kinetic": return ['cartridge']
+		elif (self.name == "Rotary Cannon"): return ['powerGenerator']
+		elif (self.name == "Flechette Cannon"): return ['flechetteMag']
+		elif (self.name == "Vapor Projector"): return ['projectorTank']
+		elif (self.name == "Wrist launcher"): return ['dart', 'flechetteClip', 'missile', 'projectorCanister', 'snare']
+		elif (self.name.endswith("launcher")): return [self.name.split()[0].lower()]
+		else: return ['powerCell']
 
 	def getProperties(self):
 		properties = utils.text.getProperties(self.propertiesMap.values(), self.weapon_properties.values(), strict=False, error=True)
@@ -223,7 +205,7 @@ class Weapon(sw5e.Equipment.Equipment):
 				if (var := utils.text.cleanJson(mode, "PropertiesMap")) not in no: wpn.propertiesMap.update(var)
 
 				wpn.weapon_type = wpn.getWeaponType()
-				wpn.ammo_type = wpn.getAmmoType()
+				wpn.ammo_types = wpn.getAmmoTypes()
 
 				wpn_data = wpn.getData(importer)[0]
 				wpn_data["name"] = f'{self.name} ({mode["Name"]})'
@@ -238,11 +220,6 @@ class Weapon(sw5e.Equipment.Equipment):
 				burst_data["data"]["target"]["value"] = '10'
 				burst_data["data"]["target"]["units"] = 'ft'
 				burst_data["data"]["target"]["type"] = 'cube'
-				if self.ammo_type:
-					burst_data["data"]["consume"]["amount"] *= burst
-					if self.ammo_type != 'Power Cell':
-						burst_data["data"]["uses"]["value"] //= burst
-						burst_data["data"]["uses"]["max"] //= burst
 
 				burst_data["data"]["actionType"] = 'save'
 				burst_data["data"]["save"] = {
@@ -255,12 +232,6 @@ class Weapon(sw5e.Equipment.Equipment):
 			if rapid := utils.text.getProperty('Rapid', self.propertiesMap):
 				rapid_data = copy.deepcopy(original_data)
 				rapid_data["name"] = f'{self.name} (Rapid)'
-
-				if self.ammo_type:
-					rapid_data["data"]["consume"]["amount"] *= rapid
-					if self.ammo_type != 'Power Cell':
-						rapid_data["data"]["uses"]["value"] //= rapid
-						rapid_data["data"]["uses"]["max"] //= rapid
 
 				rapid_data["data"]["actionType"] = 'save'
 				rapid_data["data"]["damage"]["parts"][0][0] = re.sub(r'^(\d+)d', lambda m: f'{int(m[1])*2}d', rapid_data["data"]["damage"]["parts"][0][0])
@@ -283,12 +254,12 @@ class Weapon(sw5e.Equipment.Equipment):
 		data["data"]["target"]["type"] = 'enemy'
 
 		data["data"]["range"] = self.getRange()
-		data["data"]["uses"] = self.getUses()
-		data["data"]["consume"] = self.getConsume()
 		data["data"]["actionType"] = self.getActionType()
 		data["data"]["damage"] = self.getDamage()
 		data["data"]["weaponType"] = self.weapon_type
 		data["data"]["properties"] = self.p_properties
+
+		data["data"]["ammo"] = { "types": self.ammo_types }
 
 		data = self.getAutoTargetData(data)
 		return self.getItemVariations(data, importer)

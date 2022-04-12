@@ -13,3 +13,8 @@
 - equipment.json:
   - defeaning -> deafening
   - switch cannon 'light -> switch'
+- background.json:
+  - blackguard feats
+    - empathetic -> empathic
+    - investigative -> investigator
+    - lorekeeper -> loremaster
