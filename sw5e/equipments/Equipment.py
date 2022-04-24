@@ -83,6 +83,10 @@ class Equipment(sw5e.Equipment.Equipment):
 		if self.armorClassificationEnum == 0:
 			if self.equipmentCategory == 'Clothing':
 				equipment_type = 'clothing'
+			elif self.name.lower().find('focus generator') != -1:
+				equipment_type = 'focusgenerator'
+			elif self.name.lower().find('wristpad') != -1:
+				equipment_type = 'wristpad'
 			else:
 				equipment_type = 'trinket'
 		else:
@@ -119,6 +123,9 @@ class Equipment(sw5e.Equipment.Equipment):
 			"Duranium battle armor": 'battlearmor',
 			"Durasteel exoskeleton": 'heavyexoskeleton',
 			"Laminanium assault": 'assaultarmor',
+
+			"Storing, withering focus generator": 'focusgenerator',
+			"Repelling wristpad": 'wristpad',
 		}
 		return override.get(self.name, super().getBaseItem())
 

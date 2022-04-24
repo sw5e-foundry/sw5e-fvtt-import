@@ -161,7 +161,11 @@ class Equipment(sw5e.Entity.Item):
 			"Spice": 'Consumable',
 		}
 		equipment_type = None
-		if "equipmentCategory" in raw_item and raw_item["equipmentCategory"] in mapping:
+		if raw_item["name"].lower().find("wristpad") != -1:
+			equipment_type = "Equipment"
+		elif raw_item["name"].lower().find("focus generator") != -1:
+			equipment_type = "Equipment"
+		elif "equipmentCategory" in raw_item and raw_item["equipmentCategory"] in mapping:
 			equipment_type = mapping[raw_item["equipmentCategory"]]
 		elif "equipment_type" in raw_item:
 			equipment_type = raw_item["equipment_type"]

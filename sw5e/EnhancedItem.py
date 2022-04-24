@@ -220,9 +220,11 @@ class EnhancedItem(sw5e.Entity.Item):
 				"dex": None,
 			}
 			if self.subtype in ('force', 'focus'):
-				data["data"]["armor"]["type"] = 'trinket'
+				data["data"]["armor"]["type"] = 'focusgenerator'
+				data["data"]["baseItem"] = 'focusgenerator'
 			elif self.subtype == 'tech':
-				data["data"]["armor"]["type"] = 'technology'
+				data["data"]["armor"]["type"] = 'wristpad'
+				data["data"]["baseItem"] = 'wristpad'
 			else:
 				raise ValueError(self.name, self.type, self.subtype, self.subtypeType)
 		elif self.type == 'ItemModification':
