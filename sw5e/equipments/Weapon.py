@@ -40,6 +40,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		"ret": 'Returning',
 		"sat": 'Saturate',
 		"shk": 'Shocking',
+		"smr": 'Autotarget', # Autotarget/Smart
 		"sil": 'Silent',
 		"son": 'Sonorous',
 		"spc": 'Special',
@@ -62,6 +63,7 @@ class Weapon(sw5e.Equipment.Equipment):
 
 		self.weapon_type = self.getWeaponType()
 		self.ammo_type = self.getAmmoType()
+		self.p_properties = self.getProperties()
 
 	def getImg(self, importer=None):
 		kwargs = {
@@ -174,30 +176,17 @@ class Weapon(sw5e.Equipment.Equipment):
 		else: return 'Cartridge' #TODO: detect other types of ammo (flechete, missile...)
 
 	def getProperties(self):
-		props = {};
-
-		pattern = r'^(?P<property>' + (r'|'.join(self.weapon_properties.values())).lower() + r')'
-
-		for prop in self.propertiesMap.values():
-			prop = prop.lower()
-			if prop == 'special': continue
-
-
-			if (name := re.search(pattern, prop)):
-				name = name['property']
-				key = [key for key in self.weapon_properties if self.weapon_properties[key].lower() == name][0]
-				if (value := re.search(r'(\d*d\d+)|((?<!d)\d+(?!d))', prop)):
-					if value[1]: props[key] = value[1]
-					else: props[key] = int(value[2])
-				else:
-					props[key] = True
-			else: raise ValueError(self.name, prop, pattern)
-		return props
+		properties = utils.text.getProperties(self.propertiesMap.values(), self.weapon_properties.values(), strict=False, error=True)
+		return {
+			key: properties[self.weapon_properties[key].lower()]
+			for key in self.weapon_properties.keys()
+			if (self.weapon_properties[key].lower() in properties)
+		}
 
 	def getAutoTargetData(self, data):
-		if type(auto := utils.text.getProperty('Auto', self.propertiesMap)) == list:
-			mod = (auto[0] - 10) // 2
-			prof = auto[1]
+		if 'smr' in self.p_properties and type(auto := self.p_properties["smr"].split(', ')) == list:
+			mod = (int(auto[0]) - 10) // 2
+			prof = int(auto[1])
 			data["data"]["ability"] = 'str'
 			data["data"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
 			data["data"]["damage"]["parts"][0][0] = f'{self.damageNumberOfDice}d{self.damageDieType} + {mod}'
@@ -299,7 +288,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		data["data"]["actionType"] = self.getActionType()
 		data["data"]["damage"] = self.getDamage()
 		data["data"]["weaponType"] = self.weapon_type
-		data["data"]["properties"] = self.getProperties()
+		data["data"]["properties"] = self.p_properties
 
 		data = self.getAutoTargetData(data)
 		return self.getItemVariations(data, importer)

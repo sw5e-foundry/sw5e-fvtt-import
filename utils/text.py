@@ -519,8 +519,48 @@ def getProperty(prop_name, props):
 	if len(vals) == 1: return vals[0]
 	return vals
 
+def getProperties(targets, props_list, strict=False, error=False, verbose=False, needs_end=False):
+	if type(targets) == str: targets = (targets,)
+
+	pname_pat = fr'(?:{"|".join(props_list)})'
+	if not strict: pname_pat = fr'(?:{"|".join(props_list).lower()})'
+	pval_pat = r'(?: (?:\d+)| \((?:[^()]+)\))?'
+	pval_pat_ = r'(?: (?P<flat>\d+)| \((?P<values>[^()]+)\))?'
+	prop_pat = fr'(?:{pname_pat}(?=\W|$){pval_pat})'
+	props_pat = fr'(?:{prop_pat}(?:, {prop_pat})*(?: and {prop_pat})?)'
+
+	pattern = fr'(?P<neg>removes the )?(?P<props>{props_pat})(?: propert(?:y|ies))'
+	if not needs_end: pattern += '?'
+	properties = {}
+
+	for target in targets:
+		if not strict: target = target.lower()
+		if re.search(pattern, target):
+			for match in re.finditer(pattern, target):
+				for prop in props_list:
+					if not strict: prop = prop.lower()
+					if (match2 := re.search(fr'{prop}(?=\W|$){pval_pat_}', match['props'])):
+						if match['neg']:
+							properties[prop] = False
+						else:
+							if match2['flat']:
+								properties[prop] = int(match2['flat'])
+							elif match2['values']:
+								properties[prop] = match2['values']
+							else:
+								properties[prop] = True
+		elif error:
+			raise ValueError(target, props_list)
+	return properties
+
 def lowerCase(word):
 	return word[:1].lower() + word[1:]
+
+def toInt(string):
+	try:
+		return int(string)
+	except ValueError:
+		return string
 
 def makeTable(content, header=None, align=None):
 	table = ''

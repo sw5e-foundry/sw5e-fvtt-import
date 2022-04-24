@@ -94,7 +94,7 @@ class Importer:
 
 			missing = 0
 			for entity_type in self.__entity_types:
-				storage = self.__getItemList(entity_type)
+				storage = self.getItemList(entity_type)
 				for uid in storage:
 					item = storage[uid]
 					if not item.foundry_id:
@@ -144,7 +144,7 @@ class Importer:
 		with open(f'{self.__raw_path}{file_name}.json', 'w+', encoding='utf8') as raw_file:
 			json.dump(data, raw_file, indent=4, sort_keys=False, ensure_ascii=False)
 
-	def __getItemList(self, entity_type):
+	def getItemList(self, entity_type):
 		if entity_type in self.__entity_types:
 			return getattr(self, entity_type)
 
@@ -161,7 +161,7 @@ class Importer:
 			kklass = klass.getClass(data)
 			uid = kklass.getUID(data)
 
-		storage = self.__getItemList(entity_type) or {}
+		storage = self.getItemList(entity_type) or {}
 
 		if loud: print(f'Importer.get | {uid=}')
 
@@ -174,7 +174,7 @@ class Importer:
 		if depth > 10:
 			raise RecursionError(raw_item["name"])
 		try:
-			storage = self.__getItemList(entity_type)
+			storage = self.getItemList(entity_type)
 			klass = self.__getClass(entity_type)
 
 			kklass = klass.getClass(raw_item)
@@ -217,7 +217,7 @@ class Importer:
 		data = {}
 		for entity_type in self.__entity_types:
 			print(f'	{entity_type}')
-			storage = self.__getItemList(entity_type)
+			storage = self.getItemList(entity_type)
 			for uid in storage:
 				item = storage[uid]
 				try:

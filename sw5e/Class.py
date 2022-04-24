@@ -132,23 +132,23 @@ class Class(sw5e.Entity.Item):
 		text = self.classFeatureText
 
 		features = {}
-		for match in re.finditer(r'\s### (?P<name>[^\n]*)\n(?!\s*_\*\*' + self.name + ')', text):
-			text = text[match.start():]
-			feature = []
-
-			pattern = r'#### (?P<name>[^\n]*)\n'
-			pattern += r'(?P<text>'
-			pattern += r'(?:\s*_\*\*Prerequisite:\*\* (?P<level>\d+)\w+(?:, \d+\w+| and \d+\w+)* level)?'
-			pattern += r'[^#]*)(?:\n|$)'
-
-			for invocation in re.finditer(pattern, text):
-				feature.append({
+		levels_pat = r'(?P<level>\d+)\w+(?:, \d+\w+|,? and \d+\w+)* level'
+		feature_pat = r'(?<!#)###(?!#) (?P<name>[^\n]*)\s*';
+		feature_prereq_pat = fr'_\*\*{self.name}:\*\* {levels_pat}_\s*';
+		invocat_pat = r'(?<!#)####(?!#) (?P<name>[^\n]*)\s*';
+		invocat_prereq_pat = fr'_\*\*Prerequisite:\*\* {levels_pat}_\s*';
+		for feature in re.finditer(feature_pat, text):
+			subtext = text[feature.end():]
+			invocations = []
+			if re.match(feature_prereq_pat, subtext): continue
+			if (next_feature := re.search(feature_pat, subtext)): subtext = subtext[:next_feature.start()]
+			for invocation in re.finditer(fr'{invocat_pat}(?P<text>(?:{invocat_prereq_pat})?[^#]*)', subtext):
+				invocations.append({
 					"name": invocation["name"],
 					"text": invocation["text"],
 					"level": int(invocation["level"]) if invocation["level"] else None,
 				})
-
-			features[match["name"]] = feature
+			features[feature["name"]] = invocations
 
 		return features
 

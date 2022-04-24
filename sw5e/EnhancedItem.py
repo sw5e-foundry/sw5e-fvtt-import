@@ -95,6 +95,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		self.attack_bonus, self.damage_bonus = self.getAttackBonus()
 		self.activation = self.getActivation()
 		self.rarity = self.getRarity()
+		self.p_properties = self.getProperties()
 
 		self.is_modification = self.type.endswith('Modification')
 		if (self.is_modification):
@@ -124,7 +125,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		return utils.text.getAction(self.text, self.name)
 
 	def getAttackBonus(self):
-		if match := re.search(r'You (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<atk>attack)?(?: and )?(?P<dmg>damage)? rolls (?:made )?with this', self.text):
+		if match := re.search(r'You (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<atk>attack)?(?: and )?(?P<dmg>damage)? rolls (?:made with this)?', self.text):
 			return (match["bonus"] if match[opt] else 0 for opt in ('atk', 'dmg'))
 		if match := re.search(r'You (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<up>attack|damage) rolls and a -(?P<penalty>\d+) penalty to (?:attack|damage) rolls (?:made )?with this', self.text):
 			return (match["bonus"] if match["up"] == opt else "-"+match["penalty"] for opt in ('attack', 'damage'))
@@ -132,6 +133,21 @@ class EnhancedItem(sw5e.Entity.Item):
 
 	def getRarity(self):
 		return self.rarityText
+
+	def getProperties(self):
+		if self.getType() == 'equipment':
+			from sw5e.equipments.Equipment import Equipment
+			return utils.text.getProperties(self.text, Equipment.armor_properties, needs_end=True)
+		elif self.getType() == 'weapon':
+			from sw5e.equipments.Weapon import Weapon
+			properties = utils.text.getProperties(self.text, Weapon.weapon_properties.values(), needs_end=True)
+			return {
+				key: properties[Weapon.weapon_properties[key].lower()]
+				for key in Weapon.weapon_properties.keys()
+				if (Weapon.weapon_properties[key].lower() in properties)
+			}
+		else:
+			return {}
 
 	def applySubtype(self, data):
 		if self.subtypeType == 'Specific': return data
@@ -364,6 +380,16 @@ class EnhancedItem(sw5e.Entity.Item):
 		item_type = mapping[self.typeEnum]
 		return item_type or 'loot'
 
+	def getAutoTargetData(self, data, base_item):
+		if 'smr' in self.p_properties and type(auto := self.p_properties["smr"].split(', ')) == list:
+			mod = (int(auto[0]) - 10) // 2
+			prof = int(auto[1])
+			data["data"]["ability"] = 'str'
+			data["data"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
+			data["data"]["damage"]["parts"][0][0] = f'{base_item.damageNumberOfDice}d{base_item.damageDieType} + {mod}'
+			data["data"]["proficient"] = True
+		return data
+
 	def getDataSpecific(self, importer, base_item):
 		def choose(base, enhanced, field, default):
 			if field in base and base[field] != default: return base[field]
@@ -423,8 +449,13 @@ class EnhancedItem(sw5e.Entity.Item):
 			#	item["data"]["consume"] = {}
 			#	item["data"]["ability"] = ''
 
+			item["data"]["properties"] = {**item["data"]["properties"], **self.p_properties}
+			item = self.getAutoTargetData(item, base_item);
+
 			item["data"]["actionType"] = choose(item["data"], self.action_type, "actionType", 'other')
-			item["data"]["attackBonus"] = self.attack_bonus
+			if self.attack_bonus:
+				if item["data"]["attackBonus"]: item["data"]["attackBonus"] += f' + {self.attack_bonus}'
+				else: item["data"]["attackBonus"] = self.attack_bonus
 			#	item["data"]["chatFlavor"] = ''
 			#	item["data"]["critical"] = None
 			item["data"]["damage"] = {
@@ -499,6 +530,8 @@ class EnhancedItem(sw5e.Entity.Item):
 			"scaling": "flat" if self.save_dc else "power"
 		}
 
+		data["data"]["properties"] = self.p_properties
+
 		self.applySubtype(data)
 
 		#	data["data"]["recharge"] = ''
@@ -526,26 +559,8 @@ class EnhancedItem(sw5e.Entity.Item):
 			"versatile": self.damage["versatile"]
 		}
 
-		data["data"]["properties"] = { "indeterminate": {} }
-		s_prop = r'\w+(?: (?:\d+|\(\d*d\d+\)))?'
-		s_props = f'{s_prop}(?:, {s_prop})*(?:,? and {s_prop})?'
-		s_prop = r'(?P<prop>\w+)(?: (?P<val>\d+|\(\d*d\d+\)))?'
-		for match in re.finditer(r'(?P<op>gains|removes) the (?P<props>' + s_props + r') propert(?:y|ies)', self.text):
-			for match2 in re.finditer(f'{s_prop}(?:, | and )?', match["props"]):
-				prop_id = None
-				if data["data"]["modificationItemType"] == 'equipment':
-					prop_id = match2["prop"].title()
-				if data["data"]["modificationItemType"] == 'weapon':
-					from sw5e.equipments.Weapon import Weapon
-					for prop in Weapon.weapon_properties:
-						if Weapon.weapon_properties[prop].lower() == match2["prop"].lower():
-							prop_id = prop
-							break
-				if prop_id:
-					data["data"]["properties"][prop_id] = match2["val"] or True if (match["op"] == "gains") else False;
-					data["data"]["properties"]["indeterminate"][prop_id] = False
-				else:
-					raise ValueError(self.name, data["data"]["modificationItemType"], match.groups(), match[0], match2.groups(), match2[0])
+		data["data"]["properties"] = self.p_properties
+		data["data"]["properties"]["indeterminate"] = { key: False for key in self.p_properties.keys() }
 
 		return [data]
 
