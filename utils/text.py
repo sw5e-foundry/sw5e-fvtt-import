@@ -272,6 +272,12 @@ def getTarget(text, name):
 	if text:
 		text = text.lower()
 
+		pattern = r'choose one(?P<type>hostile |allied)?\s+creature'
+		if match := re.search(pattern, text):
+			if match['type'] == 'hostile': return 1, '', 'enemy'
+			elif match['type'] == 'allied': return 1, '', 'ally'
+			else: return 1, '', 'creature'
+
 		pattern = r'exhales [^.]*a (?P<size>\d+)-foot[- ](?P<shape>cone|line)'
 		if match := re.search(pattern, text):
 			return match['size'], 'ft', match['shape']
@@ -291,7 +297,7 @@ def getTarget(text, name):
 	return None, '', ''
 
 def getRange(text, name):
-	pattern = r'point you can see within (?P<value>\d+) (?P<unit>\w+)'
+	pattern = r'within (?P<value>\d+) (?P<unit>\w+)'
 	if match := re.search(pattern, text):
 		return match["value"], match["unit"]
 
@@ -456,27 +462,32 @@ def getDuration(text, name):
 
 		## "lasts for 1 minute"
 		## "lasts for 8 hours"
-		pattern = r'(?:^|\W)lasts (?:for )?(?:(?P<val>\d+) )?' + sp_units + r'(?:\W|$)'
+		pattern = fr'(?:^|\W)lasts (?:for )?(?:(?P<val>\d+) )?{sp_units}(?:\W|$)'
 		if match := re.search(pattern, text):
 			return match['val'] or 1, match['unit']
 
 		## "for the next 8 hours"
-		pattern = r'(?:^|\W)for the next (?:(?P<val>\d+) )?' + sp_units + r'(?:\W|$)'
+		pattern = fr'(?:^|\W)for the next (?:(?P<val>\d+) )?{sp_units}(?:\W|$)'
 		if match := re.search(pattern, text):
 			return match['val'] or 1, match['unit']
 
 		## "turned for 1 minute" (e.g. channel divinity)
-		pattern = r'(?:^|\W)turned for (?:(?P<val>\d+) )?' + sp_units + r'(?:\W|$)'
+		pattern = fr'(?:^|\W)turned for (?:(?P<val>\d+) )?{sp_units}(?:\W|$)'
 		if match := re.search(pattern, text):
 			return match['val'] or 1, match['unit']
 
 		## "it is charmed by you for 1 minute"
-		pattern = r'(?:^|\W)is \w+ by you for (?:(?P<val>\d+) )?' + sp_units + r'(?:\W|$)'
+		pattern = fr'(?:^|\W)is \w+ by you for (?:(?P<val>\d+) )?{sp_units}(?:\W|$)'
+		if match := re.search(pattern, text):
+			return match['val'] or 1, match['unit']
+
+		## "once within the next 10 minutes"
+		pattern = fr'(?:^|\W)once (?:with)?in the next (?:(?P<val>\d+) )?{sp_units}(?:\W|$)'
 		if match := re.search(pattern, text):
 			return match['val'] or 1, match['unit']
 
 		## "For one minute"
-		pattern = r'(?:^|\W)for one ' + sp_units + r'(?:\W|$)'
+		pattern = fr'(?:^|\W)for one {sp_units}(?:\W|$)'
 		if match := re.search(pattern, text):
 			return 1, match['unit']
 

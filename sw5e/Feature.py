@@ -36,7 +36,11 @@ class BaseFeature(sw5e.Entity.Item):
 		return utils.text.getTarget(self.text, self.name)
 
 	def getRange(self):
-		return {}
+		value, unit = utils.text.getRange(self.text, self.name)
+		return {
+			'value': value,
+			'unit': unit
+		}
 
 	def getUses(self):
 		return utils.text.getUses(self.text, self.name)
