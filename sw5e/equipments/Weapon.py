@@ -50,7 +50,6 @@ class Weapon(sw5e.Equipment.Equipment):
 		"two": 'Two-Handed',
 		"ver": 'Versatile',
 		"vic": 'Vicious',
-		"zon": 'Zone',
 	}
 
 	def load(self, raw_item):

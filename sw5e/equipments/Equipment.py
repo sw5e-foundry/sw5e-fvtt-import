@@ -21,6 +21,7 @@ class Equipment(sw5e.Equipment.Equipment):
 		'Lightweight',
 		'Magnetic',
 		'Obscured',
+		'Obtrusive',
 		'Powered',
 		'Reactive',
 		'Regulated',
@@ -29,9 +30,32 @@ class Equipment(sw5e.Equipment.Equipment):
 		'Rigid',
 		'Silent',
 		'Spiked',
-		'Steadfast',
 		'Strength',
-		'Versatile'
+		'Steadfast',
+		'Versatile',
+	]
+	casting_properties = [
+		'Absorbing',
+		'Acessing',
+		'Amplifying',
+		'Bolstering',
+		'Constitution',
+		'Dispelling',
+		'Elongating',
+		'Enlarging',
+		'Expanding',
+		'Extending',
+		'Fading',
+		'Focused',
+		'Increasing',
+		'Inflating',
+		'Mitigating',
+		'Ranging',
+		'Rending',
+		'Repelling',
+		'Storing',
+		'Surging',
+		'Withering',
 	]
 
 	def load(self, raw_item):
@@ -42,6 +66,8 @@ class Equipment(sw5e.Equipment.Equipment):
 
 		self.uses, self.recharge = utils.text.getUses(self.description, self.name)
 		self.activation = utils.text.getActivation(self.description, self.uses, self.recharge)
+		self.armor = self.getArmor()
+		self.p_properties = self.getProperties()
 
 	def getImg(self, importer=None):
 		kwargs = {
@@ -54,8 +80,7 @@ class Equipment(sw5e.Equipment.Equipment):
 		return super().getImg(importer=importer, **kwargs)
 
 	def getDescription(self, importer):
-		properties = self.propertiesMap
-		properties = {prop: properties[prop] for prop in self.propertiesMap if prop != 'Special'}
+		properties = {prop: self.propertiesMap[prop] for prop in self.propertiesMap if prop != 'Special'}
 
 		text = ''
 
@@ -104,7 +129,19 @@ class Equipment(sw5e.Equipment.Equipment):
 		}
 
 	def getProperties(self):
-		return { prop: prop in self.propertiesMap for prop in self.armor_properties }
+		properties_list = self.casting_properties if self.armor["type"] in ('focusgenerator', 'wristpad') else self.armor_properties
+		properties = {
+			**utils.text.getProperties(self.propertiesMap.values(), properties_list, error=True),
+			**utils.text.getProperties(self.description, properties_list),
+		}
+
+		if self.name == "Repelling wristpad":
+			print(self.name, properties, self.propertiesMap, properties_list)
+		return {
+			key.lower(): properties[key.lower()]
+			for key in properties_list
+			if (key.lower() in properties)
+		}
 
 	def getBaseItem(self):
 		override = {
@@ -132,9 +169,10 @@ class Equipment(sw5e.Equipment.Equipment):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["armor"] = self.getArmor()
+		data["data"]["armor"] = self.armor
 		data["data"]["strength"] = self.strengthRequirement
 		data["data"]["stealth"] = self.stealthDisadvantage
-		data["data"]["properties"] = self.getProperties()
+		properties_list = self.casting_properties if self.armor["type"] in ('focusgenerator', 'wristpad') else self.armor_properties
+		data["data"]["properties"] = { prop: self.p_properties.get(prop.lower(), None) for prop in properties_list }
 
 		return [data]

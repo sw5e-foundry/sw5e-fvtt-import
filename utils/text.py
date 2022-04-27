@@ -505,8 +505,8 @@ def clean(raw_item, attr, default=''):
 	item = raw(raw_item, attr) or default
 	return cleanStr(item)
 
-def cleanJson(raw_item, attr):
-	item = clean(raw_item, attr+'Json', default='[]')
+def cleanJson(raw_item, attr, default='{}'):
+	item = clean(raw_item, attr+'Json', default=default)
 	try:
 		item = json.loads(item)
 	except:
@@ -530,7 +530,8 @@ def getProperty(prop_name, props):
 	if len(vals) == 1: return vals[0]
 	return vals
 
-def getProperties(targets, props_list, strict=False, error=False, verbose=False, needs_end=False):
+def getProperties(targets, props_list, strict=False, error=False, needs_end=False):
+	if not targets: return {}
 	if type(targets) == str: targets = (targets,)
 
 	pname_pat = fr'(?:{"|".join(props_list)})'
@@ -561,7 +562,7 @@ def getProperties(targets, props_list, strict=False, error=False, verbose=False,
 							else:
 								properties[prop] = True
 		elif error:
-			raise ValueError(target, props_list)
+			raise ValueError(props_list, target, targets)
 	return properties
 
 def lowerCase(word):
