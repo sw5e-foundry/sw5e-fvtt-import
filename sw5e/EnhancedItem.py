@@ -137,17 +137,21 @@ class EnhancedItem(sw5e.Entity.Item):
 	def getProperties(self):
 		if self.getType() == 'equipment':
 			from sw5e.equipments.Equipment import Equipment
-			return utils.text.getProperties(self.text, Equipment.armor_properties, needs_end=True)
+			if self.type == 'Focus': properties_list = Equipment.casting_properties
+			else: properties_list = Equipment.armor_properties
 		elif self.getType() == 'weapon':
 			from sw5e.equipments.Weapon import Weapon
-			properties = utils.text.getProperties(self.text, Weapon.weapon_properties.values(), needs_end=True)
-			return {
-				key: properties[Weapon.weapon_properties[key].lower()]
-				for key in Weapon.weapon_properties.keys()
-				if (Weapon.weapon_properties[key].lower() in properties)
-			}
+			properties_list = Weapon.weapon_properties
 		else:
 			return {}
+
+		properties = utils.text.getProperties(self.text, properties_list.values(), needs_end=True)
+		return {
+			key: properties[properties_list[key].lower()]
+			for key in properties_list.keys()
+			if (properties_list[key].lower() in properties)
+		}
+
 
 	def applySubtype(self, data):
 		if self.subtypeType == 'Specific': return data

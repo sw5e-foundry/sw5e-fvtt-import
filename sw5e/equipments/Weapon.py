@@ -156,12 +156,20 @@ class Weapon(sw5e.Equipment.Equipment):
 		elif (self.name.endswith("launcher")): return [self.name.split()[0].lower()]
 		else: return ['powerCell']
 
+	def getPropertiesList(self):
+		return self.weapon_properties
+
 	def getProperties(self):
-		properties = utils.text.getProperties(self.propertiesMap.values(), self.weapon_properties.values(), strict=False, error=True)
+		properties_list = self.getPropertiesList()
+		properties = {
+			**utils.text.getProperties(self.propertiesMap.values(), properties_list.values(), error=True),
+			**utils.text.getProperties(self.description, properties_list.values()),
+		}
+
 		return {
-			key: properties[self.weapon_properties[key].lower()]
-			for key in self.weapon_properties.keys()
-			if (self.weapon_properties[key].lower() in properties)
+			key: properties[properties_list[key].lower()]
+			for key in properties_list.keys()
+			if (properties_list[key].lower() in properties)
 		}
 
 	def getAutoTargetData(self, data):
