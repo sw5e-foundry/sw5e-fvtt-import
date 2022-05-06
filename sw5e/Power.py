@@ -35,7 +35,7 @@ class Power(sw5e.Entity.Item):
 		self.target_val, self.target_unit, self.target_type = target_range["target"]
 		self.range_val, self.range_unit = target_range["range"]
 		self.uses, self.recharge = None, None
-		self.action_type, self.damage, self.formula, self.save, self.save_dc, self.ability = self.getAction()
+		self.action_type, self.damage, self.formula, self.save, self.save_dc, self.ability, self.scaling = self.getAction()
 
 		self.school = self.getSchool()
 
@@ -93,7 +93,7 @@ class Power(sw5e.Entity.Item):
 		return target_range
 
 	def getAction(self):
-		description, scaling = self.description, ''
+		description, scale = self.description, ''
 		ability = ""
 
 		## Get default ability score
@@ -108,12 +108,9 @@ class Power(sw5e.Entity.Item):
 		elif match := re.search(r'Force Potency|Overcharge Tech', description):
 			description, scale = description[:match.start()], description[match.end():]
 
+		action_type, damage, formula, save, save_dc, scaling = utils.text.getAction(description, self.name, scale=scale)
 
-		#TODO: Process the power's scaling
-
-		action_type, damage, formula, save, save_dc = utils.text.getAction(description, self.name)
-
-		return action_type, damage, formula, save, save_dc, ability
+		return action_type, damage, formula, save, save_dc, ability, scaling
 
 	def getSchool(self):
 		if self.powerType == 'Tech': return 'tec'
@@ -184,10 +181,7 @@ class Power(sw5e.Entity.Item):
 		data["data"]["components"] = { "concentration": bool(self.concentration) }
 		data["data"]["materials"] = {}
 		data["data"]["preparation"] = {}
-		data["data"]["scaling"] = {
-			#TODO: extract scaling
-			"mode": "atwill" if self.level == 0 else "level"
-		}
+		data["data"]["scaling"] = self.scaling
 
 		return [data]
 

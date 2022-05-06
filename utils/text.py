@@ -160,8 +160,8 @@ def getUses(text, name):
 		sp_n_times = capt(sp_n) + r' times|(once|twice|thrice)'
 
 		if not found: ## NUMBER times
-			pattern = r'you (?:can|may) ' + ncapt(sp_action) + r' (?:a (?:combined )?total of )?' + ncapt(sp_n_times)
-			pattern += r'|(?:you have|(?:this|the) \w+ has) ' + capt(sp_n) + r' (?:superiority dice|amplified shots|(?!hit)(?:\w+ )?points|charges)'
+			pattern = fr'you (?:can|may) {ncapt(sp_action)} (?:a (?:combined )?total of )?{ncapt(sp_n_times)}'
+			pattern += fr'|(?:you have|(?:this|the) \w+ has) {capt(sp_n)} (?:superiority dice|amplified shots|(?!hit)(?:\w+ )?points|charges)'
 
 			if match := re.search(pattern, text):
 				found = True
@@ -187,10 +187,10 @@ def getUses(text, name):
 					}[number]
 
 		if not found: ## ONCE
-			pattern = r'once (you([\'—]ve| have)?|the \w+ (has|have) been|your companion has) ' + ncapt(sp_action_past)
-			pattern += r'|you (can[\'—]t|cannot|can not) ' + ncapt(sp_action) + r' (again )?until'
-			pattern += r'|if you ' + ncapt(sp_action) + r' again before'
-			pattern += r'|rest before you can ' + ncapt(sp_action) + r' again'
+			pattern = fr'once (you([\'—]ve| have)?|the \w+ (has|have) been|your companion has) {ncapt(sp_action_past)}'
+			pattern += fr'|you (can[\'—]t|cannot|can not) {ncapt(sp_action)} (again )?until'
+			pattern += fr'|if you {ncapt(sp_action)} again before'
+			pattern += fr'|rest before you can {ncapt(sp_action)} again'
 
 			if match := re.search(pattern, text):
 				found = True
@@ -230,7 +230,7 @@ def getUses(text, name):
 				uses = f'{lvl} < 3 ? 2 : {lvl} < 6 ? 3 : {lvl} < 12 ? 4 : {lvl} < 17 ? 5 : {lvl} < 20 ? 6 : 999'
 
 		if True: ## CUSTOM, should not have uses
-			pattern = r'you have ' + ncapt(sp_n) + r' (?:superiority dice|amplified shots|(?:\w+ )?points), instead of'
+			pattern = fr'you have {ncapt(sp_n)} (?:superiority dice|amplified shots|(?:\w+ )?points), instead of'
 			pattern += r'|you regain all expended (?:force|tech) points when you'
 			pattern += r'|you can[\'—]t use this feature on them again until'
 			pattern += r'|they (?:cannot|can not|can[\'—]t) do so again until'
@@ -303,8 +303,8 @@ def getRange(text, name):
 
 	return None, ''
 
-def getAction(text, name):
-	action_type, damage, formula, save, save_dc = '', { "parts": [], "versatile": '' }, '', '', None
+def getAction(text, name, scale=None):
+	action_type, damage, formula, save, save_dc, scaling = '', { "parts": [], "versatile": '' }, '', '', None, { "mode": 'none'}
 
 	if text:
 		text = text.lower()
@@ -318,7 +318,7 @@ def getAction(text, name):
 		## Saving Throw
 		sp_ability = r'strength|dexterity|constitution|intelligence|wisdom|charisma'
 		pattern = r'(?:succeed on|make|makes|if it fails) an? (dc (?P<dc>\d+) )?'
-		pattern += r'(?P<save1>' + sp_ability + r')(?: or (?P<save2>' + sp_ability + r'))? saving throw'
+		pattern += fr'(?P<save1>{sp_ability})(?: or (?P<save2>{sp_ability}))? saving throw'
 		if (match := re.search(pattern, text)):
 			action_type = action_type or 'save'
 			#TODO find a way to use save1 or save2
@@ -330,8 +330,8 @@ def getAction(text, name):
 		p_dformula = r'(?P<dice>\d*d\d+(?:\s*\+\s*\d*d\d+)*)(?:(?:\s*\+\s*)?(?P<flat>\d+))?(?:\s*\+ your(?P<ability_mod> [\w ]+?)(?: ability)? modifier)?'
 
 		## Healing
-		pattern = r'(?:(?:(?:re)?gains?|restores|gaining|a number of) (?P<temp>temporary )?hit points equal to |hit points increase by )' + p_formula
-		pattern2 = r'(?:(?:re)?gains?|restores?|gaining) (?:an extra )?' + p_formula + r' (?:extra |additional )?(?P<temp>temporary )?hit points'
+		pattern = fr'(?:(?:(?:re)?gains?|restores|gaining|a number of) (?P<temp>temporary )?hit points equal to |hit points increase by ){p_formula}'
+		pattern2 = fr'(?:(?:re)?gains?|restores?|gaining) (?:an extra )?{p_formula} (?:extra |additional )?(?P<temp>temporary )?hit points'
 		def foo(match):
 			nonlocal action_type
 			nonlocal damage
@@ -355,8 +355,8 @@ def getAction(text, name):
 		text = re.sub(pattern2, foo, text)
 
 		## Damage
-		pattern = r'(?:(?:takes?|taking|deals?|dealing|do) (?:(?:an )?(?:extra|additional) |up to )?|, | (?:and|plus) (?:another |an extra )?)(?:damage equal to )?' + p_formula + r'(?: of)?(?: (?P<type>\w+)(?:, (?:or )?\w+)*)?(?: damage|(?= [^.]+ damage))'
-		pattern2 = r'(?:the (?P<type>\w+ )?damage (?:also )?increases by|increase the damage by|(?:base|the additional|the extra) damage is|damage die becomes a) ' + p_formula
+		pattern = fr'(?:(?:takes?|taking|deals?|dealing|do) (?:(?:an )?(?:extra|additional) |up to )?|, | (?:and|plus) (?:another |an extra )?)(?:damage equal to )?{p_formula}(?: of)?(?: (?P<type>\w+)(?:, (?:or )?\w+)*)?(?: damage|(?= [^.]+ damage))'
+		pattern2 = fr'(?:the (?P<type>\w+ )?damage (?:also )?increases by|increase the damage by|(?:base|the additional|the extra) damage is|damage die becomes a) {p_formula}'
 		def foo(match):
 			nonlocal action_type
 			nonlocal damage
@@ -379,7 +379,7 @@ def getAction(text, name):
 		text = re.sub(pattern2, foo, text)
 
 		## 'Versatile' dice
-		pattern = r'otherwise, it takes ' + p_dformula
+		pattern = fr'otherwise, it takes {p_dformula}'
 		if (match := re.search(pattern, text)):
 			dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
 
@@ -393,9 +393,9 @@ def getAction(text, name):
 		text = re.sub(pattern, r'FORMULA', text)
 
 		## Other dice
-		pattern = r'(?:roll(?:ing)?(?: a| two)?|choose to add|(?:(?:is|are) (?:reduced|increased)|(?:increases|reduces) their current(?: and maximum)? \w+ points) by(?: an amount equal to)?|which are|die(?:, a)?) (?:an additional )?' + p_dformula + r'(?<! )'
-		pattern2 = r'for ' + p_dformula + r' turns'
-		pattern3 = r'a ' + p_dformula + r' that you can roll'
+		pattern = fr'(?:roll(?:ing)?(?: a| two)?|choose to add|(?:(?:is|are) (?:reduced|increased)|(?:increases|reduces) their current(?: and maximum)? \w+ points) by(?: an amount equal to)?|which are|die(?:, a)?) (?:an additional )?{p_dformula}(?<! )'
+		pattern2 = fr'for {p_dformula} turns'
+		pattern3 = fr'a {p_dformula} that you can roll'
 		text = re.sub(pattern, foo, text)
 		text = re.sub(pattern2, foo, text)
 		text = re.sub(pattern3, foo, text)
@@ -409,40 +409,36 @@ def getAction(text, name):
 			dice = match[0]
 
 			pattern_ignore = r'on the d20|d20 roll|rolls? the d20|roll of the d20|d20s'
-			pattern_ignore += r'|uses a ' + dice
-			pattern_ignore += r'|(?:versatile|barbed|gauntleted|spiked|double) \(' + dice + r'\)(?: and \w+(?: \d+)?)? propert(?:y|ies)' ## versatile (2d4) property
-			pattern_ignore += r'|\|\s*' + dice + r'\s*\|' ## |d20|
-			pattern_ignore += r'|\d*(?:d\d+)? to (?:a )?' + dice ## 1 to d4, d4 to d6
-			pattern_ignore += r'|' + dice + r' to (?:a )?\d*d\d+' ## d4 to d6
-			pattern_ignore += r'|' + dice + r' at \d+th level' ## 4d8 at 11th level
-			pattern_ignore += r'|th level \(' + dice + r'\)' ## 11th level (4d8)
-			pattern_ignore += r'|increasing by ' + dice + r' for each round' ## increasing by 1d8 for each round you do not detonate it
-			pattern_ignore += r'|increases by ' + dice + r' when you reach \d+th level' ## increases by 1d8 when you reach 11th level
-			pattern_ignore += r'|(?:recovers|regains) ' + dice + r' charges'
-			pattern_ignore += r'|it contains ' + dice + r'(?: [+-] \d+)? levels'
-			pattern_ignore += r'|plus ' + dice + ' for each slot level'
-			pattern_ignore += r'|to a maximum of ' + dice
-			pattern_ignore += r'|more than ' + dice + ' additional damage'
-			pattern_ignore += r'|instead of restoring ' + dice + ' hit points'
-			pattern_ignore += r'|a ' + dice + r' instead of expending'
-			pattern_ignore += r'|add(?: a)? ' + dice + r' to (?:a|an|any|its|the) (?:ability checks)?(?: or )?(?:saving throws?)?(?:rolls?)?'
-			pattern_ignore += r'|rolls(?: a)? ' + dice + r' and subtracts the number rolled'
-			pattern_ignore += r'|instead of its ' + dice + r'\.'
+			pattern_ignore += fr'|uses a {dice}'
+			pattern_ignore += fr'|(?:versatile|barbed|gauntleted|spiked|double) \({dice}\)(?: and \w+(?: \d+)?)? propert(?:y|ies)' ## versatile (2d4) property
+			pattern_ignore += fr'|\|\s*{dice}\s*\|' ## |d20|
+			pattern_ignore += fr'|\d*(?:d\d+)? to (?:a )?{dice}' ## 1 to d4, d4 to d6
+			pattern_ignore += fr'|{dice} to (?:a )?\d*d\d+' ## d4 to d6
+			pattern_ignore += fr'|{dice} at \d+th level' ## 4d8 at 11th level
+			pattern_ignore += fr'|th level \({dice}\)' ## 11th level (4d8)
+			pattern_ignore += fr'|increasing by {dice} for each round' ## increasing by 1d8 for each round you do not detonate it
+			pattern_ignore += fr'|increases by {dice} when you reach \d+th level' ## increases by 1d8 when you reach 11th level
+			pattern_ignore += fr'|(?:recovers|regains) {dice} charges'
+			pattern_ignore += fr'|it contains {dice}(?: [+-] \d+)? levels'
+			pattern_ignore += fr'|plus {dice} for each slot level'
+			pattern_ignore += fr'|to a maximum of {dice}'
+			pattern_ignore += fr'|more than {dice} additional damage'
+			pattern_ignore += fr'|instead of restoring {dice} hit points'
+			pattern_ignore += fr'|a {dice} instead of expending'
+			pattern_ignore += fr'|add(?: a)? {dice} to (?:a|an|any|its|the) (?:ability checks)?(?: or )?(?:saving throws?)?(?:rolls?)?'
+			pattern_ignore += fr'|rolls(?: a)? {dice} and subtracts the number rolled'
+			pattern_ignore += fr'|instead of its {dice}\.'
 
-			pattern_recognize = dice + r'(?: tiny projectiles| such fissures|(?:\s*x\s*\d+\s+)?feet)'
-			pattern_recognize += r'|\|\s*' + dice + r'\s*\|'
-			pattern_recognize += r'|for ' + dice + r' days'
+			pattern_recognize = fr'{dice}(?: tiny projectiles| such fissures|(?:\s*x\s*\d+\s+)?feet)'
+			pattern_recognize += fr'|\|\s*{dice}\s*\|'
+			pattern_recognize += fr'|for {dice} days'
 
 
 			formula = ('1'+dice if (dice.startswith('d')) else dice) if dice else None
 
-			## TODO: Rework this to not use a hardcoded list
 			if re.search(pattern_ignore, text):
-			# if re.search(pattern_ignore, text) or name in ('Alter Self', 'Spectrum Bolt', 'Flow-Walking', 'Intercept', 'Goggles of the Tinkerer'):
 				return formula
-			## TODO: Rework this to not use a hardcoded list
 			elif re.search(pattern_recognize, text):
-			# elif name in ('Earthquake', 'Preparedness', 'Whirlwind', 'Will of the Force', 'Energetic Burst', 'Force Vision', 'Greater Feedback', 'Insanity', 'Climber', 'Lucky', 'Promising Commander', 'Polearm Specialist'):
 				damage["parts"].append([ formula, '' ])
 			else:
 				raise ValueError(f'Unprocessed dice {formula} in {name}', text)
@@ -452,7 +448,31 @@ def getAction(text, name):
 
 		action_type = action_type or 'other'
 
-	return action_type, damage, formula, save, save_dc
+	if scale:
+		scaling["mode"] = "level" if re.search(r'Force Potency|Overcharge Tech', scale) else "atwill"
+
+		if scaling["mode"] == "atwill" and len(damage["parts"]) == 1:
+			if initial_match := re.search(r'd(?P<die>\d+)', damage["parts"][0][0]):
+				initial_die = int(initial_match["die"])
+				first_change, prev, prevdiff, cur, diff = None, None, None, None, None
+				pattern = fr'a d(?P<die>\d+) at (?P<lvl>\d+)(?:st|nd|rd|th) level'
+				if re.search(pattern, scale):
+					for match in re.finditer(pattern, scale):
+						cur = int(match["die"]), int(match["lvl"])
+						if not first_change: first_change = cur[1]
+						if prev: diff = cur[0]-prev[0], cur[1]-prev[1]
+						if prevdiff and (prevdiff != diff): break
+						prevdiff = diff
+						prev = cur
+					else:
+						die_diff, level_diff = prevdiff
+						scaled_die = f'd({initial_die}+{die_diff}*floor((@details.level+{level_diff - first_change})/{level_diff}))'
+						damage["parts"][0][0] = re.sub(fr'd{initial_die}', scaled_die, damage["parts"][0][0], 1)
+
+		#TODO: support regular power scaling
+
+
+	return action_type, damage, formula, save, save_dc, scaling
 
 def getDuration(text, name):
 	if text:

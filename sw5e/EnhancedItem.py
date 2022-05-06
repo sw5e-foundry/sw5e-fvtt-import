@@ -91,7 +91,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		self.target_value, self.target_unit, self.target_type = self.getTarget()
 		self.range_value, self.range_unit = self.getRange()
 		self.uses, self.recharge = self.getUses()
-		self.action_type, self.damage, self.formula, self.save, self.save_dc = self.getAction()
+		self.action_type, self.damage, self.formula, self.save, self.save_dc, _ = self.getAction()
 		self.attack_bonus, self.damage_bonus = self.getAttackBonus()
 		self.activation = self.getActivation()
 		self.rarity = self.getRarity()

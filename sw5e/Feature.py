@@ -22,7 +22,7 @@ class BaseFeature(sw5e.Entity.Item):
 		self.target_val, self.target_unit, self.target_type = self.getTarget()
 		self.range = self.getRange()
 		self.uses, self.recharge = self.getUses()
-		self.action_type, self.damage, self.formula, self.save, self.save_dc = self.getAction()
+		self.action_type, self.damage, self.formula, self.save, self.save_dc, _ = self.getAction()
 		self.activation = self.getActivation()
 		self.description = self.getDescription(importer)
 
