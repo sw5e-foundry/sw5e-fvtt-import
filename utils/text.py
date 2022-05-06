@@ -449,7 +449,8 @@ def getAction(text, name, scale=None):
 		action_type = action_type or 'other'
 
 	if scale:
-		scaling["mode"] = "level" if re.search(r'Force Potency|Overcharge Tech', scale) else "atwill"
+		scale = scale.lower()
+		scaling["mode"] = "level" if re.search(r'force potency|overcharge tech', scale) else "atwill"
 
 		if scaling["mode"] == "atwill" and len(damage["parts"]) == 1:
 			if initial_match := re.search(r'd(?P<die>\d+)', damage["parts"][0][0]):
@@ -469,8 +470,8 @@ def getAction(text, name, scale=None):
 						scaled_die = f'd({initial_die}+{die_diff}*floor((@details.level+{level_diff - first_change})/{level_diff}))'
 						damage["parts"][0][0] = re.sub(fr'd{initial_die}', scaled_die, damage["parts"][0][0], 1)
 
-		#TODO: support regular power scaling
-
+		pattern = r'increases by (?P<die>\d*d\d+) for each slot level above'
+		if match := re.search(pattern, scale): scaling["formula"] = match["die"]
 
 	return action_type, damage, formula, save, save_dc, scaling
 
