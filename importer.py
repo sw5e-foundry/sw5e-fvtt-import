@@ -4,10 +4,11 @@ import sw5e.ClassImprovement, sw5e.MulticlassImprovement, sw5e.SplashclassImprov
 import sw5e.Feature, sw5e.Feat, sw5e.FightingStyle, sw5e.FightingMastery, sw5e.LightsaberForm
 import sw5e.Equipment, sw5e.Power, sw5e.EnhancedItem
 import sw5e.ArmorProperty, sw5e.WeaponProperty, sw5e.Conditions
+import sw5e.Monster
 import utils.text
 
 def withEntityTypes(cls):
-	for entity_type in cls._Importer__entity_types:
+	for entity_type in cls._Importer__stored_types:
 		setattr(cls, entity_type, {})
 	return cls
 
@@ -31,7 +32,7 @@ class Importer:
 		'fightingMastery',
 		'fightingStyle',
 		'lightsaberForm',
-		# 'monster',
+		'monster',
 		'power',
 		# 'referenceTable',
 		# 'skills',
@@ -48,8 +49,8 @@ class Importer:
 		'WeaponFocus',
 		'WeaponSupremacy',
 	]
+	__stored_types = __entity_types #+ [ 'monsterBehaviour' ]
 
-	# __entity_types = [ 'background' ]
 	__base_url = "https://sw5eapi.azurewebsites.net/api"
 	version = 1
 
@@ -66,56 +67,64 @@ class Importer:
 			print('Loading...')
 			with open(self.__pickle_path, 'rb') as pickle_file:
 				old_data = pickle.load(pickle_file)
-				for entity_type in self.__entity_types:
+				for entity_type in self.__stored_types:
 					setattr(self, entity_type, old_data[entity_type])
 		else:
 			print('Unable to locate pickle file, loading from API')
 			self.update(msg='Loading...')
 
-		print('Loading foundry data...')
+		print('Applying foundry data...')
 		if os.path.isfile(self.__foundry_data_path):
-			missing = 0
+			missing_entity = 0
 			with open(self.__foundry_data_path, 'r') as foundry_data_file:
 				data = json.load(foundry_data_file)
-				for uid in data:
-					entity_type = uid.split('.')[0]
-					if entity_type not in self.__entity_types:
-						entity_type = utils.text.lowerCase(entity_type)
-					new_uid = re.sub(r'\.mode-\w+$', '', uid)
-					item = self.get(entity_type, uid=new_uid)
-					if item:
-						item.foundry_id = data[uid]["id"]
-						if "effects" in data[uid]: item.effects = data[uid]["effects"]
-					else:
-						if missing <= self.warn_limit:
-							print(f'	Foundry data for uid {uid}, but no such item exists')
-						missing += 1
-			if missing > self.warn_limit: print(f'	And {missing-self.warn_limit} more...')
+				for uid in data: missing_entity += self.__applyFoundryData(uid, data[uid])
+			if missing_entity > self.warn_limit: print(f'	And {missing_entity-self.warn_limit} more...')
 
-			missing = 0
-			for entity_type in self.__entity_types:
-				storage = self.getItemList(entity_type)
+			missing_fdata = 0
+			for entity_type in self.__stored_types:
+				storage = self.getEntityList(entity_type)
 				for uid in storage:
-					item = storage[uid]
-					if not item.foundry_id:
+					entity = storage[uid]
+					if not entity.foundry_id:
 						## TODO: Remove this once starship items are done
 						if re.search(r'EnhancedItem\.name-ship', uid): continue
 						## TODO: Find a way to set the foundry_ids of the weapon modes
-						if item.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', item.propertiesMap): continue
-						if item.__class__.__name__ == 'Weapon' and item.modes: continue
-						if missing <= self.warn_limit:
-							print(f'	Item missing it\'s foundry data: {uid}')
-						missing += 1
-			if missing > self.warn_limit: print(f'	And {missing-self.warn_limit} more...')
+						if entity.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', entity.propertiesMap): continue
+						if entity.__class__.__name__ == 'Weapon' and entity.modes: continue
+						if missing_fdata <= self.warn_limit: print(f'	Entity missing it\'s foundry data: {uid}')
+						missing_fdata += 1
+			if missing_fdata > self.warn_limit: print(f'	And {missing_fdata-self.warn_limit} more...')
+
+			if missing_entity == 0 and missing_fdata == 0: print('	.')
 		else:
 			print('	Unable to open foundry data file')
 
 	def __del__(self):
 		# with open(self.__pickle_path, 'wb+') as pickle_file:
 		# 	print('Saving...')
-		# 	data = { entity_type: getattr(self, entity_type) for entity_type in self.__entity_types }
+		# 	data = { entity_type: getattr(self, entity_type) for entity_type in self.__stored_types }
 		# 	pickle.dump(data, pickle_file)
 		pass
+
+	def __applyFoundryData(self, uid, data, parent=None):
+		missing = 0
+		entity_type = uid.split('.')[0]
+		if entity_type not in self.__stored_types: entity_type = utils.text.lowerCase(entity_type)
+		base_uid = re.sub(r'\.mode-\w+$', '', uid)
+		entity = (parent or self).get(entity_type, uid=base_uid)
+		if entity:
+			entity.foundry_id = data["id"]
+			if "effects" in data: entity.effects = data["effects"]
+			if "sub_entities" in data:
+				for sub_uid in data["sub_entities"]:
+					missing += self.__applyFoundryData(sub_uid, data["sub_entities"][sub_uid], entity)
+		else:
+			if missing <= self.warn_limit:
+				print(f'	Foundry data for uid {uid}, but no such entity exists')
+				if parent: print(f'	Parent: {parent.uid}')
+			missing += 1
+		return missing
 
 	def __getData(self, file_name, online=False):
 		data = None
@@ -144,12 +153,12 @@ class Importer:
 		with open(f'{self.__raw_path}{file_name}.json', 'w+', encoding='utf8') as raw_file:
 			json.dump(data, raw_file, indent=4, sort_keys=False, ensure_ascii=False)
 
-	def getItemList(self, entity_type):
-		if entity_type in self.__entity_types:
+	def getEntityList(self, entity_type):
+		if entity_type in self.__stored_types:
 			return getattr(self, entity_type)
 
 	def __getClass(self, entity_type):
-		entity_type = entity_type[:1].upper() + entity_type[1:]
+		entity_type = utils.text.capitalCase(entity_type)
 		return getattr(getattr(sw5e, entity_type), entity_type)
 
 	def get(self, entity_type, uid=None, data=None, loud=False):
@@ -161,35 +170,32 @@ class Importer:
 			kklass = klass.getClass(data)
 			uid = kklass.getUID(data)
 
-		storage = self.getItemList(entity_type) or {}
+		storage = self.getEntityList(entity_type) or {}
 
 		if loud: print(f'Importer.get | {uid=}')
 
-		if uid in storage:
-			return storage[uid]
-		else:
-			return None
+		return storage.get(uid, None)
 
-	def __processItem(self, raw_item, entity_type, depth=0):
+	def __processEntity(self, raw_entity, entity_type, depth=0):
 		if depth > 10:
-			raise RecursionError(raw_item["name"])
+			raise RecursionError(raw_entity["name"])
 		try:
-			storage = self.getItemList(entity_type)
+			storage = self.getEntityList(entity_type)
 			klass = self.__getClass(entity_type)
 
-			kklass = klass.getClass(raw_item)
-			uid = kklass.getUID(raw_item)
+			kklass = klass.getClass(raw_entity)
+			uid = kklass.getUID(raw_entity)
 
-			old_item = self.get(entity_type, uid=uid)
+			old_entity = self.get(entity_type, uid=uid)
 
-			if (not old_item) or (old_item.timestamp != raw_item["timestamp"]) or (old_item.importer_version != self.version) or (old_item.broken_links):
-				new_item = kklass(raw_item, old_item, uid, self)
-				storage[uid] = new_item
-				sub_items = new_item.getSubItems(self)
-				for sub_item, entity_type in sub_items:
-					self.__processItem(sub_item, entity_type, depth+1)
+			if (not old_entity) or (old_entity.timestamp != raw_entity["timestamp"]) or (old_entity.importer_version != self.version) or (old_entity.broken_links):
+				new_entity = kklass(raw_entity, old_entity, uid, self)
+				storage[uid] = new_entity
+				sub_entities = new_entity.getSubEntities(self)
+				for sub_entity, entity_type in sub_entities:
+					self.__processEntity(sub_entity, entity_type, depth+1)
 		except:
-			print(f'		{raw_item["name"]}')
+			print(f'		{raw_entity["name"]}')
 			raise
 
 	def update(self, msg='Updating...'):
@@ -198,40 +204,42 @@ class Importer:
 		for entity_type in self.__entity_types:
 			if data := self.__getData(entity_type):
 				print(f'	{entity_type}')
-				for raw_item in data:
-					self.__processItem(raw_item, entity_type)
+				for raw_entity in data:
+					self.__processEntity(raw_entity, entity_type)
 
 		extra_files = os.listdir(self.__extras_path)
 		if extra_files:
 			print("Extras...")
 			for file_name in extra_files:
 				if data := self.__getExtraData(file_name):
-					for entity_type in self.__entity_types:
+					for entity_type in self.__stored_types:
 						if entity_type in data:
 							print(f'	{file_name} ({entity_type})')
-							for raw_item in data[entity_type]:
-								self.__processItem(raw_item, entity_type)
+							for raw_entity in data[entity_type]:
+								self.__processEntity(raw_entity, entity_type)
 
 	def output(self, msg='Output...'):
 		print(msg)
 		data = {}
-		for entity_type in self.__entity_types:
+		for entity_type in self.__stored_types:
 			print(f'	{entity_type}')
-			storage = self.getItemList(entity_type)
+			storage = self.getEntityList(entity_type)
 			for uid in storage:
-				item = storage[uid]
+				entity = storage[uid]
 				try:
-					item_data, file = item.getData(self), item.getFile(self)
+					entity_data, file = entity.getData(self), entity.getFile(self)
 					if file not in data:
 						data[file] = {}
-					for mode in item_data:
+					for mode in entity_data:
 						mode_uid = mode["flags"]["uid"]
 						data[file][mode_uid] = mode
 				except:
-					print(f'		{item.name}')
+					print(f'		{entity.name}')
 					raise
 
+		print('Saving...')
 		for file in data:
+			print(f'	{file}')
 			with open(f'{self.__output_path}{file}.json', 'w+', encoding='utf8') as output_file:
 				if data[file]:
 					json.dump(data[file], output_file, indent=4, sort_keys=False, ensure_ascii=False)

@@ -146,11 +146,7 @@ class Feature(BaseFeature):
 			}.get(self.activation, 'Passive')
 			return f'systems/sw5e/packs/Icons/Class%20Features/{class_abbr}{"-ARCH" if self.source == "Archetype" else ""}-{activation}.webp'
 		else:
-			name = self.sourceName
-			name = re.sub(r'[/,]', r'-', name)
-			name = re.sub(r'[\s]', r'', name)
-			name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
-			name = re.sub(r'-*\(([^)]*)\)', r'-\1', name)
+			name = utils.text.slugify(self.sourceName)
 			return f'systems/sw5e/packs/Icons/Species/{name}.webp'
 
 	def getClassName(self, importer):

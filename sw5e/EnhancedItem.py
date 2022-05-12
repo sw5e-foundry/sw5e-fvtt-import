@@ -353,10 +353,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			return 'icons/svg/item-bag.svg'
 
 		# Otherwise use the custom icon
-		name = re.sub(r'[/,]', r'-', name)
-		name = re.sub(r'[\s]', r'', name)
-		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
-		name = re.sub(r'-*\(([^)]*)\)', r'-\1', name)
+		name = utils.text.slugify(name)
 		return f'systems/sw5e/packs/Icons/Enhanced%20Items/{name}.webp'
 
 	def getType(self):

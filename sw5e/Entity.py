@@ -2,23 +2,24 @@ import re, json
 import utils.text
 
 class Entity:
-	def __init__(self, raw_item, old_item, uid, importer):
+	def __init__(self, raw_entity, old_entity, uid, importer):
 		self.uid = uid
-		self.load(raw_item)
-		self.process(old_item, importer)
+		self.effects = []
+		self.load(raw_entity)
+		self.process(old_entity, importer)
 
-	def load(self, raw_item):
-		self.name = raw_item["name"]
-		self.timestamp = raw_item["timestamp"]
+	def load(self, raw_entity):
+		self.name = utils.text.clean(raw_entity, "name")
+		self.timestamp = utils.text.clean(raw_entity, "timestamp")
 
-	def process(self, old_item, importer):
+	def process(self, old_entity, importer):
 		self.foundry_id = None
 		self.importer_version = importer.version
 		self.broken_links = False
 
-		if old_item:
-			self.foundry_id = old_item.foundry_id
-			self.effects = old_item.effects
+		if old_entity:
+			self.foundry_id = old_entity.foundry_id
+			self.effects = old_entity.effects
 
 	def getData(self, importer):
 		data = {}
@@ -35,20 +36,23 @@ class Entity:
 	def getFile(self, importer):
 		return self.__class__.__name__
 
-	def getSubItems(self, importer):
+	def getSubEntities(self, importer):
 		return []
 
+	def get(self, entity_type, uid=None):
+		raise NotImplementedError()
+
 	@classmethod
-	def getClass(cls, raw_item):
+	def getClass(cls, raw_entity):
 		return cls
 
 	@classmethod
-	def getUID(cls, raw_item):
+	def getUID(cls, raw_entity):
 		uid = f'{cls.__name__}'
 
 		for key in ('name', 'source', 'sourceName', 'equipmentCategory', 'level', 'subtype'):
-			if key in raw_item:
-				value = raw_item[key]
+			if key in raw_entity:
+				value = raw_entity[key]
 				if type(value) == str:
 					value = value.lower()
 					value = re.sub(r'[^\w\s-]', '', value)
@@ -57,13 +61,11 @@ class Entity:
 		return uid
 
 class Item(Entity):
-	def load(self, raw_item):
-		super().load(raw_item)
+	def load(self, raw_entity):
+		super().load(raw_entity)
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
-
-		self.effects = []
+	def process(self, old_entity, importer):
+		super().process(old_entity, importer)
 
 	def getType(self, name=None):
 		if name == None:
@@ -85,9 +87,28 @@ class Item(Entity):
 		return [data]
 
 class Actor(Entity):
-	pass
+	def load(self, raw_entity):
+		super().load(raw_entity)
+		self.items = {}
+
+	def getImg(self, importer=None):
+		return 'icons/svg/mystery-man.svg'
+
+	def getData(self, importer):
+		data = super().getData(importer)[0]
+
+		data["img"] = self.getImg(importer=importer)
+		data["data"] = {}
+
+		return [data]
+
+	def get(self, entity_type, uid=None):
+		return self.items.get(uid, None)
 
 class JournalEntry(Entity):
+	def getContent(self):
+		raise NotImplementedError()
+
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
@@ -95,25 +116,17 @@ class JournalEntry(Entity):
 
 		return [data]
 
-	def getContent(self):
-		raise NotImplementedError()
-
 class Property(JournalEntry):
-	def load(self, raw_item):
-		super().load(raw_item)
+	def load(self, raw_entity):
+		super().load(raw_entity)
 
-		self.content = utils.text.clean(raw_item, 'content')
-		self.contentTypeEnum = utils.text.raw(raw_item, 'contentTypeEnum')
-		self.contentType = utils.text.clean(raw_item, 'contentType')
-		self.contentSourceEnum = utils.text.raw(raw_item, 'contentSourceEnum')
-		self.contentSource = utils.text.clean(raw_item, 'contentSource')
-		self.partitionKey = utils.text.clean(raw_item, 'partitionKey')
-		self.rowKey = utils.text.clean(raw_item, 'rowKey')
+		attrs = [ "content", "contentTypeEnum", "contentType", "contentSourceEnum", "contentSource", "partitionKey", "rowKey" ]
+		for attr in attrs: setattr(self, f'_{attr}', utils.text.clean(raw_entity, attr))
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+	def process(self, old_entity, importer):
+		super().process(old_entity, importer)
 
 	def getContent(self, val=None):
-		content = self.content
+		content = self._content
 		if val: content = re.sub(r'#### [\w-]+', f'#### {val.capitalize()}', content)
 		return utils.text.markdownToHtml(content)

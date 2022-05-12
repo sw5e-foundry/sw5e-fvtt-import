@@ -1,4 +1,4 @@
-import re, json
+import re, json, random, math, string
 
 def ncapt(patt): return f'(?:{patt})'
 def capt(patt, name=None): return f'(?P<{name}>{patt})' if name else f'({patt})'
@@ -11,6 +11,18 @@ def cleanStr(string):
 		string = re.sub(r'(\\+r|\\*\r)+', r'', string) or ''
 		string = re.sub(r'(\\+n|\\*\n)+', r'\n', string) or ''
 		return string
+
+def cleanRecursive(obj, depth=0):
+	if depth > 100: return obj
+	if type(obj) == str: return cleanStr(obj)
+	if type(obj) == dict:
+		return {
+			cleanRecursive(key, depth+1): cleanRecursive(obj[key], depth+1)
+			for key in obj
+		}
+	if type(obj) in (list, tuple):
+		return [ cleanRecursive(val, depth+1) for val in obj ]
+	return obj
 
 def markdownToHtml(lines):
 	if lines:
@@ -319,20 +331,21 @@ def getAction(text, name, scale=None):
 		sp_ability = r'strength|dexterity|constitution|intelligence|wisdom|charisma'
 		pattern = r'(?:succeed on|make|makes|if it fails) an? (dc (?P<dc>\d+) )?'
 		pattern += fr'(?P<save1>{sp_ability})(?: or (?P<save2>{sp_ability}))? saving throw'
+		pattern += r'(?: \(dc (?P<dc2>\d+)\))?'
 		if (match := re.search(pattern, text)):
 			action_type = action_type or 'save'
 			#TODO find a way to use save1 or save2
 			save = match['save1'][:3].lower()
-			save_dc = int(match["dc"]) if match["dc"] else None
+			save_dc = int(match["dc"]) if match["dc"] else int(match["dc2"]) if match["dc2"] else None
 
 		## Dice formula
-		p_formula = r'(?P<dice>\d*d\d+(?:\s*\+\s*\d*d\d+)*)?(?:(?:\s*\+\s*)?(?P<flat>\d+))?(?:\s*\+ your(?P<ability_mod> [\w ]+?)(?: ability)? modifier)?'
-		p_dformula = r'(?P<dice>\d*d\d+(?:\s*\+\s*\d*d\d+)*)(?:(?:\s*\+\s*)?(?P<flat>\d+))?(?:\s*\+ your(?P<ability_mod> [\w ]+?)(?: ability)? modifier)?'
+		p_formula = r'(?P<dice>\d*d\d+(?:\s*\+\s*\d*d\d+)*)?(?:(?:\s*\+\s*)?(?P<flat>\d+))?(?:\s+\+ your(?P<ability_mod> [\w ]+?)(?: ability)? modifier)?'
+		p_dformula = r'(?P<dice>\d*d\d+(?:\s*\+\s*\d*d\d+)*)(?:(?:\s*\+\s*)?(?P<flat>\d+))?(?:\s+\+ your(?P<ability_mod> [\w ]+?)(?: ability)? modifier)?'
 
 		## Healing
 		pattern = fr'(?:(?:(?:re)?gains?|restores|gaining|a number of) (?P<temp>temporary )?hit points equal to |hit points increase by ){p_formula}'
 		pattern2 = fr'(?:(?:re)?gains?|restores?|gaining) (?:an extra )?{p_formula} (?:extra |additional )?(?P<temp>temporary )?hit points'
-		def foo(match):
+		def healing(match):
 			nonlocal action_type
 			nonlocal damage
 			dice, flat, ability_mod, temp = match.group('dice', 'flat', 'ability_mod', 'temp')
@@ -351,13 +364,15 @@ def getAction(text, name, scale=None):
 				return 'FORMULA'
 			else:
 				return match.group(0)
-		text = re.sub(pattern, foo, text)
-		text = re.sub(pattern2, foo, text)
+		text = re.sub(pattern, healing, text)
+		text = re.sub(pattern2, healing, text)
 
 		## Damage
-		pattern = fr'(?:(?:takes?|taking|deals?|dealing|do) (?:(?:an )?(?:extra|additional) |up to )?|, | (?:and|plus) (?:another |an extra )?)(?:damage equal to )?{p_formula}(?: of)?(?: (?P<type>\w+)(?:, (?:or )?\w+)*)?(?: damage|(?= [^.]+ damage))'
+		pattern = fr'(?:(?:takes?|taking|deals?|dealing|do|suffer) (?:(?:an )?(?:extra|additional) |up to )?|, | (?:and|plus) (?:another |an extra )?)(?:damage equal to )?{p_formula}(?: of)?(?: (?P<type>\w+)(?:, (?:or )?\w+)*)?(?: damage|(?= [^.]+ damage))'
 		pattern2 = fr'(?:the (?P<type>\w+ )?damage (?:also )?increases by|increase the damage by|(?:base|the additional|the extra) damage is|damage die becomes a) {p_formula}'
-		def foo(match):
+		_pattern = fr'(?:(?:takes?|taking|deals?|dealing|do|suffer) (?:(?:an )?(?:extra|additional) |up to )?|, | (?:and|plus) (?:another |an extra )?)(?:damage equal to )?\d+ \({p_formula}\)(?: of)?(?: (?P<type>\w+)(?:, (?:or )?\w+)*)?(?: damage|(?= [^.]+ damage))'
+		_pattern2 = fr'(?:the (?P<type>\w+ )?damage (?:also )?increases by|increase the damage by|(?:base|the additional|the extra) damage is|damage die becomes a) \d+\({p_formula}\)'
+		def dmg(match):
 			nonlocal action_type
 			nonlocal damage
 			dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
@@ -375,12 +390,16 @@ def getAction(text, name, scale=None):
 				return 'FORMULA'
 			else:
 				return match.group(0)
-		text = re.sub(pattern, foo, text)
-		text = re.sub(pattern2, foo, text)
+		text = re.sub(_pattern, dmg, text)
+		text = re.sub(pattern, dmg, text)
+		text = re.sub(_pattern2, dmg, text)
+		text = re.sub(pattern2, dmg, text)
 
 		## 'Versatile' dice
 		pattern = fr'otherwise, it takes {p_dformula}'
-		if (match := re.search(pattern, text)):
+		pattern2 = fr', or {p_formula}(?= [^.]+ damage)'
+		_pattern2 = fr', or \d+ \({p_formula}\)(?= [^.]+ damage)'
+		def versatile(match):
 			dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
 
 			formula = ('1'+dice if (dice.startswith('d')) else dice) if dice else None
@@ -390,25 +409,58 @@ def getAction(text, name, scale=None):
 			if ability_mod:
 				formula = f'{(formula + " + ") or ""}@mod'
 			damage["versatile"] = formula
-		text = re.sub(pattern, r'FORMULA', text)
+		text = re.sub(pattern, versatile, text)
+		text = re.sub(_pattern2, versatile, text)
+		text = re.sub(pattern2, versatile, text)
 
 		## Other dice
-		pattern = fr'(?:roll(?:ing)?(?: a| two)?|choose to add|(?:(?:is|are) (?:reduced|increased)|(?:increases|reduces) their current(?: and maximum)? \w+ points) by(?: an amount equal to)?|which are|die(?:, a)?) (?:an additional )?{p_dformula}(?<! )'
-		pattern2 = fr'for {p_dformula} turns'
+		prefixes = fr'roll(?:ing)?(?: a| two)?'
+		prefixes += fr'|choose to add'
+		prefixes += fr'|(?:(?:is|are) (?:reduced|increased)|(?:increases|reduces) their current(?: and maximum)? \w+ points) by(?: an amount equal to)?'
+		prefixes += fr'|which are'
+		prefixes += fr'|die(?:, a)?'
+
+		pattern = fr'(?:{prefixes}) (?:an additional )?{p_dformula}(?<! )'
+		pattern2 = fr'for {p_dformula} (?:turns|days)'
 		pattern3 = fr'a {p_dformula} that you can roll'
-		text = re.sub(pattern, foo, text)
-		text = re.sub(pattern2, foo, text)
-		text = re.sub(pattern3, foo, text)
+		pattern4 = fr'{p_dformula}(?: tiny projectiles| such fissures|(?:\s*x\s*\d+\s+)?feet)'
+		pattern5 = fr'\|\s*{p_dformula}\s*\|'
+		pattern6 = fr'reduces? the damage taken by {p_dformula}'
+		pattern7 = fr'it deploys {p_dformula}'
+		def simple(match):
+			nonlocal action_type
+			nonlocal damage
+			dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
+
+			if dice or flat or ability_mod:
+				action_type = action_type or 'other'
+				formula = ('1'+dice if (dice.startswith('d')) else dice) if dice else None
+				if flat:
+					if formula: formula = f'{formula} + {flat}'
+					else: formula = flat
+				if ability_mod:
+					formula = f'{formula or ""} + @mod'
+				damage["parts"].append([ formula, '' ])
+				return 'FORMULA'
+			else:
+				return match.group(0)
+		text = re.sub(pattern, simple, text)
+		text = re.sub(pattern2, simple, text)
+		text = re.sub(pattern3, simple, text)
+		text = re.sub(pattern4, simple, text)
+		text = re.sub(pattern5, simple, text)
+		text = re.sub(pattern6, simple, text)
+		text = re.sub(pattern7, simple, text)
 
 		## Check for unprocessed dice
 		pattern = r'\d*d\d+'
-		def foo(match):
+		def unprocessed(match):
 			nonlocal text
 			nonlocal name
 
 			dice = match[0]
 
-			pattern_ignore = r'on the d20|d20 roll|rolls? the d20|roll of the d20|d20s'
+			pattern_ignore = fr'on the d20|d20 roll|rolls? the d20|roll of the d20|{dice}s'
 			pattern_ignore += fr'|uses a {dice}'
 			pattern_ignore += fr'|(?:versatile|barbed|gauntleted|spiked|double) \({dice}\)(?: and \w+(?: \d+)?)? propert(?:y|ies)' ## versatile (2d4) property
 			pattern_ignore += fr'|\|\s*{dice}\s*\|' ## |d20|
@@ -429,22 +481,15 @@ def getAction(text, name, scale=None):
 			pattern_ignore += fr'|rolls(?: a)? {dice} and subtracts the number rolled'
 			pattern_ignore += fr'|instead of its {dice}\.'
 
-			pattern_recognize = fr'{dice}(?: tiny projectiles| such fissures|(?:\s*x\s*\d+\s+)?feet)'
-			pattern_recognize += fr'|\|\s*{dice}\s*\|'
-			pattern_recognize += fr'|for {dice} days'
-
-
 			formula = ('1'+dice if (dice.startswith('d')) else dice) if dice else None
 
 			if re.search(pattern_ignore, text):
 				return formula
-			elif re.search(pattern_recognize, text):
-				damage["parts"].append([ formula, '' ])
 			else:
 				raise ValueError(f'Unprocessed dice {formula} in {name}', text)
 
 			return 'FORMULA'
-		re.sub(pattern, foo, text)
+		re.sub(pattern, unprocessed, text)
 
 		action_type = action_type or 'other'
 
@@ -482,23 +527,10 @@ def getDuration(text, name):
 		sp_units = r'(?P<unit>minute|hour|day|month|year|turn|round)s?'
 
 		## "lasts for 1 minute"
-		## "lasts for 8 hours"
-		pattern = fr'(?:^|\W)lasts (?:for )?(?:(?P<val>\d+) )?{sp_units}(?:\W|$)'
-		if match := re.search(pattern, text):
-			return match['val'] or 1, match['unit']
-
 		## "for the next 8 hours"
-		pattern = fr'(?:^|\W)for the next (?:(?P<val>\d+) )?{sp_units}(?:\W|$)'
-		if match := re.search(pattern, text):
-			return match['val'] or 1, match['unit']
-
 		## "turned for 1 minute" (e.g. channel divinity)
-		pattern = fr'(?:^|\W)turned for (?:(?P<val>\d+) )?{sp_units}(?:\W|$)'
-		if match := re.search(pattern, text):
-			return match['val'] or 1, match['unit']
-
 		## "it is charmed by you for 1 minute"
-		pattern = fr'(?:^|\W)is \w+ by you for (?:(?P<val>\d+) )?{sp_units}(?:\W|$)'
+		pattern = fr'(?:^|\W)for (?:the next )?(?:(?P<val>\d+) |one )?{sp_units}(?:\W|$)'
 		if match := re.search(pattern, text):
 			return match['val'] or 1, match['unit']
 
@@ -506,11 +538,6 @@ def getDuration(text, name):
 		pattern = fr'(?:^|\W)once (?:with)?in the next (?:(?P<val>\d+) )?{sp_units}(?:\W|$)'
 		if match := re.search(pattern, text):
 			return match['val'] or 1, match['unit']
-
-		## "For one minute"
-		pattern = fr'(?:^|\W)for one {sp_units}(?:\W|$)'
-		if match := re.search(pattern, text):
-			return 1, match['unit']
 
 		## "until the end of your next turn"
 		pattern = r'(?:^|\W)until the end of your next turn(?:\W|$)'
@@ -523,15 +550,22 @@ def raw(raw_item, attr):
 	return raw_item[attr] if (attr and attr in raw_item) else None
 
 def clean(raw_item, attr, default=''):
-	item = raw(raw_item, attr) or default
-	return cleanStr(item)
+	item = raw(raw_item, attr)
+	if item == None: item = default
+	item = cleanRecursive(item)
+	try:
+		item = int(item)
+	except:
+		pass
+	return item
 
 def cleanJson(raw_item, attr, default='{}'):
 	item = clean(raw_item, attr+'Json', default=default)
+	if item == '' or item == None: item = default
 	try:
 		item = json.loads(item)
 	except:
-		print(item)
+		print(repr(item))
 		raise
 	return item
 
@@ -589,6 +623,9 @@ def getProperties(targets, props_list, strict=False, error=False, needs_end=Fals
 def lowerCase(word):
 	return word[:1].lower() + word[1:]
 
+def capitalCase(word):
+	return word[:1].upper() + word[1:]
+
 def toInt(string):
 	try:
 		return int(string)
@@ -635,3 +672,33 @@ def getPlural(Text):
 	elif re.search('f$', text): return Text[:-1]+'ves'
 	elif re.search('fe$', text): return Text[:-2]+'ves'
 	return Text+'s'
+
+def slugify(text, capitalized=True):
+	if capitalized: text = re.sub(r'(\b\w+\b)', lambda w: w[0].capitalize(), text)
+	else: text = text.lower()
+	text = re.sub(r'[/,]', r'-', text)
+	text = re.sub(r'[\s]', r'', text)
+	text = re.sub(r'^\(([^)]*)\)', r'\1-', text)
+	text = re.sub(r'-*\(([^)]*)\)', r'-\1', text)
+	text = re.sub(r'[^\w-]', r'', text)
+	return text
+
+def toBase(number, base=10, alphabet=(string.digits+string.ascii_letters)):
+	if (base < 2) or (base > len(alphabet)):
+		raise AssertionError("int2base base out of range")
+	if number < 0:
+		return '-' + int2base(-number, base, alphabet)
+	if type(number) == float:
+		whole, frac = f'{number:.20f}'.split('.')
+		return f'{toBase(int(whole), base, alphabet)}.{toBase(int(frac), base, alphabet)}'
+	ans = ''
+	while number:
+		ans += alphabet[number % base]
+		number //= base
+	return ans[::-1] or '0'
+
+def randomID(length=16):
+	def rnd(): return toBase(random.random(), 62)[2:]
+	ID = ''
+	while len(ID) < length: ID += rnd()
+	return ID[:length]

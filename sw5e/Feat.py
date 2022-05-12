@@ -31,9 +31,5 @@ class Feat(sw5e.Feature.BaseFeature):
 				self.broken_links = True
 
 	def getImg(self, importer=None):
-		name = self.name
-		name = re.sub(r'[/,]', r'-', name)
-		name = re.sub(r'[\s]', r'', name)
-		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
-		name = re.sub(r'-*\(([^)]*)\)', r'-\1', name)
+		name = utils.text.slugify(self.name)
 		return f'systems/sw5e/packs/Icons/Feats/{name}.webp'

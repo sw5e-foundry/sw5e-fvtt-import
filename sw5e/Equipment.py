@@ -46,25 +46,20 @@ class Equipment(sw5e.Entity.Item):
 		#TODO: Remove this once there are icons for those categories
 		if item_type in no_img: return default_img
 
-		name = self.name
-		name = re.sub(r'(\b\w+\b)', lambda w: w[0].capitalize(), name)
-		name = re.sub(r'[/,]', r'-', name)
-		name = re.sub(r'[\s]', r'', name)
-		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
-		name = re.sub(r'-*\(([^)]*)\)', r'-\1', name)
-
 		item_type = re.sub(r'([a-z])([A-Z])', r'\1%20\2', item_type)
 		item_type = re.sub(r'\'', r'_', item_type)
 		item_type = re.sub(r'And', r'and', item_type)
 		item_type = re.sub(r'Or', r'or', item_type)
 		if plural: item_type += 's'
 
+		name = utils.text.slugify(self.name)
+
 		return f'systems/sw5e/packs/Icons/{item_type}/{name}.webp'
 
 	def getWeight(self):
+		if type(self.weight) == int: return self.weight
 		div = re.match(r'(\d+)/(\d+)', self.weight)
 		if div: return int(div.group(1)) / int(div.group(2))
-		else: return int(self.weight)
 
 	def getBaseItem(self):
 		return re.sub(r'\'|\s+|\([^)]*\)', '', self.name.lower());

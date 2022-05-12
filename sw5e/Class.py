@@ -66,11 +66,7 @@ class Class(sw5e.Entity.Item):
 
 	def getImg(self, importer=None, capitalized=True, index=""):
 		if index: index = f'_{index}'
-		name = self.name if capitalized else self.name.lower()
-		name = re.sub(r'[/,]', r'-', name)
-		name = re.sub(r'[\s]', r'', name)
-		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
-		name = re.sub(r'-*\(([^)]*)\)', r'-\1', name)
+		name = utils.text.slugify(self.name, capitalized=capitalized)
 		return f'systems/sw5e/packs/Icons/Classes/{name}{index}.webp'
 
 	def getLevelsTable(self, importer):
@@ -229,7 +225,7 @@ class Class(sw5e.Entity.Item):
 
 		return [data]
 
-	def getSubItems(self, importer):
+	def getSubEntities(self, importer):
 		sub_items = []
 
 		for feature_name in self.sub_item_features:

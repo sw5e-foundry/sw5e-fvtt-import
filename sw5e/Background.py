@@ -34,11 +34,7 @@ class Background(sw5e.Entity.Item):
 		super().process(old_item, importer)
 
 	def getImg(self, importer=None):
-		name = self.name
-		name = re.sub(r'[/,]', r'-', name)
-		name = re.sub(r'[\s]', r'', name)
-		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
-		name = re.sub(r'-*\(([^)]*)\)', r'-\1', name)
+		name = utils.text.slugify(self.name)
 		return f'systems/sw5e/packs/Icons/Backgrounds/{name}.webp'
 
 	def getFlavorText(self):

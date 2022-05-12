@@ -11,9 +11,5 @@ class FightingMastery(sw5e.Feature.BaseFeature):
 		super().process(old_item, importer)
 
 	def getImg(self, importer=None):
-		name = self.name
-		name = re.sub(r'[/,]', r'-', name)
-		name = re.sub(r'[\s]', r'', name)
-		name = re.sub(r'^\(([^)]*)\)', r'\1-', name)
-		name = re.sub(r'-*\(([^)]*)\)', r'-\1', name)
+		name = utils.text.slugify(self.name)
 		return f'systems/sw5e/packs/Icons/Fighting%20Styles%20and%20Masteries/{name}.webp'
