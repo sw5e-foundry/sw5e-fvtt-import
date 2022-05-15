@@ -1,56 +1,7 @@
-import sw5e.Entity, utils.text
+import sw5e.Entity, utils.text, utils.config
 import re, json, copy
 
 class EnhancedItem(sw5e.Entity.Item):
-	modification_slots = {
-		"armor": {
-			"overlay": 'slot1',
-			"underlay": 'slot2',
-			"reinforcement": 'slot3',
-			"armoring": 'slot4',
-			"shielding": 'slot4',
-		},
-		"blaster": {
-			"targeting": 'slot1',
-			"barrel": 'slot2',
-			"core": 'slot3',
-			"attachment": 'slot4',
-		},
-		"clothing": {
-			"weave": 'slot1',
-			"inlay": 'slot2',
-			"pattern": 'slot3',
-			"stitching": 'slot4',
-		},
-		"focusgenerator": {
-			"emitter": 'slot1',
-			"conductor": 'slot2',
-			"channel": 'slot3',
-			"cycler": 'slot4',
-		},
-		"lightweapon": {
-			"lens": 'slot1',
-			"crystal": 'slot2',
-			"cell": 'slot3',
-			"hilt": 'slot4',
-		},
-		"vibroweapon": {
-			"grip": 'slot1',
-			"edge": 'slot2',
-			"oscillator": 'slot3',
-			"guard": 'slot4',
-		},
-		"wristpad": {
-			"processor": 'slot1',
-			"motherboard": 'slot2',
-			"amplifier": 'slot3',
-			"dataport": 'slot4',
-		},
-		"item": {
-			"augment": 'augment',
-		},
-	}
-
 	def load(self, raw_item):
 		super().load(raw_item)
 
@@ -104,7 +55,7 @@ class EnhancedItem(sw5e.Entity.Item):
 				self.modification_slot = ""
 			else:
 				self.modification_type = self.type[:-12].lower()
-				self.modification_slot = self.modification_slots[self.modification_type][self.subtype]
+				self.modification_slot = utils.config.modification_slots[self.modification_type][self.subtype]
 
 	def getActivation(self):
 		return utils.text.getActivation(self.text, self.uses, self.recharge)
@@ -136,12 +87,10 @@ class EnhancedItem(sw5e.Entity.Item):
 
 	def getProperties(self):
 		if self.getType() == 'equipment':
-			from sw5e.equipments.Equipment import Equipment
-			if self.type == 'Focus': properties_list = Equipment.casting_properties
-			else: properties_list = Equipment.armor_properties
+			if self.type == 'Focus': properties_list = utils.config.casting_properties
+			else: properties_list = utils.config.armor_properties
 		elif self.getType() == 'weapon':
-			from sw5e.equipments.Weapon import Weapon
-			properties_list = Weapon.weapon_properties
+			properties_list = utils.config.weapon_properties
 		else:
 			return {}
 

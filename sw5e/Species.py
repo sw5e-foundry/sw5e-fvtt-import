@@ -2,34 +2,38 @@ import sw5e.Entity, utils.text
 import re, json
 
 class Species(sw5e.Entity.Item):
-	def load(self, raw_item):
-		super().load(raw_item)
+	def load(self, raw_species):
+		super().load(raw_species)
 
-		self.skinColorOptions = utils.text.clean(raw_item, "skinColorOptions")
-		self.hairColorOptions = utils.text.clean(raw_item, "hairColorOptions")
-		self.eyeColorOptions = utils.text.clean(raw_item, "eyeColorOptions")
-		self.distinctions = utils.text.clean(raw_item, "distinctions")
-		self.heightAverage = utils.text.clean(raw_item, "heightAverage")
-		self.heightRollMod = utils.text.clean(raw_item, "heightRollMod")
-		self.weightAverage = utils.text.clean(raw_item, "weightAverage")
-		self.weightRollMod = utils.text.clean(raw_item, "weightRollMod")
-		self.homeworld = utils.text.clean(raw_item, "homeworld")
-		self.flavorText = utils.text.clean(raw_item, "flavorText")
-		self.colorScheme = utils.text.clean(raw_item, "colorScheme")
-		self.manufacturer = utils.text.clean(raw_item, "manufacturer")
-		self.language = utils.text.clean(raw_item, "language")
-		self.traits = utils.text.cleanJson(raw_item, "trait")
-		self.abilitiesIncreased = utils.text.cleanJson(raw_item, "abilitiesIncreased")
-		self.imageUrls = utils.text.cleanJson(raw_item, "imageUrls")
-		self.size = utils.text.clean(raw_item, "size")
-		self.halfHumanTableEntries = utils.text.cleanJson(raw_item, "halfHumanTableEntries")
-		self.features = utils.text.clean(raw_item, "features")
-		self.contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")
-		self.contentType = utils.text.clean(raw_item, "contentType")
-		self.contentSourceEnum = utils.text.raw(raw_item, "contentSourceEnum")
-		self.contentSource = utils.text.clean(raw_item, "contentSource")
-		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
-		self.rowKey = utils.text.clean(raw_item, "rowKey")
+		attrs = [
+			"skinColorOptions",
+			"hairColorOptions",
+			"eyeColorOptions",
+			"distinctions",
+			"heightAverage",
+			"heightRollMod",
+			"weightAverage",
+			"weightRollMod",
+			"homeworld",
+			"flavorText",
+			"colorScheme",
+			"manufacturer",
+			"language",
+			"traits",
+			"abilitiesIncreased",
+			"imageUrls",
+			"size",
+			"halfHumanTableEntries",
+			"features",
+			"contentTypeEnum",
+			"contentType",
+			"contentSourceEnum",
+			"contentSource",
+			"partitionKey",
+			"timestamp",
+			"rowKey",
+		]
+		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_species, attr))
 
 	def process(self, old_item, importer):
 		super().process(old_item, importer)
@@ -39,7 +43,7 @@ class Species(sw5e.Entity.Item):
 		return f'systems/sw5e/packs/Icons/Species/{name}.webp'
 
 	def getDescription(self):
-		return utils.text.markdownToHtml(self.flavorText)
+		return utils.text.markdownToHtml(self.raw_flavorText)
 
 	def getTraits(self, importer):
 		def link(name):
@@ -47,26 +51,26 @@ class Species(sw5e.Entity.Item):
 			if importer and (trait := importer.get('feature', data={"name": name, "source": 'Species', "sourceName": self.name, "level": None})):
 				link = f'@Compendium[sw5e.speciesfeatures.{trait.foundry_id}]{{{name}}}'
 			return link
-		traits = [f'<p><em><strong>{link(trait["Name"])}.</strong></em> {trait["Description"]}</p>' for trait in self.traits]
+		traits = [f'<p><em><strong>{link(trait["name"])}.</strong></em> {trait["description"]}</p>' for trait in self.raw_traits]
 		return '\n'.join(traits)
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
 		data["data"]["description"] = { "value": self.getDescription() }
-		data["data"]["source"] = self.contentSource
+		data["data"]["source"] = self.raw_contentSource
 		data["data"]["traits"] = { "value": self.getTraits(importer) }
-		data["data"]["skinColorOptions"] = { "value": self.skinColorOptions}
-		data["data"]["hairColorOptions"] = { "value": self.hairColorOptions}
-		data["data"]["eyeColorOptions"] = { "value": self.eyeColorOptions}
-		data["data"]["colorScheme"] = { "value": self.colorScheme}
-		data["data"]["distinctions"] = { "value": self.distinctions}
-		data["data"]["heightAverage"] = { "value": self.heightAverage}
-		data["data"]["heightRollMod"] = { "value": self.heightRollMod}
-		data["data"]["weightAverage"] = { "value": self.weightAverage}
-		data["data"]["weightRollMod"] = { "value": self.weightRollMod}
-		data["data"]["homeworld"] = { "value": self.homeworld}
-		data["data"]["slanguage"] = { "value": self.language}
+		data["data"]["skinColorOptions"] = { "value": self.raw_skinColorOptions}
+		data["data"]["hairColorOptions"] = { "value": self.raw_hairColorOptions}
+		data["data"]["eyeColorOptions"] = { "value": self.raw_eyeColorOptions}
+		data["data"]["colorScheme"] = { "value": self.raw_colorScheme}
+		data["data"]["distinctions"] = { "value": self.raw_distinctions}
+		data["data"]["heightAverage"] = { "value": self.raw_heightAverage}
+		data["data"]["heightRollMod"] = { "value": self.raw_heightRollMod}
+		data["data"]["weightAverage"] = { "value": self.raw_weightAverage}
+		data["data"]["weightRollMod"] = { "value": self.raw_weightRollMod}
+		data["data"]["homeworld"] = { "value": self.raw_homeworld}
+		data["data"]["slanguage"] = { "value": self.raw_language}
 		data["data"]["damage"] = { "parts": []}
 		data["data"]["armorproperties"] = { "parts": []}
 		data["data"]["weaponproperties"] = { "parts": []}

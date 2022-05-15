@@ -1,63 +1,7 @@
-import sw5e.Equipment, utils.text
+import sw5e.Equipment, utils.text, utils.config
 import re, json
 
 class Equipment(sw5e.Equipment.Equipment):
-	armor_properties = {
-		"Absorptive": 'Absorptive',
-		"Agile": 'Agile',
-		"Anchor": 'Anchor',
-		"Avoidant": 'Avoidant',
-		"Barbed": 'Barbed',
-		"Bulky": 'Bulky',
-		"Charging": 'Charging',
-		"Concealing": 'Concealing',
-		"Cumbersome": 'Cumbersome',
-		"Gauntleted": 'Gauntleted',
-		"Imbalanced": 'Imbalanced',
-		"Impermeable": 'Impermeable',
-		"Insulated": 'Insulated',
-		"Interlocking": 'Interlocking',
-		"Lambent": 'Lambent',
-		"Lightweight": 'Lightweight',
-		"Magnetic": 'Magnetic',
-		"Obscured": 'Obscured',
-		"Obtrusive": 'Obtrusive',
-		"Powered": 'Powered',
-		"Reactive": 'Reactive',
-		"Regulated": 'Regulated',
-		"Reinforced": 'Reinforced',
-		"Responsive": 'Responsive',
-		"Rigid": 'Rigid',
-		"Silent": 'Silent',
-		"Spiked": 'Spiked',
-		"Strength": 'Strength',
-		"Steadfast": 'Steadfast',
-		"Versatile": 'Versatile',
-	}
-	casting_properties = {
-		"c_Absorbing": 'Absorbing',
-		"c_Acessing": 'Acessing',
-		"c_Amplifying": 'Amplifying',
-		"c_Bolstering": 'Bolstering',
-		"c_Constitution": 'Constitution',
-		"c_Dispelling": 'Dispelling',
-		"c_Elongating": 'Elongating',
-		"c_Enlarging": 'Enlarging',
-		"c_Expanding": 'Expanding',
-		"c_Extending": 'Extending',
-		"c_Fading": 'Fading',
-		"c_Focused": 'Focused',
-		"c_Increasing": 'Increasing',
-		"c_Inflating": 'Inflating',
-		"c_Mitigating": 'Mitigating',
-		"c_Ranging": 'Ranging',
-		"c_Rending": 'Rending',
-		"c_Repelling": 'Repelling',
-		"c_Storing": 'Storing',
-		"c_Surging": 'Surging',
-		"c_Withering": 'Withering',
-	}
-
 	def load(self, raw_item):
 		super().load(raw_item)
 
@@ -129,7 +73,7 @@ class Equipment(sw5e.Equipment.Equipment):
 		}
 
 	def getPropertiesList(self):
-		return self.casting_properties if self.armor["type"] in ('focusgenerator', 'wristpad') else self.armor_properties
+		return utils.config.casting_properties if self.armor["type"] in ('focusgenerator', 'wristpad') else utils.config.armor_properties
 
 	def getProperties(self):
 		properties_list = self.getPropertiesList()
@@ -174,8 +118,8 @@ class Equipment(sw5e.Equipment.Equipment):
 		data["data"]["strength"] = self.strengthRequirement
 		data["data"]["stealth"] = self.stealthDisadvantage
 		if self.armor["type"] in ('focusgenerator', 'wristpad'):
-			data["data"]["properties"] = { f'c_{prop}': self.p_properties.get(prop.lower(), None) for prop in self.casting_properties }
+			data["data"]["properties"] = { f'c_{prop}': self.p_properties.get(prop.lower(), None) for prop in utils.config.casting_properties }
 		else:
-			data["data"]["properties"] = { prop: self.p_properties.get(prop.lower(), None) for prop in self.armor_properties }
+			data["data"]["properties"] = { prop: self.p_properties.get(prop.lower(), None) for prop in utils.config.armor_properties }
 
 		return [data]

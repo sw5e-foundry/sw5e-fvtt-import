@@ -152,7 +152,7 @@ class Feature(BaseFeature):
 	def getClassName(self, importer):
 		if self.source in ('Archetype', 'ArchetypeInvocation'):
 			if archetype := self.getSourceItem(importer):
-				return archetype.className
+				return archetype.raw_className
 			else:
 				self.broken_links = True
 
@@ -172,14 +172,14 @@ class Feature(BaseFeature):
 		if self.contentType and self.contentTypeEnum: return self.contentType, self.contentTypeEnum
 
 		if sourceItem := self.getSourceItem(importer):
-			return sourceItem.contentType, sourceItem.contentTypeEnum
+			return sourceItem.raw_contentType, sourceItem.raw_contentTypeEnum
 		return '', 0
 
 	def getContentSource(self, importer):
 		if self.contentSource and self.contentSourceEnum: return self.contentSource, self.contentSourceEnum
 
 		if sourceItem := self.getSourceItem(importer):
-			return sourceItem.contentSource, sourceItem.contentSourceEnum
+			return sourceItem.raw_contentSource, sourceItem.raw_contentSourceEnum
 		return '', 0
 
 	def getSourceItem(self, importer):
@@ -200,19 +200,13 @@ class Feature(BaseFeature):
 		if self.source in ('Class', 'Archetype'):
 			if source_item := self.getSourceItem(importer):
 				name = self.name
-				if (plural := utils.text.getPlural(name)) in source_item.sub_item_features: name = plural
-				elif re.match(r'\w+ Superiority|Additional Maneuvers', name) and 'Maneuvers' in source_item.sub_item_features: name = 'Maneuvers'
-				if name in source_item.sub_item_features:
-					for invocation in source_item.sub_item_features[name]:
+				if (plural := utils.text.getPlural(name)) in source_item.invocations: name = plural
+				elif re.match(r'\w+ Superiority|Additional Maneuvers', name) and 'Maneuvers' in source_item.invocations: name = 'Maneuvers'
+				if name in source_item.invocations:
+					for invocation in source_item.invocations[name]:
 						invocation_text = invocation["name"]
-						data = {
-							"name": invocation["name"],
-							"source": f'{self.source}Invocation',
-							"sourceName": source_item.name,
-							"level": invocation["level"],
-						}
-						if (invocation_item := importer.get('feature', data=data)) and  invocation_item.foundry_id:
-							invocation_text = f'@Compendium[sw5e.invocations.{invocation_item.foundry_id}]{{{invocation_text}}}'
+						if "foundry_id" in invocation:
+							invocation_text = f'@Compendium[sw5e.invocations.{invocation["foundry_id"]}]{{{invocation_text}}}'
 						else:
 							self.broken_links = True
 						text += f'\n{invocation_text}'

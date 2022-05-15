@@ -14,7 +14,15 @@ def cleanStr(string):
 
 def cleanRecursive(obj, depth=0):
 	if depth > 100: return obj
-	if type(obj) == str: return cleanStr(obj)
+	if type(obj) == str:
+		obj = cleanStr(obj)
+		try:
+			s = int(obj)
+			if f'{s}' == obj:
+				obj = s
+		except:
+			pass
+		return obj
 	if type(obj) == dict:
 		return {
 			cleanRecursive(key, depth+1): cleanRecursive(obj[key], depth+1)
@@ -553,10 +561,6 @@ def clean(raw_item, attr, default=''):
 	item = raw(raw_item, attr)
 	if item == None: item = default
 	item = cleanRecursive(item)
-	try:
-		item = int(item)
-	except:
-		pass
 	return item
 
 def cleanJson(raw_item, attr, default='{}'):
@@ -567,6 +571,7 @@ def cleanJson(raw_item, attr, default='{}'):
 	except:
 		print(repr(item))
 		raise
+	item = cleanRecursive(item)
 	return item
 
 def getProperty(prop_name, props):

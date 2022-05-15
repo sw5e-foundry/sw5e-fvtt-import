@@ -2,56 +2,6 @@ import sw5e.Equipment, utils.text
 import re, json, copy
 
 class Weapon(sw5e.Equipment.Equipment):
-	weapon_properties = {
-		"amm": 'Ammunition',
-		"aut": 'Auto',
-		"bur": 'Burst',
-		"bru": 'Brutal',
-		"con": 'Constitution',
-		"def": 'Defensive',
-		"dex": 'Dexterity',
-		"dir": 'Dire',
-		"drm": 'Disarming',
-		"dgd": 'Disguised',
-		"dis": 'Disintegrate',
-		"dpt": 'Disruptive',
-		"dou": 'Double',
-		"exp": 'Explosive',
-		"fin": 'Finesse',
-		"fix": 'Fixed',
-		"foc": 'Focus',
-		"hvy": 'Heavy',
-		"hid": 'Hidden',
-		"hom": 'Homing',
-		"ion": 'Ionizing',
-		"ken": 'Keen',
-		"lgt": 'Light',
-		"lum": 'Luminous',
-		"mlt": 'Melt',
-		"mig": 'Mighty',
-		"neu": 'Neuralizing',
-		"ovr": 'Overheat',
-		"pic": 'Piercing',
-		"pow": 'Power',
-		"ran": 'Range',
-		"rap": 'Rapid',
-		"rch": 'Reach',
-		"rel": 'Reload',
-		"ret": 'Returning',
-		"sat": 'Saturate',
-		"shk": 'Shocking',
-		"smr": 'Autotarget', # Autotarget/Smart
-		"sil": 'Silent',
-		"son": 'Sonorous',
-		"spc": 'Special',
-		"str": 'Strength',
-		"swi": 'Switch',
-		"thr": 'Thrown',
-		"two": 'Two-Handed',
-		"ver": 'Versatile',
-		"vic": 'Vicious',
-	}
-
 	def load(self, raw_item):
 		super().load(raw_item)
 
@@ -157,7 +107,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		else: return ['powerCell']
 
 	def getPropertiesList(self):
-		return self.weapon_properties
+		return utils.config.weapon_properties
 
 	def getProperties(self):
 		properties_list = self.getPropertiesList()

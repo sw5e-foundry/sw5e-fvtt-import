@@ -2,28 +2,32 @@ import sw5e.Entity, utils.text
 import re, json
 
 class Archetype(sw5e.Entity.Item):
-	def load(self, raw_item):
-		super().load(raw_item)
+	def load(self, raw_archetype):
+		super().load(raw_archetype)
 
-		self.className = utils.text.clean(raw_item, "className")
-		self.text = utils.text.clean(raw_item, "text")
-		self.text2 = utils.text.raw(raw_item, "text2")
-		self.leveledTableHeaders = utils.text.cleanJson(raw_item, "leveledTableHeaders")
-		self.leveledTable = utils.text.cleanJson(raw_item, "leveledTable")
-		self.imageUrls = utils.text.cleanJson(raw_item, "imageUrls")
-		self.casterRatio = utils.text.raw(raw_item, "casterRatio")
-		self.casterTypeEnum = utils.text.raw(raw_item, "casterTypeEnum")
-		self.casterType = utils.text.clean(raw_item, "casterType")
-		self.classCasterTypeEnum = utils.text.raw(raw_item, "classCasterTypeEnum")
-		self.classCasterType = utils.text.clean(raw_item, "classCasterType")
-		self.features = utils.text.raw(raw_item, "features")
-		self.featureRowKeysJson = utils.text.cleanJson(raw_item, "featureRowKeys")
-		self.contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")
-		self.contentType = utils.text.clean(raw_item, "contentType")
-		self.contentSourceEnum = utils.text.raw(raw_item, "contentSourceEnum")
-		self.contentSource = utils.text.clean(raw_item, "contentSource")
-		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
-		self.rowKey = utils.text.clean(raw_item, "rowKey")
+		attrs = [
+			"className",
+			"text",
+			"text2",
+			"leveledTableHeaders",
+			"leveledTable",
+			"imageUrls",
+			"casterRatio",
+			"casterTypeEnum",
+			"casterType",
+			"classCasterTypeEnum",
+			"classCasterType",
+			"features",
+			"featureRowKeysJson",
+			"contentTypeEnum",
+			"contentType",
+			"contentSourceEnum",
+			"contentSource",
+			"partitionKey",
+			"timestamp",
+			"rowKey",
+		]
+		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_archetype, attr))
 
 	def process(self, old_item, importer):
 		super().process(old_item, importer)
@@ -31,83 +35,82 @@ class Archetype(sw5e.Entity.Item):
 		self.full_name = self.name
 		if self.name.endswith(' (Companion)'): self.name = self.name[:-12]
 
-		self.sub_item_features = self.getSubItemFeatures()
+		self.features, self.invocations = self.getFeatures(importer)
+		self.advancements = self.getAdvancements()
 
-	def getFeatureLink(self, feature_name, feature_level, importer):
-		text = feature_name
-		if importer:
-			feature_data = { "name": feature_name, "source": 'archetype', "sourceName": self.full_name, "level": feature_level }
-			feature = importer.get('feature', data=feature_data)
-			if feature:
-				if feature.foundry_id: text = f'@Compendium[sw5e.archetypefeatures.{feature.foundry_id}]{{{text}}}'
-				else: self.broken_links = True
-			else:
-				self.broken_links = True
-				if self.foundry_id: print(f'		Unable to find feature {feature_data=}')
-		return text
-
-	def getSubItemFeatures(self):
-		text = self.text
+	def getFeatures(self, importer):
+		text = self.raw_text
 
 		features = {}
-		for match in re.finditer(r'\s### (?P<name>[^\n]*)\n(?!\s*_\*\*' + self.name + ')', text):
-			text = text[match.start():]
-			feature = []
+		invocations = {}
 
-			expected = (self.className == 'Engineer') or (self.className == 'Scholar') or (self.className == 'Fighter') or (self.name == 'Deadeye Technique')
-			if not expected:
-				print(f'Possible error detected: searching for subitems of {self.full_name} which is not a scholar, engineer, or fighter archetype.')
-				print(f'{match["name"]=}')
+		levels_pat = r'(?P<level>\d+)\w+(?:, \d+\w+|,? and \d+\w+)* level'
+		feature_pat = r'(?<!#)###(?!#) (?P<name>[^\n]*)\s*';
+		feature_prereq_pat = fr'_\*\*{self.name}:\*\* {levels_pat}_\s*';
+		invocat_pat = r'(?<!#)####(?!#) (?P<name>[^\n]*)\s*';
+		invocat_prereq_pat = fr'_\*\*Prerequisite:\*\* (?:{levels_pat})?(?:, )?(?P<prerequisite>[^\n]*)_\s*';
+		for match in re.finditer(feature_pat, text):
+			feature_name = match["name"]
+			subtext = text[match.end():]
+			if (next_feature := re.search(feature_pat, subtext)): subtext = subtext[:next_feature.start()]
 
-			pattern = r'#### (?P<name>[^\n]*)\n'
-			pattern += r'(?P<text>'
-			pattern += r'(?:\s*_\*\*Prerequisite:\*\*'
-			pattern += r'(?: (?P<level>\d+)\w+(?:, \d+\w+| and \d+\w+)* level)?'
-			pattern += r'(?:,? (?P<prerequisite>[^_]+))?_\n)?'
-			pattern += r'[^#]*)(?:\n|$)'
+			# If there is a prerequisite, it's a normal feature
+			match = re.match(feature_prereq_pat, subtext)
+			if match:
+				level = match["level"]
+				subtext = subtext[match.end():]
 
-			for invocation in re.finditer(pattern, text):
+				feature_data = { "name": feature_name, "source": 'Archetype', "sourceName": self.full_name, "level": level }
+				feature = importer.get('feature', data=feature_data)
+				if feature:
+					if level not in features: features[level] = {}
+					features[level][feature_name] = {
+						"name": feature_name,
+						"level": level,
+						"foundry_id": feature.foundry_id,
+						"uid": feature.uid,
+						"description": subtext.strip()
+					}
+					if not feature.foundry_id: self.broken_links = True
+				else:
+					if self.foundry_id: print(f'		Unable to find feature {feature_data=}')
+					self.broken_links = True
+
+			# Otherwise, it's a list of invocations
+			if (not match) or (feature_name == "Additional Maneuvers"):
+				expected = (self.raw_className in ['Engineer', 'Scholar', 'Fighter']) or (self.name == 'Deadeye Technique')
 				if not expected:
-					print(f'	{invocation["name"]=}')
+					print(f'Possible error detected: searching for subitems of {self.full_name} which is not a scholar, engineer, or fighter archetype.')
+					print(f'{match["name"]=}')
+				invocation_list = []
+				for match in re.finditer(fr'{invocat_pat}(?P<text>(?:{invocat_prereq_pat})?[^#]*)', subtext):
+					if not expected: print(f'	{match["name"]=}')
+					invocation_list.append(match.groupdict())
+				invocations[feature_name] = invocation_list
 
-				feature.append({
-					"name": invocation["name"],
-					"text": invocation["text"],
-					"level": int(invocation["level"]) if invocation["level"] else None,
-					"prerequisite": invocation["prerequisite"],
-				})
+		for name, invocation in invocations.items():
+			if not len(invocation):
+				raise ValueError(f'Invocation type "{name}" detected with no invocations.')
 
-			features[match["name"]] = feature
+		return features, invocations
 
-		return features
+	def getAdvancements(self):
+		advancements = [ ]
+		for level in self.features:
+			uids = []
+			for name in self.features[level]:
+				feature = self.features[level][name]
+				uids.append(f'Compendium.sw5e.archetypefeatures.{feature["foundry_id"]}')
+			if len(uids):
+				advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
+		return advancements
 
 	def getDescription(self, importer):
-		text = f'## {self.full_name}\n'
+		text = self.raw_text
+		if match := re.search(r'#{3}', text):
+			text = text[:match.start()]
 
-		patt = r'### (?P<name>[^\n]+)' # '### Fast and Agile'
-		patt += r'(?P<after>\s*'
-		patt += r'_\*\*' + self.name + r':\*\* (?P<lvl>\d+)' # '_**Acquisitions Practice:** 3rd'
-		patt += r'[^#]*)'
-
-		for feature in re.finditer(patt, self.text):
-			text += f'### {self.getFeatureLink(feature["name"], feature["lvl"], importer)}{feature["after"]}\n'
-
-		for feature_name in self.sub_item_features:
-			if match := re.search(f'(?<!#)### {feature_name}([^#])*', self.text):
-				feature_data = { "name": feature_name, "source": 'archetype', "sourceName": self.full_name, "level": None }
-				if (feature_item := importer.get('feature', data=feature_data)) and feature_item.foundry_id:
-					text += f'### @Compendium[sw5e.archetypefeatures.{feature_item.foundry_id}]{{{feature_name}}}{match[1]}\n'
-				else:
-					self.broken_links = True
-					text += f'### {feature_name}{match[1]}\n'
-					for invocation in self.sub_item_features[feature_name]:
-						invocation_data = { "name": invocation["name"], "source": 'archetypeInvocation', "sourceName": self.full_name, "level": invocation["level"] }
-						if (invocation_item := importer.get('feature', data=invocation_data)) and invocation_item.foundry_id:
-							text += f'#### @Compendium[sw5e.invocations.{invocation_item.foundry_id}]{{{invocation["name"]}}}\n{invocation["text"]}\n'
-						else:
-							self.broken_links = True
-							text += f'#### {invocation["name"]}\n{invocation["text"]}\n'
-
+		text = f'## {self.full_name}\n' + text
 
 		return utils.text.markdownToHtml(text)
 
@@ -119,27 +122,31 @@ class Archetype(sw5e.Entity.Item):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
+		data["data"]["-=className"] = None
+
 		data["name"] = self.full_name
 		data["data"]["description"] = { "value": self.getDescription(importer) }
-		data["data"]["source"] = self.contentSource
-		data["data"]["className"] = self.className
-		data["data"]["classCasterType"] = self.classCasterType if self.classCasterType != "None" else ""
+		data["data"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
+		data["data"]["classIdentifier"] = utils.text.slugify(self.raw_className, capitalized=False)
+		data["data"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
+		data["data"]["source"] = self.raw_contentSource
+		data["data"]["classCasterType"] = self.raw_classCasterType if self.raw_classCasterType != "None" else ""
 
 		return [data]
 
 	def getSubEntities(self, importer):
 		sub_items = []
 
-		for feature_name in self.sub_item_features:
-			for invocation in self.sub_item_features[feature_name]:
+		for feature_name in self.invocations:
+			for invocation in self.invocations[feature_name]:
 				data = {}
 
 				for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):
-					data[key] = getattr(self, key)
+					data[key] = getattr(self, f'raw_{key}')
 
 				data["name"] = invocation["name"]
 				data["text"] = invocation["text"]
-				data["level"] = invocation["level"]
+				data["level"] = int(invocation["level"]) if invocation["level"] else None
 				data["prerequisite"] = invocation["prerequisite"]
 
 				data["source"] = 'ArchetypeInvocation'

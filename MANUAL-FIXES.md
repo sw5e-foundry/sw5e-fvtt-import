@@ -3,6 +3,10 @@
 - archetype.json:
   - Ballstic Approach -> Ballistic Approach
   - Fix prerequisite level on Way of Balance's features
+  - Fix prerequisite for Assault Specialist's 'Brute Force'
+  - Fix Slicer Pursuit's 'Systems Hijack'
+- class.json
+  - Fix fighter's 'Fighter Specialty' requirements
 - enhancedItem.json:
   - 20d6 kinetic on -> 20d6 kinetic damage on
   - enhanced shoulder cannons: subtype 'any -> shoulder cannon', enhancedWeaponType 'any -> specific'
