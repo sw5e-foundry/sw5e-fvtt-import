@@ -5,6 +5,7 @@
   - Fix prerequisite level on Way of Balance's features
   - Fix prerequisite for Assault Specialist's 'Brute Force'
   - Fix Slicer Pursuit's 'Systems Hijack'
+  - Fix Archeologist Pursuit's 'Additional Maneuvers'
 - class.json
   - Fix fighter's 'Fighter Specialty' requirements
 - enhancedItem.json:
