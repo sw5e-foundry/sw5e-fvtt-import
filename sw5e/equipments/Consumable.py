@@ -10,12 +10,40 @@ class Consumable(sw5e.Equipment.Equipment):
 
 		self.uses, self.recharge = utils.text.getUses(self.description, self.name)
 		self.activation = utils.text.getActivation(self.description, self.uses, self.recharge)
+		self.consumable_type, self.ammo_type = self.getConsumableType()
 
-		if self.name == 'Power cell' or (self.description or '').startswith(f'A {self.name.lower()} is a specializard power cell'):
-			self.activation = 'bonus'
-			self.uses_value = 480
-			self.uses = 480
-			self.recharge = 'charges'
+	def getConsumableType(self):
+		consumable_type, ammo_type = None, None
+
+		mapping = {
+			"Ammunition": 'ammo',
+			"Explosive": 'explosive',
+			"AlcoholicBeverage": 'adrenal',
+			"Spice": 'adrenal',
+			"Medical": 'medpac',
+		}
+		if self.equipmentCategory in mapping:
+			consumable_type = mapping[self.equipmentCategory]
+		else:
+			raise ValueError(self.name, self.equipmentCategory)
+
+		if consumable_type == 'ammo':
+			ammo_types = utils.config.ammo_types
+			name = self.name.lower()
+			for ammo in ammo_types:
+				amn = ammo["name"].lower()
+				if name.find(amn) != -1:
+					ammo_type = ammo["id"]
+					break
+			if not ammo_type:
+				desc = (self.description or '').lower()
+				for ammo in ammo_types:
+					amn = ammo["name"].lower()
+					if desc.find(amn) != -1:
+						ammo_type = ammo["id"]
+						break
+
+		return consumable_type, ammo_type
 
 	def getImg(self, importer=None):
 		kwargs = {
@@ -33,16 +61,7 @@ class Consumable(sw5e.Equipment.Equipment):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		mapping = {
-			"Ammunition": 'ammo',
-			"Explosive": 'explosive',
-			"AlcoholicBeverage": 'adrenal',
-			"Spice": 'adrenal',
-			"Medical": 'medpac',
-		}
-		if self.equipmentCategory in mapping:
-			data["data"]["consumableType"] = mapping[self.equipmentCategory]
-		else:
-			raise ValueError(self.name, self.equipmentCategory)
+		data["data"]["consumableType"] = self.consumable_type
+		if self.ammo_type: data["data"]["ammoType"] = self.ammo_type
 
 		return [data]

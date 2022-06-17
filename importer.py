@@ -2,7 +2,7 @@ import pickle, json, requests, os, re, sys
 import sw5e.Class, sw5e.Archetype, sw5e.Species, sw5e.Background
 import sw5e.ClassImprovement, sw5e.MulticlassImprovement, sw5e.SplashclassImprovement, sw5e.WeaponFocus, sw5e.WeaponSupremacy
 import sw5e.Feature, sw5e.Feat, sw5e.FightingStyle, sw5e.FightingMastery, sw5e.LightsaberForm
-import sw5e.Equipment, sw5e.Power, sw5e.EnhancedItem
+import sw5e.Equipment, sw5e.Power, sw5e.EnhancedItem, sw5e.Maneuvers
 import sw5e.ArmorProperty, sw5e.WeaponProperty, sw5e.Conditions
 import sw5e.Monster
 import utils.text
@@ -32,6 +32,7 @@ class Importer:
 		'fightingMastery',
 		'fightingStyle',
 		'lightsaberForm',
+		'maneuvers',
 		'monster',
 		'power',
 		# 'referenceTable',
@@ -78,7 +79,7 @@ class Importer:
 			missing_entity = 0
 			with open(self.__foundry_data_path, 'r') as foundry_data_file:
 				data = json.load(foundry_data_file)
-				for uid in data: missing_entity += self.__applyFoundryData(uid, data[uid])
+				for uid in data: missing_entity = self.__applyFoundryData(uid, data[uid], missing=missing_entity)
 			if missing_entity > self.warn_limit: print(f'	And {missing_entity-self.warn_limit} more...')
 
 			missing_fdata = 0
@@ -107,8 +108,7 @@ class Importer:
 		# 	pickle.dump(data, pickle_file)
 		pass
 
-	def __applyFoundryData(self, uid, data, parent=None):
-		missing = 0
+	def __applyFoundryData(self, uid, data, parent=None, missing=0):
 		entity_type = uid.split('.')[0]
 		if entity_type not in self.__stored_types: entity_type = utils.text.lowerCase(entity_type)
 		base_uid = re.sub(r'\.mode-\w+$', '', uid)
@@ -118,7 +118,7 @@ class Importer:
 			if "effects" in data: entity.effects = data["effects"]
 			if "sub_entities" in data:
 				for sub_uid in data["sub_entities"]:
-					missing += self.__applyFoundryData(sub_uid, data["sub_entities"][sub_uid], entity)
+					missing = self.__applyFoundryData(sub_uid, data["sub_entities"][sub_uid], entity, missing=missing)
 		else:
 			if missing <= self.warn_limit:
 				print(f'	Foundry data for uid {uid}, but no such entity exists')
@@ -211,6 +211,7 @@ class Importer:
 		if extra_files:
 			print("Extras...")
 			for file_name in extra_files:
+				if file_name.endswith('-old'): continue
 				if data := self.__getExtraData(file_name):
 					for entity_type in self.__stored_types:
 						if entity_type in data:

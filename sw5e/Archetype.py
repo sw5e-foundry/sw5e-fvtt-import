@@ -105,7 +105,7 @@ class Archetype(sw5e.Entity.Item):
 				advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
 		return advancements
 
-	def getDescription(self, importer):
+	def getDescription(self):
 		text = self.raw_text
 		if match := re.search(r'#{3}', text):
 			text = text[:match.start()]
@@ -113,6 +113,36 @@ class Archetype(sw5e.Entity.Item):
 		text = f'## {self.full_name}\n' + text
 
 		return utils.text.markdownToHtml(text)
+
+	def getInvocationsText(self, importer):
+		output = []
+		if importer:
+			for feature_name in self.invocations:
+				output += [f'<h1>{feature_name}</h1>']
+				output += ['<ul>']
+				for invocation in self.invocations[feature_name]:
+					invocation_data = {}
+					for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):
+						invocation_data[key] = getattr(self, f'raw_{key}')
+
+					invocation_data["name"] = invocation["name"]
+					invocation_data["text"] = invocation["text"]
+					invocation_data["level"] = int(invocation["level"]) if invocation["level"] else None
+					invocation_data["prerequisite"] = invocation["prerequisite"]
+
+					invocation_data["source"] = 'ArchetypeInvocation'
+					invocation_data["sourceName"] = self.name
+
+					invocation = importer.get('feature', data=invocation_data)
+					if invocation:
+						output += [f'<li>@Compendium[sw5e.invocations.{invocation.foundry_id}]{{{invocation.name.capitalize()}}}</li>']
+						if not invocation.foundry_id: self.broken_links = True
+					else:
+						if self.foundry_id: print(f'		Unable to find invocation {invocation_data=}')
+						self.broken_links = True
+				output += ['</ul>']
+
+		return "\n".join(output)
 
 	def getImg(self, importer=None, capitalized=True, index=""):
 		if index: index = f'_{index}'
@@ -123,14 +153,15 @@ class Archetype(sw5e.Entity.Item):
 		data = super().getData(importer)[0]
 
 		data["data"]["-=className"] = None
+		data["data"]["-=classCasterType"] = None
 
 		data["name"] = self.full_name
-		data["data"]["description"] = { "value": self.getDescription(importer) }
+		data["data"]["description"] = { "value": self.getDescription() }
+		data["data"]["invocations"] = { "value": self.getInvocationsText(importer) }
 		data["data"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
 		data["data"]["classIdentifier"] = utils.text.slugify(self.raw_className, capitalized=False)
 		data["data"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
 		data["data"]["source"] = self.raw_contentSource
-		data["data"]["classCasterType"] = self.raw_classCasterType if self.raw_classCasterType != "None" else ""
 
 		return [data]
 

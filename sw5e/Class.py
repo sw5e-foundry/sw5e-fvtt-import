@@ -56,7 +56,8 @@ class Class(sw5e.Entity.Item):
 		super().process(old_item, importer)
 
 		self.features, self.invocations = self.getFeatures(importer)
-		self.power_casting = self.getPowerCasting()
+		self.force_casting, self.tech_casting = self.getPowerCasting()
+		self.superiority = self.getSuperiority()
 		self.advancements = self.getAdvancements()
 
 	def getDescription(self):
@@ -126,49 +127,29 @@ class Class(sw5e.Entity.Item):
 
 		return features, invocations
 
-	def getLevelsTable(self, importer):
-		table = ['<table class="table text-center LevelTable_levelTable_14CWn">', '<thead>', '<tr>',]
-		for header in self.raw_levelChangeHeaders:
-			table += [f'<th align="center">{header}</th>']
-		table += ['</tr>', '</thead>', '<tbody>']
-
-		for level in range(1,21):
-			table += ['<tr class="rows">']
-			for header in self.raw_levelChangeHeaders:
-				element = str(self.raw_levelChanges[level][header])
-				if header == 'Features' and importer and not self.broken_links:
-					features = utils.text.cleanStr(element).split(', ')
-
-					for i, name in enumerate(features):
-						if re.search(r'\w+ feature|—', name): continue
-						if level not in self.features: continue
-						if name not in self.features[level]: continue
-						feature = self.features[level][name]
-						features[i] = f'@Compendium[sw5e.classfeatures.{feature["foundry_id"]}]{{{feature["name"].capitalize()}}}'
-					element = ', '.join(features)
-				else:
-					## Add inline rolls
-					element = re.sub(r'\b((?:\d*d)?\d+\s*)x(\s*\d+)\b', r'\1*\2', element)
-					element = re.sub(r'\b(\d*d\d+(?:\s*[+*]\s*\d+)?)\b', r'[[/r \1]]', element)
-				table += [f'<td align="center">{element}</td>']
-			table += ['</tr>']
-
-		table += ['</tbody>', '</table>']
-
-		return table
-
 	def getPowerCasting(self):
-		if self.raw_casterType == 'Tech':
-			if self.raw_casterRatio == 0.0: raise ValueError("Invalid power casting progression, techcaster with 0 caster ratio.")
-			if self.raw_casterRatio == 0.5: return "scout", "int"
-			if self.raw_casterRatio == 0.6666666666666666: return "sentinel", "int"
-			if self.raw_casterRatio == 1.0: return "engineer", "int"
-		elif self.raw_casterType == 'Force':
-			if self.raw_casterRatio == 0.0: raise ValueError("Invalid power casting progression, forcecaster with 0 caster ratio.")
-			if self.raw_casterRatio == 0.5: return "guardian", "wis"
-			if self.raw_casterRatio == 0.6666666666666666: return "sentinel", "wis"
-			if self.raw_casterRatio == 1.0: return "consular", "wis"
-		else: return "none", ""
+		mapping = {
+			# [0.0]: 'none',
+			0.25: 'arch',
+			0.5: 'half',
+			0.6666666666666666: '3/4',
+			1: 'full'
+		}
+		(cType, cRatio) = (self.raw_casterType, self.raw_casterRatio)
+
+		if cType == 'None': return 'none', 'none'
+
+		if cRatio in mapping:
+			if cType == 'Tech': return 'none', mapping[cRatio]
+			elif cType == 'Force': return mapping[cRatio], 'none'
+
+		raise ValueError(f'Invalid power casting progression, {cType}caster with {cRatio} caster ratio.')
+
+	def getSuperiority(self):
+		# TODO: Figure out how to do this without a hard coded list
+		if self.name == "Scholar": return "1"
+		elif self.name == "Fighter": return "0.5"
+		return "0"
 
 	def getAdvancements(self):
 		advancements = [ sw5e.Advancement.HitPoints() ]
@@ -180,35 +161,6 @@ class Class(sw5e.Entity.Item):
 			if len(uids):
 				advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
 		return advancements
-
-	def getClassFeatures(self, table, importer):
-		table = ['<div class="classtable">', '<blockquote>'] + table + ['</blockquote>', '</div>']
-
-		lines =  ['&nbsp;']
-		lines += ['## Class Features']
-		lines += [f'As a {self.name}, you gain the following:']
-		lines += ['#### Hit Points']
-		lines += [f'**Hit Dice:** 1d{self.raw_hitDiceDieType} per {self.name} level']
-		lines += [f'**Hit Points at 1st Level:** {self.raw_hitPointsAtFirstLevelNumber}']
-		lines += [f'**Hit Points at Higher Levels:** {self.raw_hitPointsAtHigherLevelsNumber}']
-		lines += ['#### Proficiencies']
-		lines += [f'**Armor:** {", ".join(self.raw_armorProficiencies)}']
-		lines += [f'**Weapons:** {", ".join(self.raw_weaponProficiencies)}']
-		lines += [f'**Tools:** {", ".join(self.raw_toolProficiencies)}']
-		lines += [f'**Saving Throws:** {", ".join(self.raw_savingThrows)}']
-		lines += [f'**Skills:** {self.raw_skillChoices}']
-		lines += ['**Equipment:**']
-		lines += ['You start with the following equipment, in addition to the equipment granted by your background']
-		#TODO: link equipments to their compendium items
-		lines += self.raw_equipmentLines
-		lines += ['<h3 class="mt-2">Variant: Starting Wealth</h3>']
-		lines += ['In lieu of the equipment granted by your class and background, you can elect to purchase your starting gear. If you do so, you receive no equipment from your class and background, and instead roll for your starting wealthusing the criteria below:']
-		lines += ['<table style="width: 300px; border: 0px;">', '<tbody>']
-		lines += ['<tr>', '<td style="width: 150px;">**Class**</td>', '<td style="width: 150px;"><strong class="text-right">Funds**</td>', '</tr>']
-		lines += ['<tr>', f'<td style="width: 150px;">{self.name}</td>', f'<td style="width: 150px;">{self.raw_startingWealthVariant[:-3]} cr</td>', '</tr>']
-		lines += ['</tbody>', '</table>']
-
-		return ''.join(table) + utils.text.markdownToHtml(lines)
 
 	def getArchetypesFlavor(self, importer):
 		output = [f'<h1>{self.raw_archetypeFlavorName}</h1>']
@@ -230,8 +182,38 @@ class Class(sw5e.Entity.Item):
 
 		return "\n".join(output)
 
+	def getInvocationsText(self, importer):
+		output = []
+		if importer:
+			for feature_name in self.invocations:
+				output += [f'<h1>{feature_name}</h1>']
+				output += ['<ul>']
+				for invocation in self.invocations[feature_name]:
+					invocation_data = {}
+					for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):
+						invocation_data[key] = getattr(self, f'raw_{key}')
+
+					invocation_data["name"] = invocation["name"]
+					invocation_data["text"] = invocation["text"]
+					invocation_data["level"] = int(invocation["level"]) if invocation["level"] else None
+					invocation_data["prerequisite"] = invocation["prerequisite"]
+
+					invocation_data["source"] = 'ClassInvocation'
+					invocation_data["sourceName"] = self.name
+
+					invocation = importer.get('feature', data=invocation_data)
+					if invocation:
+						output += [f'<li>@Compendium[sw5e.invocations.{invocation.foundry_id}]{{{invocation.name.capitalize()}}}</li>']
+						if not invocation.foundry_id: self.broken_links = True
+					else:
+						if self.foundry_id: print(f'		Unable to find invocation {invocation_data=}')
+						self.broken_links = True
+				output += ['</ul>']
+
+		return "\n".join(output)
+
 	def getSkillChoices(self, importer):
-		mapping = { skl["full"]: skl["abbr"] for skl in utils.config.skills }
+		mapping = { skl["name"]: skl["id"] for skl in utils.config.skills }
 		mapping["Any"] = 'any'
 		return [ mapping[skl] for skl in self.raw_skillChoicesList ]
 
@@ -239,11 +221,15 @@ class Class(sw5e.Entity.Item):
 		data = super().getData(importer)[0]
 
 		data["data"]["-=className"] = None
+		data["data"]["-=archetypes"] = None
+		data["data"]["-=classFeatures"] = None
+		data["data"]["-=levelsTable"] = None
 
 		data["data"]["description"] = { "value": self.getDescription() }
+		data["data"]["atFlavorText"] = { "value": self.getArchetypesFlavor(importer) }
+		data["data"]["invocations"] = { "value": self.getInvocationsText(importer) }
 		data["data"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
 		data["data"]["levels"] = 1
-		data["data"]["archetype"] = ""
 		data["data"]["hitDice"] = f'd{self.raw_hitDiceDieType}'
 		data["data"]["hitDiceUsed"] = 0
 		data["data"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
@@ -255,14 +241,12 @@ class Class(sw5e.Entity.Item):
 		}
 		data["data"]["source"] = self.raw_contentSource
 		data["data"]["powercasting"] = {
-			"progression": self.power_casting[0],
-			"ability": self.power_casting[1],
+			"force": self.force_casting,
+			"tech": self.tech_casting,
+			"-=progression": None,
+			"-=ability": None,
 		}
-		table = self.getLevelsTable(importer)
-		data["data"]["levelsTable"] = ''.join(table)
-		data["data"]["archetypes"] = ""
-		data["data"]["classFeatures"] = { "value": self.getClassFeatures(table, importer) }
-		data["data"]["atFlavorText"] = { "value": self.getArchetypesFlavor(importer) }
+		data["data"]["superiority"] = { "progression": self.superiority }
 
 		return [data]
 

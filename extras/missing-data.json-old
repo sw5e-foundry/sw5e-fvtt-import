@@ -1,103 +1,6 @@
 {
     "feature": [
         {
-            "name": "Armormech's Celerity",
-            "text": "_**Armormech Engineering:** 14th and 17th level_\r\nWhen you take the Attack action or use your action to a cast a tech power of 1st-level or higher, you can make one weapon attack as a bonus action.\r\nYou can use this feature five times. You gain an additional use at 17th level. You regain all expended uses when you complete a long rest.",
-            "level": 14,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Armormech Engineering",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Armormech Engineering-Armormech's Celerity-14",
-            "timestamp": "2022-05-29T01:36:27.7400067+00:00",
-            "eTag": "W/\"datetime'2022-05-29T01%3A36%3A27.7400067Z'\""
-        },
-        {
-            "name": "Targeting Matrix",
-            "text": "_**Armstech Engineering:** 14th and 17th level_\r\nWhen you cast a tech power that allows you to force creatures in an area to make a saving throw, you can instead make an attack roll with your modified weapon against a single target that would be in the range of the power. On a hit, the target suffers the effects as though they failed their saving throw. If the power would affect more than one creature, it instead affects only one.\r\nYou can use this feature five times. You gain an additional use at 17th level. You regain any expended uses when you finish a long rest.",
-            "level": 14,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Armstech Engineering",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Armstech Engineering-Targeting Matrix-14",
-            "timestamp": "2022-05-29T01:36:27.7410062+00:00",
-            "eTag": "W/\"datetime'2022-05-29T01%3A36%3A27.7410062Z'\""
-        },
-        {
-            "name": "Explosive",
-            "text": "_**Ballistic Approach:** 3rd and 9th level_\r\nWhile raging, you gain the following benefits:\r\n- When you roll a 1 or 2 on a damage die for an attack made with a blaster weapon, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2.\r\n- You add your rage damage to damage rolls from ranged weapon attacks using Strength. \r\n- At 9th level, when a creature rolls a 1 on a saving throw against your burst or rapid property, you can add your Brutal Critical dice to the damage.",
-            "level": 3,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Ballistic Approach",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Ballistic Approach-Explosive-3",
-            "timestamp": "2022-05-29T01:36:27.7360084+00:00",
-            "eTag": "W/\"datetime'2022-05-29T01%3A36%3A27.7360084Z'\""
-        },
-        {
-            "name": "Mark of the Artillerist",
-            "text": "_**Artillerist Technique:** 3rd and 11th level_\r\nYou can now use your Ranger's Quarry feature on a 10-foot cube area within 60 feet of you that you can see. You can treat any creatures inside this cube as if they are the target of your Ranger's Quarry feature, and when a creature is hit by a tech attack or fails a saving throw against a tech power you cast that deals damage, you can apply your Ranger's Quarry damage to that creature.\r\nAt 11th level, you can now use your Ranger's Quarry feature on a 15-foot cube area, instead of a 10-foot cube.",
-            "level": 3,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Artillerist Technique",
-            "metadata": null,
-            "partitionKey": "ExpandedContent",
-            "rowKey": "Archetype-Artillerist Technique-Mark of the Artillerist-3",
-            "timestamp": "2022-05-29T01:36:47.6495203+00:00",
-            "eTag": "W/\"datetime'2022-05-29T01%3A36%3A47.6495203Z'\""
-        },
-
-        {
-            "name": "Sage Advice",
-            "text": "_**Scholar:** 2nd and 13th level_\r\nYou can spend 1 minute spreading your knowledge and experience, advising those around you. When you do so, choose a skill or tool you are proficient with and a number of friendly creatures up to your Intelligence modifier within 30 feet of you who can hear you and who can understand you. Once within the next hour, the next time each creature would make an ability check with the chosen skill or tool, they may add their proficiency bonus to the roll if they are not already proficient. A creature may only benefit from this feature once. If a creature is targeted by this feature again before using it, they can choose to retain the first benefit or replace it with the new skill or tool instead.\r\nOnce you've used this feature, you can't use it again until you finish a long rest. Starting at 13th level, you regain the ability to use it after you complete a short or long rest.",
-            "level": 2,
-            "sourceEnum": 0,
-            "source": "Class",
-            "sourceName": "Scholar",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Class-Scholar-Sage Advice-2",
-            "timestamp": "2022-05-29T01:36:28.4237839+00:00",
-            "eTag": "W/\"datetime'2022-05-29T01%3A36%3A28.4237839Z'\""
-        },
-        {
-            "name": "Calm and Collected",
-            "text": "_**Scholar:** 14th and 17th level_\r\nWhen you make a saving throw caused by an effect you can see, you may gain a bonus to the saving throw equal to your Intelligence modifier. \r\nYou can use this feature five times. You gain an additional use at 17th level. You regain all expended uses when you complete a long rest.",
-            "level": 14,
-            "sourceEnum": 0,
-            "source": "Class",
-            "sourceName": "Scholar",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Class-Scholar-Calm and Collected-14",
-            "timestamp": "2022-05-29T01:36:28.4257831+00:00",
-            "eTag": "W/\"datetime'2022-05-29T01%3A36%3A28.4257831Z'\""
-        },
-
-
-
-
-
-        {
-            "name": "Thief's Reflexes",
-            "text": "_**Acquisitions Practice:** 17th level_\r\nYou can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can't use this feature when you are surprised.\r\nAdditionally, you learn to utilize the momentum of your fall to make deadly vertical strikes. Whenever you fall at least 50 feet and land within 5 feet of an enemy creature you can use your reaction to make one weapon attack against that creature. If the attack is a Sneak Attack, you can deal three additional weapon dice worth of damage and the creature must make a Dexterity saving throw or be knocked prone.",
-            "level": 17,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Acquisitions Practice",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Acquisitions Practice-Thief's Reflexes-17",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
             "name": "Survivor",
             "text": "_**Assault Specialist:** 18th level_\r\nYou attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half your hit points left. You don't gain this benefit if you have 0 hit points.",
             "level": 18,
@@ -163,6 +66,19 @@
             "eTag": "?"
         },
         {
+            "name": "Field Surgeon",
+            "text": "_**Doctor Pursuit:** 6th and 11th level_\r\nWhenever you expend superiority dice to restore hit points or grant temporary hit points to a creature, you can roll an additional die d6 and add it to the roll. This die increases to d8 at 9th level, d10 at 13th level, and d12 at 17th level.\r\nAdditionally, whenever you expend superiority dice to restore hit points or grant temporary hit points to a creature, if the creature is the target of your Critical Analysis, you can instead choose the maximum on both dice. Once you've used this feature, you must finish a short or long rest before you can use it again. Starting at 11th level, you can use it twice before a rest, but only once on the same turn.",
+            "level": 6,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Doctor Pursuit",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Doctor Pursuit-Field Surgeon-6",
+            "timestamp": "2021-10-12T11:17:35.3168147+00:00",
+            "eTag": "W/\"datetime'2021-10-12T11%3A17%3A35.3168147Z'\""
+        },
+        {
             "name": "Unerring Accuracy",
             "text": "_**Echani Order:** 17th level_\r\nYour mastery of weapons grants you extraordinary accuracy. If you miss with an attack roll using a monk weapon on your turn, you can reroll it. You can use this feature only once on each of your turns.",
             "level": 17,
@@ -172,6 +88,19 @@
             "metadata": null,
             "partitionKey": "Core",
             "rowKey": "Archetype-Echani Order-Unerring Accuracy-17",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Tech Mastery",
+            "text": "_**Rakatan Order:** 17th level_\r\nYou learn and can cast one 5th-level tech power once per long rest without expending tech points.",
+            "level": 17,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Rakatan Order",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Rakatan Order-Tech Mastery-17",
             "timestamp": "?",
             "eTag": "?"
         },
@@ -198,19 +127,6 @@
             "metadata": null,
             "partitionKey": "Core",
             "rowKey": "Archetype-Heavy Weapons Specialist-Pure Performance-18",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
-            "name": "Superior Hunter's Defense ",
-            "text": "_**Hunter Technique:** 15th level_\r\nYou gain one of the following features of your choice.\r\n#### Evasion\r\nWhen you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.\r\n#### Stand Against the Tide\r\nWhen a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice.\r\n#### Uncanny Dodge\r\nWhen an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you.",
-            "level": 15,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Hunter Technique",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Hunter Technique-Superior Hunter's Defense -15",
             "timestamp": "?",
             "eTag": "?"
         },
@@ -306,19 +222,6 @@
             "eTag": "?"
         },
         {
-            "name": "Shadow's Wrath",
-            "text": "_**Path of Shadows:** 18th level_\r\nYour training has taught you advanced techniques while you maneuver in the shadows. While you are hidden from your target, the first attack roll you make each round does not automatically reveal your presence. Make a Dexterity (Stealth) check against your target's Wisdom (Perception) check. On a success, you remain hidden. If you are also invisible, you remain invisible.",
-            "level": 18,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Path of Shadows",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Path of Shadows-Shadow's Wrath-18",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
             "name": "Forceblade Mastery",
             "text": "_**Path of the Forceblade:** 18th level_\r\nYou've mastered controlling your forceblade with your mind, using it to keep your enemies at bay. As an action, you can telekinetically control your forceblade and have it strike any number of creatures within 10 feet of you, spending 1 force point per target. Each target must make a Dexterity saving throw (DC = 8 + your bonus to weapon attack rolls with that weapon). On a failed save, it takes damage using your Kinetic Combat die + half your sentinel level (rounded down), is pushed back 10 feet and knocked prone.",
             "level": 18,
@@ -330,19 +233,6 @@
             "rowKey": "Archetype-Path of the Forceblade-Forceblade Mastery-18",
             "timestamp": "?",
             "eTag": "?"
-        },
-        {
-            "name": "Field Surgeon",
-            "text": "_**Physician Pursuit:** 6th and 11th level_\r\nWhenever you expend superiority dice to restore hit points or grant temporary hit points to a creature, you can roll an additional die d6 and add it to the roll. This die increases to d8 at 9th level, d10 at 13th level, and d12 at 17th level.\r\nAdditionally, whenever you expend superiority dice to restore hit points or grant temporary hit points to a creature, if the creature is the target of your Critical Analysis, you can instead choose the maximum on both dice. Once you've used this feature, you must finish a short or long rest before you can use it again. Starting at 11th level, you can use it twice before a rest, but only once on the same turn.",
-            "level": 6,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Physician Pursuit",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Physician Pursuit-Field Surgeon-6",
-            "timestamp": "2021-10-12T11:17:35.3168147+00:00",
-            "eTag": "W/\"datetime'2021-10-12T11%3A17%3A35.3168147Z'\""
         },
         {
             "name": "Calm Within the Storm",
@@ -397,19 +287,6 @@
             "eTag": "?"
         },
         {
-            "name": "Slayer's Counter",
-            "text": "_**Slayer Technique:** 15th level_\r\nIf the target of your Ranger's Quarry feature forces you to make a saving throw, you can use your reaction to make one weapon attack against it. You make this attack immediately before making the saving throw. If your attack hits, you automatically succeed on the saving throw, in addition to the attack's normal effects.",
-            "level": 15,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Slayer Technique",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Slayer Technique-Slayer's Counter-15",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
             "name": "Master of Resilience",
             "text": "_**Soresu Form:** 20th level_\r\nYour presence on the field of battle is an inspiration to your allies. Your Constitution and Wisdom or Charisma scores (your choice) increase by 2. Your maximum for those scores increases by 2. Additionally, you can use your action to gain the following benefits for 1 minute:\r\n- You have resistance to kinetic and energy damage from unenhanced weapons.\r\n- When you use the saber reflect force power, you can make a single melee attack on an enemy within 5ft of you as a part of that same reaction.\r\n- You have advantage on Dexterity saving throws, as do your allies within 30 feet of you.\r\nThis effect ends early if you are incapacitated or die. Once you've used this feature, you can't use it again until you finish a long rest.",
             "level": 20,
@@ -419,19 +296,6 @@
             "metadata": null,
             "partitionKey": "Core",
             "rowKey": "Archetype-Soresu Form-Master of Resilience-20",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
-            "name": "Stalker's Dodge",
-            "text": "_**Stalker Technique:** 15th level_\r\nWhenever a creature attacks you and does not have advantage, you can use your reaction to impose disadvantage on the creature's attack roll against you. You can use this feature before or after the attack roll is made, but it must be used before the outcome of the roll is determined.",
-            "level": 15,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Stalker Technique",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Stalker Technique-Stalker's Dodge-15",
             "timestamp": "?",
             "eTag": "?"
         },
@@ -579,19 +443,6 @@
             "eTag": "?"
         },
         {
-            "name": "Spiked Retribution",
-            "text": "_**Armored Approach:** 14th level_\r\nWhen a creature within 5 feet of you hits you with a melee attack, the attacker takes kinetic damage equal to your Strength modifier, as long as you are wearing your spiked armor and you aren't incapacitated.\r\n\r\nIf you are raging, you add your rage damage bonus to this damage.",
-            "level": 14,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Armored Approach",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Armored Approach-Spiked Retribution-14",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
             "name": "Modified Lightsaber",
             "text": "_**Artificer Engineering:** 3rd and 9th level_\r\nYou learn to modify an unenhanced lightsaber utilizing your artificer knowledge. Over the course of a long rest, you can modify your lightsaber. You must have the lightsaber and artificer's implements in order to perform this modification.\r\nYour modified lightsaber is enhanced, requires attunement, can only be used by you, and counts as a tech focus for your tech powers while you are attuned to it. Your modified lightsaber has 4 modification slots, and it gains more at higher levels, as shown in the Modification Slots column of the engineer table. For each modification installed in excess of your proficiency bonus, your tech point maximum is reduced by 1. Over the course of a long rest, you can install, replace, or remove a number of modifications up to your Intelligence modifier (minimum of one).\r\nSome modification effects require saving throws. When you use such an effect from this class, the DC equals your tech save DC.\r\nAt 9th level, you can maintain two different modified lightsabers. The total modification slots are split across the two items.",
             "level": 3,
@@ -653,32 +504,6 @@
             "metadata": null,
             "partitionKey": "Core",
             "rowKey": "Archetype-Ataru Form-Master of Aggression-20",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
-            "name": "Hunter's Call",
-            "text": "_**Beastmaster Approach:** 14th and 17th level_\r\nWhen you enter your rage, you can choose up to 5 allies that you can see within 30 feet of you. You gain 5 temporary hit points for each creature. For the duration of your rage, once on each of their turns, an affected ally can add your rage damage bonus to a weapon attack's damage roll.\r\n\r\nYou can use this feature five times. You gain an additional use at 17th level. You regain all expended uses when you finish a long rest.",
-            "level": 14,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Beastmaster Approach",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Beastmaster Approach-Hunter's Call-14",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
-            "name": "Hunter's Call",
-            "text": "_**Beastmaster Approach:** 14th and 17th level_\r\nWhen you enter your rage, you can choose up to 5 allies that you can see within 30 feet of you. You gain 5 temporary hit points for each creature. For the duration of your rage, once on each of their turns, an affected ally can add your rage damage bonus to a weapon attack's damage roll.\r\n\r\nYou can use this feature five times. You gain an additional use at 17th level. You regain all expended uses when you finish a long rest.",
-            "level": 14,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Beastmaster Approach (Companion)",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Beastmaster Approach (Companion)-Hunter's Call-14",
             "timestamp": "?",
             "eTag": "?"
         },
@@ -826,32 +651,6 @@
             "eTag": "?"
         },
         {
-            "name": "No Soldier Left Behind",
-            "text": "_**Fireteam Specialist:** 18th level_\r\nWhile under the effects of On Your Six, if either you or your ally are reduced to 0 hit points, you can end On Your Six to have them drop to 1 hit point instead. When you do so, the effects of On Your Six persist until the start of your next turn.",
-            "level": 18,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Fireteam Specialist",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Fireteam Specialist-No Soldier Left Behind-18",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
-            "name": "No Soldier Left Behind",
-            "text": "_**Fireteam Specialist:** 18th level_\r\nWhile under the effects of On Your Six, if either you or your companion are reduced to 0 hit points, you can end On Your Six to have them drop to 1 hit point instead. When you do so, the effects of On Your Six persist until the start of your next turn.",
-            "level": 18,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Fireteam Specialist (Companion)",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Fireteam Specialist (Companion)-No Soldier Left Behind-18",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
             "name": "Retaliation",
             "text": "_**Frenzied Approach:** 14th level_\r\nWhen you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature.",
             "level": 14,
@@ -904,19 +703,6 @@
             "eTag": "W/\"datetime'2021-10-12T11%3A17%3A48.0024088Z'\""
         },
         {
-            "name": "Inquisitor's Wrath",
-            "text": "_**Inquisitor Technique:** 15th level_\r\nYou can cast the force suppression and sever force force powers at 3rd level against the target of your Ranger's Quarry without expending tech points. If they are within 30 feet of you, you have advantage on the forcecasting ability check for these powers.\r\nYou can use this feature a number of times equal to 1 + your Intelligence modifier (a minimum of once). You regain all expended uses when you finish a long rest.\r\nThe radius of this feature increases to 60 feet at 17th level.",
-            "level": 15,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Inquisitor Technique",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Inquisitor Technique-Inquisitor's Wrath-15",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
             "name": "Debilitating Barrage",
             "text": "_**Jal Shey Order:** 17th level_\r\nYou've gained the knowledge to temporarily inhibit a creature's fortitude by striking a series of pressure points. Whenever you hit a creature with an unarmed strike, you can spend 3 focus points to cause the creature to become vulnerable to a damage type of your choice. This effect lasts for 1 minute or until they take damage of the chosen type.",
             "level": 17,
@@ -943,7 +729,7 @@
             "eTag": "?"
         },
         {
-            "name": "Relentless Assault",
+            "name": "Relentless Approach",
             "text": "_**Juggernaut Approach:** 14th level_\r\nYou're able to charge in unerring bursts. As an action, you can charge up to twice your speed in a straight line without provoking opportunity attacks. Each creature within 5 feet of your path must make a Strength or Dexterity saving throw (DC = 8 + your proficiency bonus + your Strength modifier, the target chooses the ability they use use). On a failed save, a creature takes damage equal to your Strength modifier + your Rage Bonus and is pushed back 5 feet in a direction of your choice. Creatures smaller than you make this save with disadvantage. When you end this movement, if a creature is within 5 feet of you, you can make one melee weapon attack (no action required). On a hit, the creature takes additional damage equal to your berserker level.\r\nOnce you've used this feature, you must complete a short or long rest before you can use it again.",
             "level": 14,
             "sourceEnum": 1,
@@ -951,7 +737,7 @@
             "sourceName": "Juggernaut Approach",
             "metadata": null,
             "partitionKey": "Core",
-            "rowKey": "Archetype-Juggernaut Approach-Relentless Assault-14",
+            "rowKey": "Archetype-Juggernaut Approach-Relentless Approach-14",
             "timestamp": "?",
             "eTag": "?"
         },
@@ -965,6 +751,19 @@
             "metadata": null,
             "partitionKey": "Core",
             "rowKey": "Archetype-Juyo/Vaapad Form-Master of Ferocity-20",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Relentless Assault",
+            "text": "_**Juggernaut Approach:** 14th level_\r\nYou're able to charge in unerring bursts. As an action, you can charge up to twice your speed in a straight line without provoking opportunity attacks. Each creature within 5 feet of your path must make a Strength or Dexterity saving throw (DC = 8 + your proficiency bonus + your Strength modifier, the target chooses the ability they use use). On a failed save, a creature takes damage equal to your Strength modifier + your Rage Bonus and is pushed back 5 feet in a direction of your choice. Creatures smaller than you make this save with disadvantage. When you end this movement, if a creature is within 5 feet of you, you can make one melee weapon attack (no action required). On a hit, the creature takes additional damage equal to your berserker level.\r\nOnce you've used this feature, you must complete a short or long rest before you can use it again.",
+            "level": 14,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Juggernaut Approach",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Juggernaut Approach-Relentless Assault-14",
             "timestamp": "?",
             "eTag": "?"
         },
@@ -1268,19 +1067,6 @@
             "eTag": "?"
         },
         {
-            "name": "Tech Mastery",
-            "text": "_**Rakatan Order:** 17th level_\r\nYou learn and can cast one 5th-level tech power once per long rest without expending tech points.",
-            "level": 17,
-            "sourceEnum": 1,
-            "source": "Archetype",
-            "sourceName": "Rakatan Order",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Rakatan Order-Tech Mastery-17",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
             "name": "Master Duelist",
             "text": "_**Ruffian Practice:** 17th level_\r\nYour mastery of the blade lets you turn failure into success in combat. If you miss with an attack roll, you can roll it again with advantage. Once you do so, you can't use this feature again until you finish a short or long rest.",
             "level": 17,
@@ -1307,15 +1093,15 @@
             "eTag": "?"
         },
         {
-            "name": "Self-Sustain",
-            "text": "_**Sawbones Practice:** 17th level_\r\nYou have advantage on death saving throws.\r\nAdditionally, when you are stabilized, you regain 1 hit point. Once you've used this feature, you can't use it again until you finish a short or long rest.",
+            "name": "Double Tap",
+            "text": "_**Scrapper Practice:** 17th level_\r\nYou can deal Sneak Attack damage twice per turn, but you can't deal more than your total Sneak Attack dice to a single target per turn.",
             "level": 17,
-            "sourceEnum": 0,
+            "sourceEnum": 1,
             "source": "Archetype",
-            "sourceName": "Sawbones Practice",
+            "sourceName": "Scrapper Practice",
             "metadata": null,
             "partitionKey": "Core",
-            "rowKey": "Archetype-Sawbones Practice-Self-Sustain-17",
+            "rowKey": "Archetype-Scrapper Practice-Double Tap-17",
             "timestamp": "?",
             "eTag": "?"
         },
@@ -1411,19 +1197,6 @@
             "eTag": "?"
         },
         {
-            "name": "Cure-All",
-            "text": "_**Triage Technique:** 15th level_\r\nYour healing becomes even more potent. When you restore hit points to a creature as a bonus action using your Mark of Triage feature, you can also end one of the following conditions afflicting it: blinded, deafened, diseased, paralyzed, or poisoned.",
-            "level": 15,
-            "sourceEnum": 0,
-            "source": "Archetype",
-            "sourceName": "Triage Technique",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Triage Technique-Cure-All-15",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
             "name": "Comic Frenzy",
             "text": "_**Trickster Order:** 17th level_\r\nYou gain the ability to make an overwhelming number of attacks against a group of enemies. When you use your Flurry of Blows, you can make up to three additional attacks with it (up to a total of five Flurry of Blows attacks), provided that each Flurry of Blows attack targets a different creature this turn.",
             "level": 17,
@@ -1515,19 +1288,6 @@
             "eTag": "?"
         },
         {
-            "name": "Mechu-Deru Mastery",
-            "text": "_**Way of Technology:** 18th level_\r\nYou can cast one 5th-level tech power of your choice at its base level. The power counts as a universal force power for you, and you do not require force points to cast this power. Once you've done so, you can't do so again until you complete a long rest.",
-            "level": 18,
-            "sourceEnum": 0,
-            "source": "Archetype",
-            "sourceName": "Way of Technology",
-            "metadata": null,
-            "partitionKey": "Core",
-            "rowKey": "Archetype-Way of Technology-Mechu-Deru Mastery-18",
-            "timestamp": "?",
-            "eTag": "?"
-        },
-        {
             "name": "My Ally is the Force",
             "text": "_**Way of Telekinetics:** 18th level_\r\nYou can manipulate creatures of Gargantuan size or smaller with your force powers and Way of Telekinetics features.\r\nAdditionally, whenever a force power you cast pushes or pulls a creature, you can increase the distance of that push or pull by an additional 20 feet.",
             "level": 18,
@@ -1605,8 +1365,252 @@
             "timestamp": "?",
             "eTag": "?"
         },
+        {
+            "name": "Self-Sustain",
+            "text": "_**Sawbones Practice:** 17th level_\r\nYou have advantage on death saving throws.\r\nAdditionally, when you are stabilized, you regain 1 hit point. Once you've used this feature, you can't use it again until you finish a short or long rest.",
+            "level": 17,
+            "sourceEnum": 0,
+            "source": "Archetype",
+            "sourceName": "Sawbones Practice",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Sawbones Practice-Self-Sustain-17",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Cure-All",
+            "text": "_**Triage Technique:** 15th level_\r\nYour healing becomes even more potent. When you restore hit points to a creature as a bonus action using your Mark of Triage feature, you can also end one of the following conditions afflicting it: blinded, deafened, diseased, paralyzed, or poisoned.",
+            "level": 15,
+            "sourceEnum": 0,
+            "source": "Archetype",
+            "sourceName": "Triage Technique",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Triage Technique-Cure-All-15",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Mechu-Deru Mastery",
+            "text": "_**Way of Technology:** 18th level_\r\nYou can cast one 5th-level tech power of your choice at its base level. The power counts as a universal force power for you, and you do not require force points to cast this power. Once you've done so, you can't do so again until you complete a long rest.",
+            "level": 18,
+            "sourceEnum": 0,
+            "source": "Archetype",
+            "sourceName": "Way of Technology",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Way of Technology-Mechu-Deru Mastery-18",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Thief's Reflexes",
+            "text": "_**Acquisitions Practice:** 17th level_\r\nYou can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can't use this feature when you are surprised.\r\nAdditionally, you learn to utilize the momentum of your fall to make deadly vertical strikes. Whenever you fall at least 50 feet and land within 5 feet of an enemy creature you can use your reaction to make one weapon attack against that creature. If the attack is a Sneak Attack, you can deal three additional weapon dice worth of damage and the creature must make a Dexterity saving throw or be knocked prone.",
+            "level": 17,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Acquisitions Practice",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Acquisitions Practice-Thief's Reflexes-17",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Superior Hunter's Defense ",
+            "text": "_**Hunter Technique:** 15th level_\r\nYou gain one of the following features of your choice.\r\n#### Evasion\r\nWhen you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.\r\n#### Stand Against the Tide\r\nWhen a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice.\r\n#### Uncanny Dodge\r\nWhen an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you.",
+            "level": 15,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Hunter Technique",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Hunter Technique-Superior Hunter's Defense -15",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Shadow's Wrath",
+            "text": "_**Path of Shadows:** 18th level_\r\nYour training has taught you advanced techniques while you maneuver in the shadows. While you are hidden from your target, the first attack roll you make each round does not automatically reveal your presence. Make a Dexterity (Stealth) check against your target's Wisdom (Perception) check. On a success, you remain hidden. If you are also invisible, you remain invisible.",
+            "level": 18,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Path of Shadows",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Path of Shadows-Shadow's Wrath-18",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Slayer's Counter",
+            "text": "_**Slayer Technique:** 15th level_\r\nIf the target of your Ranger's Quarry feature forces you to make a saving throw, you can use your reaction to make one weapon attack against it. You make this attack immediately before making the saving throw. If your attack hits, you automatically succeed on the saving throw, in addition to the attack's normal effects.",
+            "level": 15,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Slayer Technique",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Slayer Technique-Slayer's Counter-15",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Stalker's Dodge",
+            "text": "_**Stalker Technique:** 15th level_\r\nWhenever a creature attacks you and does not have advantage, you can use your reaction to impose disadvantage on the creature's attack roll against you. You can use this feature before or after the attack roll is made, but it must be used before the outcome of the roll is determined.",
+            "level": 15,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Stalker Technique",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Stalker Technique-Stalker's Dodge-15",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Inquisitor's Wrath",
+            "text": "_**Inquisitor Technique:** 15th level_\r\nYou can cast the force suppression and sever force force powers at 3rd level against the target of your Ranger's Quarry without expending tech points. If they are within 30 feet of you, you have advantage on the forcecasting ability check for these powers.\r\nYou can use this feature a number of times equal to 1 + your Intelligence modifier (a minimum of once). You regain all expended uses when you finish a long rest.\r\nThe radius of this feature increases to 60 feet at 17th level.",
+            "level": 15,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Inquisitor Technique",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Inquisitor Technique-Inquisitor's Wrath-15",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Spiked Retribution",
+            "text": "_**Armored Approach:** 14th level_\r\nWhen a creature within 5 feet of you hits you with a melee attack, the attacker takes kinetic damage equal to your Strength modifier, as long as you are wearing your spiked armor and you aren't incapacitated.\r\n\r\nIf you are raging, you add your rage damage bonus to this damage.",
+            "level": 14,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Armored Approach",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Armored Approach-Spiked Retribution-14",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Hunter's Call",
+            "text": "_**Beastmaster Approach:** 14th and 17th level_\r\nWhen you enter your rage, you can choose up to 5 allies that you can see within 30 feet of you. You gain 5 temporary hit points for each creature. For the duration of your rage, once on each of their turns, an affected ally can add your rage damage bonus to a weapon attack's damage roll.\r\n\r\nYou can use this feature five times. You gain an additional use at 17th level. You regain all expended uses when you finish a long rest.",
+            "level": 14,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Beastmaster Approach",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Beastmaster Approach-Hunter's Call-14",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Hunter's Call",
+            "text": "_**Beastmaster Approach:** 14th and 17th level_\r\nWhen you enter your rage, you can choose up to 5 allies that you can see within 30 feet of you. You gain 5 temporary hit points for each creature. For the duration of your rage, once on each of their turns, an affected ally can add your rage damage bonus to a weapon attack's damage roll.\r\n\r\nYou can use this feature five times. You gain an additional use at 17th level. You regain all expended uses when you finish a long rest.",
+            "level": 14,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Beastmaster Approach (Companion)",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Beastmaster Approach (Companion)-Hunter's Call-14",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "No Soldier Left Behind",
+            "text": "_**Fireteam Specialist:** 18th level_\r\nWhile under the effects of On Your Six, if either you or your ally are reduced to 0 hit points, you can end On Your Six to have them drop to 1 hit point instead. When you do so, the effects of On Your Six persist until the start of your next turn.",
+            "level": 18,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Fireteam Specialist",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Fireteam Specialist-No Soldier Left Behind-18",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "No Soldier Left Behind",
+            "text": "_**Fireteam Specialist:** 18th level_\r\nWhile under the effects of On Your Six, if either you or your companion are reduced to 0 hit points, you can end On Your Six to have them drop to 1 hit point instead. When you do so, the effects of On Your Six persist until the start of your next turn.",
+            "level": 18,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Fireteam Specialist (Companion)",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Archetype-Fireteam Specialist (Companion)-No Soldier Left Behind-18",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Tech Mastery",
+            "text": "_**Rakatan Order:** 17th level_\r\nYou learn and can cast one 5th-level tech power once per long rest without expending tech points.",
+            "level": 17,
+            "sourceEnum": 1,
+            "source": "Archetype",
+            "sourceName": "Rakatan Order",
+            "metadata": null,
+            "partitionKey": "ExpandedContent",
+            "rowKey": "Archetype-Rakatan Order-Tech Mastery-17",
+            "timestamp": "?",
+            "eTag": "?"
+        },
 
 
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "One with the Force",
+            "text": "_**Consular:** 20th level_\r\nYour attunement to the Force is absolute. Your Wisdom or Charisma score increases by 4, and your maximum for this score increases by 4. Additionally, you gain mastery over a single force power, and can cast it with little effort. Choose one 3rd-level force power that you know as your signature power. You can cast it once at 3rd level without expending force points. When you do so, you can't do so again until you finish a short or long rest.\r\nIf you want to cast it at a higher level, you must expend force points as normal.",
+            "level": 20,
+            "sourceEnum": 0,
+            "source": "Class",
+            "sourceName": "Consular",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Class-Consular-One with the Force-20",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Infuse Item",
+            "text": "_**Engineer:** 10th level_\r\nYour infuse item bonus increases to +2 at 10th level.",
+            "level": 10,
+            "sourceEnum": 0,
+            "source": "Class",
+            "sourceName": "Engineer",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Class-Engineer-Infuse Item-10",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Infuse Item",
+            "text": "_**Engineer:** 15th level_\r\nYour infuse item bonus increases to +3 at 15th level.",
+            "level": 15,
+            "sourceEnum": 0,
+            "source": "Class",
+            "sourceName": "Engineer",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Class-Engineer-Infuse Item-15",
+            "timestamp": "?",
+            "eTag": "?"
+        },
         {
             "name": "Tech Mastery",
             "text": "_**Engineer:** 20th level_\r\nYour mastery of technology is unrivaled. Your Constitution and Intelligence scores increase by 2. Your maximum for those scores increases by 2.\r\nAdditionally, when you roll initiative and have no uses of Potent Aptitude left, you regain one use.",
@@ -1617,6 +1621,58 @@
             "metadata": null,
             "partitionKey": "Core",
             "rowKey": "Class-Engineer-Tech Mastery-20",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Indomitable",
+            "text": "_**Fighter:** 13th level_\r\nYou can use your Indomitable feature two times between long rests starting at 13th level.",
+            "level": 13,
+            "sourceEnum": 0,
+            "source": "Class",
+            "sourceName": "Fighter",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Class-Fighter-Indomitable-13",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Action Surge",
+            "text": "_**Fighter:** 17th level_\r\nStarting at 17th level, you can use your Action Surge feature twice before a rest.",
+            "level": 17,
+            "sourceEnum": 0,
+            "source": "Class",
+            "sourceName": "Fighter",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Class-Fighter-Action Surge-17",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Indomitable",
+            "text": "_**Fighter:** 17th level_\r\nYou can use your Indomitable feature three times between long rests starting at 17th level.",
+            "level": 17,
+            "sourceEnum": 0,
+            "source": "Class",
+            "sourceName": "Fighter",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Class-Fighter-Indomitable-17",
+            "timestamp": "?",
+            "eTag": "?"
+        },
+        {
+            "name": "Master of Combat",
+            "text": "_Fighter**:** 20th level_\r\nYou are the master of combat. Your Strength or Dexterity score increases by 2, and your Constitution score increases by 2. Your maximum for those scores increases by 2.\r\nAdditionally, you can attack four times, instead of once, whenever you take the Attack action on your turn.",
+            "level": 20,
+            "sourceEnum": 0,
+            "source": "Class",
+            "sourceName": "Fighter",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Class-Fighter-Master of Combat-20",
             "timestamp": "?",
             "eTag": "?"
         },
@@ -1671,6 +1727,19 @@
             "rowKey": "Class-Scholar-Expertise-3",
             "timestamp": "2021-10-12T11:17:35.8822875+00:00",
             "eTag": "W/\"datetime'2021-10-12T11%3A17%3A35.8822875Z'\""
+        },
+        {
+            "name": "Sage Advice",
+            "text": "_**Scholar:** 13th level_\r\nStarting at 13th level, you regain the ability to use your Sage Advice feature after you complete a short or long rest.",
+            "level": 13,
+            "sourceEnum": 0,
+            "source": "Class",
+            "sourceName": "Scholar",
+            "metadata": null,
+            "partitionKey": "Core",
+            "rowKey": "Class-Scholar-Sage Advice-13",
+            "timestamp": "?",
+            "eTag": "?"
         },
         {
             "name": "Expertise",

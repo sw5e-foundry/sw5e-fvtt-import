@@ -1,90 +1,26 @@
 # Manual fixes (typos in the API):
 
+
+
 - archetype.json:
-  - Ballstic Approach -> Ballistic Approach
-  - Fix prerequisite level on Way of Balance's features
-  - Fix prerequisite for Assault Specialist's 'Brute Force'
   - Fix Slicer Pursuit's 'Systems Hijack'
-  - Fix Archeologist Pursuit's 'Additional Maneuvers'
-- class.json
-  - Fix fighter's 'Fighter Specialty' requirements
-- enhancedItem.json:
-  - 20d6 kinetic on -> 20d6 kinetic damage on
-  - enhanced shoulder cannons: subtype 'any -> shoulder cannon', enhancedWeaponType 'any -> specific'
-- feature.json:
-  - ld8 -> 1d8
-  - Path of Withcraft -> Path of Witchcraft
-  - Fix prerequisite level on Way of Balance's features
+  - Remove ##### Archaeologist Pursuit Forcecasting
+  - Remove ##### Adept Specialist Forcecasting
 - equipment.json:
-  - defeaning -> deafening
-  - switch cannon 'light -> switch'
-- background.json:
-  - blackguard feats
-    - empathetic -> empathic
-    - investigative -> investigator
-    - lorekeeper -> loremaster
+  - REMOVE ALL DASHES FROM WEAPON NAMES
+  - light-fist disquised -> disguised
+  - vibro-dart add placeholder description
+  - electro-vougle -> electro-voulge
+  - nightstringer -> nightstinger
+- feature.json
+  - fix XXX Forcecasting in Whirling Weapons and Flow-Walking
+  - ld8 -> 1d8
 - monster.json
-  - "B'omarr Brain Walker" cr -> 3, experience points -> 700
-  - "Cyborg Khagan" History -> Lore
-  - "DUM-Series PIT Droid" Investigate -> Investigation
-  - "Dianoga, Adult" Saving Throws: Constitution -> Con
-  - "Flesh Raider Apprentice" Saving Throws: Strength -> Str, Charisma -> Cha
-  - "Flesh Raider Berserker" Saving Throws: Strength -> Str
-  - "Grand Admiral" Saving Throws: Cha -> Cha +11, remove empty language
-  - "Hutt Crime Lord" Intimidate -> Intimidation
-  - "Hutt Wrestler" Intimidate -> Intimidation
-  - "IG-100" Saving Throws: Dex + 6 -> Dex +6, Intimidate -> Intimidation
-  - "Imperial Royal Guard" Saving Throws: "Wis", "+7" -> "Wis +7", Glatic Basic -> Galatic Basic, fix Vibroblade 'hit, hit'
-  - "JK-13 Security Droid" Intimidate -> Intimidation
-  - "Jubba Bird" Percpetion -> Perception, "underst", "s" -> "understands"
-  - "KX-Series Security Droid" Intimidate -> Intimidation
-  - "Officer, Junior" Intimidate -> Intimidation
-  - "Officer, Senior" Intimidate -> Intimidation
-  - "Step" Percpection -> Perception
-  - "Trandoshan Elite Warrior" Saving Throws: Strength -> Str, Wisdom -> Wis
-  - "Trandoshan Hunter" Saving Throws: Strength -> Str, Wisdom -> Wis
-  - "Trandoshan Huntmaster" Saving Throws: Strength -> Str, Wisdom -> Wis
-  - "Trandoshan T'doshok" Saving Throws: Strength -> Str, Constitution -> Con, Wisdom -> Wis
-  - "Trandoshan Warrior" Saving Throws: Strength -> Str, Wisdom -> Wis
-  - "Wookiee Engineer" Tech -> Technology
-  - "BB Series Astromech Droid" -> "underst", "s" -> "understands"
-  - "Bor Gullet" -> "underst", "s" -> "understands"
-  - "Brain Worm" -> "underst", "s" -> "understands"
-  - "C1 Series Astromech Droid" -> "underst", "s" -> "understands"
-  - "Gamorrean Guard" -> "underst", "s" -> "understands"
-  - "Hssiss" -> "underst", "s comm", "s" -> "understands commands", fix Bite, Claw
-  - "Jawa Scrapper" -> "underst", "s" -> "understands", fix Ion Blaster
-  - "Jawa Shamman" -> "underst", "s" -> "understands", fix Vibrostaff
-  - "Jawa Tinkerer" -> "underst", "s" -> "understands"
-  - "R2 Series Astromech Droid" -> "underst", "s" -> "understands"
-  - "Terentatek" -> "underst", "s comm", "s" -> "understands commands"
-  - "War Wyrm" -> "underst", "s comm", "s" -> "understands commands"
-  - "Cliff Wampa" -> fix Throw Boulder 'reach 5 ft., range'
-  - "AAT" -> fix Medium Repeating Blasters
-  - "Acklay, Adolescent" -> fix Bite, Claw
-  - "Acklay, Adult" -> fix Bite, Claw
-  - "Anooba" -> fix Bite
-  - "B1 Series, Squad" -> fix Massed Fire
-  - "Clodhopper" -> fix Beak
-  - "Condor Dragon" -> fix Bite, Claw
-  - "Dark Lord Spirit" -> fix Dark Lightning (RangedWeapon)
-  - "Dragonsnake" -> fix Claw
-  - "Flutterplume" -> fix Beak
-  - "K'lor'slug" -> fix Bite
-  - "Knobby White Spider" -> fix Stinger
-  - "Knobby White Spiderling" -> fix Stinger
-  - "Krayt Dragon, Greater" -> fix Bite, Claw, Tail
-  - "Krayt Dragon, Juvenile" -> fix Bite, Claw
-  - "Manifestation of Abeloth" -> fix Draining Lightning
-  - "Navy Trooper" -> fix Blaster Carabine
-  - "Officer, Senior" -> fix Blaster Carabine
-  - "Pelko Bug" -> fix Barbs
-  - "Pelko Bug Swarm" -> fix Barbs x2
-  - "Probe Killer Swarm" -> fix Leg Slash
-  - "Scurrier" -> fix Bite, Ram
-  - "Shyrack Swarm" -> fix Bite
-  - "Terentatek" -> fix Tusks, Claws, Rock
-  - "Tuk'ata" -> fix Bite, Claws, Poisonous Stingers
-  - "Vessel of Abeloth" -> fix Shotosaber
-  - "Voxyn" -> fix Multiattack
-  - "Wraid" -> fix Ram, Claws
+  - use old monster.json
+- maneuvers.json
+  - rattle 'to to' -> 'to'
+  - self-preservation 'add the result' -> 'add it to the result'
+  - sic 'em 'dice' -> 'die'
+  - steady the nerves 'equal to amount rolled' -> 'equal to the amount rolled'
+  - rampage 'result of the superiority die' -> 'superiority die'
+  - double bluff 'results of the superiority die' -> 'superiority die'

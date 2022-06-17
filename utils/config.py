@@ -1,109 +1,337 @@
-armor_properties = {
-	"Absorptive": 'Absorptive',
-	"Agile": 'Agile',
-	"Anchor": 'Anchor',
-	"Avoidant": 'Avoidant',
-	"Barbed": 'Barbed',
-	"Bulky": 'Bulky',
-	"Charging": 'Charging',
-	"Concealing": 'Concealing',
-	"Cumbersome": 'Cumbersome',
-	"Gauntleted": 'Gauntleted',
-	"Imbalanced": 'Imbalanced',
-	"Impermeable": 'Impermeable',
-	"Insulated": 'Insulated',
-	"Interlocking": 'Interlocking',
-	"Lambent": 'Lambent',
-	"Lightweight": 'Lightweight',
-	"Magnetic": 'Magnetic',
-	"Obscured": 'Obscured',
-	"Obtrusive": 'Obtrusive',
-	"Powered": 'Powered',
-	"Reactive": 'Reactive',
-	"Regulated": 'Regulated',
-	"Reinforced": 'Reinforced',
-	"Responsive": 'Responsive',
-	"Rigid": 'Rigid',
-	"Silent": 'Silent',
-	"Spiked": 'Spiked',
-	"Strength": 'Strength',
-	"Steadfast": 'Steadfast',
-	"Versatile": 'Versatile',
-}
+armor_properties = [
+	{
+		"name": 'Absorptive',
+		"id": 'Absorptive',
+	}, {
+		"name": 'Agile',
+		"id": 'Agile',
+	}, {
+		"name": 'Anchor',
+		"id": 'Anchor',
+	}, {
+		"name": 'Avoidant',
+		"id": 'Avoidant',
+	}, {
+		"name": 'Barbed',
+		"id": 'Barbed',
+	}, {
+		"name": 'Bulky',
+		"id": 'Bulky',
+	}, {
+		"name": 'Charging',
+		"id": 'Charging',
+	}, {
+		"name": 'Concealing',
+		"id": 'Concealing',
+	}, {
+		"name": 'Cumbersome',
+		"id": 'Cumbersome',
+	}, {
+		"name": 'Gauntleted',
+		"id": 'Gauntleted',
+	}, {
+		"name": 'Imbalanced',
+		"id": 'Imbalanced',
+	}, {
+		"name": 'Impermeable',
+		"id": 'Impermeable',
+	}, {
+		"name": 'Insulated',
+		"id": 'Insulated',
+	}, {
+		"name": 'Interlocking',
+		"id": 'Interlocking',
+	}, {
+		"name": 'Lambent',
+		"id": 'Lambent',
+	}, {
+		"name": 'Lightweight',
+		"id": 'Lightweight',
+	}, {
+		"name": 'Magnetic',
+		"id": 'Magnetic',
+	}, {
+		"name": 'Obscured',
+		"id": 'Obscured',
+	}, {
+		"name": 'Obtrusive',
+		"id": 'Obtrusive',
+	}, {
+		"name": 'Powered',
+		"id": 'Powered',
+	}, {
+		"name": 'Reactive',
+		"id": 'Reactive',
+	}, {
+		"name": 'Regulated',
+		"id": 'Regulated',
+	}, {
+		"name": 'Reinforced',
+		"id": 'Reinforced',
+	}, {
+		"name": 'Responsive',
+		"id": 'Responsive',
+	}, {
+		"name": 'Rigid',
+		"id": 'Rigid',
+	}, {
+		"name": 'Silent',
+		"id": 'Silent',
+	}, {
+		"name": 'Spiked',
+		"id": 'Spiked',
+	}, {
+		"name": 'Strength',
+		"id": 'Strength',
+	}, {
+		"name": 'Steadfast',
+		"id": 'Steadfast',
+	}, {
+		"name": 'Versatile',
+		"id": 'Versatile',
+	}
+]
 
-casting_properties = {
-	"c_Absorbing": 'Absorbing',
-	"c_Acessing": 'Acessing',
-	"c_Amplifying": 'Amplifying',
-	"c_Bolstering": 'Bolstering',
-	"c_Constitution": 'Constitution',
-	"c_Dispelling": 'Dispelling',
-	"c_Elongating": 'Elongating',
-	"c_Enlarging": 'Enlarging',
-	"c_Expanding": 'Expanding',
-	"c_Extending": 'Extending',
-	"c_Fading": 'Fading',
-	"c_Focused": 'Focused',
-	"c_Increasing": 'Increasing',
-	"c_Inflating": 'Inflating',
-	"c_Mitigating": 'Mitigating',
-	"c_Ranging": 'Ranging',
-	"c_Rending": 'Rending',
-	"c_Repelling": 'Repelling',
-	"c_Storing": 'Storing',
-	"c_Surging": 'Surging',
-	"c_Withering": 'Withering',
-}
+casting_properties = [
+	{
+		"name": 'Absorbing',
+		"id": 'c_Absorbing',
+	}, {
+		"name": 'Acessing',
+		"id": 'c_Acessing',
+	}, {
+		"name": 'Amplifying',
+		"id": 'c_Amplifying',
+	}, {
+		"name": 'Bolstering',
+		"id": 'c_Bolstering',
+	}, {
+		"name": 'Constitution',
+		"id": 'c_Constitution',
+	}, {
+		"name": 'Dispelling',
+		"id": 'c_Dispelling',
+	}, {
+		"name": 'Elongating',
+		"id": 'c_Elongating',
+	}, {
+		"name": 'Enlarging',
+		"id": 'c_Enlarging',
+	}, {
+		"name": 'Expanding',
+		"id": 'c_Expanding',
+	}, {
+		"name": 'Extending',
+		"id": 'c_Extending',
+	}, {
+		"name": 'Fading',
+		"id": 'c_Fading',
+	}, {
+		"name": 'Focused',
+		"id": 'c_Focused',
+	}, {
+		"name": 'Increasing',
+		"id": 'c_Increasing',
+	}, {
+		"name": 'Inflating',
+		"id": 'c_Inflating',
+	}, {
+		"name": 'Mitigating',
+		"id": 'c_Mitigating',
+	}, {
+		"name": 'Ranging',
+		"id": 'c_Ranging',
+	}, {
+		"name": 'Rending',
+		"id": 'c_Rending',
+	}, {
+		"name": 'Repelling',
+		"id": 'c_Repelling',
+	}, {
+		"name": 'Storing',
+		"id": 'c_Storing',
+	}, {
+		"name": 'Surging',
+		"id": 'c_Surging',
+	}, {
+		"name": 'Withering',
+		"id": 'c_Withering',
+	},
+]
 
-weapon_properties = {
-	"amm": 'Ammunition',
-	"aut": 'Auto',
-	"bur": 'Burst',
-	"bru": 'Brutal',
-	"con": 'Constitution',
-	"def": 'Defensive',
-	"dex": 'Dexterity',
-	"dir": 'Dire',
-	"drm": 'Disarming',
-	"dgd": 'Disguised',
-	"dis": 'Disintegrate',
-	"dpt": 'Disruptive',
-	"dou": 'Double',
-	"exp": 'Explosive',
-	"fin": 'Finesse',
-	"fix": 'Fixed',
-	"foc": 'Focus',
-	"hvy": 'Heavy',
-	"hid": 'Hidden',
-	"hom": 'Homing',
-	"ion": 'Ionizing',
-	"ken": 'Keen',
-	"lgt": 'Light',
-	"lum": 'Luminous',
-	"mlt": 'Melt',
-	"mig": 'Mighty',
-	"neu": 'Neuralizing',
-	"ovr": 'Overheat',
-	"pic": 'Piercing',
-	"pow": 'Power',
-	"ran": 'Range',
-	"rap": 'Rapid',
-	"rch": 'Reach',
-	"rel": 'Reload',
-	"ret": 'Returning',
-	"sat": 'Saturate',
-	"shk": 'Shocking',
-	"smr": 'Autotarget', # Autotarget/Smart
-	"sil": 'Silent',
-	"son": 'Sonorous',
-	"spc": 'Special',
-	"str": 'Strength',
-	"swi": 'Switch',
-	"thr": 'Thrown',
-	"two": 'Two-Handed',
-	"ver": 'Versatile',
-	"vic": 'Vicious',
-}
+weapon_properties = [
+	{
+		"name": 'Auto',
+		"id": 'aut',
+	}, {
+		"name": 'Biting',
+		"id": 'bit',
+	}, {
+		"name": 'Bright',
+		"id": 'bri',
+	}, {
+		"name": 'Brutal',
+		"id": 'bru',
+	}, {
+		"name": 'Burst',
+		"id": 'bur',
+	}, {
+		"name": 'Corruption',
+		"id": 'cor',
+	}, {
+		"name": 'Defensive',
+		"id": 'def',
+	}, {
+		"name": 'Dexterity',
+		"id": 'dex',
+	}, {
+		"name": 'Dire',
+		"id": 'dir',
+	}, {
+		"name": 'Disarming',
+		"id": 'drm',
+	}, {
+		"name": 'Disguised',
+		"id": 'dgd',
+	}, {
+		"name": 'Disintegrate',
+		"id": 'dis',
+	}, {
+		"name": 'Disruptive',
+		"id": 'dpt',
+	}, {
+		"name": 'Double',
+		"id": 'dou',
+	}, {
+		"name": 'Finesse',
+		"id": 'fin',
+	}, {
+		"name": 'Fixed',
+		"id": 'fix',
+	}, {
+		"name": 'Heavy',
+		"id": 'hvy',
+	}, {
+		"name": 'Hidden',
+		"id": 'hid',
+	}, {
+		"name": 'Interlocking',
+		"id": 'ilk',
+	}, {
+		"name": 'Keen',
+		"id": 'ken',
+	}, {
+		"name": 'Light',
+		"id": 'lgt',
+	}, {
+		"name": 'Luminous',
+		"id": 'lum',
+	}, {
+		"name": 'Mighty',
+		"id": 'mig',
+	}, {
+		"name": 'Modal',
+		"id": 'mod',
+	}, {
+		"name": 'Neuralizing',
+		"id": 'neu',
+	}, {
+		"name": 'Penetrating',
+		"id": 'pen',
+	}, {
+		"name": 'Piercing',
+		"id": 'pic',
+	}, {
+		"name": 'Power Cell',
+		"id": 'pcl',
+	}, {
+		"name": 'Range',
+		"id": 'ran',
+	}, {
+		"name": 'Rapid',
+		"id": 'rap',
+	}, {
+		"name": 'Reach',
+		"id": 'rch',
+	}, {
+		"name": 'Reckless',
+		"id": 'rck',
+	}, {
+		"name": 'Reload',
+		"id": 'rel',
+	}, {
+		"name": 'Returning',
+		"id": 'ret',
+	}, {
+		"name": 'Shocking',
+		"id": 'shk',
+	}, {
+		"name": 'Silent',
+		"id": 'sil',
+	}, {
+		"name": 'Slug Cartridge',
+		"id": 'slg',
+	}, { # Autotarget/Smart
+		"name": 'Smart',
+		"id": 'smr',
+	}, {
+		"name": 'Sonorous',
+		"id": 'son',
+	}, {
+		"name": 'Specialized',
+		"id": 'spz',
+	}, {
+		"name": 'Special',
+		"id": 'spc',
+	}, {
+		"name": 'Strength',
+		"id": 'str',
+	}, {
+		"name": 'Switch',
+		"id": 'swi',
+	}, {
+		"name": 'Thrown',
+		"id": 'thr',
+	}, {
+		"name": 'Two-Handed',
+		"id": 'two',
+	}, {
+		"name": 'Versatile',
+		"id": 'ver',
+	}, {
+		"name": 'Vicious',
+		"id": 'vic',
+	},
+]# + [ #Starship Weapon Properties
+	# {
+	# 	"name": 'Constitution',
+	# 	"id": 'con',
+	# }, {
+	# 	"name": 'Explosive',
+	# 	"id": 'exp',
+	# }, {
+	# 	"name": 'Focus',
+	# 	"id": 'foc',
+	# }, {
+	# 	"name": 'Homing',
+	# 	"id": 'hom',
+	# }, {
+	# 	"name": 'Ionizing',
+	# 	"id": 'ion',
+	# }, {
+	# 	"name": 'Melt',
+	# 	"id": 'mlt',
+	# }, {
+	# 	"name": 'Overheat',
+	# 	"id": 'ovr',
+	# }, {
+	# 	"name": 'Power',
+	# 	"id": 'pow',
+	# }, {
+	# 	"name": 'Saturate',
+	# 	"id": 'sat',
+	# },
+# ]
 
 modification_slots = {
 	"armor": {
@@ -155,59 +383,106 @@ modification_slots = {
 }
 
 skills = [
-    {
-    	"abbr": 'acr',
-    	"full": 'Acrobatics'
+	{
+		"name": 'Acrobatics',
+		"id": 'acr',
 	}, {
-    	"abbr": 'ani',
-    	"full": 'Animal Handling'
+		"name": 'Animal Handling',
+		"id": 'ani',
 	}, {
-    	"abbr": 'ath',
-    	"full": 'Athletics'
+		"name": 'Athletics',
+		"id": 'ath',
 	}, {
-    	"abbr": 'dec',
-    	"full": 'Deception'
+		"name": 'Deception',
+		"id": 'dec',
 	}, {
-    	"abbr": 'ins',
-    	"full": 'Insight'
+		"name": 'Insight',
+		"id": 'ins',
 	}, {
-    	"abbr": 'itm',
-    	"full": 'Intimidation'
+		"name": 'Intimidation',
+		"id": 'itm',
 	}, {
-    	"abbr": 'inv',
-    	"full": 'Investigation'
+		"name": 'Investigation',
+		"id": 'inv',
 	}, {
-    	"abbr": 'lor',
-    	"full": 'Lore'
+		"name": 'Lore',
+		"id": 'lor',
 	}, {
-    	"abbr": 'med',
-    	"full": 'Medicine'
+		"name": 'Medicine',
+		"id": 'med',
 	}, {
-    	"abbr": 'nat',
-    	"full": 'Nature'
+		"name": 'Nature',
+		"id": 'nat',
 	}, {
-    	"abbr": 'prc',
-    	"full": 'Perception'
+		"name": 'Perception',
+		"id": 'prc',
 	}, {
-    	"abbr": 'prf',
-    	"full": 'Performance'
+		"name": 'Performance',
+		"id": 'prf',
 	}, {
-    	"abbr": 'per',
-    	"full": 'Persuasion'
+		"name": 'Persuasion',
+		"id": 'per',
 	}, {
-    	"abbr": 'pil',
-    	"full": 'Piloting'
+		"name": 'Piloting',
+		"id": 'pil',
 	}, {
-    	"abbr": 'slt',
-    	"full": 'Sleight of Hand'
+		"name": 'Sleight of Hand',
+		"id": 'slt',
 	}, {
-    	"abbr": 'ste',
-    	"full": 'Stealth'
+		"name": 'Stealth',
+		"id": 'ste',
 	}, {
-    	"abbr": 'sur',
-    	"full": 'Survival'
+		"name": 'Survival',
+		"id": 'sur',
 	}, {
-    	"abbr": 'tec',
-    	"full": 'Technology'
+		"name": 'Technology',
+		"id": 'tec',
+	},
+]
+
+ammo_types = [
+	{
+		"name": 'Arrow',
+		"id": 'arrow',
+	}, {
+		"name": 'Bolt',
+		"id": 'bolt',
+	}, {
+		"name": 'Cartridge',
+		"id": 'cartridge',
+	}, {
+		"name": 'Dart',
+		"id": 'dart',
+	}, {
+		"name": 'Flechette Clip',
+		"id": 'flechetteClip',
+	}, {
+		"name": 'Flechette Magazine',
+		"id": 'flechetteMag',
+	}, {
+		"name": 'Missile',
+		"id": 'missile',
+	}, {
+		#"name": 'Power Cell',
+		"name": 'Cell',
+		"id": 'powerCell',
+	}, {
+		"name": 'Power Generator',
+		"id": 'powerGenerator',
+	}, {
+		"name": 'Projector Canister',
+		"id": 'projectorCanister',
+	}, {
+		"name": 'Projector Tank',
+		"id": 'projectorTank',
+	}, {
+		"name": 'Rocket',
+		"id": 'rocket',
+	}, {
+		"name": 'Snare',
+		"id": 'snare',
+	}, {
+		"name": 'Torpedo',
+		"id": 'torpedo',
 	},
 ]

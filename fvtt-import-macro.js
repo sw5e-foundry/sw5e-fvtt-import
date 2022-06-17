@@ -15,15 +15,19 @@ let item_types = {
 	],
 	'blasters': [
 		'SimpleBlaster',
-		'MartialBlaster'
+		'MartialBlaster',
+		'ExoticBlaster',
 	],
 	'lightweapons': [
 		'SimpleLightweapon',
-		'MartialLightweapon'
+		'MartialLightweapon',
+		'ExoticLightweapon',
 	],
 	'vibroweapons': [
 		'SimpleVibroweapon',
-		'MartialVibroweapon'
+		'MartialVibroweapon',
+		'Natural',
+		'ExoticVibroweapon',
 	],
 	'enhanceditems': [
 		'EnhancedAdventuringGear',
@@ -39,14 +43,7 @@ let item_types = {
 		'EnhancedWeapon',
 	],
 	'modifications': [
-		'EnhancedArmorModification',
-		'EnhancedBlasterModification',
-		'EnhancedClothingModification',
-		'EnhancedFocusGeneratorModification',
 		'EnhancedItemModification',
-		'EnhancedLightweaponModification',
-		'EnhancedVibroweaponModification',
-		'EnhancedWristpadModification',
 	],
 	'armor': ['Armor'],
 
@@ -60,6 +57,7 @@ let item_types = {
 
 	'forcepowers': ['ForcePower'],
 	'techpowers': ['TechPower'],
+	'maneuvers': ['Maneuver'],
 
 	'archetypes': ['Archetype'],
 	'archetypefeatures': ['ArchetypeFeature'],
@@ -168,9 +166,9 @@ for (let type of Object.keys(item_types)) {
 	if (allow_delete) await Item.deleteDocuments(to_delete, {pack: `sw5e.${type}`});
 	if (allow_update) await Item.updateDocuments(to_update, {pack: `sw5e.${type}`});
 	if (allow_create) {
-		items = await Item.createDocuments(to_create, { pack: `sw5e.${type}` });
+		const items = await Item.createDocuments(to_create, { pack: `sw5e.${type}` });
 		for (let item of items) {
-			uid = item.data.flags.uid;
+			const uid = item.data.flags.uid;
 
 			foundry_data[uid] = {
 				id: item.data._id,
@@ -241,9 +239,9 @@ for (let type of Object.keys(journal_entry_types)) {
 	if (allow_delete) await JournalEntry.deleteDocuments(to_delete, {pack: `sw5e.${type}`});
 	if (allow_update) await JournalEntry.updateDocuments(to_update, {pack: `sw5e.${type}`});
 	if (allow_create) {
-		entries = await JournalEntry.createDocuments(to_create, { pack: `sw5e.${type}` });
+		const entries = await JournalEntry.createDocuments(to_create, { pack: `sw5e.${type}` });
 		for (let entry of entries) {
-			uid = entry.data.flags.uid;
+			const uid = entry.data.flags.uid;
 			foundry_data[uid] = { id: entry.data._id };
 		}
 	}

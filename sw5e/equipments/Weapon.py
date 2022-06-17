@@ -40,7 +40,12 @@ class Weapon(sw5e.Equipment.Equipment):
 
 		if 'Special' in self.propertiesMap:
 			if text: text += '\n'
-			text += utils.text.markdownToHtml('#### Special\n' + self.description)
+			if (special := self.propertiesMap["Special"]).lower() != "special":
+				text += utils.text.markdownToHtml('#### Special\n' + special)
+			elif self.description:
+				text += utils.text.markdownToHtml('#### Special\n' + self.description)
+			else:
+				raise ValueError
 
 		return text
 
@@ -68,7 +73,10 @@ class Weapon(sw5e.Equipment.Equipment):
 		if (not self.damageNumberOfDice) or (not self.damageDieType):
 			return {}
 
-		die = f'{self.damageNumberOfDice}d{self.damageDieType} + @mod'
+		die = self.damageNumberOfDice
+		if self.damageDieType != 1: die = f'{die}d{self.damageDieType}'
+		die = f'{die} + @mod'
+
 		damage_type = self.damageType.lower() if self.damageType != 'Unknown' else ''
 		versatile = utils.text.getProperty('Versatile', self.propertiesMap) or ''
 		return {
@@ -80,7 +88,8 @@ class Weapon(sw5e.Equipment.Equipment):
 		w_class = self.weaponClassification
 
 		simple = w_class.startswith('Simple')
-		martial = not simple and w_class.startswith('Martial')
+		martial = w_class.startswith('Martial')
+		exotic = w_class.startswith('Exotic')
 
 		blaster = w_class.endswith('Blaster') or utils.text.getProperty('Ammunition', self.propertiesMap) or utils.text.getProperty('Reload', self.propertiesMap)
 		vibro = (not blaster) and w_class.endswith('Vibroweapon')
@@ -92,18 +101,23 @@ class Weapon(sw5e.Equipment.Equipment):
 		if martial and blaster: return 'martialB'
 		if martial and vibro: return 'martialVW'
 		if martial and light: return 'martialLW'
+		if exotic and blaster: return 'exoticB'
+		if exotic and vibro: return 'exoticVW'
+		if exotic and light: return 'exoticLW'
 		return 'natural'
 
 		return weapon_types[self.weaponClassificationEnum]
 
 	def getAmmoTypes(self):
-		if not utils.text.getProperty('Reload', self.propertiesMap): return []
-		if self.damageType == "Kinetic": return ['cartridge']
-		elif (self.name == "Rotary Cannon"): return ['powerGenerator']
+		if (self.name == "Rotary Cannon"): return ['powerGenerator']
 		elif (self.name == "Flechette Cannon"): return ['flechetteMag']
 		elif (self.name == "Vapor Projector"): return ['projectorTank']
 		elif (self.name == "Wrist launcher"): return ['dart', 'flechetteClip', 'missile', 'projectorCanister', 'snare']
+		elif (self.name == "Bolt-thrower"): return ['bolt']
+		elif (self.name in ["Shortbow", "Compound bow"]): return ['arrow']
 		elif (self.name.endswith("launcher")): return [self.name.split()[0].lower()]
+		elif not utils.text.getProperty('Reload', self.propertiesMap): return []
+		elif self.damageType == "Kinetic": return ['cartridge']
 		else: return ['powerCell']
 
 	def getPropertiesList(self):
@@ -111,21 +125,18 @@ class Weapon(sw5e.Equipment.Equipment):
 
 	def getProperties(self):
 		properties_list = self.getPropertiesList()
+
 		properties = {
-			**utils.text.getProperties(self.propertiesMap.values(), properties_list.values(), error=True),
-			**utils.text.getProperties(self.description, properties_list.values()),
+			**utils.text.getProperties(self.propertiesMap.values(), properties_list, error=True),
+			**utils.text.getProperties(self.description, properties_list),
 		}
 
-		return {
-			key: properties[properties_list[key].lower()]
-			for key in properties_list.keys()
-			if (properties_list[key].lower() in properties)
-		}
+		return properties
 
 	def getAutoTargetData(self, data):
-		if 'smr' in self.p_properties and type(auto := self.p_properties["smr"].split(', ')) == list:
-			mod = (int(auto[0]) - 10) // 2
-			prof = int(auto[1])
+		if 'smr' in self.p_properties and type(smr := self.p_properties["smr"].split('/')) == list:
+			mod = (int(smr[0]) - 10) // 2
+			prof = int(smr[1])
 			data["data"]["ability"] = 'str'
 			data["data"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
 			data["data"]["damage"]["parts"][0][0] = f'{self.damageNumberOfDice}d{self.damageDieType} + {mod}'
@@ -215,8 +226,10 @@ class Weapon(sw5e.Equipment.Equipment):
 		data["data"]["damage"] = self.getDamage()
 		data["data"]["weaponType"] = self.weapon_type
 		data["data"]["properties"] = self.p_properties
+		data["data"]["properties"]["-=amm"] = None
 
 		data["data"]["ammo"] = { "types": self.ammo_types }
+		data["data"]["consume"] = { "type": "", "target": "", "ammount": None }
 
 		data = self.getAutoTargetData(data)
 		return self.getItemVariations(data, importer)

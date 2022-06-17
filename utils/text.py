@@ -71,12 +71,12 @@ def getActivation(text, uses, recharge):
 	if text:
 		text = text.lower()
 
-		if re.search(r'bonus action', text):
+		if re.search(r'as a reaction|you can use your reaction|using your reaction|you can use this special reaction|reaction on your turn', text):
+			return 'reaction'
+		elif re.search(r'bonus action', text):
 			return 'bonus'
 		elif re.search(r'as an action|can take an action|you can use your action', text):
 			return 'action'
-		elif re.search(r'you can use your reaction|using your reaction|you can use this special reaction', text):
-			return 'reaction'
 		elif uses or recharge:
 			return 'special'
 	return None
@@ -88,6 +88,7 @@ def getUses(text, name):
 
 	if text:
 		text = text.lower()
+		text, _ = getStatblocks(text)
 
 		patSR = r'(finish|finishes|complete|after) a short(?: rest)?(?: or(?: a)? long rest)'
 		patSR += r'|regains? all expended (?:uses|charges) (?:on|after) a short(?: or long)? rest'
@@ -95,6 +96,7 @@ def getUses(text, name):
 		patLR += r'|regains? all expended (?:uses|charges) (?:on|after) a long rest'
 		patRC = r'until you move 0 feet on one of your turns'
 		patRC += r'|until you (?:store|reload|recover)'
+		patRC += r'|regains? all expended (?:uses|charges) when you (?:store|reload|recover)'
 
 		if re.search(patSR, text): recharge = 'sr'
 		elif re.search(patLR, text): recharge = 'lr'
@@ -131,8 +133,10 @@ def getUses(text, name):
 				if uses_half:
 					if uses_rounded == 'up':
 						uses = f'ceil(({uses})/2)'
-					else:
+					elif uses_rounded == 'down':
 						uses = f'floor(({uses})/2)'
+					else:
+						uses = f'round(({uses})/2)'
 
 		if not found: ## PROF times
 			pattern = r'a (?:combined )?number of (?:times|charges|superiority dice|force points in this way) equal to (?P<half>half )?your proficiency bonus'
@@ -143,7 +147,7 @@ def getUses(text, name):
 
 				uses = '@attributes.prof'
 				if match['half'] or match['half2']:
-					uses = f'floor({uses}/2)'
+					uses = f'round({uses}/2)'
 
 		if not found: ## CLASS LEVEL times
 			pattern = r'a (?:combined )?number of (?:times|charges) equal to (?P<half>half )?your (?P<class>\w+) level(?: \(rounded (?P<round>up|down)\))?'
@@ -154,11 +158,13 @@ def getUses(text, name):
 				uses = f'@classes.{match["class"].lower()}.levels'
 				if match['half']:
 					if match['round'] == 'up':
-						uses = f'ceil({uses}/2)'
+						uses = f'ceil(({uses})/2)'
+					elif match['round'] == 'down':
+						uses = f'floor(({uses})/2)'
 					else:
-						uses = f'floor({uses}/2)'
+						uses = f'round(({uses})/2)'
 
-		sp_action = r'use (?:it|(?:this|each|the chosen) (?:feature|trait|ability))'
+		sp_action = r'use (?:it|(?:this|each|the chosen|these) (?:features?|traits?|abilit(?:y|ies)))'
 		sp_action += r'|initiate playing an enhanced song'
 		sp_action += r'|invoke each of your totems'
 		sp_action += r'|invoke a totem this way'
@@ -167,7 +173,7 @@ def getUses(text, name):
 		sp_action += r'|(?:cast|do) (?:it|so)'
 		sp_action += r'|activate'
 
-		sp_action_past = r'used? (?:it|(?:this|each|the chosen) (?:feature|trait|ability))'
+		sp_action_past = r'used? (?:it|(?:this|each|the chosen|these) (?:features?|traits?|abilit(?:y|ies)))'
 		sp_action_past += r'|initiated? playing an enhanced song'
 		sp_action_past += r'|invoked? each of your totems'
 		sp_action_past += r'|invoked? a totem this way'
@@ -180,8 +186,8 @@ def getUses(text, name):
 		sp_n_times = capt(sp_n) + r' times|(once|twice|thrice)'
 
 		if not found: ## NUMBER times
-			pattern = fr'you (?:can|may) {ncapt(sp_action)} (?:a (?:combined )?total of )?{ncapt(sp_n_times)}'
-			pattern += fr'|(?:you have|(?:this|the) \w+ has) {capt(sp_n)} (?:superiority dice|amplified shots|(?!hit)(?:\w+ )?points|charges)'
+			pattern = fr'you (?:can|may) {ncapt(sp_action)} (?:a (?:combined )?(?:total of )?)?{ncapt(sp_n_times)}'
+			pattern += fr'|(?:you (?:have|gain)|(?:this|the) \w+ (?:has|gains)) {capt(sp_n)} (?:superiority dic?e|amplified shots|(?!hit)(?:\w+ )?points|charges)'
 
 			if match := re.search(pattern, text):
 				found = True
@@ -323,11 +329,14 @@ def getRange(text, name):
 
 	return None, ''
 
-def getAction(text, name, scale=None):
-	action_type, damage, formula, save, save_dc, scaling = '', { "parts": [], "versatile": '' }, '', '', None, { "mode": 'none'}
+def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
+	action_type, damage, other_formula, save, save_dc, scaling = '', { "parts": [], "versatile": '' }, '', '', None, { "mode": 'none'}
+
+	has_rolled = False
 
 	if text:
 		text = text.lower()
+		text, _ = getStatblocks(text)
 
 		## Power Attack
 		pattern = r'(make|making) a (?P<range>ranged|melee) (force|tech) attack'
@@ -337,8 +346,8 @@ def getAction(text, name, scale=None):
 
 		## Saving Throw
 		sp_ability = r'strength|dexterity|constitution|intelligence|wisdom|charisma'
-		pattern = r'(?:succeed on|make|makes|if it fails) an? (dc (?P<dc>\d+) )?'
-		pattern += fr'(?P<save1>{sp_ability})(?: or (?P<save2>{sp_ability}))? saving throw'
+		pattern = r'(?:succeed on|make|makes|if it fails) (?:an? )?(dc (?P<dc>\d+) )?'
+		pattern += fr'(?P<save1>{sp_ability})(?: or (?P<save2>{sp_ability}))? saving throws?'
 		pattern += r'(?: \(dc (?P<dc2>\d+)\))?'
 		if (match := re.search(pattern, text)):
 			action_type = action_type or 'save'
@@ -347,79 +356,143 @@ def getAction(text, name, scale=None):
 			save_dc = int(match["dc"]) if match["dc"] else int(match["dc2"]) if match["dc2"] else None
 
 		## Dice formula
-		p_formula = r'(?P<dice>\d*d\d+(?:\s*\+\s*\d*d\d+)*)?(?:(?:\s*\+\s*)?(?P<flat>\d+))?(?:\s+\+ your(?P<ability_mod> [\w ]+?)(?: ability)? modifier)?'
-		p_dformula = r'(?P<dice>\d*d\d+(?:\s*\+\s*\d*d\d+)*)(?:(?:\s*\+\s*)?(?P<flat>\d+))?(?:\s+\+ your(?P<ability_mod> [\w ]+?)(?: ability)? modifier)?'
+		p_mult = r'(?:(?P<mult>\d+) (?:times|x|\*)\s+)'
+		p_dice = r'(?P<dice>\d*d\d+(?:\s*\+\s*\d*d\d+)*)'
+		p_rolled = r'(?P<rolled>(?:the )?(?:number|amount) (?:rolled|you roll)(?: on (?:the|your) \w+ die)?|(?:the|your) \w+ die|the (?:\w+ )?die roll(?:ed)?|the (?:(?:result of the )?roll|result))'
+		p_dice = fr'(?:{p_dice}|{p_rolled})'
+		p_flat = r'(?:(?:\s*\+\s*)?(?P<flat>\d+))'
+		p_mod = r'(?:(?:\s*\+\s*)?your (?P<ability_mod>\w[\w ]*?)(?: ability)? modifier)'
+		p_lvl = r'(?:(?:\s*\+\s*)?your (?P<class_level>\w[\w ]*?)(?: class)? level)'
+		p_prof = r'(?P<prof_bonus>(?:\s*\+\s*)?your proficiency bonus)'
 
-		## Healing
-		pattern = fr'(?:(?:(?:re)?gains?|restores|gaining|a number of) (?P<temp>temporary )?hit points equal to |hit points increase by ){p_formula}'
-		pattern2 = fr'(?:(?:re)?gains?|restores?|gaining) (?:an extra )?{p_formula} (?:extra |additional )?(?P<temp>temporary )?hit points'
-		def healing(match):
-			nonlocal action_type
-			nonlocal damage
-			dice, flat, ability_mod, temp = match.group('dice', 'flat', 'ability_mod', 'temp')
+		p_formula = fr'{p_mult}?{p_dice}?{p_flat}?{p_mod}?{p_lvl}?{p_prof}?'
+		p_dformula = fr'{p_mult}?{p_dice}{p_flat}?{p_mod}?{p_lvl}?{p_prof}?'
 
-			if dice or flat or ability_mod:
-				action_type = action_type or 'heal'
-				formula = ('1'+dice if (dice.startswith('d')) else dice) if dice else None
-				if flat:
-					if formula: formula = f'{formula} + {flat}'
-					else: formula = flat
-				if ability_mod in ('strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'):
-					formula = f'{formula or ""} + @abilities.{ability_mod[:3]}.mod'
-				elif ability_mod:
-					formula = f'{formula or ""} + @mod'
-				damage["parts"].append([ formula, 'temphp' if temp else 'healing' ])
-				return 'FORMULA'
-			else:
-				return match.group(0)
-		text = re.sub(pattern, healing, text)
-		text = re.sub(pattern2, healing, text)
+		def get_formula(match):
+			nonlocal rolled_formula, has_rolled
+			mult = match.groupdict().get('mult')
+			dice = match.groupdict().get('dice')
+			rolled = match.groupdict().get('rolled')
+			flat = match.groupdict().get('flat')
+			ability_mod = match.groupdict().get('ability_mod')
+			class_lvl = match.groupdict().get('class_lvl')
+			prof_bonus = match.groupdict().get('prof_bonus')
 
-		## Damage
-		pattern = fr'(?:(?:takes?|taking|deals?|dealing|do|suffer) (?:(?:an )?(?:extra|additional) |up to )?|, | (?:and|plus) (?:another |an extra )?)(?:damage equal to )?{p_formula}(?: of)?(?: (?P<type>\w+)(?:, (?:or )?\w+)*)?(?: damage|(?= [^.]+ damage))'
-		pattern2 = fr'(?:the (?P<type>\w+ )?damage (?:also )?increases by|increase the damage by|(?:base|the additional|the extra) damage is|damage die becomes a) {p_formula}'
-		_pattern = fr'(?:(?:takes?|taking|deals?|dealing|do|suffer) (?:(?:an )?(?:extra|additional) |up to )?|, | (?:and|plus) (?:another |an extra )?)(?:damage equal to )?\d+ \({p_formula}\)(?: of)?(?: (?P<type>\w+)(?:, (?:or )?\w+)*)?(?: damage|(?= [^.]+ damage))'
-		_pattern2 = fr'(?:the (?P<type>\w+ )?damage (?:also )?increases by|increase the damage by|(?:base|the additional|the extra) damage is|damage die becomes a) \d+\({p_formula}\)'
-		def dmg(match):
-			nonlocal action_type
-			nonlocal damage
-			dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
-			dmg_type = match.group('type') or '' if 'type' in match.groupdict() else ''
 
-			if dice or flat or ability_mod:
-				action_type = action_type or 'other'
-				formula = ('1'+dice if (dice.startswith('d')) else dice) if dice else None
+			if dice and dice.startswith('d'): dice = f'1{dice}'
+			if dice or rolled or flat or ability_mod or class_lvl:
+				formula = dice
+				if rolled and not has_rolled and rolled_formula != '@ROLLED':
+					has_rolled = True
+					if formula: formula = f'{formula} + {rolled_formula}'
+					else: formula = rolled_formula
 				if flat:
 					if formula: formula = f'{formula} + {flat}'
 					else: formula = flat
 				if ability_mod:
-					formula = f'{formula or ""} + @mod'
-				damage["parts"].append([ formula, dmg_type ])
+					mod = '@mod'
+					if ability_mod in ('strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'):
+						mod = f'@abilities.{ability_mod[:3]}.mod'
+					if formula: formula = f'{formula} + {mod}'
+					else: formula = mod
+				if class_lvl:
+					lvl = f'@classes.{class_lvl.lower()}.levels'
+					if formula: formula = f'{formula} + {lvl}'
+					else: formula = lvl
+				if prof_bonus:
+					bonus = '@prof'
+					if formula: formula = f'{formula} + {bonus}'
+					else: formula = bonus
+				if formula and mult: formula = f'{mult} * ({formula})'
+				return formula
+
+		## Healing
+		patterns = [fr'(?:(?:(?:re)?gains?|restores|gaining|a number of|granting them|grant a number of creatures? (?:up|equal) to(?: \w+)+?|give yourself or that friendly creature) (?P<temp>temporary )?hit points equal to |hit points increase by ){p_formula}']
+		patterns += [fr'(?:(?:re)?gains?|restores?|gaining) (?:an extra )?{p_formula} (?:extra |additional )?(?P<temp>temporary )?hit points']
+		def healing(match):
+			nonlocal action_type, damage
+
+			formula = get_formula(match)
+			if formula:
+				temp = match['temp']
+				action_type = action_type or 'heal'
+				damage["parts"].append([ formula, 'temphp' if temp else 'healing' ])
 				return 'FORMULA'
 			else:
 				return match.group(0)
-		text = re.sub(_pattern, dmg, text)
-		text = re.sub(pattern, dmg, text)
-		text = re.sub(_pattern2, dmg, text)
-		text = re.sub(pattern2, dmg, text)
+		for pat in patterns: text = re.sub(pat, healing, text)
+
+		## Damage
+		opt1 = fr'(?:takes?|taking|deals?|dealing|do|suffer)(?:(?: an)? (?:extra|additional)| up to)?'
+		opt2 = fr','
+		opt3 = fr'(?:and|plus)(?: another| an extra)?'
+		prefix1 = fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)?'
+		prefix2 = fr'(?:{opt1})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)'
+		posfix1 = fr'(?:of )?(?:(?P<type2>\w+)(?:,(?: or)? \w+)*)?(?:damage|(?=[^.]+ damage))'
+
+		opt1 = fr'the (?P<type>\w+ )?damage (?:also )?increases by'
+		opt2 = fr'increase the damage by'
+		opt3 = fr'(?:base|the additional|the extra) damage is'
+		opt4 = fr'damage die becomes a'
+		prefix3 = fr'(?:{opt1}|{opt2}|{opt3}|{opt4})'
+
+		patterns = [fr'{prefix1} \d+ \({p_formula}\) {posfix1}']
+		patterns += [fr'{prefix2} \d+ \({p_formula}\)']
+		patterns += [fr'{prefix3} \d+ \({p_formula}\)']
+		patterns += [fr'{prefix1} {p_formula} {posfix1}']
+		patterns += [fr'{prefix2} {p_formula}']
+		patterns += [fr'{prefix3} {p_formula}']
+		patterns += [fr'the (?P<type>\w+) damage (?:equals|is equal to) {p_formula}']
+		def dmg(match):
+			nonlocal action_type, damage, other_formula
+
+			formula = get_formula(match)
+			if formula:
+				dmg_type = match.groupdict().get('type') or match.groupdict().get('type2') or ''
+				action_type = action_type or 'other'
+				if dmg_type == '' and formula == rolled_formula:
+					other_formula = formula
+				else:
+					damage["parts"].append([ formula, dmg_type ])
+				return 'FORMULA'
+			else:
+				return match.group(0)
+		for pat in patterns: text = re.sub(pat, dmg, text)
 
 		## 'Versatile' dice
-		pattern = fr'otherwise, it takes {p_dformula}'
-		pattern2 = fr', or {p_formula}(?= [^.]+ damage)'
-		_pattern2 = fr', or \d+ \({p_formula}\)(?= [^.]+ damage)'
+		patterns = [fr'otherwise, it takes {p_dformula}']
+		patterns += [fr', or \d+ \({p_formula}\)(?= [^.]+ damage)']
+		patterns += [fr', or {p_formula}(?= [^.]+ damage)']
 		def versatile(match):
-			dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
-
-			formula = ('1'+dice if (dice.startswith('d')) else dice) if dice else None
-			if flat:
-				if formula: formula = f'{formula} + {flat}'
-				else: formula = flat
-			if ability_mod:
-				formula = f'{(formula + " + ") or ""}@mod'
+			formula = get_formula(match)
 			damage["versatile"] = formula
-		text = re.sub(pattern, versatile, text)
-		text = re.sub(_pattern2, versatile, text)
-		text = re.sub(pattern2, versatile, text)
+		for pat in patterns: text = re.sub(pat, versatile, text)
+
+		## Ability Check
+		patterns = [fr'to make a (?P<type>(?:universal|light|dark) force|tech)casting ability check(?P<proficient> with proficiency)?']
+		def ability_check(match):
+			nonlocal action_type, other_formula
+
+			ctype = match.groupdict().get('type')
+			prof = match.groupdict().get('proficient')
+
+			if ctype:
+				dmg_type = match.groupdict().get('type') or match.groupdict().get('type2') or ''
+				action_type = action_type or 'abil'
+
+				ability = '@mod'
+				if ctype == 'universal force': ability = 'max(@abilities.wis.mod, @abilities.cha.mod)'
+				elif ctype == 'light force': ability = '@abilities.wis.mod'
+				elif ctype == 'dark force': ability = '@abilities.cha.mod'
+				elif ctype == 'tech': ability = '@abilities.int.mod'
+
+				other_formula = f'1d20 + {ability}'
+				if prof: other_formula += ' + @prof'
+
+				return 'FORMULA'
+			else:
+				return match.group(0)
+		for pat in patterns: text = re.sub(pat, ability_check, text)
 
 		## Other dice
 		prefixes = fr'roll(?:ing)?(?: a| two)?'
@@ -428,47 +501,46 @@ def getAction(text, name, scale=None):
 		prefixes += fr'|which are'
 		prefixes += fr'|die(?:, a)?'
 
-		pattern = fr'(?:{prefixes}) (?:an additional )?{p_dformula}(?<! )'
-		pattern2 = fr'for {p_dformula} (?:turns|days)'
-		pattern3 = fr'a {p_dformula} that you can roll'
-		pattern4 = fr'{p_dformula}(?: tiny projectiles| such fissures|(?:\s*x\s*\d+\s+)?feet)'
-		pattern5 = fr'\|\s*{p_dformula}\s*\|'
-		pattern6 = fr'reduces? the damage taken by {p_dformula}'
-		pattern7 = fr'it deploys {p_dformula}'
+		p_roll_types = fr'(?:(?:damage |attack )?rolls?|(?:ability )?checks?|results?|saving throws?|levels?|totals?|damage|attack|save)'
+		patterns = [fr'(?:{prefixes}) (?:an additional )?{p_formula}(?<! )']
+		patterns += [fr'for {p_formula} (?:turns|days)']
+		patterns += [fr'a {p_formula} that you can roll']
+		patterns += [fr'{p_formula}(?: tiny projectiles| such fissures|(?:\s*x\s*\d+\s+)?feet)']
+		patterns += [fr'\|\s*{p_formula}\s*\|']
+		patterns += [fr'reduces? the damage (?:taken )?by {p_formula}']
+		patterns += [fr'it deploys {p_formula}']
+		patterns += [fr'move (?:to a(?:n unoccupied)? space (?:you can see )?up to )?(?:a(?:n additional)? distance|a number of feet) equal to {p_formula}']
+		patterns += [fr'speed increases by {p_formula}']
+		patterns += [fr'{p_formula} to it\'?s movement speed']
+		patterns += [fr'a number of rounds equal to {p_formula}']
+		patterns += [fr'bonus to (?:any|all|every|the next) {p_roll_types}(?: (?:you|they|it) makes?)? equal to {p_formula}']
+		patterns += [fr'(?:add|subtract)(?:ing|s)? {p_formula} (?:to|from) (?:any|all|every|(?:both )?the(?: next)?|their|your|it\'s) {p_roll_types}(?: (?:you|they|it) makes?)?']
+		patterns += [fr'the result of (?:your|their|it\'s) {p_roll_types} (?:plus|minus) {p_formula}']
+		patterns += [fr'(?P<rolled>(?:expend|roll) (?:a|one|the) \w+ die(?: and roll it)?,? (?:and |to )?add(?:ing)? (?:it )?to the {p_roll_types})']
+		patterns += [fr'(?P<rolled>up to the result of the roll)']
+		patterns += [fr'(?P<rolled>roll(?:ing)? (?:the|a)(?: \w+)? die and (?:(?:add|subtract)(?:ing|\'s)?|plus|minus) (?:it|the (?:(?:amount|number) rolled|rolled (?:amount|number)|result)) (?:from|to|is))']
+		patterns += [fr'(?P<rolled>the (?:\w+ die|(?:amount|number) (?:you )?rolled|rolled (?:amount|number)|result) is (?:added|subtracted) (?:from|to))']
 		def simple(match):
-			nonlocal action_type
-			nonlocal damage
-			dice, flat, ability_mod = match.group('dice', 'flat', 'ability_mod')
+			nonlocal action_type, damage
 
-			if dice or flat or ability_mod:
+			formula = get_formula(match)
+			if formula:
 				action_type = action_type or 'other'
-				formula = ('1'+dice if (dice.startswith('d')) else dice) if dice else None
-				if flat:
-					if formula: formula = f'{formula} + {flat}'
-					else: formula = flat
-				if ability_mod:
-					formula = f'{formula or ""} + @mod'
 				damage["parts"].append([ formula, '' ])
 				return 'FORMULA'
 			else:
 				return match.group(0)
-		text = re.sub(pattern, simple, text)
-		text = re.sub(pattern2, simple, text)
-		text = re.sub(pattern3, simple, text)
-		text = re.sub(pattern4, simple, text)
-		text = re.sub(pattern5, simple, text)
-		text = re.sub(pattern6, simple, text)
-		text = re.sub(pattern7, simple, text)
+		for pat in patterns: text = re.sub(pat, simple, text)
 
 		## Check for unprocessed dice
 		pattern = r'\d*d\d+'
 		def unprocessed(match):
-			nonlocal text
-			nonlocal name
+			nonlocal text, name
 
 			dice = match[0]
 
-			pattern_ignore = fr'on the d20|d20 roll|rolls? the d20|roll of the d20|{dice}s'
+			pattern_ignore = fr'on the d20|d20 roll|roll(?:ing|s)? (?:(?:of )?the|a) d20|{dice}s'
+			pattern_ignore += fr'|which is a {dice}'
 			pattern_ignore += fr'|uses a {dice}'
 			pattern_ignore += fr'|(?:versatile|barbed|gauntleted|spiked|double) \({dice}\)(?: and \w+(?: \d+)?)? propert(?:y|ies)' ## versatile (2d4) property
 			pattern_ignore += fr'|\|\s*{dice}\s*\|' ## |d20|
@@ -489,7 +561,8 @@ def getAction(text, name, scale=None):
 			pattern_ignore += fr'|rolls(?: a)? {dice} and subtracts the number rolled'
 			pattern_ignore += fr'|instead of its {dice}\.'
 
-			formula = ('1'+dice if (dice.startswith('d')) else dice) if dice else None
+			if dice and dice.startswith('d'): dice = f'1{dice}'
+			formula = dice
 
 			if re.search(pattern_ignore, text):
 				return formula
@@ -526,7 +599,7 @@ def getAction(text, name, scale=None):
 		pattern = r'increases by (?P<die>\d*d\d+) for each slot level above'
 		if match := re.search(pattern, scale): scaling["formula"] = match["die"]
 
-	return action_type, damage, formula, save, save_dc, scaling
+	return action_type, damage, other_formula, save, save_dc, scaling
 
 def getDuration(text, name):
 	if text:
@@ -594,8 +667,10 @@ def getProperties(targets, props_list, strict=False, error=False, needs_end=Fals
 	if not targets: return {}
 	if type(targets) == str: targets = (targets,)
 
-	pname_pat = fr'(?:{"|".join(props_list)})'
-	if not strict: pname_pat = fr'(?:{"|".join(props_list).lower()})'
+	props = [prop["name"] for prop in props_list]
+
+	pname_pat = fr'(?:{"|".join(props)})'
+	if not strict: pname_pat = fr'(?:{"|".join(props).lower()})'
 	pval_pat = r'(?: (?:\d+)| \((?:[^()]+)\))?'
 	pval_pat_ = r'(?: (?P<flat>\d+)| \((?P<values>[^()]+)\))?'
 	prop_pat = fr'(?:{pname_pat}(?=\W|$){pval_pat})'
@@ -606,24 +681,52 @@ def getProperties(targets, props_list, strict=False, error=False, needs_end=Fals
 	properties = {}
 
 	for target in targets:
+		if target == '—': continue
+
 		if not strict: target = target.lower()
 		if re.search(pattern, target):
 			for match in re.finditer(pattern, target):
+				text = match['props']
 				for prop in props_list:
-					if not strict: prop = prop.lower()
-					if (match2 := re.search(fr'{prop}(?=\W|$){pval_pat_}', match['props'])):
+					pName = prop["name"] if strict else prop["name"].lower()
+					pId = prop["id"]
+					pattern2 = fr'{pName}(?=\W|$){pval_pat_}'
+					def foo(match2):
+						if match2[0].find('MATCH') != -1: return 'MATCH'
 						if match['neg']:
-							properties[prop] = False
+							properties[pId] = False
 						else:
 							if match2['flat']:
-								properties[prop] = int(match2['flat'])
+								properties[pId] = int(match2['flat'])
 							elif match2['values']:
-								properties[prop] = match2['values']
+								properties[pId] = match2['values']
 							else:
-								properties[prop] = True
+								properties[pId] = True
+						return 'MATCH'
+					text = re.sub(pattern2, foo, text)
 		elif error:
 			raise ValueError(props_list, target, targets)
 	return properties
+
+def getStatblocks(text):
+	lines = text.split('\n')
+	text = ''
+	statblocks = []
+
+	statblock = ''
+	for line in lines:
+		if statblock == '':
+			if (text == '___\n' or text.endswith('\n___\n')) and line.startswith('>'):
+				statblock = '___\n' + line
+				text = text[:-4]
+		elif not line.startswith('>'):
+			statblocks += [statblock]
+			statblock = ''
+
+		if statblock == '':
+			text += line + '\n'
+
+	return text, statblocks
 
 def lowerCase(word):
 	return word[:1].lower() + word[1:]

@@ -78,15 +78,11 @@ class Equipment(sw5e.Equipment.Equipment):
 	def getProperties(self):
 		properties_list = self.getPropertiesList()
 		properties = {
-			**utils.text.getProperties(self.propertiesMap.values(), properties_list.values(), error=True),
-			**utils.text.getProperties(self.description, properties_list.values()),
+			**utils.text.getProperties(self.propertiesMap.values(), properties_list, error=True),
+			**utils.text.getProperties(self.description, properties_list),
 		}
 
-		return {
-			key: properties[properties_list[key].lower()]
-			for key in properties_list.keys()
-			if (properties_list[key].lower() in properties)
-		}
+		return properties
 
 	def getBaseItem(self):
 		override = {
@@ -117,9 +113,6 @@ class Equipment(sw5e.Equipment.Equipment):
 		data["data"]["armor"] = self.armor
 		data["data"]["strength"] = self.strengthRequirement
 		data["data"]["stealth"] = self.stealthDisadvantage
-		if self.armor["type"] in ('focusgenerator', 'wristpad'):
-			data["data"]["properties"] = { f'c_{prop}': self.p_properties.get(prop.lower(), None) for prop in utils.config.casting_properties }
-		else:
-			data["data"]["properties"] = { prop: self.p_properties.get(prop.lower(), None) for prop in utils.config.armor_properties }
+		data["data"]["properties"] = self.p_properties
 
 		return [data]

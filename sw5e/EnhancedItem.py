@@ -49,13 +49,6 @@ class EnhancedItem(sw5e.Entity.Item):
 		self.p_properties = self.getProperties()
 
 		self.is_modification = self.type.endswith('Modification')
-		if (self.is_modification):
-			if (self.subtype == "augment"):
-				self.modification_type = "augment"
-				self.modification_slot = ""
-			else:
-				self.modification_type = self.type[:-12].lower()
-				self.modification_slot = utils.config.modification_slots[self.modification_type][self.subtype]
 
 	def getActivation(self):
 		return utils.text.getActivation(self.text, self.uses, self.recharge)
@@ -94,13 +87,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		else:
 			return {}
 
-		properties = utils.text.getProperties(self.text, properties_list.values(), needs_end=True)
-		return {
-			key: properties[properties_list[key].lower()]
-			for key in properties_list.keys()
-			if (properties_list[key].lower() in properties)
-		}
-
+		return utils.text.getProperties(self.text, properties_list, needs_end=True)
 
 	def applySubtype(self, data):
 		if self.subtypeType == 'Specific': return data
@@ -154,6 +141,20 @@ class EnhancedItem(sw5e.Entity.Item):
 					data["data"]["consumableType"] = 'adrenal'
 				elif self.subtype == 'ammunition':
 					data["data"]["consumableType"] = 'ammo'
+					ammo_types = utils.config.ammo_types
+					name = self.name.lower()
+					for ammo in ammo_types:
+						amn = ammo["name"].lower()
+						if name.find(amn) != -1:
+							data["data"]["ammoType"] = ammo["id"]
+							break
+					if not 'ammoType' in data["data"]:
+						desc = (self.text or '').lower()
+						for ammo in ammo_types:
+							amn = ammo["name"].lower()
+							if desc.find(amn) != -1:
+								data["data"]["ammoType"] = ammo["id"]
+								break
 				elif self.subtype in ('technology', 'medpac'):
 					data["data"]["consumableType"] = self.subtype
 				else:
@@ -493,11 +494,11 @@ class EnhancedItem(sw5e.Entity.Item):
 	def getDataModification(self, importer):
 		data = super().getData(importer)[0]
 
-		if self.modification_type in ('armor', 'clothing', 'focusgenerator', 'wristpad'): data["data"]["modificationItemType"] = 'equipment'
-		elif self.modification_type in ('blaster', 'vibroweapon', 'lightweapon'): data["data"]["modificationItemType"] = 'weapon'
+		if self.subtype in ('armor', 'clothing', 'focusgenerator', 'wristpad'): data["data"]["modificationItemType"] = 'equipment'
+		elif self.subtype in ('blaster', 'vibroweapon', 'lightweapon'): data["data"]["modificationItemType"] = 'weapon'
 
-		data["data"]["modificationType"] = self.modification_type
-		data["data"]["modificationSlot"] = self.modification_slot
+		data["data"]["modificationType"] = self.subtype
+		data["data"]["-=modificationSlot"] = None
 
 
 		data["data"]["description"] = { "value": self.getDescription() }
