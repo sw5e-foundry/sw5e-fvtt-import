@@ -428,7 +428,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 		opt3 = fr'(?:and|plus)(?: another| an extra)?'
 		prefix1 = fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)?'
 		prefix2 = fr'(?:{opt1})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)'
-		posfix1 = fr'(?:of )?(?:(?P<type2>\w+)(?:,(?: or)? \w+)*)?(?:damage|(?=[^.]+ damage))'
+		posfix1 = fr'(?:of )?(?:(?P<type2>\w+)?(?:,(?: or)? \w+)*)?(?: ?damage| (?=[^.]+ damage))'
 
 		opt1 = fr'the (?P<type>\w+ )?damage (?:also )?increases by'
 		opt2 = fr'increase the damage by'
@@ -666,11 +666,12 @@ def getProperty(prop_name, props):
 def getProperties(targets, props_list, strict=False, error=False, needs_end=False):
 	if not targets: return {}
 	if type(targets) == str: targets = (targets,)
+	if len(props_list) == 0: raise ValueError(targets, props_list, strict, error, needs_end)
 
 	props = [prop["name"] for prop in props_list]
 
 	pname_pat = fr'(?:{"|".join(props)})'
-	if not strict: pname_pat = fr'(?:{"|".join(props).lower()})'
+	if not strict: pname_pat = pname_pat.lower()
 	pval_pat = r'(?: (?:\d+)| \((?:[^()]+)\))?'
 	pval_pat_ = r'(?: (?P<flat>\d+)| \((?P<values>[^()]+)\))?'
 	prop_pat = fr'(?:{pname_pat}(?=\W|$){pval_pat})'
@@ -678,6 +679,7 @@ def getProperties(targets, props_list, strict=False, error=False, needs_end=Fals
 
 	pattern = fr'(?P<neg>removes the )?(?P<props>{props_pat})(?: propert(?:y|ies))'
 	if not needs_end: pattern += '?'
+
 	properties = {}
 
 	for target in targets:

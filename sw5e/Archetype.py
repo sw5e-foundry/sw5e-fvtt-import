@@ -35,8 +35,16 @@ class Archetype(sw5e.Entity.Item):
 		self.full_name = self.name
 		if self.name.endswith(' (Companion)'): self.name = self.name[:-12]
 
+		self.sourceClass = self.getSourceClass(importer)
 		self.features, self.invocations = self.getFeatures(importer)
+		self.force, self.tech, self.superiority = self.getProgression(importer)
 		self.advancements = self.getAdvancements()
+
+	def getSourceClass(self, importer):
+		if importer:
+			class_data = { "name": self.raw_className }
+			return importer.get('class', data=class_data)
+		self.broken_links = True
 
 	def getFeatures(self, importer):
 		text = self.raw_text
@@ -93,6 +101,35 @@ class Archetype(sw5e.Entity.Item):
 				raise ValueError(f'Invocation type "{name}" detected with no invocations.')
 
 		return features, invocations
+
+	def getProgression(self, importer):
+		force, tech, superiority = 'none', 'none', 'none'
+
+		features = [self.features[level][name] for level in self.features for name in self.features[level]]
+
+		if len(filtered := [ feature for feature in features if re.match(fr"(?:Improved )?Forcecasting$", feature["name"]) ]):
+			source = self.sourceClass.force if self.sourceClass else 'none'
+			if source == 'none': force = 'arch'
+			elif source == 'arch': force = 'half'
+			elif source == 'half': force = '3/4'
+			elif source == '3/4': force = 'full'
+			else: raise ValueError(source, filtered)
+
+		if len(filtered := [ feature for feature in features if re.match(fr"(?:Improved )?Techcasting$", feature["name"]) ]):
+			source = self.sourceClass.tech if self.sourceClass else 'none'
+			if source == 'none': tech = 'arch'
+			elif source == 'arch': tech = 'half'
+			elif source == 'half': tech = '3/4'
+			elif source == '3/4': tech = 'full'
+			else: raise ValueError(source, filtered)
+
+		if len(filtered := [ feature for feature in features if re.match(fr"(?:Improved )?Superiority$", feature["name"]) ]):
+			source = self.sourceClass.superiority if self.sourceClass else '0.0'
+			if source == '0.0': superiority = '0.5'
+			elif source == '0.5': superiority = '1'
+			else: raise ValueError(source, filtered)
+
+		return force, tech, superiority
 
 	def getAdvancements(self):
 		advancements = [ ]
@@ -152,16 +189,20 @@ class Archetype(sw5e.Entity.Item):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["-=className"] = None
-		data["data"]["-=classCasterType"] = None
-
 		data["name"] = self.full_name
 		data["data"]["description"] = { "value": self.getDescription() }
 		data["data"]["invocations"] = { "value": self.getInvocationsText(importer) }
 		data["data"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
 		data["data"]["classIdentifier"] = utils.text.slugify(self.raw_className, capitalized=False)
+		data["data"]["powercasting"] = { "force": self.force, "tech": self.tech }
+		data["data"]["superiority"] = { "progression": self.superiority }
 		data["data"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
 		data["data"]["source"] = self.raw_contentSource
+
+		data["data"]["-=className"] = None
+		data["data"]["-=classCasterType"] = None
+		data["data"]["powercasting"]["-=progression"] = None
+		data["data"]["powercasting"]["-=ability"] = None
 
 		return [data]
 

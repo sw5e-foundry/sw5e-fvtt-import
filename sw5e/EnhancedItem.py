@@ -46,6 +46,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		self.attack_bonus, self.damage_bonus = self.getAttackBonus()
 		self.activation = self.getActivation()
 		self.rarity = self.getRarity()
+		self.modificationItemType = self.getModificationItemType()
 		self.p_properties = self.getProperties()
 
 		self.is_modification = self.type.endswith('Modification')
@@ -78,11 +79,17 @@ class EnhancedItem(sw5e.Entity.Item):
 	def getRarity(self):
 		return self.rarityText
 
+	def getModificationItemType(self):
+		if self.subtype in ('armor', 'clothing', 'focusgenerator', 'wristpad'): return 'equipment'
+		elif self.subtype in ('blaster', 'vibroweapon', 'lightweapon'): return 'weapon'
+
 	def getProperties(self):
-		if self.getType() == 'equipment':
+		target_type = self.modificationItemType or self.getType()
+
+		if target_type == 'equipment':
 			if self.type == 'Focus': properties_list = utils.config.casting_properties
 			else: properties_list = utils.config.armor_properties
-		elif self.getType() == 'weapon':
+		elif target_type == 'weapon':
 			properties_list = utils.config.weapon_properties
 		else:
 			return {}
@@ -494,8 +501,7 @@ class EnhancedItem(sw5e.Entity.Item):
 	def getDataModification(self, importer):
 		data = super().getData(importer)[0]
 
-		if self.subtype in ('armor', 'clothing', 'focusgenerator', 'wristpad'): data["data"]["modificationItemType"] = 'equipment'
-		elif self.subtype in ('blaster', 'vibroweapon', 'lightweapon'): data["data"]["modificationItemType"] = 'weapon'
+		data["data"]["modificationItemType"] = self.modificationItemType
 
 		data["data"]["modificationType"] = self.subtype
 		data["data"]["-=modificationSlot"] = None

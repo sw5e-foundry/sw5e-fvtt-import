@@ -56,7 +56,7 @@ class Class(sw5e.Entity.Item):
 		super().process(old_item, importer)
 
 		self.features, self.invocations = self.getFeatures(importer)
-		self.force_casting, self.tech_casting = self.getPowerCasting()
+		self.force, self.tech = self.getPowerCasting()
 		self.superiority = self.getSuperiority()
 		self.advancements = self.getAdvancements()
 
@@ -147,9 +147,9 @@ class Class(sw5e.Entity.Item):
 
 	def getSuperiority(self):
 		# TODO: Figure out how to do this without a hard coded list
-		if self.name == "Scholar": return "1"
-		elif self.name == "Fighter": return "0.5"
-		return "0"
+		if self.name == 'Scholar': return '1'
+		elif self.name == 'Fighter': return '0.5'
+		return '0'
 
 	def getAdvancements(self):
 		advancements = [ sw5e.Advancement.HitPoints() ]
@@ -220,11 +220,6 @@ class Class(sw5e.Entity.Item):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["-=className"] = None
-		data["data"]["-=archetypes"] = None
-		data["data"]["-=classFeatures"] = None
-		data["data"]["-=levelsTable"] = None
-
 		data["data"]["description"] = { "value": self.getDescription() }
 		data["data"]["atFlavorText"] = { "value": self.getArchetypesFlavor(importer) }
 		data["data"]["invocations"] = { "value": self.getInvocationsText(importer) }
@@ -240,13 +235,15 @@ class Class(sw5e.Entity.Item):
 			"value": []
 		}
 		data["data"]["source"] = self.raw_contentSource
-		data["data"]["powercasting"] = {
-			"force": self.force_casting,
-			"tech": self.tech_casting,
-			"-=progression": None,
-			"-=ability": None,
-		}
+		data["data"]["powercasting"] = { "force": self.force, "tech": self.tech }
 		data["data"]["superiority"] = { "progression": self.superiority }
+
+		data["data"]["-=className"] = None
+		data["data"]["-=archetypes"] = None
+		data["data"]["-=classFeatures"] = None
+		data["data"]["-=levelsTable"] = None
+		data["data"]["powercasting"]["-=progression"] = None
+		data["data"]["powercasting"]["-=ability"] = None
 
 		return [data]
 
