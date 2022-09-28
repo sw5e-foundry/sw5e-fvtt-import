@@ -52,15 +52,18 @@ class Class(sw5e.Entity.Item):
 		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_class, attr))
 		self.raw_levelChangeHeaders = utils.text.cleanJson(raw_class, "levelChangeHeaders")
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+		self.description = self.loadDescription()
+		self.features, self.invocations = self.loadFeatures()
+		self.force, self.tech = self.loadPowerCasting()
+		self.superiority = self.loadSuperiority()
+		self.formulas = self.loadFormulas()
+		self.advancements = self.loadAdvancements()
+		self.archetypes = []
+		self.archetypesFlavor = self.loadArchetypesFlavor()
+		self.invocationsText = ""
+		self.skillChoices = self.loadSkillChoices()
 
-		self.features, self.invocations = self.getFeatures(importer)
-		self.force, self.tech = self.getPowerCasting()
-		self.superiority = self.getSuperiority()
-		self.advancements = self.getAdvancements()
-
-	def getDescription(self):
+	def loadDescription(self):
 		out_str = f'<img style="float:right;margin:5px;border:0px" src="{self.getImg(capitalized=False, index="01")}"/>\n'
 		out_str += self.raw_flavorText
 		out_str += self.raw_creatingText
@@ -71,12 +74,7 @@ class Class(sw5e.Entity.Item):
 
 		return out_str
 
-	def getImg(self, importer=None, capitalized=True, index=""):
-		if index: index = f'_{index}'
-		name = utils.text.slugify(self.name, capitalized=capitalized)
-		return f'systems/sw5e/packs/Icons/Classes/{name}{index}.webp'
-
-	def getFeatures(self, importer):
+	def loadFeatures(self):
 		text = self.raw_classFeatureText
 
 		features = {}
@@ -96,22 +94,15 @@ class Class(sw5e.Entity.Item):
 			if match := re.match(feature_prereq_pat, subtext):
 				level = match["level"]
 				subtext = subtext[match.end():]
-
 				feature_data = { "name": feature_name, "source": 'Class', "sourceName": self.name, "level": level }
-				feature = importer.get('feature', data=feature_data)
-				if feature:
-					if level not in features: features[level] = {}
-					features[level][feature_name] = {
-						"name": feature_name,
-						"level": level,
-						"foundry_id": feature.foundry_id,
-						"uid": feature.uid,
-						"description": subtext.strip()
-					}
-					if not feature.foundry_id: self.broken_links = True
-				else:
-					if self.foundry_id: print(f'		Unable to find feature {feature_data=}')
-					self.broken_links = True
+
+				if level not in features: features[level] = {}
+				features[level][feature_name] = {
+					"name": feature_name,
+					"level": level,
+					"description": subtext.strip(),
+					"uid": self.getUID(feature_data, 'Feature'),
+				}
 
 			# Otherwise, it's a list of invocations
 			else:
@@ -127,7 +118,7 @@ class Class(sw5e.Entity.Item):
 
 		return features, invocations
 
-	def getPowerCasting(self):
+	def loadPowerCasting(self):
 		mapping = {
 			# [0.0]: 'none',
 			0.25: 'arch',
@@ -145,47 +136,98 @@ class Class(sw5e.Entity.Item):
 
 		raise ValueError(f'Invalid power casting progression, {cType}caster with {cRatio} caster ratio.')
 
-	def getSuperiority(self):
+	def loadSuperiority(self):
 		# TODO: Figure out how to do this without a hard coded list
 		if self.name == 'Scholar': return '1'
 		elif self.name == 'Fighter': return '0.5'
 		return '0'
 
-	def getAdvancements(self):
+	def loadFormulas(self):
+		formulas = {}
+		nope = [
+			'level',
+			'proficiency bonus',
+			'features',
+			'force points',
+			'force powers known',
+			'tech points',
+			'tech powers known',
+			'max power level',
+			'combat superiority',
+			'maneuvers known',
+			'superiority dice',
+		]
+
+		for name in self.raw_levelChangeHeaders:
+			if name.lower() in nope: continue
+			formulas[name] = { "name": name, "values": {} }
+
+		for lvl, data in self.raw_levelChanges.items():
+			for name, value in data.items():
+				if name in formulas:
+					formulas[name]["values"][lvl] = value
+
+		return formulas
+
+	def loadAdvancements(self):
 		advancements = [ sw5e.Advancement.HitPoints() ]
-		for level in self.features:
-			uids = []
-			for name in self.features[level]:
-				feature = self.features[level][name]
-				uids.append(f'Compendium.sw5e.classfeatures.{feature["foundry_id"]}')
-			if len(uids):
-				advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
+
+		for formula in self.formulas.values():
+			advancements.append( sw5e.Advancement.ScaleValue(name=formula["name"], values=formula["values"]) )
+
 		return advancements
 
-	def getArchetypesFlavor(self, importer):
+	def loadArchetypesFlavor(self):
 		output = [f'<h1>{self.raw_archetypeFlavorName}</h1>']
 		output += [f'<p>{self.raw_archetypeFlavorText}</p>']
 
-		if importer:
+		if len(self.archetypes) > 0:
 			output += ['<ul>']
-			if importer.archetype:
-				for uid in importer.archetype:
-					arch = importer.archetype[uid]
-					if arch.raw_className == self.name:
-						if arch.foundry_id:
-							output += [f'<li>@Compendium[sw5e.archetypes.{arch.foundry_id}]{{{arch.name.capitalize()}}}</li>']
-						else:
-							output += [f'<li>{arch.name}</li>']
-			else:
-				self.broken_links = True
+			for arch in self.archetypes:
+				output += [f'<li>@Compendium[sw5e.archetypes.{arch["fid"]}]{{{arch["name"].capitalize()}}}</li>']
 			output += ['</ul>']
 
 		return "\n".join(output)
 
-	def getInvocationsText(self, importer):
-		output = []
+	def loadSkillChoices(self):
+		mapping = { skl["name"]: skl["id"] for skl in utils.config.skills }
+		mapping["Any"] = 'any'
+		return [ mapping[skl] for skl in self.raw_skillChoicesList ]
+
+
+
+	def process(self, importer):
+		super().process(importer)
+
 		if importer:
-			for feature_name in self.invocations:
+			self.processFeatures(importer)
+			self.processArchetypes(importer)
+			self.processInvocationsText(importer)
+			self.processAdvancements()
+		else:
+			self.broken_links += ['no importer']
+
+	def processFeatures(self, importer):
+		for level, features in self.features.items():
+			for feature in features.values():
+				if entity := importer.get('feature', uid=feature["uid"]):
+					feature["foundry_id"] = entity.foundry_id
+				else:
+					print(f'		Unable to find feature {feature=}')
+					self.broken_links += [f'cant find feature {feature["name"]}']
+
+	def processArchetypes(self, importer):
+		if importer.archetype:
+			self.archetypes = [
+				{ "uuid": uuid, "name": arch.full_name, "fid": arch.foundry_id}
+				for uuid, arch in importer.archetype.items()
+				if arch.raw_className == self.name
+			]
+		else: broken_links += [ "no archetypes" ]
+
+	def processInvocationsText(self, importer):
+		output = []
+		for feature_name in self.invocations:
 				output += [f'<h1>{feature_name}</h1>']
 				output += ['<ul>']
 				for invocation in self.invocations[feature_name]:
@@ -204,34 +246,45 @@ class Class(sw5e.Entity.Item):
 					invocation = importer.get('feature', data=invocation_data)
 					if invocation:
 						output += [f'<li>@Compendium[sw5e.invocations.{invocation.foundry_id}]{{{invocation.name.capitalize()}}}</li>']
-						if not invocation.foundry_id: self.broken_links = True
+						if not invocation.foundry_id: self.broken_links += ['no foundry id']
 					else:
 						if self.foundry_id: print(f'		Unable to find invocation {invocation_data=}')
-						self.broken_links = True
+						self.broken_links += ['cant find invocation']
 				output += ['</ul>']
 
-		return "\n".join(output)
+		self.invocationsText = "\n".join(output)
 
-	def getSkillChoices(self, importer):
-		mapping = { skl["name"]: skl["id"] for skl in utils.config.skills }
-		mapping["Any"] = 'any'
-		return [ mapping[skl] for skl in self.raw_skillChoicesList ]
+	def processAdvancements(self):
+		for level, features in self.features.items():
+			uids = []
+			for name, feature in features.items():
+				if 'foundry_id' in feature: uids.append(f'Compendium.sw5e.classfeatures.{feature["foundry_id"]}')
+				else: self.broken_links += [f'missing foundry_id for {feature["name"]}']
+			if len(uids):
+				self.advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
+
+
+
+	def getImg(self, importer=None, capitalized=True, index=""):
+		if index: index = f'_{index}'
+		name = utils.text.slugify(self.name, capitalized=capitalized)
+		return f'systems/sw5e/packs/Icons/Classes/{name}{index}.webp'
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["description"] = { "value": self.getDescription() }
-		data["data"]["atFlavorText"] = { "value": self.getArchetypesFlavor(importer) }
-		data["data"]["invocations"] = { "value": self.getInvocationsText(importer) }
+		data["data"]["description"] = { "value": self.description }
+		data["data"]["atFlavorText"] = { "value": self.archetypesFlavor }
+		data["data"]["invocations"] = { "value": self.invocationsText }
 		data["data"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
 		data["data"]["levels"] = 1
 		data["data"]["hitDice"] = f'd{self.raw_hitDiceDieType}'
 		data["data"]["hitDiceUsed"] = 0
 		data["data"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
-		data["data"]["saves"] = [save[:3].lower() for save in self.raw_savingThrows]
+		data["data"]["saves"] = [ save[:3].lower() for save in self.raw_savingThrows ]
 		data["data"]["skills"] = {
 			"number": self.raw_numSkillChoices,
-			"choices": self.getSkillChoices(importer),
+			"choices": self.skillChoices,
 			"value": []
 		}
 		data["data"]["source"] = self.raw_contentSource
@@ -267,3 +320,4 @@ class Class(sw5e.Entity.Item):
 				sub_items.append((data, 'feature'))
 
 		return sub_items
+

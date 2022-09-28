@@ -223,6 +223,12 @@ def getUses(text, name):
 
 				uses = 1
 
+		if not found: ## class/archetype table
+			pattern = fr'(?:points you have,|number of times) as shown (?:for your (?:[\w-]+ )+level )?in the (?P<column>(?:[\w-]+ )+)column of the (?P<table>(?:[\w-]+ )+)table'
+			if match := re.search(pattern, text):
+				found = True
+				uses = f'@scale.{slugify(match["table"], capitalized=False, space="-")}.{slugify(match["column"], capitalized=False, space="-")}'
+
 		if not found: ## CUSTOM (twiceScoutLevelPlusInt)
 			pattern = r'that barrier has hit points equal to twice your scout level \+ your intelligence modifier'
 			if match := re.search(pattern, text):
@@ -242,19 +248,6 @@ def getUses(text, name):
 				uses = '@classes.engineer.levels'
 				if match["five"]: uses = f'5 * {uses}'
 
-		if not found: ## CUSTOM (monkLevel)
-			pattern = r'your monk level determines the number of points you have'
-			if match := re.search(pattern, text):
-				found = True
-				uses = '@classes.monk.levels'
-
-		if not found: ## CUSTOM (rage)
-			pattern = r'you can enter a rage a number of times'
-			if match := re.search(pattern, text):
-				found = True
-				lvl = '@classes.berserker.levels'
-				uses = f'{lvl} < 3 ? 2 : {lvl} < 6 ? 3 : {lvl} < 12 ? 4 : {lvl} < 17 ? 5 : {lvl} < 20 ? 6 : 999'
-
 		if True: ## CUSTOM, should not have uses
 			pattern = fr'you have {ncapt(sp_n)} (?:superiority dice|amplified shots|(?:\w+ )?points), instead of'
 			pattern += r'|you regain all expended (?:force|tech) points when you'
@@ -267,7 +260,7 @@ def getUses(text, name):
 			pattern += r'|you regain all of your expended uses of potent aptitude when you finish a short or long rest'
 			pattern += r'|use this feature after the first, the dc'
 			pattern += r'|it lasts until you (?:complete|finish)'
-			pattern += r'|rest, you can (?:choose|replace|change)'
+			pattern += r'|rest, you can (?:choose|replace|change|modify|create)'
 			pattern += r'|rest, you must make a '
 			pattern += r'|rest, you gain'
 			pattern += r'|feature after you complete a short or long rest'
@@ -783,14 +776,15 @@ def getPlural(Text):
 	elif re.search('fe$', text): return Text[:-2]+'ves'
 	return Text+'s'
 
-def slugify(text, capitalized=True):
+def slugify(text, capitalized=True, space=''):
 	if capitalized: text = re.sub(r'(\b\w+\b)', lambda w: w[0].capitalize(), text)
 	else: text = text.lower()
+	if space != '': text = text.strip()
 	text = re.sub(r'[/,]', r'-', text)
-	text = re.sub(r'[\s]', r'', text)
+	text = re.sub(r'[\s]+', space, text)
 	text = re.sub(r'^\(([^)]*)\)', r'\1-', text)
 	text = re.sub(r'-*\(([^)]*)\)', r'-\1', text)
-	text = re.sub(r'[^\w-]', r'', text)
+	text = re.sub(fr'[^-\w{space}]', r'', text)
 	return text
 
 def toBase(number, base=10, alphabet=(string.digits+string.ascii_letters)):

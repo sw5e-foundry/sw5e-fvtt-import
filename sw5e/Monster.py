@@ -37,8 +37,8 @@ class MonsterBehavior(sw5e.Entity.Entity):
 		]
 		for attr in attrs: setattr(self, f'_{attr}', utils.text.clean(raw_item, attr))
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+	def process(self, importer):
+		super().process(importer)
 
 		self.id = self.getID(importer)
 		self.type = self.getType(importer)
@@ -51,7 +51,7 @@ class MonsterBehavior(sw5e.Entity.Entity):
 		self.source = self._contentSource
 
 	def getID(self, importer):
-		if not self.foundry_id: self.broken_links = True
+		if not self.foundry_id: self.broken_links += ['no foundry id']
 		return self.foundry_id or utils.text.randomID()
 
 	def getType(self, importer):
@@ -238,8 +238,8 @@ class Monster(sw5e.Entity.Actor):
 		]
 		for attr in attrs: setattr(self, f'_{attr}', utils.text.clean(raw_item, attr))
 
-	def process(self, old_actor, importer):
-		super().process(old_actor, importer)
+	def process(self, importer):
+		super().process(importer)
 
 		self.challenge_rating = self.getChallengeRating()
 		self.proficiency_bonus = self.getProficiencyBonus()
@@ -249,9 +249,9 @@ class Monster(sw5e.Entity.Actor):
 		self.skills = self.getSkills()
 		self.senses = self.getSenses()
 		self.ci = self.getConditionImmunities()
-		self.processBehaviors(old_actor, importer)
+		self.processBehaviors(importer)
 
-	def processBehaviors(self, old_actor, importer):
+	def processBehaviors(self, importer):
 		for behavior_data in self._behaviors:
 			for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):
 				behavior_data[key] = getattr(self, f'_{key}')
@@ -262,11 +262,9 @@ class Monster(sw5e.Entity.Actor):
 			behavior_data["sourceAbil"] = self.abilities
 
 			uid = MonsterBehavior.getUID(behavior_data)
-			if (not old_actor) or (old_actor.timestamp != behavior_data["timestamp"]) or (old_actor.importer_version != importer.version) or (old_actor.broken_links):
-				old_item = old_actor.items.get(uid, None) if old_actor else None
-				new_item = MonsterBehavior(behavior_data, old_item, uid, importer)
-				self.items[uid] = new_item
-				if new_item.broken_links: self.broken_links = True
+			new_item = MonsterBehavior(behavior_data, uid, importer)
+			self.items[uid] = new_item
+			self.broken_links += new_item.broken_links
 
 	def getImg(self, token=False, importer=None):
 		#TODO: removed this after icons are fixed in the system

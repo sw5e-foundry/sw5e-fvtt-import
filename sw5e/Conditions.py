@@ -13,8 +13,8 @@ class Conditions(sw5e.Entity.JournalEntry):
 		self.partitionKey = utils.text.clean(raw_item, 'partitionKey')
 		self.rowKey = utils.text.clean(raw_item, 'rowKey')
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+	def process(self, importer):
+		super().process(importer)
 
 	def getContent(self, val=None):
 		content = self.description

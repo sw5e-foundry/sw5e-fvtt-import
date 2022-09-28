@@ -5,8 +5,8 @@ class Tool(sw5e.Equipment.Equipment):
 	def load(self, raw_item):
 		super().load(raw_item)
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+	def process(self, importer):
+		super().process(importer)
 
 		self.activation = 'action'
 

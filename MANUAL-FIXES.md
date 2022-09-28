@@ -12,6 +12,7 @@
   - vibro-dart add placeholder description
   - electro-vougle -> electro-voulge
   - nightstringer -> nightstinger
+  - saberstaff: double -> modal
 - feature.json
   - fix XXX Forcecasting in Whirling Weapons and Flow-Walking
   - ld8 -> 1d8

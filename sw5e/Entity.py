@@ -2,24 +2,25 @@ import re, json
 import utils.text
 
 class Entity:
-	def __init__(self, raw_entity, old_entity, uid, importer):
+	def __init__(self, raw_entity, uid, importer):
 		self.uid = uid
+		self.importer_version = importer.version
+
 		self.effects = []
+		self.broken_links = []
+		self.processed = False
+		self.foundry_id = None
+
 		self.load(raw_entity)
-		self.process(old_entity, importer)
 
 	def load(self, raw_entity):
 		self.name = utils.text.clean(raw_entity, "name")
 		self.timestamp = utils.text.clean(raw_entity, "timestamp")
 
-	def process(self, old_entity, importer):
-		self.foundry_id = None
-		self.importer_version = importer.version
-		self.broken_links = False
-
-		if old_entity:
-			self.foundry_id = old_entity.foundry_id
-			self.effects = old_entity.effects
+	def process(self, importer):
+		# if not self.foundry_id: raise AssertionError('Entities should have foundry_id by now', self.uid)
+		self.processed = True
+		self.broken_links = []
 
 	def getData(self, importer):
 		data = {}
@@ -39,7 +40,7 @@ class Entity:
 	def getSubEntities(self, importer):
 		return []
 
-	def get(self, entity_type, uid=None):
+	def get(self, entity_type, uid=None, fid_required=True):
 		raise NotImplementedError()
 
 	@classmethod
@@ -47,8 +48,8 @@ class Entity:
 		return cls
 
 	@classmethod
-	def getUID(cls, raw_entity):
-		uid = f'{cls.__name__}'
+	def getUID(cls, raw_entity, entity_type=None):
+		uid = entity_type if entity_type else f'{cls.__name__}'
 
 		for key in ('name', 'source', 'sourceName', 'equipmentCategory', 'level', 'subtype'):
 			if key in raw_entity:
@@ -64,8 +65,8 @@ class Item(Entity):
 	def load(self, raw_entity):
 		super().load(raw_entity)
 
-	def process(self, old_entity, importer):
-		super().process(old_entity, importer)
+	def process(self, importer):
+		super().process(importer)
 
 	def getType(self, name=None):
 		if name == None:
@@ -102,7 +103,7 @@ class Actor(Entity):
 
 		return [data]
 
-	def get(self, entity_type, uid=None):
+	def get(self, entity_type, uid=None, fid_required=True):
 		return self.items.get(uid, None)
 
 class JournalEntry(Entity):
@@ -122,9 +123,6 @@ class Property(JournalEntry):
 
 		attrs = [ "content", "contentTypeEnum", "contentType", "contentSourceEnum", "contentSource", "partitionKey", "rowKey" ]
 		for attr in attrs: setattr(self, f'_{attr}', utils.text.clean(raw_entity, attr))
-
-	def process(self, old_entity, importer):
-		super().process(old_entity, importer)
 
 	def getContent(self, val=None):
 		content = self._content

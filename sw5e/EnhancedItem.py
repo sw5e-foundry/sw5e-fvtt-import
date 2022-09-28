@@ -35,8 +35,8 @@ class EnhancedItem(sw5e.Entity.Item):
 		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+	def process(self, importer):
+		super().process(importer)
 
 		self.duration_value, self.duration_unit = self.getDuration()
 		self.target_value, self.target_unit, self.target_type = self.getTarget()

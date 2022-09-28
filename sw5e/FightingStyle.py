@@ -7,8 +7,8 @@ class FightingStyle(sw5e.Feature.BaseFeature):
 
 		self.metadata = utils.text.cleanJson(raw_item, "metadata")
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+	def process(self, importer):
+		super().process(importer)
 
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)

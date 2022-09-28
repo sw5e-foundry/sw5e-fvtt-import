@@ -1,4 +1,4 @@
-import importer, sys
+import importer2, sys
 
 def main():
 	mode = ''
@@ -6,8 +6,7 @@ def main():
 
 	print(mode)
 
-	imp = importer.Importer(mode=mode)
-	imp.update()
+	imp = importer2.Importer(refresh=(mode=="refresh"))
 	imp.output()
 
 if __name__ == '__main__':

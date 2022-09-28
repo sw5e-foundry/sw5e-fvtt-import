@@ -15,8 +15,8 @@ class BaseFeature(sw5e.Entity.Item):
 		self.contentSourceEnum = utils.text.raw(raw_item, "contentSourceEnum")
 		self.contentSource = utils.text.clean(raw_item, "contentSource")
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+	def process(self, importer):
+		super().process(importer)
 
 		self.duration_value, self.duration_unit = self.getDuration()
 		self.target_val, self.target_unit, self.target_type = self.getTarget()
@@ -111,13 +111,17 @@ class Feature(BaseFeature):
 		self.sourceName = utils.text.clean(raw_item, "sourceName")
 		self.metadata = utils.text.raw(raw_item, "metadata")
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+		self.subFeatures = self.getSubfeatures()
+
+	def process(self, importer):
+		super().process(importer)
 
 		self.class_name = self.getClassName(importer)
 		self.requirements = self.getRequirements(importer)
 		self.contentType, self.contentTypeEnum = self.getContentType(importer)
 		self.contentSource, self.contentSourceEnum = self.getContentSource(importer)
+		self.processSubfeatures(importer)
+		self.description = self.getDescription(importer, processing=True)
 
 	def getType(self):
 		return "classfeature" if self.source in ['Class', 'Archetype', 'ClassInvocation', 'ArchetypeInvocation'] else "feat"
@@ -154,7 +158,7 @@ class Feature(BaseFeature):
 			if archetype := self.getSourceItem(importer):
 				return archetype.raw_className
 			else:
-				self.broken_links = True
+				self.broken_links += ['cant find class name']
 
 	def getRequirements(self, importer):
 		req = f'{self.class_name} ({self.sourceName})' if self.class_name else self.sourceName
@@ -182,19 +186,37 @@ class Feature(BaseFeature):
 			return sourceItem.raw_contentSource, sourceItem.raw_contentSourceEnum
 		return '', 0
 
-	def getSourceItem(self, importer):
-		if self.source in ('Archetype', 'ArchetypeInvocation'):
-			if item := importer.get('archetype', data={ "name": self.sourceName }):
-				return item
-		elif self.source in ('Class', 'ClassInvocation'):
-			if item := importer.get('class', data={ "name": self.sourceName }):
-				return item
-		elif self.source in ('Species',):
-			if item := importer.get('species', data={ "name": self.sourceName }):
-				return item
-		self.broken_links = True
+	def getSubfeatures(self):
+		subFeatures = []
 
-	def getDescription(self, importer):
+		for text in re.split(r'(?<!#)####(?!#)', self.text)[1:]:
+			lines = text.strip().split('\n')
+			data = {
+				"name": lines[0],
+				"text": '\n'.join(lines[1:]),
+				"comp": f'{self.getSourceType()}features',
+			}
+			subFeatures.append(data)
+
+		return subFeatures
+
+	def processSubfeatures(self, importer):
+		for feature in self.subFeatures:
+			if entity := importer.get(self.getSourceType(), data={ "name": feature["name"] }):
+				feature["fid"] = feature.foundry_id
+				feature["uid"] = feature.uid
+
+	def getSourceType(self):
+		if self.source in ('Archetype', 'ArchetypeInvocation'): return 'archetype'
+		elif self.source in ('Class', 'ClassInvocation'): return 'class'
+		elif self.source in ('Species',): return 'species'
+
+	def getSourceItem(self, importer):
+		if importer and (item := importer.get(self.getSourceType(), data={ "name": self.sourceName })):
+			return item
+		else: self.broken_links += ['cant get source item']
+
+	def getDescription(self, importer, processing=False):
 		text = self.text
 
 		if self.source in ('Class', 'Archetype'):
@@ -210,7 +232,13 @@ class Feature(BaseFeature):
 							link = f'@Compendium[sw5e.invocations.{feature.foundry_id}]{{{feature.name}}}'
 							text = re.sub(fr'#### {feature.name}\r?\n', fr'#### {link}\n', text)
 						else:
-							self.broken_links = True
+							self.broken_links += ['no feature or foundry id']
+
+		if processing:
+			for sf in self.subFeatures:
+				if "fid" in sf and "comp" in sf:
+					link = f'@Compendium[sw5e.{sf["comp"]}.{sf["fid"]}]{{{sf["name"]}}}'
+					text = re.sub(fr'#### {sf["name"]}\r?\n', f'#### {link}\n', text)
 
 		text = utils.text.markdownToHtml(text)
 
@@ -222,6 +250,34 @@ class Feature(BaseFeature):
 		data["data"]["className"] = self.class_name
 
 		return [data]
+
+	def getSubEntities(self, importer):
+		sub_items = []
+
+		for feature in self.subFeatures:
+			data = {}
+
+			for key in (
+				'timestamp',
+				'contentTypeEnum',
+				'contentType',
+				'contentSourceEnum',
+				'contentSource',
+				'partitionKey',
+				'rowKey',
+				'source',
+				'sourceEnum',
+				'sourceName',
+				'level',
+			):
+				data[key] = getattr(self, f'{key}')
+
+			data["name"] = feature["name"]
+			data["text"] = feature["text"]
+
+			sub_items.append((data, 'feature'))
+
+		return sub_items
 
 class CustomizationOption(BaseFeature):
 	def getType(self):

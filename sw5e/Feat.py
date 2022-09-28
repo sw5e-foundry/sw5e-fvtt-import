@@ -7,8 +7,8 @@ class Feat(sw5e.Feature.BaseFeature):
 
 		self.attributesIncreased = utils.text.cleanJson(raw_item, "attributesIncreased")
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+	def process(self, importer):
+		super().process(importer)
 
 		if self.name in ('Class Improvement', 'Multiclass Improvement', 'Splashclass Improvement', 'Weapon Focused', 'Weapon Supremacist'):
 			extra_text = ''
@@ -22,13 +22,13 @@ class Feat(sw5e.Feature.BaseFeature):
 				if storage[uid].foundry_id:
 					text = f'@Compendium[sw5e.feats.{storage[uid].foundry_id}]{{{text}}}'
 				else:
-					self.broken_links = True
+					self.broken_links += ['no foundry id']
 				extra_text += f'\n- {text}'
 
 			if extra_text:
 				self.description["value"] += f'\n{utils.text.markdownToHtml(extra_text)}'
 			else:
-				self.broken_links = True
+				self.broken_links += 'cant find improvement feature'
 
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)

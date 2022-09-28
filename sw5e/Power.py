@@ -26,8 +26,8 @@ class Power(sw5e.Entity.Item):
 		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+	def process(self, importer):
+		super().process(importer)
 
 		self.activation_type, self.activation_num, self.activation_condition = self.getActivation()
 		self.duration_value, self.duration_unit, self.concentration = self.getDuration()
@@ -101,12 +101,12 @@ class Power(sw5e.Entity.Item):
 		elif self.forceAlignment == 'drl': ability = 'cha'
 		elif self.forceAlignment == 'lgt': ability = 'wis'
 
-		## At-Will power scaling
-		if match := re.search(r'(?:This|The) power[\'’]s(?: [^\s]+){,10} (?:when you reach 5th|at higher levels)|At 5th level', description):
-			description, scale = description[:match.start()], description[match.start():]
 		## Leveled power upcasting
-		elif match := re.search(r'Force Potency|Overcharge Tech', description):
+		if match := re.search(r'Force Potency|Overcharge Tech', description):
 			description, scale = description[:match.start()], description[match.end():]
+		## At-Will power scaling
+		elif match := re.search(r'(?:This|The) power[\'’]s(?: [^\s]+){,10} (?:when you reach 5th|at higher levels)|At 5th level', description):
+			description, scale = description[:match.start()], description[match.start():]
 
 		action_type, damage, formula, save, save_dc, scaling = utils.text.getAction(description, self.name, scale=scale)
 

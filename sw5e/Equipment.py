@@ -34,8 +34,8 @@ class Equipment(sw5e.Entity.Item):
 		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
 		self.rowKey = utils.text.clean(raw_item, "rowKey")
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+	def process(self, importer):
+		super().process(importer)
 
 		self.uses, self.uses_value, self.recharge = None, None, None
 		self.baseItem = self.getBaseItem()

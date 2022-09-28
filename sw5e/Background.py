@@ -35,8 +35,8 @@ class Background(sw5e.Entity.Item):
 		]
 		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_background, attr))
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+	def process(self, importer):
+		super().process(importer)
 
 		self.flavorText = self.getFlavorText()
 		self.flavorDescription = self.getFlavorDescription()
@@ -83,9 +83,8 @@ class Background(sw5e.Entity.Item):
 				if feat and feat.foundry_id:
 					return f'@Compendium[sw5e.feats.{feat.foundry_id}]{{{feat.name.capitalize()}}}'
 				else:
-					self.broken_links = True
-					if self.foundry_id:
-						print(f'		Unable to find feat {name=}')
+					self.broken_links += ['cant find feat']
+					if self.foundry_id: print(f'		Unable to find feat {name=}')
 					return name
 
 			content = [ (

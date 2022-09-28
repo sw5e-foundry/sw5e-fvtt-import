@@ -29,24 +29,26 @@ class Archetype(sw5e.Entity.Item):
 		]
 		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_archetype, attr))
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
-
 		self.full_name = self.name
 		if self.name.endswith(' (Companion)'): self.name = self.name[:-12]
+		self.sourceClass = None
+		self.description = self.loadDescription()
+		self.features, self.invocations = self.loadFeatures()
+		self.force, self.tech, self.superiority = self.loadProgression()
+		self.formulas = self.loadFormulas()
+		self.advancements = self.loadAdvancements()
+		self.invocationsText = ""
 
-		self.sourceClass = self.getSourceClass(importer)
-		self.features, self.invocations = self.getFeatures(importer)
-		self.force, self.tech, self.superiority = self.getProgression(importer)
-		self.advancements = self.getAdvancements()
+	def loadDescription(self):
+		text = self.raw_text
+		if match := re.search(r'#{3}', text):
+			text = text[:match.start()]
 
-	def getSourceClass(self, importer):
-		if importer:
-			class_data = { "name": self.raw_className }
-			return importer.get('class', data=class_data)
-		self.broken_links = True
+		text = f'## {self.full_name}\n' + text
 
-	def getFeatures(self, importer):
+		return utils.text.markdownToHtml(text)
+
+	def loadFeatures(self):
 		text = self.raw_text
 
 		features = {}
@@ -67,29 +69,22 @@ class Archetype(sw5e.Entity.Item):
 			if match:
 				level = match["level"]
 				subtext = subtext[match.end():]
-
 				feature_data = { "name": feature_name, "source": 'Archetype', "sourceName": self.full_name, "level": level }
-				feature = importer.get('feature', data=feature_data)
-				if feature:
-					if level not in features: features[level] = {}
-					features[level][feature_name] = {
-						"name": feature_name,
-						"level": level,
-						"foundry_id": feature.foundry_id,
-						"uid": feature.uid,
-						"description": subtext.strip()
-					}
-					if not feature.foundry_id: self.broken_links = True
-				else:
-					if self.foundry_id: print(f'		Unable to find feature {feature_data=}')
-					self.broken_links = True
+
+				if level not in features: features[level] = {}
+				features[level][feature_name] = {
+					"name": feature_name,
+					"level": level,
+					"description": subtext.strip(),
+					"uid": self.getUID(feature_data, 'Feature'),
+				}
 
 			# Otherwise, it's a list of invocations
 			if (not match) or (feature_name == "Additional Maneuvers"):
 				expected = (self.raw_className in ['Engineer', 'Scholar', 'Fighter']) or (self.name == 'Deadeye Technique')
 				if not expected:
 					print(f'Possible error detected: searching for subitems of {self.full_name} which is not a scholar, engineer, or fighter archetype.')
-					print(f'{match["name"]=}')
+					if match: print(f'{match["name"]=}')
 				invocation_list = []
 				for match in re.finditer(fr'{invocat_pat}(?P<text>(?:{invocat_prereq_pat})?[^#]*)', subtext):
 					if not expected: print(f'	{match["name"]=}')
@@ -98,63 +93,116 @@ class Archetype(sw5e.Entity.Item):
 
 		for name, invocation in invocations.items():
 			if not len(invocation):
-				raise ValueError(f'Invocation type "{name}" detected with no invocations.')
+				raise ValueError(f'Invocation type "{name}" detected with no invocations.', self.full_name)
 
 		return features, invocations
 
-	def getProgression(self, importer):
-		force, tech, superiority = 'none', 'none', 'none'
+	def loadProgression(self):
+		force, tech, superiority = 'none', 'none', '0'
 
-		features = [self.features[level][name] for level in self.features for name in self.features[level]]
+		features = [feature for features in self.features.values() for feature in features.values()]
 
 		if len(filtered := [ feature for feature in features if re.match(fr"(?:Improved )?Forcecasting$", feature["name"]) ]):
-			source = self.sourceClass.force if self.sourceClass else 'none'
-			if source == 'none': force = 'arch'
-			elif source == 'arch': force = 'half'
-			elif source == 'half': force = '3/4'
-			elif source == '3/4': force = 'full'
-			else: raise ValueError(source, filtered)
+			force = 'arch'
 
 		if len(filtered := [ feature for feature in features if re.match(fr"(?:Improved )?Techcasting$", feature["name"]) ]):
-			source = self.sourceClass.tech if self.sourceClass else 'none'
-			if source == 'none': tech = 'arch'
-			elif source == 'arch': tech = 'half'
-			elif source == 'half': tech = '3/4'
-			elif source == '3/4': tech = 'full'
-			else: raise ValueError(source, filtered)
+			tech = 'arch'
 
 		if len(filtered := [ feature for feature in features if re.match(fr"(?:Improved )?Superiority$", feature["name"]) ]):
-			source = self.sourceClass.superiority if self.sourceClass else '0.0'
-			if source == '0.0': superiority = '0.5'
-			elif source == '0.5': superiority = '1'
-			else: raise ValueError(source, filtered)
+			superiority = '0.5'
 
 		return force, tech, superiority
 
-	def getAdvancements(self):
-		advancements = [ ]
-		for level in self.features:
-			uids = []
-			for name in self.features[level]:
-				feature = self.features[level][name]
-				uids.append(f'Compendium.sw5e.archetypefeatures.{feature["foundry_id"]}')
-			if len(uids):
-				advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
+	def loadFormulas(self):
+		formulas = {}
+
+		# nope = [
+		# 	'level',
+		# 	'proficiency bonus',
+		# 	'features',
+		# 	'force points',
+		# 	'force powers known',
+		# 	'tech points',
+		# 	'tech powers known',
+		# 	'max power level',
+		# ]
+
+		# for name in self.raw_levelChangeHeaders:
+		# 	if name in nope: continue
+		# 	formulas[name] = { "name": name, "values": {} }
+
+		# for lvl, data in self.raw_levelChanges.items():
+		# 	for name, value in data.items():
+		# 		if name in formulas:
+		# 			formulas[name]["values"][lvl] = value
+
+		return formulas
+
+	def loadAdvancements(self):
+		advancements = []
+
+		for formula in self.formulas.values():
+			advancements.append( sw5e.Advancement.ScaleValue(name=formula.name, values=formula.values) )
+
 		return advancements
 
-	def getDescription(self):
-		text = self.raw_text
-		if match := re.search(r'#{3}', text):
-			text = text[:match.start()]
 
-		text = f'## {self.full_name}\n' + text
 
-		return utils.text.markdownToHtml(text)
+	def process(self, importer):
+		super().process(importer)
 
-	def getInvocationsText(self, importer):
-		output = []
 		if importer:
-			for feature_name in self.invocations:
+			self.processSourceClass(importer)
+			self.processFeatures(importer)
+			self.processInvocationsText(importer)
+			self.processProgression()
+			self.processAdvancements()
+		else:
+			self.broken_links += ['no importer']
+
+	def processSourceClass(self, importer):
+		class_data = { "name": self.raw_className }
+		self.sourceClass = importer.get('class', data=class_data)
+
+	def processFeatures(self, importer):
+		for level, features in self.features.items():
+			for feature in features.values():
+				if entity := importer.get('feature', uid=feature["uid"]):
+					feature["foundry_id"] = entity.foundry_id
+				else:
+					print(f'		Unable to find {feature["uid"]=}')
+					self.broken_links += [f'cant find {feature["uid"]}']
+
+	def processProgression(self):
+		if self.sourceClass:
+			if self.force != 'none' and self.sourceClass.force:
+				if self.sourceClass.force == 'none': pass
+				elif self.sourceClass.force == 'arch': self.force = 'half'
+				elif self.sourceClass.force == 'half': self.force = '3/4'
+				elif self.sourceClass.force == '3/4': self.force = 'full'
+				else: raise ValueError(self.sourceClass.force)
+			if self.tech != 'none' and self.sourceClass.tech:
+				if self.sourceClass.tech == 'none': pass
+				elif self.sourceClass.tech == 'arch': self.tech = 'half'
+				elif self.sourceClass.tech == 'half': self.tech = '3/4'
+				elif self.sourceClass.tech == '3/4': self.tech = 'full'
+				else: raise ValueError(self.sourceClass.tech)
+			if self.superiority != '0' and self.sourceClass.superiority:
+				if self.sourceClass.superiority == '0': pass
+				elif self.sourceClass.superiority == '0.5': self.superiority = '1.0'
+				else: raise ValueError(self.sourceClass.superiority)
+		else:
+			self.broken_links += ['no source class']
+
+	def processAdvancements(self):
+		for level, features in self.features.items():
+			uids = [ f'Compendium.sw5e.archetypefeatures.{feature["foundry_id"]}' for feature in features.values() if "foundry_id" in feature ]
+			if len(uids):
+				self.advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
+
+	def processInvocationsText(self, importer):
+		output = []
+		for feature_name in self.invocations:
 				output += [f'<h1>{feature_name}</h1>']
 				output += ['<ul>']
 				for invocation in self.invocations[feature_name]:
@@ -173,13 +221,15 @@ class Archetype(sw5e.Entity.Item):
 					invocation = importer.get('feature', data=invocation_data)
 					if invocation:
 						output += [f'<li>@Compendium[sw5e.invocations.{invocation.foundry_id}]{{{invocation.name.capitalize()}}}</li>']
-						if not invocation.foundry_id: self.broken_links = True
+						if not invocation.foundry_id: self.broken_links += ['no foundry id']
 					else:
 						if self.foundry_id: print(f'		Unable to find invocation {invocation_data=}')
-						self.broken_links = True
+						self.broken_links += ['cant find invocation']
 				output += ['</ul>']
 
-		return "\n".join(output)
+		self.invocationsText = "\n".join(output)
+
+
 
 	def getImg(self, importer=None, capitalized=True, index=""):
 		if index: index = f'_{index}'
@@ -190,8 +240,8 @@ class Archetype(sw5e.Entity.Item):
 		data = super().getData(importer)[0]
 
 		data["name"] = self.full_name
-		data["data"]["description"] = { "value": self.getDescription() }
-		data["data"]["invocations"] = { "value": self.getInvocationsText(importer) }
+		data["data"]["description"] = { "value": self.description }
+		data["data"]["invocations"] = { "value": self.invocationsText }
 		data["data"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
 		data["data"]["classIdentifier"] = utils.text.slugify(self.raw_className, capitalized=False)
 		data["data"]["powercasting"] = { "force": self.force, "tech": self.tech }

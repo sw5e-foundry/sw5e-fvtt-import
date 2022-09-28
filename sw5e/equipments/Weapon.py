@@ -5,8 +5,8 @@ class Weapon(sw5e.Equipment.Equipment):
 	def load(self, raw_item):
 		super().load(raw_item)
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+	def process(self, importer):
+		super().process(importer)
 
 		self.activation = 'action'
 
@@ -74,7 +74,13 @@ class Weapon(sw5e.Equipment.Equipment):
 			return {}
 
 		die = self.damageNumberOfDice
-		if self.damageDieType != 1: die = f'{die}d{self.damageDieType}'
+		if self.damageDieType == -1:
+			_, damage, _, _, _, _ = utils.text.getAction(self.description, self.name)
+			die = damage["parts"][0][0]
+		elif self.damageDieType > 1:
+			die = f'{die}d{self.damageDieType}'
+		elif self.damageDieType != 1:
+			raise ValueError
 		die = f'{die} + @mod'
 
 		damage_type = self.damageType.lower() if self.damageType != 'Unknown' else ''

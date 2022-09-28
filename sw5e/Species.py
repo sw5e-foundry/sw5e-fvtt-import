@@ -35,8 +35,8 @@ class Species(sw5e.Entity.Item):
 		]
 		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_species, attr))
 
-	def process(self, old_item, importer):
-		super().process(old_item, importer)
+	def process(self, importer):
+		super().process(importer)
 
 		self.advancements = self.getAdvancements(importer)
 
@@ -55,10 +55,10 @@ class Species(sw5e.Entity.Item):
 			trait_data = { "name": trait["name"], "source": 'Species', "sourceName": self.name, "level": None }
 			if trait := importer.get('feature', data=trait_data):
 				if trait.foundry_id: uids.append(f'Compendium.sw5e.speciesfeatures.{trait.foundry_id}')
-				else: self.broken_links = True
+				else: self.broken_links += ['no foundry id']
 			else:
 				if self.foundry_id: print(f'		Unable to find feature {trait_data=}')
-				self.broken_links = True
+				self.broken_links += ['cant find trait']
 		if len(uids): advancements.append( sw5e.Advancement.ItemGrant(name="Traits", uids=uids, level=0, optional=True) )
 
 		return advancements
