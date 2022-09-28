@@ -103,7 +103,7 @@ class Power(sw5e.Entity.Item):
 
 		## Leveled power upcasting
 		if match := re.search(r'Force Potency|Overcharge Tech', description):
-			description, scale = description[:match.start()], description[match.end():]
+			description, scale = description[:match.start()], description[match.start():]
 		## At-Will power scaling
 		elif match := re.search(r'(?:This|The) power[\'’]s(?: [^\s]+){,10} (?:when you reach 5th|at higher levels)|At 5th level', description):
 			description, scale = description[:match.start()], description[match.start():]
