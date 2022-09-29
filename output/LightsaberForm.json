@@ -2,7 +2,7 @@
     "LightsaberForm.name-aqinos_form": {
         "name": "Aqinos Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0232629+00:00",
+            "timestamp": "2022-08-17T00:39:16.1552928+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-aqinos_form"
         },
@@ -10,7 +10,7 @@
         "img": "systems/sw5e/packs/Icons/Lightsaber%20Forms/AqinosForm.webp",
         "data": {
             "description": {
-                "value": "<p><em><strong>Prerequisite:</strong> The ability to cast tech powers</em></p>\n<p>As a part of the bonus action to adopt this form, if you cast a tech power of 1st level or higher, but no higher than half your Max Power Level, as your action you can make one melee weapon attack.</p>"
+                "value": "<p><em><strong>Prerequisite:</strong> The ability to cast tech powers</em></p>\n<p>As a part of the bonus action to adopt this form, if you cast a tech power of 1st level or higher as your action, but no higher than half your Max Power Level, you can make one melee weapon attack.</p>"
             },
             "requirements": null,
             "source": "PHB",
@@ -54,7 +54,7 @@
     "LightsaberForm.name-ataru_form": {
         "name": "Ataru Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0232629+00:00",
+            "timestamp": "2022-08-17T00:39:16.1552928+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-ataru_form"
         },
@@ -106,7 +106,7 @@
     "LightsaberForm.name-bakuuni_hand_form": {
         "name": "Bakuuni Hand Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0232629+00:00",
+            "timestamp": "2022-08-17T00:39:16.1552928+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-bakuuni_hand_form"
         },
@@ -114,7 +114,7 @@
         "img": "systems/sw5e/packs/Icons/Lightsaber%20Forms/BakuuniHandForm.webp",
         "data": {
             "description": {
-                "value": "<p>As a part of the bonus action to adopt this form, if you took the Attack action and would be able to use your bonus action to make an unarmed strike, you can do so as a part of this bonus action.</p>\n<p>Until the start of your next turn, when a creature enters your reach or moves while within your reach, you can use your reaction to attempt to shove the creature. On a success, you shove the target 10 feet away from you, instead of only 5.</p>"
+                "value": "<p>As a part of the bonus action to adopt this form, if you took the Attack action and would be able to use your bonus action to make an unarmed strike, you can do so as a part of this bonus action.</p>\n<p>Until the start of your next turn, when a creature enters your reach or moves while within your reach, you can use your reaction to attempt to shove the creature. On a success, you can choose shove the target an additional 5 feet.</p>"
             },
             "requirements": null,
             "source": "PHB",
@@ -158,7 +158,7 @@
     "LightsaberForm.name-djem_so_form": {
         "name": "Djem So Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0232629+00:00",
+            "timestamp": "2022-08-17T00:39:16.1552928+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-djem_so_form"
         },
@@ -207,10 +207,62 @@
         },
         "effects": []
     },
+    "LightsaberForm.name-drallig_form": {
+        "name": "Drallig Form",
+        "flags": {
+            "timestamp": "2022-08-17T00:39:16.1552928+00:00",
+            "importer_version": 2,
+            "uid": "LightsaberForm.name-drallig_form"
+        },
+        "type": "lightsaberform",
+        "img": "systems/sw5e/packs/Icons/Lightsaber%20Forms/DralligForm.webp",
+        "data": {
+            "description": {
+                "value": "<p>Until the start of your next turn, you gain a special reaction. When a creature enters your reach or moves while within your reach, you can use this special reaction to leap to an unoccupied space you can see within 10 feet without provoking opportunity attacks from that creature.</p>"
+            },
+            "requirements": null,
+            "source": "PHB",
+            "activation": {
+                "type": "reaction",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": "10",
+                "unit": "feet"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            }
+        },
+        "effects": []
+    },
     "LightsaberForm.name-ishu_form": {
         "name": "Ishu Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0232629+00:00",
+            "timestamp": "2022-08-17T00:39:16.1562925+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-ishu_form"
         },
@@ -262,7 +314,7 @@
     "LightsaberForm.name-jarkai_form": {
         "name": "Jar'Kai Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0232629+00:00",
+            "timestamp": "2022-08-17T00:39:16.1562925+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-jarkai_form"
         },
@@ -314,7 +366,7 @@
     "LightsaberForm.name-juyo_form": {
         "name": "Juyo Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0232629+00:00",
+            "timestamp": "2022-08-17T00:39:16.1562925+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-juyo_form"
         },
@@ -366,7 +418,7 @@
     "LightsaberForm.name-makashi_form": {
         "name": "Makashi Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0242624+00:00",
+            "timestamp": "2022-08-17T00:39:16.1562925+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-makashi_form"
         },
@@ -374,7 +426,7 @@
         "img": "systems/sw5e/packs/Icons/Lightsaber%20Forms/MakashiForm.webp",
         "data": {
             "description": {
-                "value": "<p>Until the start of your next turn, when a creature makes a melee weapon attack against you and misses, you can use your reaction to make one melee weapon attack against that creature.</p>"
+                "value": "<p>Until the start of your next turn, you gain a special reaction. When a creature makes a melee weapon attack against you and misses, you can use this special reaction to make an opportunity attack against that creature. </p>"
             },
             "requirements": null,
             "source": "PHB",
@@ -418,7 +470,7 @@
     "LightsaberForm.name-niman_form": {
         "name": "Niman Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0242624+00:00",
+            "timestamp": "2022-08-17T00:39:16.1562925+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-niman_form"
         },
@@ -470,7 +522,7 @@
     "LightsaberForm.name-shien_form": {
         "name": "Shien Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0242624+00:00",
+            "timestamp": "2022-08-17T00:39:16.1562925+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-shien_form"
         },
@@ -522,7 +574,7 @@
     "LightsaberForm.name-shii_cho_form": {
         "name": "Shii-Cho Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0242624+00:00",
+            "timestamp": "2022-08-17T00:39:16.1562925+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-shii_cho_form"
         },
@@ -574,7 +626,7 @@
     "LightsaberForm.name-sokan_form": {
         "name": "Sokan Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0242624+00:00",
+            "timestamp": "2022-08-17T00:39:16.1562925+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-sokan_form"
         },
@@ -582,7 +634,7 @@
         "img": "systems/sw5e/packs/Icons/Lightsaber%20Forms/SokanForm.webp",
         "data": {
             "description": {
-                "value": "<p>Until the start of your next turn, you ignore difficult terrain. Additionally, when an opponent makes a melee weapon attack against you, you can use your reaction to move to another space within 5 feet of that opponent without provoking opportunity attacks, imposing disadvantage on the triggering roll.</p>"
+                "value": "<p>Until the start of your next turn, you ignore difficult terrain. Additionally, when a hostile creature makes a melee weapon attack against you, you can use your reaction to move to another space within 5 feet of that creature without provoking opportunity attacks, imposing disadvantage on the triggering roll.</p>"
             },
             "requirements": null,
             "source": "PHB",
@@ -626,7 +678,7 @@
     "LightsaberForm.name-soresu_form": {
         "name": "Soresu Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0242624+00:00",
+            "timestamp": "2022-08-17T00:39:16.1562925+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-soresu_form"
         },
@@ -678,7 +730,7 @@
     "LightsaberForm.name-trakata_form": {
         "name": "Trakata Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0242624+00:00",
+            "timestamp": "2022-08-17T00:39:16.1562925+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-trakata_form"
         },
@@ -730,7 +782,7 @@
     "LightsaberForm.name-trispzest_form": {
         "name": "Trispzest Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0242624+00:00",
+            "timestamp": "2022-08-17T00:39:16.1572922+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-trispzest_form"
         },
@@ -782,7 +834,7 @@
     "LightsaberForm.name-twilight_form": {
         "name": "Twilight Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0242624+00:00",
+            "timestamp": "2022-08-17T00:39:16.1572922+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-twilight_form"
         },
@@ -834,7 +886,7 @@
     "LightsaberForm.name-vaapad_form": {
         "name": "Vaapad Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0242624+00:00",
+            "timestamp": "2022-08-17T00:39:16.1572922+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-vaapad_form"
         },
@@ -886,7 +938,7 @@
     "LightsaberForm.name-vonil_form": {
         "name": "Vonil Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0242624+00:00",
+            "timestamp": "2022-08-17T00:39:16.1572922+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-vonil_form"
         },
@@ -938,7 +990,7 @@
     "LightsaberForm.name-ysannanite_form": {
         "name": "Ysannanite Form",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.0242624+00:00",
+            "timestamp": "2022-08-17T00:39:16.1572922+00:00",
             "importer_version": 2,
             "uid": "LightsaberForm.name-ysannanite_form"
         },
@@ -966,58 +1018,6 @@
             },
             "range": {
                 "value": "5",
-                "unit": "feet"
-            },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "actionType": "other",
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
-            "formula": "",
-            "save": {
-                "ability": "",
-                "dc": null,
-                "scaling": "power"
-            }
-        },
-        "effects": []
-    },
-    "LightsaberForm.name-zhangwan_form": {
-        "name": "Zhangwan Form",
-        "flags": {
-            "timestamp": "2022-05-29T01:36:30.0252619+00:00",
-            "importer_version": 2,
-            "uid": "LightsaberForm.name-zhangwan_form"
-        },
-        "type": "lightsaberform",
-        "img": "systems/sw5e/packs/Icons/Lightsaber%20Forms/ZhangwanForm.webp",
-        "data": {
-            "description": {
-                "value": "<p>Until the start of your next turn, when a creature enters your reach or moves while within your reach, you can use your reaction to leap to an unoccupied space you can see within 10 feet without provoking opportunity attacks from that creature.</p>"
-            },
-            "requirements": null,
-            "source": "PHB",
-            "activation": {
-                "type": "reaction",
-                "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "target": {
-                "value": null,
-                "width": null,
-                "units": "",
-                "type": ""
-            },
-            "range": {
-                "value": "10",
                 "unit": "feet"
             },
             "uses": {

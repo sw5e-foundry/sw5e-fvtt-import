@@ -54,7 +54,7 @@ class Importer:
 	__base_url = "https://sw5eapi.azurewebsites.net/api"
 	version = 2
 
-	warn_limit = 15
+	warn_limit = 5
 
 	def __init__(self, refresh=False):
 
@@ -133,8 +133,13 @@ class Importer:
 			uid = kklass.getUID(raw_entity)
 
 			if old_entity := storage.get(uid):
-				if "Modal" in raw_entity["propertiesMap"]: return
-				else: raise ValueError(raw_entity["name"], uid, old_entity)
+				if "propertiesMap" in raw_entity and "Modal" in raw_entity["propertiesMap"]: return
+				elif raw_entity["partitionKey"] != old_entity.partitionKey:
+					if 'MISSING-DATA' in (raw_entity["partitionKey"], old_entity.partitionKey):
+						raise ValueError("Duplicated Entity in 'Missing Data'")
+					elif old_entity.partitionKey == 'Core':
+						return
+				else: raise ValueError("Duplicated Entity")
 
 			new_entity = kklass(raw_entity, uid=uid, importer=self)
 			storage[uid] = new_entity
@@ -143,7 +148,8 @@ class Importer:
 			for sub_entity, entity_type in sub_entities:
 				self.__loadEntity(sub_entity, entity_type, depth+1)
 		except:
-			print(f'		{raw_entity["name"]}')
+			print(f'		{raw_entity["name"]} {depth=}')
+			print(f'		{uid}')
 			raise
 
 	def __loadFoundryData(self):
@@ -168,6 +174,7 @@ class Importer:
 						if entity.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', entity.propertiesMap): continue
 						if entity.__class__.__name__ == 'Weapon' and entity.modes: continue
 						if missing_fdata < self.warn_limit: print(f'		Entity missing it\'s foundry data: {uid}')
+						entity.foundry_id = utils.text.randomID()
 						missing_fdata += 1
 			if missing_fdata > self.warn_limit: print(f'		And {missing_fdata-self.warn_limit} more...')
 
@@ -206,7 +213,11 @@ class Importer:
 					print(f'	{entity_type}')
 					printed = True
 				if len(entity.broken_links) or not entity.processed:
-					entity.process(importer=self)
+					try:
+						entity.process(importer=self)
+					except:
+						print(f'		{uid=} {depth=}')
+						raise
 				if entity.broken_links: broken_links.append([entity.name, entity.broken_links])
 		if depth >= 5:
 			any_non_id_error = False

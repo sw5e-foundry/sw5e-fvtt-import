@@ -1,60 +1,8 @@
 {
-    "FightingMastery.name-akimbo_mastery": {
-        "name": "Akimbo Mastery",
-        "flags": {
-            "timestamp": "2022-05-29T01:36:30.4651192+00:00",
-            "importer_version": 2,
-            "uid": "FightingMastery.name-akimbo_mastery"
-        },
-        "type": "fightingmastery",
-        "img": "systems/sw5e/packs/Icons/Fighting%20Styles%20and%20Masteries/AkimboMastery.webp",
-        "data": {
-            "description": {
-                "value": "<p>You've mastered fighting with two blasters, unleashing a volley of shots. You gain the following benefits:</p>\n<ul>\n<li>While you are wielding separate weapons in each hand with which you are proficient, when you roll the maximum on a weapon damage die against a creature, that creature suffers a -1 penalty on the first attack roll it makes before the start of your next turn.</li>\n<li>You can engage in Two-Weapon Fighting even when the weapons you are wielding lack the light property.</li>\n<li>You can reload two weapons when you would normally only be able to reload one.</li>\n<li>When you take the Attack action while you are wielding separate weapons in each hand with which you are proficient, you can choose to attack swiftly at the expense of accuracy. Your weapon attack is made without the aid of your proficiency bonus, but you can use your reaction to attack with a different weapon that you're holding in the other hand, also without your proficiency bonus. If you would make more than one attack when you take the Attack action, only one attack is made without your proficiency bonus.</li>"
-            },
-            "requirements": null,
-            "source": "PHB",
-            "activation": {
-                "type": "reaction",
-                "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "target": {
-                "value": null,
-                "width": null,
-                "units": "",
-                "type": ""
-            },
-            "range": {
-                "value": null,
-                "unit": ""
-            },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "actionType": "other",
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
-            "formula": "",
-            "save": {
-                "ability": "",
-                "dc": null,
-                "scaling": "power"
-            }
-        },
-        "effects": []
-    },
     "FightingMastery.name-area_mastery": {
         "name": "Area Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4651192+00:00",
+            "timestamp": "2022-08-17T00:39:16.5501637+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-area_mastery"
         },
@@ -62,7 +10,7 @@
         "img": "systems/sw5e/packs/Icons/Fighting%20Styles%20and%20Masteries/AreaMastery.webp",
         "data": {
             "description": {
-                "value": "<p>You've mastered fighting with weapons that affect an area, easily overwhelming your foe's defenses. You gain the following benefits:</p>\n<ul>\n<li>When determining the save DC of a flechette clip, flechette mag, projector canister, or projector tank you control, you can use 8 + your proficiency bonus + your Intelligence modifier, if it would be higher than the item's DC.</li>\n<li>Your flechette clips, flechette mags, projector canisters, and projector tanks reduce partial cover by one step (from three-quarters to half or half to one-quarter). If a creature has one-quarter cover, you ignore it entirely.</li>\n<li>When using an ammunition or explosive that requires a saving throw and deals damage, you can take a penalty to the save DC equal to your proficiency bonus. If you do so, the item's damage increases by an amount equal to your proficiency bonus.</li>"
+                "value": "<p>You've mastered fighting with weapons that affect an area, easily overwhelming your foe's defenses. You gain the following benefits:</p>\n<ul>\n<li>When determining the save DC of a projector canister you control, you can use 8 + your proficiency bonus + your Intelligence modifier, if it would be higher than the item's DC.</li>\n<li>Your projector canisters reduce partial cover by one step (from three-quarters to half or half to one-quarter). If a creature has one-quarter cover, you ignore it entirely.</li>\n<li>When using a projector canister that requires a saving throw and deals damage, you can take a penalty to the save DC equal to your proficiency bonus. If you do so, the item's damage increases by an amount equal to your proficiency bonus.</li>"
             },
             "requirements": null,
             "source": "PHB",
@@ -106,7 +54,7 @@
     "FightingMastery.name-assisting_mastery": {
         "name": "Assisting Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4651192+00:00",
+            "timestamp": "2022-08-17T00:39:16.5511631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-assisting_mastery"
         },
@@ -114,7 +62,7 @@
         "img": "systems/sw5e/packs/Icons/Fighting%20Styles%20and%20Masteries/AssistingMastery.webp",
         "data": {
             "description": {
-                "value": "<p>You've mastered enabling your allies, boosting them to the dismay of your enemies. You gain the following benefits:</p>\n<ul>\n<li>When you take the Help action and target an ally, you can choose to forgo up to half your speed. If you do so, when that ally makes its ability check to complete the task with advantage, it can reroll one of the dice once. You can not use this feature if you have moved more than half your speed this turn.</li>\n<li>When you take the Help action and target an enemy, you can choose to forgo up to half your speed. If you do so, when an ally makes its attack roll against the creature with advantage, it can reroll one of the dice once. You can not use this feature if you have moved more than half your speed this turn.</li>\n<li>Feature.</li>\n<li>When you take the Help action, it has a range in feet equal to 5 x your proficiency bonus.</li>"
+                "value": "<p>You've mastered enabling your allies, boosting them to the dismay of your enemies. You gain the following benefits:</p>\n<ul>\n<li>When you take the Help action and target an ally, you can choose to forgo up to half your speed. If you do so, when that ally makes its ability check to complete the task with advantage, it can reroll one of the dice once. You can not use this feature if you have moved more than half your speed this turn.</li>\n<li>When you take the Help action and target an enemy, you can choose to forgo up to half your speed. If you do so, when an ally makes its attack roll against the creature with advantage, it can reroll one of the dice once. You can not use this feature if you have moved more than half your speed this turn.</li>\n<li>When you take the Help action, it has a range in feet equal to 5 x your proficiency bonus.</li>"
             },
             "requirements": null,
             "source": "PHB",
@@ -158,7 +106,7 @@
     "FightingMastery.name-berserk_mastery": {
         "name": "Berserk Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4651192+00:00",
+            "timestamp": "2022-08-17T00:39:16.5511631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-berserk_mastery"
         },
@@ -210,7 +158,7 @@
     "FightingMastery.name-blindfighting_mastery": {
         "name": "Blindfighting Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4651192+00:00",
+            "timestamp": "2022-08-17T00:39:16.5511631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-blindfighting_mastery"
         },
@@ -218,7 +166,7 @@
         "img": "systems/sw5e/packs/Icons/Fighting%20Styles%20and%20Masteries/BlindfightingMastery.webp",
         "data": {
             "description": {
-                "value": "<p>You've mastered fighting without sight, finding a home in the darkness that your enemies fear. You gain the following benefits:</p>\n<ul>\n<li>Feature.</li>\n<li>Once per round, when a creature would have disadvantage on an attack roll against you due to being blinded, they must reroll one of the dice once.</li>\n<li>Once per round, when you would have advantage on an attack roll against a creature that is blinded, you can reroll one of the dice once.</li>\n<li>You gain blindsight out to a number of feet equal to 5 x your proficiency bonus. If you already have blindsight, it instead increases by a number of feet equal to 5 x your proficiency bonus.</li>"
+                "value": "<p>You've mastered fighting without sight, finding a home in the darkness that your enemies fear. You gain the following benefits:</p>\n<ul>\n<li>Once per round, when a creature would have disadvantage on an attack roll against you due to being blinded, they must reroll one of the dice once.</li>\n<li>Once per round, when you would have advantage on an attack roll against a creature that is blinded, you can reroll one of the dice once.</li>\n<li>You gain blindsight out to a number of feet equal to 5 x your proficiency bonus. If you already have blindsight, it instead increases by a number of feet equal to 5 x your proficiency bonus.</li>"
             },
             "requirements": null,
             "source": "PHB",
@@ -262,7 +210,7 @@
     "FightingMastery.name-brawler_mastery": {
         "name": "Brawler Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4651192+00:00",
+            "timestamp": "2022-08-17T00:39:16.5511631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-brawler_mastery"
         },
@@ -314,7 +262,7 @@
     "FightingMastery.name-counterstrike_mastery": {
         "name": "Counterstrike Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4651192+00:00",
+            "timestamp": "2022-08-17T00:39:16.5511631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-counterstrike_mastery"
         },
@@ -322,7 +270,7 @@
         "img": "systems/sw5e/packs/Icons/Fighting%20Styles%20and%20Masteries/CounterstrikeMastery.webp",
         "data": {
             "description": {
-                "value": "<p>You've mastered returning attacks at those who dare strike you, effortless turning aside their blades while striking them with your own. You gain the following benefits:</p>\n<ul>\n<li>Feature.</li>\n<li>Feature.</li>\n<li>When you roll a die to reduce the damage you take from a weapon, you have advantage on the die roll.</li>\n<li>When you would be the target of a weapon attack, you can immediately use your reaction to make an opportunity attack against the target without your proficiency bonus. On a hit, the target suffers the attack's normal effects, and you impose disadvantage on the triggering roll.</li>"
+                "value": "<p>You've mastered returning attacks at those who dare strike you, effortless turning aside their blades while striking them with your own. You gain the following benefits:</p>\n<ul>\n<li>Creatures have disadvantage on damage rolls from opportunity attacks they make that hit you, and you have advantage on damage roll for opportunity attacks you make that hit.</li>\n<li>When you roll a die to reduce the damage you take from a weapon, you have advantage on the die roll.</li>\n<li>Once per round, when a creature provokes an opportunity attack from you, you can choose to gain a special reaction which you can only use to make that opportunity attack. If you do so, you make the opportunity attack without the aid of your proficiency bonus.</li>\n<li>When you would be the target of a weapon attack, you can immediately use your reaction to make an opportunity attack against the target without your proficiency bonus. On a hit, the target suffers the attack's normal effects, and you impose disadvantage on the triggering roll.</li>"
             },
             "requirements": null,
             "source": "PHB",
@@ -366,7 +314,7 @@
     "FightingMastery.name-covert_mastery": {
         "name": "Covert Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4651192+00:00",
+            "timestamp": "2022-08-17T00:39:16.5511631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-covert_mastery"
         },
@@ -418,7 +366,7 @@
     "FightingMastery.name-defense_mastery": {
         "name": "Defense Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4651192+00:00",
+            "timestamp": "2022-08-17T00:39:16.5511631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-defense_mastery"
         },
@@ -470,7 +418,7 @@
     "FightingMastery.name-disruption_mastery": {
         "name": "Disruption Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4661185+00:00",
+            "timestamp": "2022-08-17T00:39:16.5511631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-disruption_mastery"
         },
@@ -522,7 +470,7 @@
     "FightingMastery.name-dual_wield_mastery": {
         "name": "Dual Wield Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4661185+00:00",
+            "timestamp": "2022-08-17T00:39:16.5511631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-dual_wield_mastery"
         },
@@ -530,7 +478,7 @@
         "img": "systems/sw5e/packs/Icons/Fighting%20Styles%20and%20Masteries/DualWieldMastery.webp",
         "data": {
             "description": {
-                "value": "<p>You've mastered fighting with two weapons, becoming a flurry of motion. You gain the following benefits:</p>\n<ul>\n<li>When you use your bonus action to engage in Two-Weapon Fighting, you can choose to forgo one or more attacks. For each attack you forgo, you gain a +1 bonus to AC until the start of your next turn.</li>\n<li>You can engage in Two-Weapon Fighting even when the weapons you are wielding lack the light property.</li>\n<li>You can draw or stow two weapons when you would normally be able to draw or stow only one.</li>\n<li>When you use your bonus action to engage in Two-Weapon Fighting, you can choose to forgo your proficiency bonus. If you do so, you can make an additional attack with that weapon, also without your proficiency bonus. If you would normally make more than one attack with your bonus action, only one attack is made without your proficiency bonus.</li>"
+                "value": "<p>You've mastered fighting with two weapons, becoming a flurry of motion. You gain the following benefits:</p>\n<ul>\n<li>You can engage in Two-Weapon Fighting even when the weapons you are wielding lack the light property.</li>\n<li>You can reload two weapons when you would normally only be able to reload one, and reloading no longer requires a free hand, provided you are wielding separate weapons in each hand.</li>\n<li>Once per round, when you make an opportunity attack while wielding separate weapons in each hand, you can attack with both weapons. Make a separate attack roll with each weapon.</li>\n<li>When you use your bonus action to engage in Two-Weapon Fighting, you can choose to forgo one or more attacks. For each attack you forgo, you gain a +1 bonus to AC until the start of your next turn.</li>\n<li>When you use your bonus action to engage in Two-Weapon Fighting, you can choose to forgo your proficiency bonus. If you do so, you can make an additional attack with that weapon, also without your proficiency bonus. If you would normally make more than one attack with your bonus action, only one attack is made without your proficiency bonus.</li>"
             },
             "requirements": null,
             "source": "PHB",
@@ -574,7 +522,7 @@
     "FightingMastery.name-duelist_mastery": {
         "name": "Duelist Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4661185+00:00",
+            "timestamp": "2022-08-17T00:39:16.5511631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-duelist_mastery"
         },
@@ -626,7 +574,7 @@
     "FightingMastery.name-equilibrium_mastery": {
         "name": "Equilibrium Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4661185+00:00",
+            "timestamp": "2022-08-17T00:39:16.5511631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-equilibrium_mastery"
         },
@@ -678,7 +626,7 @@
     "FightingMastery.name-explosives_mastery": {
         "name": "Explosives Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4661185+00:00",
+            "timestamp": "2022-08-17T00:39:16.5511631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-explosives_mastery"
         },
@@ -686,7 +634,7 @@
         "img": "systems/sw5e/packs/Icons/Fighting%20Styles%20and%20Masteries/ExplosivesMastery.webp",
         "data": {
             "description": {
-                "value": "<p>You've mastered fighting with explosives, causing untold destruction. You gain the following benefits:</p>\n<ul>\n<li>When determining the save DC of a charge, grenade, mine, missile, or rocket you control, you can use 8 + your proficiency bonus + your Intelligence modifier, if it would be higher than the item's DC.</li>\n<li>You have advantage on saving throws against charges, grenades, mines, missiles, and rockets you control.</li>\n<li>When using a charge, grenade, mine, missile, or rocket that requires a saving throw and deals damage, you can take a penalty to the save DC equal to your proficiency bonus. If you do so, the item's damage increases by an amount equal to your proficiency bonus.</li>"
+                "value": "<p>You've mastered fighting with explosives, causing untold destruction. You gain the following benefits:</p>\n<ul>\n<li>When determining the save DC of a grenade, mine, or missile you control, you can use 8 + your proficiency bonus + your Intelligence modifier, if it would be higher than the item's DC.</li>\n<li>You have advantage on saving throws against grenades, mines, and missiles you control.</li>\n<li>When using a grenade, mine, or missile that requires a saving throw and deals damage, you can take a penalty to the save DC equal to your proficiency bonus. If you do so, the item's damage increases by an amount equal to your proficiency bonus.</li>"
             },
             "requirements": null,
             "source": "PHB",
@@ -730,7 +678,7 @@
     "FightingMastery.name-formation_mastery": {
         "name": "Formation Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4661185+00:00",
+            "timestamp": "2022-08-17T00:39:16.5521631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-formation_mastery"
         },
@@ -782,7 +730,7 @@
     "FightingMastery.name-formfighting_mastery": {
         "name": "Formfighting Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4661185+00:00",
+            "timestamp": "2022-08-17T00:39:16.5521631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-formfighting_mastery"
         },
@@ -834,7 +782,7 @@
     "FightingMastery.name-great_weapon_mastery": {
         "name": "Great Weapon Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4661185+00:00",
+            "timestamp": "2022-08-17T00:39:16.5521631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-great_weapon_mastery"
         },
@@ -891,7 +839,7 @@
     "FightingMastery.name-guerrilla_mastery": {
         "name": "Guerrilla Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4661185+00:00",
+            "timestamp": "2022-08-17T00:39:16.5521631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-guerrilla_mastery"
         },
@@ -943,7 +891,7 @@
     "FightingMastery.name-gunning_mastery": {
         "name": "Gunning Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4661185+00:00",
+            "timestamp": "2022-08-17T00:39:16.5521631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-gunning_mastery"
         },
@@ -995,7 +943,7 @@
     "FightingMastery.name-mounted_mastery": {
         "name": "Mounted Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4671183+00:00",
+            "timestamp": "2022-08-17T00:39:16.5521631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-mounted_mastery"
         },
@@ -1047,7 +995,7 @@
     "FightingMastery.name-onslaught_mastery": {
         "name": "Onslaught Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4671183+00:00",
+            "timestamp": "2022-08-17T00:39:16.5521631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-onslaught_mastery"
         },
@@ -1096,18 +1044,18 @@
         },
         "effects": []
     },
-    "FightingMastery.name-secured_mastery": {
-        "name": "Secured Mastery",
+    "FightingMastery.name-poisoner_mastery": {
+        "name": "Poisoner Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4671183+00:00",
+            "timestamp": "2022-08-17T00:39:16.5521631+00:00",
             "importer_version": 2,
-            "uid": "FightingMastery.name-secured_mastery"
+            "uid": "FightingMastery.name-poisoner_mastery"
         },
         "type": "fightingmastery",
-        "img": "systems/sw5e/packs/Icons/Fighting%20Styles%20and%20Masteries/SecuredMastery.webp",
+        "img": "systems/sw5e/packs/Icons/Fighting%20Styles%20and%20Masteries/PoisonerMastery.webp",
         "data": {
             "description": {
-                "value": "<p>You've mastered fighting with weapons in atypical places, seamlessly transitioning between your armaments. You gain the following benefits:</p>\n<ul>\n<li>Feature.</li>\n<li>Feature.</li>\n<li>Once on each of your turns, when you miss an attack with a weapon that lacks the fixed property, you can make an additional attack against the same target with a fixed weapon without the aid of your proficiency bonus (no action required).</li>\n<li>Once on each of your turns, when you would make a weapon attack with a fixed weapon, you can forgo the attack. If you do so, you can add your proficiency bonus to your AC against one attack that would hit you before the start of your next turn (no action required).</li>"
+                "value": "<p>You are skilled at with the subtlety of poisons, causing untold destruction. You gain the following benefits:</p>\n<ul>\n<li>When determining the save DC of a poison you control, you can use 8 + your proficiency bonus + your Intelligence modifier, if it would be higher than the item's DC.</li>\n<li>When you apply a poison to a weapon or ammunition, that poison can affect an additional hit or an additional piece of ammunition.</li>\n<li>Creatures suffering from the poisoned condition have disadvantage on saving throws against poisons you control.</li>\n<li>When using a poison that requires a saving throw and deals damage, you can take a penalty to the save DC equal to your proficiency bonus. If you do so, the item's damage increases by an amount equal to twice your proficiency bonus.</li>"
             },
             "requirements": null,
             "source": "PHB",
@@ -1148,10 +1096,62 @@
         },
         "effects": []
     },
+    "FightingMastery.name-secured_mastery": {
+        "name": "Secured Mastery",
+        "flags": {
+            "timestamp": "2022-08-17T00:39:16.5521631+00:00",
+            "importer_version": 2,
+            "uid": "FightingMastery.name-secured_mastery"
+        },
+        "type": "fightingmastery",
+        "img": "systems/sw5e/packs/Icons/Fighting%20Styles%20and%20Masteries/SecuredMastery.webp",
+        "data": {
+            "description": {
+                "value": "<p>You've mastered fighting with weapons in atypical places, seamlessly transitioning between your armaments. You gain the following benefits:</p>\n<ul>\n<li>You can wield a number of items on each forearm equal to your full Strength modifier, instead of half.</li>\n<li>You can now reload fixed weapons using your reaction or object interaction, instead of just your action or bonus action. If you could already reload the weapon using your reaction or object interaction, once on each of your turns, you can instead reload the weapon (no action required). You must have one free hand to reload.</li>\n<li>Once on each of your turns, when you miss an attack with a weapon that lacks the fixed property, you can make an additional attack against the same target with a fixed weapon without the aid of your proficiency bonus (no action required).</li>\n<li>Once on each of your turns, when you would make a weapon attack with a fixed weapon, you can forgo the attack. If you do so, you can add your proficiency bonus to your AC against one attack that would hit you before the start of your next turn (no action required).</li>"
+            },
+            "requirements": null,
+            "source": "PHB",
+            "activation": {
+                "type": "reaction",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            }
+        },
+        "effects": []
+    },
     "FightingMastery.name-sentinel_mastery": {
         "name": "Sentinel Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4671183+00:00",
+            "timestamp": "2022-08-17T00:39:16.5521631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-sentinel_mastery"
         },
@@ -1159,7 +1159,7 @@
         "img": "systems/sw5e/packs/Icons/Fighting%20Styles%20and%20Masteries/SentinelMastery.webp",
         "data": {
             "description": {
-                "value": "<p>You've mastered techniques to take advantage of every drop in any enemy's guard; in tight spaces you are indomitable. You gain the following benefits:</p>\n<ul>\n<li>Creatures within your reach provoke opportunity attacks from you even if they take the Disengage action.</li>\n<li>When you take the Dodge action, once per round, you can take two reactions on the same turn, instead of only one. You can only take one reaction per trigger.</li>\n<li>You can use a bonus action to enter a defensive stance that lasts until the start of your next turn. While in your defensive stance, you have a number of special reactions equal to your proficiency bonus that you can only use to make opportunity attacks. You can only take one reaction per turn.</li>"
+                "value": "<p>You've mastered techniques to take advantage of every drop in any enemy's guard; in tight spaces you are indomitable. You gain the following benefits:</p>\n<ul>\n<li>Creatures within your reach provoke opportunity attacks from you even if they take the Disengage action.</li>\n<li>When you take the Dodge action, once per round, you can take two reactions on the same turn, instead of only one. You can only take one reaction per trigger.</li>\n<li>You can use a bonus action to enter a defensive stance that lasts until the start of your next turn. While in your defensive stance, you have a number of special reactions equal to your proficiency bonus that you can only use to make opportunity attacks.</li>"
             },
             "requirements": null,
             "source": "PHB",
@@ -1203,7 +1203,7 @@
     "FightingMastery.name-sharpshooter_mastery": {
         "name": "Sharpshooter Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4671183+00:00",
+            "timestamp": "2022-08-17T00:39:16.5521631+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-sharpshooter_mastery"
         },
@@ -1255,7 +1255,7 @@
     "FightingMastery.name-shield_mastery": {
         "name": "Shield Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4671183+00:00",
+            "timestamp": "2022-08-17T00:39:16.5531624+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-shield_mastery"
         },
@@ -1307,7 +1307,7 @@
     "FightingMastery.name-snapshot_mastery": {
         "name": "Snapshot Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4671183+00:00",
+            "timestamp": "2022-08-17T00:39:16.5531624+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-snapshot_mastery"
         },
@@ -1359,7 +1359,7 @@
     "FightingMastery.name-split_mastery": {
         "name": "Split Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4671183+00:00",
+            "timestamp": "2022-08-17T00:39:16.5531624+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-split_mastery"
         },
@@ -1411,7 +1411,7 @@
     "FightingMastery.name-spotting_mastery": {
         "name": "Spotting Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4671183+00:00",
+            "timestamp": "2022-08-17T00:39:16.5531624+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-spotting_mastery"
         },
@@ -1463,7 +1463,7 @@
     "FightingMastery.name-superiority_mastery": {
         "name": "Superiority Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4671183+00:00",
+            "timestamp": "2022-08-17T00:39:16.5531624+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-superiority_mastery"
         },
@@ -1515,7 +1515,7 @@
     "FightingMastery.name-throwing_mastery": {
         "name": "Throwing Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4671183+00:00",
+            "timestamp": "2022-08-17T00:39:16.5531624+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-throwing_mastery"
         },
@@ -1567,7 +1567,7 @@
     "FightingMastery.name-twin_blade_mastery": {
         "name": "Twin-Blade Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4671183+00:00",
+            "timestamp": "2022-08-17T00:39:16.5531624+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-twin_blade_mastery"
         },
@@ -1619,7 +1619,7 @@
     "FightingMastery.name-versatile_mastery": {
         "name": "Versatile Mastery",
         "flags": {
-            "timestamp": "2022-05-29T01:36:30.4681178+00:00",
+            "timestamp": "2022-08-17T00:39:16.5531624+00:00",
             "importer_version": 2,
             "uid": "FightingMastery.name-versatile_mastery"
         },

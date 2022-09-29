@@ -2,7 +2,7 @@
     "Feat.name-ace_pilot": {
         "name": "Ace Pilot",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8253272+00:00",
+            "timestamp": "2022-08-17T00:39:15.9873475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-ace_pilot"
         },
@@ -87,7 +87,7 @@
     "Feat.name-acrobat": {
         "name": "Acrobat",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8263272+00:00",
+            "timestamp": "2022-08-17T00:39:15.9873475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-acrobat"
         },
@@ -172,7 +172,7 @@
     "Feat.name-actor": {
         "name": "Actor",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8263272+00:00",
+            "timestamp": "2022-08-17T00:39:15.9873475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-actor"
         },
@@ -251,7 +251,7 @@
     "Feat.name-alert": {
         "name": "Alert",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8263272+00:00",
+            "timestamp": "2022-08-17T00:39:15.9873475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-alert"
         },
@@ -259,7 +259,7 @@
         "img": "systems/sw5e/packs/Icons/Feats/Alert.webp",
         "data": {
             "description": {
-                "value": "<p>Always on the lookout for danger, you gain the following benefits:</p>\n<ul>\n<li>You gain a +5 bonus to initiative.</li>\n<li>You can't be surprised while you are conscious.</li>\n<li>Other creatures don't gain advantage on attack rolls against you as a result of being unseen by you.</li>"
+                "value": "<p>Always on the lookout for danger, you gain the following benefits:</p>\n<ul>\n<li>You are proficient in Initiative checks..</li>\n<li>You can't be surprised while you are conscious.</li>\n<li>Other creatures don't gain advantage on attack rolls against you as a result of being unseen by you.</li>"
             },
             "requirements": null,
             "source": "PHB",
@@ -332,7 +332,7 @@
     "Feat.name-animal_handler": {
         "name": "Animal Handler",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8263272+00:00",
+            "timestamp": "2022-08-17T00:39:15.9873475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-animal_handler"
         },
@@ -417,7 +417,7 @@
     "Feat.name-armor_expert": {
         "name": "Armor Expert",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8263272+00:00",
+            "timestamp": "2022-08-17T00:39:15.9873475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-armor_expert"
         },
@@ -469,7 +469,7 @@
     "Feat.name-athlete": {
         "name": "Athlete",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8263272+00:00",
+            "timestamp": "2022-08-17T00:39:15.9873475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-athlete"
         },
@@ -521,7 +521,7 @@
     "Feat.name-augmented_cyborg": {
         "name": "Augmented Cyborg",
         "flags": {
-            "timestamp": "2022-05-29T01:36:36.033305+00:00",
+            "timestamp": "2022-08-17T00:39:23.4169158+00:00",
             "importer_version": 2,
             "uid": "Feat.name-augmented_cyborg"
         },
@@ -531,7 +531,7 @@
             "description": {
                 "value": "<p>You've experimented with cybernetic augmentations, granting the following benefits: </p>\n<ul>\n<li>Increase an ability score of your choice by 1, to a maximum of 20.</li>\n<li>Choose one cybernetic augmentation of standard rarity from Appendix A. That augmentation is installed and doesn't count against the maximum cybernetic augmentations you can support, but it does count towards your total cybernetics augmentations as shown in the Cybernetic Augmentations Side Effects table in Chapter 7.</li>"
             },
-            "requirements": null,
+            "requirements": "Type beast or humanoid",
             "source": "WH",
             "activation": {
                 "type": null,
@@ -573,7 +573,7 @@
     "Feat.name-battle_scarred": {
         "name": "Battle Scarred",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8263272+00:00",
+            "timestamp": "2022-08-17T00:39:15.9873475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-battle_scarred"
         },
@@ -652,7 +652,7 @@
     "Feat.name-bountiful_luck": {
         "name": "Bountiful Luck",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8263272+00:00",
+            "timestamp": "2022-08-17T00:39:15.9873475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-bountiful_luck"
         },
@@ -704,7 +704,7 @@
     "Feat.name-brawny": {
         "name": "Brawny",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8263272+00:00",
+            "timestamp": "2022-08-17T00:39:15.9873475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-brawny"
         },
@@ -789,7 +789,7 @@
     "Feat.name-charmer": {
         "name": "Charmer",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8263272+00:00",
+            "timestamp": "2022-08-17T00:39:15.9883473+00:00",
             "importer_version": 2,
             "uid": "Feat.name-charmer"
         },
@@ -871,10 +871,62 @@
             }
         ]
     },
+    "Feat.name-class_proficiencies": {
+        "name": "Class Proficiencies",
+        "flags": {
+            "timestamp": "2022-08-17T00:39:23.4169158+00:00",
+            "importer_version": 2,
+            "uid": "Feat.name-class_proficiencies"
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Feats/ClassProficiencies.webp",
+        "data": {
+            "description": {
+                "value": "<p>Certain classes, such as fighters or guardians, gain proficiency in all weapons within a specific category. For instance, fighters gain proficiency in all blasters and vibroweapons, and guardians gain proficiency in all lightweapons and vibroweapons. Monk, operative, scholar, and sentinel, on the other hand, only gain proficiency in martial weapons that meet certain criteria. If that criteria is met due to the use of an item or feature that add—or remove—a referenced property, this does not grant that class proficiency in the weapon. For instance, operatives gain proficiency in simple blasters, simple vibroweapons, martial blasters that lack the auto, special, strength, and two-handed properties, martial vibroweapons with the finesse property. If they add the finesse property to a vibroweapon, or remove the strength property from a blaster weapon, this would not grant the operative proficiency in that weapon.</p>"
+            },
+            "requirements": null,
+            "source": "WH",
+            "activation": {
+                "type": null,
+                "cost": null
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            }
+        },
+        "effects": []
+    },
     "Feat.name-climber": {
         "name": "Climber",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8273263+00:00",
+            "timestamp": "2022-08-17T00:39:15.9883473+00:00",
             "importer_version": 2,
             "uid": "Feat.name-climber"
         },
@@ -959,7 +1011,7 @@
     "Feat.name-commando": {
         "name": "Commando",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8273263+00:00",
+            "timestamp": "2022-08-17T00:39:15.9883473+00:00",
             "importer_version": 2,
             "uid": "Feat.name-commando"
         },
@@ -1011,7 +1063,7 @@
     "Feat.name-competitor": {
         "name": "Competitor",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8273263+00:00",
+            "timestamp": "2022-08-17T00:39:15.9883473+00:00",
             "importer_version": 2,
             "uid": "Feat.name-competitor"
         },
@@ -1063,7 +1115,7 @@
     "Feat.name-crafter": {
         "name": "Crafter",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8273263+00:00",
+            "timestamp": "2022-08-17T00:39:15.9883473+00:00",
             "importer_version": 2,
             "uid": "Feat.name-crafter"
         },
@@ -1115,7 +1167,7 @@
     "Feat.name-customized_droid": {
         "name": "Customized Droid",
         "flags": {
-            "timestamp": "2022-05-29T01:36:36.033305+00:00",
+            "timestamp": "2022-08-17T00:39:23.4169158+00:00",
             "importer_version": 2,
             "uid": "Feat.name-customized_droid"
         },
@@ -1167,7 +1219,7 @@
     "Feat.name-dungeon_delver": {
         "name": "Dungeon Delver",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8273263+00:00",
+            "timestamp": "2022-08-17T00:39:15.9883473+00:00",
             "importer_version": 2,
             "uid": "Feat.name-dungeon_delver"
         },
@@ -1219,7 +1271,7 @@
     "Feat.name-durable": {
         "name": "Durable",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8273263+00:00",
+            "timestamp": "2022-08-17T00:39:15.9883473+00:00",
             "importer_version": 2,
             "uid": "Feat.name-durable"
         },
@@ -1298,7 +1350,7 @@
     "Feat.name-empathic": {
         "name": "Empathic",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8273263+00:00",
+            "timestamp": "2022-08-17T00:39:15.9883473+00:00",
             "importer_version": 2,
             "uid": "Feat.name-empathic"
         },
@@ -1383,7 +1435,7 @@
     "Feat.name-entertainer": {
         "name": "Entertainer",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8273263+00:00",
+            "timestamp": "2022-08-17T00:39:15.9883473+00:00",
             "importer_version": 2,
             "uid": "Feat.name-entertainer"
         },
@@ -1435,7 +1487,7 @@
     "Feat.name-fanatic": {
         "name": "Fanatic",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8273263+00:00",
+            "timestamp": "2022-08-17T00:39:15.9883473+00:00",
             "importer_version": 2,
             "uid": "Feat.name-fanatic"
         },
@@ -1492,7 +1544,7 @@
     "Feat.name-feigned_confidence": {
         "name": "Feigned Confidence",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8273263+00:00",
+            "timestamp": "2022-08-17T00:39:15.9883473+00:00",
             "importer_version": 2,
             "uid": "Feat.name-feigned_confidence"
         },
@@ -1571,7 +1623,7 @@
     "Feat.name-fighting_master": {
         "name": "Fighting Master",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8273263+00:00",
+            "timestamp": "2022-08-17T00:39:15.9893475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-fighting_master"
         },
@@ -1623,7 +1675,7 @@
     "Feat.name-fighting_stylist": {
         "name": "Fighting Stylist",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8283261+00:00",
+            "timestamp": "2022-08-17T00:39:15.9893475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-fighting_stylist"
         },
@@ -1675,7 +1727,7 @@
     "Feat.name-force_guidance": {
         "name": "Force Guidance",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8283261+00:00",
+            "timestamp": "2022-08-17T00:39:15.9893475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-force_guidance"
         },
@@ -1727,7 +1779,7 @@
     "Feat.name-force_of_personality": {
         "name": "Force of Personality",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8283261+00:00",
+            "timestamp": "2022-08-17T00:39:15.9893475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-force_of_personality"
         },
@@ -1806,7 +1858,7 @@
     "Feat.name-force_sensitive": {
         "name": "Force-Sensitive",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8283261+00:00",
+            "timestamp": "2022-08-17T00:39:15.9893475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-force_sensitive"
         },
@@ -1858,7 +1910,7 @@
     "Feat.name-forceful_vigor": {
         "name": "Forceful Vigor",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8283261+00:00",
+            "timestamp": "2022-08-17T00:39:15.9893475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-forceful_vigor"
         },
@@ -1937,7 +1989,7 @@
     "Feat.name-formfighting_dabbler": {
         "name": "Formfighting Dabbler",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8283261+00:00",
+            "timestamp": "2022-08-17T00:39:15.9893475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-formfighting_dabbler"
         },
@@ -1989,7 +2041,7 @@
     "Feat.name-galvanizing_presence": {
         "name": "Galvanizing Presence",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8283261+00:00",
+            "timestamp": "2022-08-17T00:39:15.9893475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-galvanizing_presence"
         },
@@ -2068,7 +2120,7 @@
     "Feat.name-haggler": {
         "name": "Haggler",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8283261+00:00",
+            "timestamp": "2022-08-17T00:39:15.9893475+00:00",
             "importer_version": 2,
             "uid": "Feat.name-haggler"
         },
@@ -2147,7 +2199,7 @@
     "Feat.name-healer": {
         "name": "Healer",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8283261+00:00",
+            "timestamp": "2022-08-17T00:39:15.9903469+00:00",
             "importer_version": 2,
             "uid": "Feat.name-healer"
         },
@@ -2204,7 +2256,7 @@
     "Feat.name-inspiring_leader": {
         "name": "Inspiring Leader",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8293256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9903469+00:00",
             "importer_version": 2,
             "uid": "Feat.name-inspiring_leader"
         },
@@ -2256,7 +2308,7 @@
     "Feat.name-investigative_attunement": {
         "name": "Investigative Attunement",
         "flags": {
-            "timestamp": "2022-05-29T01:36:36.033305+00:00",
+            "timestamp": "2022-08-17T00:39:23.4169158+00:00",
             "importer_version": 2,
             "uid": "Feat.name-investigative_attunement"
         },
@@ -2308,7 +2360,7 @@
     "Feat.name-investigator": {
         "name": "Investigator",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8293256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9903469+00:00",
             "importer_version": 2,
             "uid": "Feat.name-investigator"
         },
@@ -2393,7 +2445,7 @@
     "Feat.name-keen_mind": {
         "name": "Keen Mind",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8293256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9903469+00:00",
             "importer_version": 2,
             "uid": "Feat.name-keen_mind"
         },
@@ -2472,7 +2524,7 @@
     "Feat.name-linguist": {
         "name": "Linguist",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8293256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9903469+00:00",
             "importer_version": 2,
             "uid": "Feat.name-linguist"
         },
@@ -2551,7 +2603,7 @@
     "Feat.name-loremaster": {
         "name": "Loremaster",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8293256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9903469+00:00",
             "importer_version": 2,
             "uid": "Feat.name-loremaster"
         },
@@ -2636,7 +2688,7 @@
     "Feat.name-lucky": {
         "name": "Lucky",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8293256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9903469+00:00",
             "importer_version": 2,
             "uid": "Feat.name-lucky"
         },
@@ -2697,7 +2749,7 @@
     "Feat.name-mariner": {
         "name": "Mariner",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8293256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9903469+00:00",
             "importer_version": 2,
             "uid": "Feat.name-mariner"
         },
@@ -2782,7 +2834,7 @@
     "Feat.name-medic": {
         "name": "Medic",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8293256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9903469+00:00",
             "importer_version": 2,
             "uid": "Feat.name-medic"
         },
@@ -2867,7 +2919,7 @@
     "Feat.name-mobile": {
         "name": "Mobile",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8293256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9903469+00:00",
             "importer_version": 2,
             "uid": "Feat.name-mobile"
         },
@@ -2919,7 +2971,7 @@
     "Feat.name-muscled_menace": {
         "name": "Muscled Menace",
         "flags": {
-            "timestamp": "2022-05-29T01:36:36.033305+00:00",
+            "timestamp": "2022-08-17T00:39:23.4169158+00:00",
             "importer_version": 2,
             "uid": "Feat.name-muscled_menace"
         },
@@ -2971,7 +3023,7 @@
     "Feat.name-naturalist": {
         "name": "Naturalist",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8293256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9913461+00:00",
             "importer_version": 2,
             "uid": "Feat.name-naturalist"
         },
@@ -3056,7 +3108,7 @@
     "Feat.name-observant": {
         "name": "Observant",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8303256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9913461+00:00",
             "importer_version": 2,
             "uid": "Feat.name-observant"
         },
@@ -3108,7 +3160,7 @@
     "Feat.name-perceptive": {
         "name": "Perceptive",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8303256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9913461+00:00",
             "importer_version": 2,
             "uid": "Feat.name-perceptive"
         },
@@ -3193,7 +3245,7 @@
     "Feat.name-performer": {
         "name": "Performer",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8303256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9913461+00:00",
             "importer_version": 2,
             "uid": "Feat.name-performer"
         },
@@ -3278,7 +3330,7 @@
     "Feat.name-power_adept": {
         "name": "Power Adept",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8303256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9913461+00:00",
             "importer_version": 2,
             "uid": "Feat.name-power_adept"
         },
@@ -3330,7 +3382,7 @@
     "Feat.name-power_channeling": {
         "name": "Power Channeling",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8303256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9913461+00:00",
             "importer_version": 2,
             "uid": "Feat.name-power_channeling"
         },
@@ -3382,7 +3434,7 @@
     "Feat.name-practiced": {
         "name": "Practiced",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8303256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9913461+00:00",
             "importer_version": 2,
             "uid": "Feat.name-practiced"
         },
@@ -3434,7 +3486,7 @@
     "Feat.name-promising_commander": {
         "name": "Promising Commander",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8303256+00:00",
+            "timestamp": "2022-08-17T00:39:15.9913461+00:00",
             "importer_version": 2,
             "uid": "Feat.name-promising_commander"
         },
@@ -3513,7 +3565,7 @@
     "Feat.name-quick_fingered": {
         "name": "Quick-Fingered",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8313252+00:00",
+            "timestamp": "2022-08-17T00:39:15.9913461+00:00",
             "importer_version": 2,
             "uid": "Feat.name-quick_fingered"
         },
@@ -3598,7 +3650,7 @@
     "Feat.name-quick_witted": {
         "name": "Quick-Witted",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8313252+00:00",
+            "timestamp": "2022-08-17T00:39:15.9913461+00:00",
             "importer_version": 2,
             "uid": "Feat.name-quick_witted"
         },
@@ -3606,7 +3658,7 @@
         "img": "systems/sw5e/packs/Icons/Feats/Quick-Witted.webp",
         "data": {
             "description": {
-                "value": "<p>Great ideas come to you naturally, often when your life depends on it. You always have a plan, or at least parts of it. You gain the following benefits:</p>\n<ul>\n<li>Increase your Intelligence score by 1, to a maximum of 20.</li>\n<li>You can use your Intelligence modifier instead of your Dexterity modifier when making initiative checks.</li>\n<li>When you would make a Dexterity saving throw, you can instead make an Intelligence saving throw. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest.</li>"
+                "value": "<p>Great ideas come to you naturally, often when your life depends on it. You always have a plan, or at least parts of it. You gain the following benefits:</p>\n<ul>\n<li>Increase your Intelligence score by 1, to a maximum of 20.</li>\n<li>You can use your Intelligence modifier instead of your Dexterity modifier when making Initiative checks.</li>\n<li>When you would make a Dexterity saving throw, you can instead make an Intelligence saving throw. You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses of this feature when you complete a long rest.</li>"
             },
             "requirements": null,
             "source": "PHB",
@@ -3677,7 +3729,7 @@
     "Feat.name-resilient": {
         "name": "Resilient",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8313252+00:00",
+            "timestamp": "2022-08-17T00:39:15.992346+00:00",
             "importer_version": 2,
             "uid": "Feat.name-resilient"
         },
@@ -3729,7 +3781,7 @@
     "Feat.name-savage_shorty": {
         "name": "Savage Shorty",
         "flags": {
-            "timestamp": "2022-05-29T01:36:36.033305+00:00",
+            "timestamp": "2022-08-17T00:39:23.4169158+00:00",
             "importer_version": 2,
             "uid": "Feat.name-savage_shorty"
         },
@@ -3820,7 +3872,7 @@
     "Feat.name-shard_modification": {
         "name": "Shard Modification",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8313252+00:00",
+            "timestamp": "2022-08-17T00:39:15.992346+00:00",
             "importer_version": 2,
             "uid": "Feat.name-shard_modification"
         },
@@ -3899,7 +3951,7 @@
     "Feat.name-silver_tongued": {
         "name": "Silver-Tongued",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8313252+00:00",
+            "timestamp": "2022-08-17T00:39:15.992346+00:00",
             "importer_version": 2,
             "uid": "Feat.name-silver_tongued"
         },
@@ -3984,7 +4036,7 @@
     "Feat.name-snappy_interjection": {
         "name": "Snappy Interjection",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8313252+00:00",
+            "timestamp": "2022-08-17T00:39:15.992346+00:00",
             "importer_version": 2,
             "uid": "Feat.name-snappy_interjection"
         },
@@ -4063,7 +4115,7 @@
     "Feat.name-specialist": {
         "name": "Specialist",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8313252+00:00",
+            "timestamp": "2022-08-17T00:39:15.992346+00:00",
             "importer_version": 2,
             "uid": "Feat.name-specialist"
         },
@@ -4115,7 +4167,7 @@
     "Feat.name-stealthy": {
         "name": "Stealthy",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8313252+00:00",
+            "timestamp": "2022-08-17T00:39:15.992346+00:00",
             "importer_version": 2,
             "uid": "Feat.name-stealthy"
         },
@@ -4200,7 +4252,7 @@
     "Feat.name-supreme_accuracy": {
         "name": "Supreme Accuracy",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8313252+00:00",
+            "timestamp": "2022-08-17T00:39:15.992346+00:00",
             "importer_version": 2,
             "uid": "Feat.name-supreme_accuracy"
         },
@@ -4252,7 +4304,7 @@
     "Feat.name-supreme_aptitude": {
         "name": "Supreme Aptitude",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8313252+00:00",
+            "timestamp": "2022-08-17T00:39:15.992346+00:00",
             "importer_version": 2,
             "uid": "Feat.name-supreme_aptitude"
         },
@@ -4304,7 +4356,7 @@
     "Feat.name-supreme_durability": {
         "name": "Supreme Durability",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8323249+00:00",
+            "timestamp": "2022-08-17T00:39:15.992346+00:00",
             "importer_version": 2,
             "uid": "Feat.name-supreme_durability"
         },
@@ -4356,7 +4408,7 @@
     "Feat.name-survivalist": {
         "name": "Survivalist",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8323249+00:00",
+            "timestamp": "2022-08-17T00:39:15.992346+00:00",
             "importer_version": 2,
             "uid": "Feat.name-survivalist"
         },
@@ -4441,7 +4493,7 @@
     "Feat.name-tech_dabbler": {
         "name": "Tech Dabbler",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8323249+00:00",
+            "timestamp": "2022-08-17T00:39:15.9933456+00:00",
             "importer_version": 2,
             "uid": "Feat.name-tech_dabbler"
         },
@@ -4520,7 +4572,7 @@
     "Feat.name-techie": {
         "name": "Techie",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8323249+00:00",
+            "timestamp": "2022-08-17T00:39:15.9933456+00:00",
             "importer_version": 2,
             "uid": "Feat.name-techie"
         },
@@ -4605,7 +4657,7 @@
     "Feat.name-threatening": {
         "name": "Threatening",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8323249+00:00",
+            "timestamp": "2022-08-17T00:39:15.9933456+00:00",
             "importer_version": 2,
             "uid": "Feat.name-threatening"
         },
@@ -4690,7 +4742,7 @@
     "Feat.name-tiny_terror": {
         "name": "Tiny Terror",
         "flags": {
-            "timestamp": "2022-05-29T01:36:36.0343043+00:00",
+            "timestamp": "2022-08-17T00:39:23.4169158+00:00",
             "importer_version": 2,
             "uid": "Feat.name-tiny_terror"
         },
@@ -4787,7 +4839,7 @@
     "Feat.name-tough": {
         "name": "Tough",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8323249+00:00",
+            "timestamp": "2022-08-17T00:39:15.9933456+00:00",
             "importer_version": 2,
             "uid": "Feat.name-tough"
         },
@@ -4866,7 +4918,7 @@
     "Feat.name-weapon_expert": {
         "name": "Weapon Expert",
         "flags": {
-            "timestamp": "2022-05-29T01:36:29.8333244+00:00",
+            "timestamp": "2022-08-17T00:39:15.9933456+00:00",
             "importer_version": 2,
             "uid": "Feat.name-weapon_expert"
         },
@@ -4957,7 +5009,7 @@
     "Feat.name-weapon_focused": {
         "name": "Weapon Focused",
         "flags": {
-            "timestamp": "2022-05-29T01:36:36.0343043+00:00",
+            "timestamp": "2022-08-17T00:39:23.4179155+00:00",
             "importer_version": 2,
             "uid": "Feat.name-weapon_focused"
         },
@@ -5009,7 +5061,7 @@
     "Feat.name-weapon_supremacist": {
         "name": "Weapon Supremacist",
         "flags": {
-            "timestamp": "2022-05-29T01:36:36.0343043+00:00",
+            "timestamp": "2022-08-17T00:39:23.4179155+00:00",
             "importer_version": 2,
             "uid": "Feat.name-weapon_supremacist"
         },
@@ -5061,7 +5113,7 @@
     "Feat.name-adaptable_fading": {
         "name": "Adaptable Fading",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.8998105+00:00",
+            "timestamp": "2022-08-17T00:40:04.8153689+00:00",
             "importer_version": 2,
             "uid": "Feat.name-adaptable_fading"
         },
@@ -5113,7 +5165,7 @@
     "Feat.name-blinding_agility": {
         "name": "Blinding Agility",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9028095+00:00",
+            "timestamp": "2022-08-17T00:40:04.8173684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-blinding_agility"
         },
@@ -5165,7 +5217,7 @@
     "Feat.name-casting_specialist": {
         "name": "Casting Specialist",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9028095+00:00",
+            "timestamp": "2022-08-17T00:40:04.8173684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-casting_specialist"
         },
@@ -5217,7 +5269,7 @@
     "Feat.name-class_improvement": {
         "name": "Class Improvement",
         "flags": {
-            "timestamp": "2022-05-29T01:36:53.9074824+00:00",
+            "timestamp": "2022-08-17T00:40:07.9803341+00:00",
             "importer_version": 2,
             "uid": "Feat.name-class_improvement"
         },
@@ -5269,7 +5321,7 @@
     "Feat.name-close_quarters_caster": {
         "name": "Close Quarters Caster",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9018096+00:00",
+            "timestamp": "2022-08-17T00:40:04.8163684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-close_quarters_caster"
         },
@@ -5321,7 +5373,7 @@
     "Feat.name-combat_caster": {
         "name": "Combat Caster",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9018096+00:00",
+            "timestamp": "2022-08-17T00:40:04.8163684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-combat_caster"
         },
@@ -5373,7 +5425,7 @@
     "Feat.name-companion_keeper": {
         "name": "Companion Keeper",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9008099+00:00",
+            "timestamp": "2022-08-17T00:40:04.8163684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-companion_keeper"
         },
@@ -5425,7 +5477,7 @@
     "Feat.name-cunning_intellect": {
         "name": "Cunning Intellect",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9028095+00:00",
+            "timestamp": "2022-08-17T00:40:04.8173684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-cunning_intellect"
         },
@@ -5477,7 +5529,7 @@
     "Feat.name-double_weapon_casting": {
         "name": "Double-Weapon Casting",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.8988107+00:00",
+            "timestamp": "2022-08-17T00:40:04.8153689+00:00",
             "importer_version": 2,
             "uid": "Feat.name-double_weapon_casting"
         },
@@ -5529,7 +5581,7 @@
     "Feat.name-dual_focused_caster": {
         "name": "Dual Focused Caster",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9018096+00:00",
+            "timestamp": "2022-08-17T00:40:04.8163684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-dual_focused_caster"
         },
@@ -5581,7 +5633,7 @@
     "Feat.name-dutifully_deployed": {
         "name": "Dutifully Deployed",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.8998105+00:00",
+            "timestamp": "2022-08-17T00:40:04.8153689+00:00",
             "importer_version": 2,
             "uid": "Feat.name-dutifully_deployed"
         },
@@ -5633,7 +5685,7 @@
     "Feat.name-exalted_awareness": {
         "name": "Exalted Awareness",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9038089+00:00",
+            "timestamp": "2022-08-17T00:40:04.8183676+00:00",
             "importer_version": 2,
             "uid": "Feat.name-exalted_awareness"
         },
@@ -5685,7 +5737,7 @@
     "Feat.name-exotic_weapon_training": {
         "name": "Exotic Weapon Training",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.8988107+00:00",
+            "timestamp": "2022-08-17T00:40:04.8153689+00:00",
             "importer_version": 2,
             "uid": "Feat.name-exotic_weapon_training"
         },
@@ -5737,7 +5789,7 @@
     "Feat.name-flexible_rending": {
         "name": "Flexible Rending",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.8998105+00:00",
+            "timestamp": "2022-08-17T00:40:04.8153689+00:00",
             "importer_version": 2,
             "uid": "Feat.name-flexible_rending"
         },
@@ -5789,7 +5841,7 @@
     "Feat.name-greater_force_sensitive": {
         "name": "Greater Force-Sensitive",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9008099+00:00",
+            "timestamp": "2022-08-17T00:40:04.8163684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-greater_force_sensitive"
         },
@@ -5841,7 +5893,7 @@
     "Feat.name-greater_tech_dabbler": {
         "name": "Greater Tech Dabbler",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9008099+00:00",
+            "timestamp": "2022-08-17T00:40:04.8163684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-greater_tech_dabbler"
         },
@@ -5893,7 +5945,7 @@
     "Feat.name-improved_force_sensitive": {
         "name": "Improved Force-Sensitive",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.8998105+00:00",
+            "timestamp": "2022-08-17T00:40:04.8163684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-improved_force_sensitive"
         },
@@ -5945,7 +5997,7 @@
     "Feat.name-improved_tech_dabbler": {
         "name": "Improved Tech Dabbler",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9008099+00:00",
+            "timestamp": "2022-08-17T00:40:04.8163684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-improved_tech_dabbler"
         },
@@ -5997,7 +6049,7 @@
     "Feat.name-master_force_sensitive": {
         "name": "Master Force-Sensitive",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9008099+00:00",
+            "timestamp": "2022-08-17T00:40:04.8163684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-master_force_sensitive"
         },
@@ -6049,7 +6101,7 @@
     "Feat.name-master_tech_dabbler": {
         "name": "Master Tech Dabbler",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9008099+00:00",
+            "timestamp": "2022-08-17T00:40:04.8163684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-master_tech_dabbler"
         },
@@ -6101,7 +6153,7 @@
     "Feat.name-mounted_caster": {
         "name": "Mounted Caster",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9018096+00:00",
+            "timestamp": "2022-08-17T00:40:04.8173684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-mounted_caster"
         },
@@ -6153,7 +6205,7 @@
     "Feat.name-multiclass_improvement": {
         "name": "Multiclass Improvement",
         "flags": {
-            "timestamp": "2022-05-29T01:36:53.9084817+00:00",
+            "timestamp": "2022-08-17T00:40:07.9803341+00:00",
             "importer_version": 2,
             "uid": "Feat.name-multiclass_improvement"
         },
@@ -6205,7 +6257,7 @@
     "Feat.name-overwhelming_presence": {
         "name": "Overwhelming Presence",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9038089+00:00",
+            "timestamp": "2022-08-17T00:40:04.8183676+00:00",
             "importer_version": 2,
             "uid": "Feat.name-overwhelming_presence"
         },
@@ -6257,7 +6309,7 @@
     "Feat.name-quick_caster": {
         "name": "Quick Caster",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9018096+00:00",
+            "timestamp": "2022-08-17T00:40:04.8173684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-quick_caster"
         },
@@ -6309,7 +6361,7 @@
     "Feat.name-sniping_caster": {
         "name": "Sniping Caster",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9018096+00:00",
+            "timestamp": "2022-08-17T00:40:04.8173684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-sniping_caster"
         },
@@ -6361,7 +6413,7 @@
     "Feat.name-splashclass_improvement": {
         "name": "Splashclass Improvement",
         "flags": {
-            "timestamp": "2022-05-29T01:36:53.9084817+00:00",
+            "timestamp": "2022-08-17T00:40:07.9803341+00:00",
             "importer_version": 2,
             "uid": "Feat.name-splashclass_improvement"
         },
@@ -6413,7 +6465,7 @@
     "Feat.name-titans_power": {
         "name": "Titan's Power",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9028095+00:00",
+            "timestamp": "2022-08-17T00:40:04.8173684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-titans_power"
         },
@@ -6470,7 +6522,7 @@
     "Feat.name-total_reconstruction": {
         "name": "Total Reconstruction",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.8988107+00:00",
+            "timestamp": "2022-08-17T00:40:04.8153689+00:00",
             "importer_version": 2,
             "uid": "Feat.name-total_reconstruction"
         },
@@ -6522,7 +6574,7 @@
     "Feat.name-two_weapon_casting": {
         "name": "Two-Weapon Casting",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.8988107+00:00",
+            "timestamp": "2022-08-17T00:40:04.8153689+00:00",
             "importer_version": 2,
             "uid": "Feat.name-two_weapon_casting"
         },
@@ -6574,7 +6626,7 @@
     "Feat.name-unnatural_resilience": {
         "name": "Unnatural Resilience",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9028095+00:00",
+            "timestamp": "2022-08-17T00:40:04.8173684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-unnatural_resilience"
         },
@@ -6626,7 +6678,7 @@
     "Feat.name-versatile_withering": {
         "name": "Versatile Withering",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.8998105+00:00",
+            "timestamp": "2022-08-17T00:40:04.8153689+00:00",
             "importer_version": 2,
             "uid": "Feat.name-versatile_withering"
         },
@@ -6678,7 +6730,7 @@
     "Feat.name-war_caster": {
         "name": "War Caster",
         "flags": {
-            "timestamp": "2022-05-29T01:36:52.9028095+00:00",
+            "timestamp": "2022-08-17T00:40:04.8173684+00:00",
             "importer_version": 2,
             "uid": "Feat.name-war_caster"
         },

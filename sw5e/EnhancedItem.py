@@ -104,7 +104,7 @@ class EnhancedItem(sw5e.Entity.Item):
 				"value": None,
 				"dex": None,
 			}
-			if self.subtype in ('body', 'feet', 'hands', 'head', 'shoulders', 'waist', 'wrists', 'legs'):
+			if self.subtype in ('body', 'feet', 'hands', 'head', 'shoulders', 'waist', 'wrists', 'forearms', 'forearm', 'legs'):
 				data["data"]["armor"]["type"] = 'clothing'
 			elif self.subtype in (None, '', 'finger', 'other', 'neck', 'back', 'wrist'):
 				data["data"]["armor"]["type"] = 'trinket'

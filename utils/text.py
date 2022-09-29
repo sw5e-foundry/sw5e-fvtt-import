@@ -532,7 +532,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 
 			dice = match[0]
 
-			pattern_ignore = fr'on the d20|d20 roll|roll(?:ing|s)? (?:(?:of )?the|a) d20|{dice}s'
+			pattern_ignore = fr'on the d20|d20 (?:roll|result)|roll(?:ing|s)? (?:(?:of )?the|a) d20|{dice}s'
 			pattern_ignore += fr'|which is a {dice}'
 			pattern_ignore += fr'|uses a {dice}'
 			pattern_ignore += fr'|(?:versatile|barbed|gauntleted|spiked|double) \({dice}\)(?: and \w+(?: \d+)?)? propert(?:y|ies)' ## versatile (2d4) property
@@ -553,6 +553,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 			pattern_ignore += fr'|add(?: a)? {dice} to (?:a|an|any|its|the) (?:ability checks)?(?: or )?(?:saving throws?)?(?:rolls?)?'
 			pattern_ignore += fr'|rolls(?: a)? {dice} and subtracts the number rolled'
 			pattern_ignore += fr'|instead of its {dice}\.'
+			pattern_ignore += fr'|becomes {dice}\.'
 
 			if dice and dice.startswith('d'): dice = f'1{dice}'
 			formula = dice
@@ -700,7 +701,10 @@ def getProperties(targets, props_list, strict=False, error=False, needs_end=Fals
 						return 'MATCH'
 					text = re.sub(pattern2, foo, text)
 		elif error:
-			raise ValueError(props_list, target, targets)
+			print(f'{props_list=}')
+			print(f'{target=}')
+			print(f'{targets=}')
+			raise ValueError()
 	return properties
 
 def getStatblocks(text):

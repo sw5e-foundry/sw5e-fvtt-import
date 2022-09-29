@@ -4,24 +4,52 @@
 
 - archetype.json:
   - Fix Slicer Pursuit's 'Systems Hijack'
-  - Remove ##### Archaeologist Pursuit Forcecasting
-  - Remove ##### Adept Specialist Forcecasting
+  - Remove ##### XXXX Force/Techcasting from:
+    - Shield Specialist
+    - Mechanist Technique
+    - Mechanist Technique (Companion)
+    - Rakatan Order
+    - Saboteur Practice
+    - Slicer Pursuit
+    - Marauder Approach
+    - Adept Specialist
+    - Aing-Tii Order
+    - Archaeologist Pursuit
+    - Beguiler Practice
 - equipment.json:
-  - REMOVE ALL DASHES FROM WEAPON NAMES
-  - light-fist disquised -> disguised
-  - vibro-dart add placeholder description
-  - electro-vougle -> electro-voulge
-  - nightstringer -> nightstinger
   - saberstaff: double -> modal
+  - radiation cannon: disrupt ive -> disruptive
+  - add vibrolance's missing description
 - feature.json
-  - fix XXX Forcecasting in Whirling Weapons and Flow-Walking
-  - ld8 -> 1d8
+  - Remove ##### XXXX Force/Techcasting table from:
+    - Whirling Weapons
+    - Flow-Walking
+    - Mark of the Mechanist
+    - High Voltage
+    - Focused Tech
+    - Ion Pulse
+    - Techcasting
+    - Reckless Power
+    - Rallying Cry
+    - Forcecasting
 - monster.json
   - use old monster.json
 - maneuvers.json
-  - rattle 'to to' -> 'to'
-  - self-preservation 'add the result' -> 'add it to the result'
   - sic 'em 'dice' -> 'die'
-  - steady the nerves 'equal to amount rolled' -> 'equal to the amount rolled'
-  - rampage 'result of the superiority die' -> 'superiority die'
-  - double bluff 'results of the superiority die' -> 'superiority die'
+  - rampage 'result of the superiority die roll' -> 'superiority die'
+- feat.json
+  - remove 'Fighting Styles and Masteries' x2
+- feature.json
+  - remove expanded content duplicate feature of:
+    - Blademaster Specialist
+    - Cyclone Approach
+    - Heavy Weapons Specialist
+    - Juggernaut Approach
+    - Precision Approach
+    - Warchief Approach
+  - remove superiority table from
+    - cover to cover
+    - reckless maneuvers
+    - on your six x2
+  - remove Deadeye Technique 'Focused Superiority'
+  - 'If d20 result' -> 'If the d20 result'

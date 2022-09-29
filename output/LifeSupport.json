@@ -1,167 +1,27 @@
 {
-    "Equipment.name-aquatic_rebreather.equipmentCategory-lifesupport": {
-        "name": "Aquatic rebreather",
+    "Equipment.name-emergency_shelter.equipmentCategory-lifesupport": {
+        "name": "Emergency shelter",
         "flags": {
-            "timestamp": "2022-05-14T22:39:42.345628+00:00",
+            "timestamp": "2022-08-17T00:39:11.8816923+00:00",
             "importer_version": 2,
-            "uid": "Equipment.name-aquatic_rebreather.equipmentCategory-lifesupport"
+            "uid": "Equipment.name-emergency_shelter.equipmentCategory-lifesupport"
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Life%20Support/AquaticRebreather.webp",
+        "img": "systems/sw5e/packs/Icons/Life%20Support/EmergencyShelter.webp",
         "data": {
             "description": {
-                "value": "<p>Aquatic breathers are breath masks designed to operate underwater. While worn, the wearer can breathe both air and water.</p>"
-            },
-            "requirements": "",
-            "source": "PHB",
-            "quantity": 1,
-            "weight": 2,
-            "price": 100,
-            "attunement": 0,
-            "equipped": false,
-            "rarity": "",
-            "identified": true,
-            "baseItem": "aquaticrebreather",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
-            "duration": {
-                "value": null,
-                "units": ""
-            },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
-            "formula": "",
-            "save": {},
-            "armor": {
-                "value": null,
-                "type": "trinket",
-                "dex": null
-            },
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": false,
-            "strength": null,
-            "stealth": false
-        },
-        "effects": []
-    },
-    "Equipment.name-enviro_suit.equipmentCategory-lifesupport": {
-        "name": "Enviro-suit",
-        "flags": {
-            "timestamp": "2022-05-14T22:39:42.345628+00:00",
-            "importer_version": 2,
-            "uid": "Equipment.name-enviro_suit.equipmentCategory-lifesupport"
-        },
-        "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Life%20Support/Enviro-Suit.webp",
-        "data": {
-            "description": {
-                "value": "<p>Environment suits, atmospheric suits, or EVA suits, are pressure suits that enabled wearers to survive and operate in zero gravity space and other dangerous conditions.</p>"
+                "value": "<p>This shelter comes packed in a 2-foot-long tube. When activated, the shelter deploys, expanding to full size in 1 minute. The shelter is 8 feet long, 8 feet wide, and 6 feet tall, and can house up to six Medium creatures. The shelter includes spikes that automatically mount to the ground, provided they can find purchase. The shelter comes with an integrated power generator, faint glowing lights in the interior which provide dim light, and creatures in the shelter are protected from the elements, including hot and cold climates, as described in chapter 5 of the Dungeon Master's Guide. The shelter's power generator lasts for seven days, after which it stops providing light. The shelter can be collapsed and restored over the course of 10 minutes.</p>"
             },
             "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": 15,
-            "price": 2000,
+            "price": 600,
             "attunement": 0,
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "enviro-suit",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
-            "duration": {
-                "value": null,
-                "units": ""
-            },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
-            "formula": "",
-            "save": {},
-            "armor": {
-                "value": null,
-                "type": "trinket",
-                "dex": null
-            },
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": false,
-            "strength": null,
-            "stealth": false
-        },
-        "effects": []
-    },
-    "Equipment.name-flight_suit.equipmentCategory-lifesupport": {
-        "name": "Flight suit",
-        "flags": {
-            "timestamp": "2022-05-14T22:39:42.345628+00:00",
-            "importer_version": 2,
-            "uid": "Equipment.name-flight_suit.equipmentCategory-lifesupport"
-        },
-        "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Life%20Support/FlightSuit.webp",
-        "data": {
-            "description": {
-                "value": "<p>Flight suits, or jumpsuits, are a type of outfit worn by pilots. They are worn in conjunction with flight helmets. They come in a variety of different colors and provide life support, and protect from hostile environments.</p>"
-            },
-            "requirements": "",
-            "source": "PHB",
-            "quantity": 1,
-            "weight": 5,
-            "price": 1000,
-            "attunement": 0,
-            "equipped": false,
-            "rarity": "",
-            "identified": true,
-            "baseItem": "flightsuit",
+            "baseItem": "emergencyshelter",
             "activation": {
                 "type": null,
                 "cost": 1,
@@ -212,7 +72,7 @@
     "Equipment.name-respirator.equipmentCategory-lifesupport": {
         "name": "Respirator",
         "flags": {
-            "timestamp": "2022-05-14T22:39:42.3466277+00:00",
+            "timestamp": "2022-08-17T00:39:11.8816923+00:00",
             "importer_version": 2,
             "uid": "Equipment.name-respirator.equipmentCategory-lifesupport"
         },
@@ -220,7 +80,7 @@
         "img": "systems/sw5e/packs/Icons/Life%20Support/Respirator.webp",
         "data": {
             "description": {
-                "value": "<p>A respirator, or breath mask, is a portable device that allowed an oxygen-breather to survive in low-oxygen atmospheres. Although not suitable for use in outer-space, these hands-free masks were essential equipment for deep-space travel that might require activity outside of a starship.</p>"
+                "value": "<p>A respirator, or breath mask, is a portable device that includes 1 hour's worth of oxygen. The respirator is designed to function in all environments.</p>"
             },
             "requirements": "",
             "source": "PHB",
@@ -282,7 +142,7 @@
     "Equipment.name-underwater_respirator.equipmentCategory-lifesupport": {
         "name": "Underwater respirator",
         "flags": {
-            "timestamp": "2022-05-14T22:39:52.1382715+00:00",
+            "timestamp": "2022-08-17T00:39:21.341595+00:00",
             "importer_version": 2,
             "uid": "Equipment.name-underwater_respirator.equipmentCategory-lifesupport"
         },
@@ -352,7 +212,7 @@
     "Equipment.name-water_suit.equipmentCategory-lifesupport": {
         "name": "Water suit",
         "flags": {
-            "timestamp": "2022-05-14T22:39:52.1382715+00:00",
+            "timestamp": "2022-08-17T00:39:21.341595+00:00",
             "importer_version": 2,
             "uid": "Equipment.name-water_suit.equipmentCategory-lifesupport"
         },
@@ -419,10 +279,290 @@
         },
         "effects": []
     },
+    "Equipment.name-chemical_suit.equipmentCategory-lifesupport": {
+        "name": "Chemical suit",
+        "flags": {
+            "timestamp": "2022-08-17T00:39:50.148167+00:00",
+            "importer_version": 2,
+            "uid": "Equipment.name-chemical_suit.equipmentCategory-lifesupport"
+        },
+        "type": "equipment",
+        "img": "systems/sw5e/packs/Icons/Life%20Support/ChemicalSuit.webp",
+        "data": {
+            "description": {
+                "value": ""
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": 15,
+            "price": 3000,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "chemicalsuit",
+            "activation": {
+                "type": null,
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {},
+            "range": {},
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {},
+            "ability": "",
+            "actionType": "",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {
+                "value": null,
+                "type": "trinket",
+                "dex": null
+            },
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "",
+            "properties": {},
+            "proficient": false,
+            "strength": null,
+            "stealth": false
+        },
+        "effects": []
+    },
+    "Equipment.name-conductive_suit.equipmentCategory-lifesupport": {
+        "name": "Conductive suit",
+        "flags": {
+            "timestamp": "2022-08-17T00:39:50.148167+00:00",
+            "importer_version": 2,
+            "uid": "Equipment.name-conductive_suit.equipmentCategory-lifesupport"
+        },
+        "type": "equipment",
+        "img": "systems/sw5e/packs/Icons/Life%20Support/ConductiveSuit.webp",
+        "data": {
+            "description": {
+                "value": ""
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": null,
+            "price": 3600,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "conductivesuit",
+            "activation": {
+                "type": null,
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {},
+            "range": {},
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {},
+            "ability": "",
+            "actionType": "",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {
+                "value": null,
+                "type": "trinket",
+                "dex": null
+            },
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "",
+            "properties": {},
+            "proficient": false,
+            "strength": null,
+            "stealth": false
+        },
+        "effects": []
+    },
+    "Equipment.name-dampening_suit.equipmentCategory-lifesupport": {
+        "name": "Dampening suit",
+        "flags": {
+            "timestamp": "2022-08-17T00:39:47.7679464+00:00",
+            "importer_version": 2,
+            "uid": "Equipment.name-dampening_suit.equipmentCategory-lifesupport"
+        },
+        "type": "equipment",
+        "img": "systems/sw5e/packs/Icons/Life%20Support/DampeningSuit.webp",
+        "data": {
+            "description": {
+                "value": ""
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": 18,
+            "price": 2500,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "dampeningsuit",
+            "activation": {
+                "type": null,
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {},
+            "range": {},
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {},
+            "ability": "",
+            "actionType": "",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {
+                "value": null,
+                "type": "trinket",
+                "dex": null
+            },
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "",
+            "properties": {},
+            "proficient": false,
+            "strength": null,
+            "stealth": false
+        },
+        "effects": []
+    },
+    "Equipment.name-diving_suit.equipmentCategory-lifesupport": {
+        "name": "Diving suit",
+        "flags": {
+            "timestamp": "2022-08-17T00:39:47.7679464+00:00",
+            "importer_version": 2,
+            "uid": "Equipment.name-diving_suit.equipmentCategory-lifesupport"
+        },
+        "type": "equipment",
+        "img": "systems/sw5e/packs/Icons/Life%20Support/DivingSuit.webp",
+        "data": {
+            "description": {
+                "value": ""
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": null,
+            "price": 2000,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "divingsuit",
+            "activation": {
+                "type": null,
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {},
+            "range": {},
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {},
+            "ability": "",
+            "actionType": "",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {
+                "value": null,
+                "type": "trinket",
+                "dex": null
+            },
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "",
+            "properties": {},
+            "proficient": false,
+            "strength": null,
+            "stealth": false
+        },
+        "effects": []
+    },
     "Equipment.name-emergency_raft.equipmentCategory-lifesupport": {
         "name": "Emergency raft",
         "flags": {
-            "timestamp": "2022-05-14T22:39:59.1071727+00:00",
+            "timestamp": "2022-08-17T00:39:50.148167+00:00",
             "importer_version": 2,
             "uid": "Equipment.name-emergency_raft.equipmentCategory-lifesupport"
         },
@@ -492,7 +632,7 @@
     "Equipment.name-emergency_rations_one_days.equipmentCategory-lifesupport": {
         "name": "Emergency rations (one day's)",
         "flags": {
-            "timestamp": "2022-05-14T22:39:59.1071727+00:00",
+            "timestamp": "2022-08-17T00:39:50.148167+00:00",
             "importer_version": 2,
             "uid": "Equipment.name-emergency_rations_one_days.equipmentCategory-lifesupport"
         },
@@ -559,29 +699,379 @@
         },
         "effects": []
     },
-    "Equipment.name-emergency_shelter.equipmentCategory-lifesupport": {
-        "name": "Emergency shelter",
+    "Equipment.name-flame_proof_suit.equipmentCategory-lifesupport": {
+        "name": "Flame-proof suit",
         "flags": {
-            "timestamp": "2022-05-14T22:39:59.1071727+00:00",
+            "timestamp": "2022-08-17T00:39:47.7689455+00:00",
             "importer_version": 2,
-            "uid": "Equipment.name-emergency_shelter.equipmentCategory-lifesupport"
+            "uid": "Equipment.name-flame_proof_suit.equipmentCategory-lifesupport"
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Life%20Support/EmergencyShelter.webp",
+        "img": "systems/sw5e/packs/Icons/Life%20Support/Flame-ProofSuit.webp",
         "data": {
             "description": {
-                "value": "<p>This shelter comes packed in a 2-foot-long tube. When activated, the shelter deploys, expanding to full size in 1 minute. The shelter is 8 feet long, 8 feet wide, and 6 feet tall, and can house up to six Medium creatures. The shelter includes spikes that automatically mount to the ground, provided they can find purchase. The shelter comes with an integrated power generator, faint glowing lights in the interior which provide dim light, and creatures in the shelter are protected from the elements, including hot and cold climates, as described in chapter 5 of the Dungeon Master's Guide. The shelter's power generator lasts for seven days, after which it stops providing light. The shelter can be collapsed and restored over the course of 10 minutes.</p>"
+                "value": ""
             },
             "requirements": "",
             "source": "EC",
             "quantity": 1,
-            "weight": 15,
-            "price": 600,
+            "weight": 20,
+            "price": 2250,
             "attunement": 0,
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "emergencyshelter",
+            "baseItem": "flame-proofsuit",
+            "activation": {
+                "type": null,
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {},
+            "range": {},
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {},
+            "ability": "",
+            "actionType": "",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {
+                "value": null,
+                "type": "trinket",
+                "dex": null
+            },
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "",
+            "properties": {},
+            "proficient": false,
+            "strength": null,
+            "stealth": false
+        },
+        "effects": []
+    },
+    "Equipment.name-hazard_suit.equipmentCategory-lifesupport": {
+        "name": "Hazard suit",
+        "flags": {
+            "timestamp": "2022-08-17T00:39:47.7689455+00:00",
+            "importer_version": 2,
+            "uid": "Equipment.name-hazard_suit.equipmentCategory-lifesupport"
+        },
+        "type": "equipment",
+        "img": "systems/sw5e/packs/Icons/Life%20Support/HazardSuit.webp",
+        "data": {
+            "description": {
+                "value": ""
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": 24,
+            "price": 1875,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "hazardsuit",
+            "activation": {
+                "type": null,
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {},
+            "range": {},
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {},
+            "ability": "",
+            "actionType": "",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {
+                "value": null,
+                "type": "trinket",
+                "dex": null
+            },
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "",
+            "properties": {},
+            "proficient": false,
+            "strength": null,
+            "stealth": false
+        },
+        "effects": []
+    },
+    "Equipment.name-mind_shielding_suit.equipmentCategory-lifesupport": {
+        "name": "Mind-shielding suit",
+        "flags": {
+            "timestamp": "2022-08-17T00:39:47.7689455+00:00",
+            "importer_version": 2,
+            "uid": "Equipment.name-mind_shielding_suit.equipmentCategory-lifesupport"
+        },
+        "type": "equipment",
+        "img": "systems/sw5e/packs/Icons/Life%20Support/Mind-ShieldingSuit.webp",
+        "data": {
+            "description": {
+                "value": ""
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": 10,
+            "price": 4500,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "mind-shieldingsuit",
+            "activation": {
+                "type": null,
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {},
+            "range": {},
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {},
+            "ability": "",
+            "actionType": "",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {
+                "value": null,
+                "type": "trinket",
+                "dex": null
+            },
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "",
+            "properties": {},
+            "proficient": false,
+            "strength": null,
+            "stealth": false
+        },
+        "effects": []
+    },
+    "Equipment.name-oyxgen_tank.equipmentCategory-lifesupport": {
+        "name": "Oyxgen tank",
+        "flags": {
+            "timestamp": "2022-08-17T00:39:47.7689455+00:00",
+            "importer_version": 2,
+            "uid": "Equipment.name-oyxgen_tank.equipmentCategory-lifesupport"
+        },
+        "type": "equipment",
+        "img": "systems/sw5e/packs/Icons/Life%20Support/OyxgenTank.webp",
+        "data": {
+            "description": {
+                "value": ""
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": 20,
+            "price": 100,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "oyxgentank",
+            "activation": {
+                "type": null,
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {},
+            "range": {},
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {},
+            "ability": "",
+            "actionType": "",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {
+                "value": null,
+                "type": "trinket",
+                "dex": null
+            },
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "",
+            "properties": {},
+            "proficient": false,
+            "strength": null,
+            "stealth": false
+        },
+        "effects": []
+    },
+    "Equipment.name-space_suit.equipmentCategory-lifesupport": {
+        "name": "Space suit",
+        "flags": {
+            "timestamp": "2022-08-17T00:39:47.7689455+00:00",
+            "importer_version": 2,
+            "uid": "Equipment.name-space_suit.equipmentCategory-lifesupport"
+        },
+        "type": "equipment",
+        "img": "systems/sw5e/packs/Icons/Life%20Support/SpaceSuit.webp",
+        "data": {
+            "description": {
+                "value": ""
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": 30,
+            "price": 1500,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "spacesuit",
+            "activation": {
+                "type": null,
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {},
+            "range": {},
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {},
+            "ability": "",
+            "actionType": "",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {
+                "value": null,
+                "type": "trinket",
+                "dex": null
+            },
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "",
+            "properties": {},
+            "proficient": false,
+            "strength": null,
+            "stealth": false
+        },
+        "effects": []
+    },
+    "Equipment.name-stabilizer_suit.equipmentCategory-lifesupport": {
+        "name": "Stabilizer suit",
+        "flags": {
+            "timestamp": "2022-08-17T00:39:47.7689455+00:00",
+            "importer_version": 2,
+            "uid": "Equipment.name-stabilizer_suit.equipmentCategory-lifesupport"
+        },
+        "type": "equipment",
+        "img": "systems/sw5e/packs/Icons/Life%20Support/StabilizerSuit.webp",
+        "data": {
+            "description": {
+                "value": ""
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": 25,
+            "price": 1800,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "stabilizersuit",
             "activation": {
                 "type": null,
                 "cost": 1,

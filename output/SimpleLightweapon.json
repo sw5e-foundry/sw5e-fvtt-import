@@ -2,7 +2,7 @@
     "Weapon.name-lightblade.equipmentCategory-weapon": {
         "name": "Lightblade",
         "flags": {
-            "timestamp": "2022-05-14T22:39:42.1447171+00:00",
+            "timestamp": "2022-08-17T00:39:11.7117474+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-lightblade.equipmentCategory-weapon"
         },
@@ -10,12 +10,12 @@
         "img": "systems/sw5e/packs/Icons/Simple%20Lightweapons/Lightblade.webp",
         "data": {
             "description": {
-                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
             },
             "requirements": "",
             "source": "PHB",
             "quantity": 1,
-            "weight": 1,
+            "weight": null,
             "price": 375,
             "attunement": 0,
             "equipped": false,
@@ -60,7 +60,7 @@
             "damage": {
                 "parts": [
                     [
-                        "1d4 + @mod",
+                        "1d6 + @mod",
                         "energy"
                     ]
                 ],
@@ -79,7 +79,6 @@
             "properties": {
                 "fin": true,
                 "hid": true,
-                "lgt": true,
                 "lum": true,
                 "-=amm": null
             },
@@ -93,7 +92,7 @@
     "Weapon.name-lightclub.equipmentCategory-weapon": {
         "name": "Lightclub",
         "flags": {
-            "timestamp": "2022-05-14T22:39:42.1457177+00:00",
+            "timestamp": "2022-08-17T00:39:11.7117474+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-lightclub.equipmentCategory-weapon"
         },
@@ -101,7 +100,7 @@
         "img": "systems/sw5e/packs/Icons/Simple%20Lightweapons/Lightclub.webp",
         "data": {
             "description": {
-                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (rounded up, minimum of +1).</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
             },
             "requirements": "",
             "source": "PHB",
@@ -184,7 +183,7 @@
     "Weapon.name-lightdagger.equipmentCategory-weapon": {
         "name": "Lightdagger",
         "flags": {
-            "timestamp": "2022-05-14T22:39:42.1457177+00:00",
+            "timestamp": "2022-08-17T00:39:11.7117474+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-lightdagger.equipmentCategory-weapon"
         },
@@ -276,7 +275,7 @@
     "Weapon.name-lightlance.equipmentCategory-weapon": {
         "name": "Lightlance",
         "flags": {
-            "timestamp": "2022-05-14T22:39:42.1457177+00:00",
+            "timestamp": "2022-08-17T00:39:11.7127469+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-lightlance.equipmentCategory-weapon"
         },
@@ -367,7 +366,7 @@
     "Weapon.name-lightsaber.equipmentCategory-weapon": {
         "name": "Lightsaber",
         "flags": {
-            "timestamp": "2022-05-14T22:39:42.1457177+00:00",
+            "timestamp": "2022-08-17T00:39:11.7127469+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-lightsaber.equipmentCategory-weapon"
         },
@@ -457,7 +456,7 @@
     "Weapon.name-sabermace.equipmentCategory-weapon": {
         "name": "Sabermace",
         "flags": {
-            "timestamp": "2022-05-14T22:39:52.2942027+00:00",
+            "timestamp": "2022-08-17T00:39:22.043365+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-sabermace.equipmentCategory-weapon"
         },
@@ -546,100 +545,10 @@
         },
         "effects": []
     },
-    "Weapon.name-saberspear.equipmentCategory-weapon": {
-        "name": "Saberspear",
-        "flags": {
-            "timestamp": "2022-05-14T22:39:42.1457177+00:00",
-            "importer_version": 2,
-            "uid": "Weapon.name-saberspear.equipmentCategory-weapon"
-        },
-        "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Simple%20Lightweapons/Saberspear.webp",
-        "data": {
-            "description": {
-                "value": "<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
-            },
-            "requirements": "",
-            "source": "PHB",
-            "quantity": 1,
-            "weight": 2,
-            "price": 450,
-            "attunement": 0,
-            "equipped": false,
-            "rarity": "",
-            "identified": true,
-            "baseItem": "saberspear",
-            "activation": {
-                "type": "action",
-                "cost": 1,
-                "condition": ""
-            },
-            "duration": {
-                "value": null,
-                "units": ""
-            },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": 20,
-                "long": 60,
-                "units": "ft"
-            },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "ammount": null
-            },
-            "ability": "",
-            "actionType": "mwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
-            "damage": {
-                "parts": [
-                    [
-                        "1d6 + @mod",
-                        "energy"
-                    ]
-                ],
-                "versatile": "2d4 +  @mod"
-            },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "simpleLW",
-            "properties": {
-                "lum": true,
-                "ran": 20,
-                "ver": "2d4",
-                "-=amm": null
-            },
-            "proficient": false,
-            "ammo": {
-                "types": []
-            }
-        },
-        "effects": []
-    },
     "Weapon.name-sicklesaber.equipmentCategory-weapon": {
         "name": "Sicklesaber",
         "flags": {
-            "timestamp": "2022-05-14T22:39:52.2942027+00:00",
+            "timestamp": "2022-08-17T00:39:22.0443648+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-sicklesaber.equipmentCategory-weapon"
         },
@@ -731,7 +640,7 @@
     "Weapon.name-lightbaton.equipmentCategory-weapon": {
         "name": "Lightbaton",
         "flags": {
-            "timestamp": "2022-05-14T22:39:59.0921792+00:00",
+            "timestamp": "2022-08-17T00:39:50.14017+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-lightbaton.equipmentCategory-weapon"
         },
@@ -821,7 +730,7 @@
     "Weapon.name-lightcutlass.equipmentCategory-weapon": {
         "name": "Lightcutlass",
         "flags": {
-            "timestamp": "2022-05-14T22:39:59.0921792+00:00",
+            "timestamp": "2022-08-17T00:39:50.14017+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-lightcutlass.equipmentCategory-weapon"
         },
@@ -908,10 +817,100 @@
         },
         "effects": []
     },
+    "Weapon.name-saberspear.equipmentCategory-weapon": {
+        "name": "Saberspear",
+        "flags": {
+            "timestamp": "2022-08-17T00:39:50.14017+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-saberspear.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Simple%20Lightweapons/Saberspear.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": 2,
+            "price": 450,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "saberspear",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": 20,
+                "long": 60,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d6 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": "2d4 +  @mod"
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "simpleLW",
+            "properties": {
+                "lum": true,
+                "ran": 20,
+                "ver": "2d4",
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
     "Weapon.name-wristsaber.equipmentCategory-weapon": {
         "name": "Wristsaber",
         "flags": {
-            "timestamp": "2022-05-14T22:39:59.0921792+00:00",
+            "timestamp": "2022-08-17T00:39:50.14017+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-wristsaber.equipmentCategory-weapon"
         },

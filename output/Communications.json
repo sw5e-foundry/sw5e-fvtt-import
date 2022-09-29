@@ -2,7 +2,7 @@
     "Loot.name-comm_jammer.equipmentCategory-communications": {
         "name": "Comm jammer",
         "flags": {
-            "timestamp": "2022-05-14T22:39:42.34163+00:00",
+            "timestamp": "2022-08-17T00:39:11.8786925+00:00",
             "importer_version": 2,
             "uid": "Loot.name-comm_jammer.equipmentCategory-communications"
         },
@@ -10,7 +10,7 @@
         "img": "systems/sw5e/packs/Icons/Communications/CommJammer.webp",
         "data": {
             "description": {
-                "value": "<p>A comm jammer is a device used to scramble communications. A comm jammer can block transmissions from unenhanced communications devices in a 100 foot radius.</p>"
+                "value": "<p>A device used to scramble and block transmissions from communications devices in a 300 foot radius. The device can be activated or deactivated as an action. Any creature sending incoming or outgoing communications within range must succeed on a DC 15 Intelligence (Technology) check. On a failure, their communications are jammed until the comm jammer is deactivated or they move out of its range. The comm jammer lasts for 1 hour and can be recharged by connecting to a power source or by replacing the power cell.</p>"
             },
             "requirements": "",
             "source": "PHB",
@@ -23,7 +23,7 @@
             "identified": true,
             "baseItem": "commjammer",
             "activation": {
-                "type": null,
+                "type": "action",
                 "cost": 1,
                 "condition": ""
             },
@@ -66,7 +66,7 @@
     "Loot.name-commlink.equipmentCategory-communications": {
         "name": "Commlink",
         "flags": {
-            "timestamp": "2022-05-14T22:39:42.34163+00:00",
+            "timestamp": "2022-08-17T00:39:11.8786925+00:00",
             "importer_version": 2,
             "uid": "Loot.name-commlink.equipmentCategory-communications"
         },
@@ -74,7 +74,7 @@
         "img": "systems/sw5e/packs/Icons/Communications/Commlink.webp",
         "data": {
             "description": {
-                "value": "<p>Commlinks are standard handheld communication devices, fitted with microphones and receivers. Standard, personal commlinks have a range of up to 30 miles, but are reduced in dense, urban areas or areas of high level interference.</p>"
+                "value": "<p>commlinks are simple handheld communication devices, fitted with microphones and receivers. Basic, personal commlinks have a range of up to 30 miles, but are reduced in dense, urban areas or areas of high level interference. The commlink lasts for 10 hours and can be recharged by connecting to a power source or by replacing the power cell.</p>"
             },
             "requirements": "",
             "source": "PHB",
@@ -127,18 +127,18 @@
         },
         "effects": []
     },
-    "Loot.name-headcomm.equipmentCategory-communications": {
-        "name": "Headcomm",
+    "Loot.name-commlink_hands_free.equipmentCategory-communications": {
+        "name": "Commlink, hands-free",
         "flags": {
-            "timestamp": "2022-05-14T22:39:42.34163+00:00",
+            "timestamp": "2022-08-17T00:39:11.8786925+00:00",
             "importer_version": 2,
-            "uid": "Loot.name-headcomm.equipmentCategory-communications"
+            "uid": "Loot.name-commlink_hands_free.equipmentCategory-communications"
         },
         "type": "loot",
-        "img": "systems/sw5e/packs/Icons/Communications/Headcomm.webp",
+        "img": "systems/sw5e/packs/Icons/Communications/Commlink-Hands-Free.webp",
         "data": {
             "description": {
-                "value": "<p>A headcomm can be installed in a helmet or worn independently. It functions as a hands-free commlink.</p>"
+                "value": "<p>A hands-free commlink functions as a commlink, but can be installed in a helmet or worn independently, such as on your head or ear.</p>"
             },
             "requirements": "",
             "source": "PHB",
@@ -149,7 +149,7 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "headcomm",
+            "baseItem": "commlink,hands-free",
             "activation": {
                 "type": null,
                 "cost": 1,
@@ -194,7 +194,7 @@
     "Loot.name-holocomm.equipmentCategory-communications": {
         "name": "Holocomm",
         "flags": {
-            "timestamp": "2022-05-14T22:39:42.34163+00:00",
+            "timestamp": "2022-08-17T00:39:11.8786925+00:00",
             "importer_version": 2,
             "uid": "Loot.name-holocomm.equipmentCategory-communications"
         },
@@ -258,7 +258,7 @@
     "Loot.name-holotrace_device.equipmentCategory-communications": {
         "name": "Holotrace device",
         "flags": {
-            "timestamp": "2022-05-14T22:39:42.34163+00:00",
+            "timestamp": "2022-08-17T00:39:11.8786925+00:00",
             "importer_version": 2,
             "uid": "Loot.name-holotrace_device.equipmentCategory-communications"
         },
@@ -322,7 +322,7 @@
     "Loot.name-personal_translator.equipmentCategory-communications": {
         "name": "Personal translator",
         "flags": {
-            "timestamp": "2022-05-14T22:39:52.1322743+00:00",
+            "timestamp": "2022-08-17T00:39:21.3385956+00:00",
             "importer_version": 2,
             "uid": "Loot.name-personal_translator.equipmentCategory-communications"
         },
@@ -386,7 +386,7 @@
     "Loot.name-pocket_scrambler.equipmentCategory-communications": {
         "name": "Pocket scrambler",
         "flags": {
-            "timestamp": "2022-05-14T22:39:42.3426295+00:00",
+            "timestamp": "2022-08-17T00:39:11.8786925+00:00",
             "importer_version": 2,
             "uid": "Loot.name-pocket_scrambler.equipmentCategory-communications"
         },
@@ -450,7 +450,7 @@
     "Loot.name-vocoder_mask.equipmentCategory-communications": {
         "name": "Vocoder mask",
         "flags": {
-            "timestamp": "2022-05-14T22:39:52.1322743+00:00",
+            "timestamp": "2022-08-17T00:39:21.3385956+00:00",
             "importer_version": 2,
             "uid": "Loot.name-vocoder_mask.equipmentCategory-communications"
         },
