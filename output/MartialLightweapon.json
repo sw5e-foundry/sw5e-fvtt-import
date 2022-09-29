@@ -1,0 +1,3011 @@
+{
+    "Weapon.name-bitesaber.equipmentCategory-weapon": {
+        "name": "Bitesaber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:52.2942027+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-bitesaber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Bitesaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Biting 13</h3>\n<p>This weapon's damage becomes acid. Additionally, when you would make a melee weapon attack with a weapon with the biting property, you can instead force the target to make a Constitution saving throw (DC = 8 + your bonus to attacks with the weapon, or the biting number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the first attack it makes before the end of its next turn has disadvantage. If damage dealt by this weapon reduces a creature to 0 hit points, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing and carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+            },
+            "requirements": "",
+            "source": "WH",
+            "quantity": 1,
+            "weight": null,
+            "price": 1800,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "bitesaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d6 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": "2d4 +  @mod"
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "bit": 13,
+                "hid": true,
+                "lum": true,
+                "ver": "2d4",
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-blightsaber.equipmentCategory-weapon": {
+        "name": "Blightsaber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:52.2952018+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-blightsaber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Blightsaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Corruption 13</h3>\n<p>This weapon's damage becomes necrotic, and it loses the luminous property if it has it. Additionally, when you would make a melee weapon attack with a weapon with the corruption property, you can instead force the target to make a Wisdom saving throw (DC = 8 + your bonus to attacks with the weapon, or the corruption number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature cannot regain hit points until the start of your next turn.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+            },
+            "requirements": "",
+            "source": "WH",
+            "quantity": 1,
+            "weight": null,
+            "price": 1800,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "blightsaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d6 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": "2d4 +  @mod"
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "cor": 13,
+                "hid": true,
+                "lum": true,
+                "ver": "2d4",
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-brightsaber.equipmentCategory-weapon": {
+        "name": "Brightsaber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:52.2952018+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-brightsaber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Brightsaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Bright 13</h3>\n<p>This weapon's damage becomes fire, and its luminous property sheds bright light in a 5-foot radius and dim light for an additional 5 feet while activated, instead of only dim light in a 5-foot radius. Additionally, when you would make a melee weapon attack with a weapon with the bright property, you can instead force the target to make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon, or the bright number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature takes additional damage of the same type at the start of its next turn equal to your governing ability modifier.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+            },
+            "requirements": "",
+            "source": "WH",
+            "quantity": 1,
+            "weight": null,
+            "price": 1800,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "brightsaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d6 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": "2d4 +  @mod"
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "bri": 13,
+                "hid": true,
+                "lum": true,
+                "ver": "2d4",
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-broadsaber.equipmentCategory-weapon": {
+        "name": "Broadsaber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:52.2952018+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-broadsaber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Broadsaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 1d8]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+            },
+            "requirements": "",
+            "source": "WH",
+            "quantity": 1,
+            "weight": null,
+            "price": 1000,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "broadsaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "2d4 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": "1d8 +  @mod"
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 13,
+                "dir": 1,
+                "lum": true,
+                "ver": "1d8",
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-buster_saber.equipmentCategory-weapon": {
+        "name": "Buster saber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:52.2952018+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-buster_saber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/BusterSaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Brutal 1</h3>\n<p>When you score a critical hit with a weapon with the brutal property, you roll a number of additional weapon damage dice equal to the brutal number.</p>\n<h3>Dexterity 19</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (rounded up, minimum of +1).</p>\n<h3>Keen 1</h3>\n<p>When you make a weapon attack with a weapon with the keen property, the critical hit range increases by an amount equal to the keen number.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+            },
+            "requirements": "",
+            "source": "WH",
+            "quantity": 1,
+            "weight": null,
+            "price": 2900,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "bustersaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": 10,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d12 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "bru": 1,
+                "dex": 19,
+                "hvy": true,
+                "ken": 1,
+                "lum": true,
+                "rch": true,
+                "two": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-crossguard_saber.equipmentCategory-weapon": {
+        "name": "Crossguard saber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:52.2962018+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-crossguard_saber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/CrossguardSaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Defensive 1</h3>\n<p>When you make your first attack on your turn with a weapon with the defensive property, you can choose to suffer a penalty to attack and damage rolls with that weapon up to the defensive number. If you do so, you gain the same bonus to AC. These effects last until the start of your next turn, as long as you're holding the weapon.</p>\n<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (rounded up, minimum of +1).</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 1d10]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+            },
+            "requirements": "",
+            "source": "WH",
+            "quantity": 1,
+            "weight": null,
+            "price": 725,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "crossguardsaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d8 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": "1d10 +  @mod"
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "def": 1,
+                "dex": 13,
+                "hvy": true,
+                "lum": true,
+                "ver": "1d10",
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-doublesaber.equipmentCategory-weapon": {
+        "name": "Doublesaber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:42.1467166+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-doublesaber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Doublesaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Double ([[/r 1d8]] energy)</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with Double-Weapon Fighting. See the rules for Double-Weapon Fighting in chapter 9.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+            },
+            "requirements": "",
+            "source": "PHB",
+            "quantity": 1,
+            "weight": null,
+            "price": 725,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "doublesaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d8 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dou": "1d8 energy",
+                "fin": true,
+                "lum": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-doubleshoto.equipmentCategory-weapon": {
+        "name": "Doubleshoto",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:42.1467166+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-doubleshoto.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Doubleshoto.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Double ([[/r 1d6]] energy)</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with Double-Weapon Fighting. See the rules for Double-Weapon Fighting in chapter 9.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+            },
+            "requirements": "",
+            "source": "PHB",
+            "quantity": 1,
+            "weight": null,
+            "price": 700,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "doubleshoto",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d6 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dou": "1d6 energy",
+                "fin": true,
+                "lgt": true,
+                "lum": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-dual_phase_saber.equipmentCategory-weapon": {
+        "name": "Dual-phase saber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:52.2962018+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-dual_phase_saber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Dual-PhaseSaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 1d12]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>\n<h3>Vicious 1</h3>\n<p>Whenever you deal damage with a weapon with the vicious property and roll the maximum on a weapon damage die, you gain a bonus to damage equal to the vicious number.</p>"
+            },
+            "requirements": "",
+            "source": "WH",
+            "quantity": 1,
+            "weight": 3,
+            "price": 1250,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "dual-phasesaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "2d4 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": "1d12 +  @mod"
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 13,
+                "hid": true,
+                "lum": true,
+                "ver": "1d12",
+                "vic": 1,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-greatsaber.equipmentCategory-weapon": {
+        "name": "Greatsaber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:42.1467166+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-greatsaber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Greatsaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+            },
+            "requirements": "",
+            "source": "PHB",
+            "quantity": 1,
+            "weight": null,
+            "price": 1725,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "greatsaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "2d6 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 11,
+                "lum": true,
+                "two": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-guard_shoto.equipmentCategory-weapon": {
+        "name": "Guard shoto",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:52.2962018+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-guard_shoto.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/GuardShoto.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Defensive 1</h3>\n<p>When you make your first attack on your turn with a weapon with the defensive property, you can choose to suffer a penalty to attack and damage rolls with that weapon up to the defensive number. If you do so, you gain the same bonus to AC. These effects last until the start of your next turn, as long as you're holding the weapon.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light luminous</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
+            },
+            "requirements": "",
+            "source": "WH",
+            "quantity": 1,
+            "weight": null,
+            "price": 375,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "guardshoto",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d4 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "def": 1,
+                "fin": true,
+                "hid": true,
+                "lgt": true,
+                "lum": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-lightaxe.equipmentCategory-weapon": {
+        "name": "Lightaxe",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:42.1467166+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-lightaxe.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Lightaxe.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (rounded up, minimum of +1).</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+            },
+            "requirements": "",
+            "source": "PHB",
+            "quantity": 1,
+            "weight": null,
+            "price": 1550,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "lightaxe",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d12 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 11,
+                "hvy": true,
+                "lum": true,
+                "two": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-lightfoil.equipmentCategory-weapon": {
+        "name": "Lightfoil",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:42.1477165+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-lightfoil.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Lightfoil.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+            },
+            "requirements": "",
+            "source": "PHB",
+            "quantity": 1,
+            "weight": null,
+            "price": 475,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "lightfoil",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d8 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "fin": true,
+                "hid": true,
+                "lum": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-lightglaive.equipmentCategory-weapon": {
+        "name": "Lightglaive",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:52.2962018+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-lightglaive.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Lightglaive.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Brutal 1</h3>\n<p>When you score a critical hit with a weapon with the brutal property, you roll a number of additional weapon damage dice equal to the brutal number.</p>\n<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+            },
+            "requirements": "",
+            "source": "WH",
+            "quantity": 1,
+            "weight": null,
+            "price": 2050,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "lightglaive",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": 10,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d10 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "bru": 1,
+                "dex": 13,
+                "lum": true,
+                "rch": true,
+                "two": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-lightkatana.equipmentCategory-weapon": {
+        "name": "Lightkatana",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:52.2962018+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-lightkatana.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Lightkatana.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Piercing 1</h3>\n<p>Before you make a weapon attack with a weapon with the piercing property, you can choose to gain a bonus to the attack roll up to the piercing number. If you do so and you hit with it, you suffer an equivalent penalty to the damage roll.</p>\n<h3>Versatile ([[/r 1d10]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+            },
+            "requirements": "",
+            "source": "WH",
+            "quantity": 1,
+            "weight": null,
+            "price": 925,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "lightkatana",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d8 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": "1d10 +  @mod"
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 11,
+                "hid": true,
+                "lum": true,
+                "pic": 1,
+                "ver": "1d10",
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-lightnodachi.equipmentCategory-weapon": {
+        "name": "Lightnodachi",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:52.297201+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-lightnodachi.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Lightnodachi.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 17</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Piercing 1</h3>\n<p>Before you make a weapon attack with a weapon with the piercing property, you can choose to gain a bonus to the attack roll up to the piercing number. If you do so and you hit with it, you suffer an equivalent penalty to the damage roll.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>\n<h3>Vicious 1</h3>\n<p>Whenever you deal damage with a weapon with the vicious property and roll the maximum on a weapon damage die, you gain a bonus to damage equal to the vicious number.</p>"
+            },
+            "requirements": "",
+            "source": "WH",
+            "quantity": 1,
+            "weight": null,
+            "price": 3050,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "lightnodachi",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "3d4 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 17,
+                "lum": true,
+                "pic": 1,
+                "two": true,
+                "vic": 1,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-martial_lightsaber.equipmentCategory-weapon": {
+        "name": "Martial lightsaber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:42.1477165+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-martial_lightsaber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/MartialLightsaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 1d10]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+            },
+            "requirements": "",
+            "source": "PHB",
+            "quantity": 1,
+            "weight": null,
+            "price": 550,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "martiallightsaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d8 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": "1d10 +  @mod"
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "hid": true,
+                "lum": true,
+                "ver": "1d10",
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-pikesaber.equipmentCategory-weapon": {
+        "name": "Pikesaber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:42.1477165+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-pikesaber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Pikesaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+            },
+            "requirements": "",
+            "source": "PHB",
+            "quantity": 1,
+            "weight": null,
+            "price": 1675,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "pikesaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": 10,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d10 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 11,
+                "lum": true,
+                "rch": true,
+                "two": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-saberwhip.equipmentCategory-weapon": {
+        "name": "Saberwhip",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:42.1477165+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-saberwhip.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Saberwhip.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>"
+            },
+            "requirements": "",
+            "source": "PHB",
+            "quantity": 1,
+            "weight": null,
+            "price": 750,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "saberwhip",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": 10,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d4 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "fin": true,
+                "hid": true,
+                "lum": true,
+                "rch": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-shotosaber.equipmentCategory-weapon": {
+        "name": "Shotosaber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:42.1487152+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-shotosaber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Shotosaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+            },
+            "requirements": "",
+            "source": "PHB",
+            "quantity": 1,
+            "weight": 1,
+            "price": 450,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "shotosaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d6 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "fin": true,
+                "hid": true,
+                "lgt": true,
+                "lum": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-sith_saber.equipmentCategory-weapon": {
+        "name": "Sith Saber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:52.297201+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-sith_saber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/SithSaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Keen 1</h3>\n<p>When you make a weapon attack with a weapon with the keen property, the critical hit range increases by an amount equal to the keen number.</p>\n<h3>Versatile ([[/r 1d10]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+            },
+            "requirements": "",
+            "source": "WH",
+            "quantity": 1,
+            "weight": null,
+            "price": 925,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "sithsaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "2d4 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": "1d10 +  @mod"
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 11,
+                "hid": true,
+                "ken": 1,
+                "ver": "1d10",
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-splitsaber.equipmentCategory-weapon": {
+        "name": "Splitsaber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:42.1487152+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-splitsaber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Splitsaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Double ([[/r 1d8]] energy)</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with Double-Weapon Fighting. See the rules for Double-Weapon Fighting in chapter 9.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+            },
+            "requirements": "",
+            "source": "PHB",
+            "quantity": 1,
+            "weight": 2,
+            "price": 1150,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "splitsaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d8 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dou": "1d8 energy",
+                "lgt": true,
+                "lum": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-warsaber.equipmentCategory-weapon": {
+        "name": "Warsaber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:52.297201+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-warsaber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Warsaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 15</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\nReckless 1\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>\n<h3>Vicious 1</h3>\n<p>Whenever you deal damage with a weapon with the vicious property and roll the maximum on a weapon damage die, you gain a bonus to damage equal to the vicious number.</p>"
+            },
+            "requirements": "",
+            "source": "WH",
+            "quantity": 1,
+            "weight": null,
+            "price": 2175,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "warsaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "2d6 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 15,
+                "rck": 1,
+                "two": true,
+                "vic": 1,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-chained_lightdagger.equipmentCategory-weapon": {
+        "name": "Chained lightdagger",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:59.0921792+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-chained_lightdagger.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/ChainedLightdagger.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Disarming</h3>\n<p>When you score a critical hit with a weapon with the disarming property against a creature that is holding an object, you can attempt to disarm the target (no action required). If the target is no more than one size larger than you (your size or smaller if your weapon has the light property), it must succeed on a Strength saving throw (DC = 8 + your bonus to attacks with the weapon) or it drops an object of your choice at its feet.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>"
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": null,
+            "price": 800,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "chainedlightdagger",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": 10,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d4 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "drm": true,
+                "fin": true,
+                "lum": true,
+                "rch": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-claymore_saber.equipmentCategory-weapon": {
+        "name": "Claymore saber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:59.0931785+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-claymore_saber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/ClaymoreSaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": null,
+            "price": 2300,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "claymoresaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "3d4 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 13,
+                "lum": true,
+                "two": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-cross_saber.equipmentCategory-weapon": {
+        "name": "Cross saber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:59.0931785+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-cross_saber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/CrossSaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 15</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Double ([[/r 2d4]] energy)</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with Double-Weapon Fighting. See the rules for Double-Weapon Fighting in chapter 9.</p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (rounded up, minimum of +1).</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>"
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": null,
+            "price": 1650,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "crosssaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": 10,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "2d4 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 15,
+                "dou": "2d4 energy",
+                "hvy": true,
+                "lum": true,
+                "rch": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-lightfist.equipmentCategory-weapon": {
+        "name": "Lightfist",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:59.0931785+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-lightfist.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Lightfist.webp",
+        "data": {
+            "description": {
+                "value": "Disguised\n<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": null,
+            "price": 650,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "lightfist",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d4 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dgd": true,
+                "dpt": true,
+                "fix": true,
+                "lgt": true,
+                "lum": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-light_ring.equipmentCategory-weapon": {
+        "name": "Light ring",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:59.0931785+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-light_ring.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/LightRing.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Returning </h3>\n<p>When you throw a weapon with this property, it automatically returns to your hand after the attack is complete, whether you hit or miss.</p>\n<h3>Thrown (range 25/75)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": 2,
+            "price": 575,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "lightring",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": 25,
+                "long": 75,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d6 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "fin": true,
+                "hid": true,
+                "lum": true,
+                "ret": true,
+                "ran": 25,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-lightsaber_pike.equipmentCategory-weapon": {
+        "name": "Lightsaber pike",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:59.0941777+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-lightsaber_pike.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/LightsaberPike.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Double ([[/r 1d8]] energy)</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with Double-Weapon Fighting. See the rules for Double-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>"
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": null,
+            "price": 1175,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "lightsaberpike",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": 10,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d8 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 11,
+                "dou": "1d8 energy",
+                "lum": true,
+                "rch": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-phase_knife.equipmentCategory-weapon": {
+        "name": "Phase knife",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:59.0941777+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-phase_knife.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/PhaseKnife.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Disguised</h3>\n<p>You have advantage on Charisma (Deception) checks made to hide the nature of a weapon with this property.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Keen 1</h3>\n<p>When you make a weapon attack with a weapon with the keen property, the critical hit range increases by an amount equal to the keen number.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Vicious</h3>\n<p>Whenever you deal damage with a weapon with the vicious property and roll the maximum on a weapon damage die, you gain a bonus to damage equal to the vicious number.</p>"
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": null,
+            "price": 1025,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "phaseknife",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d4 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 11,
+                "dgd": true,
+                "hid": true,
+                "ken": 1,
+                "lgt": true,
+                "lum": true,
+                "vic": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-retrosaber.equipmentCategory-weapon": {
+        "name": "Retrosaber",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:59.0941777+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-retrosaber.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Retrosaber.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\nReckless 1\n<h3>Versatile ([[/r 1d10]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": 3,
+            "price": 950,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "retrosaber",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d8 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": "1d10 +  @mod"
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "dex": 13,
+                "dir": 1,
+                "rck": 1,
+                "ver": "1d10",
+                "pcl": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-saberaxe.equipmentCategory-weapon": {
+        "name": "Saberaxe",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:59.0941777+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-saberaxe.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/Saberaxe.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": 1,
+            "price": 600,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "saberaxe",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "2d4 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "lum": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
+    "Weapon.name-saber_gauntlet.equipmentCategory-weapon": {
+        "name": "Saber gauntlet",
+        "flags": {
+            "timestamp": "2022-05-14T22:39:59.0951776+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-saber_gauntlet.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Martial%20Lightweapons/SaberGauntlet.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+            },
+            "requirements": "",
+            "source": "EC",
+            "quantity": 1,
+            "weight": null,
+            "price": 475,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "sabergauntlet",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "1d8 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
+            "properties": {
+                "fin": true,
+                "fix": true,
+                "lum": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    }
+}

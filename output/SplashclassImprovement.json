@@ -1,0 +1,560 @@
+{
+    "SplashclassImprovement.name-berserker": {
+        "name": "Splashclass Improvement (Berserker)",
+        "flags": {
+            "timestamp": "2022-05-29T01:36:54.399322+00:00",
+            "importer_version": 2,
+            "uid": "SplashclassImprovement.name-berserker"
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Classes/Berserker.webp",
+        "data": {
+            "description": {
+                "value": "<p>On your turn, you can enter a rage as a bonus action if you aren't wearing heavy armor.</p>\n<p>While raging, you gain the following benefits:</p>\n<ul>\n<li>You have advantage on Strength checks and Strength saving throws.</li>\n<li>When you make a melee weapon attack using Strength, you gain a +2 bonus to the damage roll.</li>\n<li>You have resistance to kinetic and energy damage.</li>\n</ul>\n<p>If you are able to cast powers, you can't cast them or concentrate on them while raging.</p>\n<p>Your rage lasts for 1 minute. It ends early if you are knocked unconscious, you don heavy armor, or if your turn ends and you haven't taken a hostile action or taken damage since your last turn. You can also end your rage on your turn as a bonus action.</p>\n<p>You can use this feature once. You gain an additional use at 11th level. You regain all expended uses when you complete a long rest.</p>"
+            },
+            "requirements": "No levels in berserker",
+            "source": "EC",
+            "activation": {
+                "type": "bonus",
+                "cost": 1
+            },
+            "duration": {
+                "value": "1",
+                "units": "minute"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": 1,
+                "per": "lr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            }
+        },
+        "effects": []
+    },
+    "SplashclassImprovement.name-consular": {
+        "name": "Splashclass Improvement (Consular)",
+        "flags": {
+            "timestamp": "2022-05-29T01:36:54.399322+00:00",
+            "importer_version": 2,
+            "uid": "SplashclassImprovement.name-consular"
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Classes/Consular.webp",
+        "data": {
+            "description": {
+                "value": "<p>You gain the ability to twist your powers to suit your needs. When you cast a force power, you can expend additional force points to modify the power. You gain one of the Force-Empowered Casting options of your choice from those available to the consular class. You gain an additional option at 11th level.</p>\n<p>You can only spend a number of force points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest.</p>"
+            },
+            "requirements": "No levels in consular, the ability to cast force powers",
+            "source": "EC",
+            "activation": {
+                "type": "special",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": "@attributes.prof",
+                "per": "lr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            }
+        },
+        "effects": []
+    },
+    "SplashclassImprovement.name-engineer": {
+        "name": "Splashclass Improvement (Engineer)",
+        "flags": {
+            "timestamp": "2022-05-29T01:36:54.399322+00:00",
+            "importer_version": 2,
+            "uid": "SplashclassImprovement.name-engineer"
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Classes/Engineer.webp",
+        "data": {
+            "description": {
+                "value": "<p>Your technological experience lends you an uncommon insight that you can use to bolster your allies. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Potent Aptitude die, a [[/r d4]]. </p>\n<p>Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the [[/r d20]] before deciding to use the Potent Aptitude die, but must decide before the GM says whether the roll succeeds or fails. Once the Potent Aptitude die is rolled, it is lost.</p>\n<p>A creature can have only one Potent Aptitude die at a time.</p>\n<p>You can use this feature a number of times equal to your proficiency bonus. You regain any expended uses when you finish a long rest.</p>"
+            },
+            "requirements": "No levels in engineer",
+            "source": "EC",
+            "activation": {
+                "type": "bonus",
+                "cost": 1
+            },
+            "duration": {
+                "value": "10",
+                "units": "minute"
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "creature"
+            },
+            "range": {
+                "value": "60",
+                "unit": "feet"
+            },
+            "uses": {
+                "value": null,
+                "max": "@attributes.prof",
+                "per": "lr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [
+                    [
+                        "1d4",
+                        ""
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            }
+        },
+        "effects": []
+    },
+    "SplashclassImprovement.name-fighter": {
+        "name": "Splashclass Improvement (Fighter)",
+        "flags": {
+            "timestamp": "2022-05-29T01:36:54.399322+00:00",
+            "importer_version": 2,
+            "uid": "SplashclassImprovement.name-fighter"
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Classes/Fighter.webp",
+        "data": {
+            "description": {
+                "value": "<p>You learn maneuvers that are fueled by special dice called superiority dice.</p>\n<p><strong><em>Maneuvers.</strong></em> You learn one maneuver of your choice from those available to the fighter class. You learn an additional maneuver at 11th level. Many maneuvers enhance an attack in some way. You can use only one maneuver per attack, and you may only use each maneuver once per turn.</p>\n<p><strong><em>Superiority Dice.</strong></em> You have a number of superiority dice equal to your proficiency bonus, which are d4s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a long rest.</p>\n<p><strong><em>Saving Throws.</strong></em> Some of your maneuvers require your target to make a saving throw to resist the maneuver's effects. The saving throw DC is calculated as follows:</p>\n<p><em></em>_</p>\n<p><strong>Maneuver save DC</strong> = 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice)</p>\n<p><em></em>_</p>"
+            },
+            "requirements": "No levels in fighter",
+            "source": "EC",
+            "activation": {
+                "type": "special",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": "@attributes.prof",
+                "per": "lr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [
+                    [
+                        "1d4",
+                        ""
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            }
+        },
+        "effects": []
+    },
+    "SplashclassImprovement.name-guardian": {
+        "name": "Splashclass Improvement (Guardian)",
+        "flags": {
+            "timestamp": "2022-05-29T01:36:54.399322+00:00",
+            "importer_version": 2,
+            "uid": "SplashclassImprovement.name-guardian"
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Classes/Guardian.webp",
+        "data": {
+            "description": {
+                "value": "<p>When you hit a creature with a melee weapon attack, you can expend force points to deal additional damage to the target, which is the same type as the weapon's damage. The additional damage is [[/r 1d8]] for each point spent in this way. You can't deal more than [[/r 2d8]] additional damage per hit in this way.</p>\n<p>You can only spend a number of force points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest.</p>"
+            },
+            "requirements": "No levels in guardian, the ability to cast force powers",
+            "source": "EC",
+            "activation": {
+                "type": "special",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": "@attributes.prof",
+                "per": "lr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [
+                    [
+                        "1d8",
+                        ""
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            }
+        },
+        "effects": []
+    },
+    "SplashclassImprovement.name-monk": {
+        "name": "Splashclass Improvement (Monk)",
+        "flags": {
+            "timestamp": "2022-05-29T01:36:54.399322+00:00",
+            "importer_version": 2,
+            "uid": "SplashclassImprovement.name-monk"
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Classes/Monk.webp",
+        "data": {
+            "description": {
+                "value": "<p>Your practice of martial arts grants you the following benefits:</p>\n<ul>\n<li>You can make an unarmed strike as a bonus action. If you would already make an unarmed strike as a bonus action, you can instead make this strike in addition to that unarmed strike.</li>\n<li>You can take the Disengage action as a bonus action. If you would already Disengage as a bonus action, you can instead also Dodge.</li>\n<li>You can take the Dash action as a bonus action. If you would already Dash as a bonus action, you can instead double your jump distance for the turn.</li>\n</ul>\n<p>You can use these features a combined number of times equal to your proficiency bonus. You regain all expended uses when you complete a long rest.</p>"
+            },
+            "requirements": "No levels in monk",
+            "source": "EC",
+            "activation": {
+                "type": "bonus",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": "@attributes.prof",
+                "per": "lr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            }
+        },
+        "effects": []
+    },
+    "SplashclassImprovement.name-operative": {
+        "name": "Splashclass Improvement (Operative)",
+        "flags": {
+            "timestamp": "2022-05-29T01:36:54.4003217+00:00",
+            "importer_version": 2,
+            "uid": "SplashclassImprovement.name-operative"
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Classes/Operative.webp",
+        "data": {
+            "description": {
+                "value": "<p>You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra [[/r 1d6]] damage to one creature you hit with a weapon attack if you have advantage on the attack roll. This damage is the same as the weapon's damage, and the attack must use a finesse or a ranged weapon.</p>\n<p>You don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.</p>\n<p>You can deal this additional damage a number of times equal to your proficiency bonus. You regain all expended uses when you complete a long rest.</p>"
+            },
+            "requirements": "No levels in operative",
+            "source": "EC",
+            "activation": {
+                "type": "special",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": "5",
+                "unit": "feet"
+            },
+            "uses": {
+                "value": null,
+                "max": "@attributes.prof",
+                "per": "lr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [
+                    [
+                        "1d6",
+                        ""
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            }
+        },
+        "effects": []
+    },
+    "SplashclassImprovement.name-scholar": {
+        "name": "Splashclass Improvement (Scholar)",
+        "flags": {
+            "timestamp": "2022-05-29T01:36:54.4003217+00:00",
+            "importer_version": 2,
+            "uid": "SplashclassImprovement.name-scholar"
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Classes/Scholar.webp",
+        "data": {
+            "description": {
+                "value": "<p>You are able to analyze a target, develop a plan on how to best overcome any potential obstacle, and execute that plan with ruthless efficiency. As a bonus action on your turn, you can analyze a target you can see within 60 feet of you. For the next minute, or until you analyze another target, you gain the following benefits:</p>\n<ul>\n<li>When you analyze a hostile creature, your attack and damage rolls made with weapons with the finesse property or blaster weapons against that target may use your Intelligence modifier instead of Strength or Dexterity.</li>\n<li>When you analyze a friendly creature, the target can end your Critical Analysis on them (no action required) to add your Intelligence modifier to one attack roll, ability check, or saving throw. Once a friendly creature has benefited from this ability, they can not do so again until they complete a short or long rest.</li>\n</ul>\n<p>You can use this feature a number of times equal to half your proficiency bonus, rounded up. You regain all expended uses when you complete a long rest.</p>"
+            },
+            "requirements": "No levels in scholar",
+            "source": "EC",
+            "activation": {
+                "type": "bonus",
+                "cost": 1
+            },
+            "duration": {
+                "value": 1,
+                "units": "minute"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": "60",
+                "unit": "feet"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            }
+        },
+        "effects": []
+    },
+    "SplashclassImprovement.name-scout": {
+        "name": "Splashclass Improvement (Scout)",
+        "flags": {
+            "timestamp": "2022-05-29T01:36:54.4003217+00:00",
+            "importer_version": 2,
+            "uid": "SplashclassImprovement.name-scout"
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Classes/Scout.webp",
+        "data": {
+            "description": {
+                "value": "<p>You learn how to effectively read and track your prey. Once on each of your turns, you can choose a creature you can see within 120 feet and mark it as your quarry (no action required). For the next hour, you gain the following benefits:</p>\n<ul>\n<li>Once per turn, when you hit the target with a weapon attack, you can deal [[/r 1d4]] additional damage to it of the same type as the weapon's damage. </li>\n<li>You have advantage on any Wisdom (Perception) or Wisdom (Survival) check you make to find it while it's on the same planet as you.</li>\n</ul>\n<p>You can only have one creature marked in this way at a time. You can mark creatures in this way a number of times equal to half your proficiency bonus, rounded up. You regain all expended uses when you complete a long rest.</p>"
+            },
+            "requirements": "No levels in scout",
+            "source": "EC",
+            "activation": {
+                "type": "special",
+                "cost": 1
+            },
+            "duration": {
+                "value": 1,
+                "units": "hour"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": "120",
+                "unit": "feet"
+            },
+            "uses": {
+                "value": null,
+                "max": "round(@attributes.prof/2)",
+                "per": "lr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [
+                    [
+                        "1d4",
+                        "additional"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            }
+        },
+        "effects": []
+    },
+    "SplashclassImprovement.name-sentinel": {
+        "name": "Splashclass Improvement (Sentinel)",
+        "flags": {
+            "timestamp": "2022-05-29T01:36:54.4003217+00:00",
+            "importer_version": 2,
+            "uid": "SplashclassImprovement.name-sentinel"
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Classes/Sentinel.webp",
+        "data": {
+            "description": {
+                "value": "<p>When you hit a creature with a melee weapon attack, you can spend 1 force point to use a Force-Empowered Self effect. You have three such effects: Deflection, Double Strike, and Slow Time. You can only use each effect once per turn, and you can only use one effect per hit.</p>\n<p><strong><em>Deflection.</strong></em> You can roll a [[/r d4]] and add it to your AC against one attack before the start of your next turn.</p>\n<p><strong><em>Double Strike.</strong></em> You can roll a [[/r d4]] and deal additional damage of the same type equal to the amount rolled.</p>\n<p><strong><em>Slow Time.</strong></em> You can roll a [[/r d4]] to increase your speed by 5 x the amount rolled until the end of your turn.</p>\n<p>You can only spend a number of force points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest.</p>"
+            },
+            "requirements": "No levels in sentinel, the ability to cast force powers",
+            "source": "EC",
+            "activation": {
+                "type": "special",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": "@attributes.prof",
+                "per": "lr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [
+                    [
+                        "1d4",
+                        ""
+                    ],
+                    [
+                        "1d4",
+                        ""
+                    ],
+                    [
+                        "1d4",
+                        ""
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            }
+        },
+        "effects": []
+    }
+}
