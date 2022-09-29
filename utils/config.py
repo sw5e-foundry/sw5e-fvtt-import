@@ -382,61 +382,106 @@ modification_slots = {
 	},
 }
 
+attributes = [
+	{
+		"name": 'Strength',
+		"id": 'str'
+	},
+	{
+		"name": 'Dexterity',
+		"id": 'dex'
+	},
+	{
+		"name": 'Constitution',
+		"id": 'con'
+	},
+	{
+		"name": 'Intelligence',
+		"id": 'int'
+	},
+	{
+		"name": 'Wisdom',
+		"id": 'wis'
+	},
+	{
+		"name": 'Charisma',
+		"id": 'cha'
+	},
+]
+
 skills = [
 	{
 		"name": 'Acrobatics',
 		"id": 'acr',
+		"attr": 'dex',
 	}, {
 		"name": 'Animal Handling',
 		"id": 'ani',
+		"attr": 'wis',
 	}, {
 		"name": 'Athletics',
 		"id": 'ath',
+		"attr": 'str',
 	}, {
 		"name": 'Deception',
 		"id": 'dec',
+		"attr": 'cha',
 	}, {
 		"name": 'Insight',
 		"id": 'ins',
+		"attr": 'wis',
 	}, {
 		"name": 'Intimidation',
 		"id": 'itm',
+		"attr": 'cha',
 	}, {
 		"name": 'Investigation',
 		"id": 'inv',
+		"attr": 'int',
 	}, {
 		"name": 'Lore',
 		"id": 'lor',
+		"attr": 'int',
 	}, {
 		"name": 'Medicine',
 		"id": 'med',
+		"attr": 'int',
 	}, {
 		"name": 'Nature',
 		"id": 'nat',
+		"attr": 'int',
 	}, {
 		"name": 'Perception',
 		"id": 'prc',
+		"attr": 'wis',
 	}, {
 		"name": 'Performance',
 		"id": 'prf',
+		"attr": 'cha',
 	}, {
 		"name": 'Persuasion',
 		"id": 'per',
+		"attr": 'cha',
 	}, {
 		"name": 'Piloting',
 		"id": 'pil',
+		"attr": 'int',
 	}, {
 		"name": 'Sleight of Hand',
 		"id": 'slt',
+		"attr": 'dex',
 	}, {
 		"name": 'Stealth',
 		"id": 'ste',
+		"attr": 'dex',
 	}, {
 		"name": 'Survival',
 		"id": 'sur',
+		"attr": 'wis',
 	}, {
 		"name": 'Technology',
 		"id": 'tec',
+		"attr": 'int',
 	},
 ]
 

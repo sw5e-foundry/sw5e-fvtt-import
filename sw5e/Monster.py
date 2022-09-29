@@ -1,4 +1,4 @@
-import sw5e.Entity, utils.text
+import sw5e.Entity, utils.text, utils.config
 import re, json
 
 class MonsterBehavior(sw5e.Entity.Entity):
@@ -35,41 +35,33 @@ class MonsterBehavior(sw5e.Entity.Entity):
 			"sourceProf",
 			"sourceAbil",
 		]
-		for attr in attrs: setattr(self, f'_{attr}', utils.text.clean(raw_item, attr))
+		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_item, attr))
 
-	def process(self, importer):
-		super().process(importer)
+		self.type = self.loadType()
+		self.description = self.loadDescription()
+		self.activation, self.recharge, self.uses = self.loadActivation()
+		self.range = self.loadRange()
+		self.target = self.loadTarget()
+		self.duration = self.loadDuration()
+		self.actionType, self.damage, self.formula, self.save, self.attackBonus = self.loadAction()
+		self.source = self.raw_contentSource
 
-		self.id = self.getID(importer)
-		self.type = self.getType(importer)
-		self.description = self.getDescription(importer)
-		self.activation, self.recharge, self.uses = self.processRestrictions(importer)
-		self.range = self.getRange(importer)
-		self.target = self.getTarget(importer)
-		self.duration = self.getDuration(importer)
-		self.actionType, self.damage, self.formula, self.save, self.attackBonus = self.getAction(importer)
-		self.source = self._contentSource
+	def loadType(self):
+		return "feat" if self.raw_attackType == "None" else "weapon"
 
-	def getID(self, importer):
-		if not self.foundry_id: self.broken_links += ['no foundry id']
-		return self.foundry_id or utils.text.randomID()
-
-	def getType(self, importer):
-		return "feat" if self._attackType == "None" else "weapon"
-
-	def getDescription(self, importer):
-		description = self._description
+	def loadDescription(self):
+		description = self.raw_description
 		description = utils.text.markdownToHtml(description)
 		if self.type == "weapon": description = f'<section class="secret">\n{description}\n</section>'
 		return { "value": description}
 
-	def processRestrictions(self, importer):
+	def loadActivation(self):
 		activation, recharge, uses = None, None, None
-		restrictions = self._restrictions or ''
+		restrictions = self.raw_restrictions or ''
 
-		if self._monsterBehaviorType != 'Trait':
+		if self.raw_monsterBehaviorType != 'Trait':
 			activation = {
-				"type": self._monsterBehaviorType.lower(),
+				"type": self.raw_monsterBehaviorType.lower(),
 				"cost": 1
 			}
 			if match := re.search(r'costs (?P<cost>\d+) actions?', restrictions.lower()):
@@ -98,15 +90,15 @@ class MonsterBehavior(sw5e.Entity.Entity):
 
 		return activation, recharge, uses
 
-	def getRange(self, importer):
-		if match := re.search(r'(?:range|reach) (?P<value>\d+)(?:/(?P<long>\d+))? (?P<units>\w+)', (self._range or '').lower()):
+	def loadRange(self):
+		if match := re.search(r'(?:range|reach) (?P<value>\d+)(?:/(?P<long>\d+))? (?P<units>\w+)', (self.raw_range or '').lower()):
 			return match.groupdict()
 
 		return None
 
-	def getTarget(self, importer):
-		if self._attackType == "None":
-			target, units, value = utils.text.getTarget(self._description, self.name)
+	def loadTarget(self):
+		if self.raw_attackType == "None":
+			target, units, value = utils.text.getTarget(self.raw_description, self.name)
 			return {
 				"type": target,
 				"units": units,
@@ -115,7 +107,7 @@ class MonsterBehavior(sw5e.Entity.Entity):
 		else:
 			target, value = None, None
 
-			target_text = (self._numberOfTargets or '').lower()
+			target_text = (self.raw_numberOfTargets or '').lower()
 			if match := re.search(r'(one)?(two)?(three)?(four)?(five)?(six)?(seven)?(eight)?(nine)?(ten)?(?P<digits>\d+)?', target_text):
 				if match["digits"]: value = match["digits"]
 				else:
@@ -130,18 +122,18 @@ class MonsterBehavior(sw5e.Entity.Entity):
 				"value": value
 			}
 
-	def getDuration(self, importer):
-		value, units = utils.text.getDuration(self._description, self.name)
+	def loadDuration(self):
+		value, units = utils.text.getDuration(self.raw_description, self.name)
 		return {
 			"value": value,
 			"units": units
 		}
 
-	def getAction(self, importer):
+	def loadAction(self):
 		action_type, damage, other_formula, save, to_hit = None, None, None, None, None
 		if self.activation:
-			if self._attackType == "None":
-				action_type, damage, other_formula, save_ability, save_dc, _ = utils.text.getAction(self._description, self.name)
+			if self.raw_attackType == "None":
+				action_type, damage, other_formula, save_ability, save_dc, _ = utils.text.getAction(self.raw_description, self.name)
 				if save_ability and save_dc:
 					save = {
 						"ability": save_ability,
@@ -149,27 +141,39 @@ class MonsterBehavior(sw5e.Entity.Entity):
 						"scaling": "flat",
 					}
 			else:
-				action_type = ('other', 'mwak', 'rwak')[self._attackTypeEnum]
+				action_type = ('other', 'mwak', 'rwak')[self.raw_attackTypeEnum]
 				damage = {
-					"parts": [[ self._damageRoll, (self._damageType or 'none').lower() ]]
-				} if self._damageRoll else None
+					"parts": [[ self.raw_damageRoll, (self.raw_damageType or 'none').lower() ]]
+				} if self.raw_damageRoll else None
 
 				attr = "dex" if action_type == "rwak" else "str"
-				attrVal = self._sourceAbil[attr]["value"]
+				attrVal = self.raw_sourceAbil[attr]["value"]
 				attrMod = (attrVal // 2) - 5
 
-				to_hit = (self._attackBonus or 0) - (attrMod + self._sourceProf)
+				to_hit = (self.raw_attackBonus or 0) - (attrMod + self.raw_sourceProf)
 		return action_type, damage, other_formula, save, to_hit
 
-	def getImg(self, importer):
-		return self._sourceImg
+
+
+	def process(self, importer):
+		super().process(importer)
+
+		self.processID()
+
+	def processID(self):
+		if not self.foundry_id: self.foundry_id = utils.text.randomID()
+
+
+
+	def getImg(self):
+		return self.raw_sourceImg
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["_id"] = self.id
+		data["_id"] = self.foundry_id
 		data["type"] = self.type
-		data["img"] = self.getImg(importer)
+		data["img"] = self.getImg()
 		data["data"] = {}
 
 		for attr in ('description', 'activation', 'recharge', 'uses', 'range', 'target', 'duration', 'actionType', 'damage', 'formula', 'save', 'attackBonus', 'source'):
@@ -236,213 +240,132 @@ class Monster(sw5e.Entity.Actor):
 			"timestamp",
 			"eTag",
 		]
-		for attr in attrs: setattr(self, f'_{attr}', utils.text.clean(raw_item, attr))
+		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_item, attr))
 
-	def process(self, importer):
-		super().process(importer)
+		self.biography = self.loadBiography()
+		self.creature_type = self.loadType()
+		self.cr = self.loadChallengeRating()
+		self.proficiency_bonus = self.loadProficiencyBonus()
+		self.ac = self.loadArmorClass()
+		self.senses = self.loadSenses()
+		self.abilities = self.loadAbilities()
+		self.skills = self.loadSkills()
+		self.size = self.loadSize()
+		self.ci = self.loadConditionImmunities()
+		self.di = self.loadDamageImmunities()
+		self.dr = self.loadDamageResistances()
+		self.dv = self.loadDamageVulnerabilities()
+		self.languages = self.loadLanguages()
+		self.items = self.loadBehaviors()
 
-		self.challenge_rating = self.getChallengeRating()
-		self.proficiency_bonus = self.getProficiencyBonus()
-		self.creature_type = self.getType()
-		self.ac = self.getArmorClass()
-		self.abilities = self.getAbilities()
-		self.skills = self.getSkills()
-		self.senses = self.getSenses()
-		self.ci = self.getConditionImmunities()
-		self.processBehaviors(importer)
+	def loadBiography(self):
+		return utils.text.markdownToHtml(f'{self.raw_sectionText}\n{self.raw_flavorText}')
 
-	def processBehaviors(self, importer):
-		for behavior_data in self._behaviors:
-			for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):
-				behavior_data[key] = getattr(self, f'_{key}')
-			behavior_data["source"] = 'Monster'
-			behavior_data["sourceName"] = self.name
-			behavior_data["sourceImg"] = self.getImg()
-			behavior_data["sourceProf"] = self.proficiency_bonus
-			behavior_data["sourceAbil"] = self.abilities
+	def loadType(self):
+		# TODO: recognize non-custom types
+		return {
+			"value": 'custom',
+			"custom": self.raw_types[0]
+		}
 
-			uid = MonsterBehavior.getUID(behavior_data)
-			new_item = MonsterBehavior(behavior_data, uid, importer)
-			self.items[uid] = new_item
-			self.broken_links += new_item.broken_links
-
-	def getImg(self, token=False, importer=None):
-		#TODO: removed this after icons are fixed in the system
-		return f'icons/svg/hazard.svg'
-		name = utils.text.slugify(self.name);
-		return f'systems/sw5e/packs/Icons/monsters/{name}/{"token" if token else "avatar"}.webp'
-
-	def getChallengeRating(self):
-		cr = self._challengeRating
+	def loadChallengeRating(self):
+		cr = self.raw_challengeRating
 		if type(cr) == int: return cr
 		parts = cr.split('/')
 		return int(parts[0]) / int(parts[1])
 
-	def getProficiencyBonus(self):
-		return (self.challenge_rating + 7) // 4
+	def loadProficiencyBonus(self):
+		return (self.cr + 7) // 4
 
-	def getType(self):
-		# TODO: recognize non-custom types
-		return {
-			"value": 'custom',
-			"custom": self._types[0]
-		}
-
-	def getArmorClass(self):
+	def loadArmorClass(self):
 		# TODO: recognize non-custom ac
 		return {
-			"calc": 'natural' if self._armorType == 'natural armor' else 'flat',
-			"flat": self._armorClass
+			"calc": 'natural' if self.raw_armorType == 'natural armor' else 'flat',
+			"flat": self.raw_armorClass
 		}
 
-	def getAbilities(self):
-		mapping = {
-			"str": 'strength',
-			"dex": 'dexterity',
-			"con": 'constitution',
-			"int": 'intelligence',
-			"wis": 'wisdom',
-			"cha": 'charisma'
-		}
-		abilities = { attr: { "value": getattr(self, f'_{mapping[attr]}') } for attr in mapping }
-		if self._savingThrows:
-			for save in self._savingThrows:
-				attr = save[:3].lower()
-				if attr in mapping:
-					mod = getattr(self, f'_{mapping[attr]}Modifier')
-					bonus = int(save[4:])
-					if (bonus - mod) == 0: abilities[attr]["proficient"] = 0
-					elif (bonus - mod) == (self.proficiency_bonus // 2): abilities[attr]["proficient"] = 0.5
-					elif (bonus - mod) == (self.proficiency_bonus * 2): abilities[attr]["proficient"] = 2
-					else: abilities[attr]["proficient"] = 1
-		return abilities
-
-	def getSkills(self):
-		mapping = {
-			"acrobatics": {
-				"abbr": 'acr',
-				"attr": 'dexterity'
-			},
-			"animal handling": {
-				"abbr": 'ani',
-				"attr": 'wisdom'
-			},
-			"athletics": {
-				"abbr": 'ath',
-				"attr": 'strength'
-			},
-			"deception": {
-				"abbr": 'dec',
-				"attr": 'charisma'
-			},
-			"insight": {
-				"abbr": 'ins',
-				"attr": 'wisdom'
-			},
-			"intimidation": {
-				"abbr": 'itm',
-				"attr": 'charisma'
-			},
-			"investigation": {
-				"abbr": 'inv',
-				"attr": 'intelligence'
-			},
-			"lore": {
-				"abbr": 'lor',
-				"attr": 'intelligence'
-			},
-			"medicine": {
-				"abbr": 'med',
-				"attr": 'wisdom'
-			},
-			"nature": {
-				"abbr": 'nat',
-				"attr": 'intelligence'
-			},
-			"perception": {
-				"abbr": 'prc',
-				"attr": 'wisdom'
-			},
-			"performance": {
-				"abbr": 'prf',
-				"attr": 'charisma'
-			},
-			"persuasion": {
-				"abbr": 'per',
-				"attr": 'charisma'
-			},
-			"piloting": {
-				"abbr": 'pil',
-				"attr": 'intelligence'
-			},
-			"sleight of hand": {
-				"abbr": 'slt',
-				"attr": 'dexterity'
-			},
-			"stealth": {
-				"abbr": 'ste',
-				"attr": 'dexterity'
-			},
-			"survival": {
-				"abbr": 'sur',
-				"attr": 'wisdom'
-			},
-			"technology": {
-				"abbr": 'tec',
-				"attr": 'intelligence'
-			}
-		}
-		skills = {}
-		pattern = r'(?P<skill>[\w ]+) (?P<bonus>[+-]?\s*\d+)'
-		if self._skills:
-			for text in self._skills:
-				if match := re.match(pattern, text):
-					skill = mapping[match["skill"].lower()]
-					mod = getattr(self, f'_{skill["attr"]}Modifier')
-					bonus = int(match["bonus"])
-					if (bonus - mod) == 0: skills[skill["abbr"]] = { "proficient": 0 }
-					if (bonus - mod) == self.proficiency_bonus: skills[skill["abbr"]] = { "proficient": 1 }
-					if (bonus - mod) < self.proficiency_bonus: skills[skill["abbr"]] = { "proficient": 0.5 }
-					if (bonus - mod) > self.proficiency_bonus: skills[skill["abbr"]] = { "proficient": 2 }
-		return skills
-
-	def getSenses(self):
+	def loadSenses(self):
 		senses = {}
 		pattern = r'(?P<sense>[\w ]+) (?P<dist>[+-]?\d+) Ft\.'
-		if self._senses:
-			for text in self._senses:
+		if self.raw_senses:
+			for text in self.raw_senses:
 				if match := re.match(pattern, text):
 					sense = match["sense"].lower()
 					dist = int(match["dist"])
 					senses[sense] = dist
 		return senses
 
-	def getDamageImmunities(self):
-		return [ val.lower() for val in self._damageImmunities ]
+	def loadAbilities(self):
+		abilities = {
+			attr["id"]: {
+				"name": attr["name"],
+				"value": getattr(self, f'raw_{attr["name"].lower()}'),
+				"mod": getattr(self, f'raw_{attr["name"].lower()}Modifier'),
+			}
+			for attr in utils.config.attributes
+		}
 
-	def getSize(self):
+		if self.raw_savingThrows:
+			for save in self.raw_savingThrows:
+				attr = save[:3].lower()
+				bonus = int(save[4:])
+				if attr in abilities:
+					mod = abilities[attr]["mod"]
+					if (bonus - mod) == 0: abilities[attr]["proficient"] = 0
+					elif (bonus - mod) == (self.proficiency_bonus // 2): abilities[attr]["proficient"] = 0.5
+					elif (bonus - mod) == (self.proficiency_bonus * 2): abilities[attr]["proficient"] = 2
+					else: abilities[attr]["proficient"] = 1
+				else: raise ValueError(save, attr, bonus)
+
+		return abilities
+
+	def loadSkills(self):
+		mapping = {
+			skl["name"].lower(): {
+				"id": skl["id"],
+				"attr": skl["attr"],
+				"attrMod": self.abilities[skl["attr"]]["mod"]
+			}
+			for skl in utils.config.skills
+		}
+
+		skills = {}
+		pattern = r'(?P<skill>[\w ]+) (?P<bonus>[+-]?\s*\d+)'
+		if self.raw_skills:
+			for text in self.raw_skills:
+				if match := re.match(pattern, text):
+					skill = mapping[match["skill"].lower()]
+					mod = skill["attrMod"]
+					bonus = int(match["bonus"])
+					if (bonus - mod) == 0: skills[skill["id"]] = { "proficient": 0 }
+					if (bonus - mod) == self.proficiency_bonus: skills[skill["id"]] = { "proficient": 1 }
+					if (bonus - mod) < self.proficiency_bonus: skills[skill["id"]] = { "proficient": 0.5 }
+					if (bonus - mod) > self.proficiency_bonus: skills[skill["id"]] = { "proficient": 2 }
+		return skills
+
+	def loadSize(self):
 		sizes = [ 'tiny', 'sm', 'med', 'lg', 'huge', 'grg' ]
-		return sizes[self._sizeEnum-1] or 'med'
+		return sizes[self.raw_sizeEnum-1] or 'med'
 
-	def getBiography(self):
-		return utils.text.markdownToHtml(f'{self._sectionText}\n{self._flavorText}')
-
-	def getDamageResistances(self):
-		return [ val.lower() for val in self._damageResistances ]
-
-	def getDamageVulnerabilities(self):
-		return [ val.lower() for val in self._damageVulnerabilities ]
-
-	def getConditionImmunities(self):
-		imm = [ val.lower() for val in self._conditionImmunities ]
-		other = self._conditionImmunitiesOther or []
+	def loadConditionImmunities(self):
+		imm = [ val.lower() for val in self.raw_conditionImmunities ]
+		other = self.raw_conditionImmunitiesOther or []
 		if 'disease' in other:
 			imm += ['diseased']
 			other = [ c for c in other if c != 'disease' ]
 		other = '; '.join(other)
 		return imm, other
 
-	def getLanguages(self):
+	def loadDamageImmunities(self):
+		return [ val.lower() for val in self.raw_damageImmunities ]
+
+	def loadDamageResistances(self):
+		return [ val.lower() for val in self.raw_damageResistances ]
+
+	def loadDamageVulnerabilities(self):
+		return [ val.lower() for val in self.raw_damageVulnerabilities ]
+
+	def loadLanguages(self):
 		valid = [
 			"abyssin",
 			"aleena",
@@ -555,7 +478,7 @@ class Monster(sw5e.Entity.Actor):
 			"value": [],
 			"custom": ""
 		}
-		for lng in self._languages:
+		for lng in self.raw_languages:
 			if not lng: continue
 			lng = lng.lower()
 			if lng.startswith("speaks "): lng = lng[7:]
@@ -568,45 +491,77 @@ class Monster(sw5e.Entity.Actor):
 				languages["custom"] += lng
 		return languages
 
-	def getBehaviors(self, importer):
-		return [ behavior.getData(importer)[0] for behavior in self.items.values() ]
+	def loadBehaviors(self):
+		behaviors = {}
+		for behavior_data in self.raw_behaviors:
+			for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):
+				behavior_data[key] = getattr(self, f'raw_{key}')
+			behavior_data["source"] = 'Monster'
+			behavior_data["sourceName"] = self.name
+			behavior_data["sourceImg"] = self.getImg()
+			behavior_data["sourceProf"] = self.proficiency_bonus
+			behavior_data["sourceAbil"] = self.abilities
+
+			uid = MonsterBehavior.getUID(behavior_data, "MonsterBehavior")
+			behavior = MonsterBehavior(behavior_data, uid, None, importer_version=self.importer_version)
+			behaviors[uid] = behavior
+
+		return behaviors
+
+
+	def process(self, importer):
+		super().process(importer)
+
+		self.processBehaviors(importer)
+
+	def processBehaviors(self, importer):
+		for behavior in self.items.values():
+			behavior.process(importer)
+			self.broken_links += behavior.broken_links
+
+
+	def getImg(self, token=False, importer=None):
+		#TODO: removed this after icons are fixed in the system
+		return f'icons/svg/hazard.svg'
+		name = utils.text.slugify(self.name);
+		return f'systems/sw5e/packs/Icons/monsters/{name}/{"token" if token else "avatar"}.webp'
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
 		data["type"] = 'npc'
-		data["data"]["source"] = self._contentSource
+		data["data"]["source"] = self.raw_contentSource
 		data["data"]["details"] = {
 			"biography": {
-				"value": self.getBiography()
+				"value": self.biography
 			},
 			"type": self.creature_type,
-			"alignment": self._alignment,
-			"cr": self._challengeRating,
-			"source": self._contentSource
+			"alignment": self.raw_alignment,
+			"cr": self.cr,
+			"source": self.raw_contentSource
 		}
 		data["data"]["attributes"] = {
 			"ac": self.ac,
 			"hp": {
-				"max": self._hitPoints,
-				"value": self._hitPoints,
-				"formula": self._hitPointRoll
+				"max": self.raw_hitPoints,
+				"value": self.raw_hitPoints,
+				"formula": self.raw_hitPointRoll
 			},
 			"senses": self.senses
 		}
 		data["data"]["abilities"] = self.abilities
 		data["data"]["skills"] = self.skills
 		data["data"]["traits"] = {
-			"size": self.getSize(),
+			"size": self.size,
 			"ci": { "value": self.ci[0], "custom": self.ci[1] },
-			"di": { "value": self.getDamageImmunities() },
-			"dr": { "value": self.getDamageResistances() },
-			"dv": { "value": self.getDamageVulnerabilities() },
-			"languages": self.getLanguages()
+			"di": { "value": self.di },
+			"dr": { "value": self.dr },
+			"dv": { "value": self.dv },
+			"languages": self.languages
 		}
 
 		data["token"] = { "img": self.getImg(token=True) }
 
-		data["items"] = self.getBehaviors(importer)
+		data["items"] = [ behavior.getData(importer)[0] for behavior in self.items.values() ]
 
 		return [data]

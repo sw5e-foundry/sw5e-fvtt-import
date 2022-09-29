@@ -32,7 +32,7 @@ class Importer:
 		'fightingStyle',
 		'lightsaberForm',
 		'maneuvers',
-		# 'monster',
+		'monster',
 		'power',
 		# 'referenceTable',
 		# 'skills',
@@ -149,15 +149,16 @@ class Importer:
 	def __loadFoundryData(self):
 		print('Loading foundry data...')
 		if os.path.isfile(self.__foundry_data_path):
+			print('	Applying foundry data...')
 			missing_entity = 0
 			with open(self.__foundry_data_path, 'r') as foundry_data_file:
 				data = json.load(foundry_data_file)
 				for uid in data: missing_entity = self.__applyFoundryData(uid, data[uid], missing=missing_entity)
-			if missing_entity > self.warn_limit: print(f'	And {missing_entity-self.warn_limit} more...')
+			if missing_entity > self.warn_limit: print(f'		And {missing_entity-self.warn_limit} more...')
 
+			print('	Checking for missing foundry data...')
 			missing_fdata = 0
 			for entity_type in self.__stored_types:
-				print(f'	{entity_type}')
 				storage = self.getEntityList(entity_type)
 				for uid, entity in storage.items():
 					if not entity.foundry_id:
@@ -166,9 +167,9 @@ class Importer:
 						## TODO: Find a way to set the foundry_ids of the weapon modes
 						if entity.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', entity.propertiesMap): continue
 						if entity.__class__.__name__ == 'Weapon' and entity.modes: continue
-						if missing_fdata < self.warn_limit: print(f'	Entity missing it\'s foundry data: {uid}')
+						if missing_fdata < self.warn_limit: print(f'		Entity missing it\'s foundry data: {uid}')
 						missing_fdata += 1
-			if missing_fdata > self.warn_limit: print(f'	And {missing_fdata-self.warn_limit} more...')
+			if missing_fdata > self.warn_limit: print(f'		And {missing_fdata-self.warn_limit} more...')
 
 			# if missing_entity == 0 and missing_fdata == 0: print('	.')
 		else:
@@ -187,11 +188,10 @@ class Importer:
 			if "sub_entities" in data:
 				for sub_uid, sub_data in data["sub_entities"].items():
 					missing = self.__applyFoundryData(sub_uid, sub_data, parent=entity, missing=missing)
-		elif uid.startswith("Monster."): pass # Ignore monsters for now
 		else:
 			if missing < self.warn_limit:
-				print(f'	Foundry data for uid {uid}, but no such entity exists')
-				if parent: print(f'	Parent: {parent.uid}')
+				print(f'		Foundry data for uid {uid}, but no such entity exists')
+				if parent: print(f'		Parent: {parent.uid}')
 			missing += 1
 		return missing
 

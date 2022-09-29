@@ -402,6 +402,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 		## Healing
 		patterns = [fr'(?:(?:(?:re)?gains?|restores|gaining|a number of|granting them|grant a number of creatures? (?:up|equal) to(?: \w+)+?|give yourself or that friendly creature) (?P<temp>temporary )?hit points equal to |hit points increase by ){p_formula}']
 		patterns += [fr'(?:(?:re)?gains?|restores?|gaining) (?:an extra )?{p_formula} (?:extra |additional )?(?P<temp>temporary )?hit points']
+		patterns += [fr'(?P<temp>reduces?) the damage (?:taken )?by (?:an extra )?{p_formula}']
 		def healing(match):
 			nonlocal action_type, damage
 
@@ -495,20 +496,19 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 		prefixes += fr'|die(?:, a)?'
 
 		p_roll_types = fr'(?:(?:damage |attack )?rolls?|(?:ability )?checks?|results?|saving throws?|levels?|totals?|damage|attack|save)'
-		patterns = [fr'(?:{prefixes}) (?:an additional )?{p_formula}(?<! )']
-		patterns += [fr'for {p_formula} (?:turns|days)']
-		patterns += [fr'a {p_formula} that you can roll']
-		patterns += [fr'{p_formula}(?: tiny projectiles| such fissures|(?:\s*x\s*\d+\s+)?feet)']
-		patterns += [fr'\|\s*{p_formula}\s*\|']
-		patterns += [fr'reduces? the damage (?:taken )?by {p_formula}']
-		patterns += [fr'it deploys {p_formula}']
-		patterns += [fr'move (?:to a(?:n unoccupied)? space (?:you can see )?up to )?(?:a(?:n additional)? distance|a number of feet) equal to {p_formula}']
-		patterns += [fr'speed increases by {p_formula}']
-		patterns += [fr'{p_formula} to it\'?s movement speed']
-		patterns += [fr'a number of rounds equal to {p_formula}']
-		patterns += [fr'bonus to (?:any|all|every|the next) {p_roll_types}(?: (?:you|they|it) makes?)? equal to {p_formula}']
-		patterns += [fr'(?:add|subtract)(?:ing|s)? {p_formula} (?:to|from) (?:any|all|every|(?:both )?the(?: next)?|their|your|it\'s) {p_roll_types}(?: (?:you|they|it) makes?)?']
-		patterns += [fr'the result of (?:your|their|it\'s) {p_roll_types} (?:plus|minus) {p_formula}']
+		patterns = [fr'(?:{prefixes}) (?:an additional )?{p_dformula}(?<! )']
+		patterns += [fr'for {p_dformula} (?:turns|days)']
+		patterns += [fr'a {p_dformula} that you can roll']
+		patterns += [fr'{p_dformula}(?: tiny projectiles| such fissures|(?:\s*x\s*\d+\s+)?feet)']
+		patterns += [fr'\|\s*{p_dformula}\s*\|']
+		patterns += [fr'it deploys {p_dformula}']
+		patterns += [fr'move (?:to a(?:n unoccupied)? space (?:you can see )?up to )?(?:a(?:n additional)? distance|a number of feet) equal to {p_dformula}']
+		patterns += [fr'speed increases by {p_dformula}']
+		patterns += [fr'{p_dformula} to it\'?s movement speed']
+		patterns += [fr'a number of rounds equal to {p_dformula}']
+		patterns += [fr'bonus to (?:any|all|every|the next) {p_roll_types}(?: (?:you|they|it) makes?)? equal to {p_dformula}']
+		patterns += [fr'(?:add|subtract)(?:ing|s)? {p_dformula} (?:to|from) (?:any|all|every|(?:both )?the(?: next)?|their|your|it\'s) {p_roll_types}(?: (?:you|they|it) makes?)?']
+		patterns += [fr'the result of (?:your|their|it\'s) {p_roll_types} (?:plus|minus) {p_dformula}']
 		patterns += [fr'(?P<rolled>(?:expend|roll) (?:a|one|the) \w+ die(?: and roll it)?,? (?:and |to )?add(?:ing)? (?:it )?to the {p_roll_types})']
 		patterns += [fr'(?P<rolled>up to the result of the roll)']
 		patterns += [fr'(?P<rolled>roll(?:ing)? (?:the|a)(?: \w+)? die and (?:(?:add|subtract)(?:ing|\'s)?|plus|minus) (?:it|the (?:(?:amount|number) rolled|rolled (?:amount|number)|result)) (?:from|to|is))']

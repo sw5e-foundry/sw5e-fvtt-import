@@ -2,9 +2,9 @@ import re, json
 import utils.text
 
 class Entity:
-	def __init__(self, raw_entity, uid, importer):
+	def __init__(self, raw_entity, uid, importer, importer_version=None):
 		self.uid = uid
-		self.importer_version = importer.version
+		self.importer_version = importer_version if importer_version else importer.version
 
 		self.effects = []
 		self.broken_links = []
