@@ -2,7 +2,7 @@
     "Weapon.name-lightblade.equipmentCategory-weapon": {
         "name": "Lightblade",
         "flags": {
-            "timestamp": "2022-08-17T00:39:11.7117474+00:00",
+            "timestamp": "2022-10-18T11:20:58.213895+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-lightblade.equipmentCategory-weapon"
         },
@@ -92,7 +92,7 @@
     "Weapon.name-lightclub.equipmentCategory-weapon": {
         "name": "Lightclub",
         "flags": {
-            "timestamp": "2022-08-17T00:39:11.7117474+00:00",
+            "timestamp": "2022-10-18T11:20:58.2148946+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-lightclub.equipmentCategory-weapon"
         },
@@ -183,7 +183,7 @@
     "Weapon.name-lightdagger.equipmentCategory-weapon": {
         "name": "Lightdagger",
         "flags": {
-            "timestamp": "2022-08-17T00:39:11.7117474+00:00",
+            "timestamp": "2022-10-18T11:20:58.2148946+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-lightdagger.equipmentCategory-weapon"
         },
@@ -272,101 +272,10 @@
         },
         "effects": []
     },
-    "Weapon.name-lightlance.equipmentCategory-weapon": {
-        "name": "Lightlance",
-        "flags": {
-            "timestamp": "2022-08-17T00:39:11.7127469+00:00",
-            "importer_version": 2,
-            "uid": "Weapon.name-lightlance.equipmentCategory-weapon"
-        },
-        "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Simple%20Lightweapons/Lightlance.webp",
-        "data": {
-            "description": {
-                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
-            },
-            "requirements": "",
-            "source": "PHB",
-            "quantity": 1,
-            "weight": null,
-            "price": 1275,
-            "attunement": 0,
-            "equipped": false,
-            "rarity": "",
-            "identified": true,
-            "baseItem": "lightlance",
-            "activation": {
-                "type": "action",
-                "cost": 1,
-                "condition": ""
-            },
-            "duration": {
-                "value": null,
-                "units": ""
-            },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": 10,
-                "long": null,
-                "units": "ft"
-            },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "ammount": null
-            },
-            "ability": "",
-            "actionType": "mwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
-            "damage": {
-                "parts": [
-                    [
-                        "2d4 + @mod",
-                        "energy"
-                    ]
-                ],
-                "versatile": ""
-            },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "simpleLW",
-            "properties": {
-                "dex": 11,
-                "lum": true,
-                "rch": true,
-                "two": true,
-                "-=amm": null
-            },
-            "proficient": false,
-            "ammo": {
-                "types": []
-            }
-        },
-        "effects": []
-    },
     "Weapon.name-lightsaber.equipmentCategory-weapon": {
         "name": "Lightsaber",
         "flags": {
-            "timestamp": "2022-08-17T00:39:11.7127469+00:00",
+            "timestamp": "2022-10-18T11:20:58.2148946+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-lightsaber.equipmentCategory-weapon"
         },
@@ -453,10 +362,101 @@
         },
         "effects": []
     },
+    "Weapon.name-lightstaff.equipmentCategory-weapon": {
+        "name": "Lightstaff",
+        "flags": {
+            "timestamp": "2022-10-18T11:20:58.2148946+00:00",
+            "importer_version": 2,
+            "uid": "Weapon.name-lightstaff.equipmentCategory-weapon"
+        },
+        "type": "weapon",
+        "img": "systems/sw5e/packs/Icons/Simple%20Lightweapons/Lightstaff.webp",
+        "data": {
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+            },
+            "requirements": "",
+            "source": "PHB",
+            "quantity": 1,
+            "weight": null,
+            "price": 1275,
+            "attunement": 0,
+            "equipped": false,
+            "rarity": "",
+            "identified": true,
+            "baseItem": "lightstaff",
+            "activation": {
+                "type": "action",
+                "cost": 1,
+                "condition": ""
+            },
+            "duration": {
+                "value": null,
+                "units": ""
+            },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": 10,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
+            "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
+            "damage": {
+                "parts": [
+                    [
+                        "2d4 + @mod",
+                        "energy"
+                    ]
+                ],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {},
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "simpleLW",
+            "properties": {
+                "dex": 11,
+                "lum": true,
+                "rch": true,
+                "two": true,
+                "-=amm": null
+            },
+            "proficient": false,
+            "ammo": {
+                "types": []
+            }
+        },
+        "effects": []
+    },
     "Weapon.name-sabermace.equipmentCategory-weapon": {
         "name": "Sabermace",
         "flags": {
-            "timestamp": "2022-08-17T00:39:22.043365+00:00",
+            "timestamp": "2022-10-18T11:21:08.573503+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-sabermace.equipmentCategory-weapon"
         },
@@ -548,7 +548,7 @@
     "Weapon.name-sicklesaber.equipmentCategory-weapon": {
         "name": "Sicklesaber",
         "flags": {
-            "timestamp": "2022-08-17T00:39:22.0443648+00:00",
+            "timestamp": "2022-10-18T11:21:08.573503+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-sicklesaber.equipmentCategory-weapon"
         },
@@ -640,7 +640,7 @@
     "Weapon.name-lightbaton.equipmentCategory-weapon": {
         "name": "Lightbaton",
         "flags": {
-            "timestamp": "2022-08-17T00:39:50.14017+00:00",
+            "timestamp": "2022-10-18T11:21:20.8184923+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-lightbaton.equipmentCategory-weapon"
         },
@@ -730,7 +730,7 @@
     "Weapon.name-lightcutlass.equipmentCategory-weapon": {
         "name": "Lightcutlass",
         "flags": {
-            "timestamp": "2022-08-17T00:39:50.14017+00:00",
+            "timestamp": "2022-10-18T11:21:20.8184923+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-lightcutlass.equipmentCategory-weapon"
         },
@@ -820,7 +820,7 @@
     "Weapon.name-saberspear.equipmentCategory-weapon": {
         "name": "Saberspear",
         "flags": {
-            "timestamp": "2022-08-17T00:39:50.14017+00:00",
+            "timestamp": "2022-10-18T11:21:20.8184923+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-saberspear.equipmentCategory-weapon"
         },
@@ -910,7 +910,7 @@
     "Weapon.name-wristsaber.equipmentCategory-weapon": {
         "name": "Wristsaber",
         "flags": {
-            "timestamp": "2022-08-17T00:39:50.14017+00:00",
+            "timestamp": "2022-10-18T11:21:20.8184923+00:00",
             "importer_version": 2,
             "uid": "Weapon.name-wristsaber.equipmentCategory-weapon"
         },

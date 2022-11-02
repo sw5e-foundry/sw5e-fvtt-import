@@ -139,7 +139,7 @@ class Importer:
 						raise ValueError("Duplicated Entity in 'Missing Data'")
 					elif old_entity.partitionKey == 'Core':
 						return
-				else: raise ValueError("Duplicated Entity")
+				else: raise ValueError("Duplicated Entity", uid)
 
 			new_entity = kklass(raw_entity, uid=uid, importer=self)
 			storage[uid] = new_entity

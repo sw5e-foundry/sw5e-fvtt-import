@@ -3,53 +3,19 @@
 
 
 - archetype.json:
+  - Remove ##### XXXX Force/Techcasting
   - Fix Slicer Pursuit's 'Systems Hijack'
-  - Remove ##### XXXX Force/Techcasting from:
-    - Shield Specialist
-    - Mechanist Technique
-    - Mechanist Technique (Companion)
-    - Rakatan Order
-    - Saboteur Practice
-    - Slicer Pursuit
-    - Marauder Approach
-    - Adept Specialist
-    - Aing-Tii Order
-    - Archaeologist Pursuit
-    - Beguiler Practice
 - equipment.json:
   - saberstaff: double -> modal
   - radiation cannon: disrupt ive -> disruptive
   - add vibrolance's missing description
 - feature.json
-  - Remove ##### XXXX Force/Techcasting table from:
-    - Whirling Weapons
-    - Flow-Walking
-    - Mark of the Mechanist
-    - High Voltage
-    - Focused Tech
-    - Ion Pulse
-    - Techcasting
-    - Reckless Power
-    - Rallying Cry
-    - Forcecasting
+  - Remove ##### XXXX Force/Techcasting table
+  - remove superiority table
+  - sentinel ideals: add 'You regain all expended uses when you finish a long rest.'
 - monster.json
   - use old monster.json
 - maneuvers.json
-  - sic 'em 'dice' -> 'die'
   - rampage 'result of the superiority die roll' -> 'superiority die'
 - feat.json
   - remove 'Fighting Styles and Masteries' x2
-- feature.json
-  - remove expanded content duplicate feature of:
-    - Blademaster Specialist
-    - Cyclone Approach
-    - Heavy Weapons Specialist
-    - Juggernaut Approach
-    - Precision Approach
-    - Warchief Approach
-  - remove superiority table from
-    - cover to cover
-    - reckless maneuvers
-    - on your six x2
-  - remove Deadeye Technique 'Focused Superiority'
-  - 'If d20 result' -> 'If the d20 result'

@@ -185,6 +185,12 @@ def getUses(text, name):
 		sp_n = r'one|two|three|four|five|six|seven|eight|nine|ten|\d+'
 		sp_n_times = capt(sp_n) + r' times|(once|twice|thrice)'
 
+		if not found: ## class/archetype table
+			pattern = fr'(?:points you have,|number of times|more times at higher levels) as shown (?:for your (?:[\w-]+ )+level )?in the (?P<column>(?:[\w-]+ )+)column of the (?P<table>(?:[\w-]+ )+)table'
+			if match := re.search(pattern, text):
+				found = True
+				uses = f'@scale.{slugify(match["table"], capitalized=False, space="-")}.{slugify(match["column"], capitalized=False, space="-")}'
+
 		if not found: ## NUMBER times
 			pattern = fr'you (?:can|may) {ncapt(sp_action)} (?:a (?:combined )?(?:total of )?)?{ncapt(sp_n_times)}'
 			pattern += fr'|(?:you (?:have|gain)|(?:this|the) \w+ (?:has|gains)) {capt(sp_n)} (?:superiority dic?e|amplified shots|(?!hit)(?:\w+ )?points|charges)'
@@ -222,12 +228,6 @@ def getUses(text, name):
 				found = True
 
 				uses = 1
-
-		if not found: ## class/archetype table
-			pattern = fr'(?:points you have,|number of times) as shown (?:for your (?:[\w-]+ )+level )?in the (?P<column>(?:[\w-]+ )+)column of the (?P<table>(?:[\w-]+ )+)table'
-			if match := re.search(pattern, text):
-				found = True
-				uses = f'@scale.{slugify(match["table"], capitalized=False, space="-")}.{slugify(match["column"], capitalized=False, space="-")}'
 
 		if not found: ## CUSTOM (twiceScoutLevelPlusInt)
 			pattern = r'that barrier has hit points equal to twice your scout level \+ your intelligence modifier'
@@ -419,7 +419,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 		## Damage
 		opt1 = fr'(?:takes?|taking|deals?|dealing|do|suffer)(?:(?: an)? (?:extra|additional)| up to)?'
 		opt2 = fr','
-		opt3 = fr'(?:and|plus)(?: another| an extra)?'
+		opt3 = fr'(?:and|plus|weapon\'s damage dice \+)(?: another| an extra)?'
 		prefix1 = fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)?'
 		prefix2 = fr'(?:{opt1})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)'
 		posfix1 = fr'(?:of )?(?:(?P<type2>\w+)?(?:,(?: or)? \w+)*)?(?: ?damage| (?=[^.]+ damage))'
