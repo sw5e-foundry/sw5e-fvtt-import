@@ -1062,29 +1062,33 @@
                 "_id": "joJ14rFFXKalCoSZ",
                 "changes": [
                     {
-                        "key": "data.bonuses.mwak.damage",
+                        "key": "system.bonuses.mwak.damage",
                         "mode": 2,
                         "value": "@scale.berserker.rage-damage",
-                        "priority": "20"
+                        "priority": 20
                     },
                     {
-                        "key": "data.traits.dr.value",
+                        "key": "system.traits.dr.value",
                         "mode": 2,
                         "value": "kinetic",
-                        "priority": "20"
+                        "priority": 20
                     },
                     {
-                        "key": "data.traits.dr.value",
+                        "key": "system.traits.dr.value",
                         "mode": 2,
                         "value": "energy",
-                        "priority": "20"
+                        "priority": 20
                     }
                 ],
                 "disabled": false,
                 "duration": {
                     "rounds": 10,
                     "startTime": null,
-                    "seconds": 60
+                    "seconds": 60,
+                    "combat": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Class%20Features/BSKR-Bonus.webp",
                 "label": "Rage",
@@ -3183,17 +3187,22 @@
                         "key": "flags.dae",
                         "mode": 0,
                         "value": "BardicInspirationDice (floor(@classes.engineer.levels/5)+3) * 2",
-                        "priority": "20"
+                        "priority": 20
                     }
                 ],
                 "disabled": false,
                 "duration": {
-                    "startTime": null
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Class%20Features/ENGR-Bonus.webp",
                 "label": "Potent Aptitude Dice",
                 "origin": "Compendium.sw5e.classfeatures.fGsRWj9oEKcrukw6",
-                "tint": null,
                 "transfer": true,
                 "flags": {
                     "core": {
@@ -3205,7 +3214,8 @@
                         "specialDuration": [],
                         "transfer": true
                     }
-                }
+                },
+                "tint": null
             },
             {
                 "_id": "87rFIkDTyzEZeKaW",
@@ -3219,12 +3229,17 @@
                 ],
                 "disabled": false,
                 "duration": {
-                    "startTime": null
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
                 },
                 "icon": "icons/skills/melee/unarmed-punch-fist.webp",
                 "label": "Inspired",
                 "origin": "Compendium.sw5e.classfeatures.fGsRWj9oEKcrukw6",
-                "tint": null,
                 "transfer": false,
                 "flags": {
                     "core": {
@@ -3236,7 +3251,8 @@
                         "specialDuration": [],
                         "transfer": true
                     }
-                }
+                },
+                "tint": null
             }
         ]
     },
@@ -14024,15 +14040,21 @@
                 "_id": "d0vaTfluRWKVZJkk",
                 "changes": [
                     {
-                        "key": "data.attributes.movement.walk",
+                        "key": "system.attributes.movement.walk",
                         "mode": 2,
                         "value": "@scale.monk.unarmored-movement",
-                        "priority": "20"
+                        "priority": 20
                     }
                 ],
                 "disabled": false,
                 "duration": {
-                    "startTime": null
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Class%20Features/MNK-Passive.webp",
                 "label": "Walk Speed",

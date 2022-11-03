@@ -531,3 +531,25 @@ ammo_types = [
 		"id": 'torpedo',
 	},
 ]
+
+enhanced_item_icons = {
+	'multi': [
+		'Alacrity Adrenal',
+		'Cybernetic',
+		'Doublesaber',
+		'DroidMod',
+		'Holocron',
+		'Lightfoil',
+		'Lightweapon Chassis',
+		'Medpac',
+		'Stamina Adrenal',
+	],
+	'single': [
+		'Battle Adrenal',
+		'Inquisitor Saber',
+		'Mandalorian Beskar\'gam',
+		'Mandalorian Helmet',
+		'Mandalorian Shuk\'orok',
+		'Strength Stim',
+	]
+}

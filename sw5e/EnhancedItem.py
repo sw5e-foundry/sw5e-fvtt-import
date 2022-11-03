@@ -296,6 +296,7 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		# Try to find the base item and use it's item
 		name = re.sub(r'\s*\([^()]*\)$', '', self.name)
+		name = re.sub(r'\s*Mk \w+$', '', name)
 		if name != self.name and self.type != 'CyberneticAugmentation':
 			data = {
 				'name': name,
@@ -305,13 +306,18 @@ class EnhancedItem(sw5e.Entity.Item):
 			if importer and (base := importer.get('equipment', data=data)):
 				return base.getImg(importer=importer)
 
-		# TODO: Remove this once there are icons for Enhanced Items
-		if name not in ('Alacrity Adrenal', 'Battle Adrenal', 'Stamina Adrenal', 'Strength Adrenal', 'Mandalorian Beskar\'gam', 'Mandalorian Helmet', 'Mandalorian Shuk\'orok'):
-			return 'icons/svg/item-bag.svg'
 
-		# Otherwise use the custom icon
-		name = utils.text.slugify(name)
-		return f'systems/sw5e/packs/Icons/Enhanced%20Items/{name}.webp'
+		# TODO: Remove this once there are icons for Enhanced Items
+		if name in utils.config.enhanced_item_icons['multi']:
+			name = utils.text.slugify(name)
+			if self.searchableRarity != 'Standard': name = name + self.searchableRarity
+			return f'systems/sw5e/packs/Icons/Enhanced%20Items/{name}.webp'
+		if name in utils.config.enhanced_item_icons['single']:
+			name = utils.text.slugify(name)
+			return f'systems/sw5e/packs/Icons/Enhanced%20Items/{name}.webp'
+
+		# Otherwise use the default item bag icon
+		return 'icons/svg/item-bag.svg'
 
 	def getType(self):
 		mapping = [

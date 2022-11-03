@@ -19,3 +19,4 @@
   - rampage 'result of the superiority die roll' -> 'superiority die'
 - feat.json
   - remove 'Fighting Styles and Masteries' x2
+  - remove 'Class Proficiencies'

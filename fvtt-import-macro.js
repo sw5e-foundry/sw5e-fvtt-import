@@ -132,7 +132,7 @@ for (let type of Object.keys(item_types)) {
 
 	let pack_docs = await pack.getDocuments();
 	for(let pack_doc of pack_docs) {
-		let pack_item = pack_doc.data;
+		let pack_item = pack_doc;
 		let uid = pack_item.flags.uid;
 
 		let importer_item = null;
@@ -168,11 +168,11 @@ for (let type of Object.keys(item_types)) {
 	if (allow_create) {
 		const items = await Item.createDocuments(to_create, { pack: `sw5e.${type}` });
 		for (let item of items) {
-			const uid = item.data.flags.uid;
+			const uid = item.flags.uid;
 
 			foundry_data[uid] = {
-				id: item.data._id,
-				effects: item.data.effects
+				id: item._id,
+				effects: item.effects
 			}
 		}
 	}
@@ -208,7 +208,7 @@ for (let type of Object.keys(journal_entry_types)) {
 
 	let pack_docs = await pack.getDocuments();
 	for(let pack_doc of pack_docs) {
-		let pack_entry = pack_doc.data;
+		let pack_entry = pack_doc;
 		let uid = pack_entry.flags.uid;
 
 		let importer_entry = null;
@@ -241,8 +241,8 @@ for (let type of Object.keys(journal_entry_types)) {
 	if (allow_create) {
 		const entries = await JournalEntry.createDocuments(to_create, { pack: `sw5e.${type}` });
 		for (let entry of entries) {
-			const uid = entry.data.flags.uid;
-			foundry_data[uid] = { id: entry.data._id };
+			const uid = entry.flags.uid;
+			foundry_data[uid] = { id: entry._id };
 		}
 	}
 
@@ -277,7 +277,7 @@ for (let type of Object.keys(actor_types)) {
 
 	let pack_docs = await pack.getDocuments();
 	for(let pack_doc of pack_docs) {
-		let pack_actor = pack_doc.data;
+		let pack_actor = pack_doc;
 		let actor_uid = pack_actor.flags.uid;
 
 		let importer_actor = null;
@@ -293,11 +293,11 @@ for (let type of Object.keys(actor_types)) {
 
 			let items_to_delete = [];
 			for (let pack_item of pack_actor.items) {
-				let item_uid = pack_item.data.flags.uid;
+				let item_uid = pack_item.flags.uid;
 				let foundry_data_item = foundry_data_items[item_uid];
 				if (foundry_data_item?.id != pack_item.id) items_to_delete.push(pack_item.id);
 			}
-			await pack_actor.document.deleteEmbeddedDocuments("Item", items_to_delete);
+			await pack_actor.deleteEmbeddedDocuments("Item", items_to_delete);
 
 			foundry_data[actor_uid] = {
 				id: pack_actor._id,
@@ -330,19 +330,19 @@ for (let type of Object.keys(actor_types)) {
 	if (allow_create) {
 		const actors = await Actor.createDocuments(to_create, { pack: `sw5e.${type}` });
 		for (let actor of actors) {
-			uid = actor.data.flags.uid;
+			uid = actor.flags.uid;
 
 			let items = {};
 			for (let item of actor.items) {
-				items[item.data.flags.uid] = {
+				items[item.flags.uid] = {
 					id: item.id,
 					effects: item.effects
 				};
 			}
 
 			foundry_data[uid] = {
-				id: actor.data._id,
-				effects: actor.data.effects,
+				id: actor._id,
+				effects: actor.effects,
 				sub_entities: items
 			}
 		}
