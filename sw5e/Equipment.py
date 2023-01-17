@@ -154,16 +154,20 @@ class Equipment(sw5e.Entity.Item):
 			"Kit": 'Tool',
 			"AlcoholicBeverage": 'Consumable',
 			"Spice": 'Consumable',
+			"Modification": 'Loot'
 		}
 		equipment_type = None
 		if raw_item["name"].lower().find("wristpad") != -1:
 			equipment_type = "Equipment"
 		elif raw_item["name"].lower().find("focus generator") != -1:
 			equipment_type = "Equipment"
+		elif raw_item["name"].lower().find("handwrap") != -1:
+			equipment_type = "Weapon"
 		elif "equipmentCategory" in raw_item and raw_item["equipmentCategory"] in mapping:
 			equipment_type = mapping[raw_item["equipmentCategory"]]
 		elif "equipment_type" in raw_item:
 			equipment_type = raw_item["equipment_type"]
+			if equipment_type in mapping: equipment_type = mapping[equipment_type]
 
 		if not equipment_type:
 			print(f'Unexpected item type, {raw_item=}')

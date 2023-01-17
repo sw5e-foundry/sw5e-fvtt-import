@@ -233,6 +233,10 @@ class Weapon(sw5e.Equipment.Equipment):
 		data["data"]["weaponType"] = self.weapon_type
 		data["data"]["properties"] = self.p_properties
 		data["data"]["properties"]["-=amm"] = None
+		data["data"]["critical"] = {
+			"threshold": None,
+			"damage": ""
+		}
 
 		data["data"]["ammo"] = { "types": self.ammo_types }
 		data["data"]["consume"] = { "type": "", "target": "", "ammount": None }

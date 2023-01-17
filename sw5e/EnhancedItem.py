@@ -1,4 +1,4 @@
-import sw5e.Entity, utils.text, utils.config
+import sw5e.Entity, utils.text, utils.config, utils.object
 import re, json, copy
 
 class EnhancedItem(sw5e.Entity.Item):
@@ -49,7 +49,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		self.modificationItemType = self.getModificationItemType()
 		self.p_properties = self.getProperties()
 
-		self.is_modification = self.type.endswith('Modification')
+		self.is_modification = self.type.endswith('Modification') or self.type in ('CyberneticAugmentation', 'DroidCustomization')
 
 	def getActivation(self):
 		return utils.text.getActivation(self.text, self.uses, self.recharge)
@@ -70,9 +70,11 @@ class EnhancedItem(sw5e.Entity.Item):
 		return utils.text.getAction(self.text, self.name)
 
 	def getAttackBonus(self):
-		if match := re.search(r'You (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<atk>attack)?(?: and )?(?P<dmg>damage)? rolls (?:made with this)?', self.text):
+		if match := re.search(r'you (?:have|gain) a \+(?P<atk>\d+) (?:bonus )?to attack rolls and deal an additional (?P<dmg>\d*d\d+) damage (?:with (?:this|your unarmed strikes))?', self.text.lower()):
+			return (match["atk"], match["dmg"])
+		if match := re.search(r'you (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<atk>attack)?(?: and )?(?P<dmg>damage)? rolls (?:(?:made )?with (?:this|your unarmed strikes))?', self.text.lower()):
 			return (match["bonus"] if match[opt] else 0 for opt in ('atk', 'dmg'))
-		if match := re.search(r'You (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<up>attack|damage) rolls and a -(?P<penalty>\d+) penalty to (?:attack|damage) rolls (?:made )?with this', self.text):
+		if match := re.search(r'you (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<up>attack|damage) rolls and a -(?P<penalty>\d+) penalty to (?:attack|damage) rolls (?:(?:made )?with (?:this|your unarmed strikes))?', self.text.lower()):
 			return (match["bonus"] if match["up"] == opt else "-"+match["penalty"] for opt in ('attack', 'damage'))
 		return 0, 0
 
@@ -169,11 +171,9 @@ class EnhancedItem(sw5e.Entity.Item):
 			else:
 				data["data"]["consumableType"] = mapping[self.subtypeTypeEnum]
 		elif self.type == 'CyberneticAugmentation':
-			## TODO: Change this once mods are supported
-			pass
+			data["data"]["modificationType"] = 'cybernetic'
 		elif self.type == 'DroidCustomization':
-			## TODO: Change this once mods are supported
-			pass
+			data["data"]["modificationType"] = 'droidcustomization'
 		elif self.type == 'Focus':
 			data["data"]["armor"] = {
 				"value": None,
@@ -188,9 +188,6 @@ class EnhancedItem(sw5e.Entity.Item):
 				data["data"]["baseItem"] = 'wristpad'
 			else:
 				raise ValueError(self.name, self.type, self.subtype, self.subtypeType)
-		elif self.type == 'ItemModification':
-			## TODO: Change this once mods are supported
-			pass
 		elif self.type == 'Shield':
 			data["data"]["armor"] = {
 				"value": 2,
@@ -206,10 +203,10 @@ class EnhancedItem(sw5e.Entity.Item):
 			else:
 				raise ValueError(self.name, self.type, self.subtype, self.subtypeType)
 		elif self.type == 'Weapon':
-			if not data["data"]["activation"]["type"]:
-				data["data"]["activation"] = { "type": 'action', "cost": 1 }
-			if not data["data"]["target"]["type"]:
-				data["data"]["target"] = { "value": 1, "type": 'enemy' }
+			if not utils.object.getProperty(data, 'data.activation.type'):
+				utils.object.setProperty(data, 'data.activation', { "type": 'action', "cost": 1 }, force=True)
+			if not utils.object.getProperty(data, 'data.target.type'):
+				utils.object.setProperty(data, 'data.target', { "type": 'enemy', "value": 1 }, force=True)
 
 			if self.subtypeType in ('AnyWithProperty', 'AnyBlasterWithProperty', 'AnyVibroweaponWithProperty', 'AnyLightweaponWithProperty'):
 				print(f"	'{self.subtypeType}' enhanced weapon detected. This kind of item is not supported since there currently no examples to know what they should look like.")
@@ -252,9 +249,13 @@ class EnhancedItem(sw5e.Entity.Item):
 		elif self.type == 'ShipWeapon':
 			## TODO: change this one ships are supported
 			pass
-		elif self.type in ('BlasterModification', 'ClothingModification', 'WristpadModification', 'ArmorModification', 'VibroweaponModification', 'LightweaponModification', 'FocusGeneratorModification', ):
-			## TODO: Change this once mods are supported
-			pass
+		elif self.is_modification:
+			data["data"]["modificationItemType"] = self.modificationItemType
+
+			data["data"]["modificationType"] = self.subtype
+			data["data"]["-=modificationSlot"] = None
+
+			data["data"]["properties"]["indeterminate"] = { key: False for key in self.p_properties.keys() }
 		else:
 			raise ValueError(self.name, self.type)
 
@@ -291,13 +292,10 @@ class EnhancedItem(sw5e.Entity.Item):
 		return text
 
 	def getImg(self, importer=None):
-		if self.is_modification:
-			return f'systems/sw5e/packs/Icons/Modifications/{self.subtype}.svg'
-
 		# Try to find the base item and use it's item
 		name = re.sub(r'\s*\([^()]*\)$', '', self.name)
 		name = re.sub(r'\s*Mk \w+$', '', name)
-		if name != self.name and self.type != 'CyberneticAugmentation':
+		if name != self.name and (not self.is_modification):
 			data = {
 				'name': name,
 				'equipment_type': self.getType().capitalize(),
@@ -305,7 +303,6 @@ class EnhancedItem(sw5e.Entity.Item):
 			}
 			if importer and (base := importer.get('equipment', data=data)):
 				return base.getImg(importer=importer)
-
 
 		# TODO: Remove this once there are icons for Enhanced Items
 		if name in utils.config.enhanced_item_icons['multi']:
@@ -316,6 +313,13 @@ class EnhancedItem(sw5e.Entity.Item):
 			name = utils.text.slugify(name)
 			return f'systems/sw5e/packs/Icons/Enhanced%20Items/{name}.webp'
 
+		# Use the modification subtype icons
+		if self.is_modification:
+			subtype = self.subtype
+			if self.type == 'CyberneticAugmentation': subtype = f'cybernetic-{self.subtype}'
+			elif self.type == 'DroidCustomization': subtype = f'droid-{self.subtype}'
+			return f'systems/sw5e/packs/Icons/Modifications/{subtype}.svg'
+
 		# Otherwise use the default item bag icon
 		return 'icons/svg/item-bag.svg'
 
@@ -325,8 +329,8 @@ class EnhancedItem(sw5e.Entity.Item):
 			'equipment', ## 1 = AdventuringGear
 			'equipment', ## 2 = Armor
 			'consumable', ## 3 = Consumable
-			'loot', ## 4 = CyberneticAugmentation
-			'loot', ## 5 = DroidCustomization
+			'modification', ## 4 = CyberneticAugmentation
+			'modification', ## 5 = DroidCustomization
 			'equipment', ## 6 = Focus
 			'modification', ## 7 = ItemModification
 			'equipment', ## 8 = Shield
@@ -344,6 +348,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			'modification', ## 20 = FocusGeneratorModification
 		]
 		item_type = mapping[self.typeEnum]
+
 		return item_type or 'loot'
 
 	def getAutoTargetData(self, data, base_item):
@@ -446,7 +451,13 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		return data
 
-	def getDataStandard(self, importer):
+	def getData(self, importer):
+		if (not self.is_modification) and self.subtypeType == 'Specific':
+			get_data = { 'name': self.subtype.title(), 'equipmentCategory': self.type.title() }
+			base_item = importer.get(self.getType(), data=get_data)
+
+			if base_item: return self.getDataSpecific(importer, base_item)
+
 		data = super().getData(importer)[0]
 
 		data["data"]["description"] = { "value": self.getDescription() }
@@ -454,26 +465,26 @@ class EnhancedItem(sw5e.Entity.Item):
 		data["data"]["attunement"] = 1 if self.requiresAttunement else 0
 		data["data"]["rarity"] = self.rarity
 
-		data["data"]["activation"] = {
+		if self.activation: data["data"]["activation"] = {
 			"type": self.activation,
 			"cost": 1 if self.activation != 'none' else None
 		}
-		data["data"]["duration"] = {
+		if self.duration_value or self.duration_unit: data["data"]["duration"] = {
 			"value": self.duration_value,
 			"units": self.duration_unit
 		}
-		data["data"]["target"] = {
+		if self.target_value or self.target_unit or self.target_type: data["data"]["target"] = {
 			"value": self.target_value,
 			"width": None,
 			"units": self.target_unit,
 			"type": self.target_type
 		}
-		data["data"]["range"] = {
+		if self.range_value or self.range_unit: data["data"]["range"] = {
 			"value": self.range_value,
 			"long": None,
 			"units": self.range_unit
 		}
-		data["data"]["uses"] = {
+		if self.uses or self.recharge: data["data"]["uses"] = {
 			"value": None,
 			"max": self.uses,
 			"per": self.recharge
@@ -481,16 +492,20 @@ class EnhancedItem(sw5e.Entity.Item):
 		#	item["data"]["consume"] = {}
 		#	item["data"]["ability"] = ''
 
-		data["data"]["actionType"] = self.action_type
-		data["data"]["attackBonus"] = self.attack_bonus
+		if self.action_type: data["data"]["actionType"] = self.action_type
+		if self.attack_bonus: data["data"]["attackBonus"] = self.attack_bonus
+		if self.damage_bonus: data["data"]["damageBonus"] = self.damage_bonus
 		#	item["data"]["chatFlavor"] = ''
-		#	item["data"]["critical"] = None
-		data["data"]["damage"] = {
+		data["data"]["critical"] = {
+			"threshold": None,
+			"damage": ""
+		}
+		if self.damage: data["data"]["damage"] = {
 			"parts": self.damage["parts"],
 			"versatile": self.damage["versatile"]
 		}
-		data["data"]["formula"] = self.formula
-		data["data"]["save"] = {
+		if self.formula: data["data"]["formula"] = self.formula
+		if self.save: data["data"]["save"] = {
 			"ability": self.save,
 			"dc": self.save_dc,
 			"scaling": "flat" if self.save_dc else "power"
@@ -503,42 +518,6 @@ class EnhancedItem(sw5e.Entity.Item):
 		#	data["data"]["recharge"] = ''
 
 		return [data]
-
-	def getDataModification(self, importer):
-		data = super().getData(importer)[0]
-
-		data["data"]["modificationItemType"] = self.modificationItemType
-
-		data["data"]["modificationType"] = self.subtype
-		data["data"]["-=modificationSlot"] = None
-
-
-		data["data"]["description"] = { "value": self.getDescription() }
-		data["data"]["source"] = self.contentSource
-		data["data"]["rarity"] = self.rarity
-
-		if self.attack_bonus: data["data"]["attackBonus"] = self.attack_bonus
-		if self.damage_bonus: data["data"]["damageBonus"] = self.damage_bonus
-		if self.damage: data["data"]["damage"] = {
-			"parts": self.damage["parts"],
-			"versatile": self.damage["versatile"]
-		}
-
-		data["data"]["properties"] = self.p_properties
-		data["data"]["properties"]["indeterminate"] = { key: False for key in self.p_properties.keys() }
-
-		return [data]
-
-	def getData(self, importer):
-		if self.is_modification: return self.getDataModification(importer)
-
-		if self.subtypeType == 'Specific':
-			get_data = { 'name': self.subtype.title(), 'equipmentCategory': self.type.title() }
-			base_item = importer.get(self.getType(), data=get_data)
-
-			if base_item: return self.getDataSpecific(importer, base_item)
-
-		return self.getDataStandard(importer)
 
 	def getFile(self, importer):
 		return f'Enhanced{self.type}'

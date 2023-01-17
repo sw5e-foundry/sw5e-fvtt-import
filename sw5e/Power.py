@@ -163,7 +163,10 @@ class Power(sw5e.Entity.Item):
 		data["data"]["actionType"] = self.action_type
 		# data["data"]["attackBonus"] = 0
 		# data["data"]["chatFlavor"] = ''
-		# data["data"]["critical"] = None
+		data["data"]["critical"] = {
+			"threshold": None,
+			"damage": ""
+		}
 		data["data"]["damage"] = self.damage
 		data["data"]["formula"] = self.formula
 		data["data"]["save"] = {
