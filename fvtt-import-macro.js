@@ -33,8 +33,6 @@ let item_types = {
 		'EnhancedAdventuringGear',
 		'EnhancedArmor',
 		'EnhancedConsumable',
-		'EnhancedCyberneticAugmentation',
-		'EnhancedDroidCustomization',
 		'EnhancedFocus',
 		'EnhancedShield',
 		// 'EnhancedShipArmor',
@@ -44,6 +42,8 @@ let item_types = {
 	],
 	'modifications': [
 		'EnhancedItemModification',
+		'EnhancedCyberneticAugmentation',
+		'EnhancedDroidCustomization',
 	],
 	'armor': ['Armor'],
 
