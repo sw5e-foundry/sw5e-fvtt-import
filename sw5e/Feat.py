@@ -26,9 +26,12 @@ class Feat(sw5e.Feature.BaseFeature):
 				extra_text += f'\n- {text}'
 
 			if extra_text:
-				self.description["value"] += f'\n{utils.text.markdownToHtml(extra_text)}'
+				self.description += f'\n{utils.text.markdownToHtml(extra_text)}'
 			else:
 				self.broken_links += 'cant find improvement feature'
+
+	def getFeatType(self):
+		return None, None
 
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)

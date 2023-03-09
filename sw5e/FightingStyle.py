@@ -1,7 +1,7 @@
 import sw5e.Feature, utils.text
 import re, json
 
-class FightingStyle(sw5e.Feature.BaseFeature):
+class FightingStyle(sw5e.Feature.CustomizationOption):
 	def load(self, raw_item):
 		super().load(raw_item)
 

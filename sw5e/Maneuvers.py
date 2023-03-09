@@ -8,6 +8,9 @@ class Maneuvers(sw5e.Feature.BaseFeature):
 		attrs = [ "metadata", "type", "eTag" ]
 		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_maneuver, attr))
 
+	def getFeatType(self):
+		return None, None
+
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)
 		return f'systems/sw5e/packs/Icons/Maneuvers/{name}.webp'

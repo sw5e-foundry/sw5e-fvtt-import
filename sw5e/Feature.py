@@ -1,7 +1,10 @@
-import sw5e.Entity, utils.text
+import sw5e.Entity, utils.text, utils.config
 import re, json
 
 class BaseFeature(sw5e.Entity.Item):
+	def getType(self):
+		return 'feat'
+
 	def load(self, raw_item):
 		super().load(raw_item)
 
@@ -25,6 +28,7 @@ class BaseFeature(sw5e.Entity.Item):
 		self.action_type, self.damage, self.formula, self.save, self.save_dc, _ = self.getAction()
 		self.activation = self.getActivation()
 		self.description = self.getDescription(importer)
+		self.featType, self.featSubtype = self.getFeatType()
 
 	def getActivation(self):
 		return utils.text.getActivation(self.text, self.uses, self.recharge)
@@ -48,9 +52,11 @@ class BaseFeature(sw5e.Entity.Item):
 	def getAction(self):
 		return utils.text.getAction(self.text, self.name)
 
+	def getFeatType(self):
+		raise NotImplementedError
+
 	def getDescription(self, importer):
-		text = utils.text.markdownToHtml(self.text)
-		return { "value": text }
+		return utils.text.markdownToHtml(self.text)
 
 	def getImg(self, importer=None):
 		raise NotImplementedError
@@ -58,7 +64,7 @@ class BaseFeature(sw5e.Entity.Item):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["description"] = self.description
+		data["data"]["description"] = { "value": self.description }
 		data["data"]["requirements"] = self.requirements
 		data["data"]["source"] = self.contentSource
 
@@ -96,7 +102,11 @@ class BaseFeature(sw5e.Entity.Item):
 			"dc": self.save_dc,
 			"scaling": "flat" if self.save_dc else "power"
 		}
-
+		if self.featType or self.featSubtype:
+			data["data"]["type"] = {
+				"value": self.featType or "",
+				"subtype": self.featSubtype or ""
+			}
 		# data["data"]["recharge"] = ''
 
 		return [data]
@@ -114,32 +124,20 @@ class Feature(BaseFeature):
 		self.subFeatures = self.getSubfeatures()
 
 	def process(self, importer):
+		self.class_name = self.getClassName(importer)
+
 		super().process(importer)
 
-		self.class_name = self.getClassName(importer)
 		self.requirements = self.getRequirements(importer)
 		self.contentType, self.contentTypeEnum = self.getContentType(importer)
 		self.contentSource, self.contentSourceEnum = self.getContentSource(importer)
 		self.processSubfeatures(importer)
 		self.description = self.getDescription(importer, processing=True)
 
-	def getType(self):
-		return "classfeature" if self.source in ['Class', 'Archetype', 'ClassInvocation', 'ArchetypeInvocation'] else "feat"
-
 	def getImg(self, importer=None):
 		if self.source in ['Class', 'Archetype', 'ClassInvocation', 'ArchetypeInvocation']:
-			class_abbr = {
-				'Berserker': 'BSKR',
-				'Consular': 'CSLR',
-				'Engineer': 'ENGR',
-				'Fighter': 'FGTR',
-				'Guardian': 'GRDN',
-				'Monk': 'MNK',
-				'Operative': 'OPRT',
-				'Scholar': 'SCLR',
-				'Scout': 'SCT',
-				'Sentinel': 'SNTL',
-			}.get(self.class_name or self.sourceName, 'BSKR')
+
+			class_abbr = { c["name"]: c["id"] for c in utils.config.classes }.get(self.class_name or self.sourceName, 'BSKR')
 			activation = {
 				'bonus': 'Bonus',
 				'action': 'Action',
@@ -150,8 +148,7 @@ class Feature(BaseFeature):
 			}.get(self.activation, 'Passive')
 			return f'systems/sw5e/packs/Icons/Class%20Features/{class_abbr}{"-ARCH" if self.source == "Archetype" else ""}-{activation}.webp'
 		else:
-			name = utils.text.slugify(self.sourceName)
-			return f'systems/sw5e/packs/Icons/Species/{name}.webp'
+			return f'systems/sw5e/packs/Icons/{self.source}/{utils.text.slugify(self.sourceName)}.webp'
 
 	def getClassName(self, importer):
 		if self.source in ('Archetype', 'ArchetypeInvocation'):
@@ -159,9 +156,11 @@ class Feature(BaseFeature):
 				return archetype.raw_className
 			else:
 				self.broken_links += ['cant find class name']
+		elif self.source in ('Class', 'ClassInvocation'):
+			return self.sourceName
 
 	def getRequirements(self, importer):
-		req = f'{self.class_name} ({self.sourceName})' if self.class_name else self.sourceName
+		req = f'{self.class_name} ({self.sourceName})' if self.class_name != self.sourceName else self.sourceName
 		if self.level and self.level > 1: req = f'{req} {self.level}'
 
 		if self.requirements: req += f', {self.requirements}'
@@ -203,8 +202,8 @@ class Feature(BaseFeature):
 	def processSubfeatures(self, importer):
 		for feature in self.subFeatures:
 			if entity := importer.get(self.getSourceType(), data={ "name": feature["name"] }):
-				feature["fid"] = feature.foundry_id
-				feature["uid"] = feature.uid
+				feature["fid"] = entity.foundry_id
+				feature["uid"] = entity.uid
 
 	def getSourceType(self):
 		if self.source in ('Archetype', 'ArchetypeInvocation'): return 'archetype'
@@ -215,6 +214,14 @@ class Feature(BaseFeature):
 		if importer and (item := importer.get(self.getSourceType(), data={ "name": self.sourceName })):
 			return item
 		else: self.broken_links += ['cant get source item']
+
+	def getFeatType(self):
+		if self.source in ('ArchetypeInvocation', 'ClassInvocation'):
+			return 'class', f'{self.class_name}Invocation'
+		if self.source in ('Archetype', 'Class'):
+			return 'class', None
+		if self.source == 'Species':
+			return 'species', None
 
 	def getDescription(self, importer, processing=False):
 		text = self.text
@@ -240,16 +247,7 @@ class Feature(BaseFeature):
 					link = f'@Compendium[sw5e.{sf["comp"]}.{sf["fid"]}]{{{sf["name"]}}}'
 					text = re.sub(fr'#### {sf["name"]}\r?\n', f'#### {link}\n', text)
 
-		text = utils.text.markdownToHtml(text)
-
-		return { "value": text }
-
-	def getData(self, importer):
-		data = super().getData(importer)[0]
-
-		data["data"]["className"] = self.class_name
-
-		return [data]
+		return utils.text.markdownToHtml(text)
 
 	def getSubEntities(self, importer):
 		sub_items = []
@@ -280,18 +278,13 @@ class Feature(BaseFeature):
 		return sub_items
 
 class CustomizationOption(BaseFeature):
-	def getType(self):
-		return 'feat'
+	def getFeatType(self):
+		subtype = self.__class__.__name__
+		subtype = ''.join((subtype[0].lower(), subtype[1:]))
+		return 'customizationOption', subtype
 
 	def getImg(self, importer=None):
 		return 'icons/svg/item-bag.svg'
-
-	def getData(self, importer):
-		data = super().getData(importer)[0]
-		class_name = self.__class__.__name__
-		class_name = re.sub(r'([a-z])([A-Z])', r'\1 \2', class_name)
-		data["name"] = f'{class_name} ({self.name})'
-		return [data]
 
 	# @classmethod
 	# def getUID(cls, raw_item):

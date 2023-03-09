@@ -59,7 +59,7 @@ class Class(sw5e.Entity.Item):
 		self.formulas = self.loadFormulas()
 		self.advancements = self.loadAdvancements()
 		self.archetypes = []
-		self.archetypesFlavor = self.loadArchetypesFlavor()
+		self.archetypesFlavor = ""
 		self.invocationsText = ""
 		self.skillChoices = self.loadSkillChoices()
 
@@ -177,18 +177,6 @@ class Class(sw5e.Entity.Item):
 
 		return advancements
 
-	def loadArchetypesFlavor(self):
-		output = [f'<h1>{self.raw_archetypeFlavorName}</h1>']
-		output += [f'<p>{self.raw_archetypeFlavorText}</p>']
-
-		if len(self.archetypes) > 0:
-			output += ['<ul>']
-			for arch in self.archetypes:
-				output += [f'<li>@Compendium[sw5e.archetypes.{arch["fid"]}]{{{arch["name"].capitalize()}}}</li>']
-			output += ['</ul>']
-
-		return "\n".join(output)
-
 	def loadSkillChoices(self):
 		mapping = { skl["name"]: skl["id"] for skl in utils.config.skills }
 		mapping["Any"] = 'any'
@@ -202,6 +190,7 @@ class Class(sw5e.Entity.Item):
 		if importer:
 			self.processFeatures(importer)
 			self.processArchetypes(importer)
+			self.processArchetypesFlavor(importer)
 			self.processInvocationsText(importer)
 			self.processAdvancements()
 		else:
@@ -224,6 +213,18 @@ class Class(sw5e.Entity.Item):
 				if arch.raw_className == self.name
 			]
 		else: broken_links += [ "no archetypes" ]
+
+	def processArchetypesFlavor(self, importer):
+		output = [f'<h1>{self.raw_archetypeFlavorName}</h1>']
+		output += [f'<p>{self.raw_archetypeFlavorText}</p>']
+
+		if len(self.archetypes) > 0:
+			output += ['<ul>']
+			for arch in self.archetypes:
+				output += [f'<li>@Compendium[sw5e.archetypes.{arch["fid"]}]{{{arch["name"].capitalize()}}}</li>']
+			output += ['</ul>']
+
+		self.archetypesFlavor = "\n".join(output)
 
 	def processInvocationsText(self, importer):
 		output = []

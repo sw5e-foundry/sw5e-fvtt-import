@@ -553,3 +553,46 @@ enhanced_item_icons = {
 		'Strength Stim',
 	]
 }
+
+classes = [
+	{
+		"name": 'Berserker',
+		"id": 'BSKR',
+	},
+	{
+		"name": 'Consular',
+		"id": 'CSLR',
+	},
+	{
+		"name": 'Engineer',
+		"id": 'ENGR',
+	},
+	{
+		"name": 'Fighter',
+		"id": 'FGTR',
+	},
+	{
+		"name": 'Guardian',
+		"id": 'GRDN',
+	},
+	{
+		"name": 'Monk',
+		"id": 'MNK',
+	},
+	{
+		"name": 'Operative',
+		"id": 'OPRT',
+	},
+	{
+		"name": 'Scholar',
+		"id": 'SCLR',
+	},
+	{
+		"name": 'Scout',
+		"id": 'SCT',
+	},
+	{
+		"name": 'Sentinel',
+		"id": 'SNTL',
+	},
+]
