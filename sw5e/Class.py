@@ -275,30 +275,30 @@ class Class(sw5e.Entity.Item):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["description"] = { "value": self.description }
-		data["data"]["atFlavorText"] = { "value": self.archetypesFlavor }
-		data["data"]["invocations"] = { "value": self.invocationsText }
-		data["data"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
-		data["data"]["levels"] = 1
-		data["data"]["hitDice"] = f'd{self.raw_hitDiceDieType}'
-		data["data"]["hitDiceUsed"] = 0
-		data["data"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
-		data["data"]["saves"] = [ save[:3].lower() for save in self.raw_savingThrows ]
-		data["data"]["skills"] = {
+		data["system"]["description"] = { "value": self.description }
+		data["system"]["atFlavorText"] = { "value": self.archetypesFlavor }
+		data["system"]["invocations"] = { "value": self.invocationsText }
+		data["system"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
+		data["system"]["levels"] = 1
+		data["system"]["hitDice"] = f'd{self.raw_hitDiceDieType}'
+		data["system"]["hitDiceUsed"] = 0
+		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
+		data["system"]["saves"] = [ save[:3].lower() for save in self.raw_savingThrows ]
+		data["system"]["skills"] = {
 			"number": self.raw_numSkillChoices,
 			"choices": self.skillChoices,
 			"value": []
 		}
-		data["data"]["source"] = self.raw_contentSource
-		data["data"]["powercasting"] = { "force": self.force, "tech": self.tech }
-		data["data"]["superiority"] = { "progression": self.superiority }
+		data["system"]["source"] = self.raw_contentSource
+		data["system"]["powercasting"] = { "force": self.force, "tech": self.tech }
+		data["system"]["superiority"] = { "progression": self.superiority }
 
-		data["data"]["-=className"] = None
-		data["data"]["-=archetypes"] = None
-		data["data"]["-=classFeatures"] = None
-		data["data"]["-=levelsTable"] = None
-		data["data"]["powercasting"]["-=progression"] = None
-		data["data"]["powercasting"]["-=ability"] = None
+		data["system"]["-=className"] = None
+		data["system"]["-=archetypes"] = None
+		data["system"]["-=classFeatures"] = None
+		data["system"]["-=levelsTable"] = None
+		data["system"]["powercasting"]["-=progression"] = None
+		data["system"]["powercasting"]["-=ability"] = None
 
 		return [data]
 

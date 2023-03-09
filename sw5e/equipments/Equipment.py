@@ -107,9 +107,9 @@ class Equipment(sw5e.Equipment.Equipment):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["armor"] = self.armor
-		data["data"]["strength"] = self.raw_strengthRequirement or 0
-		data["data"]["stealth"] = self.raw_stealthDisadvantage
-		data["data"]["properties"] = self.p_properties
+		data["system"]["armor"] = self.armor
+		data["system"]["strength"] = self.raw_strengthRequirement or 0
+		data["system"]["stealth"] = self.raw_stealthDisadvantage
+		data["system"]["properties"] = self.p_properties
 
 		return [data]

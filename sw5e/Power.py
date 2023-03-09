@@ -129,58 +129,58 @@ class Power(sw5e.Entity.Item):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["description"] = { "value": self.getDescription() }
-		data["data"]["requirements"] = self.raw_prerequisite or ''
-		data["data"]["source"] = self.raw_contentSource
-		data["data"]["activation"] = {
+		data["system"]["description"] = { "value": self.getDescription() }
+		data["system"]["requirements"] = self.raw_prerequisite or ''
+		data["system"]["source"] = self.raw_contentSource
+		data["system"]["activation"] = {
 			"type": self.activation_type,
 			"cost": self.activation_num,
 			"condition": self.activation_condition
 		}
-		data["data"]["duration"] = {
+		data["system"]["duration"] = {
 			"value": self.raw_duration_value,
 			"units": self.raw_duration_unit
 		}
-		data["data"]["target"] = {
+		data["system"]["target"] = {
 			"value": self.target_val,
 			"width": None,
 			"units": self.target_unit,
 			"type": self.target_type
 		}
-		data["data"]["range"] = {
+		data["system"]["range"] = {
 			"value": self.raw_range_val,
 			"long": None,
 			"units": self.raw_range_unit
 		}
-		data["data"]["uses"] = {
+		data["system"]["uses"] = {
 			"value": None,
 			"max": None,
 			"per": ''
 		}
-		# data["data"]["consume"] = {}
+		# data["system"]["consume"] = {}
 
-		data["data"]["ability"] = self.ability
-		data["data"]["actionType"] = self.action_type
-		# data["data"]["attackBonus"] = 0
-		# data["data"]["chatFlavor"] = ''
-		data["data"]["critical"] = {
+		data["system"]["ability"] = self.ability
+		data["system"]["actionType"] = self.action_type
+		# data["system"]["attackBonus"] = 0
+		# data["system"]["chatFlavor"] = ''
+		data["system"]["critical"] = {
 			"threshold": None,
 			"damage": ""
 		}
-		data["data"]["damage"] = self.damage
-		data["data"]["formula"] = self.formula
-		data["data"]["save"] = {
+		data["system"]["damage"] = self.damage
+		data["system"]["formula"] = self.formula
+		data["system"]["save"] = {
 			"ability": self.save,
 			"dc": self.save_dc,
 			"scaling": "flat" if self.save_dc else "power"
 		}
 
-		data["data"]["level"] = self.raw_level
-		data["data"]["school"] = self.school
-		data["data"]["components"] = { "concentration": bool(self.raw_concentration) }
-		data["data"]["materials"] = {}
-		data["data"]["preparation"] = {}
-		data["data"]["scaling"] = self.scaling
+		data["system"]["level"] = self.raw_level
+		data["system"]["school"] = self.school
+		data["system"]["components"] = { "concentration": bool(self.raw_concentration) }
+		data["system"]["materials"] = {}
+		data["system"]["preparation"] = {}
+		data["system"]["scaling"] = self.scaling
 
 		return [data]
 

@@ -105,31 +105,31 @@ class EnhancedItem(sw5e.Entity.Item):
 		if self.raw_subtypeType == 'Specific': return data
 
 		if self.raw_type == 'AdventuringGear':
-			data["data"]["armor"] = {
+			data["system"]["armor"] = {
 				"value": None,
 				"dex": None,
 			}
 			if self.raw_subtype in ('body', 'feet', 'hands', 'head', 'shoulders', 'waist', 'wrists', 'forearms', 'forearm', 'legs'):
-				data["data"]["armor"]["type"] = 'clothing'
+				data["system"]["armor"]["type"] = 'clothing'
 			elif self.raw_subtype in (None, '', 'finger', 'other', 'neck', 'back', 'wrist'):
-				data["data"]["armor"]["type"] = 'trinket'
+				data["system"]["armor"]["type"] = 'trinket'
 			else:
 				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
 		elif self.raw_type == 'Armor':
 			if self.raw_subtypeType in ('AnyHeavy', 'Any'):
-				data["data"]["armor"] = {
+				data["system"]["armor"] = {
 					"value": 16,
 					"type": 'heavy',
 					"dex": 0,
 				}
 			elif self.raw_subtypeType == 'AnyMedium':
-				data["data"]["armor"] = {
+				data["system"]["armor"] = {
 					"value": 14,
 					"type": 'medium',
 					"dex": 2,
 				}
 			elif self.raw_subtypeType == 'AnyLight':
-				data["data"]["armor"] = {
+				data["system"]["armor"] = {
 					"value": 11,
 					"type": 'light',
 					"dex": None,
@@ -150,59 +150,59 @@ class EnhancedItem(sw5e.Entity.Item):
 			if mapping[self.raw_subtypeTypeEnum] == 'CUSTOM':
 				if self.raw_subtype == 'substance':
 					## TODO: Change to alcoholic beverage once that type exists
-					data["data"]["consumableType"] = 'adrenal'
+					data["system"]["consumableType"] = 'adrenal'
 				elif self.raw_subtype == 'ammunition':
-					data["data"]["consumableType"] = 'ammo'
+					data["system"]["consumableType"] = 'ammo'
 					ammo_types = utils.config.ammo_types
 					name = self.raw_name.lower()
 					for ammo in ammo_types:
 						amn = ammo["name"].lower()
 						if name.find(amn) != -1:
-							data["data"]["ammoType"] = ammo["id"]
+							data["system"]["ammoType"] = ammo["id"]
 							break
-					if not 'ammoType' in data["data"]:
+					if not 'ammoType' in data["system"]:
 						desc = (self.raw_text or '').lower()
 						for ammo in ammo_types:
 							amn = ammo["name"].lower()
 							if desc.find(amn) != -1:
-								data["data"]["ammoType"] = ammo["id"]
+								data["system"]["ammoType"] = ammo["id"]
 								break
 				elif self.raw_subtype in ('technology', 'medpac'):
-					data["data"]["consumableType"] = self.raw_subtype
+					data["system"]["consumableType"] = self.raw_subtype
 				else:
 					raise ValueError(self.raw_name, self.raw_subtype, self.raw_subtypeType)
 			else:
-				data["data"]["consumableType"] = mapping[self.raw_subtypeTypeEnum]
+				data["system"]["consumableType"] = mapping[self.raw_subtypeTypeEnum]
 		elif self.raw_type == 'CyberneticAugmentation':
-			data["data"]["modificationType"] = 'cybernetic'
+			data["system"]["modificationType"] = 'cybernetic'
 		elif self.raw_type == 'DroidCustomization':
-			data["data"]["modificationType"] = 'droidcustomization'
+			data["system"]["modificationType"] = 'droidcustomization'
 		elif self.raw_type == 'Focus':
-			data["data"]["armor"] = {
+			data["system"]["armor"] = {
 				"value": None,
 				"type": 'trinket',
 				"dex": None,
 			}
 			if self.raw_subtype in ('force', 'focus'):
-				data["data"]["armor"]["type"] = 'focusgenerator'
-				data["data"]["baseItem"] = 'focusgenerator'
+				data["system"]["armor"]["type"] = 'focusgenerator'
+				data["system"]["baseItem"] = 'focusgenerator'
 			elif self.raw_subtype == 'tech':
-				data["data"]["armor"]["type"] = 'wristpad'
-				data["data"]["baseItem"] = 'wristpad'
+				data["system"]["armor"]["type"] = 'wristpad'
+				data["system"]["baseItem"] = 'wristpad'
 			else:
 				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
 		elif self.raw_type == 'Shield':
-			data["data"]["armor"] = {
+			data["system"]["armor"] = {
 				"value": 2,
 				"type": 'shield',
 				"dex": None,
 			}
 			if self.raw_subtypeType == 'Light':
-				data["data"]["armor"]["value"] = 1
+				data["system"]["armor"]["value"] = 1
 			elif self.raw_subtypeType in ('Medium', 'Any'):
-				data["data"]["armor"]["value"] = 2
+				data["system"]["armor"]["value"] = 2
 			elif self.raw_subtypeType == 'Heavy':
-				data["data"]["armor"]["value"] = 3
+				data["system"]["armor"]["value"] = 3
 			else:
 				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
 		elif self.raw_type == 'Weapon':
@@ -220,19 +220,19 @@ class EnhancedItem(sw5e.Entity.Item):
 				print(f'{self.raw_text=}')
 
 			if self.raw_subtypeType in ('Any', 'AnyWithProperty'):
-				if data["data"]["actionType"] == 'other':
-					data["data"]["actionType"] = 'mwak'
-				if ("weaponType" not in data["data"]) or (not data["data"]["weaponType"]):
-					data["data"]["weaponType"] = 'improv'
+				if data["system"]["actionType"] == 'other':
+					data["system"]["actionType"] = 'mwak'
+				if ("weaponType" not in data["system"]) or (not data["system"]["weaponType"]):
+					data["system"]["weaponType"] = 'improv'
 			elif self.raw_subtypeType in ('AnyBlaster', 'AnyBlasterWithProperty'):
-				data["data"]["actionType"] = 'rwak'
-				data["data"]["weaponType"] = 'simpleB'
+				data["system"]["actionType"] = 'rwak'
+				data["system"]["weaponType"] = 'simpleB'
 			elif self.raw_subtypeType in ('AnyVibroweapon', 'AnyVibroweaponWithProperty'):
-				data["data"]["actionType"] = 'mwak'
-				data["data"]["weaponType"] = 'simpleVW'
+				data["system"]["actionType"] = 'mwak'
+				data["system"]["weaponType"] = 'simpleVW'
 			elif self.raw_subtypeType in ('AnyLightweapon', 'AnyLightweaponWithProperty'):
-				data["data"]["actionType"] = 'mwak'
-				data["data"]["weaponType"] = 'simpleLW'
+				data["system"]["actionType"] = 'mwak'
+				data["system"]["weaponType"] = 'simpleLW'
 			else:
 				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
 		elif self.raw_type == 'Valuable':
@@ -253,12 +253,12 @@ class EnhancedItem(sw5e.Entity.Item):
 			## TODO: change this one ships are supported
 			pass
 		elif self.is_modification:
-			data["data"]["modificationItemType"] = self.modificationItemType
+			data["system"]["modificationItemType"] = self.modificationItemType
 
-			data["data"]["modificationType"] = self.raw_subtype
-			data["data"]["-=modificationSlot"] = None
+			data["system"]["modificationType"] = self.raw_subtype
+			data["system"]["-=modificationSlot"] = None
 
-			data["data"]["properties"]["indeterminate"] = { key: False for key in self.p_properties.keys() }
+			data["system"]["properties"]["indeterminate"] = { key: False for key in self.p_properties.keys() }
 		else:
 			raise ValueError(self.raw_name, self.raw_type)
 
@@ -358,10 +358,10 @@ class EnhancedItem(sw5e.Entity.Item):
 		if 'smr' in self.p_properties and type(auto := self.p_properties["smr"].split(', ')) == list:
 			mod = (int(auto[0]) - 10) // 2
 			prof = int(auto[1])
-			data["data"]["ability"] = 'str'
-			data["data"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
-			data["data"]["damage"]["parts"][0][0] = f'{base_item.raw_damageNumberOfDice}d{base_item.raw_damageDieType} + {mod}'
-			data["data"]["proficient"] = True
+			data["system"]["ability"] = 'str'
+			data["system"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
+			data["system"]["damage"]["parts"][0][0] = f'{base_item.raw_damageNumberOfDice}d{base_item.raw_damageDieType} + {mod}'
+			data["system"]["proficient"] = True
 		return data
 
 	def getDataSpecific(self, importer, base_item):
@@ -377,7 +377,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			mode = (re.search(r'\.mode-(.*)', item["flags"]["sw5e-importer"]["uid"]) or [None,None])[1]
 
 			for key in superdata:
-				if key in ("data", "img"): continue
+				if key in ("system", "img"): continue
 				item[key] = copy.deepcopy(superdata[key])
 
 			if self.getImg(importer=importer) != 'icons/svg/item-bag.svg':
@@ -387,70 +387,70 @@ class EnhancedItem(sw5e.Entity.Item):
 				item["name"] += f' ({mode.title()})'
 				item["flags"]["sw5e-importer"]["uid"] += f'.mode-{mode}'
 
-			item["data"]["description"] = {
-				"value": self.getDescription(base_text = (base_item.name, item["data"]["description"]["value"]))
+			item["system"]["description"] = {
+				"value": self.getDescription(base_text = (base_item.name, item["system"]["description"]["value"]))
 			}
-			item["data"]["source"] = self.raw_contentSource
-			item["data"]["attunement"] = 1 if self.raw_requiresAttunement else 0
-			item["data"]["rarity"] = self.rarity
+			item["system"]["source"] = self.raw_contentSource
+			item["system"]["attunement"] = 1 if self.raw_requiresAttunement else 0
+			item["system"]["rarity"] = self.rarity
 
-			activation = choose(item["data"]["activation"], self.activation, "type", 'none')
-			item["data"]["activation"] = {
+			activation = choose(item["system"]["activation"], self.activation, "type", 'none')
+			item["system"]["activation"] = {
 				"type": activation,
 				"cost": 1 if activation != 'none' else None
 			}
-			item["data"]["duration"] = {
-				"value": choose(item["data"]["duration"], self.duration_value, "value", None),
-				"units": choose(item["data"]["duration"], self.duration_unit, "units", 'inst'),
+			item["system"]["duration"] = {
+				"value": choose(item["system"]["duration"], self.duration_value, "value", None),
+				"units": choose(item["system"]["duration"], self.duration_unit, "units", 'inst'),
 			}
-			item["data"]["target"] = {
-				"value": choose(item["data"]["target"], self.target_value, "value", None),
+			item["system"]["target"] = {
+				"value": choose(item["system"]["target"], self.target_value, "value", None),
 				"width": None,
-				"units": choose(item["data"]["target"], self.target_unit, "units", ''),
-				"type": choose(item["data"]["target"], self.target_type, "type", ''),
+				"units": choose(item["system"]["target"], self.target_unit, "units", ''),
+				"type": choose(item["system"]["target"], self.target_type, "type", ''),
 			}
-			item["data"]["range"] = {
-				"value": choose(item["data"]["range"], self.range_value, "value", None),
-				"long": choose(item["data"]["range"], None, "long", None),
-				"units": choose(item["data"]["range"], self.range_unit, "units", ''),
+			item["system"]["range"] = {
+				"value": choose(item["system"]["range"], self.range_value, "value", None),
+				"long": choose(item["system"]["range"], None, "long", None),
+				"units": choose(item["system"]["range"], self.range_unit, "units", ''),
 			}
-			if "per" not in item["data"]["uses"] or item["data"]["uses"]["per"] == None:
-				item["data"]["uses"] = {
+			if "per" not in item["system"]["uses"] or item["system"]["uses"]["per"] == None:
+				item["system"]["uses"] = {
 					"value": None,
 					"max": self.uses,
 					"per": self.recharge
 				}
-			#	item["data"]["consume"] = {}
-			#	item["data"]["ability"] = ''
+			#	item["system"]["consume"] = {}
+			#	item["system"]["ability"] = ''
 
-			item["data"]["properties"] = {**item["data"]["properties"], **self.p_properties}
+			item["system"]["properties"] = {**item["system"]["properties"], **self.p_properties}
 			item = self.getAutoTargetData(item, base_item);
 
-			item["data"]["actionType"] = choose(item["data"], self.action_type, "actionType", 'other')
+			item["system"]["actionType"] = choose(item["system"], self.action_type, "actionType", 'other')
 			if self.attack_bonus:
-				if item["data"]["attackBonus"]: item["data"]["attackBonus"] += f' + {self.attack_bonus}'
-				else: item["data"]["attackBonus"] = self.attack_bonus
-			#	item["data"]["chatFlavor"] = ''
-			#	item["data"]["critical"] = None
-			item["data"]["damage"] = {
-				"parts": (item["data"]["damage"]["parts"] if "parts" in item["data"]["damage"] else []) + self.damage["parts"],
-				"versatile": choose(item["data"]["damage"], self.damage["versatile"], "versatile", '')
+				if item["system"]["attackBonus"]: item["system"]["attackBonus"] += f' + {self.attack_bonus}'
+				else: item["system"]["attackBonus"] = self.attack_bonus
+			#	item["system"]["chatFlavor"] = ''
+			#	item["system"]["critical"] = None
+			item["system"]["damage"] = {
+				"parts": (item["system"]["damage"]["parts"] if "parts" in item["system"]["damage"] else []) + self.damage["parts"],
+				"versatile": choose(item["system"]["damage"], self.damage["versatile"], "versatile", '')
 			}
 
-			if self.damage_bonus and item["data"]["damage"]["parts"]:
-				item["data"]["damage"]["parts"][0][0] += f' + {self.damage_bonus}'
-				if item["data"]["damage"]["versatile"]: item["data"]["damage"]["versatile"] += f' + {self.damage_bonus}'
+			if self.damage_bonus and item["system"]["damage"]["parts"]:
+				item["system"]["damage"]["parts"][0][0] += f' + {self.damage_bonus}'
+				if item["system"]["damage"]["versatile"]: item["system"]["damage"]["versatile"] += f' + {self.damage_bonus}'
 
-			item["data"]["formula"] = choose(item["data"], self.formula, "formula", '')
-			item["data"]["save"] = {
-				"ability": choose(item["data"]["save"], self.save, "ability", ''),
+			item["system"]["formula"] = choose(item["system"], self.formula, "formula", '')
+			item["system"]["save"] = {
+				"ability": choose(item["system"]["save"], self.save, "ability", ''),
 				"dc": None,
 				"scaling": "none"
 			}
 
 			item = self.applySubtype(item)
 
-			#	item["data"]["recharge"] = ''
+			#	item["system"]["recharge"] = ''
 
 		return data
 
@@ -463,62 +463,62 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		data = super().getData(importer)[0]
 
-		data["data"]["description"] = { "value": self.getDescription() }
-		data["data"]["source"] = self.raw_contentSource
-		data["data"]["attunement"] = 1 if self.raw_requiresAttunement else 0
-		data["data"]["rarity"] = self.rarity
+		data["system"]["description"] = { "value": self.getDescription() }
+		data["system"]["source"] = self.raw_contentSource
+		data["system"]["attunement"] = 1 if self.raw_requiresAttunement else 0
+		data["system"]["rarity"] = self.rarity
 
-		if self.activation: data["data"]["activation"] = {
+		if self.activation: data["system"]["activation"] = {
 			"type": self.activation,
 			"cost": 1 if self.activation != 'none' else None
 		}
-		if self.duration_value or self.duration_unit: data["data"]["duration"] = {
+		if self.duration_value or self.duration_unit: data["system"]["duration"] = {
 			"value": self.duration_value,
 			"units": self.duration_unit
 		}
-		if self.target_value or self.target_unit or self.target_type: data["data"]["target"] = {
+		if self.target_value or self.target_unit or self.target_type: data["system"]["target"] = {
 			"value": self.target_value,
 			"width": None,
 			"units": self.target_unit,
 			"type": self.target_type
 		}
-		if self.range_value or self.range_unit: data["data"]["range"] = {
+		if self.range_value or self.range_unit: data["system"]["range"] = {
 			"value": self.range_value,
 			"long": None,
 			"units": self.range_unit
 		}
-		if self.uses or self.recharge: data["data"]["uses"] = {
+		if self.uses or self.recharge: data["system"]["uses"] = {
 			"value": None,
 			"max": self.uses,
 			"per": self.recharge
 		}
-		#	item["data"]["consume"] = {}
-		#	item["data"]["ability"] = ''
+		#	item["system"]["consume"] = {}
+		#	item["system"]["ability"] = ''
 
-		if self.action_type: data["data"]["actionType"] = self.action_type
-		if self.attack_bonus: data["data"]["attackBonus"] = self.attack_bonus
-		if self.damage_bonus: data["data"]["damageBonus"] = self.damage_bonus
-		#	item["data"]["chatFlavor"] = ''
-		data["data"]["critical"] = {
+		if self.action_type: data["system"]["actionType"] = self.action_type
+		if self.attack_bonus: data["system"]["attackBonus"] = self.attack_bonus
+		if self.damage_bonus: data["system"]["damageBonus"] = self.damage_bonus
+		#	item["system"]["chatFlavor"] = ''
+		data["system"]["critical"] = {
 			"threshold": None,
 			"damage": ""
 		}
-		if self.damage: data["data"]["damage"] = {
+		if self.damage: data["system"]["damage"] = {
 			"parts": self.damage["parts"],
 			"versatile": self.damage["versatile"]
 		}
-		if self.formula: data["data"]["formula"] = self.formula
-		if self.save: data["data"]["save"] = {
+		if self.formula: data["system"]["formula"] = self.formula
+		if self.save: data["system"]["save"] = {
 			"ability": self.save,
 			"dc": self.save_dc,
 			"scaling": "flat" if self.save_dc else "power"
 		}
 
-		data["data"]["properties"] = self.p_properties
+		data["system"]["properties"] = self.p_properties
 
 		self.applySubtype(data)
 
-		#	data["data"]["recharge"] = ''
+		#	data["system"]["recharge"] = ''
 
 		return [data]
 

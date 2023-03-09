@@ -174,15 +174,15 @@ class MonsterBehavior(sw5e.Entity.Entity):
 		data["_id"] = self.foundry_id
 		data["type"] = self.type
 		data["img"] = self.getImg()
-		data["data"] = {}
+		data["system"] = {}
 
 		for attr in ('description', 'activation', 'recharge', 'uses', 'range', 'target', 'duration', 'actionType', 'damage', 'formula', 'save', 'attackBonus', 'source'):
-			if val := getattr(self, attr): data["data"][attr] = val
+			if val := getattr(self, attr): data["system"][attr] = val
 
 		if self.type == 'weapon':
-			data["data"]["weaponType"] = 'natural'
-			data["data"]["equipped"] = True
-			data["data"]["proficient"] = True
+			data["system"]["weaponType"] = 'natural'
+			data["system"]["equipped"] = True
+			data["system"]["proficient"] = True
 
 		return [data]
 
@@ -530,8 +530,8 @@ class Monster(sw5e.Entity.Actor):
 		data = super().getData(importer)[0]
 
 		data["type"] = 'npc'
-		data["data"]["source"] = self.raw_contentSource
-		data["data"]["details"] = {
+		data["system"]["source"] = self.raw_contentSource
+		data["system"]["details"] = {
 			"biography": {
 				"value": self.biography
 			},
@@ -540,7 +540,7 @@ class Monster(sw5e.Entity.Actor):
 			"cr": self.cr,
 			"source": self.raw_contentSource
 		}
-		data["data"]["attributes"] = {
+		data["system"]["attributes"] = {
 			"ac": self.ac,
 			"hp": {
 				"max": self.raw_hitPoints,
@@ -549,9 +549,9 @@ class Monster(sw5e.Entity.Actor):
 			},
 			"senses": self.senses
 		}
-		data["data"]["abilities"] = self.abilities
-		data["data"]["skills"] = self.skills
-		data["data"]["traits"] = {
+		data["system"]["abilities"] = self.abilities
+		data["system"]["skills"] = self.skills
+		data["system"]["traits"] = {
 			"size": self.size,
 			"ci": { "value": self.ci[0], "custom": self.ci[1] },
 			"di": { "value": self.di },

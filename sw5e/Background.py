@@ -172,31 +172,31 @@ class Background(sw5e.Entity.Item):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["description"] = { "value": self.getDescription() }
+		data["system"]["description"] = { "value": self.getDescription() }
 
-		data["data"]["-=flavorText"] = None
-		data["data"]["-=flavorName"] = None
-		data["data"]["-=flavorDescription"] = None
-		data["data"]["-=flavorOptions"] = None
+		data["system"]["-=flavorText"] = None
+		data["system"]["-=flavorName"] = None
+		data["system"]["-=flavorDescription"] = None
+		data["system"]["-=flavorOptions"] = None
 
-		data["data"]["skillProficiencies"] = { "value": self.raw_skillProficiencies }
-		data["data"]["toolProficiencies"] = { "value": self.raw_toolProficiencies }
-		data["data"]["languages"] = { "value": self.raw_languages }
-		data["data"]["equipment"] = { "value": self.raw_equipment }
-		data["data"]["featureName"] = { "value": self.raw_featureName }
-		data["data"]["featureText"] = { "value": self.raw_featureText }
-		data["data"]["featOptions"] = { "value": self.raw_featOptions }
+		data["system"]["skillProficiencies"] = { "value": self.raw_skillProficiencies }
+		data["system"]["toolProficiencies"] = { "value": self.raw_toolProficiencies }
+		data["system"]["languages"] = { "value": self.raw_languages }
+		data["system"]["equipment"] = { "value": self.raw_equipment }
+		data["system"]["featureName"] = { "value": self.raw_featureName }
+		data["system"]["featureText"] = { "value": self.raw_featureText }
+		data["system"]["featOptions"] = { "value": self.raw_featOptions }
 
-		data["data"]["-=suggestedCharacteristics"] = None
-		data["data"]["-=personalityTraitOptions"] = None
-		data["data"]["-=idealOptions"] = None
-		data["data"]["-=flawOptions"] = None
-		data["data"]["-=bondOptions"] = None
+		data["system"]["-=suggestedCharacteristics"] = None
+		data["system"]["-=personalityTraitOptions"] = None
+		data["system"]["-=idealOptions"] = None
+		data["system"]["-=flawOptions"] = None
+		data["system"]["-=bondOptions"] = None
 
-		data["data"]["source"] = self.raw_contentSource
+		data["system"]["source"] = self.raw_contentSource
 
-		data["data"]["-=damage"] = None
-		data["data"]["-=armorproperties"] = None
-		data["data"]["-=weaponproperties"] = None
+		data["system"]["-=damage"] = None
+		data["system"]["-=armorproperties"] = None
+		data["system"]["-=weaponproperties"] = None
 
 		return [data]

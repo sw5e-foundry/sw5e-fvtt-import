@@ -63,24 +63,24 @@ class Species(sw5e.Entity.Item):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["description"] = { "value": self.getDescription() }
-		data["data"]["source"] = self.raw_contentSource
-		data["data"]["-=traits"] = None
-		data["data"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
-		data["data"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
-		data["data"]["skinColorOptions"] = { "value": self.raw_skinColorOptions}
-		data["data"]["hairColorOptions"] = { "value": self.raw_hairColorOptions}
-		data["data"]["eyeColorOptions"] = { "value": self.raw_eyeColorOptions}
-		data["data"]["colorScheme"] = { "value": self.raw_colorScheme}
-		data["data"]["distinctions"] = { "value": self.raw_distinctions}
-		data["data"]["heightAverage"] = { "value": self.raw_heightAverage}
-		data["data"]["heightRollMod"] = { "value": self.raw_heightRollMod}
-		data["data"]["weightAverage"] = { "value": self.raw_weightAverage}
-		data["data"]["weightRollMod"] = { "value": self.raw_weightRollMod}
-		data["data"]["homeworld"] = { "value": self.raw_homeworld}
-		data["data"]["slanguage"] = { "value": self.raw_language}
-		data["data"]["-=damage"] = None
-		data["data"]["-=armorproperties"] = None
-		data["data"]["-=weaponproperties"] = None
+		data["system"]["description"] = { "value": self.getDescription() }
+		data["system"]["source"] = self.raw_contentSource
+		data["system"]["-=traits"] = None
+		data["system"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
+		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
+		data["system"]["skinColorOptions"] = { "value": self.raw_skinColorOptions}
+		data["system"]["hairColorOptions"] = { "value": self.raw_hairColorOptions}
+		data["system"]["eyeColorOptions"] = { "value": self.raw_eyeColorOptions}
+		data["system"]["colorScheme"] = { "value": self.raw_colorScheme}
+		data["system"]["distinctions"] = { "value": self.raw_distinctions}
+		data["system"]["heightAverage"] = { "value": self.raw_heightAverage}
+		data["system"]["heightRollMod"] = { "value": self.raw_heightRollMod}
+		data["system"]["weightAverage"] = { "value": self.raw_weightAverage}
+		data["system"]["weightRollMod"] = { "value": self.raw_weightRollMod}
+		data["system"]["homeworld"] = { "value": self.raw_homeworld}
+		data["system"]["slanguage"] = { "value": self.raw_language}
+		data["system"]["-=damage"] = None
+		data["system"]["-=armorproperties"] = None
+		data["system"]["-=weaponproperties"] = None
 
 		return [data]

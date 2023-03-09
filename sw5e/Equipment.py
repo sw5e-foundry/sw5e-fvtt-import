@@ -70,59 +70,59 @@ class Equipment(sw5e.Entity.Item):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["description"] = { "value": self.getDescription(importer) } #will call the child's getDescription
-		data["data"]["requirements"] = ''
-		data["data"]["source"] = self.raw_contentSource
-		data["data"]["quantity"] = 1
-		data["data"]["weight"] = self.getWeight()
-		data["data"]["price"] = self.raw_cost
-		data["data"]["attunement"] = 0
-		data["data"]["equipped"] = False
-		data["data"]["rarity"] = ''
-		data["data"]["identified"] = True
+		data["system"]["description"] = { "value": self.getDescription(importer) } #will call the child's getDescription
+		data["system"]["requirements"] = ''
+		data["system"]["source"] = self.raw_contentSource
+		data["system"]["quantity"] = 1
+		data["system"]["weight"] = self.getWeight()
+		data["system"]["price"] = self.raw_cost
+		data["system"]["attunement"] = 0
+		data["system"]["equipped"] = False
+		data["system"]["rarity"] = ''
+		data["system"]["identified"] = True
 
-		data["data"]["baseItem"] = self.baseItem
+		data["system"]["baseItem"] = self.baseItem
 
-		data["data"]["activation"] = {
+		data["system"]["activation"] = {
 			"type": self.activation,
 			"cost": 1,
 			"condition": ''
 		} if self.activation != 'none' else {}
 
 		#TODO: extract duration, target, range, consume, damage and other rolls
-		data["data"]["duration"] = {
+		data["system"]["duration"] = {
 			"value": None,
 			"units": ''
 		}
-		data["data"]["target"] = {}
-		data["data"]["range"] = {}
-		data["data"]["uses"] = {
+		data["system"]["target"] = {}
+		data["system"]["range"] = {}
+		data["system"]["uses"] = {
 			"value": self.uses_value,
 			"max": self.uses,
 			"per": self.recharge
 		}
-		data["data"]["consume"] = {}
-		data["data"]["ability"] = ''
-		data["data"]["actionType"] = ''
-		data["data"]["attackBonus"] = 0
-		data["data"]["chatFlavor"] = ''
-		data["data"]["critical"] = None
-		data["data"]["damage"] = {
+		data["system"]["consume"] = {}
+		data["system"]["ability"] = ''
+		data["system"]["actionType"] = ''
+		data["system"]["attackBonus"] = 0
+		data["system"]["chatFlavor"] = ''
+		data["system"]["critical"] = None
+		data["system"]["damage"] = {
 			"parts": [],
 			"versatile": '',
 		}
-		data["data"]["formula"] = ''
-		data["data"]["save"] = {}
-		data["data"]["armor"] = {}
-		data["data"]["hp"] = {
+		data["system"]["formula"] = ''
+		data["system"]["save"] = {}
+		data["system"]["armor"] = {}
+		data["system"]["hp"] = {
 			"value": 0,
 			"max": 0,
 			"dt": None,
 			"conditions": ''
 		}
-		data["data"]["weaponType"] = ''
-		data["data"]["properties"] = {}
-		data["data"]["proficient"] = False
+		data["system"]["weaponType"] = ''
+		data["system"]["properties"] = {}
+		data["system"]["proficient"] = False
 
 		return [data]
 

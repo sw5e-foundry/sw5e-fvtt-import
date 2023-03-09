@@ -102,7 +102,7 @@ class Item(Entity):
 
 		data["type"] = self.getType()
 		data["img"] = self.getImg(importer=importer)
-		data["data"] = {}
+		data["system"] = {}
 		data["effects"] = self.effects
 
 		return [data]
@@ -119,7 +119,7 @@ class Actor(Entity):
 		data = super().getData(importer)[0]
 
 		data["img"] = self.getImg(importer=importer)
-		data["data"] = {}
+		data["system"] = {}
 
 		return [data]
 

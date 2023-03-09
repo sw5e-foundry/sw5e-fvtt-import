@@ -37,6 +37,6 @@ class Tool(sw5e.Equipment.Equipment):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["toolType"], data["data"]["ability"] = self.getToolType()
+		data["system"]["toolType"], data["system"]["ability"] = self.getToolType()
 
 		return [data]

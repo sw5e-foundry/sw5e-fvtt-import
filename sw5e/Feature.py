@@ -71,50 +71,50 @@ class BaseFeature(sw5e.Entity.Item):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["description"] = { "value": self.description }
-		data["data"]["requirements"] = self.raw_requirements
-		data["data"]["source"] = self.raw_contentSource
+		data["system"]["description"] = { "value": self.description }
+		data["system"]["requirements"] = self.raw_requirements
+		data["system"]["source"] = self.raw_contentSource
 
-		data["data"]["activation"] = {
+		data["system"]["activation"] = {
 			"type": self.activation,
 			"cost": 1 if self.activation else None
 		}
-		data["data"]["duration"] = {
+		data["system"]["duration"] = {
 			"value": self.duration_value,
 			"units": self.duration_unit
 		}
-		data["data"]["target"] = {
+		data["system"]["target"] = {
 			"value": self.target_val,
 			"width": None,
 			"units": self.target_unit,
 			"type": self.target_type
 		}
-		data["data"]["range"] = self.range
-		data["data"]["uses"] = {
+		data["system"]["range"] = self.range
+		data["system"]["uses"] = {
 			"value": None,
 			"max": self.uses,
 			"per": self.recharge
 		}
-		# data["data"]["consume"] = {}
-		# data["data"]["ability"] = ''
+		# data["system"]["consume"] = {}
+		# data["system"]["ability"] = ''
 
-		data["data"]["actionType"] = self.action_type
-		# data["data"]["attackBonus"] = 0
-		# data["data"]["chatFlavor"] = ''
-		# data["data"]["critical"] = None
-		data["data"]["damage"] = self.damage
-		data["data"]["formula"] = self.formula
-		data["data"]["save"] = {
+		data["system"]["actionType"] = self.action_type
+		# data["system"]["attackBonus"] = 0
+		# data["system"]["chatFlavor"] = ''
+		# data["system"]["critical"] = None
+		data["system"]["damage"] = self.damage
+		data["system"]["formula"] = self.formula
+		data["system"]["save"] = {
 			"ability": self.save,
 			"dc": self.save_dc,
 			"scaling": "flat" if self.save_dc else "power"
 		}
 		if self.featType or self.featSubtype:
-			data["data"]["type"] = {
+			data["system"]["type"] = {
 				"value": self.featType or "",
 				"subtype": self.featSubtype or ""
 			}
-		# data["data"]["recharge"] = ''
+		# data["system"]["recharge"] = ''
 
 		return [data]
 

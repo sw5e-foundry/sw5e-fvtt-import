@@ -143,10 +143,10 @@ class Weapon(sw5e.Equipment.Equipment):
 		if 'smr' in self.p_properties and type(smr := self.p_properties["smr"].split('/')) == list:
 			mod = (int(smr[0]) - 10) // 2
 			prof = int(smr[1])
-			data["data"]["ability"] = 'str'
-			data["data"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
-			data["data"]["damage"]["parts"][0][0] = f'{self.raw_damageNumberOfDice}d{self.raw_damageDieType} + {mod}'
-			data["data"]["proficient"] = True
+			data["system"]["ability"] = 'str'
+			data["system"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
+			data["system"]["damage"]["parts"][0][0] = f'{self.raw_damageNumberOfDice}d{self.raw_damageDieType} + {mod}'
+			data["system"]["proficient"] = True
 		return data
 
 	def getItemVariations(self, original_data, importer):
@@ -191,12 +191,12 @@ class Weapon(sw5e.Equipment.Equipment):
 				burst_data = copy.deepcopy(original_data)
 				burst_data["name"] = f'{self.name} (Burst)'
 
-				burst_data["data"]["target"]["value"] = '10'
-				burst_data["data"]["target"]["units"] = 'ft'
-				burst_data["data"]["target"]["type"] = 'cube'
+				burst_data["system"]["target"]["value"] = '10'
+				burst_data["system"]["target"]["units"] = 'ft'
+				burst_data["system"]["target"]["type"] = 'cube'
 
-				burst_data["data"]["actionType"] = 'save'
-				burst_data["data"]["save"] = {
+				burst_data["system"]["actionType"] = 'save'
+				burst_data["system"]["save"] = {
 					"ability": 'dex',
 					"dc": None,
 					"scaling": 'dex'
@@ -207,9 +207,9 @@ class Weapon(sw5e.Equipment.Equipment):
 				rapid_data = copy.deepcopy(original_data)
 				rapid_data["name"] = f'{self.name} (Rapid)'
 
-				rapid_data["data"]["actionType"] = 'save'
-				rapid_data["data"]["damage"]["parts"][0][0] = re.sub(r'^(\d+)d', lambda m: f'{int(m[1])*2}d', rapid_data["data"]["damage"]["parts"][0][0])
-				rapid_data["data"]["save"] = {
+				rapid_data["system"]["actionType"] = 'save'
+				rapid_data["system"]["damage"]["parts"][0][0] = re.sub(r'^(\d+)d', lambda m: f'{int(m[1])*2}d', rapid_data["system"]["damage"]["parts"][0][0])
+				rapid_data["system"]["save"] = {
 					"ability": 'dex',
 					"dc": None,
 					"scaling": 'dex'
@@ -222,24 +222,24 @@ class Weapon(sw5e.Equipment.Equipment):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["data"]["target"]["value"] = 1
-		data["data"]["target"]["width"] = None
-		data["data"]["target"]["units"] = ''
-		data["data"]["target"]["type"] = 'enemy'
+		data["system"]["target"]["value"] = 1
+		data["system"]["target"]["width"] = None
+		data["system"]["target"]["units"] = ''
+		data["system"]["target"]["type"] = 'enemy'
 
-		data["data"]["range"] = self.getRange()
-		data["data"]["actionType"] = self.getActionType()
-		data["data"]["damage"] = self.getDamage()
-		data["data"]["weaponType"] = self.weapon_type
-		data["data"]["properties"] = self.p_properties
-		data["data"]["properties"]["-=amm"] = None
-		data["data"]["critical"] = {
+		data["system"]["range"] = self.getRange()
+		data["system"]["actionType"] = self.getActionType()
+		data["system"]["damage"] = self.getDamage()
+		data["system"]["weaponType"] = self.weapon_type
+		data["system"]["properties"] = self.p_properties
+		data["system"]["properties"]["-=amm"] = None
+		data["system"]["critical"] = {
 			"threshold": None,
 			"damage": ""
 		}
 
-		data["data"]["ammo"] = { "types": self.ammo_types }
-		data["data"]["consume"] = { "type": "", "target": "", "ammount": None }
+		data["system"]["ammo"] = { "types": self.ammo_types }
+		data["system"]["consume"] = { "type": "", "target": "", "ammount": None }
 
 		data = self.getAutoTargetData(data)
 		return self.getItemVariations(data, importer)

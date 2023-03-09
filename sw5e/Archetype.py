@@ -240,19 +240,19 @@ class Archetype(sw5e.Entity.Item):
 		data = super().getData(importer)[0]
 
 		data["name"] = self.full_name
-		data["data"]["description"] = { "value": self.description }
-		data["data"]["invocations"] = { "value": self.invocationsText }
-		data["data"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
-		data["data"]["classIdentifier"] = utils.text.slugify(self.raw_className, capitalized=False)
-		data["data"]["powercasting"] = { "force": self.force, "tech": self.tech }
-		data["data"]["superiority"] = { "progression": self.superiority }
-		data["data"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
-		data["data"]["source"] = self.raw_contentSource
+		data["system"]["description"] = { "value": self.description }
+		data["system"]["invocations"] = { "value": self.invocationsText }
+		data["system"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
+		data["system"]["classIdentifier"] = utils.text.slugify(self.raw_className, capitalized=False)
+		data["system"]["powercasting"] = { "force": self.force, "tech": self.tech }
+		data["system"]["superiority"] = { "progression": self.superiority }
+		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
+		data["system"]["source"] = self.raw_contentSource
 
-		data["data"]["-=className"] = None
-		data["data"]["-=classCasterType"] = None
-		data["data"]["powercasting"]["-=progression"] = None
-		data["data"]["powercasting"]["-=ability"] = None
+		data["system"]["-=className"] = None
+		data["system"]["-=classCasterType"] = None
+		data["system"]["powercasting"]["-=progression"] = None
+		data["system"]["powercasting"]["-=ability"] = None
 
 		return [data]
 
