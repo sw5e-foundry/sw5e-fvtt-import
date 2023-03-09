@@ -109,7 +109,7 @@ class BaseFeature(sw5e.Entity.Item):
 			"dc": self.save_dc,
 			"scaling": "flat" if self.save_dc else "power"
 		}
-		if self.featType or self.featSubtype:
+		if self.getType() == 'feat':
 			data["system"]["type"] = {
 				"value": self.featType or "",
 				"subtype": self.featSubtype or ""

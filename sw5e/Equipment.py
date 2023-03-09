@@ -75,7 +75,10 @@ class Equipment(sw5e.Entity.Item):
 		data["system"]["source"] = self.raw_contentSource
 		data["system"]["quantity"] = 1
 		data["system"]["weight"] = self.getWeight()
-		data["system"]["price"] = self.raw_cost
+		data["system"]["price"] = {
+			"value": self.raw_cost,
+			"denomination": "gc"
+		}
 		data["system"]["attunement"] = 0
 		data["system"]["equipped"] = False
 		data["system"]["rarity"] = ''
