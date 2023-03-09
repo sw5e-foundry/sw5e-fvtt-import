@@ -12,7 +12,7 @@ class Tool(sw5e.Equipment.Equipment):
 
 	def getImg(self, importer=None):
 		kwargs = {
-			# 'item_type': self.equipmentCategory,
+			# 'item_type': self.raw_equipmentCategory,
 			'no_img': ('Unknown', 'Tool'),
 			'default_img': 'systems/sw5e/packs/Icons/Kit/DemolitionsKit.webp',
 			# 'plural': False
@@ -20,7 +20,7 @@ class Tool(sw5e.Equipment.Equipment):
 		return super().getImg(importer=importer, **kwargs)
 
 	def getDescription(self, importer):
-		text = self.description
+		text = self.raw_description
 		return utils.text.markdownToHtml(text)
 
 	def getToolType(self):
@@ -30,8 +30,8 @@ class Tool(sw5e.Equipment.Equipment):
 		}
 		if self.name.find('implements') != -1: return 'artisan', 'int'
 		elif self.name.find('kit') != -1: return 'specialist', 'int'
-		elif self.equipmentCategory in tools: return tools[self.equipmentCategory], 'cha'
-		print(f'		Unable to recognize tool type for {self.name}, {self.equipmentCategory}')
+		elif self.raw_equipmentCategory in tools: return tools[self.raw_equipmentCategory], 'cha'
+		print(f'		Unable to recognize tool type for {self.name}, {self.raw_equipmentCategory}')
 		return '', 'int'
 
 	def getData(self, importer):

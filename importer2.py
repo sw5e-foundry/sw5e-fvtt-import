@@ -52,7 +52,7 @@ class Importer:
 	__stored_types = __entity_types
 
 	__base_url = "https://sw5eapi.azurewebsites.net/api"
-	version = 2
+	version = 3
 
 	warn_limit = 5
 
@@ -134,10 +134,10 @@ class Importer:
 
 			if old_entity := storage.get(uid):
 				if "propertiesMap" in raw_entity and "Modal" in raw_entity["propertiesMap"]: return
-				elif raw_entity["partitionKey"] != old_entity.partitionKey:
-					if 'MISSING-DATA' in (raw_entity["partitionKey"], old_entity.partitionKey):
+				elif raw_entity["partitionKey"] != old_entity.raw_partitionKey:
+					if 'MISSING-DATA' in (raw_entity["partitionKey"], old_entity.raw_partitionKey):
 						raise ValueError("Duplicated Entity in 'Missing Data'")
-					elif old_entity.partitionKey == 'Core':
+					elif old_entity.raw_partitionKey == 'Core':
 						return
 				else: raise ValueError("Duplicated Entity", uid)
 
@@ -171,8 +171,8 @@ class Importer:
 						## TODO: Remove this once starship items are done
 						if re.search(r'EnhancedItem\.name-ship', uid): continue
 						## TODO: Find a way to set the foundry_ids of the weapon modes
-						if entity.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', entity.propertiesMap): continue
-						if entity.__class__.__name__ == 'Weapon' and entity.modes: continue
+						if entity.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', entity.raw_propertiesMap): continue
+						if entity.__class__.__name__ == 'Weapon' and entity.raw_modes: continue
 						if missing_fdata < self.warn_limit: print(f'		Entity missing it\'s foundry data: {uid}')
 						entity.foundry_id = utils.text.randomID()
 						missing_fdata += 1
@@ -273,7 +273,7 @@ class Importer:
 					if file not in data:
 						data[file] = {}
 					for mode in entity_data:
-						mode_uid = mode["flags"]["uid"]
+						mode_uid = mode["flags"]["sw5e-importer"]["uid"]
 						data[file][mode_uid] = mode
 				except:
 					print(f'		{entity.name}')

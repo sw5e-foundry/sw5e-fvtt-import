@@ -2,10 +2,8 @@ import sw5e.Entity, sw5e.Advancement, utils.text
 import re, json
 
 class Species(sw5e.Entity.Item):
-	def load(self, raw_species):
-		super().load(raw_species)
-
-		attrs = [
+	def getAttrs(self):
+		return super().getAttrs() + [
 			"skinColorOptions",
 			"hairColorOptions",
 			"eyeColorOptions",
@@ -33,7 +31,6 @@ class Species(sw5e.Entity.Item):
 			"timestamp",
 			"rowKey",
 		]
-		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_species, attr))
 
 	def process(self, importer):
 		super().process(importer)

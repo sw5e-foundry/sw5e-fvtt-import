@@ -2,10 +2,8 @@ import sw5e.Entity, utils.text, utils.config
 import re, json
 
 class MonsterBehavior(sw5e.Entity.Entity):
-	def load(self, raw_item):
-		super().load(raw_item)
-
-		attrs = [
+	def getAttrs(self):
+		return super().getAttrs() + [
 			"monsterBehaviorTypeEnum",
 			"monsterBehaviorType",
 			"description",
@@ -35,7 +33,9 @@ class MonsterBehavior(sw5e.Entity.Entity):
 			"sourceProf",
 			"sourceAbil",
 		]
-		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_item, attr))
+
+	def load(self, raw_item):
+		super().load(raw_item)
 
 		self.type = self.loadType()
 		self.description = self.loadDescription()

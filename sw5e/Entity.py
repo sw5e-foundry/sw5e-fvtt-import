@@ -13,9 +13,27 @@ class Entity:
 
 		self.load(raw_entity)
 
+	def getAttrs(self):
+		return [
+			"name",
+			"contentTypeEnum",
+			"contentType",
+			"contentSourceEnum",
+			"contentSource",
+			"partitionKey",
+			"rowKey",
+			"timestamp",
+			"eTag",
+		]
+
+	def getJsonAttrs(self):
+		return []
+
 	def load(self, raw_entity):
-		self.name = utils.text.clean(raw_entity, "name")
-		self.timestamp = utils.text.clean(raw_entity, "timestamp")
+		for attr in self.getAttrs(): setattr(self, f'raw_{attr}', utils.text.clean(raw_entity, attr))
+		for attr in self.getJsonAttrs(): setattr(self, f'raw_{attr}', utils.text.cleanJson(raw_entity, attr))
+
+		self.name = self.raw_name
 
 	def process(self, importer):
 		# if not self.foundry_id: raise AssertionError('Entities should have foundry_id by now', self.uid)
@@ -27,9 +45,11 @@ class Entity:
 
 		data["name"] = self.name
 		data["flags"] = {
-			"timestamp": self.timestamp,
-			"importer_version": self.importer_version,
-			"uid": self.uid,
+			"sw5e-importer": {
+				"timestamp": self.raw_timestamp,
+				"importer_version": self.importer_version,
+				"uid": self.uid,
+			}
 		}
 
 		return [data]
@@ -118,13 +138,10 @@ class JournalEntry(Entity):
 		return [data]
 
 class Property(JournalEntry):
-	def load(self, raw_entity):
-		super().load(raw_entity)
-
-		attrs = [ "content", "contentTypeEnum", "contentType", "contentSourceEnum", "contentSource", "partitionKey", "rowKey" ]
-		for attr in attrs: setattr(self, f'_{attr}', utils.text.clean(raw_entity, attr))
+	def getAttrs(self):
+		return super().getAttrs() + [ "content", "contentTypeEnum", "contentType", "contentSourceEnum", "contentSource", "partitionKey", "rowKey" ]
 
 	def getContent(self, val=None):
-		content = self._content
+		content = self.raw_content
 		if val: content = re.sub(r'#### [\w-]+', f'#### {val.capitalize()}', content)
 		return utils.text.markdownToHtml(content)

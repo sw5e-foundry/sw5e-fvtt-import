@@ -232,7 +232,7 @@ class Importer:
 					if file not in data:
 						data[file] = {}
 					for mode in entity_data:
-						mode_uid = mode["flags"]["uid"]
+						mode_uid = mode["flags"]["sw5e-importer"]["uid"]
 						data[file][mode_uid] = mode
 				except:
 					print(f'		{entity.name}')

@@ -2,10 +2,8 @@ import sw5e.Entity, sw5e.Advancement, utils.text
 import re, json
 
 class Class(sw5e.Entity.Item):
-	def load(self, raw_class):
-		super().load(raw_class)
-
-		attrs = [
+	def getAttrs(self):
+		return super().getAttrs() + [
 			"summary",
 			"primaryAbility",
 			"flavorText",
@@ -49,7 +47,10 @@ class Class(sw5e.Entity.Item):
 			"timestamp",
 			"eTag",
 		]
-		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_class, attr))
+
+	def load(self, raw_class):
+		super().load(raw_class)
+
 		self.raw_levelChangeHeaders = utils.text.cleanJson(raw_class, "levelChangeHeaders")
 
 		self.description = self.loadDescription()

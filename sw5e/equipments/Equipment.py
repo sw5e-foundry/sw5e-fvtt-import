@@ -2,29 +2,26 @@ import sw5e.Equipment, utils.text, utils.config
 import re, json
 
 class Equipment(sw5e.Equipment.Equipment):
-	def load(self, raw_item):
-		super().load(raw_item)
-
 	def process(self, importer):
 		super().process(importer)
 
-		self.uses, self.recharge = utils.text.getUses(self.description, self.name)
-		self.activation = utils.text.getActivation(self.description, self.uses, self.recharge)
+		self.uses, self.recharge = utils.text.getUses(self.raw_description, self.name)
+		self.activation = utils.text.getActivation(self.raw_description, self.uses, self.recharge)
 		self.armor = self.getArmor()
 		self.p_properties = self.getProperties()
 
 	def getImg(self, importer=None):
 		kwargs = {
-			'item_type': self.equipmentCategory,
+			'item_type': self.raw_equipmentCategory,
 			'no_img': ('Unknown', 'Clothing'),
 			'default_img': 'systems/sw5e/packs/Icons/Armor/PHB/AssaultArmor.webp',
 			# 'plural': False
 		}
-		if self.equipmentCategory == 'Armor': kwargs["item_type"] += '/' + self.contentSource
+		if self.raw_equipmentCategory == 'Armor': kwargs["item_type"] += '/' + self.raw_contentSource
 		return super().getImg(importer=importer, **kwargs)
 
 	def getDescription(self, importer):
-		properties = {prop: self.propertiesMap[prop] for prop in self.propertiesMap if prop != 'Special'}
+		properties = {prop: self.raw_propertiesMap[prop] for prop in self.raw_propertiesMap if prop != 'Special'}
 
 		text = ''
 
@@ -38,9 +35,9 @@ class Equipment(sw5e.Equipment.Equipment):
 			text = ', '.join([properties[prop].capitalize() for prop in properties])
 			text = utils.text.markdownToHtml(text)
 
-		if self.description:
+		if self.raw_description:
 			if text: text += '\n<hr/>\n'
-			text += utils.text.markdownToHtml(self.description)
+			text += utils.text.markdownToHtml(self.raw_description)
 
 		return text
 
@@ -49,8 +46,8 @@ class Equipment(sw5e.Equipment.Equipment):
 		equipment_type = None
 		max_dex = None
 
-		if self.armorClassificationEnum == 0:
-			if self.equipmentCategory == 'Clothing':
+		if self.raw_armorClassificationEnum == 0:
+			if self.raw_equipmentCategory == 'Clothing':
 				equipment_type = 'clothing'
 			elif self.name.lower().find('focus generator') != -1:
 				equipment_type = 'focusgenerator'
@@ -59,12 +56,12 @@ class Equipment(sw5e.Equipment.Equipment):
 			else:
 				equipment_type = 'trinket'
 		else:
-			ac = re.search(r'^\+?(\d+)', self.ac)
+			ac = re.search(r'^\+?(\d+)', f'{self.raw_ac}')
 			if ac != None: ac = int(ac.group(1))
-			equipment_type = self.armorClassification.lower()
+			equipment_type = self.raw_armorClassification.lower()
 
-		if self.armorClassification == 'Medium': max_dex = 2
-		if self.armorClassification == 'Heavy': max_dex = 0
+		if self.raw_armorClassification == 'Medium': max_dex = 2
+		if self.raw_armorClassification == 'Heavy': max_dex = 0
 
 		return {
 			"value": ac,
@@ -78,8 +75,8 @@ class Equipment(sw5e.Equipment.Equipment):
 	def getProperties(self):
 		properties_list = self.getPropertiesList()
 		properties = {
-			**utils.text.getProperties(self.propertiesMap.values(), properties_list, error=True),
-			**utils.text.getProperties(self.description, properties_list),
+			**utils.text.getProperties(self.raw_propertiesMap.values(), properties_list, error=True),
+			**utils.text.getProperties(self.raw_description, properties_list),
 		}
 
 		return properties
@@ -111,8 +108,8 @@ class Equipment(sw5e.Equipment.Equipment):
 		data = super().getData(importer)[0]
 
 		data["data"]["armor"] = self.armor
-		data["data"]["strength"] = self.strengthRequirement
-		data["data"]["stealth"] = self.stealthDisadvantage
+		data["data"]["strength"] = self.raw_strengthRequirement or 0
+		data["data"]["stealth"] = self.raw_stealthDisadvantage
 		data["data"]["properties"] = self.p_properties
 
 		return [data]

@@ -2,38 +2,41 @@ import sw5e.Entity, utils.text, utils.config, utils.object
 import re, json, copy
 
 class EnhancedItem(sw5e.Entity.Item):
+	def getAttrs(self):
+		return super().getAttrs() + [
+			"name",
+			"typeEnum",
+			"type",
+			"rarityOptionsEnum",
+			"rarityOptions",
+			"rarityText",
+			"searchableRarity",
+			"requiresAttunement",
+			"valueText",
+			"text",
+			"hasPrerequisite",
+			"prerequisite",
+			"subtype",
+			"contentTypeEnum",
+			"contentType",
+			"contentSourceEnum",
+			"contentSource",
+			"partitionKey",
+			"rowKey",
+		]
+
 	def load(self, raw_item):
 		super().load(raw_item)
 
-		self.name = utils.text.clean(raw_item, "name")
-		self.typeEnum = utils.text.raw(raw_item, "typeEnum")
-		self.type = utils.text.clean(raw_item, "type")
-		self.rarityOptionsEnum = utils.text.raw(raw_item, "rarityOptionsEnum")
-		self.rarityOptions = utils.text.cleanJson(raw_item, "rarityOptions")
-		self.rarityText = utils.text.clean(raw_item, "rarityText")
-		self.searchableRarity = utils.text.clean(raw_item, "searchableRarity")
-		self.requiresAttunement = utils.text.raw(raw_item, "requiresAttunement")
-		self.valueText = utils.text.clean(raw_item, "valueText")
-		self.text = utils.text.clean(raw_item, "text")
-		self.hasPrerequisite = utils.text.raw(raw_item, "hasPrerequisite")
-		self.prerequisite = utils.text.clean(raw_item, "prerequisite")
-		self.subtype = utils.text.clean(raw_item, "subtype")
-
-		self.subtypeType = \
-			utils.text.clean(raw_item, utils.text.lowerCase(self.type)+'Type') or \
-			utils.text.clean(raw_item, f'enhanced{self.type}Type') or \
+		self.raw_subtypeType = \
+			utils.text.clean(raw_item, utils.text.lowerCase(self.raw_type)+'Type') or \
+			utils.text.clean(raw_item, f'enhanced{self.raw_type}Type') or \
 			utils.text.clean(raw_item, f'itemModificationType') or 'None'
-		self.subtypeTypeEnum = \
-			utils.text.raw(raw_item, f'{utils.text.lowerCase(self.type)}TypeEnum') or \
-			utils.text.raw(raw_item, f'enhanced{self.type}TypeEnum') or \
+		self.raw_subtypeTypeEnum = \
+			utils.text.raw(raw_item, f'{utils.text.lowerCase(self.raw_type)}TypeEnum') or \
+			utils.text.raw(raw_item, f'enhanced{self.raw_type}TypeEnum') or \
 			utils.text.raw(raw_item, f'itemModificationTypeEnum') or 0
 
-		self.contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")
-		self.contentType = utils.text.clean(raw_item, "contentType")
-		self.contentSourceEnum = utils.text.raw(raw_item, "contentSourceEnum")
-		self.contentSource = utils.text.clean(raw_item, "contentSource")
-		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
-		self.rowKey = utils.text.clean(raw_item, "rowKey")
 
 	def process(self, importer):
 		super().process(importer)
@@ -49,91 +52,91 @@ class EnhancedItem(sw5e.Entity.Item):
 		self.modificationItemType = self.getModificationItemType()
 		self.p_properties = self.getProperties()
 
-		self.is_modification = self.type.endswith('Modification') or self.type in ('CyberneticAugmentation', 'DroidCustomization')
+		self.is_modification = self.raw_type.endswith('Modification') or self.raw_type in ('CyberneticAugmentation', 'DroidCustomization')
 
 	def getActivation(self):
-		return utils.text.getActivation(self.text, self.uses, self.recharge)
+		return utils.text.getActivation(self.raw_text, self.uses, self.recharge)
 
 	def getDuration(self):
-		return utils.text.getDuration(self.text, self.name)
+		return utils.text.getDuration(self.raw_text, self.raw_name)
 
 	def getTarget(self):
-		return utils.text.getTarget(self.text, self.name)
+		return utils.text.getTarget(self.raw_text, self.raw_name)
 
 	def getRange(self):
-		return utils.text.getRange(self.text, self.name)
+		return utils.text.getRange(self.raw_text, self.raw_name)
 
 	def getUses(self):
-		return utils.text.getUses(self.text, self.name)
+		return utils.text.getUses(self.raw_text, self.raw_name)
 
 	def getAction(self):
-		return utils.text.getAction(self.text, self.name)
+		return utils.text.getAction(self.raw_text, self.raw_name)
 
 	def getAttackBonus(self):
-		if match := re.search(r'you (?:have|gain) a \+(?P<atk>\d+) (?:bonus )?to attack rolls and deal an additional (?P<dmg>\d*d\d+) damage (?:with (?:this|your unarmed strikes))?', self.text.lower()):
+		if match := re.search(r'you (?:have|gain) a \+(?P<atk>\d+) (?:bonus )?to attack rolls and deal an additional (?P<dmg>\d*d\d+) damage (?:with (?:this|your unarmed strikes))?', self.raw_text.lower()):
 			return (match["atk"], match["dmg"])
-		if match := re.search(r'you (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<atk>attack)?(?: and )?(?P<dmg>damage)? rolls (?:(?:made )?with (?:this|your unarmed strikes))?', self.text.lower()):
+		if match := re.search(r'you (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<atk>attack)?(?: and )?(?P<dmg>damage)? rolls (?:(?:made )?with (?:this|your unarmed strikes))?', self.raw_text.lower()):
 			return (match["bonus"] if match[opt] else 0 for opt in ('atk', 'dmg'))
-		if match := re.search(r'you (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<up>attack|damage) rolls and a -(?P<penalty>\d+) penalty to (?:attack|damage) rolls (?:(?:made )?with (?:this|your unarmed strikes))?', self.text.lower()):
+		if match := re.search(r'you (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<up>attack|damage) rolls and a -(?P<penalty>\d+) penalty to (?:attack|damage) rolls (?:(?:made )?with (?:this|your unarmed strikes))?', self.raw_text.lower()):
 			return (match["bonus"] if match["up"] == opt else "-"+match["penalty"] for opt in ('attack', 'damage'))
 		return 0, 0
 
 	def getRarity(self):
-		return self.rarityText
+		return self.raw_rarityText
 
 	def getModificationItemType(self):
-		if self.subtype in ('armor', 'clothing', 'focusgenerator', 'wristpad'): return 'equipment'
-		elif self.subtype in ('blaster', 'vibroweapon', 'lightweapon'): return 'weapon'
+		if self.raw_subtype in ('armor', 'clothing', 'focusgenerator', 'wristpad'): return 'equipment'
+		elif self.raw_subtype in ('blaster', 'vibroweapon', 'lightweapon'): return 'weapon'
 
 	def getProperties(self):
 		target_type = self.modificationItemType or self.getType()
 
 		if target_type == 'equipment':
-			if self.type == 'Focus': properties_list = utils.config.casting_properties
+			if self.raw_type == 'Focus': properties_list = utils.config.casting_properties
 			else: properties_list = utils.config.armor_properties
 		elif target_type == 'weapon':
 			properties_list = utils.config.weapon_properties
 		else:
 			return {}
 
-		return utils.text.getProperties(self.text, properties_list, needs_end=True)
+		return utils.text.getProperties(self.raw_text, properties_list, needs_end=True)
 
 	def applySubtype(self, data):
-		if self.subtypeType == 'Specific': return data
+		if self.raw_subtypeType == 'Specific': return data
 
-		if self.type == 'AdventuringGear':
+		if self.raw_type == 'AdventuringGear':
 			data["data"]["armor"] = {
 				"value": None,
 				"dex": None,
 			}
-			if self.subtype in ('body', 'feet', 'hands', 'head', 'shoulders', 'waist', 'wrists', 'forearms', 'forearm', 'legs'):
+			if self.raw_subtype in ('body', 'feet', 'hands', 'head', 'shoulders', 'waist', 'wrists', 'forearms', 'forearm', 'legs'):
 				data["data"]["armor"]["type"] = 'clothing'
-			elif self.subtype in (None, '', 'finger', 'other', 'neck', 'back', 'wrist'):
+			elif self.raw_subtype in (None, '', 'finger', 'other', 'neck', 'back', 'wrist'):
 				data["data"]["armor"]["type"] = 'trinket'
 			else:
-				raise ValueError(self.name, self.type, self.subtype, self.subtypeType)
-		elif self.type == 'Armor':
-			if self.subtypeType in ('AnyHeavy', 'Any'):
+				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
+		elif self.raw_type == 'Armor':
+			if self.raw_subtypeType in ('AnyHeavy', 'Any'):
 				data["data"]["armor"] = {
 					"value": 16,
 					"type": 'heavy',
 					"dex": 0,
 				}
-			elif self.subtypeType == 'AnyMedium':
+			elif self.raw_subtypeType == 'AnyMedium':
 				data["data"]["armor"] = {
 					"value": 14,
 					"type": 'medium',
 					"dex": 2,
 				}
-			elif self.subtypeType == 'AnyLight':
+			elif self.raw_subtypeType == 'AnyLight':
 				data["data"]["armor"] = {
 					"value": 11,
 					"type": 'light',
 					"dex": None,
 				}
 			else:
-				raise ValueError(self.name, self.type, self.subtype, self.subtypeType)
-		elif self.type == 'Consumable':
+				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
+		elif self.raw_type == 'Consumable':
 			mapping = [
 				None, ## None
 				'adrenal', ## Adrenals
@@ -144,136 +147,136 @@ class EnhancedItem(sw5e.Entity.Item):
 				'CUSTOM', ## Other
 				'technology', ## Barriers
 			]
-			if mapping[self.subtypeTypeEnum] == 'CUSTOM':
-				if self.subtype == 'substance':
+			if mapping[self.raw_subtypeTypeEnum] == 'CUSTOM':
+				if self.raw_subtype == 'substance':
 					## TODO: Change to alcoholic beverage once that type exists
 					data["data"]["consumableType"] = 'adrenal'
-				elif self.subtype == 'ammunition':
+				elif self.raw_subtype == 'ammunition':
 					data["data"]["consumableType"] = 'ammo'
 					ammo_types = utils.config.ammo_types
-					name = self.name.lower()
+					name = self.raw_name.lower()
 					for ammo in ammo_types:
 						amn = ammo["name"].lower()
 						if name.find(amn) != -1:
 							data["data"]["ammoType"] = ammo["id"]
 							break
 					if not 'ammoType' in data["data"]:
-						desc = (self.text or '').lower()
+						desc = (self.raw_text or '').lower()
 						for ammo in ammo_types:
 							amn = ammo["name"].lower()
 							if desc.find(amn) != -1:
 								data["data"]["ammoType"] = ammo["id"]
 								break
-				elif self.subtype in ('technology', 'medpac'):
-					data["data"]["consumableType"] = self.subtype
+				elif self.raw_subtype in ('technology', 'medpac'):
+					data["data"]["consumableType"] = self.raw_subtype
 				else:
-					raise ValueError(self.name, self.subtype, self.subtypeType)
+					raise ValueError(self.raw_name, self.raw_subtype, self.raw_subtypeType)
 			else:
-				data["data"]["consumableType"] = mapping[self.subtypeTypeEnum]
-		elif self.type == 'CyberneticAugmentation':
+				data["data"]["consumableType"] = mapping[self.raw_subtypeTypeEnum]
+		elif self.raw_type == 'CyberneticAugmentation':
 			data["data"]["modificationType"] = 'cybernetic'
-		elif self.type == 'DroidCustomization':
+		elif self.raw_type == 'DroidCustomization':
 			data["data"]["modificationType"] = 'droidcustomization'
-		elif self.type == 'Focus':
+		elif self.raw_type == 'Focus':
 			data["data"]["armor"] = {
 				"value": None,
 				"type": 'trinket',
 				"dex": None,
 			}
-			if self.subtype in ('force', 'focus'):
+			if self.raw_subtype in ('force', 'focus'):
 				data["data"]["armor"]["type"] = 'focusgenerator'
 				data["data"]["baseItem"] = 'focusgenerator'
-			elif self.subtype == 'tech':
+			elif self.raw_subtype == 'tech':
 				data["data"]["armor"]["type"] = 'wristpad'
 				data["data"]["baseItem"] = 'wristpad'
 			else:
-				raise ValueError(self.name, self.type, self.subtype, self.subtypeType)
-		elif self.type == 'Shield':
+				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
+		elif self.raw_type == 'Shield':
 			data["data"]["armor"] = {
 				"value": 2,
 				"type": 'shield',
 				"dex": None,
 			}
-			if self.subtypeType == 'Light':
+			if self.raw_subtypeType == 'Light':
 				data["data"]["armor"]["value"] = 1
-			elif self.subtypeType in ('Medium', 'Any'):
+			elif self.raw_subtypeType in ('Medium', 'Any'):
 				data["data"]["armor"]["value"] = 2
-			elif self.subtypeType == 'Heavy':
+			elif self.raw_subtypeType == 'Heavy':
 				data["data"]["armor"]["value"] = 3
 			else:
-				raise ValueError(self.name, self.type, self.subtype, self.subtypeType)
-		elif self.type == 'Weapon':
+				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
+		elif self.raw_type == 'Weapon':
 			if not utils.object.getProperty(data, 'data.activation.type'):
 				utils.object.setProperty(data, 'data.activation', { "type": 'action', "cost": 1 }, force=True)
 			if not utils.object.getProperty(data, 'data.target.type'):
 				utils.object.setProperty(data, 'data.target', { "type": 'enemy', "value": 1 }, force=True)
 
-			if self.subtypeType in ('AnyWithProperty', 'AnyBlasterWithProperty', 'AnyVibroweaponWithProperty', 'AnyLightweaponWithProperty'):
-				print(f"	'{self.subtypeType}' enhanced weapon detected. This kind of item is not supported since there currently no examples to know what they should look like.")
-				print(f'{self.name=}')
-				print(f'{self.type=}')
-				print(f'{self.subtype=}')
-				print(f'{self.subtypeType=}')
-				print(f'{self.text=}')
+			if self.raw_subtypeType in ('AnyWithProperty', 'AnyBlasterWithProperty', 'AnyVibroweaponWithProperty', 'AnyLightweaponWithProperty'):
+				print(f"	'{self.raw_subtypeType}' enhanced weapon detected. This kind of item is not supported since there currently no examples to know what they should look like.")
+				print(f'{self.raw_name=}')
+				print(f'{self.raw_type=}')
+				print(f'{self.raw_subtype=}')
+				print(f'{self.raw_subtypeType=}')
+				print(f'{self.raw_text=}')
 
-			if self.subtypeType in ('Any', 'AnyWithProperty'):
+			if self.raw_subtypeType in ('Any', 'AnyWithProperty'):
 				if data["data"]["actionType"] == 'other':
 					data["data"]["actionType"] = 'mwak'
 				if ("weaponType" not in data["data"]) or (not data["data"]["weaponType"]):
 					data["data"]["weaponType"] = 'improv'
-			elif self.subtypeType in ('AnyBlaster', 'AnyBlasterWithProperty'):
+			elif self.raw_subtypeType in ('AnyBlaster', 'AnyBlasterWithProperty'):
 				data["data"]["actionType"] = 'rwak'
 				data["data"]["weaponType"] = 'simpleB'
-			elif self.subtypeType in ('AnyVibroweapon', 'AnyVibroweaponWithProperty'):
+			elif self.raw_subtypeType in ('AnyVibroweapon', 'AnyVibroweaponWithProperty'):
 				data["data"]["actionType"] = 'mwak'
 				data["data"]["weaponType"] = 'simpleVW'
-			elif self.subtypeType in ('AnyLightweapon', 'AnyLightweaponWithProperty'):
+			elif self.raw_subtypeType in ('AnyLightweapon', 'AnyLightweaponWithProperty'):
 				data["data"]["actionType"] = 'mwak'
 				data["data"]["weaponType"] = 'simpleLW'
 			else:
-				raise ValueError(self.name, self.type, self.subtype, self.subtypeType)
-		elif self.type == 'Valuable':
+				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
+		elif self.raw_type == 'Valuable':
 			print("	'Valuable' enhanced item detected. This kind of item is not supported since there currently no examples to know what they should look like.")
-			print(f'{self.name=}')
-			print(f'{self.type=}')
-			print(f'{self.subtype=}')
-			print(f'{self.subtypeType=}')
-			print(f'{self.text=}')
+			print(f'{self.raw_name=}')
+			print(f'{self.raw_type=}')
+			print(f'{self.raw_subtype=}')
+			print(f'{self.raw_subtypeType=}')
+			print(f'{self.raw_text=}')
 			pass
-		elif self.type == 'ShipArmor':
+		elif self.raw_type == 'ShipArmor':
 			## TODO: change this one ships are supported
 			pass
-		elif self.type == 'ShipShield':
+		elif self.raw_type == 'ShipShield':
 			## TODO: change this one ships are supported
 			pass
-		elif self.type == 'ShipWeapon':
+		elif self.raw_type == 'ShipWeapon':
 			## TODO: change this one ships are supported
 			pass
 		elif self.is_modification:
 			data["data"]["modificationItemType"] = self.modificationItemType
 
-			data["data"]["modificationType"] = self.subtype
+			data["data"]["modificationType"] = self.raw_subtype
 			data["data"]["-=modificationSlot"] = None
 
 			data["data"]["properties"]["indeterminate"] = { key: False for key in self.p_properties.keys() }
 		else:
-			raise ValueError(self.name, self.type)
+			raise ValueError(self.raw_name, self.raw_type)
 
 		return data
 
 	def getDescription(self, base_text = None):
-		text = self.text
+		text = self.raw_text
 
 		header = ''
-		if self.requiresAttunement:
+		if self.raw_requiresAttunement:
 			if text.startswith('_**Requires attunement'):
 				match = re.search('\n', text)
 				header, text = text[:match.end()], text[match.end():]
 			else:
 				header += f'_**Requires attunement**_\r\n'
 
-		if self.prerequisite:
-			header += f'_Prerequisite: {self.prerequisite}_\r\n'
+		if self.raw_prerequisite:
+			header += f'_Prerequisite: {self.raw_prerequisite}_\r\n'
 
 		if header: header += '<hr/>\n'
 
@@ -284,22 +287,22 @@ class EnhancedItem(sw5e.Entity.Item):
 			base_text = utils.text.markdownToHtml(f'### {base_text[0]}') + '\n' + base_text[1]
 			text = text + '\n<p>&nbsp;</p>\n' + base_text
 		else:
-			header = re.sub(r'([a-z])([A-Z])', r'\1 \2', self.type)
+			header = re.sub(r'([a-z])([A-Z])', r'\1 \2', self.raw_type)
 			header = f'##### {header}'
-			if self.subtype and (not base_text):
-				header += f' ({self.subtype.title()})'
+			if self.raw_subtype and (not base_text):
+				header += f' ({self.raw_subtype.title()})'
 			text = f'{utils.text.markdownToHtml(header)}\n {text}'
 		return text
 
 	def getImg(self, importer=None):
 		# Try to find the base item and use it's item
-		name = re.sub(r'\s*\([^()]*\)$', '', self.name)
+		name = re.sub(r'\s*\([^()]*\)$', '', self.raw_name)
 		name = re.sub(r'\s*Mk \w+$', '', name)
-		if name != self.name and (not self.is_modification):
+		if name != self.raw_name and (not self.is_modification):
 			data = {
 				'name': name,
 				'equipment_type': self.getType().capitalize(),
-				'equipmentCategory': self.subtype
+				'equipmentCategory': self.raw_subtype
 			}
 			if importer and (base := importer.get('equipment', data=data)):
 				return base.getImg(importer=importer)
@@ -307,7 +310,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		# TODO: Remove this once there are icons for Enhanced Items
 		if name in utils.config.enhanced_item_icons['multi']:
 			name = utils.text.slugify(name)
-			if self.searchableRarity != 'Standard': name = name + self.searchableRarity
+			if self.raw_searchableRarity != 'Standard': name = name + self.raw_searchableRarity
 			return f'systems/sw5e/packs/Icons/Enhanced%20Items/{name}.webp'
 		if name in utils.config.enhanced_item_icons['single']:
 			name = utils.text.slugify(name)
@@ -315,9 +318,9 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		# Use the modification subtype icons
 		if self.is_modification:
-			subtype = self.subtype
-			if self.type == 'CyberneticAugmentation': subtype = f'cybernetic-{self.subtype}'
-			elif self.type == 'DroidCustomization': subtype = f'droid-{self.subtype}'
+			subtype = self.raw_subtype
+			if self.raw_type == 'CyberneticAugmentation': subtype = f'cybernetic-{self.raw_subtype}'
+			elif self.raw_type == 'DroidCustomization': subtype = f'droid-{self.raw_subtype}'
 			return f'systems/sw5e/packs/Icons/Modifications/{subtype}.svg'
 
 		# Otherwise use the default item bag icon
@@ -347,7 +350,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			'modification', ## 19 = LightweaponModification
 			'modification', ## 20 = FocusGeneratorModification
 		]
-		item_type = mapping[self.typeEnum]
+		item_type = mapping[self.raw_typeEnum]
 
 		return item_type or 'loot'
 
@@ -357,7 +360,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			prof = int(auto[1])
 			data["data"]["ability"] = 'str'
 			data["data"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
-			data["data"]["damage"]["parts"][0][0] = f'{base_item.damageNumberOfDice}d{base_item.damageDieType} + {mod}'
+			data["data"]["damage"]["parts"][0][0] = f'{base_item.raw_damageNumberOfDice}d{base_item.raw_damageDieType} + {mod}'
 			data["data"]["proficient"] = True
 		return data
 
@@ -371,7 +374,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		data = base_item.getData(importer)
 
 		for item in data:
-			mode = (re.search(r'\.mode-(.*)', item["flags"]["uid"]) or [None,None])[1]
+			mode = (re.search(r'\.mode-(.*)', item["flags"]["sw5e-importer"]["uid"]) or [None,None])[1]
 
 			for key in superdata:
 				if key in ("data", "img"): continue
@@ -382,13 +385,13 @@ class EnhancedItem(sw5e.Entity.Item):
 
 			if mode:
 				item["name"] += f' ({mode.title()})'
-				item["flags"]["uid"] += f'.mode-{mode}'
+				item["flags"]["sw5e-importer"]["uid"] += f'.mode-{mode}'
 
 			item["data"]["description"] = {
 				"value": self.getDescription(base_text = (base_item.name, item["data"]["description"]["value"]))
 			}
-			item["data"]["source"] = self.contentSource
-			item["data"]["attunement"] = 1 if self.requiresAttunement else 0
+			item["data"]["source"] = self.raw_contentSource
+			item["data"]["attunement"] = 1 if self.raw_requiresAttunement else 0
 			item["data"]["rarity"] = self.rarity
 
 			activation = choose(item["data"]["activation"], self.activation, "type", 'none')
@@ -452,8 +455,8 @@ class EnhancedItem(sw5e.Entity.Item):
 		return data
 
 	def getData(self, importer):
-		if (not self.is_modification) and self.subtypeType == 'Specific':
-			get_data = { 'name': self.subtype.title(), 'equipmentCategory': self.type.title() }
+		if (not self.is_modification) and self.raw_subtypeType == 'Specific':
+			get_data = { 'name': self.raw_subtype.title(), 'equipmentCategory': self.raw_type.title() }
 			base_item = importer.get(self.getType(), data=get_data)
 
 			if base_item: return self.getDataSpecific(importer, base_item)
@@ -461,8 +464,8 @@ class EnhancedItem(sw5e.Entity.Item):
 		data = super().getData(importer)[0]
 
 		data["data"]["description"] = { "value": self.getDescription() }
-		data["data"]["source"] = self.contentSource
-		data["data"]["attunement"] = 1 if self.requiresAttunement else 0
+		data["data"]["source"] = self.raw_contentSource
+		data["data"]["attunement"] = 1 if self.raw_requiresAttunement else 0
 		data["data"]["rarity"] = self.rarity
 
 		if self.activation: data["data"]["activation"] = {
@@ -520,4 +523,4 @@ class EnhancedItem(sw5e.Entity.Item):
 		return [data]
 
 	def getFile(self, importer):
-		return f'Enhanced{self.type}'
+		return f'Enhanced{self.raw_type}'

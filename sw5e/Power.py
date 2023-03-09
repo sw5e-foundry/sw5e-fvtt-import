@@ -2,50 +2,50 @@ import sw5e.Entity, utils.text
 import re, json
 
 class Power(sw5e.Entity.Item):
-	def load(self, raw_item):
-		super().load(raw_item)
-
-		self.powerTypeEnum = utils.text.raw(raw_item, "powerTypeEnum")
-		self.powerType = utils.text.clean(raw_item, "powerType")
-		self.prerequisite = utils.text.clean(raw_item, "prerequisite")
-		self.level = utils.text.raw(raw_item, "level")
-		self.castingPeriodEnum = utils.text.raw(raw_item, "castingPeriodEnum")
-		self.castingPeriod = utils.text.clean(raw_item, "castingPeriod")
-		self.castingPeriodText = utils.text.clean(raw_item, "castingPeriodText")
-		self.range = utils.text.clean(raw_item, "range")
-		self.duration = utils.text.clean(raw_item, "duration")
-		self.concentration = utils.text.raw(raw_item, "concentration")
-		self.forceAlignmentEnum = utils.text.raw(raw_item, "forceAlignmentEnum")
-		self.forceAlignment = utils.text.clean(raw_item, "forceAlignment")
-		self.description = utils.text.clean(raw_item, "description")
-		self.higherLevelDescription = utils.text.clean(raw_item, "higherLevelDescription")
-		self.contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")
-		self.contentType = utils.text.clean(raw_item, "contentType")
-		self.contentSourceEnum = utils.text.raw(raw_item, "contentSourceEnum")
-		self.contentSource = utils.text.clean(raw_item, "contentSource")
-		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
-		self.rowKey = utils.text.clean(raw_item, "rowKey")
+	def getAttrs(self):
+		return super().getAttrs() + [
+			"powerTypeEnum",
+			"powerType",
+			"prerequisite",
+			"level",
+			"castingPeriodEnum",
+			"castingPeriod",
+			"castingPeriodText",
+			"range",
+			"duration",
+			"concentration",
+			"forceAlignmentEnum",
+			"forceAlignment",
+			"description",
+			"higherLevelDescription",
+			"contentTypeEnum",
+			"contentType",
+			"contentSourceEnum",
+			"contentSource",
+			"partitionKey",
+			"rowKey",
+		]
 
 	def process(self, importer):
 		super().process(importer)
 
 		self.activation_type, self.activation_num, self.activation_condition = self.getActivation()
-		self.duration_value, self.duration_unit, self.concentration = self.getDuration()
+		self.raw_duration_value, self.raw_duration_unit, self.raw_concentration = self.getDuration()
 		target_range = self.getTargetRange()
 		self.target_val, self.target_unit, self.target_type = target_range["target"]
-		self.range_val, self.range_unit = target_range["range"]
+		self.raw_range_val, self.raw_range_unit = target_range["range"]
 		self.uses, self.recharge = None, None
 		self.action_type, self.damage, self.formula, self.save, self.save_dc, self.ability, self.scaling = self.getAction()
 
 		self.school = self.getSchool()
 
 	def getActivation(self):
-		activation_type = ('none', 'action', 'bonus', 'reaction', 'minute', 'hour')[self.castingPeriodEnum] or 'none'
+		activation_type = ('none', 'action', 'bonus', 'reaction', 'minute', 'hour')[self.raw_castingPeriodEnum] or 'none'
 
-		match = re.search(r'^(\d+) ', self.castingPeriodText or '')
+		match = re.search(r'^(\d+) ', self.raw_castingPeriodText or '')
 		activation_num = int(match[1]) if match else 0
 
-		match = re.search(r'reaction, which you take (.*)$', self.castingPeriodText or '')
+		match = re.search(r'reaction, which you take (.*)$', self.raw_castingPeriodText or '')
 		activation_condition = match[1] if match else ''
 
 		return activation_type, activation_num, activation_condition
@@ -53,7 +53,7 @@ class Power(sw5e.Entity.Item):
 	def getDuration(self):
 		pattern = r'(?P<inst>Instantaneous)|(?P<perm>Permanent)|(?P<spec>Special)|(?P<conc>up to )?(?P<val>\d+) (?P<unit>turn|round|minute|hour|day|month|year)s?'
 
-		if (match := re.search(pattern, self.duration or '')):
+		if (match := re.search(pattern, self.raw_duration or '')):
 			if match['inst']: return None, 'inst', False
 			elif match['perm']: return None, 'perm', False
 			elif match['spec']: return None, 'spec', False
@@ -67,10 +67,10 @@ class Power(sw5e.Entity.Item):
 			'range': (None, '')
 		}
 
-		if match := re.search(r'(?P<r_val>\d+) (?P<r_unit>\w+)s?|(?P<self>[Ss]elf)', self.range or ''):
+		if match := re.search(r'(?P<r_val>\d+) (?P<r_unit>\w+)s?|(?P<self>[Ss]elf)', self.raw_range or ''):
 			if match['self']:
 				target_range['range'] = (None, 'self')
-				if target := utils.text.getTarget(self.range, self.name):
+				if target := utils.text.getTarget(self.raw_range, self.name):
 					target_range['target'] = target
 			else:
 				units = {
@@ -86,20 +86,20 @@ class Power(sw5e.Entity.Item):
 
 				target_range['range'] = match['r_val'], unit
 
-				if target := utils.text.getTarget(self.description, self.name):
+				if target := utils.text.getTarget(self.raw_description, self.name):
 					target_range['target'] = target
 
 
 		return target_range
 
 	def getAction(self):
-		description, scale = self.description, ''
+		description, scale = self.raw_description, ''
 		ability = ""
 
 		## Get default ability score
-		if self.powerType == 'Tech': ability = 'int'
-		elif self.forceAlignment == 'drl': ability = 'cha'
-		elif self.forceAlignment == 'lgt': ability = 'wis'
+		if self.raw_powerType == 'Tech': ability = 'int'
+		elif self.raw_forceAlignment == 'drl': ability = 'cha'
+		elif self.raw_forceAlignment == 'lgt': ability = 'wis'
 
 		## Leveled power upcasting
 		if match := re.search(r'Force Potency|Overcharge Tech', description):
@@ -113,33 +113,33 @@ class Power(sw5e.Entity.Item):
 		return action_type, damage, formula, save, save_dc, ability, scaling
 
 	def getSchool(self):
-		if self.powerType == 'Tech': return 'tec'
-		return ('', 'uni', 'drk', 'lgt')[self.forceAlignmentEnum]
+		if self.raw_powerType == 'Tech': return 'tec'
+		return ('', 'uni', 'drk', 'lgt')[self.raw_forceAlignmentEnum]
 
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)
-		return f'systems/sw5e/packs/Icons/{self.powerType}%20Powers/{name}.webp'
+		return f'systems/sw5e/packs/Icons/{self.raw_powerType}%20Powers/{name}.webp'
 
 	def getDescription(self):
-		text = self.description
-		if self.prerequisite:
-			text = f'_**Prerequisite**: {self.prerequisite}_\n{text}'
+		text = self.raw_description
+		if self.raw_prerequisite:
+			text = f'_**Prerequisite**: {self.raw_prerequisite}_\n{text}'
 		return utils.text.markdownToHtml(text)
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
 		data["data"]["description"] = { "value": self.getDescription() }
-		data["data"]["requirements"] = self.prerequisite or ''
-		data["data"]["source"] = self.contentSource
+		data["data"]["requirements"] = self.raw_prerequisite or ''
+		data["data"]["source"] = self.raw_contentSource
 		data["data"]["activation"] = {
 			"type": self.activation_type,
 			"cost": self.activation_num,
 			"condition": self.activation_condition
 		}
 		data["data"]["duration"] = {
-			"value": self.duration_value,
-			"units": self.duration_unit
+			"value": self.raw_duration_value,
+			"units": self.raw_duration_unit
 		}
 		data["data"]["target"] = {
 			"value": self.target_val,
@@ -148,9 +148,9 @@ class Power(sw5e.Entity.Item):
 			"type": self.target_type
 		}
 		data["data"]["range"] = {
-			"value": self.range_val,
+			"value": self.raw_range_val,
 			"long": None,
-			"units": self.range_unit
+			"units": self.raw_range_unit
 		}
 		data["data"]["uses"] = {
 			"value": None,
@@ -175,9 +175,9 @@ class Power(sw5e.Entity.Item):
 			"scaling": "flat" if self.save_dc else "power"
 		}
 
-		data["data"]["level"] = self.level
+		data["data"]["level"] = self.raw_level
 		data["data"]["school"] = self.school
-		data["data"]["components"] = { "concentration": bool(self.concentration) }
+		data["data"]["components"] = { "concentration": bool(self.raw_concentration) }
 		data["data"]["materials"] = {}
 		data["data"]["preparation"] = {}
 		data["data"]["scaling"] = self.scaling
@@ -185,4 +185,4 @@ class Power(sw5e.Entity.Item):
 		return [data]
 
 	def getFile(self, importer):
-		return f'{self.powerType}Power'
+		return f'{self.raw_powerType}Power'

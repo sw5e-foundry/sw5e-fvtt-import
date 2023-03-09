@@ -2,10 +2,8 @@ import sw5e.Feature, utils.text
 import re, json
 
 class Feat(sw5e.Feature.BaseFeature):
-	def load(self, raw_item):
-		super().load(raw_item)
-
-		self.attributesIncreased = utils.text.cleanJson(raw_item, "attributesIncreased")
+	def getAttrs(self):
+		return super().getAttrs() + [ "attributesIncreased" ]
 
 	def process(self, importer):
 		super().process(importer)

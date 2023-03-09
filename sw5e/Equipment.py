@@ -2,37 +2,40 @@ import sw5e.Entity, utils.text
 import re, json
 
 class Equipment(sw5e.Entity.Item):
-	def load(self, raw_item):
-		super().load(raw_item)
+	def getAttrs(self):
+		return super().getAttrs() + [
+			"name",
+			"description",
+			"cost",
+			"weight",
+			"equipmentCategoryEnum",
+			"equipmentCategory",
+			"damageNumberOfDice",
+			"damageTypeEnum",
+			"damageType",
+			"damageDieModifier",
+			"weaponClassificationEnum",
+			"weaponClassification",
+			"armorClassificationEnum",
+			"armorClassification",
+			"damageDiceDieTypeEnum",
+			"damageDieType",
+			"properties",
+			"propertiesMap",
+			"modes",
+			"ac",
+			"strengthRequirement",
+			"stealthDisadvantage",
+			"contentTypeEnum",
+			"contentType",
+			"contentSourceEnum",
+			"contentSource",
+			"partitionKey",
+			"rowKey",
+		]
 
-		self.name = utils.text.clean(raw_item, "name")
-		self.description = utils.text.clean(raw_item, "description")
-		self.cost = utils.text.raw(raw_item, "cost")
-		self.weight = utils.text.clean(raw_item, "weight")
-		self.equipmentCategoryEnum = utils.text.raw(raw_item, "equipmentCategoryEnum")
-		self.equipmentCategory = utils.text.clean(raw_item, "equipmentCategory")
-		self.damageNumberOfDice = utils.text.raw(raw_item, "damageNumberOfDice")
-		self.damageTypeEnum = utils.text.raw(raw_item, "damageTypeEnum")
-		self.damageType = utils.text.clean(raw_item, "damageType")
-		self.damageDieModifier = utils.text.raw(raw_item, "damageDieModifier")
-		self.weaponClassificationEnum = utils.text.raw(raw_item, "weaponClassificationEnum")
-		self.weaponClassification = utils.text.clean(raw_item, "weaponClassification")
-		self.armorClassificationEnum = utils.text.raw(raw_item, "armorClassificationEnum")
-		self.armorClassification = utils.text.clean(raw_item, "armorClassification")
-		self.damageDiceDieTypeEnum = utils.text.raw(raw_item, "damageDiceDieTypeEnum")
-		self.damageDieType = utils.text.raw(raw_item, "damageDieType")
-		self.properties = utils.text.cleanJson(raw_item, "properties")
-		self.propertiesMap = utils.text.cleanJson(raw_item, "propertiesMap")
-		self.modes = utils.text.cleanJson(raw_item, "modes")
-		self.ac = utils.text.raw(raw_item, "ac")
-		self.strengthRequirement = utils.text.raw(raw_item, "strengthRequirement")
-		self.stealthDisadvantage = utils.text.raw(raw_item, "stealthDisadvantage")
-		self.contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")
-		self.contentType = utils.text.clean(raw_item, "contentType")
-		self.contentSourceEnum = utils.text.raw(raw_item, "contentSourceEnum")
-		self.contentSource = utils.text.clean(raw_item, "contentSource")
-		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
-		self.rowKey = utils.text.clean(raw_item, "rowKey")
+	def getJsonAttrs(self):
+		return super().getJsonAttrs() + [ "propertiesMap" ]
 
 	def process(self, importer):
 		super().process(importer)
@@ -41,7 +44,7 @@ class Equipment(sw5e.Entity.Item):
 		self.baseItem = self.getBaseItem()
 
 	def getImg(self, importer=None, item_type=None, no_img=('Unknown',), default_img='systems/sw5e/packs/Icons/Storage/Crate.webp', plural=False):
-		if item_type == None: item_type = self.equipmentCategory
+		if item_type == None: item_type = self.raw_equipmentCategory
 
 		#TODO: Remove this once there are icons for those categories
 		if item_type in no_img: return default_img
@@ -52,27 +55,27 @@ class Equipment(sw5e.Entity.Item):
 		item_type = re.sub(r'Or', r'or', item_type)
 		if plural: item_type += 's'
 
-		name = utils.text.slugify(self.name)
+		name = utils.text.slugify(self.raw_name)
 
 		return f'systems/sw5e/packs/Icons/{item_type}/{name}.webp'
 
 	def getWeight(self):
-		if type(self.weight) == int: return self.weight
-		div = re.match(r'(\d+)/(\d+)', self.weight)
+		if type(self.raw_weight) == int: return self.raw_weight
+		div = re.match(r'(\d+)/(\d+)', self.raw_weight)
 		if div: return int(div.group(1)) / int(div.group(2))
 
 	def getBaseItem(self):
-		return re.sub(r'\'|\s+|\([^)]*\)', '', self.name.lower());
+		return re.sub(r'\'|\s+|\([^)]*\)', '', self.raw_name.lower());
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
 		data["data"]["description"] = { "value": self.getDescription(importer) } #will call the child's getDescription
 		data["data"]["requirements"] = ''
-		data["data"]["source"] = self.contentSource
+		data["data"]["source"] = self.raw_contentSource
 		data["data"]["quantity"] = 1
 		data["data"]["weight"] = self.getWeight()
-		data["data"]["price"] = self.cost
+		data["data"]["price"] = self.raw_cost
 		data["data"]["attunement"] = 0
 		data["data"]["equipped"] = False
 		data["data"]["rarity"] = ''
@@ -124,7 +127,7 @@ class Equipment(sw5e.Entity.Item):
 		return [data]
 
 	def getFile(self, importer):
-		return self.equipmentCategory
+		return self.raw_equipmentCategory
 
 	@classmethod
 	def getClass(cls, raw_item):

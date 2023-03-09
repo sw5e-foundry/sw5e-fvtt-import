@@ -2,11 +2,8 @@ import sw5e.Entity, utils.text
 import re, json
 
 class Background(sw5e.Entity.Item):
-	def load(self, raw_background):
-		super().load(raw_background)
-
-
-		attrs = [
+	def getAttrs(self):
+		return super().getAttrs() + [
 			"flavorText",
 			"flavorName",
 			"flavorDescription",
@@ -33,7 +30,6 @@ class Background(sw5e.Entity.Item):
 			"rowKey",
 			"eTag",
 		]
-		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_background, attr))
 
 	def process(self, importer):
 		super().process(importer)

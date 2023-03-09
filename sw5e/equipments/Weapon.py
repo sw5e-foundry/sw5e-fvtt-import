@@ -16,7 +16,7 @@ class Weapon(sw5e.Equipment.Equipment):
 
 	def getImg(self, importer=None):
 		kwargs = {
-			'item_type': self.weaponClassification,
+			'item_type': self.raw_weaponClassification,
 			# 'no_img': ('Unknown',),
 			'default_img': 'systems/sw5e/packs/Icons/Simple%20Blasters/Hold-out.webp',
 			'plural': True
@@ -24,7 +24,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		return super().getImg(importer=importer, **kwargs)
 
 	def getDescription(self, importer):
-		properties = {prop: self.propertiesMap[prop] for prop in self.propertiesMap if prop != 'Special'}
+		properties = {prop: self.raw_propertiesMap[prop] for prop in self.raw_propertiesMap if prop != 'Special'}
 
 		text = ''
 
@@ -38,12 +38,12 @@ class Weapon(sw5e.Equipment.Equipment):
 			text = ', '.join([properties[prop].capitalize() for prop in properties if prop != 'Ammunition'])
 			text = utils.text.markdownToHtml(text)
 
-		if 'Special' in self.propertiesMap:
+		if 'Special' in self.raw_propertiesMap:
 			if text: text += '\n'
-			if (special := self.propertiesMap["Special"]).lower() != "special":
+			if (special := self.raw_propertiesMap["Special"]).lower() != "special":
 				text += utils.text.markdownToHtml('#### Special\n' + special)
-			elif self.description:
-				text += utils.text.markdownToHtml('#### Special\n' + self.description)
+			elif self.raw_description:
+				text += utils.text.markdownToHtml('#### Special\n' + self.raw_description)
 			else:
 				raise ValueError
 
@@ -51,11 +51,11 @@ class Weapon(sw5e.Equipment.Equipment):
 
 	def getRange(self):
 		short_range, long_range = None, None
-		if rang := (utils.text.getProperty('Ammunition', self.propertiesMap) or utils.text.getProperty('Range', self.propertiesMap)):
+		if rang := (utils.text.getProperty('Ammunition', self.raw_propertiesMap) or utils.text.getProperty('Range', self.raw_propertiesMap)):
 			if rang == 'special': short_range = 'special'
 			elif type(rang) == list: short_range, long_range = rang
 			else: short_range = rang
-		elif utils.text.getProperty('Reach', self.propertiesMap):
+		elif utils.text.getProperty('Reach', self.raw_propertiesMap):
 			short_range = 10
 		return {
 			'value': short_range,
@@ -70,34 +70,34 @@ class Weapon(sw5e.Equipment.Equipment):
 			return 'mwak'
 
 	def getDamage(self):
-		if (not self.damageNumberOfDice) or (not self.damageDieType):
+		if (not self.raw_damageNumberOfDice) or (not self.raw_damageDieType):
 			return {}
 
-		die = self.damageNumberOfDice
-		if self.damageDieType == -1:
-			_, damage, _, _, _, _ = utils.text.getAction(self.description, self.name)
+		die = self.raw_damageNumberOfDice
+		if self.raw_damageDieType == -1:
+			_, damage, _, _, _, _ = utils.text.getAction(self.raw_description, self.name)
 			die = damage["parts"][0][0]
-		elif self.damageDieType > 1:
-			die = f'{die}d{self.damageDieType}'
-		elif self.damageDieType != 1:
+		elif self.raw_damageDieType > 1:
+			die = f'{die}d{self.raw_damageDieType}'
+		elif self.raw_damageDieType != 1:
 			raise ValueError
 		die = f'{die} + @mod'
 
-		damage_type = self.damageType.lower() if self.damageType != 'Unknown' else ''
-		versatile = utils.text.getProperty('Versatile', self.propertiesMap) or ''
+		damage_type = self.raw_damageType.lower() if self.raw_damageType != 'Unknown' else ''
+		versatile = utils.text.getProperty('Versatile', self.raw_propertiesMap) or ''
 		return {
 			"parts": [[ die, damage_type ]],
 			"versatile": f'{versatile} +  @mod' if versatile else ''
 		}
 
 	def getWeaponType(self):
-		w_class = self.weaponClassification
+		w_class = self.raw_weaponClassification
 
 		simple = w_class.startswith('Simple')
 		martial = w_class.startswith('Martial')
 		exotic = w_class.startswith('Exotic')
 
-		blaster = w_class.endswith('Blaster') or utils.text.getProperty('Ammunition', self.propertiesMap) or utils.text.getProperty('Reload', self.propertiesMap)
+		blaster = w_class.endswith('Blaster') or utils.text.getProperty('Ammunition', self.raw_propertiesMap) or utils.text.getProperty('Reload', self.raw_propertiesMap)
 		vibro = (not blaster) and w_class.endswith('Vibroweapon')
 		light = (not blaster) and (not vibro) and w_class.endswith('Lightweapon')
 
@@ -112,7 +112,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		if exotic and light: return 'exoticLW'
 		return 'natural'
 
-		return weapon_types[self.weaponClassificationEnum]
+		return weapon_types[self.raw_weaponClassificationEnum]
 
 	def getAmmoTypes(self):
 		if (self.name == "Rotary Cannon"): return ['powerGenerator']
@@ -122,8 +122,8 @@ class Weapon(sw5e.Equipment.Equipment):
 		elif (self.name == "Bolt-thrower"): return ['bolt']
 		elif (self.name in ["Shortbow", "Compound bow"]): return ['arrow']
 		elif (self.name.endswith("launcher")): return [self.name.split()[0].lower()]
-		elif not utils.text.getProperty('Reload', self.propertiesMap): return []
-		elif self.damageType == "Kinetic": return ['cartridge']
+		elif not utils.text.getProperty('Reload', self.raw_propertiesMap): return []
+		elif self.raw_damageType == "Kinetic": return ['cartridge']
 		else: return ['powerCell']
 
 	def getPropertiesList(self):
@@ -133,8 +133,8 @@ class Weapon(sw5e.Equipment.Equipment):
 		properties_list = self.getPropertiesList()
 
 		properties = {
-			**utils.text.getProperties(self.propertiesMap.values(), properties_list, error=True),
-			**utils.text.getProperties(self.description, properties_list),
+			**utils.text.getProperties(self.raw_propertiesMap.values(), properties_list, error=True),
+			**utils.text.getProperties(self.raw_description, properties_list),
 		}
 
 		return properties
@@ -145,16 +145,16 @@ class Weapon(sw5e.Equipment.Equipment):
 			prof = int(smr[1])
 			data["data"]["ability"] = 'str'
 			data["data"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
-			data["data"]["damage"]["parts"][0][0] = f'{self.damageNumberOfDice}d{self.damageDieType} + {mod}'
+			data["data"]["damage"]["parts"][0][0] = f'{self.raw_damageNumberOfDice}d{self.raw_damageDieType} + {mod}'
 			data["data"]["proficient"] = True
 		return data
 
 	def getItemVariations(self, original_data, importer):
 		data = []
 
-		if self.modes:
+		if self.raw_modes:
 			# data.append(original_data)
-			for mode in self.modes:
+			for mode in self.raw_modes:
 				wpn = copy.deepcopy(self)
 				wpn.modes = []
 
@@ -183,11 +183,11 @@ class Weapon(sw5e.Equipment.Equipment):
 
 				wpn_data = wpn.getData(importer)[0]
 				wpn_data["name"] = f'{self.name} ({mode["Name"]})'
-				wpn_data["flags"]["uid"] = f'{self.uid}.mode-{mode["Name"]}'
+				wpn_data["flags"]["sw5e-importer"]["uid"] = f'{self.uid}.mode-{mode["Name"]}'
 				data.append(wpn_data)
 		else:
-			if not (utils.text.getProperty('Auto', self.propertiesMap) == True): data.append(original_data)
-			if burst := utils.text.getProperty('Burst', self.propertiesMap):
+			if not (utils.text.getProperty('Auto', self.raw_propertiesMap) == True): data.append(original_data)
+			if burst := utils.text.getProperty('Burst', self.raw_propertiesMap):
 				burst_data = copy.deepcopy(original_data)
 				burst_data["name"] = f'{self.name} (Burst)'
 
@@ -201,9 +201,9 @@ class Weapon(sw5e.Equipment.Equipment):
 					"dc": None,
 					"scaling": 'dex'
 				}
-				burst_data["flags"]["uid"] = f'{self.uid}.mode-burst'
+				burst_data["flags"]["sw5e-importer"]["uid"] = f'{self.uid}.mode-burst'
 				data.append(burst_data)
-			if rapid := utils.text.getProperty('Rapid', self.propertiesMap):
+			if rapid := utils.text.getProperty('Rapid', self.raw_propertiesMap):
 				rapid_data = copy.deepcopy(original_data)
 				rapid_data["name"] = f'{self.name} (Rapid)'
 
@@ -214,7 +214,7 @@ class Weapon(sw5e.Equipment.Equipment):
 					"dc": None,
 					"scaling": 'dex'
 				}
-				rapid_data["flags"]["uid"] = f'{self.uid}.mode-rapid'
+				rapid_data["flags"]["sw5e-importer"]["uid"] = f'{self.uid}.mode-rapid'
 				data.append(rapid_data)
 
 		return data
@@ -245,4 +245,4 @@ class Weapon(sw5e.Equipment.Equipment):
 		return self.getItemVariations(data, importer)
 
 	def getFile(self, importer):
-		return self.weaponClassification
+		return self.raw_weaponClassification

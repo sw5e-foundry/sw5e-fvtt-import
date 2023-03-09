@@ -5,18 +5,25 @@ class BaseFeature(sw5e.Entity.Item):
 	def getType(self):
 		return 'feat'
 
+	def getAttrs(self):
+		return super().getAttrs() + [
+			"text",
+			"description",
+			"requirements",
+			"prerequisite",
+			"partitionKey",
+			"rowKey",
+			"contentTypeEnum",
+			"contentType",
+			"contentSourceEnum",
+			"contentSource",
+		]
+
 	def load(self, raw_item):
 		super().load(raw_item)
 
-		self.text = utils.text.clean(raw_item, "text") or utils.text.clean(raw_item, "description")
-		self.requirements = utils.text.clean(raw_item, "requirements") or utils.text.clean(raw_item, "prerequisite")
-		self.partitionKey = utils.text.clean(raw_item, "partitionKey")
-		self.rowKey = utils.text.clean(raw_item, "rowKey")
-
-		self.contentTypeEnum = utils.text.raw(raw_item, "contentTypeEnum")
-		self.contentType = utils.text.clean(raw_item, "contentType")
-		self.contentSourceEnum = utils.text.raw(raw_item, "contentSourceEnum")
-		self.contentSource = utils.text.clean(raw_item, "contentSource")
+		self.raw_text = self.raw_text or self.raw_description
+		self.raw_requirements = self.raw_requirements or self.raw_prerequisite
 
 	def process(self, importer):
 		super().process(importer)
@@ -31,32 +38,32 @@ class BaseFeature(sw5e.Entity.Item):
 		self.featType, self.featSubtype = self.getFeatType()
 
 	def getActivation(self):
-		return utils.text.getActivation(self.text, self.uses, self.recharge)
+		return utils.text.getActivation(self.raw_text, self.uses, self.recharge)
 
 	def getDuration(self):
-		return utils.text.getDuration(self.text, self.name)
+		return utils.text.getDuration(self.raw_text, self.name)
 
 	def getTarget(self):
-		return utils.text.getTarget(self.text, self.name)
+		return utils.text.getTarget(self.raw_text, self.name)
 
 	def getRange(self):
-		value, unit = utils.text.getRange(self.text, self.name)
+		value, unit = utils.text.getRange(self.raw_text, self.name)
 		return {
 			'value': value,
 			'unit': unit
 		}
 
 	def getUses(self):
-		return utils.text.getUses(self.text, self.name)
+		return utils.text.getUses(self.raw_text, self.name)
 
 	def getAction(self):
-		return utils.text.getAction(self.text, self.name)
+		return utils.text.getAction(self.raw_text, self.name)
 
 	def getFeatType(self):
 		raise NotImplementedError
 
 	def getDescription(self, importer):
-		return utils.text.markdownToHtml(self.text)
+		return utils.text.markdownToHtml(self.raw_text)
 
 	def getImg(self, importer=None):
 		raise NotImplementedError
@@ -65,8 +72,8 @@ class BaseFeature(sw5e.Entity.Item):
 		data = super().getData(importer)[0]
 
 		data["data"]["description"] = { "value": self.description }
-		data["data"]["requirements"] = self.requirements
-		data["data"]["source"] = self.contentSource
+		data["data"]["requirements"] = self.raw_requirements
+		data["data"]["source"] = self.raw_contentSource
 
 		data["data"]["activation"] = {
 			"type": self.activation,
@@ -112,14 +119,11 @@ class BaseFeature(sw5e.Entity.Item):
 		return [data]
 
 class Feature(BaseFeature):
+	def getAttrs(self):
+		return super().getAttrs() + [ "level", "sourceEnum", "source", "sourceName", "metadata" ]
+
 	def load(self, raw_item):
 		super().load(raw_item)
-
-		self.level = utils.text.raw(raw_item, "level")
-		self.sourceEnum = utils.text.raw(raw_item, "sourceEnum")
-		self.source = utils.text.clean(raw_item, "source")
-		self.sourceName = utils.text.clean(raw_item, "sourceName")
-		self.metadata = utils.text.raw(raw_item, "metadata")
 
 		self.subFeatures = self.getSubfeatures()
 
@@ -128,16 +132,16 @@ class Feature(BaseFeature):
 
 		super().process(importer)
 
-		self.requirements = self.getRequirements(importer)
-		self.contentType, self.contentTypeEnum = self.getContentType(importer)
-		self.contentSource, self.contentSourceEnum = self.getContentSource(importer)
+		self.raw_requirements = self.getRequirements(importer)
+		self.raw_contentType, self.raw_contentTypeEnum = self.getContentType(importer)
+		self.raw_contentSource, self.raw_contentSourceEnum = self.getContentSource(importer)
 		self.processSubfeatures(importer)
 		self.description = self.getDescription(importer, processing=True)
 
 	def getImg(self, importer=None):
-		if self.source in ['Class', 'Archetype', 'ClassInvocation', 'ArchetypeInvocation']:
+		if self.raw_source in ['Class', 'Archetype', 'ClassInvocation', 'ArchetypeInvocation']:
 
-			class_abbr = { c["name"]: c["id"] for c in utils.config.classes }.get(self.class_name or self.sourceName, 'BSKR')
+			class_abbr = { c["name"]: c["id"] for c in utils.config.classes }.get(self.class_name or self.raw_sourceName, 'BSKR')
 			activation = {
 				'bonus': 'Bonus',
 				'action': 'Action',
@@ -146,40 +150,40 @@ class Feature(BaseFeature):
 				'none': 'Passive',
 				None: 'Passive',
 			}.get(self.activation, 'Passive')
-			return f'systems/sw5e/packs/Icons/Class%20Features/{class_abbr}{"-ARCH" if self.source == "Archetype" else ""}-{activation}.webp'
+			return f'systems/sw5e/packs/Icons/Class%20Features/{class_abbr}{"-ARCH" if self.raw_source == "Archetype" else ""}-{activation}.webp'
 		else:
-			return f'systems/sw5e/packs/Icons/{self.source}/{utils.text.slugify(self.sourceName)}.webp'
+			return f'systems/sw5e/packs/Icons/{self.raw_source}/{utils.text.slugify(self.raw_sourceName)}.webp'
 
 	def getClassName(self, importer):
-		if self.source in ('Archetype', 'ArchetypeInvocation'):
+		if self.raw_source in ('Archetype', 'ArchetypeInvocation'):
 			if archetype := self.getSourceItem(importer):
 				return archetype.raw_className
 			else:
 				self.broken_links += ['cant find class name']
-		elif self.source in ('Class', 'ClassInvocation'):
-			return self.sourceName
+		elif self.raw_source in ('Class', 'ClassInvocation'):
+			return self.raw_sourceName
 
 	def getRequirements(self, importer):
-		req = f'{self.class_name} ({self.sourceName})' if self.class_name != self.sourceName else self.sourceName
-		if self.level and self.level > 1: req = f'{req} {self.level}'
+		req = f'{self.class_name} ({self.raw_sourceName})' if self.class_name != self.raw_sourceName else self.raw_sourceName
+		if self.raw_level and self.raw_level > 1: req = f'{req} {self.raw_level}'
 
-		if self.requirements: req += f', {self.requirements}'
+		if self.raw_requirements: req += f', {self.raw_requirements}'
 
 		return req
 
 	def getFile(self, importer):
-		if self.source in ('ClassInvocation', 'ArchetypeInvocation'): return 'ClassInvocation'
-		return f'{self.source}Feature'
+		if self.raw_source in ('ClassInvocation', 'ArchetypeInvocation'): return 'ClassInvocation'
+		return f'{self.raw_source}Feature'
 
 	def getContentType(self, importer):
-		if self.contentType and self.contentTypeEnum: return self.contentType, self.contentTypeEnum
+		if self.raw_contentType and self.raw_contentTypeEnum: return self.raw_contentType, self.raw_contentTypeEnum
 
 		if sourceItem := self.getSourceItem(importer):
 			return sourceItem.raw_contentType, sourceItem.raw_contentTypeEnum
 		return '', 0
 
 	def getContentSource(self, importer):
-		if self.contentSource and self.contentSourceEnum: return self.contentSource, self.contentSourceEnum
+		if self.raw_contentSource and self.raw_contentSourceEnum: return self.raw_contentSource, self.raw_contentSourceEnum
 
 		if sourceItem := self.getSourceItem(importer):
 			return sourceItem.raw_contentSource, sourceItem.raw_contentSourceEnum
@@ -188,7 +192,7 @@ class Feature(BaseFeature):
 	def getSubfeatures(self):
 		subFeatures = []
 
-		for text in re.split(r'(?<!#)####(?!#)', self.text)[1:]:
+		for text in re.split(r'(?<!#)####(?!#)', self.raw_text)[1:]:
 			lines = text.strip().split('\n')
 			data = {
 				"name": lines[0],
@@ -206,34 +210,34 @@ class Feature(BaseFeature):
 				feature["uid"] = entity.uid
 
 	def getSourceType(self):
-		if self.source in ('Archetype', 'ArchetypeInvocation'): return 'archetype'
-		elif self.source in ('Class', 'ClassInvocation'): return 'class'
-		elif self.source in ('Species',): return 'species'
+		if self.raw_source in ('Archetype', 'ArchetypeInvocation'): return 'archetype'
+		elif self.raw_source in ('Class', 'ClassInvocation'): return 'class'
+		elif self.raw_source in ('Species',): return 'species'
 
 	def getSourceItem(self, importer):
-		if importer and (item := importer.get(self.getSourceType(), data={ "name": self.sourceName })):
+		if importer and (item := importer.get(self.getSourceType(), data={ "name": self.raw_sourceName })):
 			return item
 		else: self.broken_links += ['cant get source item']
 
 	def getFeatType(self):
-		if self.source in ('ArchetypeInvocation', 'ClassInvocation'):
+		if self.raw_source in ('ArchetypeInvocation', 'ClassInvocation'):
 			return 'class', f'{self.class_name}Invocation'
-		if self.source in ('Archetype', 'Class'):
+		if self.raw_source in ('Archetype', 'Class'):
 			return 'class', None
-		if self.source == 'Species':
+		if self.raw_source == 'Species':
 			return 'species', None
 
 	def getDescription(self, importer, processing=False):
-		text = self.text
+		text = self.raw_text
 
-		if self.source in ('Class', 'Archetype'):
+		if self.raw_source in ('Class', 'Archetype'):
 			if source_item := self.getSourceItem(importer):
 				name = self.name
 				if (plural := utils.text.getPlural(name)) in source_item.invocations: name = plural
 				elif re.match(r'\w+ Superiority|Additional Maneuvers', name) and 'Maneuvers' in source_item.invocations: name = 'Maneuvers'
 				if name in source_item.invocations:
 					for invocation in source_item.invocations[name]:
-						feature_data = { "name": invocation["name"], "source": f'{self.source}Invocation', "sourceName": self.sourceName, "level": invocation["level"] }
+						feature_data = { "name": invocation["name"], "source": f'{self.raw_source}Invocation', "sourceName": self.raw_sourceName, "level": invocation["level"] }
 						feature = importer.get('feature', data=feature_data)
 						if feature and feature.foundry_id:
 							link = f'@Compendium[sw5e.invocations.{feature.foundry_id}]{{{feature.name}}}'
@@ -268,7 +272,7 @@ class Feature(BaseFeature):
 				'sourceName',
 				'level',
 			):
-				data[key] = getattr(self, f'{key}')
+				data[key] = getattr(self, f'raw_{key}')
 
 			data["name"] = feature["name"]
 			data["text"] = feature["text"]

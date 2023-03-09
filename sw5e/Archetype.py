@@ -2,10 +2,8 @@ import sw5e.Entity, utils.text
 import re, json
 
 class Archetype(sw5e.Entity.Item):
-	def load(self, raw_archetype):
-		super().load(raw_archetype)
-
-		attrs = [
+	def getAttrs(self):
+		return super().getAttrs() + [
 			"className",
 			"text",
 			"text2",
@@ -27,7 +25,9 @@ class Archetype(sw5e.Entity.Item):
 			"timestamp",
 			"rowKey",
 		]
-		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_archetype, attr))
+
+	def load(self, raw_archetype):
+		super().load(raw_archetype)
 
 		self.full_name = self.name
 		if self.name.endswith(' (Companion)'): self.name = self.name[:-12]

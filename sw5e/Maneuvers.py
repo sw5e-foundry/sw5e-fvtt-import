@@ -2,11 +2,11 @@ import sw5e.Feature, utils.text
 import re, json
 
 class Maneuvers(sw5e.Feature.BaseFeature):
-	def load(self, raw_maneuver):
-		super().load(raw_maneuver)
+	def getAttrs(self):
+		return super().getAttrs() + [ "metadata", "type", "eTag" ]
 
-		attrs = [ "metadata", "type", "eTag" ]
-		for attr in attrs: setattr(self, f'raw_{attr}', utils.text.clean(raw_maneuver, attr))
+	def getType(self):
+		return "maneuver"
 
 	def getFeatType(self):
 		return None, None
@@ -15,11 +15,8 @@ class Maneuvers(sw5e.Feature.BaseFeature):
 		name = utils.text.slugify(self.name)
 		return f'systems/sw5e/packs/Icons/Maneuvers/{name}.webp'
 
-	def getType(self):
-		return "maneuver"
-
 	def getAction(self):
-		return utils.text.getAction(self.text, self.name, rolled_formula='@scale.superiority.die')
+		return utils.text.getAction(self.raw_text, self.name, rolled_formula='@scale.superiority.die')
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
