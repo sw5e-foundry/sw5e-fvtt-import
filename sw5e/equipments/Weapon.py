@@ -54,7 +54,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		if rang := (utils.text.getProperty('Ammunition', self.raw_propertiesMap) or utils.text.getProperty('Range', self.raw_propertiesMap)):
 			if rang == 'special': short_range = 'special'
 			elif type(rang) == list: short_range, long_range = rang
-			else: short_range = rang
+			else: short_range = int(rang)
 		elif utils.text.getProperty('Reach', self.raw_propertiesMap):
 			short_range = 10
 		return {
@@ -191,7 +191,7 @@ class Weapon(sw5e.Equipment.Equipment):
 				burst_data = copy.deepcopy(original_data)
 				burst_data["name"] = f'{self.name} (Burst)'
 
-				burst_data["system"]["target"]["value"] = '10'
+				burst_data["system"]["target"]["value"] = 10
 				burst_data["system"]["target"]["units"] = 'ft'
 				burst_data["system"]["target"]["type"] = 'cube'
 

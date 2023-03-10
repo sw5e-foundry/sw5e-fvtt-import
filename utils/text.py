@@ -293,19 +293,19 @@ def getTarget(text, name):
 
 		pattern = r'exhales [^.]*a (?P<size>\d+)-foot[- ](?P<shape>cone|line)'
 		if match := re.search(pattern, text):
-			return match['size'], 'ft', match['shape']
+			return int(match['size']), 'ft', match['shape']
 
 		pattern = r'(?P<size>\d+)-foot-radius,? \d+-foot-tall cylinder'
 		if match := re.search(pattern, text):
-			return match['size'], 'ft', 'cylinder'
+			return int(match['size']), 'ft', 'cylinder'
 
 		pattern = r'(?P<size>\d+)-foot[- ]radius(?P<sphere> sphere)?'
 		if match := re.search(pattern, text):
-			return match['size'], 'ft', ('sphere' if match['sphere'] else 'radius')
+			return int(match['size']), 'ft', ('sphere' if match['sphere'] else 'radius')
 
 		pattern = r'(?P<size>\d+)-foot[- ](?P<shape>cube|square|line|cone)'
 		if match := re.search(pattern, text):
-			return match['size'], 'ft', match['shape']
+			return int(match['size']), 'ft', match['shape']
 
 		pattern = r'choose (?:one|a) (?P<attitude> hostile| allied)?(?P<type>creature|droid|ally|enemy|object|starship)'
 		if match := re.search(pattern, text):
