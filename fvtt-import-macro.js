@@ -97,43 +97,43 @@ let actor_types = {
 // item_types = {};
 // journal_entry_types = {};
 
-let foundry_data = {};
+const foundry_data = {};
 
-let allow_delete = true;
-let allow_update = true;
-let allow_create = true;
-let verbose = false;
+const allow_delete = true;
+const allow_update = true;
+const allow_create = true;
+const verbose = false;
 
-for (let type of Object.keys(item_types)) {
+for (const type of Object.keys(item_types)) {
 	console.log(`Updating ${type} compendium`);
 
 	let importer_data = null;
-	for (let file_name of item_types[type]) {
-		let file = await fetch(`/sw5e-compendiums/${file_name}.json`);
-		let data = await file.json();
+	for (const file_name of item_types[type]) {
+		const file = await fetch(`/sw5e-compendiums/${file_name}.json`);
+		const data = await file.json();
 		importer_data = {
 			...importer_data,
 			...data,
 		}
 	}
 
-	let pack = await game.packs.get(`sw5e.${type}`);
+	const pack = await game.packs.get(`sw5e.${type}`);
 	if (!pack) {
 		console.log(`Compendium pack sw5e.${type} not found`);
 		continue;
 	}
 
-	let was_locked = pack.locked;
+	const was_locked = pack.locked;
 	await pack.configure({locked: false})
 
-	let to_delete = [];
-	let to_update = [];
-	let to_create = [];
+	const to_delete = [];
+	const to_update = [];
+	const to_create = [];
 
-	let pack_docs = await pack.getDocuments();
-	for(let pack_doc of pack_docs) {
-		let pack_item = pack_doc;
-		let uid = pack_item.flags.uid;
+	const pack_docs = await pack.getDocuments();
+	for(const pack_doc of pack_docs) {
+		const pack_item = pack_doc;
+		const uid = pack_item.flags["sw5e-importer"]?.uid ?? pack_item.flags.uid;
 
 		let importer_item = null;
 		if (uid) importer_item = importer_data[uid];
@@ -143,6 +143,9 @@ for (let type of Object.keys(item_types)) {
 				effects: pack_item.effects
 			}
 
+			if (pack_item.flags.uid) importer_item.flags["-=uid"] = null;
+			if (pack_item.flags.importer_version) importer_item.flags["-=importer_version"] = null;
+			if (pack_item.flags.timestamp) importer_item.flags["-=timestamp"] = null;
 			importer_item._id = pack_item._id;
 			to_update.push(importer_item);
 
@@ -153,7 +156,7 @@ for (let type of Object.keys(item_types)) {
 
 	for (let uid of Object.keys(importer_data)) {
 		if (importer_data[uid] == null) continue;
-		let importer_item = importer_data[uid];
+		const importer_item = importer_data[uid];
 		to_create.push(importer_item);
 	}
 
@@ -167,8 +170,8 @@ for (let type of Object.keys(item_types)) {
 	if (allow_update) await Item.updateDocuments(to_update, {pack: `sw5e.${type}`});
 	if (allow_create) {
 		const items = await Item.createDocuments(to_create, { pack: `sw5e.${type}` });
-		for (let item of items) {
-			const uid = item.flags.uid;
+		for (const item of items) {
+			const uid = item.flags["sw5e-importer"]?.uid ?? item.flags.uid;
 
 			foundry_data[uid] = {
 				id: item._id,
@@ -180,42 +183,45 @@ for (let type of Object.keys(item_types)) {
 	await pack.configure({locked: was_locked});
 }
 
-for (let type of Object.keys(journal_entry_types)) {
+for (const type of Object.keys(journal_entry_types)) {
 	console.log(`Updating ${type} compendium`);
 
 	let importer_data = null;
-	for (let file_name of journal_entry_types[type]) {
-		let file = await fetch(`/sw5e-compendiums/${file_name}.json`);
-		let data = await file.json();
+	for (const file_name of journal_entry_types[type]) {
+		const file = await fetch(`/sw5e-compendiums/${file_name}.json`);
+		const data = await file.json();
 		importer_data = {
 			...importer_data,
 			...data,
 		}
 	}
 
-	let pack = await game.packs.get(`sw5e.${type}`);
+	const pack = await game.packs.get(`sw5e.${type}`);
 	if (!pack) {
 		console.log(`Compendium pack sw5e.${type} not found`);
 		continue;
 	}
 
-	let was_locked = pack.locked;
+	const was_locked = pack.locked;
 	await pack.configure({locked: false})
 
-	let to_delete = [];
-	let to_update = [];
-	let to_create = [];
+	const to_delete = [];
+	const to_update = [];
+	const to_create = [];
 
-	let pack_docs = await pack.getDocuments();
-	for(let pack_doc of pack_docs) {
-		let pack_entry = pack_doc;
-		let uid = pack_entry.flags.uid;
+	const pack_docs = await pack.getDocuments();
+	for(const pack_doc of pack_docs) {
+		const pack_entry = pack_doc;
+		const uid = pack_entry.flags["sw5e-importer"]?.uid ?? pack_entry.flags.uid;
 
 		let importer_entry = null;
 		if (uid) importer_entry = importer_data[uid];
 		if (uid && importer_entry) {
 			foundry_data[uid] = { id: pack_entry._id };
 
+			if (pack_entry.flags.uid) importer_entry.flags["-=uid"] = null;
+			if (pack_entry.flags.importer_version) importer_entry.flags["-=importer_version"] = null;
+			if (pack_entry.flags.timestamp) importer_entry.flags["-=timestamp"] = null;
 			importer_entry._id = pack_entry._id;
 			to_update.push(importer_entry);
 
@@ -224,9 +230,9 @@ for (let type of Object.keys(journal_entry_types)) {
 		else to_delete.push(pack_entry._id);
 	}
 
-	for(let uid of Object.keys(importer_data)) {
+	for(const uid of Object.keys(importer_data)) {
 		if (importer_data[uid] == null) continue;
-		let importer_entry = importer_data[uid];
+		const importer_entry = importer_data[uid];
 		to_create.push(importer_entry);
 	}
 
@@ -240,8 +246,8 @@ for (let type of Object.keys(journal_entry_types)) {
 	if (allow_update) await JournalEntry.updateDocuments(to_update, {pack: `sw5e.${type}`});
 	if (allow_create) {
 		const entries = await JournalEntry.createDocuments(to_create, { pack: `sw5e.${type}` });
-		for (let entry of entries) {
-			const uid = entry.flags.uid;
+		for (const entry of entries) {
+			const uid = entry.flags["sw5e-importer"]?.uid ?? entry.flags.uid;
 			foundry_data[uid] = { id: entry._id };
 		}
 	}
@@ -249,52 +255,53 @@ for (let type of Object.keys(journal_entry_types)) {
 	await pack.configure({locked: was_locked});
 }
 
-for (let type of Object.keys(actor_types)) {
+for (const type of Object.keys(actor_types)) {
 	console.log(`Updating ${type} compendium`);
 
 	let importer_data = null;
-	for (let file_name of actor_types[type]) {
-		let file = await fetch(`/sw5e-compendiums/${file_name}.json`);
-		let data = await file.json();
+	for (const file_name of actor_types[type]) {
+		const file = await fetch(`/sw5e-compendiums/${file_name}.json`);
+		const data = await file.json();
 		importer_data = {
 			...importer_data,
 			...data,
 		}
 	}
 
-	let pack = await game.packs.get(`sw5e.${type}`);
+	const pack = await game.packs.get(`sw5e.${type}`);
 	if (!pack) {
 		console.log(`Compendium pack sw5e.${type} not found`);
 		continue;
 	}
 
-	let was_locked = pack.locked;
+	const was_locked = pack.locked;
 	await pack.configure({locked: false})
 
-	let to_delete = [];
-	let to_update = [];
-	let to_create = [];
+	const to_delete = [];
+	const to_update = [];
+	const to_create = [];
 
-	let pack_docs = await pack.getDocuments();
-	for(let pack_doc of pack_docs) {
-		let pack_actor = pack_doc;
-		let actor_uid = pack_actor.flags.uid;
+	const pack_docs = await pack.getDocuments();
+	for(const pack_doc of pack_docs) {
+		const pack_actor = pack_doc;
+		const actor_uid = pack_actor.flags["sw5e-importer"]?.uid ?? pack_actor.flags.uid;
 
 		let importer_actor = null;
 		if (actor_uid) importer_actor = importer_data[actor_uid];
 		if (actor_uid && importer_actor) {
-			let foundry_data_items = {};
-			for (let importer_item of importer_actor.items) {
-				foundry_data_items[importer_item.flags.uid] = {
+			const foundry_data_items = {};
+			for (const importer_item of importer_actor.items) {
+				const item_uid = importer_item.flags["sw5e-importer"]?.uid ?? importer_item.flags.uid;
+				foundry_data_items[item_uid] = {
 					id: importer_item._id,
 					effects: importer_item.effects
 				};
 			}
 
-			let items_to_delete = [];
-			for (let pack_item of pack_actor.items) {
-				let item_uid = pack_item.flags.uid;
-				let foundry_data_item = foundry_data_items[item_uid];
+			const items_to_delete = [];
+			for (const pack_item of pack_actor.items) {
+				const item_uid = pack_item.flags["sw5e-importer"]?.uid ?? pack_item.flags.uid;
+				const foundry_data_item = foundry_data_items[item_uid];
 				if (foundry_data_item?.id != pack_item.id) items_to_delete.push(pack_item.id);
 			}
 			await pack_actor.deleteEmbeddedDocuments("Item", items_to_delete);
@@ -305,6 +312,9 @@ for (let type of Object.keys(actor_types)) {
 				sub_entities: foundry_data_items
 			}
 
+			if (pack_actor.flags.uid) importer_actor.flags["-=uid"] = null;
+			if (pack_actor.flags.importer_version) importer_actor.flags["-=importer_version"] = null;
+			if (pack_actor.flags.timestamp) importer_actor.flags["-=timestamp"] = null;
 			importer_actor._id = pack_actor._id;
 			to_update.push(importer_actor);
 
@@ -313,9 +323,9 @@ for (let type of Object.keys(actor_types)) {
 		else to_delete.push(pack_actor._id);
 	}
 
-	for (let actor_uid of Object.keys(importer_data)) {
+	for (const actor_uid of Object.keys(importer_data)) {
 		if (importer_data[actor_uid] == null) continue;
-		let importer_actor = importer_data[actor_uid];
+		const importer_actor = importer_data[actor_uid];
 		to_create.push(importer_actor);
 	}
 
@@ -329,12 +339,13 @@ for (let type of Object.keys(actor_types)) {
 	if (allow_update) await Actor.updateDocuments(to_update, {pack: `sw5e.${type}`});
 	if (allow_create) {
 		const actors = await Actor.createDocuments(to_create, { pack: `sw5e.${type}` });
-		for (let actor of actors) {
-			uid = actor.flags.uid;
+		for (const actor of actors) {
+			const uid = actor.flags["sw5e-importer"]?.uid ?? actor.flags.uid;
 
-			let items = {};
-			for (let item of actor.items) {
-				items[item.flags.uid] = {
+			const items = {};
+			for (const item of actor.items) {
+				const item_uid = item.flags["sw5e-importer"]?.uid ?? item.flags.uid;
+				items[item_uid] = {
 					id: item.id,
 					effects: item.effects
 				};

@@ -30,10 +30,10 @@ class Power(sw5e.Entity.Item):
 		super().process(importer)
 
 		self.activation_type, self.activation_num, self.activation_condition = self.getActivation()
-		self.raw_duration_value, self.raw_duration_unit, self.raw_concentration = self.getDuration()
+		self.duration_value, self.duration_unit, self.concentration = self.getDuration()
 		target_range = self.getTargetRange()
 		self.target_val, self.target_unit, self.target_type = target_range["target"]
-		self.raw_range_val, self.raw_range_unit = target_range["range"]
+		self.range_val, self.range_unit = target_range["range"]
 		self.uses, self.recharge = None, None
 		self.action_type, self.damage, self.formula, self.save, self.save_dc, self.ability, self.scaling = self.getAction()
 
@@ -138,8 +138,8 @@ class Power(sw5e.Entity.Item):
 			"condition": self.activation_condition
 		}
 		data["system"]["duration"] = {
-			"value": self.raw_duration_value,
-			"units": self.raw_duration_unit
+			"value": self.duration_value,
+			"units": self.duration_unit
 		}
 		data["system"]["target"] = {
 			"value": self.target_val,
@@ -148,9 +148,9 @@ class Power(sw5e.Entity.Item):
 			"type": self.target_type
 		}
 		data["system"]["range"] = {
-			"value": self.raw_range_val,
+			"value": self.range_val,
 			"long": None,
-			"units": self.raw_range_unit
+			"units": self.range_unit
 		}
 		data["system"]["uses"] = {
 			"value": None,
@@ -177,7 +177,7 @@ class Power(sw5e.Entity.Item):
 
 		data["system"]["level"] = self.raw_level
 		data["system"]["school"] = self.school
-		data["system"]["components"] = { "concentration": bool(self.raw_concentration) }
+		data["system"]["components"] = { "concentration": bool(self.concentration) }
 		data["system"]["materials"] = {}
 		data["system"]["preparation"] = {}
 		data["system"]["scaling"] = self.scaling

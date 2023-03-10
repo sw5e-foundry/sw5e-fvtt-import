@@ -97,30 +97,28 @@ class MonsterBehavior(sw5e.Entity.Entity):
 		return None
 
 	def loadTarget(self):
+		value, width, units, target = None, None, None, None
+
 		if self.raw_attackType == "None":
-			target, units, value = utils.text.getTarget(self.raw_description, self.name)
-			return {
-				"type": target,
-				"units": units,
-				"value": value
-			}
-		else:
-			target, value = None, None
+			value, units, target = utils.text.getTarget(self.raw_description, self.name)
 
-			target_text = (self.raw_numberOfTargets or '').lower()
-			if match := re.search(r'(one)?(two)?(three)?(four)?(five)?(six)?(seven)?(eight)?(nine)?(ten)?(?P<digits>\d+)?', target_text):
-				if match["digits"]: value = match["digits"]
-				else:
-					for i in range(1, 11):
-						if match[i]: value = i
+		target_text = (self.raw_numberOfTargets or '').lower()
+		if (value == None) and (match := re.search(r'(one)?(two)?(three)?(four)?(five)?(six)?(seven)?(eight)?(nine)?(ten)?(?P<digits>\d+)?', target_text)):
+			if match["digits"]: value = match["digits"]
+			else:
+				for i in range(1, 11):
+					if match[i]: value = i
 
-			if match := re.search(r'creature|droid|ally|enemy|object|starship', target_text):
-				target = match[0]
+		if (target == None) and (match := re.search(r'creature|droid|ally|enemy|object|starship', target_text)):
+			target = match[0]
+			value = value or 1
 
-			return {
-				"type": target,
-				"value": value
-			}
+		return {
+			"value": value,
+			"width": width,
+			"units": units or '',
+			"type": target or '',
+		}
 
 	def loadDuration(self):
 		value, units = utils.text.getDuration(self.raw_description, self.name)

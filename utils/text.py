@@ -291,12 +291,6 @@ def getTarget(text, name):
 	if text:
 		text = text.lower()
 
-		pattern = r'choose one(?P<type>hostile |allied)?\s+creature'
-		if match := re.search(pattern, text):
-			if match['type'] == 'hostile': return 1, '', 'enemy'
-			elif match['type'] == 'allied': return 1, '', 'ally'
-			else: return 1, '', 'creature'
-
 		pattern = r'exhales [^.]*a (?P<size>\d+)-foot[- ](?P<shape>cone|line)'
 		if match := re.search(pattern, text):
 			return match['size'], 'ft', match['shape']
@@ -312,6 +306,12 @@ def getTarget(text, name):
 		pattern = r'(?P<size>\d+)-foot[- ](?P<shape>cube|square|line|cone)'
 		if match := re.search(pattern, text):
 			return match['size'], 'ft', match['shape']
+
+		pattern = r'choose (?:one|a) (?P<attitude> hostile| allied)?(?P<type>creature|droid|ally|enemy|object|starship)'
+		if match := re.search(pattern, text):
+			if match['attitude'] == 'hostile': return 1, '', 'enemy'
+			elif match['attitude'] == 'allied': return 1, '', 'ally'
+			else: return 1, '', match['type']
 
 	return None, '', ''
 
