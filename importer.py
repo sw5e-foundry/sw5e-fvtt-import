@@ -14,7 +14,6 @@ def withEntityTypes(cls):
 
 @withEntityTypes
 class Importer:
-	__pickle_path = "importer.pickle"
 	__output_path = "output/"
 	__foundry_data_path = "foundry_data.json"
 	__raw_path = "raw/"
@@ -50,56 +49,23 @@ class Importer:
 		'WeaponFocus',
 		'WeaponSupremacy',
 	]
-	__stored_types = __entity_types #+ [ 'monsterBehaviour' ]
+	__stored_types = __entity_types
 
 	__base_url = "https://sw5eapi.azurewebsites.net/api"
-	version = 1
+	version = 3
 
-	warn_limit = 15
+	warn_limit = 5
 
-	def __init__(self, mode=''):
+	def __init__(self, refresh=False):
 
-		if mode == 'refresh':
+		if refresh:
 			for entity_type in self.__entity_types:
 				data = self.__getData(entity_type, online=True)
 				self.__saveData(entity_type, data)
 
-		if os.path.isfile(self.__pickle_path):
-			print('Loading...')
-			with open(self.__pickle_path, 'rb') as pickle_file:
-				old_data = pickle.load(pickle_file)
-				for entity_type in self.__stored_types:
-					setattr(self, entity_type, old_data[entity_type])
-		else:
-			print('Unable to locate pickle file, loading from API')
-			self.update(msg='Loading...')
-
-		print('Applying foundry data...')
-		if os.path.isfile(self.__foundry_data_path):
-			missing_entity = 0
-			with open(self.__foundry_data_path, 'r') as foundry_data_file:
-				data = json.load(foundry_data_file)
-				for uid in data: missing_entity = self.__applyFoundryData(uid, data[uid], missing=missing_entity)
-			if missing_entity > self.warn_limit: print(f'	And {missing_entity-self.warn_limit} more...')
-
-			missing_fdata = 0
-			for entity_type in self.__stored_types:
-				storage = self.getEntityList(entity_type)
-				for uid in storage:
-					entity = storage[uid]
-					if not entity.foundry_id:
-						## TODO: Remove this once starship items are done
-						if re.search(r'EnhancedItem\.name-ship', uid): continue
-						## TODO: Find a way to set the foundry_ids of the weapon modes
-						if entity.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', entity.propertiesMap): continue
-						if entity.__class__.__name__ == 'Weapon' and entity.modes: continue
-						if missing_fdata <= self.warn_limit: print(f'	Entity missing it\'s foundry data: {uid}')
-						missing_fdata += 1
-			if missing_fdata > self.warn_limit: print(f'	And {missing_fdata-self.warn_limit} more...')
-
-			if missing_entity == 0 and missing_fdata == 0: print('	.')
-		else:
-			print('	Unable to open foundry data file')
+		self.__loadRawData()
+		self.__loadFoundryData()
+		self.__processEntities()
 
 	def __del__(self):
 		# with open(self.__pickle_path, 'wb+') as pickle_file:
@@ -108,23 +74,6 @@ class Importer:
 		# 	pickle.dump(data, pickle_file)
 		pass
 
-	def __applyFoundryData(self, uid, data, parent=None, missing=0):
-		entity_type = uid.split('.')[0]
-		if entity_type not in self.__stored_types: entity_type = utils.text.lowerCase(entity_type)
-		base_uid = re.sub(r'\.mode-\w+$', '', uid)
-		entity = (parent or self).get(entity_type, uid=base_uid)
-		if entity:
-			entity.foundry_id = data["id"]
-			if "effects" in data: entity.effects = data["effects"]
-			if "sub_entities" in data:
-				for sub_uid in data["sub_entities"]:
-					missing = self.__applyFoundryData(sub_uid, data["sub_entities"][sub_uid], entity, missing=missing)
-		else:
-			if missing <= self.warn_limit:
-				print(f'	Foundry data for uid {uid}, but no such entity exists')
-				if parent: print(f'	Parent: {parent.uid}')
-			missing += 1
-		return missing
 
 	def __getData(self, file_name, online=False):
 		data = None
@@ -153,59 +102,14 @@ class Importer:
 		with open(f'{self.__raw_path}{file_name}.json', 'w+', encoding='utf8') as raw_file:
 			json.dump(data, raw_file, indent=4, sort_keys=False, ensure_ascii=False)
 
-	def getEntityList(self, entity_type):
-		if entity_type in self.__stored_types:
-			return getattr(self, entity_type)
 
-	def __getClass(self, entity_type):
-		entity_type = utils.text.capitalCase(entity_type)
-		return getattr(getattr(sw5e, entity_type), entity_type)
-
-	def get(self, entity_type, uid=None, data=None, loud=False):
-		if entity_type in ('backpack', 'consumable', 'equipment', 'loot', 'tool', 'weapon'):
-			entity_type = 'equipment'
-
-		if (not uid) and data:
-			klass = self.__getClass(entity_type)
-			kklass = klass.getClass(data)
-			uid = kklass.getUID(data)
-
-		storage = self.getEntityList(entity_type) or {}
-
-		if loud: print(f'Importer.get | {uid=}')
-
-		return storage.get(uid, None)
-
-	def __processEntity(self, raw_entity, entity_type, depth=0):
-		if depth > 10:
-			raise RecursionError(raw_entity["name"])
-		try:
-			storage = self.getEntityList(entity_type)
-			klass = self.__getClass(entity_type)
-
-			kklass = klass.getClass(raw_entity)
-			uid = kklass.getUID(raw_entity)
-
-			old_entity = self.get(entity_type, uid=uid)
-
-			if (not old_entity) or (old_entity.timestamp != raw_entity["timestamp"]) or (old_entity.importer_version != self.version) or (old_entity.broken_links):
-				new_entity = kklass(raw_entity, old_entity, uid, self)
-				storage[uid] = new_entity
-				sub_entities = new_entity.getSubEntities(self)
-				for sub_entity, entity_type in sub_entities:
-					self.__processEntity(sub_entity, entity_type, depth+1)
-		except:
-			print(f'		{raw_entity["name"]}')
-			raise
-
-	def update(self, msg='Updating...'):
-		print(msg)
-
+	def __loadRawData(self):
+		print('Loading raw data...')
 		for entity_type in self.__entity_types:
 			if data := self.__getData(entity_type):
 				print(f'	{entity_type}')
 				for raw_entity in data:
-					self.__processEntity(raw_entity, entity_type)
+					self.__loadEntity(raw_entity, entity_type)
 
 		extra_files = os.listdir(self.__extras_path)
 		if extra_files:
@@ -217,7 +121,144 @@ class Importer:
 						if entity_type in data:
 							print(f'	{file_name} ({entity_type})')
 							for raw_entity in data[entity_type]:
-								self.__processEntity(raw_entity, entity_type)
+								self.__loadEntity(raw_entity, entity_type)
+
+	def __loadEntity(self, raw_entity, entity_type, depth=0):
+		if depth > 10: raise RecursionError(raw_entity["name"])
+		try:
+			storage = self.getEntityList(entity_type)
+			klass = self.__getClass(entity_type)
+
+			kklass = klass.getClass(raw_entity)
+			uid = kklass.getUID(raw_entity)
+
+			if old_entity := storage.get(uid):
+				if "propertiesMap" in raw_entity and "Modal" in raw_entity["propertiesMap"]: return
+				elif raw_entity["partitionKey"] != old_entity.raw_partitionKey:
+					if 'MISSING-DATA' in (raw_entity["partitionKey"], old_entity.raw_partitionKey):
+						raise ValueError("Duplicated Entity in 'Missing Data'")
+					elif old_entity.raw_partitionKey == 'Core':
+						return
+				else: raise ValueError("Duplicated Entity", uid)
+
+			new_entity = kklass(raw_entity, uid=uid, importer=self)
+			storage[uid] = new_entity
+
+			sub_entities = new_entity.getSubEntities(importer=self)
+			for sub_entity, entity_type in sub_entities:
+				self.__loadEntity(sub_entity, entity_type, depth+1)
+		except:
+			print(f'		{raw_entity["name"]} {depth=}')
+			print(f'		{uid}')
+			raise
+
+	def __loadFoundryData(self):
+		print('Loading foundry data...')
+		if os.path.isfile(self.__foundry_data_path):
+			print('	Applying foundry data...')
+			missing_entity = 0
+			with open(self.__foundry_data_path, 'r') as foundry_data_file:
+				data = json.load(foundry_data_file)
+				for uid in data: missing_entity = self.__applyFoundryData(uid, data[uid], missing=missing_entity)
+			if missing_entity > self.warn_limit: print(f'		And {missing_entity-self.warn_limit} more...')
+
+			print('	Checking for missing foundry data...')
+			missing_fdata = 0
+			for entity_type in self.__stored_types:
+				storage = self.getEntityList(entity_type)
+				for uid, entity in storage.items():
+					if not entity.foundry_id:
+						## TODO: Remove this once starship items are done
+						if re.search(r'EnhancedItem\.name-ship', uid): continue
+						## TODO: Find a way to set the foundry_ids of the weapon modes
+						if entity.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', entity.raw_propertiesMap): continue
+						if entity.__class__.__name__ == 'Weapon' and entity.raw_modes: continue
+						if missing_fdata < self.warn_limit: print(f'		Entity missing it\'s foundry data: {uid}')
+						entity.foundry_id = utils.text.randomID()
+						missing_fdata += 1
+			if missing_fdata > self.warn_limit: print(f'		And {missing_fdata-self.warn_limit} more...')
+
+			# if missing_entity == 0 and missing_fdata == 0: print('	.')
+		else:
+			print('	Unable to open foundry data file')
+
+	def __applyFoundryData(self, uid, data, parent=None, missing=0):
+		entity_type = uid.split('.')[0]
+		if entity_type not in self.__stored_types: entity_type = utils.text.lowerCase(entity_type)
+
+		base_uid = re.sub(r'\.mode-\w+$', '', uid)
+		entity = (parent or self).get(entity_type, uid=base_uid, fid_required=False)
+
+		if entity:
+			entity.foundry_id = data["id"]
+			if "effects" in data: entity.effects = data["effects"]
+			if "sub_entities" in data:
+				for sub_uid, sub_data in data["sub_entities"].items():
+					missing = self.__applyFoundryData(sub_uid, sub_data, parent=entity, missing=missing)
+		else:
+			if missing < self.warn_limit:
+				print(f'		Foundry data for uid {uid}, but no such entity exists')
+				if parent: print(f'		Parent: {parent.uid}')
+			missing += 1
+		return missing
+
+	def __processEntities(self, depth=0):
+		print(f'Processing Entities... {depth}')
+		broken_links = []
+		for entity_type in self.__stored_types:
+			printed = False
+			storage = self.getEntityList(entity_type)
+			for uid, entity in storage.items():
+				if not printed:
+					print(f'	{entity_type}')
+					printed = True
+				if len(entity.broken_links) or not entity.processed:
+					try:
+						entity.process(importer=self)
+					except:
+						print(f'		{uid=} {depth=}')
+						raise
+				if entity.broken_links: broken_links.append([entity.name, entity.broken_links])
+		if depth >= 5:
+			any_non_id_error = False
+			for entity, errors in broken_links:
+				for error in errors:
+					if error != 'no foundry id':
+						any_non_id_error = True
+			if any_non_id_error: raise RecursionError(broken_links)
+			else: print(broken_links)
+		if len(broken_links): self.__processEntities(depth=depth+1)
+
+
+	def getEntityList(self, entity_type):
+		if entity_type in self.__stored_types:
+			return getattr(self, entity_type)
+
+	def __getClass(self, entity_type):
+		entity_type = utils.text.capitalCase(entity_type)
+		return getattr(getattr(sw5e, entity_type), entity_type)
+
+	def getUID(self, entity_type, raw_entity):
+		klass = self.__getClass(entity_type)
+		kklass = klass.getClass(raw_entity)
+		return kklass.getUID(raw_entity)
+
+
+	def get(self, entity_type, uid=None, data=None, loud=False, fid_required=True):
+		if entity_type in ('backpack', 'consumable', 'equipment', 'loot', 'tool', 'weapon'):
+			entity_type = 'equipment'
+
+		if (not uid) and data: uid = self.getUID(entity_type, data)
+
+		storage = self.getEntityList(entity_type) or {}
+
+		if loud: print(f'Importer.get | {uid=}')
+
+		entity = storage.get(uid, None)
+		if fid_required and entity and not entity.foundry_id: raise AssertionError('Entities should have foundry_id by now')
+
+		return entity
+
 
 	def output(self, msg='Output...'):
 		print(msg)
@@ -228,7 +269,7 @@ class Importer:
 			for uid in storage:
 				entity = storage[uid]
 				try:
-					entity_data, file = entity.getData(self), entity.getFile(self)
+					entity_data, file = entity.getData(importer=self), entity.getFile(importer=self)
 					if file not in data:
 						data[file] = {}
 					for mode in entity_data:
