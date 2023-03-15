@@ -209,7 +209,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			if not utils.object.getProperty(data, 'data.activation.type'):
 				utils.object.setProperty(data, 'data.activation', { "type": 'action', "cost": 1 }, force=True)
 			if not utils.object.getProperty(data, 'data.target.type'):
-				utils.object.setProperty(data, 'data.target', { "type": 'enemy', "value": 1 }, force=True)
+				utils.object.setProperty(data, 'data.target', { "value": 1 , "type": 'enemy' }, force=True)
 
 			if self.raw_subtypeType in ('AnyWithProperty', 'AnyBlasterWithProperty', 'AnyVibroweaponWithProperty', 'AnyLightweaponWithProperty'):
 				print(f"	'{self.raw_subtypeType}' enhanced weapon detected. This kind of item is not supported since there currently no examples to know what they should look like.")

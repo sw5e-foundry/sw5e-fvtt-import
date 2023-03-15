@@ -221,7 +221,7 @@ class Feature(BaseFeature):
 
 	def getFeatType(self):
 		if self.raw_source in ('ArchetypeInvocation', 'ClassInvocation'):
-			return 'class', f'{self.class_name}Invocation'
+			return 'class', f'{self.class_name.lower()}Invocation'
 		if self.raw_source in ('Archetype', 'Class'):
 			return 'class', None
 		if self.raw_source == 'Species':

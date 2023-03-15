@@ -48,10 +48,11 @@ class Class(sw5e.Entity.Item):
 			"eTag",
 		]
 
+	def getJsonAttrs(self):
+		return super().getJsonAttrs() + [ "levelChangeHeaders" ]
+
 	def load(self, raw_class):
 		super().load(raw_class)
-
-		self.raw_levelChangeHeaders = utils.text.cleanJson(raw_class, "levelChangeHeaders")
 
 		self.description = self.loadDescription()
 		self.features, self.invocations = self.loadFeatures()
@@ -214,6 +215,7 @@ class Class(sw5e.Entity.Item):
 				if arch.raw_className == self.name
 			]
 		else: broken_links += [ "no archetypes" ]
+		print(self.name, self.archetypes)
 
 	def processArchetypesFlavor(self, importer):
 		output = [f'<h1>{self.raw_archetypeFlavorName}</h1>']
@@ -221,8 +223,7 @@ class Class(sw5e.Entity.Item):
 
 		if len(self.archetypes) > 0:
 			output += ['<ul>']
-			for arch in self.archetypes:
-				output += [f'<li>@Compendium[sw5e.archetypes.{arch["fid"]}]{{{arch["name"].capitalize()}}}</li>']
+			output += [f'<li>@Compendium[sw5e.archetypes.{arch["fid"]}]{{{arch["name"].capitalize()}}}</li>' for arch in self.archetypes]
 			output += ['</ul>']
 
 		self.archetypesFlavor = "\n".join(output)
