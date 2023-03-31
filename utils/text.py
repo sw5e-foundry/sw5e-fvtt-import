@@ -2,6 +2,7 @@ import re, json, random, math, string
 
 def ncapt(patt): return f'(?:{patt})'
 def capt(patt, name=None): return f'(?P<{name}>{patt})' if name else f'({patt})'
+def exactly_x_times(pat, x): return fr'(?<!{pat}){pat}{{{x}}}(?!{pat})'
 
 
 def cleanStr(string):
@@ -657,7 +658,7 @@ def getProperty(prop_name, props):
 	if len(vals) == 1: return vals[0]
 	return vals
 
-def getProperties(targets, props_list, strict=False, error=False, needs_end=False):
+def getProperties(targets, props_list, strict=False, error=False, needs_end=False, verbose=False):
 	if not targets: return {}
 	if type(targets) == str: targets = (targets,)
 	if len(props_list) == 0: raise ValueError(targets, props_list, strict, error, needs_end)
@@ -683,11 +684,17 @@ def getProperties(targets, props_list, strict=False, error=False, needs_end=Fals
 		if re.search(pattern, target):
 			for match in re.finditer(pattern, target):
 				text = match['props']
+				if verbose:
+					print(f'		{match=}')
+					print(f'		{text=}')
 				for prop in props_list:
 					pName = prop["name"] if strict else prop["name"].lower()
 					pId = prop["id"]
 					pattern2 = fr'{pName}(?=\W|$){pval_pat_}'
 					def foo(match2):
+						if verbose:
+							print(f'		{match2=}')
+							print(f'		{match2.groupdict()=}')
 						if match2[0].find('MATCH') != -1: return 'MATCH'
 						if match['neg']:
 							properties[pId] = False

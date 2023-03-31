@@ -181,6 +181,7 @@ class MonsterBehavior(sw5e.Entity.Entity):
 			data["system"]["weaponType"] = 'natural'
 			data["system"]["equipped"] = True
 			data["system"]["proficient"] = True
+			data["system"]["properties"] = {}
 
 		return [data]
 

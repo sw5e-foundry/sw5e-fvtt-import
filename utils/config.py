@@ -161,6 +161,9 @@ casting_properties = [
 
 weapon_properties = [
 	{
+		"name": 'Special',
+		"id": 'spc',
+	}, {
 		"name": 'Auto',
 		"id": 'aut',
 	}, {
@@ -280,9 +283,6 @@ weapon_properties = [
 	}, {
 		"name": 'Specialized',
 		"id": 'spz',
-	}, {
-		"name": 'Special',
-		"id": 'spc',
 	}, {
 		"name": 'Strength',
 		"id": 'str',

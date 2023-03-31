@@ -54,15 +54,28 @@ class Archetype(sw5e.Entity.Item):
 		features = {}
 		invocations = {}
 
-		levels_pat = r'(?P<level>\d+)\w+(?:, \d+\w+|,? and \d+\w+)* level'
-		feature_pat = r'(?<!#)###(?!#) (?P<name>[^\n]*)\s*';
-		feature_prereq_pat = fr'_\*\*{self.name}:\*\* {levels_pat}_\s*';
-		invocat_pat = r'(?<!#)####(?!#) (?P<name>[^\n]*)\s*';
-		invocat_prereq_pat = fr'_\*\*Prerequisite:\*\* (?:{levels_pat})?(?:, )?(?P<prerequisite>[^\n]*)_\s*';
+		not_a_feature = '|'.join(("GM Consideration",))
+		arch_name = '|'.join((re.sub(r'([()])', r'\\\1', name) for name in (self.name, self.full_name)))
+
+		it = utils.text.exactly_x_times(r'[_*]', 1)
+		b = utils.text.exactly_x_times(r'[_*]', 2)
+		ib = utils.text.exactly_x_times(r'[_*]', 3)
+		h3 = utils.text.exactly_x_times(r'#', 3)
+		h4 = utils.text.exactly_x_times(r'#', 4)
+
+		levels_pat = fr'(?P<level>\d+)\w+(?:, \d+\w+|,? and \d+\w+)* level'
+		feature_pat = fr'{h3} (?!{not_a_feature})(?P<name>[^\n]*)\s*';
+		feature_prereq_pat = fr'{ib}(?:{arch_name}):{b} {levels_pat}{it}\s*';
+		invocat_pat = fr'{h4} (?!{not_a_feature})(?P<name>[^\n]*)\s*';
+		invocat_prereq_pat = fr'{ib}Prerequisite:{b} (?:{levels_pat})?(?:, )?(?P<prerequisite>[^\n]*){it}\s*';
+
 		for match in re.finditer(feature_pat, text):
 			feature_name = match["name"]
+
 			subtext = text[match.end():]
-			if (next_feature := re.search(feature_pat, subtext)): subtext = subtext[:next_feature.start()]
+			if (next_feature := re.search(feature_pat, subtext)):
+				subtext = subtext[:next_feature.start()]
+
 
 			# If there is a prerequisite, it's a normal feature
 			match = re.match(feature_prereq_pat, subtext)

@@ -82,11 +82,20 @@ class Class(sw5e.Entity.Item):
 		features = {}
 		invocations = {}
 
-		levels_pat = r'(?P<level>\d+)\w+(?:, \d+\w+|,? and \d+\w+)* level'
-		feature_pat = r'(?<!#)###(?!#) (?P<name>[^\n]*)\s*';
-		feature_prereq_pat = fr'_\*\*{self.name}:\*\* {levels_pat}_\s*';
-		invocat_pat = r'(?<!#)####(?!#) (?P<name>[^\n]*)\s*';
-		invocat_prereq_pat = fr'_\*\*Prerequisite:\*\* (?:{levels_pat})?(?:, )?(?P<prerequisite>[^\n]*)_\s*';
+		not_a_feature = '|'.join(("GM Consideration",))
+		class_name = '|'.join((name.replace('([()])', '\\\1') for name in (self.name, )))
+
+		it = utils.text.exactly_x_times(r'[_*]', 1)
+		b = utils.text.exactly_x_times(r'[_*]', 2)
+		ib = utils.text.exactly_x_times(r'[_*]', 3)
+		h3 = utils.text.exactly_x_times(r'#', 3)
+		h4 = utils.text.exactly_x_times(r'#', 4)
+
+		levels_pat = fr'(?P<level>\d+)\w+(?:, \d+\w+|,? and \d+\w+)* level'
+		feature_pat = fr'{h3} (?!{not_a_feature})(?P<name>[^\n]*)\s*';
+		feature_prereq_pat = fr'{ib}{self.name}:{b} {levels_pat}{it}\s*';
+		invocat_pat = fr'{h4} (?!{not_a_feature})(?P<name>[^\n]*)\s*';
+		invocat_prereq_pat = fr'{ib}Prerequisite:{b} (?:{levels_pat})?(?:, )?(?P<prerequisite>[^\n]*){it}\s*';
 		for match in re.finditer(feature_pat, text):
 			feature_name = match["name"]
 			subtext = text[match.end():]
@@ -215,7 +224,6 @@ class Class(sw5e.Entity.Item):
 				if arch.raw_className == self.name
 			]
 		else: broken_links += [ "no archetypes" ]
-		print(self.name, self.archetypes)
 
 	def processArchetypesFlavor(self, importer):
 		output = [f'<h1>{self.raw_archetypeFlavorName}</h1>']
