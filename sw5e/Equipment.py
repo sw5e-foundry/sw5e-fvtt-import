@@ -43,7 +43,7 @@ class Equipment(sw5e.Entity.Item):
 		self.uses, self.uses_value, self.recharge = None, None, None
 		self.baseItem = self.getBaseItem()
 
-	def getImg(self, importer=None, item_type=None, no_img=('Unknown',), default_img='systems/sw5e/packs/Icons/Storage/Crate.webp', plural=False):
+	def getImg(self, importer=None, item_type=None, item_subtype=None, no_img=('Unknown',), default_img='systems/sw5e/packs/Icons/Storage/Crate.webp', plural=False):
 		if item_type == None: item_type = self.raw_equipmentCategory
 
 		#TODO: Remove this once there are icons for those categories
@@ -54,6 +54,8 @@ class Equipment(sw5e.Entity.Item):
 		item_type = re.sub(r'And', r'and', item_type)
 		item_type = re.sub(r'Or', r'or', item_type)
 		if plural: item_type += 's'
+
+		if item_subtype: item_type = f'{item_type}/{item_subtype}'
 
 		name = utils.text.slugify(self.raw_name)
 

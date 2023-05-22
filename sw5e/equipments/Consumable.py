@@ -42,6 +42,8 @@ class Consumable(sw5e.Equipment.Equipment):
 					if desc.find(amn) != -1:
 						ammo_type = ammo["id"]
 						break
+				else:
+					ammo_type = 'melee'
 
 		return consumable_type, ammo_type
 
@@ -52,6 +54,7 @@ class Consumable(sw5e.Equipment.Equipment):
 			'default_img': 'systems/sw5e/packs/Icons/Storage/Canteen.webp',
 			# 'plural': False
 		}
+		if self.ammo_type == 'melee': kwargs["item_subtype"] = 'Melee Consumables'
 		return super().getImg(importer=importer, **kwargs)
 
 	def getDescription(self, importer):
@@ -62,6 +65,6 @@ class Consumable(sw5e.Equipment.Equipment):
 		data = super().getData(importer)[0]
 
 		data["system"]["consumableType"] = self.consumable_type
-		if self.ammo_type: data["system"]["ammoType"] = self.ammo_type
+		if self.ammo_type != 'melee': data["system"]["ammoType"] = self.ammo_type
 
 		return [data]

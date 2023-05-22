@@ -255,7 +255,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		elif self.is_modification:
 			data["system"]["modificationItemType"] = self.modificationItemType
 
-			data["system"]["modificationType"] = self.raw_subtype
+			data["system"]["modificationType"] = 'focusgenerator' if self.raw_subtype == 'focus generator' else self.raw_subtype
 			data["system"]["-=modificationSlot"] = None
 
 			data["system"]["properties"]["indeterminate"] = { key: False for key in self.p_properties.keys() }
