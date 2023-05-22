@@ -505,6 +505,9 @@ ammo_types = [
 		"name": 'Flechette Magazine',
 		"id": 'flechetteMag',
 	}, {
+		"name": 'Flechette Mag',
+		"id": 'flechetteMag',
+	}, {
 		"name": 'Missile',
 		"id": 'missile',
 	}, {
