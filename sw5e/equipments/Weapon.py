@@ -91,28 +91,18 @@ class Weapon(sw5e.Equipment.Equipment):
 		}
 
 	def getWeaponType(self):
-		w_class = self.raw_weaponClassification
+		wc = self.raw_weaponClassification
 
-		simple = w_class.startswith('Simple')
-		martial = w_class.startswith('Martial')
-		exotic = w_class.startswith('Exotic')
+		start = ''
+		for training in ('Simple', 'Martial', 'Exotic'):
+			if wc.startswith(training): start = training.lower()
 
-		blaster = w_class.endswith('Blaster') or utils.text.getProperty('Ammunition', self.raw_propertiesMap) or utils.text.getProperty('Reload', self.raw_propertiesMap)
-		vibro = (not blaster) and w_class.endswith('Vibroweapon')
-		light = (not blaster) and (not vibro) and w_class.endswith('Lightweapon')
+		if wc.endswith('Blaster') or self.getProperty('Ammunition') or self.getProperty('Reload'):
+			return f'{start}B'
+		for mode in ('Vibroweapon', 'Lightweapon'):
+			if wc.endswith(mode): return f'{start}{mode[0]}W'
 
-		if simple and blaster: return 'simpleB'
-		if simple and vibro: return 'simpleVW'
-		if simple and light: return 'simpleLW'
-		if martial and blaster: return 'martialB'
-		if martial and vibro: return 'martialVW'
-		if martial and light: return 'martialLW'
-		if exotic and blaster: return 'exoticB'
-		if exotic and vibro: return 'exoticVW'
-		if exotic and light: return 'exoticLW'
 		return 'natural'
-
-		return weapon_types[self.raw_weaponClassificationEnum]
 
 	def getAmmoTypes(self):
 		if (self.name == "Rotary Cannon"): return ['powerGenerator']

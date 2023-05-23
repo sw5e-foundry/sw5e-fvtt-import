@@ -1,14 +1,14 @@
 {
-    "Equipment.name-emergency_shelter.equipmentCategory-lifesupport": {
+    "Loot.name-emergency_shelter.equipmentCategory-lifesupport": {
         "name": "Emergency shelter",
         "flags": {
             "sw5e-importer": {
                 "timestamp": "2023-03-09T01:51:54.5993849+00:00",
                 "importer_version": 3,
-                "uid": "Equipment.name-emergency_shelter.equipmentCategory-lifesupport"
+                "uid": "Loot.name-emergency_shelter.equipmentCategory-lifesupport"
             }
         },
-        "type": "equipment",
+        "type": "loot",
         "img": "systems/sw5e/packs/Icons/Life%20Support/EmergencyShelter.webp",
         "system": {
             "description": {
@@ -55,11 +55,7 @@
             },
             "formula": "",
             "save": {},
-            "armor": {
-                "value": null,
-                "type": "trinket",
-                "dex": null
-            },
+            "armor": {},
             "hp": {
                 "value": 0,
                 "max": 0,
@@ -68,9 +64,7 @@
             },
             "weaponType": "",
             "properties": {},
-            "proficient": false,
-            "strength": 0,
-            "stealth": false
+            "proficient": false
         },
         "effects": []
     },
@@ -599,16 +593,16 @@
         },
         "effects": []
     },
-    "Equipment.name-emergency_raft.equipmentCategory-lifesupport": {
+    "Loot.name-emergency_raft.equipmentCategory-lifesupport": {
         "name": "Emergency raft",
         "flags": {
             "sw5e-importer": {
                 "timestamp": "2023-03-09T01:52:13.4654454+00:00",
                 "importer_version": 3,
-                "uid": "Equipment.name-emergency_raft.equipmentCategory-lifesupport"
+                "uid": "Loot.name-emergency_raft.equipmentCategory-lifesupport"
             }
         },
-        "type": "equipment",
+        "type": "loot",
         "img": "systems/sw5e/packs/Icons/Life%20Support/EmergencyRaft.webp",
         "system": {
             "description": {
@@ -655,11 +649,7 @@
             },
             "formula": "",
             "save": {},
-            "armor": {
-                "value": null,
-                "type": "trinket",
-                "dex": null
-            },
+            "armor": {},
             "hp": {
                 "value": 0,
                 "max": 0,
@@ -668,26 +658,24 @@
             },
             "weaponType": "",
             "properties": {},
-            "proficient": false,
-            "strength": 0,
-            "stealth": false
+            "proficient": false
         },
         "effects": []
     },
-    "Equipment.name-emergency_rations_one_days.equipmentCategory-lifesupport": {
+    "Consumable.name-emergency_rations_one_days.equipmentCategory-lifesupport": {
         "name": "Emergency rations (one day's)",
         "flags": {
             "sw5e-importer": {
                 "timestamp": "2023-03-09T01:52:13.4664447+00:00",
                 "importer_version": 3,
-                "uid": "Equipment.name-emergency_rations_one_days.equipmentCategory-lifesupport"
+                "uid": "Consumable.name-emergency_rations_one_days.equipmentCategory-lifesupport"
             }
         },
-        "type": "equipment",
+        "type": "consumable",
         "img": "systems/sw5e/packs/Icons/Life%20Support/EmergencyRations-OneDayS.webp",
         "system": {
             "description": {
-                "value": ""
+                "value": null
             },
             "requirements": "",
             "source": "EC",
@@ -730,11 +718,7 @@
             },
             "formula": "",
             "save": {},
-            "armor": {
-                "value": null,
-                "type": "trinket",
-                "dex": null
-            },
+            "armor": {},
             "hp": {
                 "value": 0,
                 "max": 0,
@@ -744,8 +728,8 @@
             "weaponType": "",
             "properties": {},
             "proficient": false,
-            "strength": 0,
-            "stealth": false
+            "consumableType": "ration",
+            "ammoType": null
         },
         "effects": []
     },
@@ -974,20 +958,20 @@
         },
         "effects": []
     },
-    "Equipment.name-oxygen_tank.equipmentCategory-lifesupport": {
+    "Loot.name-oxygen_tank.equipmentCategory-lifesupport": {
         "name": "Oxygen tank",
         "flags": {
             "sw5e-importer": {
                 "timestamp": "2023-03-09T01:52:13.4284665+00:00",
                 "importer_version": 3,
-                "uid": "Equipment.name-oxygen_tank.equipmentCategory-lifesupport"
+                "uid": "Loot.name-oxygen_tank.equipmentCategory-lifesupport"
             }
         },
-        "type": "equipment",
+        "type": "loot",
         "img": "systems/sw5e/packs/Icons/Life%20Support/OxygenTank.webp",
         "system": {
             "description": {
-                "value": ""
+                "value": null
             },
             "requirements": "",
             "source": "EC",
@@ -1030,11 +1014,7 @@
             },
             "formula": "",
             "save": {},
-            "armor": {
-                "value": null,
-                "type": "trinket",
-                "dex": null
-            },
+            "armor": {},
             "hp": {
                 "value": 0,
                 "max": 0,
@@ -1043,9 +1023,7 @@
             },
             "weaponType": "",
             "properties": {},
-            "proficient": false,
-            "strength": 0,
-            "stealth": false
+            "proficient": false
         },
         "effects": []
     },

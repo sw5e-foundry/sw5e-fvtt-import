@@ -69,6 +69,9 @@ class Equipment(sw5e.Entity.Item):
 	def getBaseItem(self):
 		return re.sub(r'\'|\s+|\([^)]*\)', '', self.raw_name.lower());
 
+	def getProperty(self, prop):
+		return utils.text.getProperty(prop, self.raw_propertiesMap)
+
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
@@ -137,53 +140,28 @@ class Equipment(sw5e.Entity.Item):
 	@classmethod
 	def getClass(cls, raw_item):
 		from sw5e.equipments import Backpack, Consumable, Equipment, Loot, Tool, Weapon
-		mapping = {
-			"Unknown": None,
-			"Ammunition": 'Consumable',
-			"Explosive": 'Consumable',
-			"Weapon": 'Weapon',
-			"Armor": 'Equipment',
-			"Storage": 'Backpack',
-			"AdventurePack": 'Backpack',
-			"Communications": 'Loot',
-			"DataRecordingAndStorage": 'Loot',
-			"LifeSupport": 'Equipment',
-			"Medical": 'MEDICAL',
-			"WeaponOrArmorAccessory": 'Equipment',
-			"Tool": 'Tool',
-			"Mount": 'Loot',
-			"Vehicle": 'Loot',
-			"TradeGood": 'Loot',
-			"Utility": 'Loot',
-			"GamingSet": 'Tool',
-			"MusicalInstrument": 'Tool',
-			"Droid": 'Loot',
-			"Clothing": 'Equipment',
-			"Kit": 'Tool',
-			"AlcoholicBeverage": 'Consumable',
-			"Spice": 'Consumable',
-			"Modification": 'Loot'
-		}
-		equipment_type = None
-		if raw_item["name"].lower().find("wristpad") != -1:
-			equipment_type = "Equipment"
-		elif raw_item["name"].lower().find("focus generator") != -1:
-			equipment_type = "Equipment"
-		elif raw_item["name"].lower().find("handwrap") != -1:
-			equipment_type = "Weapon"
-		elif "equipmentCategory" in raw_item and raw_item["equipmentCategory"] in mapping:
-			equipment_type = mapping[raw_item["equipmentCategory"]]
-		elif "equipment_type" in raw_item:
-			equipment_type = raw_item["equipment_type"]
-			if equipment_type in mapping: equipment_type = mapping[equipment_type]
 
-		if not equipment_type:
+		name = raw_item["name"].lower()
+		mapping = utils.config.equipment_mappings
+		equipment_mapping = None
+		equipment_type = None
+
+		if "equipmentCategory" in raw_item and raw_item["equipmentCategory"] in mapping:
+			equipment_mapping = mapping[raw_item["equipmentCategory"]]
+
+		if not equipment_mapping:
 			print(f'Unexpected item type, {raw_item=}')
 			raise ValueError(cls, raw_item["name"], raw_item["equipmentCategory"], raw_item)
-		elif equipment_type == 'MEDICAL':
-			name = raw_item["name"]
-			if re.search('prosthesis', name): equipment_type = 'Equipment'
-			else: equipment_type = 'Consumable'
+		for cur in equipment_mapping:
+			# print(f'		{cur=}');
+			# print(f'		{raw_item=}');
+			pattern = cur.get("pattern", "")
+			if re.search(pattern, name):
+				equipment_type = cur["type"]
+				break
+		else:
+			print(f'Unexpected item type, {raw_item=}')
+			raise ValueError(cls, raw_item["name"], raw_item["equipmentCategory"], raw_item, equipment_mapping)
 
 		klass = getattr(getattr(sw5e.equipments, equipment_type.capitalize()), equipment_type.capitalize())
 		return klass

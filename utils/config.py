@@ -1,4 +1,4 @@
-armor_properties = [
+armor_properties = (
 	{
 		"name": 'Absorptive',
 		"id": 'Absorptive',
@@ -90,9 +90,9 @@ armor_properties = [
 		"name": 'Versatile',
 		"id": 'Versatile',
 	}
-]
+)
 
-casting_properties = [
+casting_properties = (
 	{
 		"name": 'Absorbing',
 		"id": 'c_Absorbing',
@@ -157,9 +157,9 @@ casting_properties = [
 		"name": 'Withering',
 		"id": 'c_Withering',
 	},
-]
+)
 
-weapon_properties = [
+weapon_properties = (
 	{
 		"name": 'Special',
 		"id": 'spc',
@@ -302,7 +302,7 @@ weapon_properties = [
 		"name": 'Vicious',
 		"id": 'vic',
 	},
-]# + [ #Starship Weapon Properties
+)# + ( #Starship Weapon Properties
 	# {
 	# 	"name": 'Constitution',
 	# 	"id": 'con',
@@ -331,7 +331,7 @@ weapon_properties = [
 	# 	"name": 'Saturate',
 	# 	"id": 'sat',
 	# },
-# ]
+# )
 
 modification_slots = {
 	"armor": {
@@ -382,7 +382,7 @@ modification_slots = {
 	},
 }
 
-attributes = [
+attributes = (
 	{
 		"name": 'Strength',
 		"id": 'str'
@@ -407,9 +407,9 @@ attributes = [
 		"name": 'Charisma',
 		"id": 'cha'
 	},
-]
+)
 
-skills = [
+skills = (
 	{
 		"name": 'Acrobatics',
 		"id": 'acr',
@@ -483,9 +483,9 @@ skills = [
 		"id": 'tec',
 		"attr": 'int',
 	},
-]
+)
 
-ammo_types = [
+ammo_types = (
 	{
 		"name": 'Arrow',
 		"id": 'arrow',
@@ -533,31 +533,50 @@ ammo_types = [
 		"name": 'Torpedo',
 		"id": 'torpedo',
 	},
-]
+)
 
-enhanced_item_icons = {
-	'multi': [
-		'Alacrity Adrenal',
-		'Cybernetic',
-		'Doublesaber',
-		'DroidMod',
-		'Holocron',
-		'Lightfoil',
-		'Lightweapon Chassis',
-		'Medpac',
-		'Stamina Adrenal',
-	],
-	'single': [
-		'Battle Adrenal',
-		'Inquisitor Saber',
-		'Mandalorian Beskar\'gam',
-		'Mandalorian Helmet',
-		'Mandalorian Shuk\'orok',
-		'Strength Stim',
-	]
-}
+enhanced_item_no_icons = (
+	"Armor",
+	"Blaster",
+	"Blueprint",
+	"Charisma Stim",
+	"Cloak",
+	"Constitution Stim",
+	"Dexterity Stim",
+	"Environmental Barrier",
+	"Handwraps",
+	"Intelligence Stim",
+	"Lightweapon",
+	"Machinist's Catalyzer",
+	"Pants",
+	"Physical Barrier",
+	"Poison",
+	"Portable Teleporter",
+	"Ring of Tech Storing",
+	"Shield",
+	"Sorcerer's Adrenal",
+	"Tool",
+	"Tunic",
+	"Vibroweapon",
+	"Vitapac",
+	"Weapon",
+	"Wisdom Stim",
+	"Ship Armor",
+	"Ship Shield",
+)
 
-classes = [
+enhanced_item_icons = (
+	'Alacrity Adrenal',
+	'Battle Adrenal',
+	'Inquisitor Saber',
+	'Mandalorian Beskar\'gam',
+	'Mandalorian Helmet',
+	'Mandalorian Shuk\'orok',
+	'Stamina Adrenal',
+	'Strength Stim',
+)
+
+classes = (
 	{
 		"name": 'Berserker',
 		"id": 'BSKR',
@@ -598,4 +617,280 @@ classes = [
 		"name": 'Sentinel',
 		"id": 'SNTL',
 	},
-]
+)
+
+equipment_mappings = {
+	"Unknown": (),
+	"Ammunition": (
+		{
+			"pattern": r'Arrow',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'arrow',
+		},
+		{
+			"pattern": r'Bolt',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'bolt',
+		},
+		{
+			"pattern": r'Cartridge',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'cartridge',
+		},
+		{
+			"pattern": r'Dart',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'dart',
+		},
+		{
+			"pattern": r'Flechette Clip',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'flechetteClip',
+		},
+		{
+			"pattern": r'Flechette Mag(?:azine)?',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'flechetteMag',
+		},
+		{
+			"pattern": r'Missile',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'missile',
+		},
+		{
+			"pattern": r'Cell',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'powerCell',
+		},
+		{
+			"pattern": r'Power Generator',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'powerGenerator',
+		},
+		{
+			"pattern": r'Projector Canister',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'projectorCanister',
+		},
+		{
+			"pattern": r'Projector Tank',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'projectorTank',
+		},
+		{
+			"pattern": r'Rocket',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'rocket',
+		},
+		{
+			"pattern": r'Snare',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'snare',
+		},
+		{
+			"pattern": r'Torpedo',
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'torpedo',
+		},
+		{
+			"type": 'Consumable',
+			"category": 'ammo',
+			"subcategory": 'melee',
+		},
+	),
+	"Explosive": (
+		{
+			"type": 'Consumable',
+			"category": 'explosive',
+		},
+	),
+	"Weapon": (
+		{
+			"type": 'Weapon',
+		},
+	),
+	"Armor": (
+		{
+			"pattern": r'handwrap',
+			"type": 'Weapon',
+		},
+		{
+			"type": 'Equipment',
+		},
+	),
+	"Storage": (
+		{
+			"type": 'Backpack',
+		},
+	),
+	"AdventurePack": (
+		{
+			"type": 'Backpack',
+		},
+	),
+	"Communications": (
+		{
+			"type": 'Loot',
+		},
+	),
+	"DataRecordingAndStorage": (
+		{
+			"pattern": r'wristpad',
+			"type": 'Equipment',
+			"category": 'wristpad',
+		},
+		{
+			"pattern": r'focus generator',
+			"type": 'Equipment',
+			"category": 'focusgenerator',
+		},
+		{
+			"type": 'Loot',
+		},
+	),
+	"LifeSupport": (
+		{
+			"pattern": r'suit|respirator',
+			"type": 'Equipment',
+		},
+		{
+			"pattern": r'ration',
+			"type": 'Consumable',
+			"category": 'ration',
+		},
+		{
+			"type": 'Loot',
+		},
+	),
+	"Medical": (
+		{
+			"pattern": r'prosthesis',
+			"type": 'Equipment',
+		},
+		{
+			"type": 'Consumable',
+			"category": 'medpac',
+		},
+	),
+	"WeaponOrArmorAccessory": (
+		{
+			"type": 'Equipment',
+		},
+	),
+	"Tool": (
+		{
+			"type": 'Tool',
+		},
+	),
+	"Mount": (
+		{
+			"type": 'Loot',
+		},
+	),
+	"Vehicle": (
+		{
+			"type": 'Loot',
+		},
+	),
+	"TradeGood": (
+		{
+			"type": 'Loot',
+		},
+	),
+	"Utility": (
+		{
+			"pattern": r'ration',
+			"type": 'Consumable',
+			"category": 'ration',
+		},
+		{
+			"pattern": r'spike',
+			"type": 'Consumable',
+			"category": 'technology',
+		},
+		{
+			"type": 'loot',
+		},
+	),
+	"GamingSet": (
+		{
+			"type": 'Tool',
+		},
+	),
+	"MusicalInstrument": (
+		{
+			"type": 'Tool',
+		},
+	),
+	"Droid": (
+		{
+			"type": 'Loot',
+		},
+	),
+	"Clothing": (
+		{
+			"type": 'Equipment',
+		},
+	),
+	"Kit": (
+		{
+			"type": 'Tool',
+		},
+	),
+	"AlcoholicBeverage": (
+		{
+			"type": 'Consumable',
+			"category": 'adrenal',
+		},
+	),
+	"Spice": (
+		{
+			"type": 'Consumable',
+			"category": 'adrenal',
+		},
+	),
+	"Modification": (
+		{
+			"type": 'Loot'
+		},
+	),
+}
+
+enhanced_equipment_mappings = {
+	"AdventuringGear-None": None,
+	"AdventuringGear-back": ('Clothing', 'WeaponOrArmorAccessory'),
+	"AdventuringGear-body": 'Clothing',
+	"AdventuringGear-feet": ('Clothing', 'WeaponOrArmorAccessory'),
+	"AdventuringGear-finger": 'Clothing',
+	"AdventuringGear-hands": 'Clothing',
+	"AdventuringGear-legs": 'Clothing',
+	"AdventuringGear-shoulders": 'Clothing',
+	"Consumable-adrenal": 'Spice',
+	"Consumable-ammunition": 'Ammunition',
+	"Consumable-barrier": 'Armor',
+	"Consumable-explosive": 'Explosive',
+	"Consumable-medpac": 'Medical',
+	"Consumable-poison": 'Medical',
+	"Consumable-stimpac": 'Medical',
+	"Consumable-substance": ('Spice', 'AlcoholicBeverage'),
+	"Consumable-technology": ('Utility', 'Medical'),
+	"Focus-force": 'DataRecordingAndStorage',
+	"Focus-tech": 'DataRecordingAndStorage',
+	"ShipArmor-any": None,
+	"ShipShield-any": None,
+	"ShipWeapon-any": None,
+}

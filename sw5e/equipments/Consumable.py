@@ -1,4 +1,4 @@
-import sw5e.Equipment, utils.text
+import sw5e.Equipment, utils.text, utils.config
 import re, json
 
 class Consumable(sw5e.Equipment.Equipment):
@@ -15,37 +15,25 @@ class Consumable(sw5e.Equipment.Equipment):
 	def getConsumableType(self):
 		consumable_type, ammo_type = None, None
 
-		mapping = {
-			"Ammunition": 'ammo',
-			"Explosive": 'explosive',
-			"AlcoholicBeverage": 'adrenal',
-			"Spice": 'adrenal',
-			"Medical": 'medpac',
+		mapping = { 
+			k: [
+				val
+				for val in v
+				if val["type"] == 'Consumable'
+			]
+			for k,v in utils.config.equipment_mappings.items()
 		}
-		if self.raw_equipmentCategory in mapping:
-			consumable_type = mapping[self.raw_equipmentCategory]
+
+		# print(f'		{mapping=}');
+		for cur in mapping[self.raw_equipmentCategory]:
+			# print(f'		{cur=}');
+			if function := cur.get("function", None):
+				return function(self)
+			elif not (pattern := cur.get("pattern", "")) or re.search(pattern.lower(), self.name.lower()):
+				return cur.get("category", None), cur.get("subcategory", None)
 		else:
-			raise ValueError(self.name, self.raw_equipmentCategory)
-
-		if consumable_type == 'ammo':
-			ammo_types = utils.config.ammo_types
-			name = self.name.lower()
-			for ammo in ammo_types:
-				amn = ammo["name"].lower()
-				if name.find(amn) != -1:
-					ammo_type = ammo["id"]
-					break
-			if not ammo_type:
-				desc = (self.raw_description or '').lower()
-				for ammo in ammo_types:
-					amn = ammo["name"].lower()
-					if desc.find(amn) != -1:
-						ammo_type = ammo["id"]
-						break
-				else:
-					ammo_type = 'melee'
-
-		return consumable_type, ammo_type
+			print(f'Unexpected equipment category/name, {self.raw_equipmentCategory=}')
+			raise ValueError(self.raw_name, self.raw_equipmentCategory)
 
 	def getImg(self, importer=None):
 		kwargs = {
