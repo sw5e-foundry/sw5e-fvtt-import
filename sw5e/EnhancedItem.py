@@ -186,9 +186,9 @@ class EnhancedItem(sw5e.Entity.Item):
 		# Use the modification subtype icons
 		if self.is_modification:
 			subtype = self.raw_subtype
-			if self.raw_type == 'CyberneticAugmentation': subtype = f'cybernetic-{self.raw_subtype}'
-			elif self.raw_type == 'DroidCustomization': subtype = f'droid-{self.raw_subtype}'
-			return f'systems/sw5e/packs/Icons/Modifications/{subtype}.svg'
+			if self.raw_type == 'CyberneticAugmentation': subtype = f'CyberneticMod'
+			elif self.raw_type == 'DroidCustomization': subtype = f'DroidMod'
+			return f'systems/sw5e/packs/Icons/Modifications/{subtype.replace(" ", "").capitalize()}Mod.svg'
 
 		# Otherwise use the default item bag icon
 		return 'icons/svg/item-bag.svg'
