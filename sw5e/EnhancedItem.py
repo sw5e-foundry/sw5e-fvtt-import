@@ -224,8 +224,8 @@ class EnhancedItem(sw5e.Entity.Item):
 
 	def getDataSpecific(self, importer):
 		def choose(base, enhanced, field, default):
-			if field in base and base[field] != default: return base[field]
 			if enhanced != default: return enhanced
+			if field in base: return base[field]
 			return default
 
 		superdata = super().getData(importer)[0]
@@ -238,8 +238,8 @@ class EnhancedItem(sw5e.Entity.Item):
 				if key in ("system", "img"): continue
 				item[key] = copy.deepcopy(superdata[key])
 
-			if self.getImg(importer=importer) != 'icons/svg/item-bag.svg':
-				item["img"] = self.getImg(importer=importer)
+			if (img := self.getImg(importer=importer)) != 'icons/svg/item-bag.svg':
+				item["img"] = img
 
 			if mode:
 				item["name"] += f' ({mode.title()})'
@@ -252,7 +252,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			item["system"]["attunement"] = 1 if self.raw_requiresAttunement else 0
 			item["system"]["rarity"] = self.rarity
 
-			activation = choose(item["system"]["activation"], self.activation, "type", 'none')
+			activation = choose(item["system"]["activation"], self.activation, "type", None)
 			item["system"]["activation"] = {
 				"type": activation,
 				"cost": 1 if activation != 'none' else None
@@ -294,18 +294,19 @@ class EnhancedItem(sw5e.Entity.Item):
 				"versatile": choose(item["system"]["damage"], self.damage["versatile"], "versatile", '')
 			}
 
-			if self.damage_bonus and item["system"]["damage"]["parts"]:
-				item["system"]["damage"]["parts"][0][0] += f' + {self.damage_bonus}'
+			if self.damage_bonus:
+				if len(item["system"]["damage"]["parts"]): item["system"]["damage"]["parts"][0][0] += f' + {self.damage_bonus}'
+				else: item["system"]["damage"]["parts"].append([f'{self.damage_bonus}', ''])
 				if item["system"]["damage"]["versatile"]: item["system"]["damage"]["versatile"] += f' + {self.damage_bonus}'
 
-			item["system"]["formula"] = choose(item["system"], self.formula, "formula", '')
+			item["system"]["formula"] = choose(item["system"], self.formula, 'formula', '')
 			item["system"]["save"] = {
-				"ability": choose(item["system"]["save"], self.save, "ability", ''),
-				"dc": None,
-				"scaling": "none"
+				"ability": choose(item["system"]["save"], self.save, 'ability', ''),
+				"dc": choose(item["system"]["save"], self.save_dc, 'dc', None),
+				"scaling": choose(item["system"]["save"], 'flat' if self.save_dc else 'none', 'scaling', 'none')
 			}
 
-			item = self.applyDataAutoTarget(item)
+			item = self.applyDataAutoTarget(item, burst_or_rapid=mode in ('burst', 'rapid'))
 			item = self.applyDataSubtype(item)
 
 			#	item["system"]["recharge"] = ''
@@ -365,7 +366,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		if self.save: data["system"]["save"] = {
 			"ability": self.save,
 			"dc": self.save_dc,
-			"scaling": "flat" if self.save_dc else "power"
+			"scaling": 'flat' if self.save_dc else 'none'
 		}
 
 		data["system"]["properties"] = self.properties
@@ -377,15 +378,24 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		return [data]
 
-	def applyDataAutoTarget(self, data):
+	def applyDataAutoTarget(self, data, burst_or_rapid=False):
 		if self.getType() == 'Weapon':
-			if 'smr' in self.properties and type(auto := self.properties["smr"].split(', ')) == list:
-				mod = (int(auto[0]) - 10) // 2
-				prof = int(auto[1])
-				data["system"]["ability"] = 'str'
-				data["system"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
-				data["system"]["damage"]["parts"][0][0] = f'{self.base_item.raw_damageNumberOfDice}d{self.base_item.raw_damageDieType} + {mod}'
+			if 'smr' in self.properties and type(smr := self.properties["smr"].split(', ')) == list:
+				mod = (int(smr[0]) - 10) // 2
+				prof = int(smr[1])
+
+				if burst_or_rapid:
+					data["system"]["save"] = {
+						"dc": 8 + mod + prof + self.attack_bonus,
+						"scaling": 'flat'
+					}
+				else:
+					data["system"]["ability"] = 'str'
+					data["system"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
+
 				data["system"]["proficient"] = True
+				data["system"]["damage"]["parts"][0][0] = f'{self.base_item.raw_damageNumberOfDice}d{self.base_item.raw_damageDieType} + {mod}'
+
 		return data
 
 	def applyDataSubtype(self, data):

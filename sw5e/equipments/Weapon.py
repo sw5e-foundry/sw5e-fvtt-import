@@ -129,14 +129,22 @@ class Weapon(sw5e.Equipment.Equipment):
 
 		return properties
 
-	def getAutoTargetData(self, data):
+	def getAutoTargetData(self, data, burst_or_rapid=False):
 		if 'smr' in self.p_properties and type(smr := self.p_properties["smr"].split('/')) == list:
 			mod = (int(smr[0]) - 10) // 2
 			prof = int(smr[1])
-			data["system"]["ability"] = 'str'
-			data["system"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
-			data["system"]["damage"]["parts"][0][0] = f'{self.raw_damageNumberOfDice}d{self.raw_damageDieType} + {mod}'
+
+			if burst_or_rapid:
+				data["system"]["save"] = {
+					"dc": 8 + mod + prof,
+					"scaling": 'flat'
+				}
+			else:
+				data["system"]["ability"] = 'str'
+				data["system"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
+
 			data["system"]["proficient"] = True
+			data["system"]["damage"]["parts"][0][0] = f'{self.raw_damageNumberOfDice}d{self.raw_damageDieType} + {mod}'
 		return data
 
 	def getItemVariations(self, original_data, importer):
@@ -176,7 +184,10 @@ class Weapon(sw5e.Equipment.Equipment):
 				wpn_data["flags"]["sw5e-importer"]["uid"] = f'{self.uid}.mode-{mode["Name"]}'
 				data.append(wpn_data)
 		else:
-			if not (utils.text.getProperty('Auto', self.raw_propertiesMap) == True): data.append(original_data)
+			if not (utils.text.getProperty('Auto', self.raw_propertiesMap) == True):
+				normal_data = copy.deepcopy(original_data)
+				normal_data = self.getAutoTargetData(normal_data)
+				data.append(normal_data)
 			if burst := utils.text.getProperty('Burst', self.raw_propertiesMap):
 				burst_data = copy.deepcopy(original_data)
 				burst_data["name"] = f'{self.name} (Burst)'
@@ -192,6 +203,7 @@ class Weapon(sw5e.Equipment.Equipment):
 					"scaling": 'dex'
 				}
 				burst_data["flags"]["sw5e-importer"]["uid"] = f'{self.uid}.mode-burst'
+				burst_data = self.getAutoTargetData(burst_data, burst_or_rapid=True)
 				data.append(burst_data)
 			if rapid := utils.text.getProperty('Rapid', self.raw_propertiesMap):
 				rapid_data = copy.deepcopy(original_data)
@@ -205,6 +217,7 @@ class Weapon(sw5e.Equipment.Equipment):
 					"scaling": 'dex'
 				}
 				rapid_data["flags"]["sw5e-importer"]["uid"] = f'{self.uid}.mode-rapid'
+				rapid_data = self.getAutoTargetData(rapid_data, burst_or_rapid=True)
 				data.append(rapid_data)
 
 		return data
@@ -230,7 +243,6 @@ class Weapon(sw5e.Equipment.Equipment):
 		data["system"]["ammo"] = { "types": self.ammo_types }
 		data["system"]["consume"] = { "type": "", "target": "", "ammount": None }
 
-		data = self.getAutoTargetData(data)
 		return self.getItemVariations(data, importer)
 
 	def getFile(self, importer):

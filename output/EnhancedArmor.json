@@ -662,7 +662,7 @@
             },
             "consume": {},
             "ability": "",
-            "actionType": "",
+            "actionType": "save",
             "attackBonus": 0,
             "chatFlavor": "",
             "critical": null,
@@ -673,8 +673,8 @@
             "formula": "",
             "save": {
                 "ability": "wis",
-                "dc": null,
-                "scaling": "none"
+                "dc": 15,
+                "scaling": "flat"
             },
             "armor": {
                 "value": 18,
@@ -732,7 +732,7 @@
             },
             "duration": {
                 "value": "10",
-                "units": ""
+                "units": "minute"
             },
             "target": {
                 "value": null,
