@@ -222,7 +222,6 @@ class Weapon(sw5e.Equipment.Equipment):
 		data["system"]["damage"] = self.getDamage()
 		data["system"]["weaponType"] = self.weapon_type
 		data["system"]["properties"] = self.p_properties
-		data["system"]["properties"]["-=amm"] = None
 		data["system"]["critical"] = {
 			"threshold": None,
 			"damage": ""
