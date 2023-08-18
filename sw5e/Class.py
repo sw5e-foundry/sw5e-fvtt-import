@@ -55,7 +55,7 @@ class Class(sw5e.Entity.Item):
 		super().load(raw_class)
 
 		self.description = self.loadDescription()
-		self.features, self.invocations = self.loadFeatures()
+		self.features, self.invocations, self.asi = self.loadFeatures()
 		self.force, self.tech = self.loadPowerCasting()
 		self.superiority = self.loadSuperiority()
 		self.formulas = self.loadFormulas()
@@ -81,6 +81,7 @@ class Class(sw5e.Entity.Item):
 
 		features = {}
 		invocations = {}
+		asi = []
 
 		not_a_feature = '|'.join(("GM Consideration",))
 		class_name = '|'.join((name.replace('([()])', '\\\1') for name in (self.name, )))
@@ -91,7 +92,7 @@ class Class(sw5e.Entity.Item):
 		h3 = utils.text.exactly_x_times(r'#', 3)
 		h4 = utils.text.exactly_x_times(r'#', 4)
 
-		levels_pat = fr'(?P<level>\d+)\w+(?:, \d+\w+|,? and \d+\w+)* level'
+		levels_pat = fr'(?P<levels>(?P<level>\d+)\w+(?:, \d+\w+|,? and \d+\w+)*) level'
 		feature_pat = fr'{h3} (?!{not_a_feature})(?P<name>[^\n]*)\s*';
 		feature_prereq_pat = fr'{ib}{self.name}:{b} {levels_pat}{it}\s*';
 		invocat_pat = fr'{h4} (?!{not_a_feature})(?P<name>[^\n]*)\s*';
@@ -101,8 +102,16 @@ class Class(sw5e.Entity.Item):
 			subtext = text[match.end():]
 			if (next_feature := re.search(feature_pat, subtext)): subtext = subtext[:next_feature.start()]
 
+			# ASI are not added as normal features
+			if feature_name.strip().lower() == "ability score improvement":
+				match = re.match(feature_prereq_pat, subtext)
+				levels = match["levels"]
+				for match in re.finditer(fr'\d+', levels):
+					level = match[0]
+					asi.append(int(level))
+
 			# If there is a prerequisite, it's a normal feature
-			if match := re.match(feature_prereq_pat, subtext):
+			elif match := re.match(feature_prereq_pat, subtext):
 				level = match["level"]
 				subtext = subtext[match.end():]
 				feature_data = { "name": feature_name, "source": 'Class', "sourceName": self.name, "level": level }
@@ -127,7 +136,7 @@ class Class(sw5e.Entity.Item):
 				print(invocations)
 				raise ValueError(f'Invocation type "{name}" detected with no invocations.')
 
-		return features, invocations
+		return features, invocations, asi
 
 	def loadPowerCasting(self):
 		mapping = {
@@ -185,6 +194,9 @@ class Class(sw5e.Entity.Item):
 
 		for formula in self.formulas.values():
 			advancements.append( sw5e.Advancement.ScaleValue(name=formula["name"], values=formula["values"]) )
+
+		for level in self.asi:
+			advancements.append( sw5e.Advancement.AbilityScoreImprovement(level=level) )
 
 		return advancements
 

@@ -13,6 +13,26 @@ class Advancement():
 		}
 		return data
 
+class AbilityScoreImprovement(Advancement):
+	def __init__(self, name=None, points=2, fixed=[], level=1, class_restriction=""):
+		self.name = name
+		self.configuration = {
+			"fixed": fixed,
+			"points": points
+		}
+		self.level = level
+		self.class_restriction = class_restriction
+
+	def getData(self, importer):
+		data = super().getData(importer)
+
+		data["configuration"] = self.configuration
+		data["level"] = self.level
+		if self.name: data["title"] = self.name
+		data["classRestriction"] = self.class_restriction
+
+		return data
+
 class HitPoints(Advancement):
 	pass
 
@@ -108,3 +128,59 @@ class ItemGrant(Advancement):
 		data["classRestriction"] = self.class_restriction
 
 		return data
+
+
+class ItemChoice(Advancement):
+	def __init__(
+		self,
+		name=None,
+		hint="",
+		choices=[],
+		allow_drops=True,
+		item_type=None,
+		pool=[],
+		power_ability="",
+		power_preparation="",
+		power_uses_per="",
+		power_uses_max="",
+		restriction_type="",
+		restriction_subtype="",
+		restriction_level="",
+		level=1,
+		class_restriction=""
+	):
+		self.name = name
+		self.configuration = {
+			"hint": hint,
+			"choices": choices,
+			"allowDrops": allow_drops,
+			"type": item_type,
+			"pool": pool,
+			"power": {
+				"ability": power_ability,
+				"preparation": power_preparation,
+				"uses": {
+					"per": power_uses_per,
+					"max": power_uses_max,
+				},
+			},
+			"restriction": {
+				"type": restriction_type,
+				"subtype": restriction_subtype,
+				"level": restriction_level,
+			},
+		}
+		self.level = level
+		self.class_restriction = class_restriction
+
+	def getData(self, importer):
+		data = super().getData(importer)
+
+		data["configuration"] = self.configuration
+		data["level"] = self.level
+		if self.name: data["title"] = self.name
+		data["classRestriction"] = self.class_restriction
+
+		return data
+
+

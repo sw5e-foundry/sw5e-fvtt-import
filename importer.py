@@ -142,11 +142,12 @@ class Importer:
 				else: raise ValueError("Duplicated Entity", uid)
 
 			new_entity = kklass(raw_entity, uid=uid, importer=self)
-			storage[uid] = new_entity
+			if new_entity.isValid():
+				storage[uid] = new_entity
 
-			sub_entities = new_entity.getSubEntities(importer=self)
-			for sub_entity, entity_type in sub_entities:
-				self.__loadEntity(sub_entity, entity_type, depth+1)
+				sub_entities = new_entity.getSubEntities(importer=self)
+				for sub_entity, entity_type in sub_entities:
+					self.__loadEntity(sub_entity, entity_type, depth+1)
 		except:
 			print(f'		{raw_entity["name"]} {depth=}')
 			print(f'		{uid}')

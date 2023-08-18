@@ -63,6 +63,9 @@ class Entity:
 	def get(self, entity_type, uid=None, fid_required=True):
 		raise NotImplementedError()
 
+	def isValid(self):
+		return True
+
 	@classmethod
 	def getClass(cls, raw_entity):
 		return cls

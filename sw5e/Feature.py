@@ -281,6 +281,10 @@ class Feature(BaseFeature):
 
 		return sub_items
 
+	def isValid(self):
+		if self.raw_name == "Ability Score Improvement": return False
+		return super().isValid()
+
 class CustomizationOption(BaseFeature):
 	def getFeatType(self):
 		subtype = self.__class__.__name__
