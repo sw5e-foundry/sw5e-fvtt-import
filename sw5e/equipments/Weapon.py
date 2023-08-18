@@ -52,7 +52,7 @@ class Weapon(sw5e.Equipment.Equipment):
 	def getRange(self):
 		short_range, long_range = None, None
 		if rang := (utils.text.getProperty('Ammunition', self.raw_propertiesMap) or utils.text.getProperty('Range', self.raw_propertiesMap)):
-			if rang == 'special': short_range = 'special'
+			if rang == 'special': pass
 			elif type(rang) == list: short_range, long_range = rang
 			else: short_range = int(rang)
 		elif utils.text.getProperty('Reach', self.raw_propertiesMap):
