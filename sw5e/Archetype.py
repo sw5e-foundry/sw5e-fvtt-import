@@ -202,6 +202,7 @@ class Archetype(sw5e.Entity.Item):
 		self.sourceClass = importer.get('class', data=class_data)
 
 	def processFeatures(self, importer):
+		all_features = {}
 		for level, features in self.features.items():
 			for feature in features.values():
 				if entity := importer.get('feature', uid=feature["uid"]):
@@ -209,14 +210,40 @@ class Archetype(sw5e.Entity.Item):
 				else:
 					print(f'		Unable to find feature {feature=}')
 					self.broken_links += [f'cant find feature {feature["name"]}']
+				all_features[feature["name"]] = feature
+		for level, features in self.sourceClass.features.items():
+			for feature in features.values():
+				all_features[feature["name"]] = feature
 
-		for invocation_type, invocations in self.invocations.items():
-			for invocation in invocations.values():
+		for invocation_category, invocations in self.invocations.items():
+			for name, invocation in invocations.items():
+				if name.startswith('_'): continue
 				if entity := importer.get('feature', uid=invocation["uid"]):
 					invocation["foundry_id"] = entity.foundry_id
 				else:
 					print(f'		Unable to find invocation {invocation=}')
 					self.broken_links += [f'cant find invocation {invocation["name"]}']
+
+			# Enginner Modifications don't have a specific feature
+			if self.sourceClass.name == 'Engineer' or self.name in ['Enhancement Specialist', 'Totem Specialist']:
+				invocations["_feature_name"] = utils.text.getSingular(invocation_category)[0]
+				continue
+
+			attempts = [
+				invocation_category,
+				*utils.text.getSingular(invocation_category),
+				" ".join(invocation_category.split()[1:]),
+				*utils.text.getSingular(" ".join(invocation_category.split()[1:])),
+			]
+			try:
+				feature_name = [ attempt for attempt in attempts if attempt in all_features ][0]
+			except:
+				print("Mismatched Invocation Category", invocation_category, all_features.keys(), attempts)
+				raise
+
+			invocations["_feature_name"] = feature_name
+			invocations["_text"] = all_features[feature_name]["description"]
+
 
 	def processProgression(self):
 		if self.sourceClass:
@@ -248,30 +275,36 @@ class Archetype(sw5e.Entity.Item):
 
 		# Choose Invocations
 		for invocation_category, invocations in self.invocations.items():
-
 			# TODO: Find a way to support archetype only modifications
 			if invocation_category in ["Ammunition Enhancements", "Totem Options"]: continue
 
+			# Prepare the pool of invocations
 			uids = []
 			for name, invocation in invocations.items():
+				if name.startswith('_'): continue
 				# TODO: Once 'ItemChoice' supports levels, change this to use it
 				if 'foundry_id' in invocation: uids.append(f'Compendium.sw5e.invocations.{invocation["foundry_id"]}')
 				else: self.broken_links += [f'missing foundry_id for {invocation["name"]}']
 
-			choices = {}
-			previous = 0
+			# Determine the header row used for the choices
+			feature_name = invocations["_feature_name"]
 			attempts = [
+				feature_name,
+				f'{feature_name} Options',
+				f'{" ".join(feature_name.split()[1:])} Slots',
 				invocation_category,
-				f'{invocation_category[:-1]} Options',
 				f'{" ".join(invocation_category.split()[1:])}',
 				f'{" ".join(invocation_category.split()[1:])} Known',
-				f'{" ".join(invocation_category.split()[1:])[:-1]} Slots',
 			]
 			try:
 				header = [ attempt for attempt in attempts if (attempt in self.sourceClass.raw_levelChangeHeaders) ][0]
 			except:
-				raise ValueError("Mismatched Invocation Category", invocation_category, self.sourceClass.raw_levelChangeHeaders, attempts)
+				print("Mismatched Invocation Category", invocation_category, self.sourceClass.raw_levelChangeHeaders, attempts)
+				raise
 
+			# Prepare the choices
+			choices = {}
+			previous = 0
 			for level, changes in self.sourceClass.raw_levelChanges.items():
 				cur = changes[header]
 				if type(cur) == str: cur = int(cur) if cur.isnumeric() else 0
@@ -279,9 +312,10 @@ class Archetype(sw5e.Entity.Item):
 					choices[level] = cur - previous
 					previous = cur
 
+			# Create the advancement
 			self.advancements.append( sw5e.Advancement.ItemChoice(
 				name=invocation_category,
-				hint=invocations.get("text", ''),
+				hint=invocations.get("_text", ''),
 				choices=choices,
 				item_type='feat',
 				pool=uids,
@@ -293,13 +327,14 @@ class Archetype(sw5e.Entity.Item):
 	def processInvocationsText(self, importer):
 		output = []
 		for invocation_category, invocations in self.invocations.items():
-				output += [f'<h1>{invocation_category}</h1>']
-				output += ['<ul>']
-				for invocation in invocations.values():
-					if "foundry_id" in invocation:
-						output += [f'<li>@Compendium[sw5e.invocations.{invocation["foundry_id"]}]{{{invocation["name"].capitalize()}}}</li>']
-					else: self.broken_links += ['no foundry id']
-				output += ['</ul>']
+			output += [f'<h1>{invocation_category}</h1>']
+			output += ['<ul>']
+			for name, invocation in invocations.items():
+				if name.startswith('_'): continue
+				if "foundry_id" in invocation:
+					output += [f'<li>@Compendium[sw5e.invocations.{invocation["foundry_id"]}]{{{invocation["name"].capitalize()}}}</li>']
+				else: self.broken_links += ['no foundry id']
+			output += ['</ul>']
 
 		self.invocationsText = "\n".join(output)
 
@@ -332,7 +367,8 @@ class Archetype(sw5e.Entity.Item):
 		sub_items = []
 
 		for invocation_category, invocations in self.invocations.items():
-			for invocation in invocations.values():
+			for name, invocation in invocations.items():
+				if name.startswith('_'): continue
 				data = {}
 
 				for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):

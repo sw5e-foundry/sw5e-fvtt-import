@@ -775,6 +775,20 @@ def makeTable(content, header=None, align=None):
 	table = f'<table>{table}</table>'
 	return table
 
+def getSingular(Text):
+	possibilities = []
+	text = Text.lower()
+	if text in ('sheep', 'series', 'species', 'deer', ''): return [Text]
+	if re.search('(s|ss|sh|ch|x|z|o)es$', text): possibilities.append(Text[:-2])
+	if re.search('ies$', text): possibilities.append(Text[:-3]+'y')
+	if re.search('ves$', text): possibilities.append(Text[:-3]+'f')
+	if re.search('ves$', text): possibilities.append(Text[:-3]+'fe')
+	if re.search('es$', text): possibilities.append(Text[:-2]+'is')
+	if re.search('i$', text): possibilities.append(Text[:-1]+'us')
+	if re.search('a$', text): possibilities.append(Text[:-1]+'on')
+	if re.search('s$', text): possibilities.append(Text[:-1])
+	return possibilities
+
 def getPlural(Text):
 	text = Text.lower()
 	if text in ('sheep', 'series', 'species', 'deer'): return Text
