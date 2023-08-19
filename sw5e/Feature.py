@@ -236,12 +236,10 @@ class Feature(BaseFeature):
 				if (plural := utils.text.getPlural(name)) in source_item.invocations: name = plural
 				elif re.match(r'\w+ Superiority|Additional Maneuvers', name) and 'Maneuvers' in source_item.invocations: name = 'Maneuvers'
 				if name in source_item.invocations:
-					for invocation in source_item.invocations[name]:
-						feature_data = { "name": invocation["name"], "source": f'{self.raw_source}Invocation', "sourceName": self.raw_sourceName, "level": invocation["level"] }
-						feature = importer.get('feature', data=feature_data)
-						if feature and feature.foundry_id:
-							link = f'@Compendium[sw5e.invocations.{feature.foundry_id}]{{{feature.name}}}'
-							text = re.sub(fr'#### {feature.name}\r?\n', fr'#### {link}\n', text)
+					for invocation in source_item.invocations[name].values():
+						if "foundry_id" in invocation:
+							link = f'@Compendium[sw5e.invocations.{invocation["foundry_id"]}]{{{invocation["name"]}}}'
+							text = re.sub(fr'#### {invocation["name"]}\r?\n', fr'#### {link}\n', text)
 						else:
 							self.broken_links += ['no feature or foundry id']
 

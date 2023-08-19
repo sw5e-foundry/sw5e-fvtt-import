@@ -146,7 +146,6 @@ class ItemChoice(Advancement):
 		restriction_type="",
 		restriction_subtype="",
 		restriction_level="",
-		level=1,
 		class_restriction=""
 	):
 		self.name = name
@@ -170,14 +169,12 @@ class ItemChoice(Advancement):
 				"level": restriction_level,
 			},
 		}
-		self.level = level
 		self.class_restriction = class_restriction
 
 	def getData(self, importer):
 		data = super().getData(importer)
 
 		data["configuration"] = self.configuration
-		data["level"] = self.level
 		if self.name: data["title"] = self.name
 		data["classRestriction"] = self.class_restriction
 

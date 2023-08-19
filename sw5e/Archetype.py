@@ -78,11 +78,15 @@ class Archetype(sw5e.Entity.Item):
 
 
 			# If there is a prerequisite, it's a normal feature
-			match = re.match(feature_prereq_pat, subtext)
-			if match:
+			if (feature_name != "Additional Maneuvers") and (match := re.match(feature_prereq_pat, subtext)):
 				level = match["level"]
 				subtext = subtext[match.end():]
-				feature_data = { "name": feature_name, "source": 'Archetype', "sourceName": self.full_name, "level": level }
+				feature_data = {
+					"name": feature_name,
+					"source": 'Archetype',
+					"sourceName": self.full_name,
+					"level": level,
+				}
 
 				if level not in features: features[level] = {}
 				features[level][feature_name] = {
@@ -93,19 +97,39 @@ class Archetype(sw5e.Entity.Item):
 				}
 
 			# Otherwise, it's a list of invocations
-			if (not match) or (feature_name == "Additional Maneuvers"):
+			else:
 				expected = (self.raw_className in ['Engineer', 'Scholar', 'Fighter']) or (self.name == 'Deadeye Technique')
 				if not expected:
 					print(f'Possible error detected: searching for subitems of {self.full_name} which is not a scholar, engineer, or fighter archetype.')
 					if match: print(f'{match["name"]=}')
-				invocation_list = []
+				invocation_category = feature_name
+				if invocation_category not in invocations: invocations[invocation_category] = {}
 				for match in re.finditer(fr'{invocat_pat}(?P<text>(?:{invocat_prereq_pat})?[^#]*)', subtext):
-					if not expected: print(f'	{match["name"]=}')
-					invocation_list.append(match.groupdict())
-				invocations[feature_name] = invocation_list
+					invocation_name = match["name"]
+					level = match["level"]
+					invocation_text = match["text"]
+					if not expected: print(f'	{invocation_name=}')
+
+					invocation_data = {
+						"name": invocation_name,
+						"text": invocation_text,
+						"level": int(level) if level else None,
+						"prerequisite": match["prerequisite"],
+						"source": 'ClassInvocation',
+						"sourceName": self.name
+					}
+
+					invocations[invocation_category][invocation_name] = {
+						"name": invocation_name,
+						"level": level,
+						"text": invocation_text,
+						"prerequisite": match["prerequisite"],
+						"uid": self.getUID(invocation_data, 'Feature'),
+					}
 
 		for name, invocation in invocations.items():
 			if not len(invocation):
+				print(json.dumps(invocations, indent=4, sort_keys=False, ensure_ascii=False))
 				raise ValueError(f'Invocation type "{name}" detected with no invocations.', self.full_name)
 
 		return features, invocations
@@ -183,8 +207,16 @@ class Archetype(sw5e.Entity.Item):
 				if entity := importer.get('feature', uid=feature["uid"]):
 					feature["foundry_id"] = entity.foundry_id
 				else:
-					print(f'		Unable to find {feature["uid"]=}')
-					self.broken_links += [f'cant find {feature["uid"]}']
+					print(f'		Unable to find feature {feature=}')
+					self.broken_links += [f'cant find feature {feature["name"]}']
+
+		for invocation_type, invocations in self.invocations.items():
+			for invocation in invocations.values():
+				if entity := importer.get('feature', uid=feature["uid"]):
+					invocation["foundry_id"] = entity.foundry_id
+				else:
+					print(f'		Unable to find invocation {invocation=}')
+					self.broken_links += [f'cant find invocation {invocation["name"]}']
 
 	def processProgression(self):
 		if self.sourceClass:
@@ -215,34 +247,16 @@ class Archetype(sw5e.Entity.Item):
 
 	def processInvocationsText(self, importer):
 		output = []
-		for feature_name in self.invocations:
-				output += [f'<h1>{feature_name}</h1>']
+		for invocation_category, invocations in self.invocations.items():
+				output += [f'<h1>{invocation_category}</h1>']
 				output += ['<ul>']
-				for invocation in self.invocations[feature_name]:
-					invocation_data = {}
-					for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):
-						invocation_data[key] = getattr(self, f'raw_{key}')
-
-					invocation_data["name"] = invocation["name"]
-					invocation_data["text"] = invocation["text"]
-					invocation_data["level"] = int(invocation["level"]) if invocation["level"] else None
-					invocation_data["prerequisite"] = invocation["prerequisite"]
-
-					invocation_data["source"] = 'ArchetypeInvocation'
-					invocation_data["sourceName"] = self.name
-
-					invocation = importer.get('feature', data=invocation_data)
-					if invocation:
-						output += [f'<li>@Compendium[sw5e.invocations.{invocation.foundry_id}]{{{invocation.name.capitalize()}}}</li>']
-						if not invocation.foundry_id: self.broken_links += ['no foundry id']
-					else:
-						if self.foundry_id: print(f'		Unable to find invocation {invocation_data=}')
-						self.broken_links += ['cant find invocation']
+				for invocation in invocations.values():
+					if "foundry_id" in invocation:
+						output += [f'<li>@Compendium[sw5e.invocations.{invocation["foundry_id"]}]{{{invocation["name"].capitalize()}}}</li>']
+					else: self.broken_links += ['no foundry id']
 				output += ['</ul>']
 
 		self.invocationsText = "\n".join(output)
-
-
 
 	def getImg(self, importer=None, capitalized=True, index=""):
 		if index: index = f'_{index}'
@@ -272,8 +286,8 @@ class Archetype(sw5e.Entity.Item):
 	def getSubEntities(self, importer):
 		sub_items = []
 
-		for feature_name in self.invocations:
-			for invocation in self.invocations[feature_name]:
+		for invocation_category, invocations in self.invocations.items():
+			for invocation in invocations.values():
 				data = {}
 
 				for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):
@@ -289,3 +303,4 @@ class Archetype(sw5e.Entity.Item):
 				sub_items.append((data, 'feature'))
 
 		return sub_items
+

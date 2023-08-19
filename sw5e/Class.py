@@ -114,7 +114,13 @@ class Class(sw5e.Entity.Item):
 			elif match := re.match(feature_prereq_pat, subtext):
 				level = match["level"]
 				subtext = subtext[match.end():]
-				feature_data = { "name": feature_name, "source": 'Class', "sourceName": self.name, "level": level }
+
+				feature_data = {
+					"name": feature_name,
+					"source": 'Class',
+					"sourceName": self.name,
+					"level": level,
+				}
 
 				if level not in features: features[level] = {}
 				features[level][feature_name] = {
@@ -126,14 +132,33 @@ class Class(sw5e.Entity.Item):
 
 			# Otherwise, it's a list of invocations
 			else:
-				invocation_list = []
+				invocation_category = feature_name
+				if invocation_category not in invocations: invocations[invocation_category] = {}
 				for match in re.finditer(fr'{invocat_pat}(?P<text>(?:{invocat_prereq_pat})?[^#]*)', subtext):
-					invocation_list.append(match.groupdict())
-				invocations[feature_name] = invocation_list
+					invocation_name = match["name"]
+					level = match["level"]
+					text = match["text"]
+
+					invocation_data = {
+						"name": invocation_name,
+						"text": text,
+						"level": int(level) if level else None,
+						"prerequisite": match["prerequisite"],
+						"source": 'ClassInvocation',
+						"sourceName": self.name,
+					}
+
+					invocations[invocation_category][invocation_name] = {
+						"name": invocation_name,
+						"level": level,
+						"text": text,
+						"prerequisite": match["prerequisite"],
+						"uid": self.getUID(invocation_data, 'Feature'),
+					}
 
 		for name, invocation in invocations.items():
 			if not len(invocation):
-				print(invocations)
+				print(json.dumps(invocations, indent=4, sort_keys=False, ensure_ascii=False))
 				raise ValueError(f'Invocation type "{name}" detected with no invocations.')
 
 		return features, invocations, asi
@@ -228,6 +253,14 @@ class Class(sw5e.Entity.Item):
 					print(f'		Unable to find feature {feature=}')
 					self.broken_links += [f'cant find feature {feature["name"]}']
 
+		for invocation_type, invocations in self.invocations.items():
+			for invocation in invocations.values():
+				if entity := importer.get('feature', uid=feature["uid"]):
+					invocation["foundry_id"] = entity.foundry_id
+				else:
+					print(f'		Unable to find invocation {invocation=}')
+					self.broken_links += [f'cant find invocation {invocation["name"]}']
+
 	def processArchetypes(self, importer):
 		if importer.archetype:
 			self.archetypes = [
@@ -250,29 +283,13 @@ class Class(sw5e.Entity.Item):
 
 	def processInvocationsText(self, importer):
 		output = []
-		for feature_name in self.invocations:
-				output += [f'<h1>{feature_name}</h1>']
+		for invocation_category, invocations in self.invocations.items():
+				output += [f'<h1>{invocation_category}</h1>']
 				output += ['<ul>']
-				for invocation in self.invocations[feature_name]:
-					invocation_data = {}
-					for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):
-						invocation_data[key] = getattr(self, f'raw_{key}')
-
-					invocation_data["name"] = invocation["name"]
-					invocation_data["text"] = invocation["text"]
-					invocation_data["level"] = int(invocation["level"]) if invocation["level"] else None
-					invocation_data["prerequisite"] = invocation["prerequisite"]
-
-					invocation_data["source"] = 'ClassInvocation'
-					invocation_data["sourceName"] = self.name
-
-					invocation = importer.get('feature', data=invocation_data)
-					if invocation:
-						output += [f'<li>@Compendium[sw5e.invocations.{invocation.foundry_id}]{{{invocation.name.capitalize()}}}</li>']
-						if not invocation.foundry_id: self.broken_links += ['no foundry id']
-					else:
-						if self.foundry_id: print(f'		Unable to find invocation {invocation_data=}')
-						self.broken_links += ['cant find invocation']
+				for invocation in invocations.values():
+					if "foundry_id" in invocation:
+						output += [f'<li>@Compendium[sw5e.invocations.{invocation["foundry_id"]}]{{{invocation["name"].capitalize()}}}</li>']
+					else: self.broken_links += ['no foundry id']
 				output += ['</ul>']
 
 		self.invocationsText = "\n".join(output)
@@ -285,6 +302,35 @@ class Class(sw5e.Entity.Item):
 				else: self.broken_links += [f'missing foundry_id for {feature["name"]}']
 			if len(uids):
 				self.advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
+
+		for invocation_category, invocations in self.invocations.items():
+			uids = []
+			for name, invocation in invocations.items():
+				# TODO: Once 'ItemChoice' supports levels, change this to use it
+				if 'foundry_id' in feature: uids.append(f'Compendium.sw5e.classinvocations.{invocation["foundry_id"]}')
+				else: self.broken_links += [f'missing foundry_id for {invocation["name"]}']
+
+			choices = {}
+			previous = 0
+			for level, changes in self.raw_levelChanges.items():
+				cur = changes.get(invocation_category)
+				if cur == None: cur = changes.get(f'{invocation_category[:-1]} Options')
+				if cur == None: cur = changes.get(f'{" ".join(invocation_category.split()[1:])} Known')
+
+				if type(cur) == str: cur = int(cur) if cur.isnumeric() else 0
+				if cur > previous:
+					choices[level] = cur - previous
+					previous = cur
+
+			self.advancements.append( sw5e.Advancement.ItemChoice(
+				name=invocation_category,
+				hint=invocations.get("text", ''),
+				choices=choices,
+				item_type='feat',
+				pool=uids,
+				restriction_type='class',
+				restriction_subtype=f'{self.name.lower()}Invocation'
+			) )
 
 
 
@@ -326,8 +372,8 @@ class Class(sw5e.Entity.Item):
 	def getSubEntities(self, importer):
 		sub_items = []
 
-		for feature_name in self.invocations:
-			for invocation in self.invocations[feature_name]:
+		for invocation_category, invocations in self.invocations.items():
+			for invocation in invocations.values():
 				data = {}
 
 				for key in ('timestamp', 'contentTypeEnum', 'contentType', 'contentSourceEnum', 'contentSource', 'partitionKey', 'rowKey'):
@@ -343,4 +389,5 @@ class Class(sw5e.Entity.Item):
 				sub_items.append((data, 'feature'))
 
 		return sub_items
+
 
