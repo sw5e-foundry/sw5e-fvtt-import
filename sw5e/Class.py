@@ -370,6 +370,23 @@ class Class(sw5e.Entity.Item):
 				restriction_subtype=f'{self.name.lower()}Invocation'
 			) )
 
+		# Choose Archetype
+		if len(self.archetypes) > 0:
+			# Prepare the pool of archetypes
+			uids = [ f'Compendium.sw5e.archetypes.{arch["fid"]}' for arch in self.archetypes ]
+
+			# Prepare the choices
+			choices = { "3": 1 }
+
+			# Create the advancement
+			self.advancements.append( sw5e.Advancement.ItemChoice(
+				name=self.raw_archetypeFlavorName,
+				hint=self.raw_archetypeFlavorText,
+				choices=choices,
+				item_type='archetype',
+				pool=uids,
+			) )
+
 
 
 	def getImg(self, importer=None, capitalized=True, index=""):
