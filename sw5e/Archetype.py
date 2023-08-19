@@ -115,7 +115,7 @@ class Archetype(sw5e.Entity.Item):
 						"text": invocation_text,
 						"level": int(level) if level else None,
 						"prerequisite": match["prerequisite"],
-						"source": 'ClassInvocation',
+						"source": 'ArchetypeInvocation',
 						"sourceName": self.name
 					}
 
@@ -212,7 +212,7 @@ class Archetype(sw5e.Entity.Item):
 
 		for invocation_type, invocations in self.invocations.items():
 			for invocation in invocations.values():
-				if entity := importer.get('feature', uid=feature["uid"]):
+				if entity := importer.get('feature', uid=invocation["uid"]):
 					invocation["foundry_id"] = entity.foundry_id
 				else:
 					print(f'		Unable to find invocation {invocation=}')

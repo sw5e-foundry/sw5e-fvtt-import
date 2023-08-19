@@ -255,7 +255,7 @@ class Class(sw5e.Entity.Item):
 
 		for invocation_type, invocations in self.invocations.items():
 			for invocation in invocations.values():
-				if entity := importer.get('feature', uid=feature["uid"]):
+				if entity := importer.get('feature', uid=invocation["uid"]):
 					invocation["foundry_id"] = entity.foundry_id
 				else:
 					print(f'		Unable to find invocation {invocation=}')
