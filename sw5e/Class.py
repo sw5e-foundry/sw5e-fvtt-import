@@ -295,6 +295,7 @@ class Class(sw5e.Entity.Item):
 		self.invocationsText = "\n".join(output)
 
 	def processAdvancements(self):
+		# Grant Features
 		for level, features in self.features.items():
 			uids = []
 			for name, feature in features.items():
@@ -303,20 +304,30 @@ class Class(sw5e.Entity.Item):
 			if len(uids):
 				self.advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
 
+		# Choose Invocations
 		for invocation_category, invocations in self.invocations.items():
 			uids = []
 			for name, invocation in invocations.items():
 				# TODO: Once 'ItemChoice' supports levels, change this to use it
-				if 'foundry_id' in feature: uids.append(f'Compendium.sw5e.invocations.{invocation["foundry_id"]}')
+				if 'foundry_id' in invocation: uids.append(f'Compendium.sw5e.invocations.{invocation["foundry_id"]}')
 				else: self.broken_links += [f'missing foundry_id for {invocation["name"]}']
 
 			choices = {}
 			previous = 0
-			for level, changes in self.raw_levelChanges.items():
-				cur = changes.get(invocation_category)
-				if cur == None: cur = changes.get(f'{invocation_category[:-1]} Options')
-				if cur == None: cur = changes.get(f'{" ".join(invocation_category.split()[1:])} Known')
+			attempts = [
+				invocation_category,
+				f'{invocation_category[:-1]} Options',
+				f'{" ".join(invocation_category.split()[1:])}',
+				f'{" ".join(invocation_category.split()[1:])} Known',
+				f'{" ".join(invocation_category.split()[1:])[:-1]} Slots',
+			]
+			try:
+				header = [ attempt for attempt in attempts if attempt in self.raw_levelChangeHeaders ][0]
+			except:
+				raise ValueError("Mismatched Invocation Category", invocation_category, self.raw_levelChangeHeaders, attempts)
 
+			for level, changes in self.raw_levelChanges.items():
+				cur = changes[header]
 				if type(cur) == str: cur = int(cur) if cur.isnumeric() else 0
 				if cur > previous:
 					choices[level] = cur - previous

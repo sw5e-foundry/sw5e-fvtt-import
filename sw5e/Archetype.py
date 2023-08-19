@@ -240,10 +240,55 @@ class Archetype(sw5e.Entity.Item):
 			self.broken_links += ['no source class']
 
 	def processAdvancements(self):
+		# Grant Features
 		for level, features in self.features.items():
 			uids = [ f'Compendium.sw5e.archetypefeatures.{feature["foundry_id"]}' for feature in features.values() if "foundry_id" in feature ]
 			if len(uids):
 				self.advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
+
+		# Choose Invocations
+		for invocation_category, invocations in self.invocations.items():
+
+			# TODO: Find a way to support archetype only modifications
+			if invocation_category in ["Ammunition Enhancements", "Totem Options"]: continue
+
+			uids = []
+			for name, invocation in invocations.items():
+				# TODO: Once 'ItemChoice' supports levels, change this to use it
+				if 'foundry_id' in invocation: uids.append(f'Compendium.sw5e.invocations.{invocation["foundry_id"]}')
+				else: self.broken_links += [f'missing foundry_id for {invocation["name"]}']
+
+			choices = {}
+			previous = 0
+			attempts = [
+				invocation_category,
+				f'{invocation_category[:-1]} Options',
+				f'{" ".join(invocation_category.split()[1:])}',
+				f'{" ".join(invocation_category.split()[1:])} Known',
+				f'{" ".join(invocation_category.split()[1:])[:-1]} Slots',
+			]
+			try:
+				header = [ attempt for attempt in attempts if (attempt in self.sourceClass.raw_levelChangeHeaders) ][0]
+			except:
+				raise ValueError("Mismatched Invocation Category", invocation_category, self.sourceClass.raw_levelChangeHeaders, attempts)
+
+			for level, changes in self.sourceClass.raw_levelChanges.items():
+				cur = changes[header]
+				if type(cur) == str: cur = int(cur) if cur.isnumeric() else 0
+				if cur > previous:
+					choices[level] = cur - previous
+					previous = cur
+
+			self.advancements.append( sw5e.Advancement.ItemChoice(
+				name=invocation_category,
+				hint=invocations.get("text", ''),
+				choices=choices,
+				item_type='feat',
+				pool=uids,
+				restriction_type='class',
+				restriction_subtype=f'{self.name.lower()}Invocation'
+			) )
+
 
 	def processInvocationsText(self, importer):
 		output = []
