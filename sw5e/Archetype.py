@@ -341,6 +341,7 @@ class Archetype(sw5e.Entity.Item):
 	def getImg(self, importer=None, capitalized=True, index=""):
 		if index: index = f'_{index}'
 		name = utils.text.slugify(self.full_name, capitalized=capitalized)
+		name = re.sub(f'-Depreciated', '', name)
 		return f'systems/sw5e/packs/Icons/Archetypes/{name}{index}.webp'
 
 	def getData(self, importer):

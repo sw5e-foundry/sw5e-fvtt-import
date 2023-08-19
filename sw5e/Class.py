@@ -392,6 +392,7 @@ class Class(sw5e.Entity.Item):
 	def getImg(self, importer=None, capitalized=True, index=""):
 		if index: index = f'_{index}'
 		name = utils.text.slugify(self.name, capitalized=capitalized)
+		name = re.sub(f'-Depreciated', '', name)
 		return f'systems/sw5e/packs/Icons/Classes/{name}{index}.webp'
 
 	def getData(self, importer):
