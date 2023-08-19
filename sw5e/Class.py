@@ -307,7 +307,7 @@ class Class(sw5e.Entity.Item):
 			uids = []
 			for name, invocation in invocations.items():
 				# TODO: Once 'ItemChoice' supports levels, change this to use it
-				if 'foundry_id' in feature: uids.append(f'Compendium.sw5e.classinvocations.{invocation["foundry_id"]}')
+				if 'foundry_id' in feature: uids.append(f'Compendium.sw5e.invocations.{invocation["foundry_id"]}')
 				else: self.broken_links += [f'missing foundry_id for {invocation["name"]}']
 
 			choices = {}
