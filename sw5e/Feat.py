@@ -29,7 +29,7 @@ class Feat(sw5e.Feature.BaseFeature):
 				self.broken_links += 'cant find improvement feature'
 
 	def getFeatType(self):
-		return None, None
+		return 'feat', None
 
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)
