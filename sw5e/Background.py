@@ -31,65 +31,93 @@ class Background(sw5e.Entity.Item):
 			"eTag",
 		]
 
-	def process(self, importer):
-		super().process(importer)
+	def load(self, raw_background):
+		super().load(raw_background)
 
-		self.flavorText = self.getFlavorText()
-		self.flavorDescription = self.getFlavorDescription()
-		self.flavorOptions = self.getTable(self.raw_flavorOptions, self.raw_flavorName)
+		self.flavorText = self.loadFlavorText()
+		self.flavorDescription = self.loadFlavorDescription()
+		self.flavorOptions = utils.text.makeRollTable(self.raw_flavorOptions, self.raw_flavorName)
+		self.personalityTraitOptions = utils.text.makeRollTable(self.raw_personalityTraitOptions, 'Personality Trait')
+		self.idealOptions = utils.text.makeRollTable(self.raw_idealOptions, 'Ideal')
+		self.flawOptions = utils.text.makeRollTable(self.raw_flawOptions, 'Flaw')
+		self.bondOptions = utils.text.makeRollTable(self.raw_bondOptions, 'Bond')
 
-		self.featOptions = self.getFeatOptions(importer)
+		self.featOptions = self.loadFeatOptions()
+		self.advancements = self.loadAdvancements()
 
-		self.personalityTraitOptions = self.getTable(self.raw_personalityTraitOptions, 'Personality Trait')
-		self.idealOptions = self.getTable(self.raw_idealOptions, 'Ideal')
-		self.flawOptions = self.getTable(self.raw_flawOptions, 'Flaw')
-		self.bondOptions = self.getTable(self.raw_bondOptions, 'Bond')
-
-	def getImg(self, importer=None):
-		name = utils.text.slugify(self.name)
-		return f'systems/sw5e/packs/Icons/Backgrounds/{name}.webp'
-
-	def getFlavorText(self):
+	def loadFlavorText(self):
 		text = self.raw_flavorText
 		return utils.text.markdownToHtml(text)
 
-	def getFlavorDescription(self):
+	def loadFlavorDescription(self):
 		text = self.raw_flavorDescription
 		if text and (match := re.search(r'\s*\|\s*d\d+\s*\|', text)):
 			text = text[:match.start()]
 		return utils.text.markdownToHtml(text)
 
-	def getTable(self, table, name):
-		if table:
-			content = [ (
-				opt["roll"],
-				(opt["name"] or '') + (': ' if (opt["name"] and opt["description"]) else '') + (opt["description"] or '')
-			) for opt in table ]
-			header = [ f'[[/r d{len(content)} # {name}]]', name ]
-			align = [ 'center', 'center' ]
-			return utils.text.makeTable(content, header=header, align=align)
+	def loadFeatOptions(self):
+		feats = []
 
-	def getFeatOptions(self, importer):
-		if self.raw_featOptions:
-			def getLink(name):
-				nonlocal self
-				nonlocal importer
+		for feat_data in (self.raw_featOptions or []):
+			feat = {
+				"name": feat_data["name"],
+				"roll": feat_data["roll"],
+			}
+			feat["uid"] = self.getUID(feat, 'Feat')
+			feats.append(feat)
 
-				feat = importer.get('feat', data={'name': name})
-				if feat and feat.foundry_id:
-					return f'@Compendium[sw5e.feats.{feat.foundry_id}]{{{feat.name.capitalize()}}}'
-				else:
-					self.broken_links += ['cant find feat']
-					if self.foundry_id: print(f'		Unable to find feat {name=}')
-					return name
+		return feats
 
-			content = [ (
-				opt["roll"],
-				getLink(opt["name"])
-			) for opt in self.raw_featOptions ]
-			header = [ f'[[/r d{len(content)} # Feat]]', 'Feat' ]
-			align = [ 'center', 'center' ]
-			return utils.text.makeTable(content, header=header, align=align)
+	def loadAdvancements(self):
+		advancements = []
+		return advancements
+
+	def process(self, importer):
+		super().process(importer)
+
+		self.processFeatOptions(importer)
+		self.processAdvancements()
+
+		self.featOptionsText = self.getFeatOptionsText()
+
+	def processFeatOptions(self, importer):
+		for feat in self.featOptions:
+			if entity := importer.get('feat', uid=feat["uid"]):
+				feat["foundry_id"] = entity.foundry_id
+			else:
+				print(f'		Unable to find {feat=}')
+				self.broken_links += [f'cant find feat {feat["name"]}']
+
+	def processAdvancements(self):
+		# Choose Feat
+		if len(self.featOptions) > 0:
+			# Prepare the pool of archetypes
+			uids = [ f'Compendium.sw5e.feats.{feat["foundry_id"]}' for feat in self.featOptions ]
+
+			# Prepare the choices
+			choices = { "0": 1 }
+
+			# Create the advancement
+			self.advancements.append( sw5e.Advancement.ItemChoice(
+				name='Feat',
+				hint='These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.',
+				choices=choices,
+				item_type='feat',
+				restriction_type='feat',
+				pool=uids,
+			) )
+
+	def getFeatOptionsText(self):
+		def getLink(feat):
+			return f'@Compendium[sw5e.feats.{feat.get("foundry_id", None)}]{{{feat["name"].capitalize()}}}'
+
+		content = [ (
+			opt["roll"],
+			getLink(opt)
+		) for opt in self.featOptions ]
+		header = [ f'[[/r d{len(content)} # Feat]]', 'Feat' ]
+		align = [ 'center', 'center' ]
+		return utils.text.makeTable(content, header=header, align=align)
 
 	def getDescription(self):
 		text = \
@@ -125,7 +153,7 @@ class Background(sw5e.Entity.Item):
 		if self.raw_featureName and self.raw_featureText: text += \
 			f'<div class="background"><h2>Feature: {self.raw_featureName}</h2></div>\n'\
 			f'<div class="background"><p>{self.raw_featureText}</p></div>'
-		if self.featOptions: text += \
+		if self.featOptionsText: text += \
 			f'<h2>Background Feat</h2>\n'\
 			f'<p>\n'\
 			f'	As a further embodiment of the experience and training of your background, you can choose from the\n'\
@@ -133,7 +161,7 @@ class Background(sw5e.Entity.Item):
 			f'</p>\n'\
 			f'<div class="smalltable">\n'\
 			f'	<p>\n'\
-			f'		{self.featOptions}\n'\
+			f'		{self.featOptionsText}\n'\
 			f'	</p>\n'\
 			f'</div>\n'
 		if self.personalityTraitOptions or self.idealOptions or self.flawOptions or self.bondOptions:
@@ -169,15 +197,14 @@ class Background(sw5e.Entity.Item):
 
 		return text
 
+	def getImg(self, importer=None):
+		name = utils.text.slugify(self.name)
+		return f'systems/sw5e/packs/Icons/Backgrounds/{name}.webp'
+
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
 		data["system"]["description"] = { "value": self.getDescription() }
-
-		data["system"]["-=flavorText"] = None
-		data["system"]["-=flavorName"] = None
-		data["system"]["-=flavorDescription"] = None
-		data["system"]["-=flavorOptions"] = None
 
 		data["system"]["skillProficiencies"] = { "value": self.raw_skillProficiencies }
 		data["system"]["toolProficiencies"] = { "value": self.raw_toolProficiencies }
@@ -186,14 +213,19 @@ class Background(sw5e.Entity.Item):
 		data["system"]["featureName"] = { "value": self.raw_featureName }
 		data["system"]["featureText"] = { "value": self.raw_featureText }
 		data["system"]["featOptions"] = { "value": self.raw_featOptions }
+		data["system"]["source"] = self.raw_contentSource
+		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
+
+		data["system"]["-=flavorText"] = None
+		data["system"]["-=flavorName"] = None
+		data["system"]["-=flavorDescription"] = None
+		data["system"]["-=flavorOptions"] = None
 
 		data["system"]["-=suggestedCharacteristics"] = None
 		data["system"]["-=personalityTraitOptions"] = None
 		data["system"]["-=idealOptions"] = None
 		data["system"]["-=flawOptions"] = None
 		data["system"]["-=bondOptions"] = None
-
-		data["system"]["source"] = self.raw_contentSource
 
 		data["system"]["-=damage"] = None
 		data["system"]["-=armorproperties"] = None

@@ -68,6 +68,45 @@ def markdownToHtml(lines):
 			lines[i] = re.sub(r'\b(\d*d\d+(?:\s*[+*]\s*\d+)?)\b', r'[[/r \1]]', lines[i])
 		return '\n'.join(lines)
 
+def makeTable(content, header=None, align=None):
+	table = ''
+	if header:
+		line = ''
+		for x in range(len(header)):
+			part = header[x]
+			if align and align[x]: part = f'<th align="{align[x]}">{part}</th>'
+			else: part = f'<th>{part}</th>'
+			line += part
+		line = f'<thead><tr>{line}</tr></thead>'
+		table += line
+
+	if content:
+		contents = ''
+		for y in range(len(content)):
+			line = ''
+			for x in range(len(content[y])):
+				part = content[y][x]
+				if align and align[x]: part = f'<th align="{align[x]}">{part}</th>'
+				else: part = f'<th>{part}</th>'
+				line += part
+			line = f'<tr class="rows">{line}</tr>'
+			contents += line
+		contents = f'<tbody>{contents}</tbody>'
+		table += contents
+
+	table = f'<table>{table}</table>'
+	return table
+
+def makeRollTable(table, name):
+	if table:
+		content = [ (
+			opt["roll"],
+			(opt["name"] or '') + (': ' if (opt["name"] and opt["description"]) else '') + (opt["description"] or '')
+		) for opt in table ]
+		header = [ f'[[/r d{len(content)} # {name}]]', name ]
+		align = [ 'center', 'center' ]
+		return makeTable(content, header=header, align=align)
+
 def getActivation(text, uses, recharge):
 	if text:
 		text = text.lower()
@@ -745,35 +784,6 @@ def toInt(string):
 		return int(string)
 	except ValueError:
 		return string
-
-def makeTable(content, header=None, align=None):
-	table = ''
-	if header:
-		line = ''
-		for x in range(len(header)):
-			part = header[x]
-			if align and align[x]: part = f'<th align="{align[x]}">{part}</th>'
-			else: part = f'<th>{part}</th>'
-			line += part
-		line = f'<thead><tr>{line}</tr></thead>'
-		table += line
-
-	if content:
-		contents = ''
-		for y in range(len(content)):
-			line = ''
-			for x in range(len(content[y])):
-				part = content[y][x]
-				if align and align[x]: part = f'<th align="{align[x]}">{part}</th>'
-				else: part = f'<th>{part}</th>'
-				line += part
-			line = f'<tr class="rows">{line}</tr>'
-			contents += line
-		contents = f'<tbody>{contents}</tbody>'
-		table += contents
-
-	table = f'<table>{table}</table>'
-	return table
 
 def getSingular(Text):
 	possibilities = []
