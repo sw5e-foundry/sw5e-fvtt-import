@@ -140,10 +140,10 @@ class Weapon(sw5e.Equipment.Equipment):
 					"scaling": 'flat'
 				}
 			else:
-				data["system"]["ability"] = 'str'
-				data["system"]["attackBonus"] = f'{mod} - @abilities.str.mod + {prof} - @attributes.prof'
+				data["system"]["ability"] = 'none'
+				data["system"]["attackBonus"] = f'{mod} + {prof}'
 
-			data["system"]["proficient"] = True
+			data["system"]["proficient"] = False
 			data["system"]["damage"]["parts"][0][0] = f'{self.raw_damageNumberOfDice}d{self.raw_damageDieType} + {mod}'
 		return data
 

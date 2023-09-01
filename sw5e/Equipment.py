@@ -130,7 +130,7 @@ class Equipment(sw5e.Entity.Item):
 		}
 		data["system"]["weaponType"] = ''
 		data["system"]["properties"] = {}
-		data["system"]["proficient"] = False
+		data["system"]["proficient"] = None
 
 		return [data]
 
