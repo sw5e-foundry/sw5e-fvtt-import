@@ -15801,28 +15801,7 @@
     },
     "Feature.name-razor_focus.source-archetype.sourceName-pugnacity_practice.level-17": {
         "id": "hNLCVeWzPt9KyXDY",
-        "effects": [
-            {
-                "_id": "8H40zgYS6J0C1rPc",
-                "flags": {},
-                "changes": [],
-                "duration": {
-                    "startTime": null,
-                    "seconds": null,
-                    "combat": null,
-                    "rounds": null,
-                    "turns": null,
-                    "startRound": null,
-                    "startTurn": null
-                },
-                "icon": "systems/sw5e/packs/Icons/Class%20Features/OPRT-ARCH-Bonus.webp",
-                "label": "New Active Effect",
-                "transfer": false,
-                "disabled": false,
-                "origin": null,
-                "tint": null
-            }
-        ]
+        "effects": []
     },
     "Feature.name-sapping_storm.source-archetype.sourceName-way_of_manipulation.level-18": {
         "id": "hPn1UOSEPn94LbGV",
@@ -18012,7 +17991,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Class%20Features/BSKR-Bonus.webp",
-                "label": "Rage",
                 "origin": "Compendium.sw5e.classfeatures.DAk6NKEfJq4gEyhB",
                 "tint": null,
                 "transfer": false,
@@ -18026,7 +18004,10 @@
                         "specialDuration": [],
                         "transfer": false
                     }
-                }
+                },
+                "name": "Rage",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -18398,7 +18379,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Class%20Features/ENGR-Bonus.webp",
-                "label": "Potent Aptitude Dice",
                 "origin": "Compendium.sw5e.classfeatures.fGsRWj9oEKcrukw6",
                 "transfer": true,
                 "flags": {
@@ -18412,7 +18392,10 @@
                         "transfer": true
                     }
                 },
-                "tint": null
+                "tint": null,
+                "name": "Potent Aptitude Dice",
+                "description": "",
+                "statuses": []
             },
             {
                 "_id": "87rFIkDTyzEZeKaW",
@@ -18435,7 +18418,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/skills/melee/unarmed-punch-fist.webp",
-                "label": "Inspired",
                 "origin": "Compendium.sw5e.classfeatures.fGsRWj9oEKcrukw6",
                 "transfer": false,
                 "flags": {
@@ -18449,7 +18431,10 @@
                         "transfer": true
                     }
                 },
-                "tint": null
+                "tint": null,
+                "name": "Inspired",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -18521,7 +18506,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Class%20Features/MNK-Passive.webp",
-                "label": "Walk Speed",
                 "origin": "Compendium.sw5e.classfeatures.FeiOrQG28deFgBT1",
                 "tint": null,
                 "transfer": true,
@@ -18535,7 +18519,10 @@
                         "specialDuration": [],
                         "transfer": true
                     }
-                }
+                },
+                "name": "Walk Speed",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -20939,7 +20926,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Thisspiasian.webp",
-                "label": "Thisspiasian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -20948,7 +20934,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Thisspiasian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -21036,7 +21025,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Tusken.webp",
-                "label": "Tusken",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -21045,7 +21033,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Tusken",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -21127,7 +21118,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Squib.webp",
-                "label": "Squib",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -21136,7 +21126,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Squib",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -21266,7 +21259,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Droid%20Class%20II.webp",
-                "label": "Droid, Class II",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -21275,7 +21267,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Droid, Class II",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -21351,7 +21346,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Trandoshan.webp",
-                "label": "Trandoshan",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -21361,7 +21355,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Trandoshan",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -21449,7 +21446,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Chagrian.webp",
-                "label": "Chagrian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -21459,7 +21455,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Chagrian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -21551,7 +21550,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Mon%20Calamari.webp",
-                "label": "Mon Calamari",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -21561,7 +21559,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Mon Calamari",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -21655,7 +21656,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Quarren.webp",
-                "label": "Quarren",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -21665,7 +21665,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Quarren",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -21747,7 +21750,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Sullustan.webp",
-                "label": "Sullustan",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -21757,7 +21759,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Sullustan",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -21843,7 +21848,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Talz.webp",
-                "label": "Talz",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -21853,7 +21857,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Talz",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -21957,7 +21964,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Anzellan.webp",
-                "label": "Anzellan",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -21966,7 +21972,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Anzellan",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -22054,7 +22063,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Colicoid.webp",
-                "label": "Colicoid",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -22064,7 +22072,10 @@
                         "specialDuration": "None"
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Colicoid",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -22146,7 +22157,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Rattataki.webp",
-                "label": "Rattataki",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -22155,7 +22165,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Rattataki",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -22243,7 +22256,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Herglic.webp",
-                "label": "Herglic",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -22252,7 +22264,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Herglic",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -22340,7 +22355,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Bith.webp",
-                "label": "Bith",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -22349,7 +22363,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Bith",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -22431,7 +22448,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Nautolan.webp",
-                "label": "Nautolan",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -22441,7 +22457,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Nautolan",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -22529,7 +22548,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Aqualish.webp",
-                "label": "Aqualish",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -22539,7 +22557,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Aqualish",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -22615,7 +22636,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/HGTTG/Baragwin.webp",
-                "label": "Baragwin",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -22625,7 +22645,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Baragwin",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -22707,7 +22730,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Besalisk.webp",
-                "label": "Besalisk",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -22716,7 +22738,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Besalisk",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -22786,7 +22811,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Clawdite.webp",
-                "label": "Clawdite",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -22795,7 +22819,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Clawdite",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -22895,7 +22922,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Draethos.webp",
-                "label": "Draethos",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -22905,7 +22931,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Draethos",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -22975,7 +23004,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Gotal.webp",
-                "label": "Gotal",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -22985,7 +23013,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Gotal",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -23061,7 +23092,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Mustafarian.webp",
-                "label": "Mustafarian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -23071,7 +23101,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Mustafarian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -23135,7 +23168,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Miraluka.webp",
-                "label": "Miraluka",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -23143,7 +23175,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Miraluka",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -23225,7 +23260,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Ryn.webp",
-                "label": "Ryn",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -23235,7 +23269,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Ryn",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -23333,7 +23370,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Dug.webp",
-                "label": "Dug",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -23342,7 +23378,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Dug",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -23412,7 +23451,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Pa%27lowick.webp",
-                "label": "Pa'lowick",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -23420,7 +23458,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Pa'lowick",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -23532,7 +23573,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Droid%20Class%20III.webp",
-                "label": "Droid, Class III",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -23541,7 +23581,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Droid, Class III",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -23641,7 +23684,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Defel.webp",
-                "label": "Defel",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -23651,7 +23693,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Defel",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -23763,7 +23808,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Gungan.webp",
-                "label": "Gungan",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -23773,7 +23817,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Gungan",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -23849,7 +23896,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Weequay.webp",
-                "label": "Weequay",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -23859,7 +23905,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Weequay",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -23899,7 +23948,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Half-Human.webp",
-                "label": "Half-Human",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -23908,7 +23956,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Half-Human",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -24000,7 +24051,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Duros.webp",
-                "label": "Duros",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -24010,7 +24060,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Duros",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -24092,7 +24145,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Dashade.webp",
-                "label": "Dashade",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -24101,7 +24153,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Dashade",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -24207,7 +24262,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Rakata.webp",
-                "label": "Rakata",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -24217,7 +24271,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Rakata",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -24317,7 +24374,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Chiss.webp",
-                "label": "Chiss",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -24327,7 +24383,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Chiss",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -24397,7 +24456,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Verpine.webp",
-                "label": "Verpine",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -24407,7 +24465,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Verpine",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -24483,7 +24544,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Chevin.webp",
-                "label": "Chevin",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -24492,7 +24552,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Chevin",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -24568,7 +24631,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Nothoiin.webp",
-                "label": "Nothoiin",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -24580,7 +24642,10 @@
                         ]
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Nothoiin",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -24674,7 +24739,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Noghri.webp",
-                "label": "Noghri",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -24683,7 +24747,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Noghri",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -24753,7 +24820,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Arcona.webp",
-                "label": "Arcona",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -24762,7 +24828,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Arcona",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -24844,7 +24913,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Felucian.webp",
-                "label": "Felucian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -24853,7 +24921,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Felucian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -24947,7 +25018,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Ardennian.webp",
-                "label": "Ardennian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -24957,7 +25027,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Ardennian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -25045,7 +25118,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Neimoidian.webp",
-                "label": "Neimoidian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -25055,7 +25127,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Neimoidian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -25107,7 +25182,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Human.webp",
-                "label": "Human",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -25116,7 +25190,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Human",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -25198,7 +25275,6 @@
                     "startTurn": null
                 },
                 "icon": "modules/hgttg/packs/Icons/Advozse.webp",
-                "label": "Advozse",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -25208,7 +25284,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Advozse",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -25272,7 +25351,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Barabel.webp",
-                "label": "Barabel",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -25282,7 +25360,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Barabel",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -25376,7 +25457,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Kubaz.webp",
-                "label": "Kubaz",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -25386,7 +25466,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Kubaz",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -25498,7 +25581,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Chadra-Fan.webp",
-                "label": "Chadra-Fan",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -25507,7 +25589,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Chadra-Fan",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -25583,7 +25668,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Hutt.webp",
-                "label": "Hutt, Adolescent",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -25592,7 +25676,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Hutt, Adolescent",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -25692,7 +25779,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Lasat.webp",
-                "label": "Lasat",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -25702,7 +25788,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Lasat",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -25784,7 +25873,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Aing-Tii.webp",
-                "label": "Aing-Tii",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -25793,7 +25881,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Aing-Tii",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -25863,7 +25954,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Zeltron.webp",
-                "label": "Zeltron",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -25872,7 +25962,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Zeltron",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -25948,7 +26041,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Pau%27an.webp",
-                "label": "Pau'an",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -25958,7 +26050,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Pau'an",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -26034,7 +26129,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Zabrak.webp",
-                "label": "Zabrak",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -26044,7 +26138,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Zabrak",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -26156,7 +26253,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Ewok.webp",
-                "label": "Ewok",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -26165,7 +26261,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Ewok",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -26241,7 +26340,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Togruta.webp",
-                "label": "Togruta",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -26251,7 +26349,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Togruta",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -26357,7 +26458,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Kaleesh.webp",
-                "label": "Kaleesh",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -26367,7 +26467,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Kaleesh",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -26455,7 +26558,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Lannik.webp",
-                "label": "Lannik",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -26464,7 +26566,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Lannik",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -26568,7 +26673,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Jawa.webp",
-                "label": "Jawa",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -26578,7 +26682,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Jawa",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -26666,7 +26773,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Twi_lek.webp",
-                "label": "Twi'lek",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -26676,7 +26782,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Twi'lek",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -26758,7 +26867,6 @@
                     "startTurn": null
                 },
                 "icon": "modules/hgttg/packs/Icons/Tognath.webp",
-                "label": "Tognath",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -26768,7 +26876,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Tognath",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -26862,7 +26973,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Gamorrean.webp",
-                "label": "Gamorrean",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -26871,7 +26981,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Gamorrean",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -26981,7 +27094,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Kage.webp",
-                "label": "Kage",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -26991,7 +27103,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Kage",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -27079,7 +27194,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Abyssin.webp",
-                "label": "Abyssin",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -27091,7 +27205,10 @@
                         ]
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Abyssin",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -27173,7 +27290,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Echani.webp",
-                "label": "Echani",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -27182,7 +27298,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Echani",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -27258,7 +27377,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Arkanian.webp",
-                "label": "Arkanian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -27268,7 +27386,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Arkanian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -27362,7 +27483,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Zygerrian.webp",
-                "label": "Zygerrian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -27372,7 +27492,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Zygerrian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -27460,7 +27583,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Togorian.webp",
-                "label": "Togorian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -27469,7 +27591,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Togorian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -27557,7 +27682,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Bothan.webp",
-                "label": "Bothan",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -27566,7 +27690,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Bothan",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -27636,7 +27763,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Chironian.webp",
-                "label": "Chironian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -27645,7 +27771,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Chironian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -27749,7 +27878,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Voss.webp",
-                "label": "Voss",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -27759,7 +27887,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Voss",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -27829,7 +27960,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Mikkian.webp",
-                "label": "Mikkian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -27838,7 +27968,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Mikkian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -27932,7 +28065,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Rodian.webp",
-                "label": "Rodian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -27942,7 +28074,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Rodian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -28018,7 +28153,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Geonosian.webp",
-                "label": "Geonosian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -28027,7 +28161,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Geonosian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -28107,7 +28244,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Yevetha.webp",
-                "label": "Yevetha",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -28116,7 +28252,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Yevetha",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -28198,7 +28337,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Gand.webp",
-                "label": "Gand",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -28207,7 +28345,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Gand",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -28283,7 +28424,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Pyke.webp",
-                "label": "Pyke",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -28292,7 +28432,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Pyke",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -28416,7 +28559,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Droid%20Class%20V.webp",
-                "label": "Droid, Class V",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -28425,7 +28567,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Droid, Class V",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -28513,7 +28658,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Kel%20Dor.webp",
-                "label": "Kel Dor",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -28523,7 +28667,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Kel Dor",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -28593,7 +28740,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Ithorian.webp",
-                "label": "Ithorian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -28602,7 +28748,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Ithorian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -28684,7 +28833,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Karkarodon.webp",
-                "label": "Karkarodon",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -28693,7 +28841,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Karkarodon",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -28775,7 +28926,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Devaronian.webp",
-                "label": "Devaronian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -28784,7 +28934,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Devaronian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -28866,7 +29019,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Balosar.webp",
-                "label": "Balosar",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -28875,7 +29027,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Balosar",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -28999,7 +29154,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Droid%20Class%20IV.webp",
-                "label": "Droid, Class IV",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -29008,7 +29162,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Droid, Class IV",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -29084,7 +29241,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Rishii.webp",
-                "label": "Rishii",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -29093,7 +29249,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Rishii",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -29181,7 +29340,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Harch.webp",
-                "label": "Harch",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -29191,7 +29349,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Harch",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -29297,7 +29458,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Lurmen.webp",
-                "label": "Lurmen",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -29307,7 +29467,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Lurmen",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -29383,7 +29546,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Anomid.webp",
-                "label": "Anomid",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -29393,7 +29555,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Anomid",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -29469,7 +29634,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Muun.webp",
-                "label": "Muun",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -29478,7 +29642,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Muun",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -29566,7 +29733,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Ssi-Ruu.webp",
-                "label": "Ssi-Ruu",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -29575,7 +29741,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Ssi-Ruu",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -29657,7 +29826,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Killik.webp",
-                "label": "Killik",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -29666,7 +29834,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Killik",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -29758,7 +29929,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Kyuzo.webp",
-                "label": "Kyuzo",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -29768,7 +29938,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Kyuzo",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -29860,7 +30033,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Cerean.webp",
-                "label": "Cerean",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -29869,7 +30041,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Cerean",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -29957,7 +30132,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Codru-Ji.webp",
-                "label": "Codru-Ji",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -29966,7 +30140,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Codru-Ji",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -30078,7 +30255,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Droid%20Class%20I.webp",
-                "label": "Droid, Class I",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -30087,7 +30263,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Droid, Class I",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -30169,7 +30348,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Iktotchi.webp",
-                "label": "Iktotchi",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -30178,7 +30356,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Iktotchi",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -30272,7 +30453,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Cathar.webp",
-                "label": "Cathar",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -30282,7 +30462,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Cathar",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -30364,7 +30547,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Mirialan.webp",
-                "label": "Mirialan",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -30373,7 +30555,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Mirialan",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -30449,7 +30634,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Kaminoan.webp",
-                "label": "Kaminoan",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -30458,7 +30642,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Kaminoan",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -30546,7 +30733,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Flesh%20Raider.webp",
-                "label": "Flesh Raider",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -30556,7 +30742,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Flesh Raider",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -30644,7 +30833,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Sith%20Pureblood.webp",
-                "label": "Sith Pureblood",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -30654,7 +30842,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Sith Pureblood",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -30748,7 +30939,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Patrolian.webp",
-                "label": "Patrolian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -30760,7 +30950,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Patrolian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -30836,7 +31029,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Selkath.webp",
-                "label": "Selkath",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -30845,7 +31037,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Selkath",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -30927,7 +31122,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Givin.webp",
-                "label": "Givin",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -30936,7 +31130,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Givin",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -31006,7 +31203,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Nikto.webp",
-                "label": "Nikto",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -31016,7 +31212,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Nikto",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -31104,7 +31303,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Aleena.webp",
-                "label": "Aleena",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -31113,7 +31311,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Aleena",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -31207,7 +31408,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Toydarian.webp",
-                "label": "Toydarian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -31216,7 +31416,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Toydarian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -31298,7 +31501,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Shistavanen.webp",
-                "label": "Shistavanen",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -31308,7 +31510,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Shistavanen",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -31402,7 +31607,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Klatooinian.webp",
-                "label": "Klatooinian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -31411,7 +31615,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Klatooinian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -31497,7 +31704,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Tarasin.webp",
-                "label": "Tarasin",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -31506,7 +31712,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Tarasin",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -31600,7 +31809,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Ortolan.webp",
-                "label": "Ortolan",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -31609,7 +31817,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Ortolan",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -31703,7 +31914,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Ugnaught.webp",
-                "label": "Ugnaught",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -31713,7 +31923,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Ugnaught",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -31787,7 +32000,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Umbaran.webp",
-                "label": "Umbaran",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -31797,7 +32009,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Umbaran",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -31897,7 +32112,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Kushiban.webp",
-                "label": "Kushiban",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -31906,7 +32120,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Kushiban",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -31988,7 +32205,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Wookiee.webp",
-                "label": "Wookiee",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -31998,7 +32214,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Wookiee",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -32104,7 +32323,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Ho%27Din.webp",
-                "label": "Ho'Din",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -32114,7 +32332,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Ho'Din",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -32190,7 +32411,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Esh-Kha.webp",
-                "label": "Esh-Kha",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -32200,7 +32420,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Esh-Kha",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -32286,7 +32509,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Falleen.webp",
-                "label": "Falleen",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -32295,7 +32517,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Falleen",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -32377,7 +32602,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Gran.webp",
-                "label": "Gran",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -32386,7 +32610,10 @@
                         "stackable": false
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Gran",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -32474,7 +32701,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Species/Vurk.webp",
-                "label": "Vurk",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -32484,7 +32710,10 @@
                         "specialDuration": []
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Vurk",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -38864,7 +39093,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Teacher",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -38874,7 +39102,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Teacher",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -38908,7 +39139,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Dathomir Witch",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -38917,7 +39147,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Dathomir Witch",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -38949,7 +39182,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Investigator",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -38958,7 +39190,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Investigator",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -38992,7 +39227,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Sith",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39002,7 +39236,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Sith",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39036,7 +39273,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Gambler",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39045,7 +39281,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Gambler",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39079,7 +39318,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Farmer",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39088,7 +39326,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Farmer",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39116,7 +39357,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Student",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39126,7 +39366,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Student",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39168,7 +39411,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Soldier",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39178,7 +39420,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Soldier",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39218,7 +39463,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Scoundrel",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39228,7 +39472,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Scoundrel",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39260,7 +39507,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Companion",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39269,7 +39515,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Companion",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39301,7 +39550,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Scientist",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39311,7 +39559,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Scientist",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39339,7 +39590,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Folk Hero",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39348,7 +39598,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Folk Hero",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39376,7 +39629,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Bounty Hunter",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39385,7 +39637,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Bounty Hunter",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39419,7 +39674,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Office Worker",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39429,7 +39683,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Office Worker",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39463,7 +39720,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Outlaw",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39473,7 +39729,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Outlaw",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39507,7 +39766,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Hermit",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39516,7 +39774,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Hermit",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39544,7 +39805,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Courtier",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39553,7 +39813,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Courtier",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39581,7 +39844,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "(Un)Retired Adventurer",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39590,7 +39852,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "(Un)Retired Adventurer",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39618,7 +39883,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Force Adept",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39627,7 +39891,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Force Adept",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39655,7 +39922,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Backgrounds/Clone.webp",
-                "label": "Clone",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39664,7 +39930,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Clone",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39698,7 +39967,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Jedi",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39707,7 +39975,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Jedi",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39735,7 +40006,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Crime Lord",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39744,7 +40014,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Crime Lord",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39772,7 +40045,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Agent",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39781,7 +40053,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Agent",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39809,7 +40084,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Faction Artisan",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39818,7 +40092,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Faction Artisan",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39852,7 +40129,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Pirate",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39862,7 +40138,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Pirate",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39900,7 +40179,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Smuggler",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39910,7 +40188,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Smuggler",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39950,7 +40231,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Urchin",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39960,7 +40240,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Urchin",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -39994,7 +40277,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Laborer",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40004,7 +40286,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Laborer",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40032,7 +40317,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Barbarian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40041,7 +40325,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Barbarian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40075,7 +40362,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Mercenary",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40085,7 +40371,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Mercenary",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40113,7 +40402,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Racer",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40123,7 +40411,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Racer",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40163,7 +40454,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Entertainer",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40172,7 +40462,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Entertainer",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40210,7 +40503,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Nomad",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40220,7 +40512,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Nomad",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40254,7 +40549,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Jensaari",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40263,7 +40557,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Jensaari",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40291,7 +40588,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "City Watch",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40300,7 +40596,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "City Watch",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40328,7 +40627,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Spacer",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40338,7 +40636,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Spacer",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40372,7 +40673,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Gladiator",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40381,7 +40681,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Gladiator",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40409,7 +40712,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Faction Merchant",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40418,7 +40720,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Faction Merchant",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40452,7 +40757,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Noble",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40462,7 +40766,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Noble",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40490,7 +40797,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Lawyer",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40500,7 +40806,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Lawyer",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40528,7 +40837,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Clone Trooper",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40537,7 +40845,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Clone Trooper",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40571,7 +40882,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Mandalorian",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40581,7 +40891,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Mandalorian",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40609,7 +40922,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Far Traveler",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40618,7 +40930,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Far Traveler",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40662,7 +40977,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Backgrounds/Imperial%20Knight.webp",
-                "label": "Imperial Knight",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40671,7 +40985,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Imperial Knight",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40703,7 +41020,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Faction Adventurer",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40712,7 +41028,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Faction Adventurer",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40740,7 +41059,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Criminal",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40749,7 +41067,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Criminal",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40785,7 +41106,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Backgrounds/Scavenger.webp",
-                "label": "Scavenger",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40794,7 +41114,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Scavenger",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40822,7 +41145,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Holonet Technician",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40831,7 +41153,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Holonet Technician",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40859,7 +41184,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Servant",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40869,7 +41193,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Servant",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40897,7 +41224,6 @@
                     "startTurn": null
                 },
                 "icon": "icons/svg/mystery-man.svg",
-                "label": "Addict",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40906,7 +41232,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Addict",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40940,7 +41269,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Charmer.webp",
-                "label": "Charmer",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40950,7 +41278,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Charmer",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -40988,7 +41319,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Empathic.webp",
-                "label": "Empathic",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40998,7 +41328,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Empathic",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41026,7 +41359,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/ForcefulVigor.webp",
-                "label": "Forceful Vigor",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41036,7 +41368,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Forceful Vigor",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41070,7 +41405,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Performer.webp",
-                "label": "Performer",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41080,7 +41414,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Performer",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41114,7 +41451,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Mariner.webp",
-                "label": "Mariner",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41124,7 +41460,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Mariner",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41162,7 +41501,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Stealthy.webp",
-                "label": "Stealthy",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41172,7 +41510,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Stealthy",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41208,7 +41549,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Haggler.webp",
-                "label": "Haggler",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41218,7 +41558,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Haggler",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41260,7 +41603,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Investigator.webp",
-                "label": "Investigator",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41270,7 +41612,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Investigator",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41316,7 +41661,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Techie.webp",
-                "label": "Techie",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41326,7 +41670,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Techie",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41372,7 +41719,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Quick-Fingered.webp",
-                "label": "Quick-Fingered",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41382,7 +41728,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Quick-Fingered",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41414,7 +41763,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Tough.webp",
-                "label": "Tough",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41424,7 +41772,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Tough",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41452,7 +41803,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/GalvanizingPresence.webp",
-                "label": "Galvanizing Presence",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41462,7 +41812,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Galvanizing Presence",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41490,7 +41843,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Durable.webp",
-                "label": "Durable",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41500,7 +41852,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Durable",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41540,7 +41895,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/WeaponExpert.webp",
-                "label": "Weapon Expert",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41550,7 +41904,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Weapon Expert",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41578,7 +41935,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/SnappyInterjection.webp",
-                "label": "Snappy Interjection",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41588,7 +41944,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Snappy Interjection",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41638,7 +41997,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Climber.webp",
-                "label": "Climber",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41648,7 +42006,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Climber",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41688,7 +42049,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/ForceofPersonality.webp",
-                "label": "Force of Personality",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41698,7 +42058,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Force of Personality",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41816,7 +42179,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Survivalist.webp",
-                "label": "Survivalist",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41826,7 +42188,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Survivalist",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41860,7 +42225,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Perceptive.webp",
-                "label": "Perceptive",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41870,7 +42234,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Perceptive",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41924,7 +42291,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Naturalist.webp",
-                "label": "Naturalist",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41934,7 +42300,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Naturalist",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -41968,7 +42337,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Medic.webp",
-                "label": "Medic",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41978,7 +42346,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Medic",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42034,7 +42405,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Actor.webp",
-                "label": "Actor",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42044,7 +42414,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Actor",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42096,7 +42469,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/PromisingCommander.webp",
-                "label": "Promising Commander",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42106,7 +42478,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Promising Commander",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42146,7 +42521,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/TechDabbler.webp",
-                "label": "Tech Dabbler",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42156,7 +42530,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Tech Dabbler",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42184,7 +42561,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/KeenMind.webp",
-                "label": "Keen Mind",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42194,7 +42570,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Keen Mind",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42226,7 +42605,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Linguist.webp",
-                "label": "Linguist",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42236,7 +42614,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Linguist",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42282,7 +42663,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Loremaster.webp",
-                "label": "Loremaster",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42292,7 +42672,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Loremaster",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42320,7 +42703,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Quick-Witted.webp",
-                "label": "Quick-Witted",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42330,7 +42712,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Quick-Witted",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42368,7 +42753,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/AnimalHandler.webp",
-                "label": "Animal Handler",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42378,7 +42762,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Animal Handler",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42416,7 +42803,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Threatening.webp",
-                "label": "Threatening",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42426,7 +42812,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Threatening",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42470,7 +42859,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/BattleScarred.webp",
-                "label": "Battle Scarred",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42480,7 +42868,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Battle Scarred",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42602,7 +42993,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Silver-Tongued.webp",
-                "label": "Silver-Tongued",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42612,7 +43002,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Silver-Tongued",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42650,7 +43043,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Brawny.webp",
-                "label": "Brawny",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42660,7 +43052,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Brawny",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42702,7 +43097,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/AcePilot.webp",
-                "label": "Ace Pilot",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42712,7 +43106,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Ace Pilot",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42740,7 +43137,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/ShardModification.webp",
-                "label": "Shard Modification",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42750,7 +43146,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Shard Modification",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42804,7 +43203,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/TinyTerror.webp",
-                "label": "Tiny Terror",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42814,7 +43212,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Tiny Terror",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42852,7 +43253,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Acrobat.webp",
-                "label": "Acrobat",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42862,7 +43262,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Acrobat",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42938,7 +43341,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/FeignedConfidence.webp",
-                "label": "Feigned Confidence",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42948,7 +43350,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Feigned Confidence",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -42980,7 +43385,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/Alert.webp",
-                "label": "Alert",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -42992,7 +43396,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Alert",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -43060,7 +43467,6 @@
                     "startTurn": null
                 },
                 "icon": "systems/sw5e/packs/Icons/Feats/SavageShorty.webp",
-                "label": "Savage Shorty",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -43070,7 +43476,10 @@
                         "transfer": true
                     }
                 },
-                "origin": null
+                "origin": null,
+                "name": "Savage Shorty",
+                "description": "",
+                "statuses": []
             }
         ]
     },
