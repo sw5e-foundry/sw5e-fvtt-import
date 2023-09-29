@@ -164,9 +164,10 @@ class Feature(BaseFeature):
 			return self.raw_sourceName
 
 	def getRequirements(self, importer):
-		req = f'{self.class_name} ({self.raw_sourceName})' if self.class_name != self.raw_sourceName else self.raw_sourceName
-		if self.raw_level and self.raw_level > 1: req = f'{req} {self.raw_level}'
+		req = self.raw_sourceName
 
+		if self.class_name and self.class_name != self.raw_sourceName: req = f'{self.class_name} ({req})'
+		if self.raw_level and self.raw_level > 1: req = f'{req} {self.raw_level}'
 		if self.raw_requirements: req += f', {self.raw_requirements}'
 
 		return req
