@@ -13,7 +13,7 @@ class Equipment(sw5e.Equipment.Equipment):
 	def getImg(self, importer=None):
 		kwargs = {
 			'item_type': self.raw_equipmentCategory,
-			'no_img': ('Unknown', 'Clothing'),
+			'no_img': ('Unknown'),
 			'default_img': 'systems/sw5e/packs/Icons/Armor/PHB/AssaultArmor.webp',
 			# 'plural': False
 		}
