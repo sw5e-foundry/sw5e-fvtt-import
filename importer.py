@@ -30,7 +30,7 @@ class Importer:
 		'feature',
 		'fightingMastery',
 		'fightingStyle',
-		'lightsaberForm',
+		'lightsaberForms',
 		'maneuvers',
 		'monster',
 		'power',
