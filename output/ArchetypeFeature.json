@@ -2774,7 +2774,7 @@
         "name": "Adaptive Fighting",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9464448+00:00",
+                "timestamp": "2022-05-29T01:36:47.5785442+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-adaptive_fighting.source-archetype.sourceName-blademaster_specialist.level-3"
             }
@@ -2783,7 +2783,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/FGTR-ARCH-Action.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Blademaster Specialist:</strong> 3rd level</em></p>\n<p>You've learned to make adaptations to your fighting style on the fly. You have three such effects: Change Up, Draw, and Stow. When you use your Adaptive Fighting, you choose which effect to create.</p>\n<p>You can use this feature twice. You gain an additional use at 5th, 9th, 13th, and 17th level. You regain all expended uses when you complete a short or long rest.</p>\n<h3>Change Up</h3>\n<p>You can use your object interaction and expend a use of your Adaptive Fighting to change the Fighting Style option granted to you by your fighter class feature.</p>\n<h3>Draw</h3>\n<p>When you use your object interaction to draw one or more weapons, you can expend a use of your Adaptive Fighting (no action required) to increase your critical hit range by 1 with the weapon(s) until the start of your next turn.</p>\n<h3>Stow</h3>\n<p>When you use your object interaction to stow a weapon, you can expend a use of your Adaptive Fighting (no action required) to take the Disengage action.</p>"
+                "value": "<p><em><strong>Blademaster Specialist:</strong> 3rd level</em></p>\n<p>You've learned to make adaptations to your fighting style on the fly. You have three such effects: Change Up, Draw, and Stow. When you use your Adaptive Fighting, you choose which effect to create.</p>\n<p>You can use this features a number of times equal to your Strength or Dexterity modifier (your choice, a minimum of once). You regain all expended uses when you complete a short or long rest.</p>\n<h3>Change Up</h3>\n<p>You can use your object interaction and expend a use of your Adaptive Fighting to change the Fighting Style option granted to you by your fighter class feature.</p>\n<h3>Draw</h3>\n<p>When you use your object interaction to draw one or more weapons, you can expend a use of your Adaptive Fighting (no action required) to increase your critical hit range by 1 with the weapon(s) until the start of your next turn.</p>\n<h3>Stow</h3>\n<p>When you use your object interaction to stow a weapon, you can expend a use of your Adaptive Fighting (no action required) to take the Disengage action.</p>"
             },
             "requirements": "Fighter (Blademaster Specialist) 3",
             "source": "PHB",
@@ -2807,7 +2807,7 @@
             },
             "uses": {
                 "value": null,
-                "max": 2,
+                "max": "max(max(@abilities.str.mod, @abilities.dex.mod), 1)",
                 "per": "sr"
             },
             "actionType": "other",
@@ -2832,7 +2832,7 @@
         "name": "Change Up",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9464448+00:00",
+                "timestamp": "2022-05-29T01:36:47.5785442+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-change_up.source-archetype.sourceName-blademaster_specialist.level-3"
             }
@@ -2890,7 +2890,7 @@
         "name": "Draw",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9464448+00:00",
+                "timestamp": "2022-05-29T01:36:47.5785442+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-draw.source-archetype.sourceName-blademaster_specialist.level-3"
             }
@@ -2948,7 +2948,7 @@
         "name": "Stow",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9464448+00:00",
+                "timestamp": "2022-05-29T01:36:47.5785442+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-stow.source-archetype.sourceName-blademaster_specialist.level-3"
             }
@@ -3006,7 +3006,7 @@
         "name": "Adrenaline Rush",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9464448+00:00",
+                "timestamp": "2022-05-29T01:36:47.5795435+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-adrenaline_rush.source-archetype.sourceName-blademaster_specialist.level-15"
             }
@@ -3064,7 +3064,7 @@
         "name": "Dervish",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9464448+00:00",
+                "timestamp": "2022-05-29T01:36:47.5795435+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-dervish.source-archetype.sourceName-blademaster_specialist.level-7"
             }
@@ -3122,7 +3122,7 @@
         "name": "Resilient Fighting",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9464448+00:00",
+                "timestamp": "2022-05-29T01:36:47.5795435+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-resilient_fighting.source-archetype.sourceName-blademaster_specialist.level-10"
             }
@@ -3180,7 +3180,7 @@
         "name": "Unarmored Defense",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9464448+00:00",
+                "timestamp": "2022-05-29T01:36:47.5785442+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-unarmored_defense.source-archetype.sourceName-blademaster_specialist.level-3"
             }
@@ -4523,7 +4523,7 @@
         "name": "Double Swing",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.932453+00:00",
+                "timestamp": "2022-05-29T01:36:47.5015687+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-double_swing.source-archetype.sourceName-cyclone_approach.level-3"
             }
@@ -4532,7 +4532,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/BSKR-ARCH-Passive.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Cyclone Approach:</strong> 3rd level</em></p>\n<p>Once on each of your turns when you miss with an attack while raging, you can immediately make a melee weapon attack with a weapon wielded in a different hand. </p>"
+                "value": "<p><em><strong>Cyclone Approach:</strong> 3rd level</em></p>\n<p>Once on each of your turns when you miss with an attack while raging, you can immediately make a melee attack with the weapon in your other hand. </p>"
             },
             "requirements": "Berserker (Cyclone Approach) 3",
             "source": "PHB",
@@ -4581,7 +4581,7 @@
         "name": "Dual Wielder",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.932453+00:00",
+                "timestamp": "2022-05-29T01:36:47.5015687+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-dual_wielder.source-archetype.sourceName-cyclone_approach.level-3"
             }
@@ -4639,7 +4639,7 @@
         "name": "Mighty Leap",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9334518+00:00",
+                "timestamp": "2022-05-29T01:36:47.5025682+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-mighty_leap.source-archetype.sourceName-cyclone_approach.level-10"
             }
@@ -4697,7 +4697,7 @@
         "name": "Twisting Winds",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9334518+00:00",
+                "timestamp": "2022-05-29T01:36:47.5025682+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-twisting_winds.source-archetype.sourceName-cyclone_approach.level-6"
             }
@@ -4706,7 +4706,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/BSKR-ARCH-Passive.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Cyclone Approach:</strong> 6th level</em></p>\n<p>Your unpredictable movement makes you harder to hit and pin down. When you make a saving throw or ability checks to avoid being knocked prone, pushed, grappled, or restrained, you can add your Strength or Dexterity modifier (your choice).</p>"
+                "value": "<p><em><strong>Cyclone Approach:</strong> 6th level</em></p>\n<p>Your unpredictable movement makes you harder to hit and pin down. When you make a saving throw or ability checks to avoid being knocked prone, pushed, grappled, or restrained, it gains a bonus equal to your Strength or Dexterity modifier (your choice) as long as it doesn't already include that modifier.</p>"
             },
             "requirements": "Berserker (Cyclone Approach) 6",
             "source": "PHB",
@@ -6424,7 +6424,7 @@
         "name": "Dive For Cover",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.2639119+00:00",
+                "timestamp": "2023-05-30T20:15:26.6261269+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-dive_for_cover.source-archetype.sourceName-gunslinger_practice.level-13"
             }
@@ -6482,7 +6482,7 @@
         "name": "Dive For Cover",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.2639119+00:00",
+                "timestamp": "2023-05-30T20:15:26.6261269+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-dive_for_cover.source-archetype.sourceName-gunslinger_practice.level-17"
             }
@@ -6540,7 +6540,7 @@
         "name": "Dive For Cover",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.262912+00:00",
+                "timestamp": "2023-05-30T20:15:26.6261269+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-dive_for_cover.source-archetype.sourceName-gunslinger_practice.level-3"
             }
@@ -6598,7 +6598,7 @@
         "name": "Dive For Cover",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.2639119+00:00",
+                "timestamp": "2023-05-30T20:15:26.6261269+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-dive_for_cover.source-archetype.sourceName-gunslinger_practice.level-5"
             }
@@ -6656,7 +6656,7 @@
         "name": "Dive For Cover",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.2639119+00:00",
+                "timestamp": "2023-05-30T20:15:26.6261269+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-dive_for_cover.source-archetype.sourceName-gunslinger_practice.level-9"
             }
@@ -6714,7 +6714,7 @@
         "name": "Ricochet Shot",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.2639119+00:00",
+                "timestamp": "2023-05-30T20:15:26.6271255+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-ricochet_shot.source-archetype.sourceName-gunslinger_practice.level-13"
             }
@@ -6772,7 +6772,7 @@
         "name": "Spinning Flourish",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.2639119+00:00",
+                "timestamp": "2023-05-30T20:15:26.6271255+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-spinning_flourish.source-archetype.sourceName-gunslinger_practice.level-9"
             }
@@ -6830,7 +6830,7 @@
         "name": "Trick Shooter",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.2639119+00:00",
+                "timestamp": "2023-05-30T20:15:26.6271255+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-trick_shooter.source-archetype.sourceName-gunslinger_practice.level-3"
             }
@@ -6888,7 +6888,7 @@
         "name": "Blinding Shot",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.2639119+00:00",
+                "timestamp": "2023-05-30T20:15:26.6271255+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-blinding_shot.source-archetype.sourceName-gunslinger_practice.level-3"
             }
@@ -6946,7 +6946,7 @@
         "name": "Brutal Shot",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.2639119+00:00",
+                "timestamp": "2023-05-30T20:15:26.6271255+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-brutal_shot.source-archetype.sourceName-gunslinger_practice.level-3"
             }
@@ -7004,7 +7004,7 @@
         "name": "Hampering Shot",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.2639119+00:00",
+                "timestamp": "2023-05-30T20:15:26.6271255+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-hampering_shot.source-archetype.sourceName-gunslinger_practice.level-3"
             }
@@ -7062,7 +7062,7 @@
         "name": "Maximum Output",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-05-29T01:36:27.7450051+00:00",
+                "timestamp": "2023-05-30T20:15:26.6091361+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-maximum_output.source-archetype.sourceName-heavy_weapons_specialist.level-7"
             }
@@ -7125,7 +7125,7 @@
         "name": "My Little Friend Says Hello There",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-05-29T01:36:27.7450051+00:00",
+                "timestamp": "2023-05-30T20:15:26.6091361+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-my_little_friend_says_hello_there.source-archetype.sourceName-heavy_weapons_specialist.level-3"
             }
@@ -7134,7 +7134,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/FGTR-ARCH-Passive.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Heavy Weapons Specialist:</strong> 3rd level</em></p>\n<p>You know how to use the sheer size of your weapon to strike fear in those around you. You can add your Strength modifier to any Charisma (Intimidation) check you make while wielding a weapon with the heavy or strength properties that doesn't already include that modifier.</p>"
+                "value": "<p><em><strong>Heavy Weapons Specialist:</strong> 3rd level</em></p>\n<p>You know how to use the sheer size of your weapon to strike fear in those around you. You can add your Strength modifier to any Charisma (Intimidation) check you make while wielding a weapon with the heavy or strength properties.</p>"
             },
             "requirements": "Fighter (Heavy Weapons Specialist) 3",
             "source": "EC",
@@ -7183,7 +7183,7 @@
         "name": "Overwhelm",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-05-29T01:36:27.7450051+00:00",
+                "timestamp": "2023-05-30T20:15:26.6091361+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-overwhelm.source-archetype.sourceName-heavy_weapons_specialist.level-15"
             }
@@ -7241,7 +7241,7 @@
         "name": "Rock Steady",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-05-29T01:36:27.7450051+00:00",
+                "timestamp": "2023-05-30T20:15:26.6091361+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-rock_steady.source-archetype.sourceName-heavy_weapons_specialist.level-3"
             }
@@ -7299,7 +7299,7 @@
         "name": "Straight Through",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-05-29T01:36:27.7450051+00:00",
+                "timestamp": "2023-05-30T20:15:26.6091361+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-straight_through.source-archetype.sourceName-heavy_weapons_specialist.level-10"
             }
@@ -8063,7 +8063,7 @@
         "name": "Armored Brute",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9334518+00:00",
+                "timestamp": "2022-05-29T01:36:47.5035681+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-armored_brute.source-archetype.sourceName-juggernaut_approach.level-3"
             }
@@ -8121,7 +8121,7 @@
         "name": "Overwhelming Cleave",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9334518+00:00",
+                "timestamp": "2022-05-29T01:36:47.5045681+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-overwhelming_cleave.source-archetype.sourceName-juggernaut_approach.level-10"
             }
@@ -8184,7 +8184,7 @@
         "name": "Raging Bulwark",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9334518+00:00",
+                "timestamp": "2022-05-29T01:36:47.5045681+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-raging_bulwark.source-archetype.sourceName-juggernaut_approach.level-6"
             }
@@ -8193,7 +8193,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/BSKR-ARCH-Reaction.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Juggernaut Approach:</strong> 6th level</em></p>\n<p>Your imposing form acts as a shield for your allies. When a friendly creature you can see is the target of a ranged attack, or forced to make a Dexterity saving throw, and you can see the source of the effect, you can use your reaction to move up to half your speed towards the friendly creature. You must end this move closer to the ally than you started. If you end this movement between your ally and the source of the effect, you provide cover for the attack.</p>\n<p>Additionally, you provide three-quarters cover, instead of half-cover, to creatures of the same size category, and you provide full cover, instead of three-quarters cover, to creatures one size smaller than you.</p>"
+                "value": "<p><em><strong>Juggernaut Approach:</strong> 6th level</em></p>\n<p>Your imposing form acts as a shield for your allies. When a friendly creature you can see is the target of a ranged attack, or forced to make a Dexterity saving throw, and you can see the source of the effect, you can use your reaction to move up to half your speed towards the friendly creature. You must end this move closer to the ally than you started. If you end this movement between your ally and the source of the effect, you provide cover for the attack.</p>\n<p>Additionally, you provide three-quarters cover, instead of half-cover, to creatures your size, and you provide full cover to creatures smaller than you.</p>"
             },
             "requirements": "Berserker (Juggernaut Approach) 6",
             "source": "PHB",
@@ -8242,7 +8242,7 @@
         "name": "Unstoppable Force",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9334518+00:00",
+                "timestamp": "2022-05-29T01:36:47.5035681+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-unstoppable_force.source-archetype.sourceName-juggernaut_approach.level-3"
             }
@@ -8300,22 +8300,22 @@
         "name": "Assassinate",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9894189+00:00",
+                "timestamp": "2022-08-17T00:39:51.1248481+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-assassinate.source-archetype.sourceName-lethality_practice.level-3"
             }
         },
         "type": "feat",
-        "img": "systems/sw5e/packs/Icons/Class%20Features/OPRT-ARCH-Action.webp",
+        "img": "systems/sw5e/packs/Icons/Class%20Features/OPRT-ARCH-Passive.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Lethality Practice:</strong> 3rd level</em></p>\n<p>When you hit a creature that you are hidden from with a weapon attack, you can choose to turn that hit into a critical hit. If the attack reduces the creature to 0 hit points, it does not automatically reveal your presence to any remaining creatures. Make a Dexterity (Stealth) check contested by the creatures' Wisdom (Perception) check. On a success, you remain hidden. If you would already be able to make a Dexterity (Stealth) check to remain hidden as part of the attack, you instead gain advantage on the check.</p>\n<p>You can use this feature once. You gain an additional use at 9th and 17th level. You regain all expended uses when you finish a long rest.</p>"
+                "value": "<p><em><strong>Lethality Practice:</strong> 3rd level</em></p>\n<p>You are at your deadliest when you get the drop on your enemies. You have advantage on attack rolls against any creature that hasn't taken a turn in the combat yet. Additionally, any hit you score against a creature that is surprised is a critical hit.</p>"
             },
             "requirements": "Operative (Lethality Practice) 3",
             "source": "PHB",
             "activation": {
-                "type": "special",
-                "cost": 1
+                "type": null,
+                "cost": null
             },
             "duration": {
                 "value": null,
@@ -8333,8 +8333,8 @@
             },
             "uses": {
                 "value": null,
-                "max": 1,
-                "per": "lr"
+                "max": null,
+                "per": null
             },
             "actionType": "other",
             "damage": {
@@ -8474,7 +8474,7 @@
         "name": "Lethal Strikes",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9894189+00:00",
+                "timestamp": "2022-08-17T00:39:51.1248481+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-lethal_strikes.source-archetype.sourceName-lethality_practice.level-3"
             }
@@ -8483,7 +8483,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/OPRT-ARCH-Passive.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Lethality Practice:</strong> 3rd level</em></p>\n<p>You learn how to read your foes and strikes their weak points. When you deal Sneak Attack damage to a creature, you may choose to forgo two of your Sneak Attack dice to make the attack a lethal strike. </p>\n<p>Some of your lethal strikes require your target to make a saving throw to resist the lethal strike's effects. The saving throw DC is calculated as follows: </p>\n<p><em></em>_</p>\n<p><strong>Lethal Strike save DC</strong> = 8 + your proficiency bonus + your Dexterity modifier</p>\n<p><em></em>_</p>\n<h3>Priming Attack</h3>\n<p>You attempt to prime the target. The target must make a Dexterity, Constitution, or Wisdom saving throw (your choice). On a failed save, the next time you deal Sneak Attack damage against the target before the end of your next turn, you roll four additional Sneak Attack dice.</p>\n<h3>Target Assessment</h3>\n<p>You attempt to infer crucial details about your foe. The creature must make a Charisma saving throw. On a failed save, the GM tells you two of the following characteristics of your choice:</p>\n<ul>\n<li>Highest ability score</li>\n<li>Lowest ability score</li>\n<li>Strongest saving throw</li>\n<li>Weakest saving throw</li>\n</ul>\n<h3>Vulnerable Strike</h3>\n<p>You attempt to stagger the target. The target must make a Wisdom saving throw. On a failed save, the next time you would make an attack roll against the target before the end of your next turn, you can instead force the target to make a saving throw with the ability score of your choice. On a failed save, the creature takes normal weapon damage, is subjected to any additional effects that would occur on a hit, and you can apply your Sneak Attack damage to the roll.</p>"
+                "value": "<p><em><strong>Lethality Practice:</strong> 3rd level</em></p>\n<p>You learn how to read your foes and strikes their weak points. When you deal Sneak Attack damage to a creature, you may choose to forgo two of your Sneak Attack dice to make the attack a lethal strike. </p>\n<p>Some of your lethal strikes require your target to make a saving throw to resist the lethal strike's effects. The saving throw DC is calculated as follows: </p>\n<p><em></em>_</p>\n<p><strong>Lethal Strike save DC</strong> = 8 + your proficiency bonus + your Dexterity modifier</p>\n<p><em></em>_</p>\n<h3>Priming Attack</h3>\n<p>You attempt to prime the target. The target must make a Dexterity, Constitution, or Wisdom saving throw (your choice). On a failed save, the next time you deal Sneak Attack damage against the target before the end of your next turn, you roll four additional Sneak Attack dice.</p>\n<h3>Target Assessment</h3>\n<p>You attempt to infer crucial details about your foe. The creature must make a Charisma saving throw. On a failed save, the GM tells you two of the following characteristics of your choice:</p>\n<ul>\n<li>Highest ability score</li>\n<li>Lowest ability score</li>\n<li>Strongest saving throw</li>\n<li>Weakest saving throw</li>\n</ul>\n<h3>Vulnerable Strike</h3>\n<p>You attempt to stagger the target. The target must make a Wisdom saving throw. On a failed save, the next time you would make an attack roll against the target before the end of your next turn, you can instead force the target to make a saving throw with the ability score of your choice. On a failed save, the creature takes normal weapon damage and you can apply your Sneak Attack dice to the roll.</p>"
             },
             "requirements": "Operative (Lethality Practice) 3",
             "source": "PHB",
@@ -8532,7 +8532,7 @@
         "name": "Priming Attack",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9894189+00:00",
+                "timestamp": "2022-08-17T00:39:51.1248481+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-priming_attack.source-archetype.sourceName-lethality_practice.level-3"
             }
@@ -8590,7 +8590,7 @@
         "name": "Target Assessment",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9894189+00:00",
+                "timestamp": "2022-08-17T00:39:51.1248481+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-target_assessment.source-archetype.sourceName-lethality_practice.level-3"
             }
@@ -8648,7 +8648,7 @@
         "name": "Vulnerable Strike",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9894189+00:00",
+                "timestamp": "2022-08-17T00:39:51.1248481+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-vulnerable_strike.source-archetype.sourceName-lethality_practice.level-3"
             }
@@ -8657,7 +8657,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/OPRT-ARCH-Passive.webp",
         "system": {
             "description": {
-                "value": "<p>You attempt to stagger the target. The target must make a Wisdom saving throw. On a failed save, the next time you would make an attack roll against the target before the end of your next turn, you can instead force the target to make a saving throw with the ability score of your choice. On a failed save, the creature takes normal weapon damage, is subjected to any additional effects that would occur on a hit, and you can apply your Sneak Attack damage to the roll.</p>"
+                "value": "<p>You attempt to stagger the target. The target must make a Wisdom saving throw. On a failed save, the next time you would make an attack roll against the target before the end of your next turn, you can instead force the target to make a saving throw with the ability score of your choice. On a failed save, the creature takes normal weapon damage and you can apply your Sneak Attack dice to the roll.</p>"
             },
             "requirements": "Operative (Lethality Practice) 3",
             "source": "PHB",
@@ -9528,7 +9528,7 @@
         "name": "Reckless Power",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9344514+00:00",
+                "timestamp": "2023-05-30T20:15:42.7149511+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-reckless_power.source-archetype.sourceName-marauder_approach.level-6"
             }
@@ -10418,7 +10418,7 @@
         "name": "Entropic Rush",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.2699098+00:00",
+                "timestamp": "2023-05-30T20:15:26.6181303+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-entropic_rush.source-archetype.sourceName-path_of_aggression.level-7"
             }
@@ -10476,7 +10476,7 @@
         "name": "Living Current",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.1619456+00:00",
+                "timestamp": "2023-05-30T20:15:26.6181303+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-living_current.source-archetype.sourceName-path_of_aggression.level-13"
             }
@@ -10534,7 +10534,7 @@
         "name": "Thunderous Momentum",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.2699098+00:00",
+                "timestamp": "2023-05-30T20:15:26.6181303+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-thunderous_momentum.source-archetype.sourceName-path_of_aggression.level-3"
             }
@@ -10592,7 +10592,7 @@
         "name": "Voltaic Slash",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-08-17T00:39:14.2689102+00:00",
+                "timestamp": "2023-05-30T20:15:26.6171316+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-voltaic_slash.source-archetype.sourceName-path_of_aggression.level-3"
             }
@@ -11245,7 +11245,7 @@
         "name": "Energized Kinetics",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.8684887+00:00",
+                "timestamp": "2022-08-17T00:39:51.2598038+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-energized_kinetics.source-archetype.sourceName-path_of_the_corsair.level-13"
             }
@@ -12642,7 +12642,7 @@
         "name": "Battle Anticipation",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-05-29T01:36:27.7370075+00:00",
+                "timestamp": "2023-05-30T20:15:26.4132476+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-battle_anticipation.source-archetype.sourceName-precision_approach.level-6"
             }
@@ -12700,7 +12700,7 @@
         "name": "Careful Steps",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-05-29T01:36:27.7370075+00:00",
+                "timestamp": "2023-05-30T20:15:26.4132476+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-careful_steps.source-archetype.sourceName-precision_approach.level-3"
             }
@@ -12758,7 +12758,7 @@
         "name": "Focused Rage",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-05-29T01:36:27.7370075+00:00",
+                "timestamp": "2023-05-30T20:15:26.4132476+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-focused_rage.source-archetype.sourceName-precision_approach.level-3"
             }
@@ -12816,7 +12816,7 @@
         "name": "Improved Danger Sense",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-05-29T01:36:27.7370075+00:00",
+                "timestamp": "2023-05-30T20:15:26.4132476+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-improved_danger_sense.source-archetype.sourceName-precision_approach.level-10"
             }
@@ -13396,7 +13396,7 @@
         "name": "Rallying Cry",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:57.9474436+00:00",
+                "timestamp": "2023-05-30T20:15:42.7249456+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-rallying_cry.source-archetype.sourceName-shield_specialist.level-7"
             }
@@ -16170,7 +16170,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/FGTR-ARCH-Passive.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Tactical Specialist:</strong> 7th level</em></p>\n<p>If you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about its capabilities compared to your own. The GM tells you if the creature is your equal, superior, or inferior in regard to two of the following characteristics of your choice:</p>\n<h4>Tactical Superiority</h4>\n<p>Level|Maneuvers Known|Superiority Dice Quantity|</p>\n<p>|:---:|:---:|:---:|:---:|</p>\n<p>| 3rd| 4| 4|</p>\n<p>| 4th| 5| 4|</p>\n<p>| 5th| 6| 5|</p>\n<p>| 6th| 7| 5|</p>\n<p>| 7th| 9| 6|</p>\n<p>| 8th|10| 6|</p>\n<p>| 9th|11| 7|</p>\n<p>|10th|12| 7|</p>\n<p>|11th|14| 8|</p>\n<p>|12th|15| 8|</p>\n<p>|13th|16| 9|</p>\n<p>|14th|17| 9|</p>\n<p>|15th|19|10|</p>\n<p>|16th|20|10|</p>\n<p>|17th|21|11|</p>\n<p>|18th|22|11|</p>\n<p>|19th|23|12|</p>\n<p>|20th|24|12|</p>\n<ul>\n<li>Strength score</li>\n<li>Dexterity score</li>\n<li>Constitution score</li>\n<li>Armor Class</li>\n<li>Current hit points</li>\n<li>Total class levels (if any)</li>\n<li>Fighter class levels (if any)</li>"
+                "value": "<p><em><strong>Tactical Specialist:</strong> 7th level</em></p>\n<p>If you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about its capabilities compared to your own. The GM tells you if the creature is your equal, superior, or inferior in regard to two of the following characteristics of your choice:</p>\n<ul>\n<li>Strength score</li>\n<li>Dexterity score</li>\n<li>Constitution score</li>\n<li>Armor Class</li>\n<li>Current hit points</li>\n<li>Total class levels (if any)</li>\n<li>Fighter class levels (if any)</li>"
             },
             "requirements": "Fighter (Tactical Specialist) 7",
             "source": "PHB",
@@ -17293,7 +17293,7 @@
         "name": "Commanding Rage",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-05-29T01:36:27.7380074+00:00",
+                "timestamp": "2023-05-30T20:15:26.4142482+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-commanding_rage.source-archetype.sourceName-warchief_approach.level-3"
             }
@@ -17351,7 +17351,7 @@
         "name": "Inspiring Presence",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-05-29T01:36:27.7380074+00:00",
+                "timestamp": "2023-05-30T20:15:26.4142482+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-inspiring_presence.source-archetype.sourceName-warchief_approach.level-6"
             }
@@ -17409,7 +17409,7 @@
         "name": "Raid Planning",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-05-29T01:36:27.7380074+00:00",
+                "timestamp": "2023-05-30T20:15:26.4142482+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-raid_planning.source-archetype.sourceName-warchief_approach.level-10"
             }
@@ -17418,7 +17418,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/BSKR-ARCH-Passive.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Warchief Approach:</strong> 10th level</em></p>\n<p>You learn to flare up your allies' drive for combat, urging them to follow you into the fray. During a long rest, you tell sagas, sing battle songs, and give inspiring speeches. At the end of the long rest choose up to 5 creatures that can hear and understand you (which can include yourself) to add your Charisma modifier (minimum of +1) to their next initiative roll, and a 10 foot bonus to their speed on their first turn of combat.</p>"
+                "value": "<p><em><strong>Warchief Approach:</strong> 10th level</em></p>\n<p>You learn to flare up your allies' drive for combat, urging them to follow you into the fray. During a long rest, you tell sagas, sing battle songs, and give inspiring speeches. At the end of the long rest choose up to 5 creatures that can hear and understand you (which can include yourself) to add your Charisma modifier (minimum of +1) to their next Initiative check, and a 10 foot bonus to their speed on their first turn of combat.</p>"
             },
             "requirements": "Berserker (Warchief Approach) 10",
             "source": "EC",
@@ -17467,7 +17467,7 @@
         "name": "Savage Diplomat",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2022-05-29T01:36:27.7380074+00:00",
+                "timestamp": "2023-05-30T20:15:26.4132476+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-savage_diplomat.source-archetype.sourceName-warchief_approach.level-3"
             }
@@ -19807,7 +19807,7 @@
         "name": "Whirling Weapons",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.7497019+00:00",
+                "timestamp": "2023-05-30T20:15:26.4662184+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-whirling_weapons.source-archetype.sourceName-adept_specialist.level-7"
             }
@@ -19816,7 +19816,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/FGTR-ARCH-Passive.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Adept Specialist:</strong> 7th level</em></p>\n<p>Your constant blur of motion and attacks becomes an unending barrage as you build momentum. Once on your turn when you miss with a weapon attack you can make another weapon attack, no action required.</p>"
+                "value": "<p><em><strong>Adept Specialist:</strong> 7th level</em></p>\n<p>Your constant blur of motion and attacks becomes an unending barrage as you build momentum. Once on your turn when you miss with a weapon attack you can make another weapon attack, no action required. </p>"
             },
             "requirements": "Fighter (Adept Specialist) 7",
             "source": "EC",
@@ -19865,7 +19865,7 @@
         "name": "Flow-Walking",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.68174+00:00",
+                "timestamp": "2023-05-30T20:15:26.6191308+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-flow_walking.source-archetype.sourceName-aing_tii_order.level-13"
             }
@@ -19923,7 +19923,7 @@
         "name": "Flow-Walking",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.68174+00:00",
+                "timestamp": "2023-05-30T20:15:26.6191308+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-flow_walking.source-archetype.sourceName-aing_tii_order.level-17"
             }
@@ -19981,7 +19981,7 @@
         "name": "Flow-Walking",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.68174+00:00",
+                "timestamp": "2023-05-30T20:15:26.6191308+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-flow_walking.source-archetype.sourceName-aing_tii_order.level-6"
             }
@@ -20039,7 +20039,7 @@
         "name": "Flow-Walking",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.68174+00:00",
+                "timestamp": "2023-05-30T20:15:26.6191308+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-flow_walking.source-archetype.sourceName-aing_tii_order.level-9"
             }
@@ -21315,7 +21315,7 @@
         "name": "Forcecasting",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.677743+00:00",
+                "timestamp": "2023-05-30T20:15:26.5561676+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-forcecasting.source-archetype.sourceName-archaeologist_pursuit.level-3"
             }
@@ -21373,7 +21373,7 @@
         "name": "Force Powers Known",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.677743+00:00",
+                "timestamp": "2023-05-30T20:15:26.5561676+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-force_powers_known.source-archetype.sourceName-archaeologist_pursuit.level-3"
             }
@@ -21431,7 +21431,7 @@
         "name": "Force Points",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.677743+00:00",
+                "timestamp": "2023-05-30T20:15:26.5561676+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-force_points.source-archetype.sourceName-archaeologist_pursuit.level-3"
             }
@@ -21489,7 +21489,7 @@
         "name": "Max Power Level",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.677743+00:00",
+                "timestamp": "2023-05-30T20:15:26.5561676+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-max_power_level.source-archetype.sourceName-archaeologist_pursuit.level-3"
             }
@@ -21547,7 +21547,7 @@
         "name": "Forcecasting Ability",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.677743+00:00",
+                "timestamp": "2023-05-30T20:15:26.5561676+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-forcecasting_ability.source-archetype.sourceName-archaeologist_pursuit.level-3"
             }
@@ -30104,7 +30104,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/BSKR-ARCH-Passive.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Champion Approach:</strong> 3rd level</em></p>\n<p>When you use your Reckless Attack feature, you have advantage on superiority die rolls that would be added to the attack or damage rolls of your affected attacks.</p>\n<h4>Champion Superiority</h4>\n<p>|Level|Maneuvers Known|Superiority Dice Quantity|Superiority Dice Size|</p>\n<p>|:--:|:--:|:--:|:--:|</p>\n<p>| 3rd| 2|2| [[/r d4]]|</p>\n<p>| 4th| 2|2| [[/r d4]]|</p>\n<p>| 5th| 4|3| [[/r d6]]|</p>\n<p>| 6th| 4|3| [[/r d6]]|</p>\n<p>| 7th| 5|3| [[/r d6]]|</p>\n<p>| 8th| 5|3| [[/r d6]]|</p>\n<p>| 9th| 6|4| [[/r d8]]|</p>\n<p>|10th| 6|4| [[/r d8]]|</p>\n<p>|11th| 7|4| [[/r d8]]|</p>\n<p>|12th| 7|4| [[/r d8]]|</p>\n<p>|13th| 9|5|[[/r d10]]|</p>\n<p>|14th| 9|5|[[/r d10]]|</p>\n<p>|15th|10|5|[[/r d10]]|</p>\n<p>|16th|10|5|[[/r d10]]|</p>\n<p>|17th|11|6|[[/r d12]]|</p>\n<p>|18th|11|6|[[/r d12]]|</p>\n<p>|19th|12|6|[[/r d12]]|</p>\n<p>|20th|12|6|[[/r d12]]|</p>"
+                "value": "<p><em><strong>Champion Approach:</strong> 3rd level</em></p>\n<p>When you use your Reckless Attack feature, you have advantage on superiority die rolls that would be added to the attack or damage rolls of your affected attacks.</p>"
             },
             "requirements": "Berserker (Champion Approach) 3",
             "source": "EC",
@@ -30133,80 +30133,7 @@
             },
             "actionType": "other",
             "damage": {
-                "parts": [
-                    [
-                        "1d4",
-                        ""
-                    ],
-                    [
-                        "1d4",
-                        ""
-                    ],
-                    [
-                        "1d6",
-                        ""
-                    ],
-                    [
-                        "1d6",
-                        ""
-                    ],
-                    [
-                        "1d6",
-                        ""
-                    ],
-                    [
-                        "1d6",
-                        ""
-                    ],
-                    [
-                        "1d8",
-                        ""
-                    ],
-                    [
-                        "1d8",
-                        ""
-                    ],
-                    [
-                        "1d8",
-                        ""
-                    ],
-                    [
-                        "1d8",
-                        ""
-                    ],
-                    [
-                        "1d10",
-                        ""
-                    ],
-                    [
-                        "1d10",
-                        ""
-                    ],
-                    [
-                        "1d10",
-                        ""
-                    ],
-                    [
-                        "1d10",
-                        ""
-                    ],
-                    [
-                        "1d12",
-                        ""
-                    ],
-                    [
-                        "1d12",
-                        ""
-                    ],
-                    [
-                        "1d12",
-                        ""
-                    ],
-                    [
-                        "1d12",
-                        ""
-                    ]
-                ],
+                "parts": [],
                 "versatile": ""
             },
             "formula": "",
@@ -33083,7 +33010,7 @@
         "name": "Quickslice",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.7457031+00:00",
+                "timestamp": "2023-05-30T20:15:26.4642184+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-quickslice.source-archetype.sourceName-cybertech_engineering.level-6"
             }
@@ -33208,7 +33135,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/SCT-ARCH-Passive.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Deadeye Technique:</strong> 7th level</em></p>\n<p>Attack rolls made against you on your turn are made with disadvantage.</p>\n<h4>Deadeye Superiority</h4>\n<p>|Level|Maneuvers Known|Superiority Dice Quantity|Superiority Dice Size|</p>\n<p>|:--:|:--:|:--:|:--:|</p>\n<p>| 3rd| 2|2| [[/r d4]]|</p>\n<p>| 4th| 2|2| [[/r d4]]|</p>\n<p>| 5th| 4|3| [[/r d6]]|</p>\n<p>| 6th| 4|3| [[/r d6]]|</p>\n<p>| 7th| 5|3| [[/r d6]]|</p>\n<p>| 8th| 5|3| [[/r d6]]|</p>\n<p>| 9th| 6|4| [[/r d8]]|</p>\n<p>|10th| 6|4| [[/r d8]]|</p>\n<p>|11th| 7|4| [[/r d8]]|</p>\n<p>|12th| 7|4| [[/r d8]]|</p>\n<p>|13th| 9|5|[[/r d10]]|</p>\n<p>|14th| 9|5|[[/r d10]]|</p>\n<p>|15th|10|5|[[/r d10]]|</p>\n<p>|16th|10|5|[[/r d10]]|</p>\n<p>|17th|11|6|[[/r d12]]|</p>\n<p>|18th|11|6|[[/r d12]]|</p>\n<p>|19th|12|6|[[/r d12]]|</p>\n<p>|20th|12|6|[[/r d12]]|</p>"
+                "value": "<p><em><strong>Deadeye Technique:</strong> 7th level</em></p>\n<p>Attack rolls made against you on your turn are made with disadvantage.</p>"
             },
             "requirements": "Scout (Deadeye Technique) 7",
             "source": "EC",
@@ -33237,80 +33164,7 @@
             },
             "actionType": "other",
             "damage": {
-                "parts": [
-                    [
-                        "1d4",
-                        ""
-                    ],
-                    [
-                        "1d4",
-                        ""
-                    ],
-                    [
-                        "1d6",
-                        ""
-                    ],
-                    [
-                        "1d6",
-                        ""
-                    ],
-                    [
-                        "1d6",
-                        ""
-                    ],
-                    [
-                        "1d6",
-                        ""
-                    ],
-                    [
-                        "1d8",
-                        ""
-                    ],
-                    [
-                        "1d8",
-                        ""
-                    ],
-                    [
-                        "1d8",
-                        ""
-                    ],
-                    [
-                        "1d8",
-                        ""
-                    ],
-                    [
-                        "1d10",
-                        ""
-                    ],
-                    [
-                        "1d10",
-                        ""
-                    ],
-                    [
-                        "1d10",
-                        ""
-                    ],
-                    [
-                        "1d10",
-                        ""
-                    ],
-                    [
-                        "1d12",
-                        ""
-                    ],
-                    [
-                        "1d12",
-                        ""
-                    ],
-                    [
-                        "1d12",
-                        ""
-                    ],
-                    [
-                        "1d12",
-                        ""
-                    ]
-                ],
+                "parts": [],
                 "versatile": ""
             },
             "formula": "",
@@ -36783,7 +36637,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/FGTR-ARCH-Bonus.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Fireteam Specialist:</strong> 10th level</em></p>\n<p>While your companion is within 5 feet of you, you can use your bonus action to begin a coordinated </p>\n<h4>Fireteam Superiority</h4>\n<p>|Level|Maneuvers Known|Superiority Dice Quantity|</p>\n<p>|:---:|:---:|:---:|:---:|</p>\n<p>| 3rd| 4| 4|</p>\n<p>| 4th| 5| 4|</p>\n<p>| 5th| 6| 5|</p>\n<p>| 6th| 7| 5|</p>\n<p>| 7th| 9| 6|</p>\n<p>| 8th|10| 6| </p>\n<p>| 9th|11| 7|</p>\n<p>|10th|12| 7|</p>\n<p>|11th|14| 8|</p>\n<p>|12th|15| 8|</p>\n<p>|13th|16| 9|</p>\n<p>|14th|17| 9|</p>\n<p>|15th|19|10|</p>\n<p>|16th|20|10|</p>\n<p>|17th|21|11|</p>\n<p>|18th|22|11|</p>\n<p>|19th|23|12|</p>\n<p>|20th|24|12|</p>\n<p>maneuver. For the next minute, while you and your companion are within 5 feet of each other and neither of you are wielding a shield, you each gain a bonus to AC equal to half your proficiency bonus.</p>\n<p>This effect ends early if either you or your companion are incapacitated or die. Once you've used this feature, you can't use it again until you complete a long rest.</p>"
+                "value": "<p><em><strong>Fireteam Specialist:</strong> 10th level</em></p>\n<p>While your companion is within 5 feet of you, you can use your bonus action to begin a coordinated </p>\n<p>maneuver. For the next minute, while you and your companion are within 5 feet of each other and neither of you are wielding a shield, you each gain a bonus to AC equal to half your proficiency bonus.</p>\n<p>This effect ends early if either you or your companion are incapacitated or die. Once you've used this feature, you can't use it again until you complete a long rest.</p>"
             },
             "requirements": "Fighter (Fireteam Specialist (Companion)) 10",
             "source": "EC",
@@ -37131,7 +36985,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/FGTR-ARCH-Reaction.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Fireteam Specialist:</strong> 10th level</em></p>\n<p>You can use your bonus action to begin a coordinated maneuver with an ally who is within 5 feet of you. For the next minute, while you and the chosen ally are within 5 feet of each other and neither of you are wielding a shield, you each gain a bonus to AC equal to half your proficiency bonus.</p>\n<p>When the chosen ally moves on their turn, you can use your reaction to move with them. You must end this movement within 5 feet of the ally, and this movement can't exceed your speed.</p>\n<p>This effect ends early if either you or your ally are incapacitated or die. Once you've used this feature, you can't use it again until you complete a long rest.</p>\n<h4>Fireteam Superiority</h4>\n<p>|Level|Maneuvers Known|Superiority Dice Quantity|</p>\n<p>|:---:|:---:|:---:|:---:|</p>\n<p>| 3rd| 4| 4|</p>\n<p>| 4th| 5| 4|</p>\n<p>| 5th| 6| 5|</p>\n<p>| 6th| 7| 5|</p>\n<p>| 7th| 9| 6|</p>\n<p>| 8th|10| 6| </p>\n<p>| 9th|11| 7|</p>\n<p>|10th|12| 7|</p>\n<p>|11th|14| 8|</p>\n<p>|12th|15| 8|</p>\n<p>|13th|16| 9|</p>\n<p>|14th|17| 9|</p>\n<p>|15th|19|10|</p>\n<p>|16th|20|10|</p>\n<p>|17th|21|11|</p>\n<p>|18th|22|11|</p>\n<p>|19th|23|12|</p>\n<p>|20th|24|12|</p>"
+                "value": "<p><em><strong>Fireteam Specialist:</strong> 10th level</em></p>\n<p>You can use your bonus action to begin a coordinated maneuver with an ally who is within 5 feet of you. For the next minute, while you and the chosen ally are within 5 feet of each other and neither of you are wielding a shield, you each gain a bonus to AC equal to half your proficiency bonus.</p>\n<p>When the chosen ally moves on their turn, you can use your reaction to move with them. You must end this movement within 5 feet of the ally, and this movement can't exceed your speed.</p>\n<p>This effect ends early if either you or your ally are incapacitated or die. Once you've used this feature, you can't use it again until you complete a long rest.</p>"
             },
             "requirements": "Fighter (Fireteam Specialist) 10",
             "source": "EC",
@@ -45706,7 +45560,7 @@
         "img": "systems/sw5e/packs/Icons/Class%20Features/OPRT-ARCH-Passive.webp",
         "system": {
             "description": {
-                "value": "<p><em><strong>Maverick Practice:</strong> 9th level</em></p>\n<p>When a creature fails a saving throw or ability check against you or an effect you control, you don't need advantage on your attack roll to use Sneak Attack, you can't have disadvantage on attack rolls against that creature, and that creature can't have advantage on ability checks and saving throws against effects you control. These effects last until the end of your next turn.</p>\n<h4>Maverick Superiority</h4>\n<p>|Level|Maneuvers Known|Superiority Dice Quantity|Superiority Dice Size|</p>\n<p>|:--:|:--:|:--:|:--:|</p>\n<p>| 3rd| 2|2| [[/r d4]]|</p>\n<p>| 4th| 2|2| [[/r d4]]|</p>\n<p>| 5th| 4|3| [[/r d6]]|</p>\n<p>| 6th| 4|3| [[/r d6]]|</p>\n<p>| 7th| 5|3| [[/r d6]]|</p>\n<p>| 8th| 5|3| [[/r d6]]|</p>\n<p>| 9th| 6|4| [[/r d8]]|</p>\n<p>|10th| 6|4| [[/r d8]]|</p>\n<p>|11th| 7|4| [[/r d8]]|</p>\n<p>|12th| 7|4| [[/r d8]]|</p>\n<p>|13th| 9|5|[[/r d10]]|</p>\n<p>|14th| 9|5|[[/r d10]]|</p>\n<p>|15th|10|5|[[/r d10]]|</p>\n<p>|16th|10|5|[[/r d10]]|</p>\n<p>|17th|11|6|[[/r d12]]|</p>\n<p>|18th|11|6|[[/r d12]]|</p>\n<p>|19th|12|6|[[/r d12]]|</p>\n<p>|20th|12|6|[[/r d12]]|</p>"
+                "value": "<p><em><strong>Maverick Practice:</strong> 9th level</em></p>\n<p>When a creature fails a saving throw or ability check against you or an effect you control, you don't need advantage on your attack roll to use Sneak Attack, you can't have disadvantage on attack rolls against that creature, and that creature can't have advantage on ability checks and saving throws against effects you control. These effects last until the end of your next turn.</p>"
             },
             "requirements": "Operative (Maverick Practice) 9",
             "source": "EC",
@@ -45735,80 +45589,7 @@
             },
             "actionType": "other",
             "damage": {
-                "parts": [
-                    [
-                        "1d4",
-                        ""
-                    ],
-                    [
-                        "1d4",
-                        ""
-                    ],
-                    [
-                        "1d6",
-                        ""
-                    ],
-                    [
-                        "1d6",
-                        ""
-                    ],
-                    [
-                        "1d6",
-                        ""
-                    ],
-                    [
-                        "1d6",
-                        ""
-                    ],
-                    [
-                        "1d8",
-                        ""
-                    ],
-                    [
-                        "1d8",
-                        ""
-                    ],
-                    [
-                        "1d8",
-                        ""
-                    ],
-                    [
-                        "1d8",
-                        ""
-                    ],
-                    [
-                        "1d10",
-                        ""
-                    ],
-                    [
-                        "1d10",
-                        ""
-                    ],
-                    [
-                        "1d10",
-                        ""
-                    ],
-                    [
-                        "1d10",
-                        ""
-                    ],
-                    [
-                        "1d12",
-                        ""
-                    ],
-                    [
-                        "1d12",
-                        ""
-                    ],
-                    [
-                        "1d12",
-                        ""
-                    ],
-                    [
-                        "1d12",
-                        ""
-                    ]
-                ],
+                "parts": [],
                 "versatile": ""
             },
             "formula": "",
@@ -46234,7 +46015,7 @@
         "name": "Mark of the Mechanist",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.6857378+00:00",
+                "timestamp": "2023-05-30T20:15:26.6131342+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-mark_of_the_mechanist.source-archetype.sourceName-mechanist_technique_companion.level-7"
             }
@@ -46640,7 +46421,7 @@
         "name": "High Voltage",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.6837386+00:00",
+                "timestamp": "2023-05-30T20:15:26.6121355+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-high_voltage.source-archetype.sourceName-mechanist_technique.level-11"
             }
@@ -54097,7 +53878,7 @@
         "name": "Focused Tech",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.6847388+00:00",
+                "timestamp": "2023-05-30T20:15:26.6231293+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-focused_tech.source-archetype.sourceName-rakatan_order.level-6"
             }
@@ -55030,7 +54811,7 @@
         "name": "Ion Pulse",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.6747441+00:00",
+                "timestamp": "2023-05-30T20:15:26.5541688+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-ion_pulse.source-archetype.sourceName-saboteur_practice.level-13"
             }
@@ -58633,7 +58414,7 @@
         "name": "Techcasting",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.6837386+00:00",
+                "timestamp": "2023-05-30T20:15:26.561164+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-techcasting.source-archetype.sourceName-slicer_pursuit.level-3"
             }
@@ -58691,7 +58472,7 @@
         "name": "Tech Powers Known",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.6837386+00:00",
+                "timestamp": "2023-05-30T20:15:26.561164+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-tech_powers_known.source-archetype.sourceName-slicer_pursuit.level-3"
             }
@@ -58749,7 +58530,7 @@
         "name": "Tech Points",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.6837386+00:00",
+                "timestamp": "2023-05-30T20:15:26.561164+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-tech_points.source-archetype.sourceName-slicer_pursuit.level-3"
             }
@@ -58807,7 +58588,7 @@
         "name": "Max Power Level",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.6837386+00:00",
+                "timestamp": "2023-05-30T20:15:26.561164+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-max_power_level.source-archetype.sourceName-slicer_pursuit.level-3"
             }
@@ -58865,7 +58646,7 @@
         "name": "Techcasting Ability",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.6837386+00:00",
+                "timestamp": "2023-05-30T20:15:26.561164+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-techcasting_ability.source-archetype.sourceName-slicer_pursuit.level-3"
             }
@@ -58923,7 +58704,7 @@
         "name": "Techcasting Focus",
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:14.6837386+00:00",
+                "timestamp": "2023-05-30T20:15:26.561164+00:00",
                 "importer_version": 3,
                 "uid": "Feature.name-techcasting_focus.source-archetype.sourceName-slicer_pursuit.level-3"
             }
@@ -68134,6 +67915,528 @@
                 "value": "<p><em><strong>Zoologist Pursuit:</strong> 3rd level</em></p>\n<p>You gain proficiency in Animal Handling, and you have advantage on Wisdom (Animal Handling) checks. Additionally, you can't have disadvantage on Wisdom (Animal Handling) checks.</p>"
             },
             "requirements": "Scholar (Zoologist Pursuit) 3",
+            "source": "EC",
+            "activation": {
+                "type": null,
+                "cost": null
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            },
+            "type": {
+                "value": "class",
+                "subtype": ""
+            }
+        },
+        "effects": []
+    },
+    "Feature.name-adaptable_applications.source-archetype.sourceName-cybertech_engineering_old.level-13": {
+        "name": "Adaptable Applications",
+        "flags": {
+            "sw5e-importer": {
+                "timestamp": "2023-05-30T20:15:26.4652185+00:00",
+                "importer_version": 3,
+                "uid": "Feature.name-adaptable_applications.source-archetype.sourceName-cybertech_engineering_old.level-13"
+            }
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Class%20Features/ENGR-ARCH-Action.webp",
+        "system": {
+            "description": {
+                "value": "<p><em><strong>Cybertech Engineering (Old):</strong> 6th, 9th, 13th, and 17th level</em></p>\n<p>When you cast a tech power of 1st level or higher, you can choose to deal additional damage or provide additional healing with that power. The additional damage or healing equals half your engineer level.</p>\n<p>You can use this feature three times. You gain an additional use at 9th, 13th, and 17th level. You regain all expended uses when you complete a long rest.</p>"
+            },
+            "requirements": "Engineer (Cybertech Engineering (Old)) 13",
+            "source": "EC",
+            "activation": {
+                "type": "special",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": 3,
+                "per": "lr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            },
+            "type": {
+                "value": "class",
+                "subtype": ""
+            }
+        },
+        "effects": []
+    },
+    "Feature.name-adaptable_applications.source-archetype.sourceName-cybertech_engineering_old.level-17": {
+        "name": "Adaptable Applications",
+        "flags": {
+            "sw5e-importer": {
+                "timestamp": "2023-05-30T20:15:26.4652185+00:00",
+                "importer_version": 3,
+                "uid": "Feature.name-adaptable_applications.source-archetype.sourceName-cybertech_engineering_old.level-17"
+            }
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Class%20Features/ENGR-ARCH-Action.webp",
+        "system": {
+            "description": {
+                "value": "<p><em><strong>Cybertech Engineering (Old):</strong> 6th, 9th, 13th, and 17th level</em></p>\n<p>When you cast a tech power of 1st level or higher, you can choose to deal additional damage or provide additional healing with that power. The additional damage or healing equals half your engineer level.</p>\n<p>You can use this feature three times. You gain an additional use at 9th, 13th, and 17th level. You regain all expended uses when you complete a long rest.</p>"
+            },
+            "requirements": "Engineer (Cybertech Engineering (Old)) 17",
+            "source": "EC",
+            "activation": {
+                "type": "special",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": 3,
+                "per": "lr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            },
+            "type": {
+                "value": "class",
+                "subtype": ""
+            }
+        },
+        "effects": []
+    },
+    "Feature.name-adaptable_applications.source-archetype.sourceName-cybertech_engineering_old.level-6": {
+        "name": "Adaptable Applications",
+        "flags": {
+            "sw5e-importer": {
+                "timestamp": "2023-05-30T20:15:26.4652185+00:00",
+                "importer_version": 3,
+                "uid": "Feature.name-adaptable_applications.source-archetype.sourceName-cybertech_engineering_old.level-6"
+            }
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Class%20Features/ENGR-ARCH-Action.webp",
+        "system": {
+            "description": {
+                "value": "<p><em><strong>Cybertech Engineering (Old):</strong> 6th, 9th, 13th, and 17th level</em></p>\n<p>When you cast a tech power of 1st level or higher, you can choose to deal additional damage or provide additional healing with that power. The additional damage or healing equals half your engineer level.</p>\n<p>You can use this feature three times. You gain an additional use at 9th, 13th, and 17th level. You regain all expended uses when you complete a long rest.</p>"
+            },
+            "requirements": "Engineer (Cybertech Engineering (Old)) 6",
+            "source": "EC",
+            "activation": {
+                "type": "special",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": 3,
+                "per": "lr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            },
+            "type": {
+                "value": "class",
+                "subtype": ""
+            }
+        },
+        "effects": []
+    },
+    "Feature.name-adaptable_applications.source-archetype.sourceName-cybertech_engineering_old.level-9": {
+        "name": "Adaptable Applications",
+        "flags": {
+            "sw5e-importer": {
+                "timestamp": "2023-05-30T20:15:26.4652185+00:00",
+                "importer_version": 3,
+                "uid": "Feature.name-adaptable_applications.source-archetype.sourceName-cybertech_engineering_old.level-9"
+            }
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Class%20Features/ENGR-ARCH-Action.webp",
+        "system": {
+            "description": {
+                "value": "<p><em><strong>Cybertech Engineering (Old):</strong> 6th, 9th, 13th, and 17th level</em></p>\n<p>When you cast a tech power of 1st level or higher, you can choose to deal additional damage or provide additional healing with that power. The additional damage or healing equals half your engineer level.</p>\n<p>You can use this feature three times. You gain an additional use at 9th, 13th, and 17th level. You regain all expended uses when you complete a long rest.</p>"
+            },
+            "requirements": "Engineer (Cybertech Engineering (Old)) 9",
+            "source": "EC",
+            "activation": {
+                "type": "special",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": 3,
+                "per": "lr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            },
+            "type": {
+                "value": "class",
+                "subtype": ""
+            }
+        },
+        "effects": []
+    },
+    "Feature.name-bonus_proficiencies.source-archetype.sourceName-cybertech_engineering_old.level-3": {
+        "name": "Bonus Proficiencies",
+        "flags": {
+            "sw5e-importer": {
+                "timestamp": "2023-05-30T20:15:26.4642184+00:00",
+                "importer_version": 3,
+                "uid": "Feature.name-bonus_proficiencies.source-archetype.sourceName-cybertech_engineering_old.level-3"
+            }
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Class%20Features/ENGR-ARCH-Passive.webp",
+        "system": {
+            "description": {
+                "value": "<p><em><strong>Cybertech Engineering (Old):</strong> 3rd level</em></p>\n<p>You gain proficiency in cybertech's implements. Additionally, when you engage in crafting with cybertech's implements, the rate at which you craft doubles.</p>"
+            },
+            "requirements": "Engineer (Cybertech Engineering (Old)) 3",
+            "source": "EC",
+            "activation": {
+                "type": null,
+                "cost": null
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            },
+            "type": {
+                "value": "class",
+                "subtype": ""
+            }
+        },
+        "effects": []
+    },
+    "Feature.name-combat_contrivances.source-archetype.sourceName-cybertech_engineering_old.level-14": {
+        "name": "Combat Contrivances",
+        "flags": {
+            "sw5e-importer": {
+                "timestamp": "2023-05-30T20:15:26.4652185+00:00",
+                "importer_version": 3,
+                "uid": "Feature.name-combat_contrivances.source-archetype.sourceName-cybertech_engineering_old.level-14"
+            }
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Class%20Features/ENGR-ARCH-Bonus.webp",
+        "system": {
+            "description": {
+                "value": "<p><em><strong>Cybertech Engineering (Old):</strong> 14th level</em></p>\n<p>When you use your action to a cast a 1st-level or higher tech power, you can use your bonus action to gain temporary hit points equal to the level of the tech power + your Intelligence modifier.</p>"
+            },
+            "requirements": "Engineer (Cybertech Engineering (Old)) 14",
+            "source": "EC",
+            "activation": {
+                "type": "bonus",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            },
+            "type": {
+                "value": "class",
+                "subtype": ""
+            }
+        },
+        "effects": []
+    },
+    "Feature.name-cybertech_contraptions.source-archetype.sourceName-cybertech_engineering_old.level-3": {
+        "name": "Cybertech Contraptions",
+        "flags": {
+            "sw5e-importer": {
+                "timestamp": "2023-05-30T20:15:26.4652185+00:00",
+                "importer_version": 3,
+                "uid": "Feature.name-cybertech_contraptions.source-archetype.sourceName-cybertech_engineering_old.level-3"
+            }
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Class%20Features/ENGR-ARCH-Passive.webp",
+        "system": {
+            "description": {
+                "value": "<p><em><strong>Cybertech Engineering (Old):</strong> 3rd level</em></p>\n<p>You learn modify gadgets and wristpads utilizing your cybertech knowledge. Over the course of a long rest, you can modify your wristpad. You must have a wristpad and cybertech's implements in order to perform this modification.</p>\n<p>Your wristpad requires attunement, can only be used by you, and counts as a tech focus for your tech powers while you are attuned to it. Your modified wristpad has 4 modification slots, and it gains more at higher levels, as shown in the Modification Slots column of the engineer table. For each modification installed in excess of your proficiency bonus, your tech point maximum is reduced by 1. Over the course of a long rest, you can install, replace, or remove a number of modifications up to your Intelligence modifier (minimum of one).</p>\n<p>Some modification effects require saving throws. When you use such an effect from this class, the DC equals your tech save DC.</p>"
+            },
+            "requirements": "Engineer (Cybertech Engineering (Old)) 3",
+            "source": "EC",
+            "activation": {
+                "type": null,
+                "cost": null
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            },
+            "type": {
+                "value": "class",
+                "subtype": ""
+            }
+        },
+        "effects": []
+    },
+    "Feature.name-perfected_purposing.source-archetype.sourceName-cybertech_engineering_old.level-18": {
+        "name": "Perfected Purposing",
+        "flags": {
+            "sw5e-importer": {
+                "timestamp": "2023-05-30T20:15:26.4652185+00:00",
+                "importer_version": 3,
+                "uid": "Feature.name-perfected_purposing.source-archetype.sourceName-cybertech_engineering_old.level-18"
+            }
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Class%20Features/ENGR-ARCH-Action.webp",
+        "system": {
+            "description": {
+                "value": "<p><em><strong>Cybertech Engineering (Old):</strong> 18th level</em></p>\n<p>When you cast a tech power, you can choose to deal maximum damage or provide maximum healing with that power.</p>\n<p>Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
+            },
+            "requirements": "Engineer (Cybertech Engineering (Old)) 18",
+            "source": "EC",
+            "activation": {
+                "type": "special",
+                "cost": 1
+            },
+            "duration": {
+                "value": null,
+                "units": "inst"
+            },
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
+            },
+            "range": {
+                "value": null,
+                "unit": ""
+            },
+            "uses": {
+                "value": null,
+                "max": 1,
+                "per": "sr"
+            },
+            "actionType": "other",
+            "damage": {
+                "parts": [],
+                "versatile": ""
+            },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "power"
+            },
+            "type": {
+                "value": "class",
+                "subtype": ""
+            }
+        },
+        "effects": []
+    },
+    "Feature.name-potent_techcasting.source-archetype.sourceName-cybertech_engineering_old.level-3": {
+        "name": "Potent Techcasting",
+        "flags": {
+            "sw5e-importer": {
+                "timestamp": "2023-05-30T20:15:26.4652185+00:00",
+                "importer_version": 3,
+                "uid": "Feature.name-potent_techcasting.source-archetype.sourceName-cybertech_engineering_old.level-3"
+            }
+        },
+        "type": "feat",
+        "img": "systems/sw5e/packs/Icons/Class%20Features/ENGR-ARCH-Passive.webp",
+        "system": {
+            "description": {
+                "value": "<p><em><strong>Cybertech Engineering (Old):</strong> 3rd level</em></p>\n<p>When you miss with a tech attack roll, or a creature succeeds on a saving throw against a tech power you cast, you can expend one use of your Potent Aptitude to overwhelm them. Roll the die, and either add it to the attack roll or subtract it from their saving throw.</p>"
+            },
+            "requirements": "Engineer (Cybertech Engineering (Old)) 3",
             "source": "EC",
             "activation": {
                 "type": null,
