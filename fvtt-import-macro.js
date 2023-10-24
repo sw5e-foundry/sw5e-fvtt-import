@@ -81,7 +81,7 @@ let item_types = {
 	],
 	'fightingstyles': ['FightingStyle'],
 	'fightingmasteries': ['FightingMastery'],
-	'lightsaberform': ['LightsaberForm'],
+	'lightsaberforms': ['LightsaberForm'],
 }
 
 let journal_entry_types = {
