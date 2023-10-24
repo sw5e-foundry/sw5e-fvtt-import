@@ -8,6 +8,7 @@ def exactly_x_times(pat, x): return fr'(?<!{pat}){pat}{{{x}}}(?!{pat})'
 def cleanStr(string):
 	if string:
 		string = ' '.join(string.split(' ')) or ''
+		string = re.sub(r'’', r"'", string) or ''
 		string = re.sub(r'\ufffd', r'—', string) or ''
 		string = re.sub(r'(\\+r|\\*\r)+', r'', string) or ''
 		string = re.sub(r'(\\+n|\\*\n)+', r'\n', string) or ''
@@ -179,7 +180,7 @@ def getUses(text, name):
 						uses = f'round(({uses})/2)'
 
 		if not found: ## PROF times
-			pattern = r'a (?:combined )?number of (?:times|charges|superiority dice|force points in this way) equal to (?P<half>half )?your proficiency bonus'
+			pattern = r'a (?:combined )?number of (?:times|charges|superiority dice|(?:force|tech) points in this way) equal to (?P<half>half )?your proficiency bonus'
 			pattern += r'|in excess of (?P<half2>half )?your proficiency bonus \(resetting on a long rest\)'
 
 			if match := re.search(pattern, text):

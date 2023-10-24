@@ -13,6 +13,8 @@
   - Remove ##### XXXX Force/Techcasting table
   - remove superiority table
   - sentinel ideals: add 'You regain all expended uses when you finish a long rest.'
+  - Remove 'focused superiority'
+  - Remove 'Nikto' species variants
 - monster.json
   - use old monster.json
 - maneuvers.json
