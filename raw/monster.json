@@ -889,16 +889,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Ranged Weapon Attack: +10 to hit, range 120/240 ft., one target. Hit: 25 (4d10+6) energy damage.",
                 "descriptionWithLinks": " Ranged Weapon Attack: +10 to hit, range 120/240 ft., one target. Hit: 25 (4d10+6) energy damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 2,
+                "attackType": "RangedWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 10,
+                "range": "range 120/240 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "25",
+                "damageRoll": "4d10+6",
+                "damageTypeEnum": 3,
+                "damageType": "Energy"
             },
             {
                 "name": "Plasma Cannon",
@@ -927,8 +927,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "AAT",
-        "timestamp": "2023-05-30T20:15:23.1760945+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1760945Z'\""
+        "timestamp": "2023-03-09T01:52:11.0158654+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A11.0158654Z'\""
     },
     {
         "name": "AT-AT",
@@ -2137,16 +2137,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 24 (4d8 + 6) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 24 (4d8 + 6) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 9,
+                "range": "reach 10 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "24",
+                "damageRoll": "4d8 + 6",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Claw",
@@ -2154,16 +2154,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 21 (3d10 + 6) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 21 (3d10 + 6) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 9,
+                "range": "reach 10 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "21",
+                "damageRoll": "3d10 + 6",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Trampling Charge\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" If the acklay moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 16 Strength saving throw or be knocked prone. If the target is prone, the acklay can make one claw attack against it as a bonus action.\",\"DescriptionWithLinks\":\" If the acklay moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 16 Strength saving throw or be knocked prone. If the target is prone, the acklay can make one claw attack against it as a bonus action.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Bite\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 24 (4d8 + 6) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 24 (4d8 + 6) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Claw\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 21 (3d10 + 6) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 21 (3d10 + 6) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -2175,8 +2175,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Acklay, Adolescent",
-        "timestamp": "2023-05-30T20:15:23.1471107+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1471107Z'\""
+        "timestamp": "2023-03-09T01:52:10.9828848+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9828848Z'\""
     },
     {
         "name": "Acklay, Adult",
@@ -2265,16 +2265,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 25 (4d8 + 7) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 25 (4d8 + 7) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 11,
+                "range": "reach 10 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "25",
+                "damageRoll": "4d8 + 7",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Claw",
@@ -2282,16 +2282,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 29 (4d10 + 7) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 29 (4d10 + 7) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 11,
+                "range": "reach 10 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "25",
+                "damageRoll": "4d8 + 7",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Trampling Charge\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" If the acklay moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 19 Strength saving throw or be knocked prone. If the target is prone, the acklay can make one claw attack against it as a bonus action.\",\"DescriptionWithLinks\":\" If the acklay moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a DC 19 Strength saving throw or be knocked prone. If the target is prone, the acklay can make one claw attack against it as a bonus action.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Bite\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 25 (4d8 + 7) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 25 (4d8 + 7) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Claw\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 29 (4d10 + 7) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 29 (4d10 + 7) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -2303,8 +2303,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Acklay, Adult",
-        "timestamp": "2023-05-30T20:15:23.1481109+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1481109Z'\""
+        "timestamp": "2023-03-09T01:52:10.9838847+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9838847Z'\""
     },
     {
         "name": "Aiwha",
@@ -2522,18 +2522,18 @@
                 "name": "Bite",
                 "monsterBehaviorTypeEnum": 2,
                 "monsterBehaviorType": "Action",
-                "description": " Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: (2d6 + 3) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
-                "descriptionWithLinks": " Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: (2d6 + 3) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "description": " Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+                "descriptionWithLinks": " Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 5,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "10",
+                "damageRoll": "2d6 + 3",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Bite\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: (2d6 + 3) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: (2d6 + 3) kinetic damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -2545,8 +2545,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Anooba",
-        "timestamp": "2023-05-30T20:15:23.1481109+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1481109Z'\""
+        "timestamp": "2023-03-09T01:52:10.9838847+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9838847Z'\""
     },
     {
         "name": "Aryx",
@@ -3056,8 +3056,8 @@
             "Huttese"
         ],
         "languagesJson": "[\"Galactic Basic\",\"Huttese\"]",
-        "challengeRating": "CR",
-        "experiencePoints": 3,
+        "challengeRating": "3",
+        "experiencePoints": 700,
         "behaviors": [
             {
                 "name": "Multiattack",
@@ -3103,8 +3103,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "B'omarr Brain Walker",
-        "timestamp": "2023-05-30T20:15:23.1571058+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1571058Z'\""
+        "timestamp": "2023-03-09T01:52:10.9958778+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9958778Z'\""
     },
     {
         "name": "B'omarr Monk Initiate",
@@ -3755,14 +3755,14 @@
                 "name": "Massed Fire",
                 "monsterBehaviorTypeEnum": 2,
                 "monsterBehaviorType": "Action",
-                "description": " The squad fires en masse at a point within 150 feetEach creature of the squad's choice in a 10-foot-radius sphere centered on that point must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 36 (8d8) energy damage, or 18 (4d8) energy damage if the squad has half its hit points or fewer. On a successful save, it takes half as much damage.",
-                "descriptionWithLinks": " The squad fires en masse at a point within 150 feetEach creature of the squad's choice in a 10-foot-radius sphere centered on that point must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 36 (8d8) energy damage, or 18 (4d8) energy damage if the squad has half its hit points or fewer. On a successful save, it takes half as much damage.",
+                "description": " The squad fires en masse at a point within 150 feet. Each creature of the squad's choice in a 10-foot-radius sphere centered on that point must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 36 (8d8) energy damage, or 18 (4d8) energy damage if the squad has half its hit points or fewer. On a successful save, it takes half as much damage.",
+                "descriptionWithLinks": " The squad fires en masse at a point within 150 feet. Each creature of the squad's choice in a 10-foot-radius sphere centered on that point must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 36 (8d8) energy damage, or 18 (4d8) energy damage if the squad has half its hit points or fewer. On a successful save, it takes half as much damage.",
                 "attackTypeEnum": 0,
                 "attackType": "None",
                 "restrictions": null,
                 "attackBonus": 150,
-                "range": "a creature takes 36 (8d8) energy damage",
-                "numberOfTargets": "or 18 (4d8) energy damage if the squad has half its hit points or fewer. On a successful save",
+                "range": null,
+                "numberOfTargets": null,
                 "damage": null,
                 "damageRoll": null,
                 "damageTypeEnum": 0,
@@ -3778,8 +3778,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "B1 Series, Squad",
-        "timestamp": "2023-05-30T20:15:23.1531075+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1531075Z'\""
+        "timestamp": "2023-03-09T01:52:10.9908801+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9908801Z'\""
     },
     {
         "name": "B2 Series, B2-A",
@@ -4237,8 +4237,7 @@
         "sensesJson": "[\"Darkvision 30 Ft.\",\"passive Perception 13\"]",
         "languages": [
             "Speaks binary",
-            "underst",
-            "s Basic"
+            "understands Basic"
         ],
         "languagesJson": "[\"Speaks binary\",\"underst\",\"s Basic\"]",
         "challengeRating": "1/8",
@@ -4305,8 +4304,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "BB Series Astromech Droid",
-        "timestamp": "2023-05-30T20:15:23.1511095+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1511095Z'\""
+        "timestamp": "2023-03-09T01:52:10.9868887+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9868887Z'\""
     },
     {
         "name": "BX Series, BX-5C",
@@ -6142,8 +6141,7 @@
         ],
         "sensesJson": "[\"blindsight 120 ft.\",\"passive Perception 18\"]",
         "languages": [
-            "underst",
-            "s Galactic Basic but can't speak",
+            "understands Galactic Basic but can't speak",
             "telepathy 120 ft."
         ],
         "languagesJson": "[\"underst\",\"s Galactic Basic but can't speak\",\"telepathy 120 ft.\"]",
@@ -6364,8 +6362,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Bor Gullet",
-        "timestamp": "2023-05-30T20:15:23.1581052+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1581052Z'\""
+        "timestamp": "2023-03-09T01:52:10.9968767+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9968767Z'\""
     },
     {
         "name": "Brain Worm",
@@ -6439,8 +6437,7 @@
         ],
         "sensesJson": "[\"Blindsight 60 ft. (blind beyond this radius\",\"passive Perception 12\"]",
         "languages": [
-            "Geonosian (underst",
-            "s but can't speak)"
+            "Geonosian (understands but can't speak)"
         ],
         "languagesJson": "[\"Geonosian (underst\",\"s but can't speak)\"]",
         "challengeRating": "2",
@@ -6541,8 +6538,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Brain Worm",
-        "timestamp": "2023-05-30T20:15:23.1581052+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1581052Z'\""
+        "timestamp": "2023-03-09T01:52:10.9968767+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9968767Z'\""
     },
     {
         "name": "C1 Series Astromech Droid",
@@ -6623,8 +6620,7 @@
         "sensesJson": "[\"Darkvision 60 Ft.\",\"passive Perception 13\"]",
         "languages": [
             "Speaks binary",
-            "underst",
-            "s Basic"
+            "understands Basic"
         ],
         "languagesJson": "[\"Speaks binary\",\"underst\",\"s Basic\"]",
         "challengeRating": "1/8",
@@ -6708,8 +6704,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "C1 Series Astromech Droid",
-        "timestamp": "2023-05-30T20:15:23.1511095+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1511095Z'\""
+        "timestamp": "2023-03-09T01:52:10.9878815+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9878815Z'\""
     },
     {
         "name": "Cantina Brawl",
@@ -7216,14 +7212,14 @@
                 "name": "Throw Boulder",
                 "monsterBehaviorTypeEnum": 2,
                 "monsterBehaviorType": "Action",
-                "description": " Ranged Weapon Attack: +8 to hit, reach 5 ft., range 25/50 ft., one target. Hit: 8 (1d8+5) kinetic damage. If the target is a creature, it must succeed a DC 15 Strength saving throw or be knocked prone.",
-                "descriptionWithLinks": " Ranged Weapon Attack: +8 to hit, reach 5 ft., range 25/50 ft., one target. Hit: 8 (1d8+5) kinetic damage. If the target is a creature, it must succeed a DC 15 Strength saving throw or be knocked prone.",
+                "description": " Ranged Weapon Attack: +8 to hit, range 25/50 ft., one target. Hit: 8 (1d8+5) kinetic damage. If the target is a creature, it must succeed a DC 15 Strength saving throw or be knocked prone.",
+                "descriptionWithLinks": " Ranged Weapon Attack: +8 to hit, range 25/50 ft., one target. Hit: 8 (1d8+5) kinetic damage. If the target is a creature, it must succeed a DC 15 Strength saving throw or be knocked prone.",
                 "attackTypeEnum": 2,
                 "attackType": "RangedWeapon",
                 "restrictions": null,
                 "attackBonus": 8,
-                "range": "reach 5 ft.",
-                "numberOfTargets": "range 25/50 ft.",
+                "range": "range 25/50 ft.",
+                "numberOfTargets": "one target",
                 "damage": "8",
                 "damageRoll": "1d8+5",
                 "damageTypeEnum": 7,
@@ -7239,8 +7235,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Cliff Wampa",
-        "timestamp": "2023-05-30T20:15:22.5984239+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.5984239Z'\""
+        "timestamp": "2023-03-09T01:52:10.6320887+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.6320887Z'\""
     },
     {
         "name": "Clodhopper",
@@ -7329,16 +7325,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 4,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "5",
+                "damageRoll": "1d6+2",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Standing Leap\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" The clodhopper's long jump is up to 20 feet and its high jump is up to 10 ft., with or without a running start.\",\"DescriptionWithLinks\":\" The clodhopper's long jump is up to 20 feet and its high jump is up to 10 ft., with or without a running start.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Beak\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -7350,8 +7346,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Clodhopper",
-        "timestamp": "2023-05-30T20:15:22.6034207+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.6034207Z'\""
+        "timestamp": "2023-03-09T01:52:10.6400843+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.6400843Z'\""
     },
     {
         "name": "Condor Dragon",
@@ -7460,16 +7456,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 7,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "13",
+                "damageRoll": "2d8+4",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Claws",
@@ -7477,16 +7473,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 7,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "9",
+                "damageRoll": "1d10+4",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Unhindered Movement\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" The dragon's movement speed is not reduced while moving with a grappled creature.\",\"DescriptionWithLinks\":\" The dragon's movement speed is not reduced while moving with a grappled creature.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Multiattack\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\"  The dragon can make three attacks: two with its claws and one with its bite.\",\"DescriptionWithLinks\":\"  The dragon can make three attacks: two with its claws and one with its bite.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Bite\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Claws\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -7498,8 +7494,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Condor Dragon",
-        "timestamp": "2023-05-30T20:15:23.1591042+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1591042Z'\""
+        "timestamp": "2023-03-09T01:52:10.9978756+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9978756Z'\""
     },
     {
         "name": "Cyborg Khagan",
@@ -7537,12 +7533,12 @@
         "savingThrowsJson": "[\"Con +5\",\"Int +6\"]",
         "skills": [
             "Athletics +9",
-            "History +6",
+            "Lore +6",
             "Intimidation +4",
             "Perception +4",
             "Stealth +7"
         ],
-        "skillsJson": "[\"Athletics +9\",\"History +6\",\"Intimidation +4\",\"Perception +4\",\"Stealth +7\"]",
+        "skillsJson": "[\"Athletics +9\",\"Lore +6\",\"Intimidation +4\",\"Perception +4\",\"Stealth +7\"]",
         "damageImmunities": [],
         "damageImmunitiesParsed": [],
         "damageImmunitiesParsedJson": "[]",
@@ -7842,8 +7838,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Cyborg Khagan",
-        "timestamp": "2023-05-30T20:15:22.8602751+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8602751Z'\""
+        "timestamp": "2023-03-09T01:52:10.7100432+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7100432Z'\""
     },
     {
         "name": "DF.9 Anti-Infantry Turret",
@@ -8438,9 +8434,9 @@
         "savingThrowsJson": "",
         "skills": [
             "Technology +3",
-            "Investigate +3"
+            "Investigation +3"
         ],
-        "skillsJson": "[\"Technology +3\",\"Investigate +3\"]",
+        "skillsJson": "[\"Technology +3\",\"Investigation +3\"]",
         "damageImmunities": [],
         "damageImmunitiesParsed": [],
         "damageImmunitiesParsedJson": "[]",
@@ -8616,8 +8612,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "DUM-Series PIT Droid",
-        "timestamp": "2023-05-30T20:15:22.8882582+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8882582Z'\""
+        "timestamp": "2023-03-09T01:52:10.7340287+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7340287Z'\""
     },
     {
         "name": "Dark Lord Spirit",
@@ -8840,16 +8836,16 @@
                 "monsterBehaviorType": "Legendary",
                 "description": " Ranged Power Attack: +13 to hit, range 60 ft., one target. Hit: 14 (4d6) necrotic damage.  The target must succeed on a DC 23 Strength saving throw or become shocked until the end of their next turn.",
                 "descriptionWithLinks": " Ranged Power Attack: +13 to hit, range 60 ft., one target. Hit: 14 (4d6) necrotic damage.  The target must succeed on a DC 23 Strength saving throw or become shocked until the end of their next turn.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 2,
+                "attackType": "RangedWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 13,
+                "range": "range 60 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "14",
+                "damageRoll": "4d6",
+                "damageTypeEnum": 9,
+                "damageType": "Necrotic"
             },
             {
                 "name": "Sow Discord",
@@ -8895,8 +8891,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Dark Lord Spirit",
-        "timestamp": "2023-05-30T20:15:23.1611023+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1611023Z'\""
+        "timestamp": "2023-03-09T01:52:10.9998746+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9998746Z'\""
     },
     {
         "name": "Dark Side Spirit",
@@ -10013,9 +10009,9 @@
         "charisma": 6,
         "charismaModifier": -2,
         "savingThrows": [
-            "Constitution +7"
+            "Con +7"
         ],
-        "savingThrowsJson": "[\"Constitution +7\"]",
+        "savingThrowsJson": "[\"Con +7\"]",
         "skills": [
             "Stealth +5"
         ],
@@ -10164,8 +10160,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Dianoga, Adult",
-        "timestamp": "2023-05-30T20:15:23.1631023+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1631023Z'\""
+        "timestamp": "2023-03-09T01:52:11.0018736+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A11.0018736Z'\""
     },
     {
         "name": "Dragonsnake",
@@ -10308,16 +10304,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 12 (2d6 + 5) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 12 (2d6 + 5) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 8,
+                "range": "reach 10 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "12",
+                "damageRoll": "2d6 + 5",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Hold Breath\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" The dragonsnake can hold its breath for 1 hour.\",\"DescriptionWithLinks\":\" The dragonsnake can hold its breath for 1 hour.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Surprise Attack\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" If the dragonsnake surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 7 (2d6) damage from the attack.\",\"DescriptionWithLinks\":\" If the dragonsnake surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 7 (2d6) damage from the attack.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Multiattack\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" The dragonsnake can make three attacks: two with its claws and one with its bite.\",\"DescriptionWithLinks\":\" The dragonsnake can make three attacks: two with its claws and one with its bite.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Bite\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 15 (3d6 + 5) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 15 (3d6 + 5) kinetic damage.\",\"AttackTypeEnum\":1,\"AttackType\":\"MeleeWeapon\",\"Restrictions\":null,\"AttackBonus\":8,\"Range\":\"reach 10 ft.\",\"NumberOfTargets\":\"one target.\",\"Damage\":\"15\",\"DamageRoll\":\"3d6 + 5\",\"DamageTypeEnum\":7,\"DamageType\":\"Kinetic\"},{\"Name\":\"Claws\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 12 (2d6 + 5) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 12 (2d6 + 5) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -10329,8 +10325,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Dragonsnake",
-        "timestamp": "2023-05-30T20:15:23.1631023+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1631023Z'\""
+        "timestamp": "2023-03-09T01:52:11.0028734+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A11.0028734Z'\""
     },
     {
         "name": "Emperor's Hand",
@@ -12199,10 +12195,10 @@
         "charisma": 12,
         "charismaModifier": 1,
         "savingThrows": [
-            "Strength +4",
-            "Charisma +3"
+            "Str +4",
+            "Cha +3"
         ],
-        "savingThrowsJson": "[\"Strength +4\",\"Charisma +3\"]",
+        "savingThrowsJson": "[\"Str +4\",\"Cha +3\"]",
         "skills": [
             "Athletics +4"
         ],
@@ -12317,8 +12313,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Flesh Raider Apprentice",
-        "timestamp": "2023-05-30T20:15:23.1680984+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1680984Z'\""
+        "timestamp": "2023-03-09T01:52:11.0078699+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A11.0078699Z'\""
     },
     {
         "name": "Flesh Raider Berserker",
@@ -12350,9 +12346,9 @@
         "charisma": 10,
         "charismaModifier": 0,
         "savingThrows": [
-            "Strength +4"
+            "Str +4"
         ],
-        "savingThrowsJson": "[\"Strength +4\"]",
+        "savingThrowsJson": "[\"Str +4\"]",
         "skills": [
             "Athletics +4"
         ],
@@ -12449,8 +12445,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Flesh Raider Berserker",
-        "timestamp": "2023-05-30T20:15:23.1680984+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1680984Z'\""
+        "timestamp": "2023-03-09T01:52:11.0078699+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A11.0078699Z'\""
     },
     {
         "name": "Flutterplume",
@@ -12556,18 +12552,18 @@
                 "name": "Beak",
                 "monsterBehaviorTypeEnum": 2,
                 "monsterBehaviorType": "Action",
-                "description": " Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: (1d4) kinetic damage",
-                "descriptionWithLinks": " Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: (1d4) kinetic damage",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "description": " Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) kinetic damage",
+                "descriptionWithLinks": " Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) kinetic damage",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 2,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "2",
+                "damageRoll": "1d4",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Keen Sight and Smell\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" The flutterplume has advantage on Wisdom (Perception) checks that rely on sight or smell.\",\"DescriptionWithLinks\":\" The flutterplume has advantage on Wisdom (Perception) checks that rely on sight or smell.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Pack Tactics\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" The flutterplume has advantage on an attack roll against a creature if at least one of the flutterplume's allies is within 5 feet of the creature and the ally isn't incapacitated.\",\"DescriptionWithLinks\":\" The flutterplume has advantage on an attack roll against a creature if at least one of the flutterplume's allies is within 5 feet of the creature and the ally isn't incapacitated.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Beak\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: (1d4) kinetic damage\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: (1d4) kinetic damage\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -12579,8 +12575,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Flutterplume",
-        "timestamp": "2023-05-30T20:15:23.1690984+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1690984Z'\""
+        "timestamp": "2023-03-09T01:52:11.0078699+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A11.0078699Z'\""
     },
     {
         "name": "Force Storm Eye",
@@ -13442,8 +13438,7 @@
         "sensesJson": "[\"passive Perception 10\"]",
         "languages": [
             "Gamorrese",
-            "Galactic Basic (underst",
-            "s but can't speak)"
+            "Galactic Basic (understands but can't speak)"
         ],
         "languagesJson": "[\"Gamorrese\",\"Galactic Basic (underst\",\"s but can't speak)\"]",
         "challengeRating": "2",
@@ -13510,8 +13505,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Gamorrean Guard",
-        "timestamp": "2023-05-30T20:15:23.178093+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.178093Z'\""
+        "timestamp": "2023-03-09T01:52:11.0178648+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A11.0178648Z'\""
     },
     {
         "name": "Geejaw",
@@ -14593,7 +14588,7 @@
             "Dex +10",
             "Int +9",
             "Wis +7",
-            "Cha"
+            "Cha +11"
         ],
         "savingThrowsJson": "[\"Dex +10\",\"Int +9\",\"Wis +7\",\"Cha\"]",
         "skills": [
@@ -14638,10 +14633,9 @@
         "languages": [
             "Galactic basic",
             "Cheunh",
-            "",
             "any 3 others"
         ],
-        "languagesJson": "[\"Galactic basic\",\"Cheunh\",\"\",\"any 3 others\"]",
+        "languagesJson": "[\"Galactic basic\",\"Cheunh\",\"any 3 others\"]",
         "challengeRating": "20",
         "experiencePoints": 25000,
         "behaviors": [
@@ -14927,8 +14921,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Grand Admiral",
-        "timestamp": "2023-05-30T20:15:23.178093+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.178093Z'\""
+        "timestamp": "2023-03-09T01:52:11.0178648+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A11.0178648Z'\""
     },
     {
         "name": "Greysor",
@@ -17098,9 +17092,7 @@
         ],
         "sensesJson": "[\"Darkvision 60ft\",\"passive Perception 13\"]",
         "languages": [
-            "Can't speak but underst",
-            "s comm",
-            "s in Sith"
+            "Can't speak but understands commands in Sith"
         ],
         "languagesJson": "[\"Can't speak but underst\",\"s comm\",\"s in Sith\"]",
         "challengeRating": "7",
@@ -17163,16 +17155,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 14 (3d8+4) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 17) or become poisoned and take 6 (2d6) toxin damage per turn. The target is also grappled (escape DC 16). Until this grapple ends, the target is restrained, and the Hssiss can't bite another target",
                 "descriptionWithLinks": " Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 14 (3d8+4) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 17) or become poisoned and take 6 (2d6) toxin damage per turn. The target is also grappled (escape DC 16). Until this grapple ends, the target is restrained, and the Hssiss can't bite another target",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 6,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "14",
+                "damageRoll": "3d8 + 4",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Claws",
@@ -17180,16 +17172,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 11 (3d6+4) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 15) or become poisoned and take 6 (2d6) toxin damage per turn.",
                 "descriptionWithLinks": " Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 11 (3d6+4) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 15) or become poisoned and take 6 (2d6) toxin damage per turn.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 6,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "14",
+                "damageRoll": "3d6 + 4",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Invisibility",
@@ -17218,8 +17210,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Hssiss",
-        "timestamp": "2023-05-30T20:15:22.8512792+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8512792Z'\""
+        "timestamp": "2023-03-09T01:52:10.7010485+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7010485Z'\""
     },
     {
         "name": "Hutt Crime Lord",
@@ -17259,11 +17251,11 @@
         "skills": [
             "Deception +8",
             "Insight +6",
-            "Intimidate +12",
+            "Intimidation +12",
             "Perception +6",
             "Persuasion +8"
         ],
-        "skillsJson": "[\"Deception +8\",\"Insight +6\",\"Intimidate +12\",\"Perception +6\",\"Persuasion +8\"]",
+        "skillsJson": "[\"Deception +8\",\"Insight +6\",\"Intimidation +12\",\"Perception +6\",\"Persuasion +8\"]",
         "damageImmunities": [],
         "damageImmunitiesParsed": [],
         "damageImmunitiesParsedJson": "[]",
@@ -17573,8 +17565,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Hutt Crime Lord",
-        "timestamp": "2023-05-30T20:15:22.8522795+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8522795Z'\""
+        "timestamp": "2023-03-09T01:52:10.7020471+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7020471Z'\""
     },
     {
         "name": "Hutt Wrestler",
@@ -17611,9 +17603,9 @@
         ],
         "savingThrowsJson": "[\"Str +8\",\"Con +8\"]",
         "skills": [
-            "Intimidate +8"
+            "Intimidation +8"
         ],
-        "skillsJson": "[\"Intimidate +8\"]",
+        "skillsJson": "[\"Intimidation +8\"]",
         "damageImmunities": [],
         "damageImmunitiesParsed": [],
         "damageImmunitiesParsedJson": "[]",
@@ -17753,8 +17745,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Hutt Wrestler",
-        "timestamp": "2023-05-30T20:15:22.8522795+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8522795Z'\""
+        "timestamp": "2023-03-09T01:52:10.7010485+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7010485Z'\""
     },
     {
         "name": "Hyena-Class Bomber",
@@ -18385,15 +18377,15 @@
         "charisma": 9,
         "charismaModifier": -1,
         "savingThrows": [
-            "Dex + 6"
+            "Dex +6"
         ],
-        "savingThrowsJson": "[\"Dex + 6\"]",
+        "savingThrowsJson": "[\"Dex +6\"]",
         "skills": [
             "Perception +3",
             "Stealth +6",
-            "Intimidate +1"
+            "Intimidation +1"
         ],
-        "skillsJson": "[\"Perception +3\",\"Stealth +6\",\"Intimidate +1\"]",
+        "skillsJson": "[\"Perception +3\",\"Stealth +6\",\"Intimidation +1\"]",
         "damageImmunities": [],
         "damageImmunitiesParsed": [],
         "damageImmunitiesParsedJson": "[]",
@@ -18523,8 +18515,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "IG-100 Series",
-        "timestamp": "2023-05-30T20:15:23.1551075+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1551075Z'\""
+        "timestamp": "2023-03-09T01:52:10.9938785+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9938785Z'\""
     },
     {
         "name": "IG-227 Hailfire-Class Droid",
@@ -19646,10 +19638,9 @@
         "savingThrows": [
             "Dex +6",
             "Con +7",
-            "Wis",
-            "+7"
+            "Wis +7"
         ],
-        "savingThrowsJson": "[\"Dex +6\",\"Con +7\",\"Wis\",\"+7\"]",
+        "savingThrowsJson": "[\"Dex +6\",\"Con +7\",\"Wis +7\"]",
         "skills": [
             "Athletics +8",
             "Perception +7",
@@ -19681,7 +19672,7 @@
         ],
         "sensesJson": "[\"passive Perception 17\"]",
         "languages": [
-            "Glactic Basic"
+            "Galactic Basic"
         ],
         "languagesJson": "[\"Glactic Basic\"]",
         "challengeRating": "9",
@@ -19725,14 +19716,14 @@
                 "name": "Vibroblade",
                 "monsterBehaviorTypeEnum": 2,
                 "monsterBehaviorType": "Action",
-                "description": " Melee Weapon Attack: +8 to hit, hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) kinetic damage.",
-                "descriptionWithLinks": " Melee Weapon Attack: +8 to hit, hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) kinetic damage.",
+                "description": " Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) kinetic damage.",
+                "descriptionWithLinks": " Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) kinetic damage.",
                 "attackTypeEnum": 1,
                 "attackType": "MeleeWeapon",
                 "restrictions": null,
                 "attackBonus": 8,
-                "range": "hit",
-                "numberOfTargets": "reach 5 ft.",
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
                 "damage": "8",
                 "damageRoll": "1d8 + 4",
                 "damageTypeEnum": 7,
@@ -19782,8 +19773,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Imperial Royal Guard",
-        "timestamp": "2023-05-30T20:15:22.8532788+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8532788Z'\""
+        "timestamp": "2023-03-09T01:52:10.7030465+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7030465Z'\""
     },
     {
         "name": "Imperial Senate Guard",
@@ -20652,9 +20643,9 @@
         "savingThrowsJson": "",
         "skills": [
             "Perception +6",
-            "Intimidate +3"
+            "Intimidation +3"
         ],
-        "skillsJson": "[\"Perception +6\",\"Intimidate +3\"]",
+        "skillsJson": "[\"Perception +6\",\"Intimidation +3\"]",
         "damageImmunities": [],
         "damageImmunitiesParsed": [],
         "damageImmunitiesParsedJson": "[]",
@@ -20825,8 +20816,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "JK-13 Security Droid",
-        "timestamp": "2023-05-30T20:15:22.8832613+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8832613Z'\""
+        "timestamp": "2023-03-09T01:52:10.7300311+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7300311Z'\""
     },
     {
         "name": "Jakrab",
@@ -21003,8 +20994,7 @@
         "sensesJson": "[\"darkvision 60 ft.\",\"passive Perception 10\"]",
         "languages": [
             "Jawaese",
-            "underst",
-            "s but doesn't speak Galactic Basic"
+            "understands but doesn't speak Galactic Basic"
         ],
         "languagesJson": "[\"Jawaese\",\"underst\",\"s but doesn't speak Galactic Basic\"]",
         "challengeRating": "1/2",
@@ -21033,16 +21023,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Ranged Weapon Attack: +4 to hit, range 40/160 ft., one creature. Hit 3 (1d4 + 2) ion damage.",
                 "descriptionWithLinks": " Ranged Weapon Attack: +4 to hit, range 40/160 ft., one creature. Hit 3 (1d4 + 2) ion damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 2,
+                "attackType": "RangedWeapon",
                 "restrictions": null,
                 "attackBonus": 4,
                 "range": "range 40/160 ft.",
-                "numberOfTargets": "one creature. *Hit 3* (1d4 + 2) ion damage.",
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "numberOfTargets": "one creature.",
+                "damage": 3,
+                "damageRoll": "1d4 + 2",
+                "damageTypeEnum": 6,
+                "damageType": "Ion"
             },
             {
                 "name": "Ion Grenade",
@@ -21071,8 +21061,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Jawa Scrapper",
-        "timestamp": "2023-05-30T20:15:22.8562762+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8562762Z'\""
+        "timestamp": "2023-03-09T01:52:10.7070444+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7070444Z'\""
     },
     {
         "name": "Jawa Shaman",
@@ -21137,8 +21127,7 @@
         "sensesJson": "[\"darkvision 60 ft.\",\"passive Perception 12\"]",
         "languages": [
             "Jawaese",
-            "underst",
-            "s but doesn't speak Galactic Basic"
+            "understands but doesn't speak Galactic Basic"
         ],
         "languagesJson": "[\"Jawaese\",\"underst\",\"s but doesn't speak Galactic Basic\"]",
         "challengeRating": "2",
@@ -21182,18 +21171,18 @@
                 "name": "Vibrostaff",
                 "monsterBehaviorTypeEnum": 2,
                 "monsterBehaviorType": "Action",
-                "description": " one target. Hit 5 (2d4) kinetic damage.  Melee Weapon Attack: +2 to hit, reach 5 ft.,",
-                "descriptionWithLinks": " one target. Hit 5 (2d4) kinetic damage.  Melee Weapon Attack: +2 to hit, reach 5 ft.,",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "description": " Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit 5 (2d4) kinetic damage.",
+                "descriptionWithLinks": " Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit 5 (2d4) kinetic damage.",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 2,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "5",
+                "damageRoll": "2d4",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Grovel, Cower, and Beg",
@@ -21222,8 +21211,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Jawa Shaman",
-        "timestamp": "2023-05-30T20:15:22.8572758+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8572758Z'\""
+        "timestamp": "2023-03-09T01:52:10.7070444+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7070444Z'\""
     },
     {
         "name": "Jawa Tinkerer",
@@ -21288,8 +21277,7 @@
         "sensesJson": "[\"darkvision 60 ft.\",\"passive Perception 10\"]",
         "languages": [
             "Jawaese",
-            "underst",
-            "s but doesn't speak Galactic Basic"
+            "understands but doesn't speak Galactic Basic"
         ],
         "languagesJson": "[\"Jawaese\",\"underst\",\"s but doesn't speak Galactic Basic\"]",
         "challengeRating": "1/2",
@@ -21356,8 +21344,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Jawa Tinkerer",
-        "timestamp": "2023-05-30T20:15:22.8572758+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8572758Z'\""
+        "timestamp": "2023-03-09T01:52:10.7070444+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7070444Z'\""
     },
     {
         "name": "Jubba Bird",
@@ -21392,9 +21380,9 @@
         "savingThrowsJson": "",
         "skills": [
             "Insight +6",
-            "Percpetion +4"
+            "Perception +4"
         ],
-        "skillsJson": "[\"Insight +6\",\"Percpetion +4\"]",
+        "skillsJson": "[\"Insight +6\",\"Perception +4\"]",
         "damageImmunities": [],
         "damageImmunitiesParsed": [],
         "damageImmunitiesParsedJson": "[]",
@@ -21420,8 +21408,7 @@
         ],
         "sensesJson": "[\"passive Perception 14\"]",
         "languages": [
-            "underst",
-            "s Galactic Basic but can't speak",
+            "understands Galactic Basic but can't speak",
             "telepathy 60 ft."
         ],
         "languagesJson": "[\"underst\",\"s Galactic Basic but can't speak\",\"telepathy 60 ft.\"]",
@@ -21489,8 +21476,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Jubba Bird",
-        "timestamp": "2023-05-30T20:15:22.6054192+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.6054192Z'\""
+        "timestamp": "2023-03-09T01:52:10.6440815+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.6440815Z'\""
     },
     {
         "name": "Jundland Wastes Womp Rat",
@@ -22013,16 +22000,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) kinetic damage, and the target must succeed on a DC 11 Constitution saving throw or take 10 (3d6) poison damage. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
                 "descriptionWithLinks": " Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) kinetic damage, and the target must succeed on a DC 11 Constitution saving throw or take 10 (3d6) poison damage. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 4,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one creture.",
+                "damage": "4",
+                "damageRoll": "1d4+2",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Swarm Tactics\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" The K'lor'slug has advantage on an attack roll against a creature if at least one of the k'lor'slug's allies is within 5 feet of the creature and the ally isn't incapacitated.\",\"DescriptionWithLinks\":\" The K'lor'slug has advantage on an attack roll against a creature if at least one of the k'lor'slug's allies is within 5 feet of the creature and the ally isn't incapacitated.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Bite\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) kinetic damage, and the target must succeed on a DC 11 Constitution saving throw or take 10 (3d6) poison damage. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) kinetic damage, and the target must succeed on a DC 11 Constitution saving throw or take 10 (3d6) poison damage. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -22034,8 +22021,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "K'lor'slug",
-        "timestamp": "2023-05-30T20:15:22.8622732+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8622732Z'\""
+        "timestamp": "2023-03-09T01:52:10.712041+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.712041Z'\""
     },
     {
         "name": "KX-Series Security Droid",
@@ -22071,9 +22058,9 @@
         "skills": [
             "Athletics +7",
             "Perception +4",
-            "Intimidate +2"
+            "Intimidation +2"
         ],
-        "skillsJson": "[\"Athletics +7\",\"Perception +4\",\"Intimidate +2\"]",
+        "skillsJson": "[\"Athletics +7\",\"Perception +4\",\"Intimidation +2\"]",
         "damageImmunities": [],
         "damageImmunitiesParsed": [],
         "damageImmunitiesParsedJson": "[]",
@@ -22163,8 +22150,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "KX-Series Security Droid",
-        "timestamp": "2023-05-30T20:15:22.8832613+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8832613Z'\""
+        "timestamp": "2023-03-09T01:52:10.7300311+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7300311Z'\""
     },
     {
         "name": "Kaadu",
@@ -22728,16 +22715,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) kinetic damage, and the target must make a DC 15 Constitution saving throw, taking 18 (4d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
                 "descriptionWithLinks": " Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) kinetic damage, and the target must make a DC 15 Constitution saving throw, taking 18 (4d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 7,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "15",
+                "damageRoll": "2d10 + 4",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Distress Spores\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" When the spider takes damage, all other spiders within 240 feet of it can sense its pain.\",\"DescriptionWithLinks\":\" When the spider takes damage, all other spiders within 240 feet of it can sense its pain.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"False Appearance\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" While the spider remains motionless, it is indistinguishable from a normal gnarltree.\",\"DescriptionWithLinks\":\" While the spider remains motionless, it is indistinguishable from a normal gnarltree.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Multiattack\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" The spider makes two slam attacks.\",\"DescriptionWithLinks\":\" The spider makes two slam attacks.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Slam\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 13 (2d8 + 4) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 13 (2d8 + 4) kinetic damage.\",\"AttackTypeEnum\":1,\"AttackType\":\"MeleeWeapon\",\"Restrictions\":null,\"AttackBonus\":7,\"Range\":\"reach 10 ft.\",\"NumberOfTargets\":\"one target.\",\"Damage\":\"13\",\"DamageRoll\":\"2d8 + 4\",\"DamageTypeEnum\":7,\"DamageType\":\"Kinetic\"},{\"Name\":\"Pacifying Spores\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" The spider ejects spores in 15-foot cone. All creatures in the area must succeed on a DC 14 Constitution saving throw or be stunned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\",\"DescriptionWithLinks\":\" The spider ejects spores in 15-foot cone. All creatures in the area must succeed on a DC 14 Constitution saving throw or be stunned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":\"3/Day\",\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Stinger\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) kinetic damage, and the target must make a DC 15 Constitution saving throw, taking 18 (4d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) kinetic damage, and the target must make a DC 15 Constitution saving throw, taking 18 (4d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -22749,8 +22736,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Knobby White Spider",
-        "timestamp": "2023-05-30T20:15:22.8632723+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8632723Z'\""
+        "timestamp": "2023-03-09T01:52:10.712041+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.712041Z'\""
     },
     {
         "name": "Knobby White Spiderling",
@@ -22863,16 +22850,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 3 (1d6) kinetic damage, and the target must make a DC 14 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
                 "descriptionWithLinks": " Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 3 (1d6) kinetic damage, and the target must make a DC 14 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 4,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "3",
+                "damageRoll": "1d6",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Distress Spores\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" When the spider takes damage, all other spiders within 240 feet of it can sense its pain.\",\"DescriptionWithLinks\":\" When the spider takes damage, all other spiders within 240 feet of it can sense its pain.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Slam\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) kinetic damage.\",\"AttackTypeEnum\":1,\"AttackType\":\"MeleeWeapon\",\"Restrictions\":null,\"AttackBonus\":2,\"Range\":\"reach 5 ft.\",\"NumberOfTargets\":\"one target.\",\"Damage\":\"2\",\"DamageRoll\":\"1d4\",\"DamageTypeEnum\":7,\"DamageType\":\"Kinetic\"},{\"Name\":\"Stinger\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 3 (1d6) kinetic damage, and the target must make a DC 14 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 3 (1d6) kinetic damage, and the target must make a DC 14 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -22884,8 +22871,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Knobby White Spiderling",
-        "timestamp": "2023-05-30T20:15:22.8622732+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8622732Z'\""
+        "timestamp": "2023-03-09T01:52:10.712041+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.712041Z'\""
     },
     {
         "name": "Kolkpravis Baatar",
@@ -24166,7 +24153,7 @@
         "charisma": 7,
         "charismaModifier": -2,
         "savingThrows": [
-            "* Dex +7",
+            "Dex +7",
             "Con +16"
         ],
         "savingThrowsJson": "[\"* Dex +7\",\"Con +16\"]",
@@ -24227,16 +24214,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit: 21 (2d10 + 10) kinetic damage plus 7 (3d4) toxin damage. The target must then succeed on a Constitution saving throw (DC 19) or become poisoned.",
                 "descriptionWithLinks": " Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit: 21 (2d10 + 10) kinetic damage plus 7 (3d4) toxin damage. The target must then succeed on a Constitution saving throw (DC 19) or become poisoned.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 17,
+                "range": "reach 15 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "21",
+                "damageRoll": "2d10 + 10",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Claw",
@@ -24244,16 +24231,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +17 to hit, reach 10 ft., one target. Hit: 17 (2d6 + 10) kinetic damage. plus 7 (3d4) toxin damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +17 to hit, reach 10 ft., one target. Hit: 17 (2d6 + 10) kinetic damage. plus 7 (3d4) toxin damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 17,
+                "range": "reach 10 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "17",
+                "damageRoll": "2d6 + 10",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Tail",
@@ -24261,16 +24248,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +17 to hit, reach 20 ft., one target. Hit: 19 (2d8 + 10) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +17 to hit, reach 20 ft., one target. Hit: 19 (2d8 + 10) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 17,
+                "range": "reach 20 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "19",
+                "damageRoll": "2d8 + 10",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Frightful Presence",
@@ -24367,8 +24354,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Krayt Dragon, Greater",
-        "timestamp": "2023-05-30T20:15:22.8642717+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8642717Z'\""
+        "timestamp": "2023-03-09T01:52:10.7140399+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7140399Z'\""
     },
     {
         "name": "Krayt Dragon, Juvenile",
@@ -24461,16 +24448,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) kinetic damage plus 4 (2d4) toxin damage. The target must then succeed on a Constitution saving throw (DC 15) or become poisoned.",
                 "descriptionWithLinks": " Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) kinetic damage plus 4 (2d4) toxin damage. The target must then succeed on a Constitution saving throw (DC 15) or become poisoned.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 10,
+                "range": "reach 10 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "17",
+                "damageRoll": "2d10 + 6",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Claw",
@@ -24478,16 +24465,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) kineric damage plus 4 (2d4) toxin damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) kineric damage plus 4 (2d4) toxin damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 10,
+                "range": "reach 10 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "13",
+                "damageRoll": "2d6 + 6",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Poisonous Saliva",
@@ -24516,8 +24503,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Krayt Dragon, Juvenile",
-        "timestamp": "2023-05-30T20:15:22.8642717+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8642717Z'\""
+        "timestamp": "2023-03-09T01:52:10.7130413+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7130413Z'\""
     },
     {
         "name": "L0M Series",
@@ -25383,16 +25370,16 @@
                 "monsterBehaviorType": "Legendary",
                 "description": " Ranged Power Attack: +17 to hit, range 15 ft., one target. Hit: 20 (2d10+9) lightning damage plus 11 (2d10) necrotic damage.",
                 "descriptionWithLinks": " Ranged Power Attack: +17 to hit, range 15 ft., one target. Hit: 20 (2d10+9) lightning damage plus 11 (2d10) necrotic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 2,
+                "attackType": "RangedWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 17,
+                "range": "range 15 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "20",
+                "damageRoll": "2d10 + 9",
+                "damageTypeEnum": 8,
+                "damageType": "Lightning"
             },
             {
                 "name": "Maddening Will",
@@ -25421,8 +25408,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Manifestation of Abeloth",
-        "timestamp": "2023-05-30T20:15:23.1471107+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1471107Z'\""
+        "timestamp": "2023-03-09T01:52:10.9828848+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9828848Z'\""
     },
     {
         "name": "Marksman-H Remote",
@@ -28379,16 +28366,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Ranged Weapon Attack: +4 to hit, range 60/240 ft., one target. Hit: 5 (1d6 + 2) energy damage.",
                 "descriptionWithLinks": " Ranged Weapon Attack: +4 to hit, range 60/240 ft., one target. Hit: 5 (1d6 + 2) energy damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 2,
+                "attackType": "RangedWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 4,
+                "range": "range 60/240 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "5",
+                "damageRoll": "1d6 + 2",
+                "damageTypeEnum": 3,
+                "damageType": "Energy"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Multiattack\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" The Navy Trooper makes two blaster carbine attacks.\",\"DescriptionWithLinks\":\" The Navy Trooper makes two blaster carbine attacks.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Blaster Carbine\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Ranged Weapon Attack: +4 to hit, range 60/240 ft., one target. Hit: 5 (1d6 + 2) energy damage.\",\"DescriptionWithLinks\":\" Ranged Weapon Attack: +4 to hit, range 60/240 ft., one target. Hit: 5 (1d6 + 2) energy damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -28400,8 +28387,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Navy Trooper",
-        "timestamp": "2023-05-30T20:15:23.1770939+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1770939Z'\""
+        "timestamp": "2023-03-09T01:52:11.0168649+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A11.0168649Z'\""
     },
     {
         "name": "Nerf",
@@ -28680,9 +28667,9 @@
         "savingThrowsJson": "",
         "skills": [
             "Perception +2",
-            "Intimidate +3"
+            "Intimidation +3"
         ],
-        "skillsJson": "[\"Perception +2\",\"Intimidate +3\"]",
+        "skillsJson": "[\"Perception +2\",\"Intimidation +3\"]",
         "damageImmunities": [],
         "damageImmunitiesParsed": [],
         "damageImmunitiesParsedJson": "[]",
@@ -28792,8 +28779,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Officer, Junior",
-        "timestamp": "2023-05-30T20:15:23.1760945+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1760945Z'\""
+        "timestamp": "2023-03-09T01:52:11.0168649+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A11.0168649Z'\""
     },
     {
         "name": "Officer, Senior",
@@ -28828,9 +28815,9 @@
         "savingThrowsJson": "",
         "skills": [
             "Perception +2",
-            "Intimidate +3"
+            "Intimidation +3"
         ],
-        "skillsJson": "[\"Perception +2\",\"Intimidate +3\"]",
+        "skillsJson": "[\"Perception +2\",\"Intimidation +3\"]",
         "damageImmunities": [],
         "damageImmunitiesParsed": [],
         "damageImmunitiesParsedJson": "[]",
@@ -28885,16 +28872,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Ranged Weapon Attack: +3 to hit, range 60/240 ft., one target. Hit: 4 (1d6 + 1) energy damage.",
                 "descriptionWithLinks": " Ranged Weapon Attack: +3 to hit, range 60/240 ft., one target. Hit: 4 (1d6 + 1) energy damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 2,
+                "attackType": "RangedWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 3,
+                "range": "range 60/240 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "4",
+                "damageRoll": "1d6 + 1",
+                "damageTypeEnum": 3,
+                "damageType": "Energy"
             },
             {
                 "name": "Call to Attack",
@@ -28957,8 +28944,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Officer, Senior",
-        "timestamp": "2023-05-30T20:15:23.178093+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.178093Z'\""
+        "timestamp": "2023-03-09T01:52:11.0178648+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A11.0178648Z'\""
     },
     {
         "name": "Opee Sea Killer",
@@ -29442,16 +29429,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +9 to hit, reach 0 ft., one creature. Hit: 1 (2d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.",
                 "descriptionWithLinks": " Melee Weapon Attack: +9 to hit, reach 0 ft., one creature. Hit: 1 (2d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 9,
+                "range": "reach 0 ft.",
+                "numberOfTargets": "one creature.",
+                "damage": "1",
+                "damageRoll": "2d4 - 1",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Barbs\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +9 to hit, reach 0 ft., one creature. Hit: 1 (2d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +9 to hit, reach 0 ft., one creature. Hit: 1 (2d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -29463,8 +29450,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Pelko Bug",
-        "timestamp": "2023-05-30T20:15:22.8702686+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8702686Z'\""
+        "timestamp": "2023-03-09T01:52:10.7190383+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7190383Z'\""
     },
     {
         "name": "Pelko Bug Swarm",
@@ -29551,16 +29538,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +9 to hit, reach 0 ft., one creature. Hit: 15 (4d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.",
                 "descriptionWithLinks": " Melee Weapon Attack: +9 to hit, reach 0 ft., one creature. Hit: 15 (4d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": "swarm has more than half HP",
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 9,
+                "range": "reach 0 ft.",
+                "numberOfTargets": "one creature.",
+                "damage": "15",
+                "damageRoll": "4d4 - 1",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Barbs",
@@ -29568,16 +29555,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +9 to hit, reach 0 ft., one creature. Hit: 7 (2d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.",
                 "descriptionWithLinks": " Melee Weapon Attack: +9 to hit, reach 0 ft., one creature. Hit: 7 (2d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": "swarm has half HP or less",
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 9,
+                "range": "reach 0 ft.",
+                "numberOfTargets": "one creature.",
+                "damage": "7",
+                "damageRoll": "2d4 - 1",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Barbs\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +9 to hit, reach 0 ft., one creature. Hit: 15 (4d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +9 to hit, reach 0 ft., one creature. Hit: 15 (4d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":\"swarm has more than half HP\",\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Barbs\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +9 to hit, reach 0 ft., one creature. Hit: 7 (2d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +9 to hit, reach 0 ft., one creature. Hit: 7 (2d4-1) kinetic damage, and the target must succeed on a DC 12 Constitution saving throw or take 2 poison damage and become paralyzed.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":\"swarm has half HP or less\",\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -29589,8 +29576,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Pelko Bug Swarm",
-        "timestamp": "2023-05-30T20:15:22.8702686+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8702686Z'\""
+        "timestamp": "2023-03-09T01:52:10.7200372+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7200372Z'\""
     },
     {
         "name": "Pistoeka sabotage droid",
@@ -30158,16 +30145,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 6 (1d4+4) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 6 (1d4+4) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 7,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one creature.",
+                "damage": "6",
+                "damageRoll": "1d4 + 4",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Multiattack\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" The swarm makes 4 leg slash attacks.\",\"DescriptionWithLinks\":\" The swarm makes 4 leg slash attacks.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":\"swarm has more than half HP\",\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Multiattack\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" The swarm makes 2 leg slash attacks.\",\"DescriptionWithLinks\":\" The swarm makes 2 leg slash attacks.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":\"swarm has less than or equal to half HP\",\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Leg Slash\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 6 (1d4+4) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 6 (1d4+4) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -30179,8 +30166,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Probe Killer Swarm",
-        "timestamp": "2023-05-30T20:15:23.1501096+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1501096Z'\""
+        "timestamp": "2023-03-09T01:52:10.9858834+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9858834Z'\""
     },
     {
         "name": "Purge Trooper",
@@ -30465,8 +30452,7 @@
         "sensesJson": "[\"Darkvision 60 Ft.\",\"passive Perception 13\"]",
         "languages": [
             "Speaks binary",
-            "underst",
-            "s Basic"
+            "understands Basic"
         ],
         "languagesJson": "[\"Speaks binary\",\"underst\",\"s Basic\"]",
         "challengeRating": "1/8",
@@ -30550,8 +30536,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "R2 Series Astromech Droid",
-        "timestamp": "2023-05-30T20:15:23.1511095+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1511095Z'\""
+        "timestamp": "2023-03-09T01:52:10.9878815+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9878815Z'\""
     },
     {
         "name": "Rakghoul",
@@ -33854,16 +33840,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 4,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one creature.",
+                "damage": "4",
+                "damageRoll": "1d4 + 2",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Ram",
@@ -33871,16 +33857,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 2) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 2) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 4,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one creature.",
+                "damage": "8",
+                "damageRoll": "2d4 + 2",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Keen Smell\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" The scurrier has advantage on Wisdom (Perception) checks that rely on smell.\",\"DescriptionWithLinks\":\" The scurrier has advantage on Wisdom (Perception) checks that rely on smell.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Pack Tactics\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" The scurrier has advantage on an attack roll against a creature if at least one of the scurrier's allies is within 5 feet of the creature and the ally isn't incapacitated.\",\"DescriptionWithLinks\":\" The scurrier has advantage on an attack roll against a creature if at least one of the scurrier's allies is within 5 feet of the creature and the ally isn't incapacitated.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Bite\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Ram\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 2) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 2) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -33892,8 +33878,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Scurrier",
-        "timestamp": "2023-05-30T20:15:22.607418+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.607418Z'\""
+        "timestamp": "2023-03-09T01:52:10.6470792+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.6470792Z'\""
     },
     {
         "name": "Shaak",
@@ -34360,16 +34346,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +6 to hit, reach 5 ft., one creature in the swarm's space. Hit: 9 (2d8) kinetic damage, or 4 (1d8) kinetic damage if the swarm has half of its hit points or fewer.",
                 "descriptionWithLinks": " Melee Weapon Attack: +6 to hit, reach 5 ft., one creature in the swarm's space. Hit: 9 (2d8) kinetic damage, or 4 (1d8) kinetic damage if the swarm has half of its hit points or fewer.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 6,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one creature.",
+                "damage": "9",
+                "damageRoll": "2d8",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Keen Hearing\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" The Shyrack has advantage on Wisdom (Perception) checks that rely on hearing.\",\"DescriptionWithLinks\":\" The Shyrack has advantage on Wisdom (Perception) checks that rely on hearing.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Swarm\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a small shyrack. The swarm can't regain hit points or gain temporary hit points.\",\"DescriptionWithLinks\":\" The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a small shyrack. The swarm can't regain hit points or gain temporary hit points.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Bite\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +6 to hit, reach 5 ft., one creature in the swarm's space. Hit: 9 (2d8) kinetic damage, or 4 (1d8) kinetic damage if the swarm has half of its hit points or fewer.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +6 to hit, reach 5 ft., one creature in the swarm's space. Hit: 9 (2d8) kinetic damage, or 4 (1d8) kinetic damage if the swarm has half of its hit points or fewer.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -34381,8 +34367,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Shyrack Swarm",
-        "timestamp": "2023-05-30T20:15:22.8842617+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8842617Z'\""
+        "timestamp": "2023-03-09T01:52:10.7310304+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7310304Z'\""
     },
     {
         "name": "Sibian Hound",
@@ -35530,9 +35516,9 @@
         "savingThrowsJson": "",
         "skills": [
             "Stealth +4",
-            "Percpection +3"
+            "Perception +3"
         ],
-        "skillsJson": "[\"Stealth +4\",\"Percpection +3\"]",
+        "skillsJson": "[\"Stealth +4\",\"Perception +3\"]",
         "damageImmunities": [],
         "damageImmunitiesParsed": [],
         "damageImmunitiesParsedJson": "[]",
@@ -35634,8 +35620,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Steep",
-        "timestamp": "2023-05-30T20:15:22.8852602+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8852602Z'\""
+        "timestamp": "2023-03-09T01:52:10.7310304+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7310304Z'\""
     },
     {
         "name": "Stintaril",
@@ -37307,9 +37293,7 @@
         ],
         "sensesJson": "[\"Darkvision 60ft\",\"passive Perception 13\"]",
         "languages": [
-            "Can't speak but underst",
-            "s comm",
-            "s in Sith"
+            "Can't speak but understands commands in Sith"
         ],
         "languagesJson": "[\"Can't speak but underst\",\"s comm\",\"s in Sith\"]",
         "challengeRating": "9",
@@ -37372,16 +37356,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 22 (5d8+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 15) or become poisoned and take 2 (1d4) toxin damage per turn.",
                 "descriptionWithLinks": " Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 22 (5d8+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 15) or become poisoned and take 2 (1d4) toxin damage per turn.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 6,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one creature.",
+                "damage": "22",
+                "damageRoll": "5d8 + 3",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Claws",
@@ -37389,16 +37373,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 18 (5d6+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 15) or become poisoned and take 2 (1d4) toxin damage per turn.",
                 "descriptionWithLinks": " Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 18 (5d6+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 15) or become poisoned and take 2 (1d4) toxin damage per turn.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 6,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one creature.",
+                "damage": "18",
+                "damageRoll": "5d6 + 3",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Rock",
@@ -37406,16 +37390,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Ranged Weapon Attack: +3 to hit, range 30/70 ft., one creature. Hit: 15 (4d6+3) kinetic damage.",
                 "descriptionWithLinks": " Ranged Weapon Attack: +3 to hit, range 30/70 ft., one creature. Hit: 15 (4d6+3) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 2,
+                "attackType": "RangedWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 3,
+                "range": "range 30/70 ft.",
+                "numberOfTargets": "one creature.",
+                "damage": "15",
+                "damageRoll": "4d6 + 3",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Force Resistance\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" The terentatek has advantage on saving throws against force powers and resistance to damage dealt by force powers.\",\"DescriptionWithLinks\":\" The terentatek has advantage on saving throws against force powers and resistance to damage dealt by force powers.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Sith-born\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" Dark forcecasters and Sith (species) have advantage on Animal Handling checks on Terentatek.\",\"DescriptionWithLinks\":\" Dark forcecasters and Sith (species) have advantage on Animal Handling checks on Terentatek.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Multiattack\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" The Terentatek makes three attacks, once with its tusks and twice with its claws.\",\"DescriptionWithLinks\":\" The Terentatek makes three attacks, once with its tusks and twice with its claws.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Tusks\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 22 (5d8+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 15) or become poisoned and take 2 (1d4) toxin damage per turn.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 22 (5d8+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 15) or become poisoned and take 2 (1d4) toxin damage per turn.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Claws\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 18 (5d6+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 15) or become poisoned and take 2 (1d4) toxin damage per turn.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 18 (5d6+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 15) or become poisoned and take 2 (1d4) toxin damage per turn.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Rock\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Ranged Weapon Attack: +3 to hit, range 30/70 ft., one creature. Hit: 15 (4d6+3) kinetic damage.\",\"DescriptionWithLinks\":\" Ranged Weapon Attack: +3 to hit, range 30/70 ft., one creature. Hit: 15 (4d6+3) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -37427,8 +37411,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Terentatek",
-        "timestamp": "2023-05-30T20:15:22.8862595+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.8862595Z'\""
+        "timestamp": "2023-03-09T01:52:10.7330296+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.7330296Z'\""
     },
     {
         "name": "Trandoshan Elite Warrior",
@@ -37460,10 +37444,10 @@
         "charisma": 13,
         "charismaModifier": 2,
         "savingThrows": [
-            "Strength +7",
-            "Wisdom +5"
+            "Str +7",
+            "Wis +5"
         ],
-        "savingThrowsJson": "[\"Strength +7\",\"Wisdom +5\"]",
+        "savingThrowsJson": "[\"Str +7\",\"Wis +5\"]",
         "skills": [
             "Athletics +7",
             "Intimidation +5",
@@ -37667,8 +37651,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Trandoshan Elite Warrior",
-        "timestamp": "2023-05-30T20:15:22.5924267+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.5924267Z'\""
+        "timestamp": "2023-03-09T01:52:10.6250924+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.6250924Z'\""
     },
     {
         "name": "Trandoshan Hunter",
@@ -37700,10 +37684,10 @@
         "charisma": 9,
         "charismaModifier": -1,
         "savingThrows": [
-            "Strength +5",
-            "Wisdom +4"
+            "Str +5",
+            "Wis +4"
         ],
-        "savingThrowsJson": "[\"Strength +5\",\"Wisdom +4\"]",
+        "savingThrowsJson": "[\"Str +5\",\"Wis +4\"]",
         "skills": [
             "Athletics +5",
             "Perception +4",
@@ -37855,8 +37839,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Trandoshan Hunter",
-        "timestamp": "2023-05-30T20:15:22.5924267+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.5924267Z'\""
+        "timestamp": "2023-03-09T01:52:10.6250924+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.6250924Z'\""
     },
     {
         "name": "Trandoshan Huntmaster",
@@ -37888,10 +37872,10 @@
         "charisma": 15,
         "charismaModifier": 2,
         "savingThrows": [
-            "Strength +7",
-            "Wisdom +6"
+            "Str +7",
+            "Wis +6"
         ],
-        "savingThrowsJson": "[\"Strength +7\",\"Wisdom +6\"]",
+        "savingThrowsJson": "[\"Str +7\",\"Wis +6\"]",
         "skills": [
             "Athletics +7",
             "Intimidation +5",
@@ -38097,8 +38081,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Trandoshan Huntmaster",
-        "timestamp": "2023-05-30T20:15:22.5914282+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.5914282Z'\""
+        "timestamp": "2023-03-09T01:52:10.6240929+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.6240929Z'\""
     },
     {
         "name": "Trandoshan T'doshok",
@@ -38130,11 +38114,11 @@
         "charisma": 13,
         "charismaModifier": 2,
         "savingThrows": [
-            "Strength +11",
-            "Constitution +9",
-            "Wisdom +8"
+            "Str +11",
+            "Con +9",
+            "Wis +8"
         ],
-        "savingThrowsJson": "[\"Strength +11\",\"Constitution +9\",\"Wisdom +8\"]",
+        "savingThrowsJson": "[\"Str +11\",\"Con +9\",\"Wis +8\"]",
         "skills": [
             "Athletics +11",
             "Intimidation +7",
@@ -38460,8 +38444,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Trandoshan T'doshok",
-        "timestamp": "2023-05-30T20:15:22.5924267+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.5924267Z'\""
+        "timestamp": "2023-03-09T01:52:10.626092+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.626092Z'\""
     },
     {
         "name": "Trandoshan Warrior",
@@ -38493,10 +38477,10 @@
         "charisma": 9,
         "charismaModifier": -1,
         "savingThrows": [
-            "Strength +5",
-            "Wisdom +3"
+            "Str +5",
+            "Wis +3"
         ],
-        "savingThrowsJson": "[\"Strength +5\",\"Wisdom +3\"]",
+        "savingThrowsJson": "[\"Str +5\",\"Wis +3\"]",
         "skills": [
             "Athletics +5",
             "Perception +3",
@@ -38648,8 +38632,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Trandoshan Warrior",
-        "timestamp": "2023-05-30T20:15:22.5914282+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.5914282Z'\""
+        "timestamp": "2023-03-09T01:52:10.6240929+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.6240929Z'\""
     },
     {
         "name": "Tree",
@@ -40757,16 +40741,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 7 (1d8+3) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 7 (1d8+3) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 5,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one creature.",
+                "damage": "15",
+                "damageRoll": "1d8 + 3",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Claws",
@@ -40774,16 +40758,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 6 (1d6+3) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 6 (1d6+3) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 5,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one creature.",
+                "damage": "15",
+                "damageRoll": "1d6 + 3",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Poisonous Stingers",
@@ -40791,16 +40775,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 13) or become poisoned.",
                 "descriptionWithLinks": " Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 13) or become poisoned.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 5,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one creature.",
+                "damage": "15",
+                "damageRoll": "1d4 + 3",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Keen Senses\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" The Tuk'ata has advantage on Wisdom (Perception) checks.\",\"DescriptionWithLinks\":\" The Tuk'ata has advantage on Wisdom (Perception) checks.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Sith-born\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" Dark forcecasters and Sith (species) have advantage on Animal Handling checks against Tuk'ata.\",\"DescriptionWithLinks\":\" Dark forcecasters and Sith (species) have advantage on Animal Handling checks against Tuk'ata.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Telepathy\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" Tuk'ata can communicate telepathically with other creature within it's line of sight.\",\"DescriptionWithLinks\":\" Tuk'ata can communicate telepathically with other creature within it's line of sight.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Multiattack\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" The Tuk'ata makes two attacks, once with its bite and once with its claws or poisonous stingers.\",\"DescriptionWithLinks\":\" The Tuk'ata makes two attacks, once with its bite and once with its claws or poisonous stingers.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Bite\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 7 (1d8+3) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 7 (1d8+3) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Claws\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 6 (1d6+3) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 6 (1d6+3) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Poisonous Stingers\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 13) or become poisoned.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4+3) kinetic damage. The creature must then succeed on a Constitution saving throw (DC 13) or become poisoned.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -40812,8 +40796,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Tuk'ata",
-        "timestamp": "2023-05-30T20:15:22.593427+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.593427Z'\""
+        "timestamp": "2023-03-09T01:52:10.626092+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.626092Z'\""
     },
     {
         "name": "Tusk Cat",
@@ -42261,16 +42245,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +10 to hit, reach 5 ft., one creature. Hit: 10 (2d6 + 3) energy damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +10 to hit, reach 5 ft., one creature. Hit: 10 (2d6 + 3) energy damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 9,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": 10,
+                "damageRoll": "2d6 + 3",
+                "damageTypeEnum": 2,
+                "damageType": "Energy"
             },
             {
                 "name": "Teleport",
@@ -42350,8 +42334,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Vessel of Abeloth",
-        "timestamp": "2023-05-30T20:15:23.1471107+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A23.1471107Z'\""
+        "timestamp": "2023-03-09T01:52:10.9818855+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.9818855Z'\""
     },
     {
         "name": "Vesuvague Tree",
@@ -43024,8 +43008,8 @@
                 "name": "Multiattack",
                 "monsterBehaviorTypeEnum": 2,
                 "monsterBehaviorType": "Action",
-                "description": " Bite. Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 15 (3d8 + 5) kinetic damage & 12 (2d12) acid damage If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked prone.  Tail. Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 17 (4d6 + 5) kinetic damage plus 18 (6d6) poison damage. If the target is a creature it must also make DC 16 Constitution saving throw. On a failure, a creature is paralyzed for 1 minute. The creature can repeat this saving throw at end of each of its turns, ending the effect on itself.  Sonic Blast (Recharge 5-6). The Voxyn emits a sonic howl from its snout. Creatures within 30 feet of it must succeed on a DC 16 Constitution saving throw or take 32 (5d10 + 5) Sonic damage, be stunned for 1 minute, and is deafened. Takes half damage on a successful save. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.   Voxyn can make two bite attacks and one tail attack",
-                "descriptionWithLinks": " Bite. Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 15 (3d8 + 5) kinetic damage & 12 (2d12) acid damage If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked prone.  Tail. Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 17 (4d6 + 5) kinetic damage plus 18 (6d6) poison damage. If the target is a creature it must also make DC 16 Constitution saving throw. On a failure, a creature is paralyzed for 1 minute. The creature can repeat this saving throw at end of each of its turns, ending the effect on itself.  Sonic Blast (Recharge 5-6). The Voxyn emits a sonic howl from its snout. Creatures within 30 feet of it must succeed on a DC 16 Constitution saving throw or take 32 (5d10 + 5) Sonic damage, be stunned for 1 minute, and is deafened. Takes half damage on a successful save. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.   Voxyn can make two bite attacks and one tail attack",
+                "description": "  Voxyn can make two bite attacks and one tail attack",
+                "descriptionWithLinks": "  Voxyn can make two bite attacks and one tail attack",
                 "attackTypeEnum": 0,
                 "attackType": "None",
                 "restrictions": null,
@@ -43035,6 +43019,57 @@
                 "damage": null,
                 "damageRoll": null,
                 "damageTypeEnum": 0,
+                "damageType": "Unknown"
+            },
+            {
+                "name": "Bite",
+                "monsterBehaviorTypeEnum": 2,
+                "monsterBehaviorType": "Action",
+                "description": " Bite. Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 15 (3d8 + 5) kinetic damage & 12 (2d12) acid damage If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked prone.",
+                "descriptionWithLinks": " Bite. Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 15 (3d8 + 5) kinetic damage & 12 (2d12) acid damage If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked prone.",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
+                "restrictions": null,
+                "attackBonus": 9,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "15",
+                "damageRoll": "3d8 + 5",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
+            },
+            {
+                "name": "Tail",
+                "monsterBehaviorTypeEnum": 2,
+                "monsterBehaviorType": "Action",
+                "description": " Tail. Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 17 (4d6 + 5) kinetic damage plus 18 (6d6) poison damage. If the target is a creature it must also make DC 16 Constitution saving throw. On a failure, a creature is paralyzed for 1 minute. The creature can repeat this saving throw at end of each of its turns, ending the effect on itself.",
+                "descriptionWithLinks": " Tail. Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 17 (4d6 + 5) kinetic damage plus 18 (6d6) poison damage. If the target is a creature it must also make DC 16 Constitution saving throw. On a failure, a creature is paralyzed for 1 minute. The creature can repeat this saving throw at end of each of its turns, ending the effect on itself.",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
+                "restrictions": null,
+                "attackBonus": 9,
+                "range": "reach 10 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "17",
+                "damageRoll": "4d6 + 5",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
+            },
+            {
+                "name": "Sonic Blast",
+                "monsterBehaviorTypeEnum": 2,
+                "monsterBehaviorType": "Action",
+                "description": " The Voxyn emits a sonic howl from its snout. Creatures within 30 feet of it must succeed on a DC 16 Constitution saving throw or take 32 (5d10 + 5) Sonic damage, be stunned for 1 minute, and is deafened. Takes half damage on a successful save. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+                "descriptionWithLinks": " The Voxyn emits a sonic howl from its snout. Creatures within 30 feet of it must succeed on a DC 16 Constitution saving throw or take 32 (5d10 + 5) Sonic damage, be stunned for 1 minute, and is deafened. Takes half damage on a successful save. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+                "attackTypeEnum": 0,
+                "attackType": "None",
+                "restrictions": "Recharge 5-6",
+                "attackBonus": 0,
+                "range": null,
+                "numberOfTargets": null,
+                "damage": null,
+                "damageRoll": null,
+                "damageTypeEnum":null,
                 "damageType": "Unknown"
             }
         ],
@@ -43047,8 +43082,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Voxyn",
-        "timestamp": "2023-05-30T20:15:22.5974236+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.5974236Z'\""
+        "timestamp": "2023-03-09T01:52:10.6320887+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.6320887Z'\""
     },
     {
         "name": "Vulptex",
@@ -43431,9 +43466,7 @@
         ],
         "sensesJson": "[\"Darkvision 60 ft.\",\"Blindsight 30 ft.\",\"Tremorsense 60 ft.\",\"passive Perception\"]",
         "languages": [
-            "Can't speak but underst",
-            "s comm",
-            "s in Sith"
+            "Can't speak but understands commands in Sith"
         ],
         "languagesJson": "[\"Can't speak but underst\",\"s comm\",\"s in Sith\"]",
         "challengeRating": "20",
@@ -43636,8 +43669,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "War Wyrm",
-        "timestamp": "2023-05-30T20:15:22.5984239+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.5984239Z'\""
+        "timestamp": "2023-03-09T01:52:10.634087+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.634087Z'\""
     },
     {
         "name": "Weaponized Gonk Droid",
@@ -44277,9 +44310,9 @@
         "skills": [
             "Perception +4",
             "Stealth +5",
-            "Tech +6"
+            "Technology +6"
         ],
-        "skillsJson": "[\"Perception +4\",\"Stealth +5\",\"Tech +6\"]",
+        "skillsJson": "[\"Perception +4\",\"Stealth +5\",\"Technology +6\"]",
         "damageImmunities": [],
         "damageImmunitiesParsed": [],
         "damageImmunitiesParsedJson": "[]",
@@ -44408,8 +44441,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Wookiee Engineer",
-        "timestamp": "2023-05-30T20:15:22.5994233+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.5994233Z'\""
+        "timestamp": "2023-03-09T01:52:10.6360864+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.6360864Z'\""
     },
     {
         "name": "Wookiee Hunter",
@@ -44860,16 +44893,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 11 (3d6 + 3) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 11 (3d6 + 3) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 3,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "11",
+                "damageRoll": "3d6 + 3",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             },
             {
                 "name": "Claws",
@@ -44877,16 +44910,16 @@
                 "monsterBehaviorType": "Action",
                 "description": " Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 7 (2d4+3) kinetic damage.",
                 "descriptionWithLinks": " Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 7 (2d4+3) kinetic damage.",
-                "attackTypeEnum": 0,
-                "attackType": "None",
+                "attackTypeEnum": 1,
+                "attackType": "MeleeWeapon",
                 "restrictions": null,
-                "attackBonus": 0,
-                "range": null,
-                "numberOfTargets": null,
-                "damage": null,
-                "damageRoll": null,
-                "damageTypeEnum": 0,
-                "damageType": "Unknown"
+                "attackBonus": 3,
+                "range": "reach 5 ft.",
+                "numberOfTargets": "one target.",
+                "damage": "7",
+                "damageRoll": "2d4 + 3",
+                "damageTypeEnum": 7,
+                "damageType": "Kinetic"
             }
         ],
         "behaviorsJson": "[{\"Name\":\"Charge\",\"MonsterBehaviorTypeEnum\":1,\"MonsterBehaviorType\":\"Trait\",\"Description\":\" If the Wraid moves at least 20 feet straight toward a target and then hits it with a ram Attack on the same turn, the target takes an extra 4 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 10 Strength saving throw or be knocked prone.\",\"DescriptionWithLinks\":\" If the Wraid moves at least 20 feet straight toward a target and then hits it with a ram Attack on the same turn, the target takes an extra 4 (2d8) kinetic damage. If the target is a creature, it must succeed on a DC 10 Strength saving throw or be knocked prone.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Multiattack\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" The Wraid makes two attacks, once with its ram and one with its claws.\",\"DescriptionWithLinks\":\" The Wraid makes two attacks, once with its ram and one with its claws.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Ram\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 11 (3d6 + 3) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 11 (3d6 + 3) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"},{\"Name\":\"Claws\",\"MonsterBehaviorTypeEnum\":2,\"MonsterBehaviorType\":\"Action\",\"Description\":\" Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 7 (2d4+3) kinetic damage.\",\"DescriptionWithLinks\":\" Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 7 (2d4+3) kinetic damage.\",\"AttackTypeEnum\":0,\"AttackType\":\"None\",\"Restrictions\":null,\"AttackBonus\":0,\"Range\":null,\"NumberOfTargets\":null,\"Damage\":null,\"DamageRoll\":null,\"DamageTypeEnum\":0,\"DamageType\":\"Unknown\"}]",
@@ -44898,8 +44931,8 @@
         "contentSource": "SnV",
         "partitionKey": "Core",
         "rowKey": "Wraid",
-        "timestamp": "2023-05-30T20:15:22.6014231+00:00",
-        "eTag": "W/\"datetime'2023-05-30T20%3A15%3A22.6014231Z'\""
+        "timestamp": "2023-03-09T01:52:10.6380847+00:00",
+        "eTag": "W/\"datetime'2023-03-09T01%3A52%3A10.6380847Z'\""
     },
     {
         "name": "Wyyyschokk",
