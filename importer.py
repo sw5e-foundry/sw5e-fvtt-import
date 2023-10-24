@@ -30,7 +30,7 @@ class Importer:
 		'feature',
 		'fightingMastery',
 		'fightingStyle',
-		'lightsaberForms',
+		'lightsaberForm',
 		'maneuvers',
 		'monster',
 		'power',
@@ -59,8 +59,12 @@ class Importer:
 	def __init__(self, refresh=False):
 
 		if refresh:
+			print('Refreshing raw data...')
 			for entity_type in self.__entity_types:
+				print(f'	{entity_type}')
+				old_data = self.__getData(entity_type, online=False)
 				data = self.__getData(entity_type, online=True)
+				data = self.__mergeData(old_data, data)
 				self.__saveData(entity_type, data)
 
 		self.__loadRawData()
@@ -101,6 +105,40 @@ class Importer:
 	def __saveData(self, file_name, data):
 		with open(f'{self.__raw_path}{file_name}.json', 'w+', encoding='utf8') as raw_file:
 			json.dump(data, raw_file, indent=4, sort_keys=False, ensure_ascii=False)
+
+	def __mergeData(self, old_data, new_data):
+		old_data_table = { element["rowKey"]: element for element in old_data }
+		new_data_table = { element["rowKey"]: element for element in new_data }
+
+		data = []
+		keys = set()
+
+		for old_element in old_data:
+			row_key = old_element["rowKey"]
+			if row_key in keys: continue
+			new_element = new_data_table.get(row_key)
+
+			if not new_element:
+				print(f'		Removed content: {row_key=}')
+			else:
+				element_keys_set = set(old_element.keys()).union(set(new_element.keys()))
+				element_diff = { key for key in element_keys_set if old_element.get(key) != new_element.get(key) }
+				if element_diff.issubset({'timestamp', 'eTag'}):
+					data.append(old_element)
+				else:
+					print(f'		Updated content: {row_key=}')
+					data.append(new_element)
+				keys.add(row_key)
+
+		for new_element in new_data:
+			row_key = new_element["rowKey"]
+			if row_key in keys: continue
+			print(f'		Added content: {row_key=}')
+			data.append(new_element)
+			keys.add(row_key)
+
+		return data
+
 
 
 	def __loadRawData(self):
