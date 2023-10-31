@@ -58,6 +58,11 @@ class Species(sw5e.Entity.Item):
 				self.broken_links += ['cant find trait']
 		if len(uids): advancements.append( sw5e.Advancement.ItemGrant(name="Traits", uids=uids, level=0, optional=True) )
 
+		# TODO: Change this once/if we get the ability to restrict the choices you can spend points on
+		fixed = { abl["abilities"][0][:3].lower(): abl["amount"] for abl in self.raw_abilitiesIncreased[0] if len(abl["abilities"]) == 1 }
+		points = sum({ abl["amount"] for abl in self.raw_abilitiesIncreased[0] if len(abl["abilities"]) != 1 })
+		advancements.append( sw5e.Advancement.AbilityScoreImprovement(level=0, fixed=fixed, points=points) )
+
 		return advancements
 
 	def getData(self, importer):
