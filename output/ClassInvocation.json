@@ -7507,7 +7507,7 @@
             "damage": {
                 "parts": [
                     [
-                        "1d10 + @mod",
+                        "1d10 + @mod + @classes.scholar.levels",
                         "temphp"
                     ]
                 ],
@@ -19813,9 +19813,14 @@
                 "max": null,
                 "per": null
             },
-            "actionType": "other",
+            "actionType": "heal",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.scholar.levels",
+                        "temphp"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -21012,9 +21017,14 @@
                 "max": null,
                 "per": null
             },
-            "actionType": "other",
+            "actionType": "heal",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.half your scholar.levels",
+                        "temphp"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -26638,7 +26648,7 @@
             "damage": {
                 "parts": [
                     [
-                        "1d10 + @abilities.dex.mod",
+                        "1d10 + @abilities.dex.mod + @classes.monk.levels",
                         ""
                     ]
                 ],

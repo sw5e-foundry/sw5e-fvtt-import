@@ -390,17 +390,20 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 			save_dc = int(match["dc"]) if match["dc"] else int(match["dc2"]) if match["dc2"] else None
 
 		## Dice formula
+		p_plus = r'(?:\s*\+\s*)'
 		p_mult = r'(?:(?P<mult>\d+) (?:times|x|\*)\s+)'
 		p_dice = r'(?P<dice>\d*d\d+(?:\s*\+\s*\d*d\d+)*)'
 		p_rolled = r'(?P<rolled>(?:the )?(?:number|amount) (?:rolled|you roll)(?: on (?:the|your) \w+ die)?|(?:the|your) \w+ die|the (?:\w+ )?die roll(?:ed)?|the (?:(?:result of the )?roll|result))'
 		p_dice = fr'(?:{p_dice}|{p_rolled})'
-		p_flat = r'(?:(?:\s*\+\s*)?(?P<flat>\d+))'
-		p_mod = r'(?:(?:\s*\+\s*)?your (?P<ability_mod>\w[\w ]*?)(?: ability)? modifier)'
-		p_lvl = r'(?:(?:\s*\+\s*)?your (?P<class_level>\w[\w ]*?)(?: class)? level)'
-		p_prof = r'(?P<prof_bonus>(?:\s*\+\s*)?your proficiency bonus)'
+		p_flat = fr'(?:{p_plus}?(?P<flat>\d+))'
+		p_mod = fr'(?:{p_plus}?your (?P<ability_mod>\w[\w ]*?)(?: ability)? modifier)'
+		p_charlvl = fr'(?:{p_plus}?(?P<char_level>your level))'
+		p_classlvl = fr'(?:{p_plus}?your (?P<class_level>\w[\w ]*?)(?: class)? level)'
+		p_mod2 = fr'(?:{p_plus}?your (?P<ability_mod2>\w[\w ]*?)(?: ability)? modifier)'
+		p_prof = fr'(?P<prof_bonus>{p_plus}?your proficiency bonus)'
 
-		p_formula = fr'{p_mult}?{p_dice}?{p_flat}?{p_mod}?{p_lvl}?{p_prof}?'
-		p_dformula = fr'{p_mult}?{p_dice}{p_flat}?{p_mod}?{p_lvl}?{p_prof}?'
+		p_formula = fr'{p_mult}?{p_dice}?{p_flat}?{p_mod}?{p_charlvl}?{p_classlvl}?{p_mod2}?{p_prof}?'
+		p_dformula = fr'{p_mult}?{p_dice}{p_flat}?{p_mod}?{p_charlvl}?{p_classlvl}?{p_mod2}?{p_prof}?'
 
 		def get_formula(match):
 			nonlocal rolled_formula, has_rolled
@@ -409,7 +412,9 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 			rolled = match.groupdict().get('rolled')
 			flat = match.groupdict().get('flat')
 			ability_mod = match.groupdict().get('ability_mod')
-			class_lvl = match.groupdict().get('class_lvl')
+			char_lvl = match.groupdict().get('char_level')
+			class_lvl = match.groupdict().get('class_level')
+			ability_mod2 = match.groupdict().get('ability_mod2')
 			prof_bonus = match.groupdict().get('prof_bonus')
 
 
@@ -429,10 +434,20 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 						mod = f'@abilities.{ability_mod[:3]}.mod'
 					if formula: formula = f'{formula} + {mod}'
 					else: formula = mod
+				if char_lvl:
+					lvl = f'@details.level'
+					if formula: formula = f'{formula} + {lvl}'
+					else: formula = lvl
 				if class_lvl:
 					lvl = f'@classes.{class_lvl.lower()}.levels'
 					if formula: formula = f'{formula} + {lvl}'
 					else: formula = lvl
+				if ability_mod2:
+					mod = '@mod'
+					if ability_mod2 in ('strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'):
+						mod = f'@abilities.{ability_mod2[:3]}.mod'
+					if formula: formula = f'{formula} + {mod}'
+					else: formula = mod
 				if prof_bonus:
 					bonus = '@prof'
 					if formula: formula = f'{formula} + {bonus}'

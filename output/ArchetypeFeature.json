@@ -8746,7 +8746,7 @@
             "damage": {
                 "parts": [
                     [
-                        "1d10 + @abilities.dex.mod",
+                        "1d10 + @abilities.dex.mod + @classes.guardian.levels",
                         ""
                     ]
                 ],
@@ -8809,7 +8809,7 @@
             "damage": {
                 "parts": [
                     [
-                        "1d10 + @abilities.dex.mod",
+                        "1d10 + @abilities.dex.mod + @classes.guardian.levels",
                         ""
                     ]
                 ],
@@ -13432,9 +13432,14 @@
                 "max": null,
                 "per": null
             },
-            "actionType": "other",
+            "actionType": "heal",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.fighter.levels",
+                        "healing"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -21819,7 +21824,7 @@
             "damage": {
                 "parts": [
                     [
-                        "1d12",
+                        "1d12 + @classes.berserker.levels",
                         "temphp"
                     ]
                 ],
@@ -21882,7 +21887,7 @@
             "damage": {
                 "parts": [
                     [
-                        "1d12",
+                        "1d12 + @classes.berserker.levels",
                         "temphp"
                     ]
                 ],
@@ -22349,7 +22354,12 @@
             },
             "actionType": "other",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.engineer.levels + @abilities.int.mod",
+                        "psychic"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -26874,9 +26884,14 @@
                 "max": null,
                 "per": null
             },
-            "actionType": "other",
+            "actionType": "heal",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.berserker.levels",
+                        "temphp"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -27115,9 +27130,14 @@
                 "max": null,
                 "per": null
             },
-            "actionType": "other",
+            "actionType": "heal",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.berserker.levels",
+                        "temphp"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -28075,7 +28095,7 @@
             "damage": {
                 "parts": [
                     [
-                        "1d10 + @abilities.con.mod",
+                        "1d10 + @abilities.con.mod + @classes.engineer.levels",
                         ""
                     ]
                 ],
@@ -30665,7 +30685,12 @@
             },
             "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "5 * (@classes.engineer.levels)",
+                        "healing"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -31013,7 +31038,12 @@
             },
             "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "5 * (@classes.engineer.levels)",
+                        "healing"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -31361,7 +31391,12 @@
             },
             "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "5 * (@classes.engineer.levels)",
+                        "healing"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -31711,7 +31746,7 @@
             "damage": {
                 "parts": [
                     [
-                        "1d10 + @abilities.int.mod",
+                        "1d10 + @abilities.int.mod + @classes.engineer.levels",
                         ""
                     ]
                 ],
@@ -35479,9 +35514,14 @@
                 "max": 1,
                 "per": "sr"
             },
-            "actionType": "other",
+            "actionType": "heal",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.fighter.levels + @abilities.cha.mod",
+                        "healing"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -36722,9 +36762,14 @@
                 "max": null,
                 "per": null
             },
-            "actionType": "other",
+            "actionType": "heal",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.fighter.levels",
+                        "temphp"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -37070,9 +37115,14 @@
                 "max": null,
                 "per": null
             },
-            "actionType": "other",
+            "actionType": "heal",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.fighter.levels",
+                        "temphp"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -44764,7 +44814,7 @@
             "damage": {
                 "parts": [
                     [
-                        "1d10 + @abilities.dex.mod",
+                        "1d10 + @abilities.dex.mod + @classes.monk.levels",
                         ""
                     ]
                 ],
@@ -51293,7 +51343,7 @@
             "damage": {
                 "parts": [
                     [
-                        "1d10 + @abilities.dex.mod",
+                        "1d10 + @abilities.dex.mod + @classes.sentinel.levels",
                         ""
                     ]
                 ],
@@ -59327,7 +59377,12 @@
             },
             "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.scout.levels + @abilities.int.mod",
+                        "energy"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -59385,7 +59440,12 @@
             },
             "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.scout.levels + @abilities.int.mod",
+                        "energy"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -59443,7 +59503,12 @@
             },
             "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.scout.levels + @abilities.int.mod",
+                        "energy"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -59501,7 +59566,12 @@
             },
             "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.scout.levels + @abilities.int.mod",
+                        "energy"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -59559,7 +59629,12 @@
             },
             "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.scout.levels + @abilities.int.mod",
+                        "energy"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -59617,7 +59692,12 @@
             },
             "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.scout.levels + @abilities.int.mod",
+                        "energy"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -59856,7 +59936,7 @@
             "damage": {
                 "parts": [
                     [
-                        "1d10 + @mod",
+                        "1d10 + @mod + @classes.monk.levels",
                         ""
                     ]
                 ],
@@ -60913,7 +60993,16 @@
             },
             "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.scout.levels",
+                        "temphp"
+                    ],
+                    [
+                        "@classes.scout.levels",
+                        "psychic"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -62128,9 +62217,18 @@
                 "max": null,
                 "per": null
             },
-            "actionType": "other",
+            "actionType": "heal",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.guardian.levels",
+                        "temphp"
+                    ],
+                    [
+                        "@classes.guardian.levels",
+                        "temphp"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -62244,9 +62342,18 @@
                 "max": null,
                 "per": null
             },
-            "actionType": "other",
+            "actionType": "heal",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.guardian.levels",
+                        "temphp"
+                    ],
+                    [
+                        "@classes.guardian.levels",
+                        "temphp"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -63171,9 +63278,18 @@
                 "max": null,
                 "per": null
             },
-            "actionType": "other",
+            "actionType": "heal",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.guardian.levels",
+                        "temphp"
+                    ],
+                    [
+                        "@classes.guardian.levels",
+                        "temphp"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -63287,9 +63403,18 @@
                 "max": null,
                 "per": null
             },
-            "actionType": "other",
+            "actionType": "heal",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.guardian.levels",
+                        "temphp"
+                    ],
+                    [
+                        "@classes.guardian.levels",
+                        "temphp"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -65939,7 +66064,12 @@
             },
             "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.consular.levels + @mod",
+                        "force"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -65997,7 +66127,12 @@
             },
             "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "@classes.consular.levels + @mod",
+                        "force"
+                    ]
+                ],
                 "versatile": ""
             },
             "formula": "",
@@ -73107,6 +73242,10 @@
                 "parts": [
                     [
                         "@abilities.str.mod",
+                        ""
+                    ],
+                    [
+                        "@classes.berserker.levels",
                         ""
                     ]
                 ],
