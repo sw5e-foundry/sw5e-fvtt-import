@@ -1,4 +1,4 @@
-import sw5e.Equipment, utils.text
+import sw5e.Equipment, utils.text, utils.config
 import re, json, copy
 
 class Weapon(sw5e.Equipment.Equipment):
@@ -11,6 +11,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		self.activation = 'action'
 
 		self.weapon_type = self.getWeaponType()
+		self.weapon_class = self.getWeaponClass()
 		self.ammo_types = self.getAmmoTypes()
 		self.p_properties = self.getProperties()
 
@@ -103,6 +104,13 @@ class Weapon(sw5e.Equipment.Equipment):
 			if wc.endswith(mode): return f'{start}{mode[0]}W'
 
 		return 'natural'
+
+	def getWeaponClass(self):
+		if self.weapon_type == 'natural': return ''
+		for (classification, wpns) in utils.config.weapon_classes.items():
+			if self.name.lower() in wpns:
+				return classification
+		else: raise ValueError(self.name)
 
 	def getAmmoTypes(self):
 		if (self.name == "Rotary Cannon"): return ['powerGenerator']
@@ -234,6 +242,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		data["system"]["actionType"] = self.getActionType()
 		data["system"]["damage"] = self.getDamage()
 		data["system"]["weaponType"] = self.weapon_type
+		data["system"]["weaponClass"] = self.weapon_class
 		data["system"]["properties"] = self.p_properties
 		data["system"]["critical"] = {
 			"threshold": None,
