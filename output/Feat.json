@@ -545,7 +545,164 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Armor Expert - Light Armor Prof",
+                "icon": "systems/sw5e/packs/Icons/Feats/ArmorExpert.webp",
+                "origin": "Compendium.sw5e.feats.Item.TVHebhZpaHYvZifT",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "2pC4zqFBjb1Qo0dq",
+                "changes": [
+                    {
+                        "key": "system.traits.armorProf.value",
+                        "mode": 2,
+                        "value": "lgt",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            },
+            {
+                "name": "Armor Expert - Light Armor Effect",
+                "icon": "systems/sw5e/packs/Icons/Feats/ArmorExpert.webp",
+                "origin": "Compendium.sw5e.feats.Item.TVHebhZpaHYvZifT",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": true,
+                "_id": "NJw9puV3IveuaU8j",
+                "changes": [
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 2,
+                        "value": "5",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            },
+            {
+                "name": "Armor Expert - Medium Armor Prof",
+                "icon": "systems/sw5e/packs/Icons/Feats/ArmorExpert.webp",
+                "origin": "Compendium.sw5e.feats.Item.TVHebhZpaHYvZifT",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": true,
+                "_id": "6m6SxonZ0nLrBrCe",
+                "changes": [
+                    {
+                        "key": "system.traits.armorProf.value",
+                        "mode": 2,
+                        "value": "med",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            },
+            {
+                "name": "Armor Expert - Heavy Armor Prof",
+                "icon": "systems/sw5e/packs/Icons/Feats/ArmorExpert.webp",
+                "origin": "Compendium.sw5e.feats.Item.TVHebhZpaHYvZifT",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": true,
+                "_id": "t64LLT7W4lLpamEF",
+                "changes": [
+                    {
+                        "key": "system.traits.armorProf.value",
+                        "mode": 2,
+                        "value": "hvy",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-athlete": {
         "name": "Athlete",
@@ -877,14 +1034,26 @@
                 "changes": [
                     {
                         "key": "system.abilities.str.value",
-                        "value": "1",
                         "mode": 2,
+                        "value": "1",
                         "priority": 20
                     },
                     {
                         "key": "system.skills.ath.value",
-                        "value": "1",
                         "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.encumbranceMultiplier",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 1
+                    },
+                    {
+                        "key": "flags.sw5e.encumbranceMultiplier",
+                        "mode": 2,
+                        "value": "1",
                         "priority": 20
                     }
                 ],
@@ -903,9 +1072,14 @@
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
@@ -976,15 +1150,15 @@
                 "_id": "O6MV5fgux54aJzON",
                 "changes": [
                     {
-                        "key": "system.attributes.cha.value",
-                        "value": "1",
+                        "key": "system.abilities.cha.value",
                         "mode": 2,
+                        "value": "1",
                         "priority": 20
                     },
                     {
                         "key": "system.skills.per.value",
-                        "value": "1",
                         "mode": 4,
+                        "value": "1",
                         "priority": 20
                     }
                 ],
@@ -1003,9 +1177,14 @@
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
@@ -1077,14 +1256,14 @@
                 "changes": [
                     {
                         "key": "system.abilities.str.value",
-                        "value": "1",
                         "mode": 2,
+                        "value": "1",
                         "priority": 20
                     },
                     {
                         "key": "system.attributes.movement.climb",
+                        "mode": 4,
                         "value": "(@attributes.movement.walk)",
-                        "mode": 5,
                         "priority": 20
                     }
                 ],
@@ -1103,9 +1282,14 @@
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
@@ -1171,7 +1355,53 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Commando",
+                "icon": "systems/sw5e/packs/Icons/Feats/Commando.webp",
+                "origin": "Compendium.sw5e.feats.Item.cgEKmab6JAcZNW7A",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "EKsP9DTIcPhZnd1t",
+                "changes": [
+                    {
+                        "key": "system.abilities.dex.value",
+                        "mode": 2,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.attributes.movement.crawl",
+                        "mode": 4,
+                        "value": "@attributes.movement.walk",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-competitor": {
         "name": "Competitor",
@@ -1467,8 +1697,14 @@
                 "changes": [
                     {
                         "key": "system.abilities.con.value",
-                        "value": "1",
                         "mode": 2,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.attributes.hp.bonuses.level",
+                        "mode": 2,
+                        "value": "+2",
                         "priority": 20
                     }
                 ],
@@ -1487,9 +1723,14 @@
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
@@ -1781,9 +2022,9 @@
                 "_id": "BjCZUlbZ9U1ZOSJa",
                 "changes": [
                     {
-                        "key": "system.attributes.str.mod",
-                        "value": "1",
+                        "key": "system.abilities.cha.value",
                         "mode": 2,
+                        "value": "1",
                         "priority": 20
                     }
                 ],
@@ -1802,9 +2043,14 @@
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
@@ -2049,9 +2295,9 @@
                 "_id": "IJoxm3NhIdtw6E6s",
                 "changes": [
                     {
-                        "key": "system.attributes.str.mod",
-                        "value": "1",
+                        "key": "system.abilities.cha.value",
                         "mode": 2,
+                        "value": "1",
                         "priority": 20
                     }
                 ],
@@ -2070,15 +2316,59 @@
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
                 "name": "Force of Personality",
                 "description": "",
                 "statuses": []
+            },
+            {
+                "name": "Force of Personality - Cha Insight",
+                "icon": "systems/sw5e/packs/Icons/Feats/ForceOfPersonality.webp",
+                "origin": "Compendium.sw5e.feats.Item.Beg3ouX2K8W2x1lr",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "urYwpkjLxBV3VM3d",
+                "changes": [
+                    {
+                        "key": "system.skills.ins.ability",
+                        "mode": 5,
+                        "value": "cha",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
             }
         ]
     },
@@ -2353,9 +2643,9 @@
                 "_id": "oqsKJpSvNVvb4brh",
                 "changes": [
                     {
-                        "key": "system.attributes.str.mod",
-                        "value": "1",
+                        "key": "system.abilities.cha.value",
                         "mode": 2,
+                        "value": "1",
                         "priority": 20
                     }
                 ],
@@ -2374,9 +2664,14 @@
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
@@ -2447,9 +2742,9 @@
                 "_id": "UoHud3hNEJGfWPXH",
                 "changes": [
                     {
-                        "key": "system.attributes.str.mod",
-                        "value": "1",
+                        "key": "system.abilities.cha.value",
                         "mode": 2,
+                        "value": "1",
                         "priority": 20
                     }
                 ],
@@ -2468,9 +2763,14 @@
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
@@ -2657,7 +2957,47 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Investigative Attunement",
+                "icon": "systems/sw5e/packs/Icons/Feats/InvestigativeAttunement.webp",
+                "origin": "Compendium.sw5e.feats.Item.hnuTCyZGmYSNBvM1",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "JqOVSECv7Yk3nw5D",
+                "changes": [
+                    {
+                        "key": "system.attributes.attunement.max",
+                        "mode": 2,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-investigator": {
         "name": "Investigator",
@@ -3176,14 +3516,14 @@
                 "changes": [
                     {
                         "key": "system.abilities.con.value",
-                        "value": "1",
                         "mode": 2,
+                        "value": "1",
                         "priority": 20
                     },
                     {
                         "key": "system.attributes.movement.swim",
+                        "mode": 4,
                         "value": "(@attributes.movement.walk)",
-                        "mode": 5,
                         "priority": 20
                     }
                 ],
@@ -3202,9 +3542,14 @@
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
@@ -3370,7 +3715,47 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Mobile",
+                "icon": "systems/sw5e/packs/Icons/Feats/Mobile.webp",
+                "origin": "Compendium.sw5e.feats.Item.Dtrt85Kr1g39MET9",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "iG4oD5rLzEr3Lv0F",
+                "changes": [
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 2,
+                        "value": "10",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-muscled_menace": {
         "name": "Muscled Menace",
@@ -3428,7 +3813,53 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Muscled Menace",
+                "icon": "systems/sw5e/packs/Icons/Feats/MuscledMenace.webp",
+                "origin": "Compendium.sw5e.feats.Item.jpWBzw0pFU5CLSjO",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "tXcYjABXky3iTA1Y",
+                "changes": [
+                    {
+                        "key": "system.abilities.str.value",
+                        "mode": 2,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 2,
+                        "value": "5",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-naturalist": {
         "name": "Naturalist",
@@ -3586,7 +4017,47 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Observant",
+                "icon": "systems/sw5e/packs/Icons/Feats/Observant.webp",
+                "origin": "Compendium.sw5e.feats.Item.7diQN6VoqJhyYGtA",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "uKp5Jcfy5ot8aw2I",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.observantFeat",
+                        "mode": 0,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-perceptive": {
         "name": "Perceptive",
@@ -3749,15 +4220,15 @@
                 "_id": "6r9fTP1TDu68qrBF",
                 "changes": [
                     {
-                        "key": "system.attributes.str.mod",
-                        "value": "1",
+                        "key": "system.abilities.cha.value",
                         "mode": 2,
+                        "value": "1",
                         "priority": 20
                     },
                     {
                         "key": "system.skills.prf.value",
-                        "value": "1",
                         "mode": 4,
+                        "value": "1",
                         "priority": 20
                     }
                 ],
@@ -3776,9 +4247,14 @@
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
@@ -4023,9 +4499,9 @@
                 "_id": "3NVot0o4OXJ7cilR",
                 "changes": [
                     {
-                        "key": "system.attributes.str.mod",
-                        "value": "1",
+                        "key": "system.abilities.cha.value",
                         "mode": 2,
+                        "value": "1",
                         "priority": 20
                     }
                 ],
@@ -4044,9 +4520,14 @@
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
@@ -4475,9 +4956,9 @@
                 "_id": "ADseZBBm0OiENVFg",
                 "changes": [
                     {
-                        "key": "flags.dnd5e.forceInsensitive",
+                        "key": "flags.sw5e.forceInsensitive",
+                        "mode": 0,
                         "value": "0",
-                        "mode": 5,
                         "priority": 20
                     }
                 ],
@@ -4496,9 +4977,14 @@
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
@@ -4916,7 +5402,47 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Supreme Accuracy",
+                "icon": "systems/sw5e/packs/Icons/Feats/SupremeAccuracy.webp",
+                "origin": "Compendium.sw5e.feats.Item.m6W6X7kF1BP6YFoa",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "KTZ4CxXtAApgcQVZ",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.elvenAccuracy",
+                        "mode": 0,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-supreme_aptitude": {
         "name": "Supreme Aptitude",
@@ -4974,7 +5500,47 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Supreme Aptitude",
+                "icon": "systems/sw5e/packs/Icons/Feats/SupremeAptitude.webp",
+                "origin": "Compendium.sw5e.feats.Item.zYb7G5KmvBqXD28s",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "WQYHEv8tO63VeZCx",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.supremeAptitude",
+                        "mode": 0,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-supreme_durability": {
         "name": "Supreme Durability",
@@ -5032,7 +5598,47 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Supreme Durability",
+                "icon": "systems/sw5e/packs/Icons/Feats/SupremeDurability.webp",
+                "origin": "Compendium.sw5e.feats.Item.oScPYG8zpmD5X4PZ",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "ZfocHCRK0K7Xyi0j",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.supremeDurability",
+                        "mode": 0,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-survivalist": {
         "name": "Survivalist",
@@ -6028,7 +6634,47 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Blinding Agility",
+                "icon": "systems/sw5e/packs/Icons/Feats/BlindingAgility.webp",
+                "origin": "Compendium.sw5e.feats.Item.Raj7ax628fmECZjB",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "LD7QpcPGV6Xjd8Ft",
+                "changes": [
+                    {
+                        "key": "system.abilities.dex.proficient",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-casting_specialist": {
         "name": "Casting Specialist",
@@ -6086,7 +6732,143 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Casting Specialist - Both",
+                "icon": "systems/sw5e/packs/Icons/Feats/CastingSpecialist.webp",
+                "origin": "Compendium.sw5e.feats.Item.msmwv2EKYVQdcBUo",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "Z471rnHOhEOIG8jX",
+                "changes": [
+                    {
+                        "key": "system.bonuses.mpak.attack",
+                        "mode": 2,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.bonuses.rpak.attack",
+                        "mode": 2,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            },
+            {
+                "name": "Casting Specialist - Force",
+                "icon": "systems/sw5e/packs/Icons/Feats/CastingSpecialist.webp",
+                "origin": "Compendium.sw5e.feats.Item.msmwv2EKYVQdcBUo",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "aMsqMcYmFcDg0Jba",
+                "changes": [
+                    {
+                        "key": "system.bonuses.power.forceDarkDC",
+                        "mode": 2,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.bonuses.power.forceLightDC",
+                        "mode": 2,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.bonuses.power.forceUnivDC",
+                        "mode": 2,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            },
+            {
+                "name": "Casting Specialist - Tech",
+                "icon": "systems/sw5e/packs/Icons/Feats/CastingSpecialist.webp",
+                "origin": "Compendium.sw5e.feats.Item.msmwv2EKYVQdcBUo",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "sR1iYoRbyb1A8zfs",
+                "changes": [
+                    {
+                        "key": "system.bonuses.power.techDC",
+                        "mode": 2,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-chemical_buffer": {
         "name": "Chemical Buffer",
@@ -6434,7 +7216,47 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Cunning Forcecaster",
+                "icon": "systems/sw5e/packs/Icons/Feats/CunningForcecaster.webp",
+                "origin": "Compendium.sw5e.feats.Item.y3QU0k8Q4Ocvsbju",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "NGV5GPeurIYuRcdA",
+                "changes": [
+                    {
+                        "key": "system.abilities.int.value",
+                        "mode": 2,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-cunning_intellect": {
         "name": "Cunning Intellect",
@@ -6492,7 +7314,77 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Cunning Intellect",
+                "icon": "systems/sw5e/packs/Icons/Feats/CunningIntellect.webp",
+                "origin": "Compendium.sw5e.feats.Item.vtOGxEhm8vkUY0w6",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "ZIlcK7Sb2dYfYQBd",
+                "changes": [
+                    {
+                        "key": "system.abilities.int.proficient",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.inv.value",
+                        "mode": 4,
+                        "value": "0.5",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.lor.value",
+                        "mode": 4,
+                        "value": "0.5",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.nat.value",
+                        "mode": 4,
+                        "value": "0.5",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.pil.value",
+                        "mode": 4,
+                        "value": "0.5",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.tec.value",
+                        "mode": 4,
+                        "value": "0.5",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-double_weapon_casting": {
         "name": "Double-Weapon Casting",
@@ -6782,7 +7674,47 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Exalted Awareness",
+                "icon": "systems/sw5e/packs/Icons/Feats/ExaltedAwareness.webp",
+                "origin": "Compendium.sw5e.feats.Item.N3jNRgXwtZ8VsuWj",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "Ljo5yJb635PSmQ1O",
+                "changes": [
+                    {
+                        "key": "system.abilities.wis.proficient",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-exotic_weapon_training": {
         "name": "Exotic Weapon Training",
@@ -7652,7 +8584,47 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Overwhelming Presence",
+                "icon": "systems/sw5e/packs/Icons/Feats/OverwhelmingPresence.webp",
+                "origin": "Compendium.sw5e.feats.Item.iv4QyY1Ig1EBkaq6",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "JanXyQ7pf6ErIBWu",
+                "changes": [
+                    {
+                        "key": "system.abilities.cha.proficient",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-quick_caster": {
         "name": "Quick Caster",
@@ -7947,7 +8919,47 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Titan's Power",
+                "icon": "systems/sw5e/packs/Icons/Feats/TitanSPower.webp",
+                "origin": "Compendium.sw5e.feats.Item.hTvif2roWQW7BceW",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "7c6BO7ePzTjTFwzI",
+                "changes": [
+                    {
+                        "key": "system.abilities.str.proficient",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-total_reconstruction": {
         "name": "Total Reconstruction",
@@ -8121,7 +9133,47 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "name": "Unnatural Resilience",
+                "icon": "systems/sw5e/packs/Icons/Feats/UnnaturalResilience.webp",
+                "origin": "Compendium.sw5e.feats.Item.j9vMXArRjO4VHp7z",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "transfer": true,
+                "disabled": false,
+                "_id": "DfZOT8f474mw8xhM",
+                "changes": [
+                    {
+                        "key": "system.abilities.con.proficient",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "description": "",
+                "statuses": [],
+                "flags": {
+                    "dae": {
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "stackable": "noneName",
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
+                    }
+                },
+                "tint": null
+            }
+        ]
     },
     "Feat.name-versatile_withering": {
         "name": "Versatile Withering",
