@@ -13,7 +13,7 @@ let types = [
 	"fightingmasteries",
 	"forcepowers",
 	"gamingset",
-	"lightsaberform",
+	"lightsaberforms",
 	"species",
 	"speciestraits",
 	"techpowers",

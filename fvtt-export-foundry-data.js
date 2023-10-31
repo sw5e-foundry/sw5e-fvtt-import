@@ -33,8 +33,6 @@ let item_types = {
 		'EnhancedAdventuringGear',
 		'EnhancedArmor',
 		'EnhancedConsumable',
-		'EnhancedCyberneticAugmentation',
-		'EnhancedDroidCustomization',
 		'EnhancedFocus',
 		'EnhancedShield',
 		// 'EnhancedShipArmor',
@@ -44,6 +42,8 @@ let item_types = {
 	],
 	'modifications': [
 		'EnhancedItemModification',
+		'EnhancedCyberneticAugmentation',
+		'EnhancedDroidCustomization',
 	],
 	'armor': ['Armor'],
 
@@ -81,7 +81,7 @@ let item_types = {
 	],
 	'fightingstyles': ['FightingStyle'],
 	'fightingmasteries': ['FightingMastery'],
-	'lightsaberform': ['LightsaberForm'],
+	'lightsaberforms': ['LightsaberForm'],
 }
 
 let journal_entry_types = {
@@ -97,21 +97,21 @@ let actor_types = {
 // item_types = {};
 // journal_entry_types = {};
 
-let foundry_data = {};
+const foundry_data = {};
 
-for (let type of Object.keys(item_types)) {
+for (const type of Object.keys(item_types)) {
 	console.log(`Extracting from ${type} compendium`);
 
-	let pack = await game.packs.get(`sw5e.${type}`);
+	const pack = await game.packs.get(`sw5e.${type}`);
 	if (!pack) {
 		console.log(`Compendium pack sw5e.${type} not found`);
 		continue;
 	}
 
-	let pack_docs = await pack.getDocuments();
-	for(let pack_doc of pack_docs) {
-		let pack_item = pack_doc.data;
-		let uid = pack_item.flags.uid;
+	const pack_docs = await pack.getDocuments();
+	for(const pack_doc of pack_docs) {
+		const pack_item = pack_doc;
+		const uid = pack_item.flags["sw5e-importer"]?.uid ?? pack_item.flags.uid;
 
 		if (uid) {
 			foundry_data[uid] = {
@@ -122,19 +122,19 @@ for (let type of Object.keys(item_types)) {
 	}
 }
 
-for (let type of Object.keys(journal_entry_types)) {
+for (const type of Object.keys(journal_entry_types)) {
 	console.log(`Extracting from ${type} compendium`);
 
-	let pack = await game.packs.get(`sw5e.${type}`);
+	const pack = await game.packs.get(`sw5e.${type}`);
 	if (!pack) {
 		console.log(`Compendium pack sw5e.${type} not found`);
 		continue;
 	}
 
-	let pack_docs = await pack.getDocuments();
-	for(let pack_doc of pack_docs) {
-		let pack_entry = pack_doc.data;
-		let uid = pack_entry.flags.uid;
+	const pack_docs = await pack.getDocuments();
+	for(const pack_doc of pack_docs) {
+		const pack_entry = pack_doc;
+		const uid = pack_entry.flags["sw5e-importer"]?.uid ?? pack_entry.flags.uid;
 
 		if (uid) {
 			foundry_data[uid] = { id: pack_entry._id };
@@ -142,25 +142,25 @@ for (let type of Object.keys(journal_entry_types)) {
 	}
 }
 
-for (let type of Object.keys(actor_types)) {
+for (const type of Object.keys(actor_types)) {
 	console.log(`Extracting from ${type} compendium`);
 
-	let pack = await game.packs.get(`sw5e.${type}`);
+	const pack = await game.packs.get(`sw5e.${type}`);
 	if (!pack) {
 		console.log(`Compendium pack sw5e.${type} not found`);
 		continue;
 	}
 
-	let pack_docs = await pack.getDocuments();
-	for(let pack_doc of pack_docs) {
-		let pack_actor = pack_doc.data;
-		let actor_uid = pack_actor.flags.uid;
+	const pack_docs = await pack.getDocuments();
+	for(const pack_doc of pack_docs) {
+		const pack_actor = pack_doc;
+		const actor_uid = pack_actor.flags["sw5e-importer"]?.uid ?? pack_actor.flags.uid;
 
 		if (actor_uid) {
-			let foundry_data_items = {};
-			for (let itm of pack_actor.items) {
-				let pack_item = itm.data;
-				foundry_data_items[pack_item.flags.uid] = {
+			const foundry_data_items = {};
+			for (const pack_item of pack_actor.items) {
+				const item_uid = pack_item.flags["sw5e-importer"]?.uid ?? pack_item.flags.uid;
+				foundry_data_items[item_uid] = {
 					id: pack_item._id,
 					effects: pack_item.effects
 				};
@@ -174,6 +174,7 @@ for (let type of Object.keys(actor_types)) {
 		}
 	}
 }
+
 
 console.log('Foundry Data:');
 console.log(foundry_data);
