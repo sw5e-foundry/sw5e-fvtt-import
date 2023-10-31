@@ -26333,92 +26333,86 @@
                 "changes": [
                     {
                         "key": "system.details.species",
-                        "value": "Ewok",
                         "mode": 5,
+                        "value": "Ewok",
                         "priority": 5
                     },
                     {
                         "key": "system.abilities.dex.value",
-                        "value": "2",
                         "mode": 2,
+                        "value": "2",
                         "priority": 20
                     },
                     {
                         "key": "system.abilities.con.value",
-                        "value": "1",
                         "mode": 2,
+                        "value": "1",
                         "priority": 20
                     },
                     {
                         "key": "system.traits.size",
-                        "value": "sm",
                         "mode": 5,
+                        "value": "sm",
                         "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
-                        "value": "25",
                         "mode": 5,
+                        "value": "25",
                         "priority": 5
                     },
                     {
                         "key": "system.skills.nat.value",
-                        "value": "1",
                         "mode": 4,
+                        "value": "1",
                         "priority": 20
                     },
                     {
                         "key": "system.skills.sur.value",
-                        "value": "1",
                         "mode": 4,
+                        "value": "1",
                         "priority": 20
                     },
                     {
                         "key": "system.attributes.movement.climb",
-                        "value": "25",
                         "mode": 2,
+                        "value": "25",
                         "priority": 20
                     },
                     {
                         "key": "system.traits.languages.value",
-                        "value": "ewokese",
                         "mode": 0,
+                        "value": "ewokese",
                         "priority": 0
                     },
                     {
                         "key": "system.traits.languages.value",
-                        "value": "basic",
                         "mode": 0,
+                        "value": "basic",
                         "priority": 0
                     },
                     {
                         "key": "flags.sw5e.crudeWeaponSpecialists",
-                        "value": "1",
-                        "mode": 5,
-                        "priority": 20
-                    },
-                    {
-                        "key": "system.traits.toolProf.value",
-                        "value": "music",
                         "mode": 0,
+                        "value": "1",
                         "priority": 20
                     },
                     {
                         "key": "flags.sw5e.maskOfTheWild",
+                        "mode": 0,
                         "value": "1",
-                        "mode": 5,
                         "priority": 20
                     },
                     {
                         "key": "flags.sw5e.undersized",
+                        "mode": 0,
                         "value": "1",
-                        "mode": 5,
                         "priority": 20
                     },
                     {
                         "key": "flags.sw5e.keenSenses",
+                        "mode": 0,
                         "value": "1",
-                        "mode": 5,
                         "priority": 20
                     }
                 ],
@@ -26438,7 +26432,13 @@
                 "flags": {
                     "dae": {
                         "transfer": true,
-                        "stackable": false
+                        "stackable": "noneName",
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
                     }
                 },
                 "origin": null,
@@ -39272,7 +39272,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Teacher.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39318,7 +39318,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/DathomirWitch.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39361,7 +39361,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Investigator.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39406,7 +39406,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Sith.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39452,7 +39452,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Gambler.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39497,7 +39497,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Farmer.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39536,7 +39536,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Student.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39569,14 +39569,8 @@
                 "changes": [
                     {
                         "key": "system.details.background",
-                        "value": "Soldier",
                         "mode": 5,
-                        "priority": 20
-                    },
-                    {
-                        "key": "system.traits.toolProf.value",
-                        "value": "game",
-                        "mode": 2,
+                        "value": "Soldier",
                         "priority": 20
                     }
                 ],
@@ -39590,14 +39584,19 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Soldier.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
@@ -39642,7 +39641,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Scoundrel.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39686,7 +39685,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Companion.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39729,7 +39728,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Scientist.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39769,7 +39768,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/FolkHero.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39808,7 +39807,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/BountyHunter.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39853,7 +39852,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/OfficeWorker.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39899,7 +39898,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Outlaw.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39945,7 +39944,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Hermit.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -39984,7 +39983,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Courtier.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40023,7 +40022,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Un-RetiredAdventurer.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40062,7 +40061,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/ForceAdept.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40125,14 +40124,14 @@
                 "changes": [
                     {
                         "key": "system.details.background",
-                        "value": "Jedi",
                         "mode": 5,
+                        "value": "Jedi",
                         "priority": 20
                     },
                     {
-                        "key": "system.traits.toolProf.value",
-                        "value": "arti",
-                        "mode": 2,
+                        "key": "system.tools.artificersimplements.prof",
+                        "mode": 0,
+                        "value": "1",
                         "priority": 20
                     }
                 ],
@@ -40146,13 +40145,19 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Jedi.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "transfer": true
+                        "stackable": "noneName",
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": "",
+                        "specialDuration": []
                     }
                 },
                 "origin": null,
@@ -40185,7 +40190,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/CrimeLord.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40224,7 +40229,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Agent.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40263,7 +40268,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/FactionArtisan.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40308,7 +40313,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Pirate.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40358,7 +40363,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Smuggler.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40410,14 +40415,19 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Urchin.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
                     "dae": {
-                        "stackable": false,
-                        "specialDuration": "None",
-                        "transfer": true
+                        "stackable": "noneName",
+                        "specialDuration": [],
+                        "transfer": true,
+                        "selfTarget": false,
+                        "selfTargetAlways": false,
+                        "dontApply": false,
+                        "showIcon": false,
+                        "durationExpression": ""
                     }
                 },
                 "origin": null,
@@ -40456,7 +40466,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Laborer.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40496,7 +40506,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Barbarian.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40541,7 +40551,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Mercenary.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40581,7 +40591,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Racer.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40633,7 +40643,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Entertainer.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40682,7 +40692,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Nomad.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40728,7 +40738,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Jensaarai.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40767,7 +40777,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/CityWatch.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40806,7 +40816,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Spacer.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40852,7 +40862,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Gladiator.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40891,7 +40901,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/FactionMerchant.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40936,7 +40946,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Noble.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -40976,7 +40986,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Lawyer.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41016,7 +41026,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/CloneTrooper.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41061,7 +41071,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Mandalorian.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41101,7 +41111,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/FarTraveler.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41156,7 +41166,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "systems/sw5e/packs/Icons/Backgrounds/Imperial%20Knight.webp",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/ImperialKnight.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41199,7 +41209,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/FactionAdventurer.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41238,7 +41248,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Criminal.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41324,7 +41334,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/HolonetTechnician.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41363,7 +41373,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Servant.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
@@ -41403,7 +41413,7 @@
                     "startRound": null,
                     "startTurn": null
                 },
-                "icon": "icons/svg/mystery-man.svg",
+                "icon": "systems/sw5e/packs/Icons/Backgrounds/Addict.webp",
                 "tint": null,
                 "transfer": true,
                 "flags": {
