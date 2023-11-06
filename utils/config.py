@@ -552,8 +552,10 @@ enhanced_item_no_icons = (
 	"Physical Barrier",
 	"Poison",
 	"Portable Teleporter",
+	"Remote Detonator",
 	"Ring of Tech Storing",
 	"Shield",
+	"Smugglepack",
 	"Sorcerer's Adrenal",
 	"Tool",
 	"Tunic",
@@ -871,7 +873,7 @@ equipment_mappings = {
 }
 
 enhanced_equipment_mappings = {
-	"AdventuringGear-None": ('Utility', 'DataRecordingAndStorage'),
+	"AdventuringGear-None": ('Utility', 'DataRecordingAndStorage', 'Storage'),
 	"AdventuringGear-back": ('Clothing', 'WeaponOrArmorAccessory'),
 	"AdventuringGear-body": 'Clothing',
 	"AdventuringGear-feet": ('Clothing', 'WeaponOrArmorAccessory'),

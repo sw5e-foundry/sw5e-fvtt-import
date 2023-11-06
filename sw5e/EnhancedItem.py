@@ -28,14 +28,13 @@ class EnhancedItem(sw5e.Entity.Item):
 	def load(self, raw_item):
 		super().load(raw_item)
 
-		self.raw_subtypeType = \
-			utils.text.clean(raw_item, utils.text.lowerCase(self.raw_type)+'Type') or \
-			utils.text.clean(raw_item, f'enhanced{self.raw_type}Type') or \
-			utils.text.clean(raw_item, f'itemModificationType') or 'None'
-		self.raw_subtypeTypeEnum = \
-			utils.text.raw(raw_item, f'{utils.text.lowerCase(self.raw_type)}TypeEnum') or \
-			utils.text.raw(raw_item, f'enhanced{self.raw_type}TypeEnum') or \
-			utils.text.raw(raw_item, f'itemModificationTypeEnum') or 0
+		self.raw_subtypeTypeEnum = 0
+		self.raw_subtypeType = 'None'
+		for key in [utils.text.lowerCase(self.raw_type)+'Type', f'enhanced{self.raw_type}Type', f'itemModificationType']:
+			if enum := utils.text.raw(raw_item, f'{key}Enum'):
+				self.raw_subtypeTypeEnum = enum
+				self.raw_subtypeType = utils.text.clean(raw_item, key)
+				break
 
 
 	def process(self, importer):
@@ -124,12 +123,14 @@ class EnhancedItem(sw5e.Entity.Item):
 		elif self.raw_name != self.base_name:
 			get_data = {
 				'name': self.base_name,
-				'equipmentCategory': utils.config.enhanced_equipment_mappings[f'{self.raw_type}-{self.raw_subtype}'],
+				'equipmentCategory': utils.config.enhanced_equipment_mappings.get(f'{self.raw_type}-{self.raw_subtype}', 'NOPE'),
 			}
 		else:
 			return None
 
-		if get_data["equipmentCategory"] == None:
+		if get_data["equipmentCategory"] == 'NOPE':
+			raise ValueError(self.raw_name, self.base_name, self.raw_type, self.raw_subtype)
+		elif get_data["equipmentCategory"] == None:
 			return None
 		elif type(get_data["equipmentCategory"]) is tuple:
 			for category in get_data["equipmentCategory"]:
@@ -139,7 +140,7 @@ class EnhancedItem(sw5e.Entity.Item):
 					return base_item
 		elif base_item := importer.get('equipment', data=get_data):
 			return base_item
-		elif not self.base_name in (utils.config.enhanced_item_icons + utils.config.enhanced_item_no_icons):
+		if not self.base_name in (utils.config.enhanced_item_icons + utils.config.enhanced_item_no_icons):
 			print(f"		Failed to find base item for '{self.raw_name}', {self.base_name=}")
 
 	def getDescription(self, base_text = None):
