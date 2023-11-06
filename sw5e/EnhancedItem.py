@@ -52,7 +52,8 @@ class EnhancedItem(sw5e.Entity.Item):
 		self.attack_bonus, self.damage_bonus = self.getAttackBonus()
 		self.activation = self.getActivation()
 		self.rarity = self.getRarity()
-		self.modificationItemType = self.getModificationItemType()
+		self.modification_item_type = self.getModificationItemType()
+		self.modifiable_item = self.getModifiableItem()
 		self.properties = self.getProperties()
 
 	def getActivation(self):
@@ -89,8 +90,16 @@ class EnhancedItem(sw5e.Entity.Item):
 		if self.raw_subtype in ('armor', 'clothing', 'focusgenerator', 'wristpad'): return 'equipment'
 		elif self.raw_subtype in ('blaster', 'vibroweapon', 'lightweapon'): return 'weapon'
 
+	def getModifiableItem(self):
+		if self.is_modification: return
+		if self.raw_name.find("Chassis") != -1:
+			return {
+				'chassis': 'chassis',
+				'augmentSlots': utils.config.chassis_slots.get(self.rarity, 4) - 4
+			}
+
 	def getProperties(self):
-		target_type = self.modificationItemType or (self.base_item and self.base_item.getType())
+		target_type = self.modification_item_type or (self.base_item and self.base_item.getType())
 
 		if target_type == 'equipment':
 			if self.raw_type == 'Focus': properties_list = utils.config.casting_properties
@@ -370,6 +379,8 @@ class EnhancedItem(sw5e.Entity.Item):
 			"scaling": 'flat' if self.save_dc else 'none'
 		}
 
+		if self.modifiable_item: data["system"]["modify"] = self.modifiable_item
+
 		data["system"]["properties"] = self.properties
 
 		self.applyDataAutoTarget(data)
@@ -501,7 +512,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			## TODO: change this one ships are supported
 			pass
 		elif self.is_modification:
-			data["system"]["modificationItemType"] = self.modificationItemType
+			data["system"]["modificationItemType"] = self.modification_item_type
 
 			data["system"]["modificationType"] = 'focusgenerator' if self.raw_subtype == 'focus generator' else self.raw_subtype
 			data["system"]["-=modificationSlot"] = None

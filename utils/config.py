@@ -1147,3 +1147,12 @@ weapon_classes = {
 		"sunsaber",
 	]
 }
+
+chassis_slots = {
+	"standard": 4,
+	"premium": 4,
+	"prototype": 5,
+	"advanced": 5,
+	"legendary": 6,
+	"artifact": 6,
+}
