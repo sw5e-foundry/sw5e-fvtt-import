@@ -539,13 +539,9 @@ enhanced_item_no_icons = (
 	"Armor",
 	"Blaster",
 	"Blueprint",
-	"Charisma Stim",
 	"Cloak",
-	"Constitution Stim",
-	"Dexterity Stim",
 	"Environmental Barrier",
 	"Handwraps",
-	"Intelligence Stim",
 	"Lightweapon",
 	"Machinist's Catalyzer",
 	"Pants",
@@ -562,7 +558,6 @@ enhanced_item_no_icons = (
 	"Vibroweapon",
 	"Vitapac",
 	"Weapon",
-	"Wisdom Stim",
 	"Ship Armor",
 	"Ship Shield",
 )
@@ -570,12 +565,17 @@ enhanced_item_no_icons = (
 enhanced_item_icons = (
 	'Alacrity Adrenal',
 	'Battle Adrenal',
+	"Charisma Stim",
+	"Constitution Stim",
+	"Dexterity Stim",
 	'Inquisitor Saber',
+	"Intelligence Stim",
 	'Mandalorian Beskar\'gam',
 	'Mandalorian Helmet',
 	'Mandalorian Shuk\'orok',
 	'Stamina Adrenal',
 	'Strength Stim',
+	"Wisdom Stim",
 )
 
 classes = (
