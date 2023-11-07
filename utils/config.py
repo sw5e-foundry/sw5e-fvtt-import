@@ -536,22 +536,13 @@ ammo_types = (
 )
 
 enhanced_item_no_icons = (
-	'Armor',
-	'Blaster',
-	'Cloak',
 	'Environmental Barrier',
-	'Lightweapon',
 	'Machinist\'s Catalyzer',
 	'Physical Barrier',
 	'Portable Teleporter',
-	'Remote Detonator',
 	'Ring of Tech Storing',
-	'Shield',
-	'Smugglepack',
 	'Sorcerer\'s Adrenal',
 	'Tool',
-	'Tunic',
-	'Vibroweapon',
 	'Vitapac',
 	'Weapon',
 	'Ship Armor',
@@ -866,8 +857,8 @@ equipment_mappings = {
 }
 
 enhanced_equipment_mappings = {
-	"AdventuringGear-None": ('Utility', 'DataRecordingAndStorage', 'Storage'),
-	"AdventuringGear-back": ('Clothing', 'WeaponOrArmorAccessory'),
+	"AdventuringGear-None": ('Utility', 'DataRecordingAndStorage', 'Storage', 'WeaponOrArmorAccessory'),
+	"AdventuringGear-back": ('Clothing', 'WeaponOrArmorAccessory', 'Storage'),
 	"AdventuringGear-body": 'Clothing',
 	"AdventuringGear-feet": ('Clothing', 'WeaponOrArmorAccessory'),
 	"AdventuringGear-finger": 'Clothing',

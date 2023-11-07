@@ -36,11 +36,15 @@ class EnhancedItem(sw5e.Entity.Item):
 				self.raw_subtypeType = utils.text.clean(raw_item, key)
 				break
 
+		self.is_modification = self.raw_type.endswith('Modification') or self.raw_type in ('CyberneticAugmentation', 'DroidCustomization')
+		self.rarity = self.getRarity()
+		self.modification_item_type = self.getModificationItemType()
+		self.modifiable_item = self.getModifiableItem() or False
+
 
 	def process(self, importer):
 		super().process(importer)
 
-		self.is_modification = self.raw_type.endswith('Modification') or self.raw_type in ('CyberneticAugmentation', 'DroidCustomization')
 		self.base_name = self.getBaseName()
 		self.base_item = self.getBaseItem(importer)
 
@@ -51,9 +55,6 @@ class EnhancedItem(sw5e.Entity.Item):
 		self.attack_bonus, self.damage_bonus, text = self.getAttackBonus()
 		self.action_type, self.damage, self.formula, self.save, self.save_dc, _ = self.getAction(text)
 		self.activation = self.getActivation()
-		self.rarity = self.getRarity()
-		self.modification_item_type = self.getModificationItemType()
-		self.modifiable_item = self.getModifiableItem()
 		self.properties = self.getProperties()
 
 	def getActivation(self):
@@ -134,7 +135,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			}
 		elif self.raw_name != self.base_name:
 			get_data = {
-				'name': self.base_name,
+				'name': self.base_name.lower(),
 				'equipmentCategory': utils.config.enhanced_equipment_mappings.get(f'{self.raw_type}-{self.raw_subtype}', 'NOPE'),
 			}
 		else:
@@ -152,7 +153,8 @@ class EnhancedItem(sw5e.Entity.Item):
 					return base_item
 		elif base_item := importer.get('equipment', data=get_data):
 			return base_item
-		if not self.base_name in (utils.config.enhanced_item_icons + utils.config.enhanced_item_no_icons):
+
+		if not self.base_name in (utils.config.enhanced_item_icons + utils.config.enhanced_item_no_icons) and not self.modifiable_item:
 			print(f"		Failed to find base item for '{self.raw_name}', {get_data=}")
 
 	def getDescription(self, base_text = None):
