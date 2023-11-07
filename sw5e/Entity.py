@@ -24,6 +24,7 @@ class Entity:
 			"rowKey",
 			"timestamp",
 			"eTag",
+			"fakeItem",
 		]
 
 	def getJsonAttrs(self):

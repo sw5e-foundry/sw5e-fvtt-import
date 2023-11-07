@@ -48,8 +48,8 @@ class EnhancedItem(sw5e.Entity.Item):
 		self.target_value, self.target_unit, self.target_type = self.getTarget()
 		self.range_value, self.range_unit = self.getRange()
 		self.uses, self.recharge = self.getUses()
-		self.action_type, self.damage, self.formula, self.save, self.save_dc, _ = self.getAction()
-		self.attack_bonus, self.damage_bonus = self.getAttackBonus()
+		self.attack_bonus, self.damage_bonus, text = self.getAttackBonus()
+		self.action_type, self.damage, self.formula, self.save, self.save_dc, _ = self.getAction(text)
 		self.activation = self.getActivation()
 		self.rarity = self.getRarity()
 		self.modification_item_type = self.getModificationItemType()
@@ -71,17 +71,20 @@ class EnhancedItem(sw5e.Entity.Item):
 	def getUses(self):
 		return utils.text.getUses(self.raw_text, self.raw_name)
 
-	def getAction(self):
-		return utils.text.getAction(self.raw_text, self.raw_name)
+	def getAction(self, text):
+		return utils.text.getAction(text, self.raw_name)
 
 	def getAttackBonus(self):
-		if match := re.search(r'you (?:have|gain) a \+(?P<atk>\d+) (?:bonus )?to attack rolls and deal an additional (?P<dmg>\d*d\d+) damage (?:with (?:this|your unarmed strikes))?', self.raw_text.lower()):
-			return (match["atk"], match["dmg"])
-		if match := re.search(r'you (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<atk>attack)?(?: and )?(?P<dmg>damage)? rolls (?:(?:made )?with (?:this|your unarmed strikes))?', self.raw_text.lower()):
-			return (match["bonus"] if match[opt] else 0 for opt in ('atk', 'dmg'))
-		if match := re.search(r'you (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<up>attack|damage) rolls and a -(?P<penalty>\d+) penalty to (?:attack|damage) rolls (?:(?:made )?with (?:this|your unarmed strikes))?', self.raw_text.lower()):
-			return (match["bonus"] if match["up"] == opt else "-"+match["penalty"] for opt in ('attack', 'damage'))
-		return 0, 0
+		text = self.raw_text.lower()
+		def replaceText(_text, _match):
+			return _text[:_match.start()] + 'FORMULA' + _text[_match.end():]
+		if match := re.search(r'you (?:have|gain) a \+(?P<atk>\d+) (?:bonus )?to attack rolls and deal an additional (?P<dmg>\d*d\d+) damage (?:with (?:this|your unarmed strikes))?', text):
+			return (match["atk"], match["dmg"], replaceText(text, match))
+		if match := re.search(r'you (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<atk>attack)?(?: and )?(?P<dmg>damage)? rolls (?:(?:made )?with (?:this|your unarmed strikes))?', text):
+			return tuple(match["bonus"] if match[opt] else 0 for opt in ('atk', 'dmg')) + (replaceText(text, match),)
+		if match := re.search(r'you (?:have|gain) a \+(?P<bonus>\d+) (?:bonus )?to (?P<up>attack|damage) rolls and a -(?P<penalty>\d+) penalty to (?:attack|damage) rolls (?:(?:made )?with (?:this|your unarmed strikes))?', text):
+			return tuple(match["bonus"] if match["up"] == opt else "-"+match["penalty"] for opt in ('attack', 'damage')) + (replaceText(text, match),)
+		return 0, 0, text
 
 	def getRarity(self):
 		return self.raw_rarityText
@@ -150,7 +153,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		elif base_item := importer.get('equipment', data=get_data):
 			return base_item
 		if not self.base_name in (utils.config.enhanced_item_icons + utils.config.enhanced_item_no_icons):
-			print(f"		Failed to find base item for '{self.raw_name}', {self.base_name=}")
+			print(f"		Failed to find base item for '{self.raw_name}', {get_data=}")
 
 	def getDescription(self, base_text = None):
 		text = self.raw_text
@@ -191,6 +194,8 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		# Use the base item's icon
 		if self.base_item:
+			if name in utils.config.enhanced_item_no_icons:
+				print('item in enhanced_item_no_icons but has base item:', self.name, self.base_name)
 			return self.base_item.getImg(importer=importer)
 
 		# Use the modification subtype icons
@@ -200,6 +205,11 @@ class EnhancedItem(sw5e.Entity.Item):
 			elif self.raw_type == 'DroidCustomization': subtype = f'Droid'
 			if subtype != 'Augment': subtype = f'{subtype}Mod'
 			return f'systems/sw5e/packs/Icons/Modifications/{subtype}.webp'
+
+		# Use the modification icons for chassis
+		if self.modifiable_item:
+			subtype = utils.config.chassis_mappings[f'{self.raw_type}-{self.raw_subtype}']
+			return f'systems/sw5e/packs/Icons/Modifications/{subtype.capitalize()}BASE.webp'
 
 		# Otherwise use the default item bag icon
 		return 'icons/svg/item-bag.svg'
@@ -228,9 +238,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			'modification', ## 19 = LightweaponModification
 			'modification', ## 20 = FocusGeneratorModification
 		]
-		item_type = mapping[self.raw_typeEnum]
-
-		return item_type or 'loot'
+		return mapping[self.raw_typeEnum] or 'loot'
 
 	def getDataSpecific(self, importer):
 		def choose(base, enhanced, field, default):

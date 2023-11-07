@@ -207,6 +207,7 @@ class Importer:
 				storage = self.getEntityList(entity_type)
 				for uid, entity in storage.items():
 					if not entity.foundry_id:
+						if entity.raw_fakeItem: continue
 						## TODO: Remove this once starship items are done
 						if re.search(r'EnhancedItem\.name-ship', uid): continue
 						## TODO: Find a way to set the foundry_ids of the weapon modes
@@ -294,7 +295,8 @@ class Importer:
 		if loud: print(f'Importer.get | {uid=}')
 
 		entity = storage.get(uid, None)
-		if fid_required and entity and not entity.foundry_id: raise AssertionError('Entities should have foundry_id by now')
+		if fid_required and entity and not entity.foundry_id and not entity.raw_fakeItem:
+			raise AssertionError('Entities should have foundry_id by now')
 
 		return entity
 
@@ -307,6 +309,7 @@ class Importer:
 			storage = self.getEntityList(entity_type)
 			for uid in storage:
 				entity = storage[uid]
+				if entity.raw_fakeItem: continue
 				try:
 					entity_data, file = entity.getData(importer=self), entity.getFile(importer=self)
 					if file not in data:
