@@ -214,6 +214,10 @@ class EnhancedItem(sw5e.Entity.Item):
 			return f'systems/sw5e/packs/Icons/Modifications/{subtype.capitalize()}BASE.webp'
 
 		# Otherwise use the default item bag icon
+		if name in utils.config.enhanced_item_no_icons:
+			return 'icons/svg/item-bag.svg'
+
+		print(f'		Enhanced item with no icon, but not in the no icon list. {name=}')
 		return 'icons/svg/item-bag.svg'
 
 	def getType(self):
