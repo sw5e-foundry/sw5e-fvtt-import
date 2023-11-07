@@ -120,6 +120,9 @@ class EnhancedItem(sw5e.Entity.Item):
 		name = re.sub(r'\s*\([^()]*\)$', '', self.raw_name)
 		name = re.sub(r'\s*Mk \w+$', '', name)
 		name = re.sub(r' Chassis$', '', name)
+		name = re.sub(r'(Adept|Ancient|Apprentice|Journeyman|Master|Novice) ', '', name)
+		name = re.sub(r'(Knight\'s|Master\'s|Padawan\'s) ', '', name)
+		name = re.sub(r'(Acolyte\'s|Lord\'s|Warrior\'s) ', '', name)
 		return name
 
 	def getBaseItem(self, importer):

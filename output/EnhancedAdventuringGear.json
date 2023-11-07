@@ -9,7 +9,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/AratechEchoBelt.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Waist)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>While you wear this belt with its field on, Wisdom (Perception) checks made to see you have disadvantage, and you have advantage on Dexterity (Stealth) checks made to hide, as the belt funnels light around you. Activating or deactivating the belt takes an action.</p>\n<p><em>The success of this high-end stealth field generator emboldened Aratech to branch out into other hardware.</em></p>"
@@ -49,7 +49,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/AratechSoundDampeningBoots.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Feet)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>While you wear these boots, your steps make no sound, regardless of the surface you are moving across. You also have advantage on Dexterity (Stealth) checks that rely on moving silently. </p>\n<p><em>Before their repulsorcraft hit it big, Aratech honed its edge in the stealth field generator market.</em></p>"
@@ -133,7 +133,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/BaragwinStealthUnit.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Waist)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>While wearing this belt, you can turn on its stealth field to cause yourself to become invisible. While you are invisible, anything you are carrying or wearing is invisible with you. You become visible when you turn off the field. Turning the field on or off requires an action.</p>\n<p>Deduct the time you are invisible, in increments of 1 minute, from the belt's maximum duration of 2 hours. After 2 hours of use, the belt ceases to function. For every uninterrupted period of 12 hours the belt goes unused, it regains 1 hour of use.</p>\n<p><em>Those Baragwin who sought to turn their telepathic empathy into an asset for bounty hunting needed something special to overcome the drawbacks of their lumbering frames.</em></p>"
@@ -2008,7 +2008,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/DominatorBelt.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Waist)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>While wearing this belt, your Strength score becomes 29. If your Strength is already equal to or greater than 29, it has no effect on you.</p>\n<p><em>While only barely adhering to the most technical definition of a belt, this harness-like rig of pneumaticized limb actuators supplies enormous strength to every limb of its wearer's body, monstrously increasing their physical power.</em></p>"
@@ -3786,33 +3786,80 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Clothing/JediRobe.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Body)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>You gain a +2 bonus to AC while you wear this robe.</p>\n<p><em>Members of the Order typically wear plain or unassuming garments, but this variant offers the additional protection needed by Jedi influencing important events.</em></p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "prototype",
+            "identified": true,
+            "baseItem": "jedirobe",
+            "activation": {
+                "type": null,
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
-            "actionType": "other",
-            "critical": {
-                "threshold": null,
-                "damage": ""
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
             },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": ""
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {},
+            "ability": "",
+            "actionType": "",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "properties": {},
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
+            },
             "armor": {
                 "value": null,
-                "dex": null,
-                "type": "clothing"
-            }
+                "type": "clothing",
+                "dex": null
+            },
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "",
+            "properties": {},
+            "proficient": null,
+            "strength": 0,
+            "stealth": false
         },
         "effects": []
     },
@@ -3826,33 +3873,80 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Clothing/JediRobe.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Body)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>You gain a +3 bonus to AC while you wear this robe.</p>\n<p><em>Members of the Order typically wear plain or unassuming garments, but Jedi Masters also know the importance of adequate protection when great challenges must be surmounted.</em></p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "advanced",
+            "identified": true,
+            "baseItem": "jedirobe",
+            "activation": {
+                "type": null,
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
-            "actionType": "other",
-            "critical": {
-                "threshold": null,
-                "damage": ""
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
             },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": ""
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {},
+            "ability": "",
+            "actionType": "",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "properties": {},
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
+            },
             "armor": {
                 "value": null,
-                "dex": null,
-                "type": "clothing"
-            }
+                "type": "clothing",
+                "dex": null
+            },
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "",
+            "properties": {},
+            "proficient": null,
+            "strength": 0,
+            "stealth": false
         },
         "effects": []
     },
@@ -3866,33 +3960,80 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Clothing/JediRobe.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Body)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>You gain a +1 bonus to AC while you wear this robe.</p>\n<p><em>Members of the Jedi Order typically wear plain or unassuming garments, offering only a minor boost to defenses.</em></p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "premium",
+            "identified": true,
+            "baseItem": "jedirobe",
+            "activation": {
+                "type": null,
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
-            "actionType": "other",
-            "critical": {
-                "threshold": null,
-                "damage": ""
+            "target": {
+                "value": null,
+                "width": null,
+                "units": "",
+                "type": ""
             },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": ""
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {},
+            "ability": "",
+            "actionType": "",
+            "attackBonus": 0,
+            "chatFlavor": "",
+            "critical": null,
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "properties": {},
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
+            },
             "armor": {
                 "value": null,
-                "dex": null,
-                "type": "clothing"
-            }
+                "type": "clothing",
+                "dex": null
+            },
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "",
+            "properties": {},
+            "proficient": null,
+            "strength": 0,
+            "stealth": false
         },
         "effects": []
     },
@@ -3955,7 +4096,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/JensaaraiHeadgear.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Head)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>While you are wearing this headgear, kinetic and energy damage that you take from unenhanced weapons is reduced by an amount equal to your proficiency bonus.</p>\n<p><strong><em>Jensaarai Regalia.</strong></em> While wearing and attuned to this armor and Jensaarai Armor, this headgear no longer count towards your maximum attunement. While wearing and attuned to this headgear, Jensaarai Armor, and Jensaarai Cloak, fire, cold, and force damage you take is reduced by an amount equal to your proficiency bonus.</p>\n<p><em>Most Jensaarai craft a mask or helmet bearing the visage of an animal that best personifies their desires or goals.</em></p>"
@@ -5308,7 +5449,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/RingOfForceStoring.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Finger)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This ring stores force powers cast into it, holding them until the attuned wearer uses them. The ring can store up to 6 levels worth of force powers at a time. When found, it contains [[/r 1d7]] - 1 levels of stored force powers chosen by the GM.</p>\n<p>Any creature can cast a force power of 1st through 6th level into the ring by touching the ring as the force power is cast. The force power has no effect, other than to be stored in the ring. If the ring can't hold the force power, the force power is expended without effect. The level of the slot used to cast the force power determines how much space it uses.</p>\n<p>While wearing this ring, you can cast any force power stored in it. The force power uses the slot level, force save DC, force attack bonus, and forcecasting ability of the original caster, but is otherwise treated as if you cast the force power. The force power cast from the ring is no longer stored in it, freeing up space.</p>"
@@ -5348,7 +5489,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/RingOfForceStoring.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Finger)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This ring stores force powers cast into it, holding them until the attuned wearer uses them. The ring can store up to 9 levels worth of force powers at a time. When found, it contains [[/r 1d10]] - 1 levels of stored force powers chosen by the GM.</p>\n<p>Any creature can cast a force power of 1st through 9th level into the ring by touching the ring as the force power is cast. The force power has no effect, other than to be stored in the ring. If the ring can't hold the force power, the force power is expended without effect. The level of the slot used to cast the force power determines how much space it uses.</p>\n<p>While wearing this ring, you can cast any force power stored in it. The force power uses the slot level, force save DC, force attack bonus, and forcecasting ability of the original caster, but is otherwise treated as if you cast the force power. The force power cast from the ring is no longer stored in it, freeing up space.</p>"
@@ -5388,7 +5529,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/RingOfForceStoring.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Finger)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This ring stores force powers cast into it, holding them until the attuned wearer uses them. The ring can store up to 3 levels worth of force powers at a time. When found, it contains [[/r 1d4]] - 1 levels of stored force powers chosen by the GM.</p>\n<p>Any creature can cast a force power of 1st through 3rd level into the ring by touching the ring as the force power is cast. The force power has no effect, other than to be stored in the ring. If the ring can't hold the force power, the force power is expended without effect. The level of the slot used to cast the force power determines how much space it uses.</p>\n<p>While wearing this ring, you can cast any force power stored in it. The force power uses the slot level, force save DC, force attack bonus, and forcecasting ability of the original caster, but is otherwise treated as if you cast the force power. The force power cast from the ring is no longer stored in it, freeing up space.</p>"
@@ -5428,7 +5569,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/RingOfForceStoring.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Finger)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This ring stores force powers cast into it, holding them until the attuned wearer uses them. The ring can store up to 5 levels worth of force powers at a time. When found, it contains [[/r 1d6]] - 1 levels of stored force powers chosen by the GM.</p>\n<p>Any creature can cast a force power of 1st through 5th level into the ring by touching the ring as the force power is cast. The force power has no effect, other than to be stored in the ring. If the ring can't hold the force power, the force power is expended without effect. The level of the slot used to cast the force power determines how much space it uses.</p>\n<p>While wearing this ring, you can cast any force power stored in it. The force power uses the slot level, force save DC, force attack bonus, and forcecasting ability of the original caster, but is otherwise treated as if you cast the force power. The force power cast from the ring is no longer stored in it, freeing up space.</p>"
@@ -5468,7 +5609,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/RingOfForceStoring.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Finger)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This ring stores force powers cast into it, holding them until the attuned wearer uses them. The ring can store up to 8 levels worth of force powers at a time. When found, it contains [[/r 1d9]] - 1 levels of stored force powers chosen by the GM.</p>\n<p>Any creature can cast a force power of 1st through 8th level into the ring by touching the ring as the force power is cast. The force power has no effect, other than to be stored in the ring. If the ring can't hold the force power, the force power is expended without effect. The level of the slot used to cast the force power determines how much space it uses.</p>\n<p>While wearing this ring, you can cast any force power stored in it. The force power uses the slot level, force save DC, force attack bonus, and forcecasting ability of the original caster, but is otherwise treated as if you cast the force power. The force power cast from the ring is no longer stored in it, freeing up space.</p>"
@@ -5508,7 +5649,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/RingOfForceStoring.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Finger)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This ring stores force powers cast into it, holding them until the attuned wearer uses them. The ring can store up to 2 levels worth of force powers at a time. When found, it contains [[/r 1d3]] - 1 levels of stored force powers chosen by the GM.</p>\n<p>Any creature can cast a force power of 1st or 2nd level into the ring by touching the ring as the force power is cast. The force power has no effect, other than to be stored in the ring. If the ring can't hold the force power, the force power is expended without effect. The level of the slot used to cast the force power determines how much space it uses.</p>\n<p>While wearing this ring, you can cast any force power stored in it. The force power uses the slot level, force save DC, force attack bonus, and forcecasting ability of the original caster, but is otherwise treated as if you cast the force power. The force power cast from the ring is no longer stored in it, freeing up space.</p>"
@@ -5548,7 +5689,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/RingOfTechStoring.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Finger)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This ring stores tech powers cast into it, holding them until the attuned wearer uses them. The ring can store up to 2 levels worth of tech powers at a time. When found, it contains [[/r 1d3]] - 1 levels of stored tech powers chosen by the GM.</p>\n<p>Any creature can cast a tech power of 1st or 2nd level into the ring by touching the ring as the tech power is cast. The tech power has no effect, other than to be stored in the ring. If the ring can't hold the tech power, the tech power is expended without effect. The level of the slot used to cast the tech power determines how much space it uses.</p>\n<p>While wearing this ring, you can cast any tech power stored in it. The tech power uses the slot level, tech save DC, tech attack bonus, and techcasting ability of the original caster, but is otherwise treated as if you cast the tech power. The tech power cast from the ring is no longer stored in it, freeing up space.</p>"
@@ -5588,7 +5729,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/RingOfTechStoring.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Finger)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This ring stores tech powers cast into it, holding them until the attuned wearer uses them. The ring can store up to 3 levels worth of tech powers at a time. When found, it contains [[/r 1d4]] - 1 levels of stored tech powers chosen by the GM.</p>\n<p>Any creature can cast a tech power of 1st through 3rd level into the ring by touching the ring as the tech power is cast. The tech power has no effect, other than to be stored in the ring. If the ring can't hold the tech power, the tech power is expended without effect. The level of the slot used to cast the tech power determines how much space it uses.</p>\n<p>While wearing this ring, you can cast any tech power stored in it. The tech power uses the slot level, tech save DC, tech attack bonus, and techcasting ability of the original caster, but is otherwise treated as if you cast the tech power. The tech power cast from the ring is no longer stored in it, freeing up space.</p>"
@@ -5628,7 +5769,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/RingOfTechStoring.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Finger)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This ring stores tech powers cast into it, holding them until the attuned wearer uses them. The ring can store up to 5 levels worth of tech powers at a time. When found, it contains [[/r 1d6]] - 1 levels of stored tech powers chosen by the GM.</p>\n<p>Any creature can cast a tech power of 1st through 5th level into the ring by touching the ring as the tech power is cast. The tech power has no effect, other than to be stored in the ring. If the ring can't hold the tech power, the tech power is expended without effect. The level of the slot used to cast the tech power determines how much space it uses.</p>\n<p>While wearing this ring, you can cast any tech power stored in it. The tech power uses the slot level, tech save DC, tech attack bonus, and techcasting ability of the original caster, but is otherwise treated as if you cast the tech power. The tech power cast from the ring is no longer stored in it, freeing up space.</p>"
@@ -5668,7 +5809,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/RingOfTechStoring.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Finger)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This ring stores tech powers cast into it, holding them until the attuned wearer uses them. The ring can store up to 6 levels worth of tech powers at a time. When found, it contains [[/r 1d7]] - 1 levels of stored tech powers chosen by the GM.</p>\n<p>Any creature can cast a tech power of 1st through 6th level into the ring by touching the ring as the tech power is cast. The tech power has no effect, other than to be stored in the ring. If the ring can't hold the tech power, the tech power is expended without effect. The level of the slot used to cast the tech power determines how much space it uses.</p>\n<p>While wearing this ring, you can cast any tech power stored in it. The tech power uses the slot level, tech save DC, tech attack bonus, and techcasting ability of the original caster, but is otherwise treated as if you cast the tech power. The tech power cast from the ring is no longer stored in it, freeing up space.</p>"
@@ -5708,7 +5849,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/RingOfTechStoring.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Finger)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This ring stores tech powers cast into it, holding them until the attuned wearer uses them. The ring can store up to 8 levels worth of tech powers at a time. When found, it contains [[/r 1d9]] - 1 levels of stored tech powers chosen by the GM.</p>\n<p>Any creature can cast a tech power of 1st through 8th level into the ring by touching the ring as the tech power is cast. The tech power has no effect, other than to be stored in the ring. If the ring can't hold the tech power, the tech power is expended without effect. The level of the slot used to cast the tech power determines how much space it uses.</p>\n<p>While wearing this ring, you can cast any tech power stored in it. The tech power uses the slot level, tech save DC, tech attack bonus, and techcasting ability of the original caster, but is otherwise treated as if you cast the tech power. The tech power cast from the ring is no longer stored in it, freeing up space.</p>"
@@ -5748,7 +5889,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/RingOfTechStoring.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Finger)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This ring stores tech powers cast into it, holding them until the attuned wearer uses them. The ring can store up to 9 levels worth of tech powers at a time. When found, it contains [[/r 1d10]] - 1 levels of stored tech powers chosen by the GM.</p>\n<p>Any creature can cast a tech power of 1st through 9th level into the ring by touching the ring as the tech power is cast. The tech power has no effect, other than to be stored in the ring. If the ring can't hold the tech power, the tech power is expended without effect. The level of the slot used to cast the tech power determines how much space it uses.</p>\n<p>While wearing this ring, you can cast any tech power stored in it. The tech power uses the slot level, tech save DC, tech attack bonus, and techcasting ability of the original caster, but is otherwise treated as if you cast the tech power. The tech power cast from the ring is no longer stored in it, freeing up space.</p>"
@@ -6765,7 +6906,7 @@
             }
         },
         "type": "equipment",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/SithStrengthBelt.webp",
         "system": {
             "description": {
                 "value": "<h4>Adventuring Gear (Waist)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>While wearing this belt, your Strength score becomes 27. If your Strength is already equal to or greater than 27, it has no effect on you.</p>\n<p><em>Worn on the legs, waist and lower back, this belt massively increases a users physical power with a set of heavy durasteel actuators alongside an synaptic monitoring system that reacts to its users motion with optimized power responses.</em></p>"
