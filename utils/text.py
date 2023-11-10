@@ -795,11 +795,18 @@ def lowerCase(word):
 def capitalCase(word):
 	return word[:1].upper() + word[1:]
 
-def toInt(string):
+def toInt(string, allowWords=False, default=None):
+	if allowWords:
+		numbers = [ "one", "two", "three", "four", "five", "six", "seven", "eigth", "nine", "ten" ]
+		try:
+			return numbers.index(string.lower()) + 1
+		except ValueError:
+			pass
 	try:
 		return int(string)
 	except ValueError:
-		return string
+		if default != None: return default
+		else: return string
 
 def getSingular(Text):
 	possibilities = []

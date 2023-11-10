@@ -64,12 +64,15 @@ class Species(sw5e.Entity.Item):
 			for abl in self.raw_abilitiesIncreased[0]
 			if len(abl["abilities"]) == 1 and abl["abilities"][0][:3].lower() != 'any'
 		}
-		#TODO: Support 'any two', 'any four'...
-		points = sum({
+		points = sum([
 			abl["amount"]
 			for abl in self.raw_abilitiesIncreased[0]
-			if len(abl["abilities"]) != 1 or abl["abilities"][0][:3].lower() == 'any'
-		})
+			if len(abl["abilities"]) != 1
+		]) + sum([
+			(abl["amount"] * utils.text.toInt(abl["abilities"][0][3:].strip(), allowWords=True, default=1))
+			for abl in self.raw_abilitiesIncreased[0]
+			if len(abl["abilities"]) == 1 and abl["abilities"][0][:3].lower() == 'any'
+		])
 		advancements.append( sw5e.Advancement.AbilityScoreImprovement(level=0, fixed=fixed, points=points) )
 
 		return advancements
