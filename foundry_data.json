@@ -18576,7 +18576,7 @@
                         "key": "system.attributes.movement.walk",
                         "mode": 2,
                         "value": "@scale.monk.unarmored-movement",
-                        "priority": 20
+                        "priority": 5
                     }
                 ],
                 "disabled": false,
@@ -21026,6 +21026,108 @@
         "id": "0EcNY9y4DSoYS8Vk",
         "effects": [
             {
+                "_id": "BPpKJqS5i9yfJIHs",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Thisspiasian",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 0,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.skills.lor.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "thisspiasian",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.extraArms",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Thisspiasian.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.0EcNY9y4DSoYS8Vk.ActiveEffect.4WoMle31KAvAHxvk"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.0EcNY9y4DSoYS8Vk",
+                "name": "Thisspiasian",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "6sFYvuWTUi9YMb9J",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.ability.save.all",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Thisspiasian.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.0EcNY9y4DSoYS8Vk.ActiveEffect.4WoMle31KAvAHxvk"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.0EcNY9y4DSoYS8Vk",
+                "name": "Inscrutable - against effects that read thoughts",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "4WoMle31KAvAHxvk",
                 "changes": [
                     {
@@ -21206,6 +21308,102 @@
         "id": "252n5KfccLRdbysj",
         "effects": [
             {
+                "_id": "nu2OtSBRydV6qbHh",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Squib",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 0,
+                        "value": "sm",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "25",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "squibbian",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.undersized",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Squib.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.252n5KfccLRdbysj.ActiveEffect.JyXU6gNsxf6u3HUH"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.252n5KfccLRdbysj",
+                "name": "Squib",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "hVGaUSK9JuJrYec5",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Squib.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.252n5KfccLRdbysj.ActiveEffect.JyXU6gNsxf6u3HUH"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.252n5KfccLRdbysj",
+                "name": "Keen Smell",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "JyXU6gNsxf6u3HUH",
                 "changes": [
                     {
@@ -21293,13 +21491,13 @@
                         "key": "system.traits.size",
                         "value": "sm",
                         "mode": 0,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "25",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.dr.value",
@@ -21359,7 +21557,7 @@
                         "key": "system.details.species",
                         "value": "Droid, Class II",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "flags.sw5e.forceInsensitive",
@@ -21458,7 +21656,7 @@
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "flags.sw5e.regenerative",
@@ -21534,7 +21732,7 @@
                         "key": "system.attributes.movement.swim",
                         "value": "30",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.languages.value",
@@ -21632,7 +21830,7 @@
                         "key": "system.attributes.movement.swim",
                         "value": "30",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.languages.value",
@@ -21684,6 +21882,114 @@
         "id": "3LOMgdmvO9QADv10",
         "effects": [
             {
+                "_id": "Yz0kDSJZzldZd1Af",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Quarren",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.climb",
+                        "mode": 2,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.swim",
+                        "mode": 2,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "60",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "quarrenese",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Quarren.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.3LOMgdmvO9QADv10.ActiveEffect.IS0m3cc1VZFBsy2j"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.3LOMgdmvO9QADv10",
+                "name": "Quarren",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "bE4O6BrwZ9dmfqbZ",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Quarren.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.3LOMgdmvO9QADv10.ActiveEffect.IS0m3cc1VZFBsy2j"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.3LOMgdmvO9QADv10",
+                "name": "Keen Hearing",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "IS0m3cc1VZFBsy2j",
                 "changes": [
                     {
@@ -21708,13 +22014,13 @@
                         "key": "system.attributes.movement.climb",
                         "value": "30",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.swim",
                         "value": "30",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.senses.darkvision",
@@ -21777,6 +22083,108 @@
     "Species.name-sullustan": {
         "id": "3YMAETyv0Sm0OdRf",
         "effects": [
+            {
+                "_id": "R30RcPR3JR2NURpz",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Sullustan",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "60",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.pil.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "sullustese",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Sullustan.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.3YMAETyv0Sm0OdRf.ActiveEffect.NSowTSCKpURLCCPz"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.3YMAETyv0Sm0OdRf",
+                "name": "Sullustan",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "Olkrr0lY5hrJVL5a",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Sullustan.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.3YMAETyv0Sm0OdRf.ActiveEffect.NSowTSCKpURLCCPz"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.3YMAETyv0Sm0OdRf",
+                "name": "Keen Hearing",
+                "description": "",
+                "statuses": []
+            },
             {
                 "_id": "NSowTSCKpURLCCPz",
                 "changes": [
@@ -22048,6 +22456,39 @@
                 "name": "Anzellan",
                 "description": "",
                 "statuses": []
+            },
+            {
+                "_id": "J6me2fxX06OUbUSS",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.inv",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Anzellan.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.4NVv8yQ6Vu6PvtCA.ActiveEffect.ZGdzAq1Gl4xaxDRD"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.4NVv8yQ6Vu6PvtCA",
+                "name": "Detail Oriented - within 5 feet",
+                "description": "",
+                "statuses": []
             }
         ]
     },
@@ -22260,7 +22701,7 @@
                         "key": "system.attributes.movement.swim",
                         "value": "30",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.skills.tec.value",
@@ -22322,6 +22763,135 @@
     "Species.name-bith": {
         "id": "6tVXIOLALv7F5F4k",
         "effects": [
+            {
+                "_id": "gTnfCIujqHy3PcrS",
+                "changes": [
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Bith",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "bith",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "mode": 0,
+                        "value": "music",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Bith.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.6tVXIOLALv7F5F4k.ActiveEffect.064LQEqCktTG9phA"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.6tVXIOLALv7F5F4k",
+                "name": "Bith",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "JaW7kmJADu0cckOM",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.inv",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Bith.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.6tVXIOLALv7F5F4k.ActiveEffect.064LQEqCktTG9phA"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.6tVXIOLALv7F5F4k",
+                "name": "Detail Oriented - within 5 feet",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "5ofYHXAAmxFb8fqE",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Bith.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.6tVXIOLALv7F5F4k.ActiveEffect.064LQEqCktTG9phA"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.6tVXIOLALv7F5F4k",
+                "name": "Keen Hearing and Smell",
+                "description": "",
+                "statuses": []
+            },
             {
                 "_id": "064LQEqCktTG9phA",
                 "changes": [
@@ -22440,7 +23010,7 @@
                         "key": "system.attributes.movement.swim",
                         "value": "30",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.languages.value",
@@ -22580,25 +23150,121 @@
         "id": "9I4FSaNm2b5OadQx",
         "effects": [
             {
+                "_id": "ygBLONc021h8kHLW",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Baragwin",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "25",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.skills.sur.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 2,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.custom",
+                        "mode": 0,
+                        "value": "Baragwinian",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Baragwin.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.9I4FSaNm2b5OadQx.ActiveEffect.C7M9etD11dPHPBAr"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.9I4FSaNm2b5OadQx",
+                "name": "Baragwin",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "nKa8zU0nbYU67Xh1",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Baragwin.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.9I4FSaNm2b5OadQx.ActiveEffect.C7M9etD11dPHPBAr"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.9I4FSaNm2b5OadQx",
+                "name": "Keen Smell",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "C7M9etD11dPHPBAr",
                 "changes": [
                     {
                         "key": "system.details.species",
                         "value": "Baragwin",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "25",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.skills.sur.value",
@@ -22818,7 +23484,7 @@
                         "key": "system.details.species",
                         "value": "Draethos",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
@@ -23138,19 +23804,19 @@
                         "key": "system.details.species",
                         "value": "Ryn",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.toolProf.value",
@@ -23391,19 +24057,19 @@
                         "key": "system.details.species",
                         "value": "Droid, Class III",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 0,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "25",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.dr.value",
@@ -23501,6 +24167,126 @@
     "Species.name-defel": {
         "id": "FLrIaqeiRgG7XO4D",
         "effects": [
+            {
+                "_id": "YsLIrMCUxkbLtaaK",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Defel",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "sm",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "25",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "60",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.ste.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "defel",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "mode": 0,
+                        "value": "scav",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.undersized",
+                        "mode": 0,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Defel.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.FLrIaqeiRgG7XO4D.ActiveEffect.avJjg9zlYNomK9Uw"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.FLrIaqeiRgG7XO4D",
+                "name": "Defel",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "qdcZdJhN1aN2ONoa",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.disadvantage.attack.all",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.situational.disadvantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Defel.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.FLrIaqeiRgG7XO4D.ActiveEffect.avJjg9zlYNomK9Uw"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.FLrIaqeiRgG7XO4D",
+                "name": "Sunlight Sensitivity - you or your target is in sunlight",
+                "description": "",
+                "statuses": []
+            },
             {
                 "_id": "avJjg9zlYNomK9Uw",
                 "changes": [
@@ -23713,6 +24499,108 @@
     "Species.name-weequay": {
         "id": "Hc4GsnEUNuueTMDE",
         "effects": [
+            {
+                "_id": "N1tC15fGu1NNo2AX",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Weequay",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "60",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "sriluurian",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.meleeCriticalDamageDice",
+                        "mode": 2,
+                        "value": "+1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Weequay.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.Hc4GsnEUNuueTMDE.ActiveEffect.wsSPpwrkO8w3mi04"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.Hc4GsnEUNuueTMDE",
+                "name": "Weequay",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "CV9Qp2KXunAZ8Ey9",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Weequay.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.Hc4GsnEUNuueTMDE.ActiveEffect.wsSPpwrkO8w3mi04"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.Hc4GsnEUNuueTMDE",
+                "name": "Keen Senses - involving a particular sense",
+                "description": "",
+                "statuses": []
+            },
             {
                 "_id": "wsSPpwrkO8w3mi04",
                 "changes": [
@@ -24290,6 +25178,102 @@
         "id": "KOwV2N1l4bDeGSlb",
         "effects": [
             {
+                "_id": "ux3hsIeZ5o8oWfqV",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Chevin",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.skills.sur.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "chevin",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Chevin.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.KOwV2N1l4bDeGSlb.ActiveEffect.xyKlxEBAGLcMBv2n"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.KOwV2N1l4bDeGSlb",
+                "name": "Chevin",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "RIqvwh6158o9GGyJ",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Chevin.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.KOwV2N1l4bDeGSlb.ActiveEffect.xyKlxEBAGLcMBv2n"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.KOwV2N1l4bDeGSlb",
+                "name": "Keen Hearing",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "xyKlxEBAGLcMBv2n",
                 "changes": [
                     {
@@ -24371,19 +25355,19 @@
                         "key": "system.details.species",
                         "value": "Nothoiin",
                         "mode": 5,
-                        "priority": 50
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 50
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 50
+                        "priority": 5
                     },
                     {
                         "key": "system.skills.pil.value",
@@ -24442,6 +25426,108 @@
     "Species.name-noghri": {
         "id": "KrhqL2dbdh6LPvYf",
         "effects": [
+            {
+                "_id": "w8pDMiVbU1LKs1JQ",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Noghri",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 0,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.skills.sur.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.ste.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "honoghran",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Noghri.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.KrhqL2dbdh6LPvYf.ActiveEffect.osToSGRyw3lDaFpz"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.KrhqL2dbdh6LPvYf",
+                "name": "Noghri",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "Z7CSYhnx99Q954zc",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Noghri.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.KrhqL2dbdh6LPvYf.ActiveEffect.osToSGRyw3lDaFpz"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.KrhqL2dbdh6LPvYf",
+                "name": "Keen Smell",
+                "description": "",
+                "statuses": []
+            },
             {
                 "_id": "osToSGRyw3lDaFpz",
                 "changes": [
@@ -24536,25 +25622,115 @@
         "id": "KwDQepuVGtneaTTY",
         "effects": [
             {
+                "_id": "vkpTLAXvTHpP9S6H",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Arcona",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "arconese",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Arcona.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.KwDQepuVGtneaTTY.ActiveEffect.NGgLg9M06MvvWwAh"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.KwDQepuVGtneaTTY",
+                "name": "Arcona",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "P9LXrkukSdERPtiq",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Arcona.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.KwDQepuVGtneaTTY.ActiveEffect.NGgLg9M06MvvWwAh"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.KwDQepuVGtneaTTY",
+                "name": "Keen Smell",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "NGgLg9M06MvvWwAh",
                 "changes": [
                     {
                         "key": "system.details.species",
                         "value": "Arcona",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.languages.value",
@@ -24716,7 +25892,7 @@
                         "key": "system.attributes.movement.climb",
                         "value": "25",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.languages.value",
@@ -24937,19 +26113,19 @@
                         "key": "system.details.species",
                         "value": "Advozse",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.senses.darkvision",
@@ -25019,19 +26195,19 @@
                         "key": "system.details.species",
                         "value": "Barabel",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.senses.darkvision",
@@ -25088,6 +26264,153 @@
     "Species.name-kubaz": {
         "id": "MtBnA2VnLwqdnBvc",
         "effects": [
+            {
+                "_id": "KjYCOmNuADd9tQHN",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Kubaz",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "120",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.tec.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "kubazian",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "mode": 0,
+                        "value": "slic",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Kubaz.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.MtBnA2VnLwqdnBvc.ActiveEffect.KTMeZ69AIhp6lmIz"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.MtBnA2VnLwqdnBvc",
+                "name": "Kubaz",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "L67WRXxiXupihqw1",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Kubaz.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.MtBnA2VnLwqdnBvc.ActiveEffect.KTMeZ69AIhp6lmIz"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.MtBnA2VnLwqdnBvc",
+                "name": "Keen Smell",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "nupkXSrVF3uQnHZI",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.disadvantage.attack.all",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.situational.disadvantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Kubaz.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.MtBnA2VnLwqdnBvc.ActiveEffect.KTMeZ69AIhp6lmIz"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.MtBnA2VnLwqdnBvc",
+                "name": "Sunlight Sensitivity - you or your target is in sunlight",
+                "description": "",
+                "statuses": []
+            },
             {
                 "_id": "KTMeZ69AIhp6lmIz",
                 "changes": [
@@ -25183,6 +26506,114 @@
         "id": "Nhk7H4YrE05zsDqT",
         "effects": [
             {
+                "_id": "Sb2vQ8ADsGynND7i",
+                "changes": [
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "sm",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "25",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.climb",
+                        "mode": 5,
+                        "value": "25",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "mode": 0,
+                        "value": "tin",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "chadra-fan",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.undersized",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Chadra-Fan",
+                        "priority": 5
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Chadra-Fan.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.Nhk7H4YrE05zsDqT.ActiveEffect.6clSr6rfOZJaWWiM"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.Nhk7H4YrE05zsDqT",
+                "name": "Chadra-Fan",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "DZ1AIMRGrytCLsfV",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Chadra-Fan.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.Nhk7H4YrE05zsDqT.ActiveEffect.6clSr6rfOZJaWWiM"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.Nhk7H4YrE05zsDqT",
+                "name": "Keen Hearing and Smell",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "6clSr6rfOZJaWWiM",
                 "changes": [
                     {
@@ -25243,7 +26674,7 @@
                         "key": "system.details.species",
                         "value": "Chadra-Fan",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "flags.sw5e.multipleHearts",
@@ -25369,6 +26800,126 @@
         "id": "ObArlzuGAnSFkUlj",
         "effects": [
             {
+                "_id": "LjgyVnQWeAfawcjh",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Lasat",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.weaponProf.custom",
+                        "mode": 0,
+                        "value": "blaster rifles",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.weaponProf.custom",
+                        "mode": 0,
+                        "value": "vibrostaffs",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.attributes.movement.climb",
+                        "mode": 2,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "60",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "lasat",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.encumbranceMultiplier",
+                        "mode": 2,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Lasat.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.ObArlzuGAnSFkUlj.ActiveEffect.W5MLBoopu6UEzuac"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.ObArlzuGAnSFkUlj",
+                "name": "Lasat",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "TLEE6Ci63oP53CuM",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Lasat.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.ObArlzuGAnSFkUlj.ActiveEffect.W5MLBoopu6UEzuac"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.ObArlzuGAnSFkUlj",
+                "name": "Keen Hearing and Sight",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "W5MLBoopu6UEzuac",
                 "changes": [
                     {
@@ -25405,7 +26956,7 @@
                         "key": "system.attributes.movement.climb",
                         "value": "30",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.senses.darkvision",
@@ -25701,7 +27252,7 @@
                         "key": "system.details.species",
                         "value": "Zabrak",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
@@ -25777,6 +27328,120 @@
         "id": "QZMVzQJspLNa5lSS",
         "effects": [
             {
+                "_id": "YF5Ro8qNuBwzpwvV",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Ewok",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "sm",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "25",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.skills.nat.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.sur.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.attributes.movement.climb",
+                        "mode": 2,
+                        "value": "25",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "ewokese",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.undersized",
+                        "mode": 0,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Ewok.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.QZMVzQJspLNa5lSS.ActiveEffect.jwNxli358V22lYXu"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.QZMVzQJspLNa5lSS",
+                "name": "Ewok",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "yPVoqgu4JugIxUlr",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Ewok.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.QZMVzQJspLNa5lSS.ActiveEffect.jwNxli358V22lYXu"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.QZMVzQJspLNa5lSS",
+                "name": "Keen Smell",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "jwNxli358V22lYXu",
                 "changes": [
                     {
@@ -25813,7 +27478,7 @@
                         "key": "system.attributes.movement.climb",
                         "mode": 2,
                         "value": "25",
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.languages.value",
@@ -25970,6 +27635,132 @@
         "id": "RFOrxqZ3boFYO4PY",
         "effects": [
             {
+                "_id": "HRnJjfYiLrAdD5dg",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Kaleesh",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "60",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.weaponProf.custom",
+                        "mode": 0,
+                        "value": "blaster carbine",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.weaponProf.custom",
+                        "mode": 0,
+                        "value": "vibroblade",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.weaponProf.custom",
+                        "mode": 0,
+                        "value": "vibropike",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.weaponProf.custom",
+                        "mode": 0,
+                        "value": "vibrospear",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.sur.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "kaleesh",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Kaleesh.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.RFOrxqZ3boFYO4PY.ActiveEffect.uRB8h6A9A9SrsbWe"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.RFOrxqZ3boFYO4PY",
+                "name": "Kaleesh",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "Zl8vs9WkiOoL83ih",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Kaleesh.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.RFOrxqZ3boFYO4PY.ActiveEffect.uRB8h6A9A9SrsbWe"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.RFOrxqZ3boFYO4PY",
+                "name": "Keen Smell",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "uRB8h6A9A9SrsbWe",
                 "changes": [
                     {
@@ -26075,6 +27866,114 @@
     "Species.name-lannik": {
         "id": "Rk10Hp7sOKiIVrVJ",
         "effects": [
+            {
+                "_id": "1jngxeWLGGTmes1O",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Lannik",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 0,
+                        "value": "sm",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "25",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.skills.lor.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "lannik",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.undersized",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Lannik.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.Rk10Hp7sOKiIVrVJ.ActiveEffect.cc9M6XfSr4Cq2XkG"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.Rk10Hp7sOKiIVrVJ",
+                "name": "Lannik",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "yaPsksIBoftNrc7z",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Lannik.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.Rk10Hp7sOKiIVrVJ.ActiveEffect.cc9M6XfSr4Cq2XkG"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.Rk10Hp7sOKiIVrVJ",
+                "name": "Keen Hearing",
+                "description": "",
+                "statuses": []
+            },
             {
                 "_id": "cc9M6XfSr4Cq2XkG",
                 "changes": [
@@ -26361,19 +28260,19 @@
                         "key": "system.details.species",
                         "value": "Tognath",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "flags.sw5e.foreignBiology",
@@ -26430,6 +28329,93 @@
     "Species.name-gamorrean": {
         "id": "W4oIea3LqP1dAXGu",
         "effects": [
+            {
+                "_id": "qx2PgWl7zOL8lWE9",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Gamorrean",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 0,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.weaponProf.custom",
+                        "mode": 0,
+                        "value": "vibroaxe",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.weaponProf.custom",
+                        "mode": 0,
+                        "value": "vibromace",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.weaponProf.custom",
+                        "mode": 0,
+                        "value": "vibrosword",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "gamorrese",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.attributes.hp.bonuses.level",
+                        "mode": 2,
+                        "value": "+1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.meleeCriticalDamageDice",
+                        "mode": 2,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Gamorrean.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.W4oIea3LqP1dAXGu.ActiveEffect.teRJPynVl1RXWsN8"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.W4oIea3LqP1dAXGu",
+                "name": "Gamorrean",
+                "description": "",
+                "statuses": []
+            },
             {
                 "_id": "teRJPynVl1RXWsN8",
                 "changes": [
@@ -26528,6 +28514,126 @@
         "id": "WQrjYmqGB0tHwxeE",
         "effects": [
             {
+                "_id": "G3YZPkTcIi4dDM7Y",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Kage",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.skills.ani.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.ath.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "120",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.weaponProf.custom",
+                        "mode": 0,
+                        "value": "electroprod",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.weaponProf.custom",
+                        "mode": 0,
+                        "value": "electrostaff",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Kage.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.WQrjYmqGB0tHwxeE.ActiveEffect.i0cnHmFVkjW8q1nQ"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.WQrjYmqGB0tHwxeE",
+                "name": "Kage",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "fQtntxWSsAPYiSJL",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.disadvantage.attack.all",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.situational.disadvantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Kage.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.WQrjYmqGB0tHwxeE.ActiveEffect.i0cnHmFVkjW8q1nQ"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.WQrjYmqGB0tHwxeE",
+                "name": "Sunlight Sensitivity - you or your target is in sunlight",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "i0cnHmFVkjW8q1nQ",
                 "changes": [
                     {
@@ -26540,7 +28646,7 @@
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
@@ -26640,19 +28746,19 @@
                         "key": "system.details.species",
                         "value": "Abyssin",
                         "mode": 5,
-                        "priority": 50
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 50
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 50
+                        "priority": 5
                     },
                     {
                         "key": "system.skills.sur.value",
@@ -26805,19 +28911,121 @@
         "id": "XoFN88whSWZafSbn",
         "effects": [
             {
+                "_id": "RAp3oZRuCxtSNaQn",
+                "changes": [
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "60",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "arkanian",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Arkanian",
+                        "priority": 5
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Arkanian.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.XoFN88whSWZafSbn.ActiveEffect.s3slbKvtOar4zl7y"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.XoFN88whSWZafSbn",
+                "name": "Arkanian",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "hfIgOZCRsvfzi2qj",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.disadvantage.attack.all",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.situational.disadvantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Arkanian.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.XoFN88whSWZafSbn.ActiveEffect.s3slbKvtOar4zl7y"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.XoFN88whSWZafSbn",
+                "name": "Sunlight Sensitivity - you or your target is in sunlight",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "s3slbKvtOar4zl7y",
                 "changes": [
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.senses.darkvision",
@@ -26841,7 +29049,7 @@
                         "key": "system.details.species",
                         "value": "Arkanian",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "flags.sw5e.sunlightSensitivity",
@@ -27222,6 +29430,126 @@
         "id": "aRLy0IIuWoqiSh25",
         "effects": [
             {
+                "_id": "X002u29n7yM4vH3l",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Voss",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "60",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.med.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.weaponProf.custom",
+                        "mode": 0,
+                        "value": "blaster rifle",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.weaponProf.custom",
+                        "mode": 0,
+                        "value": "techblade",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "voss",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.halflingLucky",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Voss.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.aRLy0IIuWoqiSh25.ActiveEffect.g7qkdxQGBYGcMDU9"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.aRLy0IIuWoqiSh25",
+                "name": "Voss",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "Sc6Z4txdrv4ABykb",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.ability.save.all",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Voss.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.aRLy0IIuWoqiSh25.ActiveEffect.g7qkdxQGBYGcMDU9"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.aRLy0IIuWoqiSh25",
+                "name": "Inscrutable - against effects that read thoughts",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "g7qkdxQGBYGcMDU9",
                 "changes": [
                     {
@@ -27322,25 +29650,121 @@
         "id": "aWyQIk0yQVEBWiY6",
         "effects": [
             {
+                "_id": "XFMDt0NURO4CUw4v",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Mikkian",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 2,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.blindsight",
+                        "mode": 2,
+                        "value": "30",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 2,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.custom",
+                        "mode": 0,
+                        "value": "Mikkian",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Mikkian.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.aWyQIk0yQVEBWiY6.ActiveEffect.2FSlkSzlsfoQSsQs"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.aWyQIk0yQVEBWiY6",
+                "name": "Mikkian",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "jELd0cuLorurmLHV",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Mikkian.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.aWyQIk0yQVEBWiY6.ActiveEffect.2FSlkSzlsfoQSsQs"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.aWyQIk0yQVEBWiY6",
+                "name": "Keen Hearing",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "2FSlkSzlsfoQSsQs",
                 "changes": [
                     {
                         "key": "system.details.species",
                         "value": "Mikkian",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.senses.blindsight",
@@ -27396,6 +29820,120 @@
     "Species.name-rodian": {
         "id": "adaUHwGfIrAKGSn5",
         "effects": [
+            {
+                "_id": "zFqjAOHt16NLbAVN",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Rodian",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.climb",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "60",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.sur.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.ste.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "rodese",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Rodian.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.adaUHwGfIrAKGSn5.ActiveEffect.FUiWLoJwaDtoE4pp"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.adaUHwGfIrAKGSn5",
+                "name": "Rodian",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "gdc1EmOSoDmqyFii",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Rodian.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.adaUHwGfIrAKGSn5.ActiveEffect.FUiWLoJwaDtoE4pp"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.adaUHwGfIrAKGSn5",
+                "name": "Keen Hearing and Smell",
+                "description": "",
+                "statuses": []
+            },
             {
                 "_id": "FUiWLoJwaDtoE4pp",
                 "changes": [
@@ -27813,19 +30351,19 @@
                         "key": "system.details.species",
                         "value": "Droid, Class V",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 0,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.dr.value",
@@ -28117,7 +30655,7 @@
                         "key": "system.attributes.movement.swim",
                         "value": "30",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.languages.value",
@@ -28255,6 +30793,108 @@
         "id": "fxX6jiB6zMh5LHdc",
         "effects": [
             {
+                "_id": "FzG2zpKDM6Elr24P",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Balosar",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 0,
+                        "value": "poison",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "balosur",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "mode": 0,
+                        "value": "spice",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Balosar.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.fxX6jiB6zMh5LHdc.ActiveEffect.DkWzA7SfsdXIq6aA"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.fxX6jiB6zMh5LHdc",
+                "name": "Balosar",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "mebaLEwfl4QjrFOD",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Balosar.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.fxX6jiB6zMh5LHdc.ActiveEffect.DkWzA7SfsdXIq6aA"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.fxX6jiB6zMh5LHdc",
+                "name": "Keen Hearing",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "DkWzA7SfsdXIq6aA",
                 "changes": [
                     {
@@ -28342,13 +30982,13 @@
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 0,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.dr.value",
@@ -28414,7 +31054,7 @@
                         "key": "system.details.species",
                         "value": "Droid, Class IV",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "flags.sw5e.forceInsensitive",
@@ -28465,6 +31105,102 @@
         "id": "gP8Y6RuZ1cHmNbAR",
         "effects": [
             {
+                "_id": "zwbVjLE2T6fdsb9I",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Rishii",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.fly",
+                        "mode": 2,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "rishii",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Rishii.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.gP8Y6RuZ1cHmNbAR.ActiveEffect.EG1cQYESSqx7uV17"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.gP8Y6RuZ1cHmNbAR",
+                "name": "Rishii",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "tArIqvo5Lix6635C",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Rishii.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.gP8Y6RuZ1cHmNbAR.ActiveEffect.EG1cQYESSqx7uV17"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.gP8Y6RuZ1cHmNbAR",
+                "name": "Keen Hearing and Sight",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "EG1cQYESSqx7uV17",
                 "changes": [
                     {
@@ -28489,7 +31225,7 @@
                         "key": "system.attributes.movement.fly",
                         "value": "30",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.languages.value",
@@ -28628,13 +31364,13 @@
                         "key": "system.traits.size",
                         "value": "sm",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "25",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.senses.darkvision",
@@ -28664,7 +31400,7 @@
                         "key": "system.attributes.movement.climb",
                         "value": "25",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.languages.value",
@@ -28682,7 +31418,7 @@
                         "key": "system.details.species",
                         "value": "Lurmen",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "flags.sw5e.nimbleAgility",
@@ -28734,19 +31470,19 @@
                         "key": "system.details.species",
                         "value": "Anomid",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "flags.sw5e.techResistance",
@@ -28878,6 +31614,147 @@
     "Species.name-ssi_ruu": {
         "id": "jaZL0M2Xrc57PzTj",
         "effects": [
+            {
+                "_id": "Gx9lsS3BpF2SIXCX",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Ssi-Ruu",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 0,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "35",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.skills.sur.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "ssi-ruuvi",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.forceInsensitive",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Ssi-Ruu.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.jaZL0M2Xrc57PzTj.ActiveEffect.mHet1jKAIkSgtPbd"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.jaZL0M2Xrc57PzTj",
+                "name": "Ssi-Ruu",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "01RnAkk6wVZbHnyn",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Ssi-Ruu.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.jaZL0M2Xrc57PzTj.ActiveEffect.mHet1jKAIkSgtPbd"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.jaZL0M2Xrc57PzTj",
+                "name": "Keen Smell",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "FEGxoE3psTus1z2D",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.disadvantage.attack.all",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.situational.disadvantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Ssi-Ruu.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.jaZL0M2Xrc57PzTj.ActiveEffect.mHet1jKAIkSgtPbd"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.jaZL0M2Xrc57PzTj",
+                "name": "Sunlight Sensitivity - you or your target is in sunlight",
+                "description": "",
+                "statuses": []
+            },
             {
                 "_id": "mHet1jKAIkSgtPbd",
                 "changes": [
@@ -29230,6 +32107,108 @@
         "id": "mgDm7I7RSzOvuIOG",
         "effects": [
             {
+                "_id": "aU47lgX8jlnHbYS6",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Codru-Ji",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 0,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.ac.value",
+                        "mode": 5,
+                        "value": "12+@abilities.dex.mod",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "codruese",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.extraArms",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Codru-Ji.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.mgDm7I7RSzOvuIOG.ActiveEffect.cF7ScwvPgQ03tTqh"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.mgDm7I7RSzOvuIOG",
+                "name": "Codru-ji",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "SslLyEo0ihq0EfXd",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Codru-Ji.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.mgDm7I7RSzOvuIOG.ActiveEffect.cF7ScwvPgQ03tTqh"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.mgDm7I7RSzOvuIOG",
+                "name": "Keen Hearing",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "cF7ScwvPgQ03tTqh",
                 "changes": [
                     {
@@ -29323,13 +32302,13 @@
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 0,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "25",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.dr.value",
@@ -29383,7 +32362,7 @@
                         "key": "system.details.species",
                         "value": "Droid, Class I",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "flags.sw5e.forceInsensitive",
@@ -29545,7 +32524,7 @@
                         "key": "system.attributes.movement.climb",
                         "value": "20",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.skills.prc.value",
@@ -29615,7 +32594,7 @@
                         "key": "system.details.species",
                         "value": "Mirialan",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
@@ -29959,25 +32938,25 @@
                         "key": "system.details.species",
                         "value": "Patrolian",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "sm",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "25",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.swim",
                         "value": "25",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "flags.sw5e.amphibious",
@@ -30079,7 +33058,7 @@
                         "key": "system.attributes.movement.swim",
                         "value": "30",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.languages.value",
@@ -30217,19 +33196,19 @@
                         "key": "system.details.species",
                         "value": "Nikto",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.dr.value",
@@ -30293,7 +33272,7 @@
                         "key": "system.details.species",
                         "value": "Aleena",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
@@ -30398,7 +33377,7 @@
                         "key": "system.attributes.movement.fly",
                         "value": "25",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.languages.value",
@@ -30466,6 +33445,102 @@
     "Species.name-shistavanen": {
         "id": "q77zsiObxfzRNWUF",
         "effects": [
+            {
+                "_id": "030roldwXYH7zFrt",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Shistavanen",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "60",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "shistavanen",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Shistavanen.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.q77zsiObxfzRNWUF.ActiveEffect.uIcJ7M92lT53GK8n"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.q77zsiObxfzRNWUF",
+                "name": "Shistavanen",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "5SmFeXfECxPBRmqb",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Shistavanen.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.q77zsiObxfzRNWUF.ActiveEffect.uIcJ7M92lT53GK8n"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.q77zsiObxfzRNWUF",
+                "name": "Keen Hearing and Smell",
+                "description": "",
+                "statuses": []
+            },
             {
                 "_id": "uIcJ7M92lT53GK8n",
                 "changes": [
@@ -30721,6 +33796,114 @@
         "id": "sUIVVJzeUIAm51ZB",
         "effects": [
             {
+                "_id": "2qQDQApwHSwk85jt",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Ortolan",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 0,
+                        "value": "sm",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "25",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.skills.prf.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "ortolan",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "mode": 0,
+                        "value": "music",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.undersized",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Ortolan.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.sUIVVJzeUIAm51ZB.ActiveEffect.Dh3FLNKo1HFJ7pqF"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.sUIVVJzeUIAm51ZB",
+                "name": "Ortolan",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "LtZ1px6YzHzoE10s",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Ortolan.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.sUIVVJzeUIAm51ZB.ActiveEffect.Dh3FLNKo1HFJ7pqF"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.sUIVVJzeUIAm51ZB",
+                "name": "Keen Hearing and Smell",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "Dh3FLNKo1HFJ7pqF",
                 "changes": [
                     {
@@ -30911,6 +34094,108 @@
     "Species.name-umbaran": {
         "id": "sm8q9UjqMxguQcG2",
         "effects": [
+            {
+                "_id": "bZfvXqxEtFLb9Mcw",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Umbaran",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "120",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "umbaran",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Umbaran.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.sm8q9UjqMxguQcG2.ActiveEffect.UYCnNjKYqbeNq6n8"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.sm8q9UjqMxguQcG2",
+                "name": "Umbaran",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "fGimngedPaLedZyI",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.disadvantage.attack.all",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.situational.disadvantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Umbaran.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.sm8q9UjqMxguQcG2.ActiveEffect.UYCnNjKYqbeNq6n8"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.sm8q9UjqMxguQcG2",
+                "name": "Sunlight Sensitivity - you or your target is in sunlight",
+                "description": "",
+                "statuses": []
+            },
             {
                 "_id": "UYCnNjKYqbeNq6n8",
                 "changes": [
@@ -31199,13 +34484,13 @@
                         "key": "system.traits.size",
                         "value": "med",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.attributes.movement.walk",
                         "value": "30",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.skills.nat.value",
@@ -31217,7 +34502,7 @@
                         "key": "system.attributes.movement.climb",
                         "value": "30",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "flags.sw5e.multipleHearts",
@@ -31241,7 +34526,7 @@
                         "key": "system.details.species",
                         "value": "Ho'Din",
                         "mode": 5,
-                        "priority": 20
+                        "priority": 5
                     }
                 ],
                 "disabled": false,
@@ -31274,6 +34559,81 @@
     "Species.name-esh_kha": {
         "id": "y9srMEmADsqiQNI9",
         "effects": [
+            {
+                "_id": "ffzoK411b5xIiB1l",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Esh-kha",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.senses.darkvision",
+                        "mode": 2,
+                        "value": "60",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.skills.inv.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 0,
+                        "value": "kharan",
+                        "priority": 20
+                    },
+                    {
+                        "key": "flags.sw5e.meleeCriticalDamageDice",
+                        "mode": 2,
+                        "value": "+1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Esh-Kha.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.y9srMEmADsqiQNI9.ActiveEffect.aUdPMqzH9ntC1KQB"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.y9srMEmADsqiQNI9",
+                "name": "Esh-Kha",
+                "description": "",
+                "statuses": []
+            },
             {
                 "_id": "aUdPMqzH9ntC1KQB",
                 "changes": [
@@ -31442,6 +34802,108 @@
         "id": "zUPGpaizRcj9ZiOu",
         "effects": [
             {
+                "_id": "itZRTygDRiXSQt39",
+                "changes": [
+                    {
+                        "key": "system.details.species",
+                        "mode": 5,
+                        "value": "Gran",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.traits.size",
+                        "mode": 5,
+                        "value": "med",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.attributes.movement.walk",
+                        "mode": 5,
+                        "value": "30",
+                        "priority": 5
+                    },
+                    {
+                        "key": "system.skills.ins.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 2,
+                        "value": "basic",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "mode": 2,
+                        "value": "gran",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.attributes.hp.bonuses.level",
+                        "mode": 2,
+                        "value": "+1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Gran.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.zUPGpaizRcj9ZiOu.ActiveEffect.2cpzxKWagRwrN2wf"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.zUPGpaizRcj9ZiOu",
+                "name": "Gran",
+                "description": "",
+                "statuses": []
+            },
+            {
+                "_id": "hGBd9EFJmN9bujvF",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.prc",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "icon": "systems/sw5e/packs/Icons/Species/Gran.webp",
+                "tint": null,
+                "transfer": true,
+                "flags": {
+                    "core": {
+                        "sourceId": "Compendium.sw5e.species.Item.zUPGpaizRcj9ZiOu.ActiveEffect.2cpzxKWagRwrN2wf"
+                    }
+                },
+                "origin": "Compendium.sw5e.species.Item.zUPGpaizRcj9ZiOu",
+                "name": "Keen Sight",
+                "description": "",
+                "statuses": []
+            },
+            {
                 "_id": "2cpzxKWagRwrN2wf",
                 "changes": [
                     {
@@ -31529,7 +34991,7 @@
                         "key": "system.details.species",
                         "value": "Vurk",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.size",
@@ -31559,7 +35021,7 @@
                         "key": "system.attributes.movement.swim",
                         "value": "30",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "system.traits.languages.value",
@@ -40387,7 +43849,7 @@
                         "key": "system.attributes.movement.swim",
                         "mode": 4,
                         "value": "(@attributes.movement.walk)",
-                        "priority": 20
+                        "priority": 5
                     }
                 ],
                 "disabled": false,
@@ -41159,7 +44621,7 @@
                         "key": "system.attributes.movement.climb",
                         "mode": 4,
                         "value": "(@attributes.movement.walk)",
-                        "priority": 20
+                        "priority": 5
                     }
                 ],
                 "disabled": false,
@@ -41334,7 +44796,7 @@
                         "key": "system.attributes.movement.walk",
                         "mode": 2,
                         "value": "10",
-                        "priority": 20
+                        "priority": 5
                     }
                 ],
                 "description": "",
@@ -41905,7 +45367,7 @@
                         "key": "system.attributes.movement.walk",
                         "mode": 2,
                         "value": "5",
-                        "priority": 20
+                        "priority": 5
                     }
                 ],
                 "description": "",
@@ -42460,7 +45922,7 @@
                         "key": "system.attributes.movement.crawl",
                         "mode": 4,
                         "value": "@attributes.movement.walk",
-                        "priority": 20
+                        "priority": 5
                     }
                 ],
                 "description": "",
@@ -42940,7 +46402,7 @@
                         "key": "system.attributes.movement.walk",
                         "mode": 2,
                         "value": "5",
-                        "priority": 20
+                        "priority": 5
                     }
                 ],
                 "description": "",
@@ -43472,7 +46934,7 @@
                         "key": "system.attributes.movement.walk",
                         "value": "5",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "flags.sw5e.pintsized",
@@ -44023,7 +47485,7 @@
                         "key": "system.attributes.movement.walk",
                         "value": "5",
                         "mode": 2,
-                        "priority": 20
+                        "priority": 5
                     },
                     {
                         "key": "flags.sw5e.undersized",
