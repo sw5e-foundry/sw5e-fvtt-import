@@ -46,6 +46,10 @@ class Equipment(sw5e.Entity.Item):
 	def getImg(self, importer=None, item_type=None, item_subtype=None, no_img=('Unknown',), default_img='systems/sw5e/packs/Icons/Storage/Crate.webp', plural=False):
 		if item_type == None: item_type = self.raw_equipmentCategory
 
+		name = utils.text.slugify(self.raw_name)
+
+		if self.raw_fakeItem: return f'systems/sw5e/packs/Icons/Enhanced%20Items/Generic/{name}.webp'
+
 		#TODO: Remove this once there are icons for those categories
 		if item_type in no_img: return default_img
 
@@ -56,8 +60,6 @@ class Equipment(sw5e.Entity.Item):
 		if plural: item_type += 's'
 
 		if item_subtype: item_type = f'{item_type}/{item_subtype}'
-
-		name = utils.text.slugify(self.raw_name)
 
 		return f'systems/sw5e/packs/Icons/{item_type}/{name}.webp'
 

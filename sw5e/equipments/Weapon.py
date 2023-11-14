@@ -106,7 +106,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		return 'natural'
 
 	def getWeaponClass(self):
-		if self.weapon_type == 'natural': return ''
+		if self.weapon_type == 'natural' or self.raw_fakeItem: return ''
 		for (classification, wpns) in utils.config.weapon_classes.items():
 			if self.name.lower() in wpns:
 				return classification

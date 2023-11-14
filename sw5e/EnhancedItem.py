@@ -128,7 +128,6 @@ class EnhancedItem(sw5e.Entity.Item):
 	def getBaseItem(self, importer):
 		if not importer: return None
 		if self.is_modification: return None
-		if self.raw_subtypeType.startswith('Any'): return None
 
 		get_data = {}
 		if self.raw_subtypeType == 'Specific':
@@ -157,8 +156,10 @@ class EnhancedItem(sw5e.Entity.Item):
 		elif base_item := importer.get('equipment', data=get_data):
 			return base_item
 
-		if not self.base_name in (utils.config.enhanced_item_icons + utils.config.enhanced_item_no_icons) and not self.modifiable_item:
-			print(f"		Failed to find base item for '{self.raw_name}', {get_data=}")
+		if self.raw_subtypeType.startswith('Any'): return None
+		if self.base_name in (utils.config.enhanced_item_icons + utils.config.enhanced_item_no_icons): return None
+		if self.modifiable_item: return None
+		print(f"		Failed to find base item for '{self.raw_name}', {get_data=}")
 
 	def getDescription(self, base_text = None):
 		text = self.raw_text
@@ -210,11 +211,6 @@ class EnhancedItem(sw5e.Entity.Item):
 			elif self.raw_type == 'DroidCustomization': subtype = f'Droid'
 			if subtype != 'Augment': subtype = f'{subtype}Mod'
 			return f'systems/sw5e/packs/Icons/Modifications/{subtype}.webp'
-
-		# Use the modification icons for chassis
-		if self.modifiable_item:
-			subtype = utils.config.chassis_mappings[f'{self.raw_type}-{self.raw_subtype}']
-			return f'systems/sw5e/packs/Icons/Modifications/{subtype.capitalize()}BASE.webp'
 
 		# Otherwise use the default item bag icon
 		if name in utils.config.enhanced_item_no_icons:

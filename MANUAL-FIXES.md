@@ -9,6 +9,7 @@
   - saberstaff: double -> modal
   - radiation cannon: disrupt ive -> disruptive
   - add vibrolance's missing description
+  - 'Oyxgen tank' -> 'Oxygen tank'
 - feature.json
   - Remove ##### XXXX Force/Techcasting table
   - remove superiority table

@@ -109,19 +109,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/BlasterBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Blaster.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Blaster)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable blaster chassis comes with vacant modification slots for blaster modifications, as well as one augment slot. It can house modifications of advanced rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "advanced",
+            "identified": true,
+            "baseItem": "blaster",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "rwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -130,20 +168,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 1
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialB",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleB"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -157,19 +201,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/BlasterBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Blaster.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Blaster)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable blaster chassis comes with vacant modification slots for blaster modifications, as well as two augment slots. It can house modifications of artifact rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "artifact",
+            "identified": true,
+            "baseItem": "blaster",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "rwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -178,20 +260,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 2
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialB",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleB"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -205,19 +293,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/BlasterBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Blaster.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Blaster)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable blaster chassis comes with vacant modification slots for blaster modifications, as well as two augment slots. It can house modifications of legendary rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "legendary",
+            "identified": true,
+            "baseItem": "blaster",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "rwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -226,20 +352,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 2
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialB",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleB"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -253,19 +385,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/BlasterBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Blaster.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Blaster)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable blaster chassis comes with vacant modification slots for blaster modifications. It can house modifications of premium rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "premium",
+            "identified": true,
+            "baseItem": "blaster",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "rwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -274,20 +444,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 0
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialB",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleB"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -301,19 +477,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/BlasterBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Blaster.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Blaster)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable blaster chassis comes with vacant modification slots for blaster modifications, as well as one augment slot. It can house modifications of prototype rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "prototype",
+            "identified": true,
+            "baseItem": "blaster",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "rwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -322,20 +536,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 1
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialB",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleB"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -349,19 +569,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/BlasterBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Blaster.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Blaster)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable blaster chassis comes with vacant modification slots for blaster modifications. It can house modifications of standard rarity.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "standard",
+            "identified": true,
+            "baseItem": "blaster",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "rwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -370,20 +628,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 0
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialB",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleB"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -2088,19 +2352,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/LightweaponBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Lightweapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Lightweapon)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable lightweapon chassis comes with vacant modification slots for lightweapon modifications, as well as one augment slot. It can house modifications of advanced rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "advanced",
+            "identified": true,
+            "baseItem": "lightweapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -2109,20 +2411,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 1
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleLW"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -2136,19 +2444,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/LightweaponBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Lightweapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Lightweapon)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable lightweapon chassis comes with vacant modification slots for lightweapon modifications, as well as two augment slots. It can house modifications of artifact rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "artifact",
+            "identified": true,
+            "baseItem": "lightweapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -2157,20 +2503,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 2
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleLW"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -2184,19 +2536,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/LightweaponBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Lightweapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Lightweapon)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable lightweapon chassis comes with vacant modification slots for lightweapon modifications, as well as two augment slots. It can house modifications of legendary rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "legendary",
+            "identified": true,
+            "baseItem": "lightweapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -2205,20 +2595,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 2
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleLW"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -2232,19 +2628,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/LightweaponBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Lightweapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Lightweapon)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable lightweapon chassis comes with vacant modification slots for lightweapon modifications. It can house modifications of premium rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "premium",
+            "identified": true,
+            "baseItem": "lightweapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -2253,20 +2687,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 0
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleLW"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -2280,19 +2720,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/LightweaponBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Lightweapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Lightweapon)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable lightweapon chassis comes with vacant modification slots for lightweapon modifications, as well as one augment slot. It can house modifications of prototype rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "prototype",
+            "identified": true,
+            "baseItem": "lightweapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -2301,20 +2779,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 1
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleLW"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -2328,19 +2812,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/LightweaponBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Lightweapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Lightweapon)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable lightweapon chassis comes with vacant modification slots for lightweapon modifications. It can house modifications of standard rarity.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "standard",
+            "identified": true,
+            "baseItem": "lightweapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -2349,20 +2871,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 0
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialLW",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleLW"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -3870,19 +4398,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/VibroweaponBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Vibroweapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Vibroweapon)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable vibroweapon chassis comes with vacant modification slots for vibroweapon modifications, as well as one augment slot. It can house modifications of advanced rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "advanced",
+            "identified": true,
+            "baseItem": "vibroweapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -3891,20 +4457,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 1
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialVW",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleVW"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -3918,19 +4490,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/VibroweaponBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Vibroweapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Vibroweapon)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable vibroweapon chassis comes with vacant modification slots for vibroweapon modifications, as well as two augment slots. It can house modifications of artifact rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "artifact",
+            "identified": true,
+            "baseItem": "vibroweapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -3939,20 +4549,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 2
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialVW",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleVW"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -3966,19 +4582,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/VibroweaponBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Vibroweapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Vibroweapon)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable vibroweapon chassis comes with vacant modification slots for vibroweapon modifications, as well as two augment slots. It can house modifications of legendary rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "legendary",
+            "identified": true,
+            "baseItem": "vibroweapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -3987,20 +4641,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 2
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialVW",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleVW"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -4014,19 +4674,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/VibroweaponBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Vibroweapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Vibroweapon)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable vibroweapon chassis comes with vacant modification slots for vibroweapon modifications. It can house modifications of premium rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "premium",
+            "identified": true,
+            "baseItem": "vibroweapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -4035,20 +4733,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 0
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialVW",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleVW"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -4062,19 +4766,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/VibroweaponBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Vibroweapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Vibroweapon)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable vibroweapon chassis comes with vacant modification slots for vibroweapon modifications, as well as one augment slot. It can house modifications of prototype rarity or lower.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "prototype",
+            "identified": true,
+            "baseItem": "vibroweapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -4083,20 +4825,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 1
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialVW",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleVW"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -4110,19 +4858,57 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Modifications/VibroweaponBASE.webp",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Vibroweapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any Vibroweapon)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>This modifiable vibroweapon chassis comes with vacant modification slots for vibroweapon modifications. It can house modifications of standard rarity.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 1,
+            "equipped": false,
             "rarity": "standard",
+            "identified": true,
+            "baseItem": "vibroweapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
+            "attackBonus": 0,
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
@@ -4131,20 +4917,26 @@
                 "parts": [],
                 "versatile": ""
             },
-            "modify": {
-                "chassis": "chassis",
-                "augmentSlots": 0
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
             },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "martialVW",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "simpleVW"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -4158,39 +4950,90 @@
             }
         },
         "type": "weapon",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Weapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any)</h4>\n <p>You have a +3 bonus to attack rolls and deal an additional [[/r 1d10]] damage with this enhanced weapon.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 0,
+            "equipped": false,
             "rarity": "artifact",
+            "identified": true,
+            "baseItem": "weapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
             "attackBonus": "3",
-            "damageBonus": "1d10",
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
             },
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d10",
+                        ""
+                    ]
+                ],
                 "versatile": ""
             },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
+            },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "natural",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "improv"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -4204,39 +5047,90 @@
             }
         },
         "type": "weapon",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Weapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any)</h4>\n <p>You have a +3 bonus to attack rolls and deal an additional [[/r 1d8]] damage with this enhanced weapon.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 0,
+            "equipped": false,
             "rarity": "legendary",
+            "identified": true,
+            "baseItem": "weapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
             "attackBonus": "3",
-            "damageBonus": "1d8",
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
             },
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d8",
+                        ""
+                    ]
+                ],
                 "versatile": ""
             },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
+            },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "natural",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "improv"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -4250,39 +5144,90 @@
             }
         },
         "type": "weapon",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Weapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any)</h4>\n <p>You have a +1 bonus to attack and damage rolls made with this enhanced weapon.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 0,
+            "equipped": false,
             "rarity": "premium",
+            "identified": true,
+            "baseItem": "weapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
             "attackBonus": "1",
-            "damageBonus": "1",
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
             },
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1",
+                        ""
+                    ]
+                ],
                 "versatile": ""
             },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
+            },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "natural",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "improv"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -4296,39 +5241,90 @@
             }
         },
         "type": "weapon",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Weapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any)</h4>\n <p>You have a +2 bonus to attack and damage rolls made with this enhanced weapon.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 0,
+            "equipped": false,
             "rarity": "prototype",
+            "identified": true,
+            "baseItem": "weapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
             "attackBonus": "2",
-            "damageBonus": "2",
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
             },
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2",
+                        ""
+                    ]
+                ],
                 "versatile": ""
             },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
+            },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "natural",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "improv"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
@@ -4342,39 +5338,90 @@
             }
         },
         "type": "weapon",
-        "img": "icons/svg/item-bag.svg",
+        "img": "systems/sw5e/packs/Icons/Enhanced%20Items/Generic/Weapon.webp",
         "system": {
             "description": {
                 "value": "<h4>Weapon (Any)</h4>\n <p>You have a +3 bonus to attack and damage rolls made with this enhanced weapon.</p>"
             },
+            "requirements": "",
             "source": "WH",
+            "quantity": 1,
+            "weight": 0,
+            "price": {
+                "value": 0,
+                "denomination": "gc"
+            },
             "attunement": 0,
+            "equipped": false,
             "rarity": "advanced",
+            "identified": true,
+            "baseItem": "weapon",
+            "activation": {
+                "type": "action",
+                "cost": 1
+            },
             "duration": {
                 "value": null,
-                "units": "inst"
+                "units": ""
             },
+            "target": {
+                "value": 1,
+                "width": null,
+                "units": "",
+                "type": "enemy"
+            },
+            "range": {
+                "value": null,
+                "long": null,
+                "units": "ft"
+            },
+            "uses": {
+                "value": null,
+                "max": null,
+                "per": null
+            },
+            "consume": {
+                "type": "",
+                "target": "",
+                "ammount": null
+            },
+            "ability": "",
             "actionType": "mwak",
             "attackBonus": "3",
-            "damageBonus": "3",
+            "chatFlavor": "",
             "critical": {
                 "threshold": null,
                 "damage": ""
             },
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "3",
+                        ""
+                    ]
+                ],
                 "versatile": ""
             },
+            "formula": "",
+            "save": {
+                "ability": "",
+                "dc": null,
+                "scaling": "none"
+            },
+            "armor": {},
+            "hp": {
+                "value": 0,
+                "max": 0,
+                "dt": null,
+                "conditions": ""
+            },
+            "weaponType": "natural",
             "properties": {},
-            "activation": {
-                "type": "action",
-                "cost": 1
-            },
-            "target": {
-                "value": 1,
-                "type": "enemy"
-            },
-            "weaponType": "improv"
+            "proficient": null,
+            "weaponClass": "",
+            "ammo": {
+                "types": []
+            }
         },
         "effects": []
     },
