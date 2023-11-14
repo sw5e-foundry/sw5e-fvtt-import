@@ -103,7 +103,9 @@ class Weapon(sw5e.Equipment.Equipment):
 		for mode in ('Vibroweapon', 'Lightweapon'):
 			if wc.endswith(mode): return f'{start}{mode[0]}W'
 
-		return 'natural'
+		if wc == 'Natural': return 'natural'
+
+		return 'improvised'
 
 	def getWeaponClass(self):
 		if self.weapon_type == 'natural' or self.raw_fakeItem: return ''
