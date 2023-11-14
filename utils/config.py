@@ -894,7 +894,7 @@ equipment_mappings = {
 }
 
 enhanced_equipment_mappings = {
-	"AdventuringGear-None": ('Utility', 'DataRecordingAndStorage', 'Storage', 'WeaponOrArmorAccessory'),
+	"AdventuringGear-None": ('Utility', 'DataRecordingAndStorage', 'Storage', 'WeaponOrArmorAccessory', 'Tool'),
 	"AdventuringGear-back": ('Clothing', 'WeaponOrArmorAccessory', 'Storage'),
 	"AdventuringGear-body": 'Clothing',
 	"AdventuringGear-feet": ('Clothing', 'WeaponOrArmorAccessory'),

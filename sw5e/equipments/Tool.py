@@ -25,13 +25,17 @@ class Tool(sw5e.Equipment.Equipment):
 
 	def getToolType(self):
 		tools = {
-			"GamingSet": 'game',
-			"MusicalInstrument": 'music',
+			"GamingSet": ('game', 'cha'),
+			"MusicalInstrument": ('music', 'cha'),
+			"ArtisanImplements": ('artisan', 'int'),
+			"SpecialistsKit": ('specialist', 'int'),
 		}
-		if self.name.find('implements') != -1: return 'artisan', 'int'
-		elif self.name.find('kit') != -1: return 'specialist', 'int'
-		elif self.raw_equipmentCategory in tools: return tools[self.raw_equipmentCategory], 'cha'
-		print(f'		Unable to recognize tool type for {self.name}, {self.raw_equipmentCategory}')
+		category = self.raw_equipmentCategory
+		if self.name.find('implements') != -1: category = 'ArtisanImplements'
+		elif self.name.find('kit') != -1: category = 'SpecialistsKit'
+
+		if category in tools: return tools[category]
+		elif self.name != 'Tool': print(f'		Unable to recognize tool type for {self.name}, {category}')
 		return '', 'int'
 
 	def getData(self, importer):
