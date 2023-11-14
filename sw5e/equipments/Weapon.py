@@ -105,7 +105,7 @@ class Weapon(sw5e.Equipment.Equipment):
 
 		if wc == 'Natural': return 'natural'
 
-		return 'improvised'
+		return 'improv'
 
 	def getWeaponClass(self):
 		if self.weapon_type == 'natural' or self.raw_fakeItem: return ''
