@@ -461,7 +461,37 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/BSKR-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.qv4Qv2DztxkC39ZA",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Brutal Critical",
+                "_id": "6xkP5ibVcNRYejYv",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.meleeCriticalDamageDice",
+                        "mode": 2,
+                        "value": "1",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-danger_sense.source-class.sourceName-berserker.level-3": {
         "name": "Danger Sense",
@@ -519,7 +549,37 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/BSKR-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.tt5qug0uGnvi19Xi",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Danger Sense",
+                "_id": "0tABhrpbhVs3j44V",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.dangerSense",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-extra_attack.source-class.sourceName-berserker.level-5": {
         "name": "Extra Attack",
@@ -635,7 +695,37 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/BSKR-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.n9JNlRdzYfwhOtUm",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Feral Impulse",
+                "_id": "CcMxxtNDj6pwN1iB",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.initiativeAdv",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-indomitable_might.source-class.sourceName-berserker.level-18": {
         "name": "Indomitable Might",
@@ -809,7 +899,55 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/BSKR-Bonus.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.FgJJanWEm8ruwcLk",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Primal Champion",
+                "_id": "2Xg0ZcBTSCuai9gx",
+                "changes": [
+                    {
+                        "key": "system.abilities.str.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.str.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.con.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.con.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-rage.source-class.sourceName-berserker.level-1": {
         "name": "Rage",
@@ -875,22 +1013,34 @@
                         "key": "system.bonuses.mwak.damage",
                         "mode": 2,
                         "value": "@scale.berserker.rage-damage",
-                        "priority": 20
+                        "priority": null
                     },
                     {
                         "key": "system.traits.dr.value",
                         "mode": 2,
                         "value": "kinetic",
-                        "priority": 20
+                        "priority": null
                     },
                     {
                         "key": "system.traits.dr.value",
                         "mode": 2,
                         "value": "energy",
-                        "priority": 20
+                        "priority": null
+                    },
+                    {
+                        "key": "flags.sw5e.advantage.ability.check.str",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": null
+                    },
+                    {
+                        "key": "flags.sw5e.advantage.ability.save.str",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": null
                     }
                 ],
-                "disabled": false,
+                "disabled": true,
                 "duration": {
                     "rounds": 10,
                     "startTime": null,
@@ -971,7 +1121,43 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/BSKR-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.DqNRgYsYggcj2Shl",
+                "duration": {
+                    "rounds": 1,
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": true,
+                "name": "Reckless Attack",
+                "_id": "zzOesxeGFHtn9AdN",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.advantage.attack.str",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": null
+                    },
+                    {
+                        "key": "flags.sw5e.grants.advantage.attack.all",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-relentless_rage.source-class.sourceName-berserker.level-11": {
         "name": "Relentless Rage",
@@ -2247,7 +2433,43 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/CSLR-Action.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.SRvdjRxU3cpcEdcw",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "One with the Force",
+                "_id": "9Q7CRnMUso8f5CN5",
+                "changes": [
+                    {
+                        "key": "system.abilities.wis.max",
+                        "mode": 2,
+                        "value": "4",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.wis.value",
+                        "mode": 2,
+                        "value": "4",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-engineering_discipline.source-class.sourceName-engineer.level-14": {
         "name": "Engineering Discipline",
@@ -4011,7 +4233,55 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/FGTR-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.0L38TGkU8ViI7klt",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Master of Combat",
+                "_id": "2FxsF8ev6xFw81dv",
+                "changes": [
+                    {
+                        "key": "system.abilities.str.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.str.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.con.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.con.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-second_wind.source-class.sourceName-fighter.level-1": {
         "name": "Second Wind",
@@ -5558,7 +5828,67 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/MNK-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.bwKnBonjwJc5c2Kx",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Diamond Soul",
+                "_id": "YEEXbVEGBNFLAW77",
+                "changes": [
+                    {
+                        "key": "system.abilities.str.proficient",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.dex.proficient",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.con.proficient",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.int.proficient",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.wis.proficient",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.cha.proficient",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-empty_body.source-class.sourceName-monk.level-18": {
         "name": "Empty Body",
@@ -5616,7 +5946,103 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/MNK-Action.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.h4WPdGXUliSHbSWW",
+                "duration": {
+                    "rounds": 10,
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": true,
+                "name": "Empty Body",
+                "_id": "JEcECuosMRNxkmWH",
+                "changes": [
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 2,
+                        "value": "kinetic",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 2,
+                        "value": "acid",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 2,
+                        "value": "cold",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 2,
+                        "value": "energy",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 2,
+                        "value": "fire",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 2,
+                        "value": "ion",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 2,
+                        "value": "lightning",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 2,
+                        "value": "necrotic",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 2,
+                        "value": "poison",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 2,
+                        "value": "poison",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 2,
+                        "value": "psychic",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 2,
+                        "value": "sonic",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-enhanced_strikes.source-class.sourceName-monk.level-6": {
         "name": "Enhanced Strikes",
@@ -6607,7 +7033,55 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/MNK-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.z517Qm5VFOUCEYyk",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Perfect Self",
+                "_id": "lvrzOEJia8PaIrn3",
+                "changes": [
+                    {
+                        "key": "system.abilities.dex.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.dex.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.wis.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.wis.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-purity_of_body.source-class.sourceName-monk.level-13": {
         "name": "Purity of Body",
@@ -6665,7 +7139,37 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/MNK-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.Y4d7NX1lWQiLdVFn",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Purity of Body",
+                "_id": "LMhHXo4KubmXW2X8",
+                "changes": [
+                    {
+                        "key": "system.traits.dr.value",
+                        "mode": 2,
+                        "value": "poison",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-slow_fall.source-class.sourceName-monk.level-4": {
         "name": "Slow Fall",
@@ -7883,7 +8387,37 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/OPRT-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.SICFNyKCxZ45o0QE",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Reliable Talent",
+                "_id": "nJYgAqb75QbLWCrK",
+                "changes": [
+                    {
+                        "key": "system.sw5e.flags.reliableTalent",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-slippery_mind.source-class.sourceName-operative.level-15": {
         "name": "Slippery Mind",
@@ -7941,7 +8475,37 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/OPRT-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.agVlC70rzKNh3nnW",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Slippery Mind",
+                "_id": "IYQDbX3xCkHfSdSW",
+                "changes": [
+                    {
+                        "key": "system.abilities.wis.value",
+                        "mode": 4,
+                        "value": "1",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-sneak_attack.source-class.sourceName-operative.level-1": {
         "name": "Sneak Attack",
@@ -8062,7 +8626,55 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/OPRT-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.b5o43ocdxaR9Ed7f",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Stroke of Luck",
+                "_id": "vx0UtN3OrUPcHtiS",
+                "changes": [
+                    {
+                        "key": "system.abilities.dex.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.dex.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.int.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.int.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-uncanny_dodge.source-class.sourceName-operative.level-5": {
         "name": "Uncanny Dodge",
@@ -8947,7 +9559,43 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/SCLR-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.j0CGv1G7GU5WtLhh",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Knowledge Unbound",
+                "_id": "jTlhT8ipNmEwqbje",
+                "changes": [
+                    {
+                        "key": "system.abilities.int.max",
+                        "mode": 2,
+                        "value": "4",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.int.value",
+                        "mode": 2,
+                        "value": "4",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-multitasker.source-class.sourceName-scholar.level-5": {
         "name": "Multitasker",
@@ -9411,7 +10059,55 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/SCT-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.KAVTEkNRyWghicEE",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Foe Slayer",
+                "_id": "zCwH3nJSjb6783hH",
+                "changes": [
+                    {
+                        "key": "system.abilities.str.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.str.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.int.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.int.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-pathfinder.source-class.sourceName-scout.level-1": {
         "name": "Pathfinder",
@@ -9469,7 +10165,37 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/SCT-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.IvWufgONo62OsPU4",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "While travelling",
+                "_id": "lWhxtMKB2CKj5Jf1",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.situational.advantage.skill.suv",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-rangers_quarry.source-class.sourceName-scout.level-1": {
         "name": "Ranger's Quarry",
@@ -10765,7 +11491,55 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/SNTL-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.jTKDvLAy0d52oVjL",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Center of the Force",
+                "_id": "RzG35uUqBdB6UdKU",
+                "changes": [
+                    {
+                        "key": "system.abilities.dex.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.dex.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.wis.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.wis.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-enlightened_evasion.source-class.sourceName-sentinel.level-15": {
         "name": "Enlightened Evasion",
@@ -11461,7 +12235,37 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/SNTL-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.C1UAdaL6DzVkJBiV",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Led by the Force",
+                "_id": "HtKChT8QHDMEC1eQ",
+                "changes": [
+                    {
+                        "key": "flags.sw5e.jackOfAllTrades",
+                        "mode": 5,
+                        "value": "1",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-sentinel_calling.source-class.sourceName-sentinel.level-13": {
         "name": "Sentinel Calling",
@@ -12157,7 +12961,55 @@
                 "subtype": ""
             }
         },
-        "effects": []
+        "effects": [
+            {
+                "icon": "systems/sw5e/packs/Icons/Class%20Features/ENGR-Passive.webp",
+                "origin": "Compendium.sw5e.classfeatures.Item.f1XeMafaqejD02MW",
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "disabled": false,
+                "name": "Tech Mastery",
+                "_id": "M19oSc9G4Qx56F6h",
+                "changes": [
+                    {
+                        "key": "system.abilities.int.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.int.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.con.max",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    },
+                    {
+                        "key": "system.abilities.con.value",
+                        "mode": 2,
+                        "value": "2",
+                        "priority": null
+                    }
+                ],
+                "description": "",
+                "transfer": true,
+                "statuses": [],
+                "flags": {},
+                "tint": null
+            }
+        ]
     },
     "Feature.name-focus.source-class.sourceName-monk.level-2": {
         "name": "Focus",

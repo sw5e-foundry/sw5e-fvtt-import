@@ -543,7 +543,6 @@ enhanced_item_no_icons = (
 
 enhanced_item_icons = (
 	'Atmospheric Decanting Vessel',
-	'Sith Robe',
 	'Adapted Armor',
 	'Aratech Echo Belt',
 	'Aratech Sound Dampening Boots',
