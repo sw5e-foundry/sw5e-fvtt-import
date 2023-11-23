@@ -35,6 +35,8 @@ class Species(sw5e.Entity.Item):
 	def process(self, importer):
 		super().process(importer)
 
+		self.features = self.getFeatures(importer)
+		self.traits = self.getTraits()
 		self.advancements = self.getAdvancements(importer)
 
 	def getImg(self, importer=None):
@@ -44,19 +46,32 @@ class Species(sw5e.Entity.Item):
 	def getDescription(self):
 		return utils.text.markdownToHtml(self.raw_flavorText)
 
-	def getAdvancements(self, importer):
-		advancements = []
-
-		uids = []
+	def getFeatures(self, importer):
+		features = []
 		for trait in self.raw_traits:
 			trait_data = { "name": trait["name"], "source": 'Species', "sourceName": self.name, "level": None }
 			if trait := importer.get('feature', data=trait_data):
-				if trait.foundry_id: uids.append(f'Compendium.sw5e.speciesfeatures.{trait.foundry_id}')
+				if trait.foundry_id: features.append(trait)
 				else: self.broken_links += ['no foundry id']
 			else:
 				if self.foundry_id: print(f'		Unable to find feature {trait_data=}')
 				self.broken_links += ['cant find trait']
-		if len(uids): advancements.append( sw5e.Advancement.ItemGrant(name="Traits", uids=uids, level=0, optional=True) )
+		return features
+
+	def getTraits(self):
+		choices, grants = [], []
+		for feature in self.features:
+			fchoices, fgrants = utils.text.getTraits(feature.raw_text.lower(), self.name)
+			if fchoices: choices.extend(fchoices)
+			if fgrants: grants.extend(fgrants)
+
+		return { "choices": choices, "grants": grants }
+
+	def getAdvancements(self, importer):
+		advancements = []
+
+		uids = [ f'Compendium.sw5e.speciesfeatures.{feature.foundry_id}' for feature in self.features if feature.foundry_id ]
+		if len(uids): advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=0, optional=True) )
 
 		# TODO: Change this once/if we get the ability to restrict the choices you can spend points on
 		fixed = {
@@ -74,6 +89,14 @@ class Species(sw5e.Entity.Item):
 			if len(abl["abilities"]) == 1 and abl["abilities"][0][:3].lower() == 'any'
 		])
 		advancements.append( sw5e.Advancement.AbilityScoreImprovement(level=0, fixed=fixed, points=points) )
+
+		size_table = { full: abr for (abr, full) in utils.config.actor_sizes.items() }
+		size = size_table[self.raw_size or "Medium"]
+		advancements.append( sw5e.Advancement.Size(choices=[size]))
+
+		# TODO: support non default traits
+		if len(self.traits["choices"]) or len(self.traits["grants"]):
+			advancements.append( sw5e.Advancement.Trait(choices=self.traits["choices"], grants=self.traits["grants"]) )
 
 		return advancements
 

@@ -1,4 +1,4 @@
-import re, json, random, math, string
+import re, json, random, math, string, utils.config
 
 def ncapt(patt): return f'(?:{patt})'
 def capt(patt, name=None): return f'(?P<{name}>{patt})' if name else f'({patt})'
@@ -620,7 +620,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 				raise ValueError(f'Unprocessed dice {formula} in {name}', text)
 
 			return 'FORMULA'
-		re.sub(pattern, unprocessed, text)
+		text = re.sub(pattern, unprocessed, text)
 
 		action_type = action_type or 'other'
 
@@ -789,13 +789,258 @@ def getStatblocks(text):
 
 	return text, statblocks
 
+def getTraits(text, name):
+	_text = text
+	choices, grants = [], []
+
+	if text:
+		types = {
+			"skills": { skl["name"].lower(): skl for skl in utils.config.skills },
+			"armors": { armor["name"].lower(): armor for armor in utils.config.armor_types },
+			"attributes": { attr["name"].lower(): attr for attr in utils.config.attributes },
+			"tools": { tool["name"].lower(): tool for tool in utils.config.tools },
+			"weapons": {
+				wpn: {
+					"name": wpn,
+					"id": re.sub(' -', '', wpn),
+					"type": (
+						'melee' if wpn_class in ["blade", "crushing", "trip"] else
+						'ranged' if wpn_class in ["carbine", "heavy", "rifle", "sidearm"] else
+						''
+					),
+				} for wpn_class in utils.config.weapon_classes.values() for wpn in wpn_class
+			},
+		}
+		for tool in dict(types["tools"]): types["tools"][f'{tool}s'] = types["tools"][tool]
+		for wpn in dict(types["weapons"]): types["weapons"][f'{wpn}s'] = types["weapons"][wpn]
+
+		generic_types = {
+			"skills": {
+				attr["name"].lower(): { "foo": lambda trait, skl: skl["attr"] == types["attributes"][trait]["id"] }
+				for attr in utils.config.attributes
+			},
+			"tools": {
+				"musical instruments": { "id": 'music:*' },
+				"instruments": { "id": 'music:*' },
+				"specialist's kits": { "id": 'specialist:*' },
+				"artisan's implements": { "id": 'artisan:*' },
+				"gaming sets": { "id": 'game:*' },
+				"vehicles": { "id": 'vehicle:*' },
+			},
+			"weapons": {
+				"vibroweapons": { "ids": [ 'svb:*', 'mvb:*' ] },
+				"simple or martial vibroweapons": { "ids": [ 'svb:*', 'mvb:*' ] },
+				"simple vibroweapons": { "id": 'svb:*' },
+				"martial vibroweapons": { "id": 'mvb:*' },
+				"exotic vibroweapons": { "id": 'evw:*' },
+
+				"lightweapons": { "ids": [ 'slw:*', 'mlw:*' ] },
+				"simple or martial lightweapons": { "ids": [ 'slw:*', 'mlw:*' ] },
+				"simple lightweapons": { "id": 'slw:*' },
+				"martial lightweapons": { "id": 'mlw:*' },
+				"exotic lightweapons": { "id": 'elw:*' },
+
+				"blasters": { "ids": [ 'smb:*', 'mrb:*' ] },
+				"simple or martial blasters": { "ids": [ 'smb:*', 'mrb:*' ] },
+				"simple blasters": { "id": 'smb:*' },
+				"martial blasters": { "id": 'mrb:*' },
+				"exotic blasters": { "id": 'exb:*' },
+				# TODO: Find a way to make this work
+				"blasters that deal sonic damage": { "ids": [ 'smb:*', 'mrb:*' ] },
+			}
+		}
+		for t in generic_types: generic_types[t][t] = { "id": f'*' }
+
+		types_ids = { t: t for t in types }
+		types_ids["tools"] = "tool"
+
+		p_types = {}
+		cp_types = {}
+		for k, t in types.items():
+			values = [ trait for trait in t ]
+			generic_values = [ f'{k}?' ] + [ f'{trait}?' for trait in generic_types[k] ] if k in generic_types else []
+			p_types[k] = ncapt(ncapt('|'.join(values + generic_values)) + fr'(?: {k}?)?')
+			cp_types[k] = ncapt(capt('|'.join(values), name=f'type_{k}') + fr'(?: {k}?)?')
+			if k in generic_types:
+				cp_types["generic_"+k] = ncapt(capt('|'.join(generic_values), name=f'gtype_{k}') + fr'(?: {k}?)?')
+
+		p_types["all"] = ncapt('|'.join([p_types[k] for k in p_types]))
+		cp_types["all"] = ncapt('|'.join([cp_types[k] for k in cp_types]))
+
+		p_trait_types = ncapt('|'.join(f'{t}?' for t in types))
+
+		p_number = ncapt(fr'one|two|three|four|five|six|seven|eight|nine|ten|\d+')
+		cp_number = capt(fr'one|two|three|four|five|six|seven|eight|nine|ten|\d+', name='number')
+
+		p_choice = ncapt(fr'(?: your choice of)?')
+		p_sep = ncapt(fr',? or,?|,? and,?|,? as well as|,') + p_choice
+		cp_sep = capt(fr',? or,?|,? and,?|,? as well as|,', name='sep') + p_choice
+
+		p_following = ncapt(fr'{p_number}(?: of the following {p_trait_types}(?: of your choice)?:)?')
+		cp_following = ncapt(fr'{cp_number}(?: of the following {p_trait_types}(?: of your choice)?:)?')
+
+		p_prepo = ncapt(fr'the|an?|{p_following}') + ncapt(fr'(?: set of)?')
+		cp_prepo = ncapt(fr'the|an?|{cp_following}') + ncapt(fr'(?: set of)?')
+
+		p_prefix1 = ncapt(fr'(?:have|gain) proficiency')
+		p_prefix2 = ncapt(fr'(?:are|become) proficient')
+		p_prefix = ncapt(fr'(?:{p_prefix1}|{p_prefix2}) (?:in|with)') + p_choice
+
+		p_posfix = ncapt(fr'\(your choice\)|of your choice')
+
+		p_1trait = ncapt(fr'(?:{p_prefix} )(?:{p_prepo} )?' + p_types["all"] + fr'(?: {p_posfix})?')
+		p_trait = ncapt(fr'(?:{p_prefix} )?(?:{p_prepo} )?' + p_types["all"] + fr'(?: {p_posfix})?')
+		cp_trait = ncapt(fr'(?:{p_prefix} )?(?:{cp_prepo} )?' + cp_types["all"] + fr'(?: {p_posfix})?')
+
+		p_traits = ncapt(fr'{p_1trait}(?:{p_sep} {p_trait})*?(?: {p_posfix})?\.')
+		cp_traits = ncapt(fr'(?:{cp_sep} )?{cp_trait}(?P<rest>(?:{p_sep} {p_trait})*?)@@@!!!@@@')
+
+		def process_group(group, mode):
+			nonlocal choices, grants
+			# if name == 'Anzellan':
+			# 	print('processing group')
+			# 	print(f'{group=}')
+			# 	print(f'{mode=}')
+
+			for t in group:
+				if t["generic"]:
+					if t["trait"] not in generic_types[t["trait_type"]] and f'{t["trait"]}s' in generic_types[t["trait_type"]]: t["trait"] += 's'
+					cfg = generic_types[t["trait_type"]][t["trait"]]
+					if "id" in cfg:
+						if mode == 'or':
+							t["id"] = cfg["id"]
+						elif mode == 'and':
+							process_group([t], 'or')
+							t["disabled"] = True
+					else:
+						t["disabled"] = True
+						traits = []
+						if "ids" in cfg:
+							traits = [ {
+								"trait_type": t["trait_type"],
+								"trait": t["trait"],
+								"id": t_id,
+								"number": t["number"],
+								"generic": False,
+								"disabled": False,
+							} for t_id in cfg["ids"] ]
+						else:
+							traits = [ {
+								"trait_type": t["trait_type"],
+								"trait": new_t["name"].lower(),
+								"id": new_t["id"],
+								"number": t["number"],
+								"generic": False,
+								"disabled": False,
+							} for new_t in types[t["trait_type"]].values() if cfg["foo"](t["trait"], new_t) ]
+						if mode == 'or':
+							group += traits
+						elif mode == 'and':
+							process_group(traits, 'or')
+				elif not "id" in t:
+					if t["trait"] in types[t["trait_type"]]:
+						t["id"] = types[t["trait_type"]][t["trait"]]["id"]
+					else:
+						raise ValueError(t, group, mode)
+				t["type_id"] = types_ids[t["trait_type"]]
+				if not t["disabled"] and "id" not in t: raise ValueError(t, group, mode)
+
+			number = ([ t["number"] for t in group if t["number"] ]+[1])[0]
+			group = [ t for t in group if not t["disabled"] ]
+
+			if mode == 'or':
+				choices.append({
+					"count": number or 1,
+					"pool": [ f'{t["type_id"]}:{t["id"]}' for t in group ],
+				})
+			elif mode == 'and':
+				grants.extend([ f'{t["type_id"]}:{t["id"]}' for t in group if not t["generic"] ])
+				for t in group:
+					if not t["generic"]: continue
+					choices.append({
+						"count": t["number"] or 1,
+						"pool": [ f'{t["type_id"]}:{t["id"]}' ],
+					})
+			else:
+				raise ValueError(mode, group, mode)
+
+		def get_traits(match):
+			subtext = match[0][:-1]
+			current = []
+
+			# if name == 'Anzellan':
+			# 	print(f'{text=}')
+			while subtext:
+				submatch = re.search(cp_traits, f'{subtext}@@@!!!@@@')
+				if not submatch: break
+
+				generic = False
+				trait_type = [ t for t in types if submatch.groupdict().get(f'type_{t}') ]
+				if len(trait_type):
+					trait_type = trait_type[0]
+					trait = submatch.groupdict().get(f'type_{trait_type}')
+				else:
+					trait_type = [ t for t in generic_types if submatch.groupdict().get(f'gtype_{t}') ][0]
+					trait = submatch.groupdict().get(f'gtype_{trait_type}')
+					generic = True
+
+				number = toInt(submatch.groupdict().get('number') or '', allowWords=True, default=None)
+				rest = submatch.groupdict().get('rest') or ''
+				sep = submatch.groupdict().get('sep') or ''
+
+				mode = None
+				if re.search(r'or', sep): mode = 'or'
+				if re.search(r'and|as well as', sep): mode = 'and'
+
+				# if name == 'Anzellan':
+				# 	print(f'{subtext=}')
+				# 	print(f'{number=} {trait=} {trait_type=} {sep=} {rest=} {mode=}')
+
+				trait = {
+					"trait_type": trait_type,
+					"trait": trait,
+					"number": number,
+					"generic": generic,
+					"disabled": False,
+				}
+
+				if mode == 'or':
+					current.append(trait)
+					process_group(current, 'or')
+					current = []
+				elif mode == 'and':
+					process_group(current, 'and')
+					current = []
+					current.append(trait)
+				else:
+					current.append(trait)
+
+				subtext = rest
+
+			if len(current):
+				process_group(current, 'and')
+
+			return 'PROCESSED'
+		text = re.sub(p_traits, get_traits, text)
+
+		patterns = ['someone proficient', 'must be proficient', 'double your proficiency', 'proficiency bonus', 'considered proficient', 'would already be proficient']
+		for pat in patterns: text = re.sub(pat, "PROCESSED", text)
+
+		if re.search(f'proficient|proficiency', text):
+			print('Unprocessed proficiency:', text, '\n', _text)
+
+	# if name == 'Anzellan' and (choices or grants): print(f'{choices=} {grants=}')
+
+	return choices, grants
+
 def lowerCase(word):
 	return word[:1].lower() + word[1:]
 
 def capitalCase(word):
 	return word[:1].upper() + word[1:]
 
-def toInt(string, allowWords=False, default=None):
+toIntDefault = {}
+def toInt(string, allowWords=False, default=toIntDefault):
 	if allowWords:
 		numbers = [ "one", "two", "three", "four", "five", "six", "seven", "eigth", "nine", "ten" ]
 		try:
@@ -805,7 +1050,7 @@ def toInt(string, allowWords=False, default=None):
 	try:
 		return int(string)
 	except ValueError:
-		if default != None: return default
+		if default != toIntDefault: return default
 		else: return string
 
 def getSingular(Text):

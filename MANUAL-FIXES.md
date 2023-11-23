@@ -16,10 +16,13 @@
   - sentinel ideals: add 'You regain all expended uses when you finish a long rest.'
   - Remove 'focused superiority'
   - Remove 'Nikto' species variants
+  - 'Changeling Instincts': add `.` at the end, change `and` to `or`
 - monster.json
   - use old monster.json
 - maneuvers.json
   - rampage 'result of the superiority die roll' -> 'superiority die'
+- species.json
+  - clawdite 'Changeling Instincts': add `.` at the end, change `and` to `or`
 - feat.json
   - remove 'Fighting Styles and Masteries' x2
   - remove 'Class Proficiencies'

@@ -14,27 +14,97 @@ class Advancement():
 		return data
 
 class AbilityScoreImprovement(Advancement):
-	def __init__(self, name=None, points=2, fixed=[], level=1, class_restriction=""):
+	def __init__(self, name=None, level=1, class_restriction="", points=2, fixed=[]):
 		self.name = name
+		self.level = level
+		self.class_restriction = class_restriction
 		self.configuration = {
 			"fixed": fixed,
 			"points": points
 		}
-		self.level = level
-		self.class_restriction = class_restriction
 
 	def getData(self, importer):
 		data = super().getData(importer)
 
+		data["classRestriction"] = self.class_restriction
 		data["configuration"] = self.configuration
 		data["level"] = self.level
 		if self.name: data["title"] = self.name
-		data["classRestriction"] = self.class_restriction
 
 		return data
 
 class HitPoints(Advancement):
 	pass
+
+class ItemChoice(Advancement):
+	def __init__(
+		self,
+		name=None,
+		class_restriction="",
+		hint="",
+		choices=[],
+		allow_drops=True,
+		item_type=None,
+		pool=[],
+		power_ability="",
+		power_preparation="",
+		power_uses_per="",
+		power_uses_max="",
+		restriction_type="",
+		restriction_subtype="",
+		restriction_level="",
+	):
+		self.name = name
+		self.class_restriction = class_restriction
+		self.configuration = {
+			"hint": hint,
+			"choices": choices,
+			"allowDrops": allow_drops,
+			"type": item_type,
+			"pool": pool,
+			"power": {
+				"ability": power_ability,
+				"preparation": power_preparation,
+				"uses": {
+					"per": power_uses_per,
+					"max": power_uses_max,
+				},
+			},
+			"restriction": {
+				"type": restriction_type,
+				"subtype": restriction_subtype,
+				"level": restriction_level,
+			},
+		}
+
+	def getData(self, importer):
+		data = super().getData(importer)
+
+		data["classRestriction"] = self.class_restriction
+		data["configuration"] = self.configuration
+		if self.name: data["title"] = self.name
+
+		return data
+
+class ItemGrant(Advancement):
+	def __init__(self, name=None, level=1, class_restriction="", uids=[], optional=False):
+		self.name = name
+		self.level = level
+		self.class_restriction = class_restriction
+		self.configuration = {
+			"items": uids,
+			"optional": optional
+		}
+
+	def getData(self, importer):
+		data = super().getData(importer)
+
+		data["classRestriction"] = self.class_restriction
+		data["configuration"] = self.configuration
+		data["level"] = self.level
+		if self.name: data["title"] = self.name
+
+		return data
 
 class ScaleValue(Advancement):
 	def __init__(self, name="Scale Value", values={}):
@@ -109,75 +179,41 @@ class ScaleValue(Advancement):
 
 		return data
 
-class ItemGrant(Advancement):
-	def __init__(self, name=None, uids=[], optional=False, level=1, class_restriction=""):
+class Size(Advancement):
+	def __init__(self, name=None, level=0, class_restriction="", choices=["med"]):
 		self.name = name
-		self.configuration = {
-			"items": uids,
-			"optional": optional
-		}
 		self.level = level
 		self.class_restriction = class_restriction
+		self.configuration = { "sizes": choices }
 
 	def getData(self, importer):
 		data = super().getData(importer)
 
+		data["classRestriction"] = self.class_restriction
 		data["configuration"] = self.configuration
 		data["level"] = self.level
 		if self.name: data["title"] = self.name
-		data["classRestriction"] = self.class_restriction
 
 		return data
 
-
-class ItemChoice(Advancement):
-	def __init__(
-		self,
-		name=None,
-		hint="",
-		choices=[],
-		allow_drops=True,
-		item_type=None,
-		pool=[],
-		power_ability="",
-		power_preparation="",
-		power_uses_per="",
-		power_uses_max="",
-		restriction_type="",
-		restriction_subtype="",
-		restriction_level="",
-		class_restriction=""
-	):
+class Trait(Advancement):
+	def __init__(self, name=None, level=0, class_restriction="", choices=[], grants=[], mode="default", allow_replacements=False):
 		self.name = name
-		self.configuration = {
-			"hint": hint,
-			"choices": choices,
-			"allowDrops": allow_drops,
-			"type": item_type,
-			"pool": pool,
-			"power": {
-				"ability": power_ability,
-				"preparation": power_preparation,
-				"uses": {
-					"per": power_uses_per,
-					"max": power_uses_max,
-				},
-			},
-			"restriction": {
-				"type": restriction_type,
-				"subtype": restriction_subtype,
-				"level": restriction_level,
-			},
-		}
+		self.level = level
 		self.class_restriction = class_restriction
+		self.configuration = {
+			"allow_replacements": allow_replacements,
+			"choices": choices,
+			"grants": grants,
+			"mode": mode,
+		}
 
 	def getData(self, importer):
 		data = super().getData(importer)
 
-		data["configuration"] = self.configuration
-		if self.name: data["title"] = self.name
 		data["classRestriction"] = self.class_restriction
+		data["configuration"] = self.configuration
+		data["level"] = self.level
+		if self.name: data["title"] = self.name
 
 		return data
-
-

@@ -485,6 +485,25 @@ skills = (
 	},
 )
 
+armor_types = (
+	{
+		"name": 'Light',
+		"id": 'lgt',
+	},
+	{
+		"name": 'Medium',
+		"id": 'med',
+	},
+	{
+		"name": 'Heavy',
+		"id": 'hvy',
+	},
+	{
+		"name": 'Shield',
+		"id": 'sld',
+	},
+)
+
 ammo_types = (
 	{
 		"name": 'Arrow',
@@ -1183,3 +1202,285 @@ chassis_slots = {
 	"legendary": 6,
 	"artifact": 6,
 }
+
+actor_sizes = {
+	"tiny": 'Tiny',
+	"sm": 'Small',
+	"med": 'Medium',
+	"lg": 'Large',
+	"huge": 'Huge',
+	"grg": 'Gargantuan',
+}
+
+tools = [
+	{
+		"type": 'artisan',
+		"name": 'armormech\'s implements',
+		"id": 'armormechsimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'armstech\'s implements',
+		"id": 'armstechsimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'artificer\'s implements',
+		"id": 'artificersimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'artist\'s implements',
+		"id": 'artistsimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'astrotech\'s implements',
+		"id": 'astrotechsimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'audiotech\'s implements',
+		"id": 'audiotechsimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'biotech\'s implements',
+		"id": 'biotechsimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'constructor\'s implements',
+		"id": 'constructorsimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'cybertech\'s implements',
+		"id": 'cybertechsimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'gadgeteer\'s implements',
+		"id": 'gadgeteersimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'geneticist\'s implements',
+		"id": 'geneticistsimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'jeweler\'s implements',
+		"id": 'jewelersimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'surveyor\'s implements',
+		"id": 'surveyorsimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'synthweaver\'s implements',
+		"id": 'synthweaversimplements',
+	},
+	{
+		"type": 'artisan',
+		"name": 'tinker\'s implements',
+		"id": 'tinkersimplements',
+	},
+	{
+		"type": 'game',
+		"name": 'chance cubes',
+		"id": 'chancecubes',
+	},
+	{
+		"type": 'game',
+		"name": 'dejarik set',
+		"id": 'dejarikset',
+	},
+	{
+		"type": 'game',
+		"name": 'pazaak deck',
+		"id": 'pazaakdeck',
+	},
+	{
+		"type": 'game',
+		"name": 'sabacc deck',
+		"id": 'sabaccdeck',
+	},
+	{
+		"type": 'music',
+		"name": 'bandfill',
+		"id": 'bandfill',
+	},
+	{
+		"type": 'music',
+		"name": 'chindinkalu horn',
+		"id": 'chindinkaluhorn',
+	},
+	{
+		"type": 'music',
+		"name": 'drum',
+		"id": 'drum',
+	},
+	{
+		"type": 'music',
+		"name": 'fanfar',
+		"id": 'fanfar',
+	},
+	{
+		"type": 'music',
+		"name": 'fizzz',
+		"id": 'fizzz',
+	},
+	{
+		"type": 'music',
+		"name": 'flute',
+		"id": 'flute',
+	},
+	{
+		"type": 'music',
+		"name": 'kloo horn',
+		"id": 'kloohorn',
+	},
+	{
+		"type": 'music',
+		"name": 'lute',
+		"id": 'lute',
+	},
+	{
+		"type": 'music',
+		"name": 'mandoviol',
+		"id": 'mandoviol',
+	},
+	{
+		"type": 'music',
+		"name": 'ommni box',
+		"id": 'ommnibox',
+	},
+	{
+		"type": 'music',
+		"name": 'shawm',
+		"id": 'shawm',
+	},
+	{
+		"type": 'music',
+		"name": 'slitherhorn',
+		"id": 'slitherhorn',
+	},
+	{
+		"type": 'music',
+		"name": 'traz',
+		"id": 'traz',
+	},
+	{
+		"type": 'music',
+		"name": 'valahorn',
+		"id": 'valahorn',
+	},
+	{
+		"type": 'music',
+		"name": 'xantha',
+		"id": 'xantha',
+	},
+	{
+		"type": 'specialist',
+		"name": 'archaeologist kit',
+		"id": 'archaeologistkit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'artillerist\'s kit',
+		"id": 'artilleristskit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'bioanalysis kit',
+		"id": 'bioanalysiskit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'biochemist\'s kit',
+		"id": 'biochemistskit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'brewer\'s kit',
+		"id": 'brewerskit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'chef\'s kit',
+		"id": 'chefskit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'demolition\'s kit',
+		"id": 'demolitionskit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'disguise kit',
+		"id": 'disguisekit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'forgery kit',
+		"id": 'forgerykit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'mechanic\'s kit',
+		"id": 'mechanicskit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'munitions kit',
+		"id": 'munitionskit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'poisoner\'s kit',
+		"id": 'poisonerskit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'scavenging kit',
+		"id": 'scavengingkit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'security kit',
+		"id": 'securitykit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'slicer\'s kit',
+		"id": 'slicerskit',
+	},
+	{
+		"type": 'specialist',
+		"name": 'spicer\'s kit',
+		"id": 'spicerskit',
+	},
+	{
+		"type": 'vehicle',
+		"name": 'air',
+		"id": 'air',
+	},
+	{
+		"type": 'vehicle',
+		"name": 'land',
+		"id": 'land',
+	},
+	{
+		"type": 'vehicle',
+		"name": 'space',
+		"id": 'space',
+	},
+	{
+		"type": 'vehicle',
+		"name": 'water',
+		"id": 'water',
+	},
+]
