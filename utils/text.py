@@ -852,7 +852,9 @@ def getTraits(text, name):
 		for t in generic_types: generic_types[t][t] = { "id": f'*' }
 
 		types_ids = { t: t for t in types }
+		types_ids["armors"] = "armor"
 		types_ids["tools"] = "tool"
+		types_ids["weapons"] = "weapon"
 
 		p_types = {}
 		cp_types = {}
