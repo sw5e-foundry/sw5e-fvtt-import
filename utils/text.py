@@ -789,7 +789,7 @@ def getStatblocks(text):
 
 	return text, statblocks
 
-def getTraits(text, name, require_prefix=True):
+def getTraits(text, name, require_prefix=True, restrict_types=None):
 	_text = text
 	choices, grants = [], []
 
@@ -862,11 +862,12 @@ def getTraits(text, name, require_prefix=True):
 
 		p_types = {}
 		cp_types = {}
-		for k, t in types.items():
-			values = [ f'{trait}' for trait in reversed(t) ]
+		for k in (restrict_types or types):
+			values = [ f'{trait}' for trait in reversed(types[k]) ] if k in types else []
 			generic_values = [ f'{k}?' ] + [ f'{trait}' for trait in reversed(generic_types[k]) ] if k in generic_types else []
-			p_types[k] = ncapt(ncapt('|'.join(values + generic_values)) + fr'(?: {k}?)?')
-			cp_types[k] = ncapt(capt('|'.join(values), name=f'type_{k}') + fr'(?: {k}?)?')
+			if k in types:
+				p_types[k] = ncapt(ncapt('|'.join(values + generic_values)) + fr'(?: {k}?)?')
+				cp_types[k] = ncapt(capt('|'.join(values), name=f'type_{k}') + fr'(?: {k}?)?')
 			if k in generic_types:
 				cp_types["generic_"+k] = ncapt(capt('|'.join(generic_values), name=f'gtype_{k}') + fr'(?: {k}?)?')
 		for t in generic_types: generic_types[t][t] = { "id": f'*' }
@@ -900,7 +901,6 @@ def getTraits(text, name, require_prefix=True):
 		cp_trait = ncapt(fr'(?:{p_prefix} )?(?:{cp_prepo} )?' + cp_types["all"] + fr'(?: {p_posfix})?')
 
 		p_traits = ncapt(fr'{p_1trait if require_prefix else p_trait}(?:(?:{p_sep} {p_trait})*)')
-		p_traits = ncapt(fr'{p_1trait}(?:(?:{p_sep} {p_trait})*)')
 		cp_traits = ncapt(fr'(?:{cp_sep} )?{cp_trait}(?P<rest>(?:{p_sep} {p_trait})*)')
 
 		def process_group(group, mode):

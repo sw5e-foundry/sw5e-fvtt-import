@@ -224,24 +224,18 @@ class Class(sw5e.Entity.Item):
 		return [ armor for armors in self.raw_armorProficiencies for armor in mapping[armors.lower().split(" ")[0]]]
 
 	def loadWeaponProficiencies(self):
+		grants = []
 		# TODO: make this respect weapon property restrictions
-		mapping = {
-			"all vibroweapons": [ 'svb', 'mvb' ],
-			"simple vibroweapons": [ 'svb' ],
-			"martial vibroweapons": [ 'mvb' ],
-			"exotic vibroweapons": [ 'evw' ],
+		for wpn in self.raw_weaponProficiencies:
+			wpn = wpn.lower()
+			if wpn.startswith('all'): wpn = ' '.join(wpn.split(' ')[1:])
+			fchoices, fgrants = utils.text.getTraits(wpn, self.name, require_prefix=False, restrict_types=['weapons'])
+			if fchoices:
+				for fchoice in fchoices: fchoice["pool"] = [ trait[:-2] if trait.endswith(':*') else trait for trait in fchoice["pool"] ]
+				grants.extend(fchoice["pool"])
+			if fgrants: grants.extend(fgrants)
 
-			"all lightweapons": [ 'slw', 'mlw' ],
-			"simple lightweapons": [ 'slw' ],
-			"martial lightweapons": [ 'mlw' ],
-			"exotic lightweapons": [ 'elw' ],
-
-			"all blasters": [ 'smb', 'mrb' ],
-			"simple blasters": [ 'smb' ],
-			"martial blasters": [ 'mrb' ],
-			"exotic blasters": [ 'exb' ],
-		}
-		return [ wpn for wpns in self.raw_weaponProficiencies for wpn in mapping.get(' '.join(wpns.split(' ')[:2]).lower(), []) ]
+		return grants
 
 	def loadToolProficiencies(self):
 		# TODO: make this respect weapon property restrictions
@@ -268,9 +262,9 @@ class Class(sw5e.Entity.Item):
 		return { "choices": choices, "grants": grants }
 
 	def loadSkillChoices(self):
-		mapping = { skl["name"]: skl["id"] for skl in utils.config.skills }
-		mapping["Any"] = 'any'
-		return [ mapping[skl] for skl in self.raw_skillChoicesList ]
+		mapping = { skl["name"].lower(): f'skills:{skl["id"]}' for skl in utils.config.skills }
+		mapping["any"] = 'skills:*'
+		return [ mapping[skl.lower()] for skl in self.raw_skillChoicesList ]
 
 	def loadAdvancements(self):
 		advancements = [ sw5e.Advancement.HitPoints() ]
@@ -287,9 +281,7 @@ class Class(sw5e.Entity.Item):
 			], class_restriction='primary') )
 
 		if self.weaponProficiencies:
-			advancements.append( sw5e.Advancement.Trait(level=1, grants=[
-				f'weapon:{wpn}' for wpn in self.weaponProficiencies
-			], class_restriction='primary') )
+			advancements.append( sw5e.Advancement.Trait(level=1, grants=self.weaponProficiencies, class_restriction='primary') )
 
 		if self.toolProficiencies["choices"] or self.toolProficiencies["grants"]:
 			advancements.append( sw5e.Advancement.Trait(level=1, 
@@ -306,7 +298,7 @@ class Class(sw5e.Entity.Item):
 		if self.skillChoices:
 			advancements.append( sw5e.Advancement.Trait(level=1, choices=[{
 				"count": self.raw_numSkillChoices,
-				"pool": [ f'skills:{skl}' for skl in self.skillChoices],
+				"pool": self.skillChoices,
 			}], allow_replacements=True, class_restriction='primary') )
 
 		# TODO: multiclass proficiencies with self.raw_multiClassProficiencies and utils.text.getTraits
