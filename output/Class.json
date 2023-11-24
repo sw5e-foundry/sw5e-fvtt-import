@@ -26,13 +26,13 @@
             "hitDiceUsed": 0,
             "advancement": [
                 {
-                    "_id": "HHeIXApD4hs1yoRw",
+                    "_id": "1qJaNzH6TL5CYRc3",
                     "type": "HitPoints",
                     "configuration": {},
                     "value": {}
                 },
                 {
-                    "_id": "SLMXm7Wlty61hTh8",
+                    "_id": "EaRWQpodAxJSf4Mv",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "rages",
@@ -62,7 +62,7 @@
                     "title": "Rages"
                 },
                 {
-                    "_id": "xZBGQAeAxMM146uj",
+                    "_id": "1ExqINJ8q2yB1DL2",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "rage-damage",
@@ -86,7 +86,7 @@
                     "title": "Rage Damage"
                 },
                 {
-                    "_id": "1L4JyjNnb5IRRwLd",
+                    "_id": "1EIKuHqbdkRs1HNF",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "berserker-instincts",
@@ -110,7 +110,7 @@
                     "title": "Berserker Instincts"
                 },
                 {
-                    "_id": "13wcpgebh33t1ABP",
+                    "_id": "18gz0MD1cfPy1UCc",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -121,7 +121,7 @@
                     "level": 4
                 },
                 {
-                    "_id": "BSmsdiuAEi5NvIlH",
+                    "_id": "RR2LTFXZnQY1R2fK",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -132,7 +132,7 @@
                     "level": 8
                 },
                 {
-                    "_id": "1QYFkbw2urxP1R8E",
+                    "_id": "PAmqwD51CQeea1GT",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -143,7 +143,7 @@
                     "level": 12
                 },
                 {
-                    "_id": "tbYyetbLt1C1zqjG",
+                    "_id": "1EuAykvvTR7DN23s",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -154,7 +154,7 @@
                     "level": 16
                 },
                 {
-                    "_id": "19uThiYpSYMI18oH",
+                    "_id": "1Fry6lDr6WE0VaRD",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -165,7 +165,81 @@
                     "level": 19
                 },
                 {
-                    "_id": "LbVllK3XK2e1U7FI",
+                    "_id": "1JuETSy3Md14P1v5",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "armor:light",
+                            "armor:medium"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "124BAtBABcOjbAjJ",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "weapon:svb",
+                            "weapon:mvb",
+                            "weapon:smb"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "17sys3gmxjpK1HCG",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "saves:str",
+                            "saves:con"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "EO0bj6COsgd1u5Vq",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ani",
+                                    "skills:ath",
+                                    "skills:itm",
+                                    "skills:nat",
+                                    "skills:prc",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "XXAumoRUoVj14oNd",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -180,7 +254,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "12ppHMSbaoeCVP1g",
+                    "_id": "1V2UoI1Ofw1RzyQi",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -195,7 +269,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1qpOOFXwW6wM1fQy",
+                    "_id": "1NjGuYtX042kWdMD",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -210,7 +284,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1FNg5JCU3yXoDdxb",
+                    "_id": "1kKM7LHJCAaU1l4l",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -224,7 +298,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "eHFgRzog1iGCMy4r",
+                    "_id": "1ev5lAYhPYu59Tyy",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -238,7 +312,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "NpFLHDwwoa2shg14",
+                    "_id": "1FPAAFDoFZ6l10xx",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -252,7 +326,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "K5ewNEHhiomkmCHe",
+                    "_id": "Oe8wJqk035NsK2XW",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -266,7 +340,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1OR7klLuprlLDH5B",
+                    "_id": "13ZLbL8OC9thuPaL",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -280,7 +354,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1glehwLBm5JWr6Ge",
+                    "_id": "1zbRhmRJy70w1UI2",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -294,7 +368,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1BJqdarKeyOb1E5a",
+                    "_id": "1xBgiUXvZvMm1teU",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -308,7 +382,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1sdbfOMmGCmRfZGx",
+                    "_id": "yQhd59gkbsWelez9",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "You've honed two instincts, as detailed at the end of the class description, and you hone more at higher levels, as shown in the Berserker Instincts column of the berserker table.",
@@ -358,7 +432,7 @@
                     "title": "Berserker Instincts"
                 },
                 {
-                    "_id": "171cSf19PCxLIeoa",
+                    "_id": "16jPQh3oit7R1d3B",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "For berserkers, rage is an internal reservoir where pain, grief, and anger are forged into a fury hard as steel. Your approach grants you features at 3rd, 6th, 10th, and 14th level.",
@@ -403,22 +477,6 @@
                     "title": "Berserker Approaches"
                 }
             ],
-            "saves": [
-                "str",
-                "con"
-            ],
-            "skills": {
-                "number": 2,
-                "choices": [
-                    "ani",
-                    "ath",
-                    "itm",
-                    "nat",
-                    "prc",
-                    "sur"
-                ],
-                "value": []
-            },
             "source": "PHB",
             "powercasting": {
                 "force": "none",
@@ -463,13 +521,13 @@
             "hitDiceUsed": 0,
             "advancement": [
                 {
-                    "_id": "121DPqiwUFhk1sSO",
+                    "_id": "J9HeCPEwrWk1vPRO",
                     "type": "HitPoints",
                     "configuration": {},
                     "value": {}
                 },
                 {
-                    "_id": "9rCYWSw04Di1FXjX",
+                    "_id": "D5yFDWAtnbi1zVhU",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "force-empowered-casting-options",
@@ -490,7 +548,7 @@
                     "title": "Force-Empowered Casting Options"
                 },
                 {
-                    "_id": "1aNBuV96dYXh19Wo",
+                    "_id": "1E9f01otmFaH1gJb",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -501,7 +559,7 @@
                     "level": 4
                 },
                 {
-                    "_id": "1uB5YlYq7gce1C7h",
+                    "_id": "gTjIZ4jEdEL1vkmy",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -512,7 +570,7 @@
                     "level": 8
                 },
                 {
-                    "_id": "1LZZMSMN0AJTetHz",
+                    "_id": "3it0EPWuY53P1J6P",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -523,7 +581,7 @@
                     "level": 12
                 },
                 {
-                    "_id": "16yUlSCiua531HFM",
+                    "_id": "1kkM1xafElXZ12oM",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -534,7 +592,7 @@
                     "level": 16
                 },
                 {
-                    "_id": "1GEN9VT0zGJ91A0x",
+                    "_id": "1KwCkEtWLNA34XPe",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -545,7 +603,80 @@
                     "level": 19
                 },
                 {
-                    "_id": "VR6Q1eo0FmOyzcaj",
+                    "_id": "EOL0mXgkw5E11au4",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "armor:none"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1g9BoqZOtDfCa3LZ",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "weapon:slw",
+                            "weapon:svb"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "Gjp4Y1cg1HZBS2tX",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "saves:wis",
+                            "saves:cha"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1lkaNHdOTgyq1Nvi",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:itm",
+                                    "skills:inv",
+                                    "skills:lor",
+                                    "skills:med",
+                                    "skills:per"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1TfrTgrMMDHt136t",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -560,7 +691,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "ZtFJBj55vEG15miv",
+                    "_id": "1N0qxoqZkioB1JOS",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -575,7 +706,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1hZgXcwiybSI1oNj",
+                    "_id": "192aEjIihR6W1U3z",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -590,7 +721,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "bPH2gSzQT4c3YJhk",
+                    "_id": "1S8PkgPvdGyJpD9N",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -604,7 +735,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1ydYRIdrl8vGeiIz",
+                    "_id": "1jrPCA1K18ys1tcY",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "You gain the ability to twist your powers to suit your needs. When you cast a force power, you can expend additional force points to modify the power. You gain two Force-Empowered Casting options, located at the end of the class description, and you learn more at higher levels, as shown in the Force-Empowered Casting Options of the cnosular table.\nYou can use only one Force-Empowered Casting option on a power when you cast it, unless otherwise noted.",
@@ -647,7 +778,7 @@
                     "title": "Force-Empowered Castings"
                 },
                 {
-                    "_id": "mXp8UEVkNdDXDcBB",
+                    "_id": "1BYUTRnDZdTa1or6",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "Different consulars select different traditions, called Ways, to follow as they hone their powers. Your tradition grants you features at 3rd, 6th, 10th, 14th, and 18th level.",
@@ -689,23 +820,6 @@
                     "title": "Consular Traditions"
                 }
             ],
-            "saves": [
-                "wis",
-                "cha"
-            ],
-            "skills": {
-                "number": 2,
-                "choices": [
-                    "dec",
-                    "ins",
-                    "itm",
-                    "inv",
-                    "lor",
-                    "med",
-                    "per"
-                ],
-                "value": []
-            },
             "source": "PHB",
             "powercasting": {
                 "force": "full",
@@ -750,13 +864,13 @@
             "hitDiceUsed": 0,
             "advancement": [
                 {
-                    "_id": "ojCnLj1JHppRQKVc",
+                    "_id": "iXzEhed1doe1KWpp",
                     "type": "HitPoints",
                     "configuration": {},
                     "value": {}
                 },
                 {
-                    "_id": "wBs83ELPH63lzFUQ",
+                    "_id": "1tw82X9QiUM4Zn5u",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "potent-aptitude",
@@ -788,7 +902,7 @@
                     "title": "Potent Aptitude"
                 },
                 {
-                    "_id": "Jdrf6LtY4udjhT9u",
+                    "_id": "1eYHXNthdIH9u1lD",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "modification-slots",
@@ -818,7 +932,7 @@
                     "title": "Modification Slots"
                 },
                 {
-                    "_id": "bjyQahyicdBLJu0A",
+                    "_id": "so4A3Ytg6eYy4G3Z",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -829,7 +943,7 @@
                     "level": 4
                 },
                 {
-                    "_id": "1paBTBYFuPhLsXV7",
+                    "_id": "tsJNbiVQ6Iq1Phif",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -840,7 +954,7 @@
                     "level": 8
                 },
                 {
-                    "_id": "1d4lkXlpv2fz149z",
+                    "_id": "1RZyclAeilvJTL0g",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -851,7 +965,7 @@
                     "level": 12
                 },
                 {
-                    "_id": "jQb2Tz0CUWW1otMH",
+                    "_id": "z5SqaKqN8WJ1o52Z",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -862,7 +976,7 @@
                     "level": 16
                 },
                 {
-                    "_id": "1DHqzxzJnZAus2c0",
+                    "_id": "5VmPeHvrfAnRMHb5",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -873,7 +987,101 @@
                     "level": 19
                 },
                 {
-                    "_id": "1uIigFPTuILiVADY",
+                    "_id": "1z5Vg9oynsDYZVNX",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "armor:light"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1R9z7AWq5hVVipqP",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "weapon:smb",
+                            "weapon:svb"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1ryJSEXT7M9W16uA",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "tool:*"
+                                ]
+                            }
+                        ],
+                        "grants": [
+                            "tool:tinkersimplements"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "RKu1NotEG3mgwMwp",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "saves:con",
+                            "saves:int"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1wrij3V3sxIf1J9Z",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 3,
+                                "pool": [
+                                    "skills:inv",
+                                    "skills:lor",
+                                    "skills:med",
+                                    "skills:nat",
+                                    "skills:pil",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1kiGdTPFNPUTR7Tb",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -888,7 +1096,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1uAES6e0bFwiuSOm",
+                    "_id": "gKYbQUdTdBYxi9gU",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -903,7 +1111,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "JZReDwlYPd0NfOe2",
+                    "_id": "SYFDaSlncQI1cYli",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -917,7 +1125,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "LWH5XUDJv1ph8cBK",
+                    "_id": "1Hfkg0XBlZEW1OQq",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -931,7 +1139,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "wdBbd1LHjrq1eRYQ",
+                    "_id": "gVmCt6oluMBTje42",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "Each discipline focuses on maximizing the personal use of a certain tool. Your discipline grants you features at 3rd, 6th, 14th, and 18th level.",
@@ -975,22 +1183,6 @@
                     "title": "Engineering Disciplines"
                 }
             ],
-            "saves": [
-                "con",
-                "int"
-            ],
-            "skills": {
-                "number": 3,
-                "choices": [
-                    "inv",
-                    "lor",
-                    "med",
-                    "nat",
-                    "pil",
-                    "tec"
-                ],
-                "value": []
-            },
             "source": "PHB",
             "powercasting": {
                 "force": "none",
@@ -1035,13 +1227,13 @@
             "hitDiceUsed": 0,
             "advancement": [
                 {
-                    "_id": "ub9kDe8RVuL1sOT8",
+                    "_id": "GbY5oULGRkIiyIxt",
                     "type": "HitPoints",
                     "configuration": {},
                     "value": {}
                 },
                 {
-                    "_id": "1joWWEmoEt9W12Tk",
+                    "_id": "1pWzbGIEAeMj1e33",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "superiority-dice-quantity",
@@ -1068,7 +1260,7 @@
                     "title": "Superiority Dice Quantity"
                 },
                 {
-                    "_id": "Ts1d2WSfa8UUZktB",
+                    "_id": "PPRDvXsBQLl1S33u",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "superiority-dice-size",
@@ -1100,7 +1292,7 @@
                     "title": "Superiority Dice Size"
                 },
                 {
-                    "_id": "CVga6EUg64rgHuqA",
+                    "_id": "13pMPaKPc8mF1CWQ",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "strategies-known",
@@ -1124,7 +1316,7 @@
                     "title": "Strategies Known"
                 },
                 {
-                    "_id": "1h1aU9MD1KxS1aUc",
+                    "_id": "1FsPwC152FEzQQ10",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -1135,7 +1327,7 @@
                     "level": 4
                 },
                 {
-                    "_id": "1QJmiAnEgqDe8aux",
+                    "_id": "xlNkI5xFXDGL7IJx",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -1146,7 +1338,7 @@
                     "level": 6
                 },
                 {
-                    "_id": "1IFK0wy2x6Pz5nFo",
+                    "_id": "PiwrN9QfNgi1iIU5",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -1157,7 +1349,7 @@
                     "level": 8
                 },
                 {
-                    "_id": "cgMrXwZcO5Q1oGfY",
+                    "_id": "17Dcos7lhepw1Clz",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -1168,7 +1360,7 @@
                     "level": 12
                 },
                 {
-                    "_id": "jIWBQYsDtFusiBar",
+                    "_id": "1fAmkyHDABx12rPj",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -1179,7 +1371,7 @@
                     "level": 14
                 },
                 {
-                    "_id": "1MqGSX8GbzknuP5U",
+                    "_id": "1fPFRUgNmHKqLqaL",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -1190,7 +1382,7 @@
                     "level": 16
                 },
                 {
-                    "_id": "vGPVlHZ2AGl1nqfx",
+                    "_id": "f3cBV5c9pi81wpTY",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -1201,7 +1393,83 @@
                     "level": 19
                 },
                 {
-                    "_id": "1OrftWdxAFBnJ2zC",
+                    "_id": "13vC79t64xGlyZJO",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "armor:all"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "13ulihfFA88xCk49",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "weapon:smb",
+                            "weapon:mrb",
+                            "weapon:svb",
+                            "weapon:mvb"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "TrtOBKBPhUDwRQgM",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "saves:str",
+                            "saves:con"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1l0JEb9CEGs8Sfep",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:acr",
+                                    "skills:ani",
+                                    "skills:ath",
+                                    "skills:lor",
+                                    "skills:ins",
+                                    "skills:itm",
+                                    "skills:prc",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1Dxd0ErGYAwMrlVM",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1216,7 +1484,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "Q25QEeSmNiG1aDej",
+                    "_id": "1D5gCSZ3GmzP1QrV",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1231,7 +1499,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "U1QniCv7x14y03UO",
+                    "_id": "juYBBXxJZsIv433w",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1246,7 +1514,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "EjdMPH9qDL21xOLL",
+                    "_id": "FtJytvAANlr11OYV",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1260,7 +1528,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "C56QwYfd36hpdTgg",
+                    "_id": "sl8Vtm6TpfX1joci",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1274,7 +1542,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "noct3sWsfb1IlUxv",
+                    "_id": "1bHI8g563h8W1pxW",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1288,7 +1556,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1Do2BUQFijXw6J5U",
+                    "_id": "VgCAAxzQBpv1HcLI",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1302,7 +1570,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1jceCmjawzxX5QXb",
+                    "_id": "1ouopijBWpIrSRRk",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "You've adopted a fighter strategy, as detailed at the end of the class description, and you adopt more at higher levels, as shown in the Strategies Known column of the fighter table.",
@@ -1343,7 +1611,7 @@
                     "title": "Fighter Strategies"
                 },
                 {
-                    "_id": "1t5tjy7LQzNE18Yr",
+                    "_id": "1wSld9wtqkPSiIyV",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "Different fighters choose different approaches to perfecting their fighting prowess. The fighter specialty you choose to emulate reflects your approach. Your specialty grants you features at 3rd, 7th, 10th, 15th, and 18th level.",
@@ -1387,24 +1655,6 @@
                     "title": "Fighter Specialties"
                 }
             ],
-            "saves": [
-                "str",
-                "con"
-            ],
-            "skills": {
-                "number": 2,
-                "choices": [
-                    "acr",
-                    "ani",
-                    "ath",
-                    "lor",
-                    "ins",
-                    "itm",
-                    "prc",
-                    "sur"
-                ],
-                "value": []
-            },
             "source": "PHB",
             "powercasting": {
                 "force": "none",
@@ -1449,13 +1699,13 @@
             "hitDiceUsed": 0,
             "advancement": [
                 {
-                    "_id": "1V084EOU0i80HPaA",
+                    "_id": "wrhSbrsDo5kCZ9bW",
                     "type": "HitPoints",
                     "configuration": {},
                     "value": {}
                 },
                 {
-                    "_id": "a7LnrKDYQ0X17rH2",
+                    "_id": "1kR6TqSE0hz7LjtZ",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "focused-strikes",
@@ -1487,7 +1737,7 @@
                     "title": "Focused Strikes"
                 },
                 {
-                    "_id": "khjEjLQgQAk1tKq3",
+                    "_id": "1vzGA8RAWwGI16iO",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "auras-known",
@@ -1508,7 +1758,7 @@
                     "title": "Auras Known"
                 },
                 {
-                    "_id": "dSavFqhK6if1FFn4",
+                    "_id": "ezng7SXk6gee15CE",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "aura-radius",
@@ -1532,7 +1782,7 @@
                     "title": "Aura Radius"
                 },
                 {
-                    "_id": "gS9I3WrecEeAicZa",
+                    "_id": "ZcPPeekspxW1y3un",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -1543,7 +1793,7 @@
                     "level": 4
                 },
                 {
-                    "_id": "1ti1mnah6N8S1KEE",
+                    "_id": "YzWoVH34Aa81DLR6",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -1554,7 +1804,7 @@
                     "level": 8
                 },
                 {
-                    "_id": "EAhVSGVDfYF1OkK0",
+                    "_id": "Yaz9jjxFK2B1M96L",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -1565,7 +1815,7 @@
                     "level": 12
                 },
                 {
-                    "_id": "93twguxR0Ni1HxdD",
+                    "_id": "1rRkmloejS5Xr9GL",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -1576,7 +1826,7 @@
                     "level": 16
                 },
                 {
-                    "_id": "fMWur37lwytYnzJ0",
+                    "_id": "11oxlw2Rrp101PGm",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -1587,7 +1837,85 @@
                     "level": 19
                 },
                 {
-                    "_id": "8HB4n4InJ6P10jg0",
+                    "_id": "1QwgBb3YJuKbPAm3",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "armor:light",
+                            "armor:medium"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "SAJXD9R74JX1bbBs",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "weapon:slw",
+                            "weapon:mlw",
+                            "weapon:svb",
+                            "weapon:mvb"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1QPkf6rTfD7zDRAs",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "saves:con",
+                            "saves:cha"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1GNCGkTsMpsK1ylj",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:acr",
+                                    "skills:ath",
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:itm",
+                                    "skills:lor",
+                                    "skills:prc",
+                                    "skills:per",
+                                    "skills:pil"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "4TcVY7YU28sgal2G",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1602,7 +1930,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1I6rhiW16W5L1p8l",
+                    "_id": "h7Y1ro3kNnnfPcIa",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1617,7 +1945,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1yU1n0Ws3lXlZuFE",
+                    "_id": "17qaVJf3exCW1HIg",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1632,7 +1960,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "dyGuBs5SlzA7i64i",
+                    "_id": "1Heh5X4r1XPHTj4M",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1646,7 +1974,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "16QWDDNVsQwyki98",
+                    "_id": "1eCFkE5TNpUw425N",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1660,7 +1988,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "15OrpowObDDA1aYc",
+                    "_id": "IqAnDWIp2x41NXik",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1674,7 +2002,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "16YPSuEnXxeRNUvy",
+                    "_id": "79XAa5B3WB5otDYJ",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -1688,7 +2016,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1EKgfGYyenv9omF3",
+                    "_id": "1uVWeDowl2CrD3P4",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "You gain an aura of your choice, as detailed at the end of the class description, and you gain more at higher levels, as shown in the Auras Known column of the guardian table. Your aura has a radius of 5 feet, which increases at higher levels, as shown in the Aura Radius column of the guardian table.",
@@ -1727,7 +2055,7 @@
                     "title": "Guardian Auras"
                 },
                 {
-                    "_id": "xGAzNUdWD76W4Bpq",
+                    "_id": "DRYgbAEo71a11fHd",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "Different guardians focus on different lightsaber styles, called Forms, as they hone their powers. Your focus grants you features at 3rd, 7th, 15th, and 20th level.",
@@ -1771,25 +2099,6 @@
                     "title": "Guardian Foci"
                 }
             ],
-            "saves": [
-                "con",
-                "cha"
-            ],
-            "skills": {
-                "number": 2,
-                "choices": [
-                    "acr",
-                    "ath",
-                    "dec",
-                    "ins",
-                    "itm",
-                    "lor",
-                    "prc",
-                    "per",
-                    "pil"
-                ],
-                "value": []
-            },
             "source": "PHB",
             "powercasting": {
                 "force": "half",
@@ -1834,13 +2143,13 @@
             "hitDiceUsed": 0,
             "advancement": [
                 {
-                    "_id": "16fHqWXghaz91m5P",
+                    "_id": "1jKxTwcc6VDFH0Sj",
                     "type": "HitPoints",
                     "configuration": {},
                     "value": {}
                 },
                 {
-                    "_id": "1QCzIyQ9RVwJ8OYr",
+                    "_id": "1JM5YVcVP21hsf8A",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "martial-arts",
@@ -1872,7 +2181,7 @@
                     "title": "Martial Arts"
                 },
                 {
-                    "_id": "1jQ9tU0HjSDx1lld",
+                    "_id": "xrnZAUp3U6WElrg1",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "focus-points",
@@ -1941,7 +2250,7 @@
                     "title": "Focus Points"
                 },
                 {
-                    "_id": "1mPI7O4xMHq1guMN",
+                    "_id": "1CARg9g0MBiFFKa1",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "monastic-vows",
@@ -1965,7 +2274,7 @@
                     "title": "Monastic Vows"
                 },
                 {
-                    "_id": "qID9iaVVZwy1exNI",
+                    "_id": "1Rnb1j7dhLWqnjZ8",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "unarmored-movement",
@@ -1995,7 +2304,7 @@
                     "title": "Unarmored Movement"
                 },
                 {
-                    "_id": "1P3P4o89BUxI1m2j",
+                    "_id": "183OwiKgLK1JzbuO",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2006,7 +2315,7 @@
                     "level": 4
                 },
                 {
-                    "_id": "HmUhaiaOz5Z16fFe",
+                    "_id": "1k1fiBU4qN4ShDdA",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2017,7 +2326,7 @@
                     "level": 8
                 },
                 {
-                    "_id": "1Rr8Jr39yZGhuJGX",
+                    "_id": "bx0Pq9ETdmy1RBTA",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2028,7 +2337,7 @@
                     "level": 10
                 },
                 {
-                    "_id": "Opm3G6q5Jfl1aJQR",
+                    "_id": "W1jRMjUbhvIZXViK",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2039,7 +2348,7 @@
                     "level": 12
                 },
                 {
-                    "_id": "1dYroTJC3NlG2l1S",
+                    "_id": "CdLDiSm4PhGVDowl",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2050,7 +2359,7 @@
                     "level": 16
                 },
                 {
-                    "_id": "46H0U2BowdaE5RsN",
+                    "_id": "1RwQOjvJOaR3SRbu",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2061,7 +2370,80 @@
                     "level": 19
                 },
                 {
-                    "_id": "C5sLvddkgrw1FItx",
+                    "_id": "1FjaP3O9E4qNHROJ",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "armor:none"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "aL06tdsfIvsdKYmb",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "weapon:smb",
+                            "weapon:svb",
+                            "weapon:mvb"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1CDyNWHMlDR9mf1V",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "saves:str",
+                            "saves:dex"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "8sHiqcGbB7J2ThVz",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:acr",
+                                    "skills:ath",
+                                    "skills:ins",
+                                    "skills:lor",
+                                    "skills:prc",
+                                    "skills:ste"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1Co40tuRAsrSRAWz",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2076,7 +2458,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "3pUTSiyuUwW1sg3H",
+                    "_id": "UiF2UB4EAyx2YOKw",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2091,7 +2473,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "hjUnxa70CT97bxw8",
+                    "_id": "Z8Xs9DZxVqMKkNo0",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2107,7 +2489,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "2TAwWjfJH127Ja2z",
+                    "_id": "yYUmQpLWMrL161bK",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2121,7 +2503,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "70QYCQg0cP51Dkd0",
+                    "_id": "1bzF32VXQ0V4n4aC",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2136,7 +2518,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "DbmNNZT5OUlXEISG",
+                    "_id": "18G3j0Q0xzSq1oPs",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2150,7 +2532,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "4nsAY7yufYG1cqHA",
+                    "_id": "1wy6p6NP0I681TZQ",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2165,7 +2547,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "IDWziCrg4Wr1BYyf",
+                    "_id": "LNm8UfxZB1Z3qzDP",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2179,7 +2561,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1bZpzQ4mcxfS1P3w",
+                    "_id": "1sbjwUW9rFxTp5sX",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2193,7 +2575,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "dX4oKUUDfSv1gJkz",
+                    "_id": "8XBO2RGIO4jIUy9Z",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2207,7 +2589,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1syjK017Jq371Cvc",
+                    "_id": "5jdGOmSVlVz1sT5S",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2221,7 +2603,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1kKSgo2FGiDLjaNv",
+                    "_id": "S2qauPVVt0f5yGgD",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2235,7 +2617,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "10ruvRS06jvqu7TX",
+                    "_id": "jf4Os2XXiokb8Bs5",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "You've sworn two vows, as detailed at the end of the class description. You swear an additional vow at 7th, 13th, and 17th level.",
@@ -2286,7 +2668,7 @@
                     "title": "Monastic Vows"
                 },
                 {
-                    "_id": "cqZYFgpQgQB1S1Jt",
+                    "_id": "wQxH6SMB9dCbwW89",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "Orders of monastic pursuit are common in the locales scattered across the galaxy. Each order is based in a specific culture and is mutually exclusive, despite relying on the same basic techniques. Your order grants you features at 3rd, 6th, 11th, and 17th level.",
@@ -2329,22 +2711,6 @@
                     "title": "Monastic Orders"
                 }
             ],
-            "saves": [
-                "str",
-                "dex"
-            ],
-            "skills": {
-                "number": 2,
-                "choices": [
-                    "acr",
-                    "ath",
-                    "ins",
-                    "lor",
-                    "prc",
-                    "ste"
-                ],
-                "value": []
-            },
             "source": "PHB",
             "powercasting": {
                 "force": "none",
@@ -2389,13 +2755,13 @@
             "hitDiceUsed": 0,
             "advancement": [
                 {
-                    "_id": "jUiDZrnB1LeKQ5v8",
+                    "_id": "1rVIAwdef7fpsYqE",
                     "type": "HitPoints",
                     "configuration": {},
                     "value": {}
                 },
                 {
-                    "_id": "qAU2p2cq8S3xH8Fa",
+                    "_id": "YwlCjCQk7Hy16NxQ",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "sneak-attack",
@@ -2447,7 +2813,7 @@
                     "title": "Sneak Attack"
                 },
                 {
-                    "_id": "zEG3rRRLMX910dzg",
+                    "_id": "GijsosiesVf1RF4t",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "operative-exploits",
@@ -2471,7 +2837,7 @@
                     "title": "Operative Exploits"
                 },
                 {
-                    "_id": "155HuzDuL1Fb4wiL",
+                    "_id": "1wxinGxUutqVoeLd",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2482,7 +2848,7 @@
                     "level": 4
                 },
                 {
-                    "_id": "q3rwPpj6SpVsvWIG",
+                    "_id": "YuMosv3molu3Spsv",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2493,7 +2859,7 @@
                     "level": 8
                 },
                 {
-                    "_id": "kaPuhyX8z3w1Bh8B",
+                    "_id": "OdGRlq4Nkeg1uFRs",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2504,7 +2870,7 @@
                     "level": 10
                 },
                 {
-                    "_id": "2JiwCHl0w4fXYlaj",
+                    "_id": "1A0ATs6QIcVpVsOl",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2515,7 +2881,7 @@
                     "level": 12
                 },
                 {
-                    "_id": "ZfT9k8e7slr172Wp",
+                    "_id": "SPdIWZ2hf96qmgxE",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2526,7 +2892,7 @@
                     "level": 16
                 },
                 {
-                    "_id": "1RGaJYt6BD6E1e6I",
+                    "_id": "HK5eztz338l1D5YO",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2537,7 +2903,96 @@
                     "level": 19
                 },
                 {
-                    "_id": "1k1NdGkNs0pt1l3c",
+                    "_id": "1P0fGWiPcarl1ecR",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "armor:light"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "ujE2H60aIwtEc9Ly",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "weapon:smb",
+                            "weapon:svb",
+                            "weapon:mrb",
+                            "weapon:mvb"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "dDjpICDLuee7j1tY",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "tool:specialist:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1P0YqzPTKTrmjA4J",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "saves:dex",
+                            "saves:int"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1wobecMJsTFH1mdF",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 4,
+                                "pool": [
+                                    "skills:any"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1U4JnuSXCejncRbS",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2552,7 +3007,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "y4Pj8V16YVv17w1o",
+                    "_id": "cEKUxbP3ZCe1oiTd",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2567,7 +3022,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1OCdhE5ApfxT3AIJ",
+                    "_id": "1D4pSbJ8xzeb14ua",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2582,7 +3037,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "13MK8IMW9ynqB9ww",
+                    "_id": "1zQ9QiqGiuoL1bwR",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2596,7 +3051,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "7DODhYnIqTtsC7pp",
+                    "_id": "3d2pHGVCoAiAjPhm",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2610,7 +3065,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1s98mXP3e53L1z8d",
+                    "_id": "bLhVEy233Db1xQkX",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2624,7 +3079,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "i9SI3xrrQPt1dLca",
+                    "_id": "1Dqqeg28BscM1xog",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2638,7 +3093,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "YPuXAsatXxqJ2r3d",
+                    "_id": "1gV9G0N58Oct1ADq",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2652,7 +3107,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1v4mnEZX0rVBqWfD",
+                    "_id": "LL5IjBidglq18Nrk",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2666,7 +3121,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "gcfAOhJBh3f16jNz",
+                    "_id": "1UtJyXTbHfRTqmIo",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -2680,7 +3135,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "ejfjzWcmhLT11X0M",
+                    "_id": "Rt3tI8nQ0H31fckq",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "You've adopted two exploits, as detailed at the end of the class description. You adopt an additional exploit at 7th, 13th, and 17th level.",
@@ -2724,7 +3179,7 @@
                     "title": "Operative Exploits"
                 },
                 {
-                    "_id": "1D7NoUgsNIzm1RHW",
+                    "_id": "11ifH3g2zJIr1naI",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "Operatives share, including their emphasis on perfecting their skills, their precise and deadly approach to combat, and their increasingly quick reflexes, though their practices differ. Your practice grants you features at 3rd, 9th, 13th, and 17th level.",
@@ -2769,17 +3224,6 @@
                     "title": "Operative Practices"
                 }
             ],
-            "saves": [
-                "dex",
-                "int"
-            ],
-            "skills": {
-                "number": 4,
-                "choices": [
-                    "any"
-                ],
-                "value": []
-            },
             "source": "PHB",
             "powercasting": {
                 "force": "none",
@@ -2824,13 +3268,13 @@
             "hitDiceUsed": 0,
             "advancement": [
                 {
-                    "_id": "XYxvo3oN6fwzIj28",
+                    "_id": "159lZ2lIoO5a16u5",
                     "type": "HitPoints",
                     "configuration": {},
                     "value": {}
                 },
                 {
-                    "_id": "PpLxJKlAtzQ1QtpQ",
+                    "_id": "NpDFhJWVv0uYnvq2",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "superiority-dice-quantity",
@@ -2872,7 +3316,7 @@
                     "title": "Superiority Dice Quantity"
                 },
                 {
-                    "_id": "1PZcleVN85Kekli1",
+                    "_id": "cQ9JwKVAis41Ctlz",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "superiority-dice-size",
@@ -2904,7 +3348,7 @@
                     "title": "Superiority Dice Size"
                 },
                 {
-                    "_id": "tOrti3TDsKD3Q68I",
+                    "_id": "3BJbhvJTLCIjapVu",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "discoveries",
@@ -2937,7 +3381,7 @@
                     "title": "Discoveries"
                 },
                 {
-                    "_id": "14DQC1fNz3AM1yZ5",
+                    "_id": "14ycJILJ4iVl1mD9",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2948,7 +3392,7 @@
                     "level": 4
                 },
                 {
-                    "_id": "1wdX4TCnXuEHtW6Q",
+                    "_id": "1zGcYpPXVNJcPPvs",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2959,7 +3403,7 @@
                     "level": 8
                 },
                 {
-                    "_id": "Z5v1vwYHO8U1eD5q",
+                    "_id": "1xtuThrJOaxtptGU",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2970,7 +3414,7 @@
                     "level": 12
                 },
                 {
-                    "_id": "1rCxCdHXwWFtw0t8",
+                    "_id": "1JcxDBEwp9r01eqs",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2981,7 +3425,7 @@
                     "level": 16
                 },
                 {
-                    "_id": "UFL72WRsPePktGrx",
+                    "_id": "tajIBmCHaU2zhuJb",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -2992,7 +3436,103 @@
                     "level": 19
                 },
                 {
-                    "_id": "1BrWOov5Mx9w16Zf",
+                    "_id": "1nSbUXHcnyqe1Si4",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "armor:light"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1bLDhcN2TO1Mp2pc",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "weapon:smb",
+                            "weapon:svb",
+                            "weapon:mvb"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "15zjmV3AJADP1u8D",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "tool:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1fYx4WJvcZo498RW",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "saves:int",
+                            "saves:wis"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "2IpdWQ3Xu2glFfSE",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 3,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:itm",
+                                    "skills:inv",
+                                    "skills:lor",
+                                    "skills:med",
+                                    "skills:nat",
+                                    "skills:per",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "go5MNIrPIk51N1si",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3007,7 +3547,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1ex263qPDyGm1HKE",
+                    "_id": "i6f0ihFbsHBZszfO",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3022,7 +3562,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1n7viTd5qqpF1pVF",
+                    "_id": "RlkwsbkzGsIwesMc",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3037,7 +3577,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1Fo18tfXjr8n1e0v",
+                    "_id": "HA3nuQstOvonvno9",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3051,7 +3591,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "z60quolMn1Xenxxk",
+                    "_id": "xNklVXUKSor1uhkt",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3065,7 +3605,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1bGeUhbgQXU61qj8",
+                    "_id": "1NJjlOStWrMYFjDZ",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3079,7 +3619,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "JxzyMvSH61RHezco",
+                    "_id": "1oHsn9vEKcojaqoT",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3093,7 +3633,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "GZPEvTZXiOmf1PWT",
+                    "_id": "1oONDUhqdyQYEKr1",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "As you adventure, your studies have helped you discover new practices you can apply to your skills. You master two discoveries of your choice. Your discovery options are detailed at the end of the class description. When you gain certain scholar levels, you gain additional discoveries of your choice, as shown in the Discoveries column of the scholar table.\nAdditionally, when you gain a level in this class, you can choose one of the discoveries you know and replace it with another discovery that you could learn at that level.",
@@ -3152,7 +3692,7 @@
                     "title": "Discoveries"
                 },
                 {
-                    "_id": "1Fh6PvhCS9OEKA8U",
+                    "_id": "1rXI1VBiQ6fM1yRm",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "Your pursuit is a representation of which fields you have studied or how you practically apply your knowledge. Your pursuit grants you features at 3rd, 6th, 9th, and 17th level.",
@@ -3194,25 +3734,6 @@
                     "title": "Academic Pursuits"
                 }
             ],
-            "saves": [
-                "int",
-                "wis"
-            ],
-            "skills": {
-                "number": 3,
-                "choices": [
-                    "dec",
-                    "ins",
-                    "itm",
-                    "inv",
-                    "lor",
-                    "med",
-                    "nat",
-                    "per",
-                    "sur"
-                ],
-                "value": []
-            },
             "source": "PHB",
             "powercasting": {
                 "force": "none",
@@ -3257,13 +3778,13 @@
             "hitDiceUsed": 0,
             "advancement": [
                 {
-                    "_id": "1FHW1yvWLyJu1PH9",
+                    "_id": "PwPuvWy8iFi1vB04",
                     "type": "HitPoints",
                     "configuration": {},
                     "value": {}
                 },
                 {
-                    "_id": "vwvGiNoiSk21lzso",
+                    "_id": "EqpXcCTgVoBKt3EI",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "rangers-quarry",
@@ -3295,7 +3816,7 @@
                     "title": "Ranger's Quarry"
                 },
                 {
-                    "_id": "eWIJwXDt8tB3bg8z",
+                    "_id": "1lJX8ROcPquXiJUF",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "routines-known",
@@ -3316,7 +3837,7 @@
                     "title": "Routines Known"
                 },
                 {
-                    "_id": "nSPv1T5BES71Pbgg",
+                    "_id": "18YQi2UwPAxp1Mws",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "routine-radius",
@@ -3340,7 +3861,7 @@
                     "title": "Routine Radius"
                 },
                 {
-                    "_id": "1V5RNHPa3PEG1wqv",
+                    "_id": "8g34vxbmG4H1OVun",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -3351,7 +3872,7 @@
                     "level": 4
                 },
                 {
-                    "_id": "1NJUrx8L7Tqa1Ri0",
+                    "_id": "1NaRKdyD60dn9vlr",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -3362,7 +3883,7 @@
                     "level": 8
                 },
                 {
-                    "_id": "16ec1Wfb2xhqfRhJ",
+                    "_id": "UD4Jh1XxlCs1iNsG",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -3373,7 +3894,7 @@
                     "level": 12
                 },
                 {
-                    "_id": "UGeunmMayBq9qPbq",
+                    "_id": "1v97WIPZYdBXYY3n",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -3384,7 +3905,7 @@
                     "level": 16
                 },
                 {
-                    "_id": "kPCVy97FnBldY8si",
+                    "_id": "1A5ipDBtfnHg1tWs",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -3395,7 +3916,85 @@
                     "level": 19
                 },
                 {
-                    "_id": "5ITmFhs3qWg1RUmk",
+                    "_id": "1ANPYmyxdnt1h05L",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "armor:light",
+                            "armor:medium"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "Gqufe5ERiGj1UtEC",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "weapon:smb",
+                            "weapon:mrb",
+                            "weapon:svb",
+                            "weapon:mvb"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "x6ErCYDRROPGxWro",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "saves:str",
+                            "saves:dex"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1rzQ6QD8FTG1zvm7",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 3,
+                                "pool": [
+                                    "skills:ani",
+                                    "skills:ath",
+                                    "skills:ins",
+                                    "skills:inv",
+                                    "skills:prc",
+                                    "skills:pil",
+                                    "skills:ste",
+                                    "skills:sur",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1hV6Nt9KZohF1Jn4",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3410,7 +4009,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1vibDenwYCVi1mZ7",
+                    "_id": "14DUF5noshHJ1658",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3425,7 +4024,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1iwNNmaNrjDHgkIs",
+                    "_id": "4gqzgwlaKP18qaSL",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3440,7 +4039,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "ybGvgBTrdnxxeGk0",
+                    "_id": "1d0L3NSQ95QSsEtp",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3454,7 +4053,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1eD3AP8UIqyYyLcd",
+                    "_id": "FpE8yUVtAGRJjOrT",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3468,7 +4067,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "Eosdnsj4HAFDz9UN",
+                    "_id": "1N5DkurOHvAArcWv",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3482,7 +4081,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "172TXVPBqO6OmBdT",
+                    "_id": "eOLEijbvZBS1aAin",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3496,7 +4095,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1SKAPBZIUJR71s0a",
+                    "_id": "6nuefvMEbSaamJgz",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3510,7 +4109,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "Df3DfKwhqWbSiMp4",
+                    "_id": "vWwh6s0AXSiSz3SZ",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3524,7 +4123,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "jLGCg87g3yO1n1lZ",
+                    "_id": "1o8LWHPV9Dxe1KNs",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "You've developed one routine, as detailed at the end of the class description, and you gain more at higher levels, as shown in the Routines Known column of the scout table. Your routine has a radius of 5 feet, which increases at higher levels, as shown in the Routine Radius column of the scout table.",
@@ -3564,7 +4163,7 @@
                     "title": "Scout Routines"
                 },
                 {
-                    "_id": "128Ejdv2SaRe1JW0",
+                    "_id": "7qKIs6YoF3f1dUDq",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "Scouts tend to share knowledge amongst them selves, focusing on specific techniques and honing them to perfection. Your technique grants you features at 3rd, 7th, 11th, and 15th level.",
@@ -3609,25 +4208,6 @@
                     "title": "Scout Techniques"
                 }
             ],
-            "saves": [
-                "str",
-                "dex"
-            ],
-            "skills": {
-                "number": 3,
-                "choices": [
-                    "ani",
-                    "ath",
-                    "ins",
-                    "inv",
-                    "prc",
-                    "pil",
-                    "ste",
-                    "sur",
-                    "tec"
-                ],
-                "value": []
-            },
             "source": "PHB",
             "powercasting": {
                 "force": "none",
@@ -3672,13 +4252,13 @@
             "hitDiceUsed": 0,
             "advancement": [
                 {
-                    "_id": "BmEp1fyl5eo1sD9J",
+                    "_id": "1y4E0TZxZ7RV1CuL",
                     "type": "HitPoints",
                     "configuration": {},
                     "value": {}
                 },
                 {
-                    "_id": "1Qv0VMGz3Us11zaz",
+                    "_id": "iprNX6aIyeV1BiWf",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "kinetic-combat",
@@ -3710,7 +4290,7 @@
                     "title": "Kinetic Combat"
                 },
                 {
-                    "_id": "V44I9BwMPSo1dXa1",
+                    "_id": "5KJtODmXTLWoCDhk",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "ideals-known",
@@ -3731,7 +4311,7 @@
                     "title": "Ideals Known"
                 },
                 {
-                    "_id": "nNW0rUzAHx3G9kYJ",
+                    "_id": "12kgJO0GqYJ41302",
                     "type": "ScaleValue",
                     "configuration": {
                         "identifier": "ideal-manifests",
@@ -3752,7 +4332,7 @@
                     "title": "Ideal Manifests"
                 },
                 {
-                    "_id": "cDx4ue6rI7a1xW3W",
+                    "_id": "UU5yKrI2HUo1Ml4G",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -3763,7 +4343,7 @@
                     "level": 4
                 },
                 {
-                    "_id": "1j7QuRW38XzR1nhI",
+                    "_id": "9xnfMp3K4iCrxTwY",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -3774,7 +4354,7 @@
                     "level": 8
                 },
                 {
-                    "_id": "1tlPI1QO5iIX1Ej0",
+                    "_id": "1ofITyBW0ccA101d",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -3785,7 +4365,7 @@
                     "level": 12
                 },
                 {
-                    "_id": "1EEBSDRk9wFd1sQ7",
+                    "_id": "1Rew3wWecUMc1s3a",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -3796,7 +4376,7 @@
                     "level": 16
                 },
                 {
-                    "_id": "xWJfYIgmVvx11c7I",
+                    "_id": "1dCqhSludWRGGsJT",
                     "type": "AbilityScoreImprovement",
                     "configuration": {
                         "fixed": [],
@@ -3807,7 +4387,104 @@
                     "level": 19
                 },
                 {
-                    "_id": "n6bcg54T5M91S0Xh",
+                    "_id": "1vHeFocZDXA71bQ5",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "armor:light"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1lue9K23UcW411uU",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "weapon:slw",
+                            "weapon:svb",
+                            "weapon:mlw",
+                            "weapon:mvb"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "KRfhx1cxpqN1krAy",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "tool:specialist:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1wlKGFWga5wc1xWe",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "saves:dex",
+                            "saves:cha"
+                        ],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1iEASshsPAyLvFdZ",
+                    "type": "Trait",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 3,
+                                "pool": [
+                                    "skills:acr",
+                                    "skills:ani",
+                                    "skills:ins",
+                                    "skills:itm",
+                                    "skills:prc",
+                                    "skills:per",
+                                    "skills:pil",
+                                    "skills:ste",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "value": {},
+                    "classRestriction": "primary",
+                    "level": 0
+                },
+                {
+                    "_id": "1l7dVBD2JWHJ1daP",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3822,7 +4499,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1ssWp16S0a9h1RvS",
+                    "_id": "1MTNzIzwuZP01uMS",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3837,7 +4514,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "ViemZi4Y1ohS133y",
+                    "_id": "vjxQXabLyrO1xWrl",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3851,7 +4528,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "1QJaLu1vPGMt2uxM",
+                    "_id": "17mxbN4sQsaT1koX",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3865,7 +4542,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "147XjwYIbuqk1aid",
+                    "_id": "1GFFjdlyIF0C1F6t",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3879,7 +4556,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "Os7sQZWNJk31Pb7U",
+                    "_id": "1gvYyt9DUX65YTVL",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3893,7 +4570,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "aukTW4ryIu9taBLI",
+                    "_id": "1QfTd8oc0nLI1xSj",
                     "type": "ItemGrant",
                     "configuration": {
                         "items": [
@@ -3907,7 +4584,7 @@
                     "title": "Features"
                 },
                 {
-                    "_id": "zzdYvGgW9yg1h0eP",
+                    "_id": "16yzG7OwUhpN1Ccb",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "You adopt ideals that exemplify your bond with the Force. You adopt two ideals of your choice, as detailed at the end of the class description, and you adopt more at higher levels, as shown in the Ideals Known column of the sentinel table.\nYou can manifest your ideals a combined total of twice, and you can manifest them more times at higher levels as shown in the Ideal Manifests column of the sentinel table.",
@@ -3948,7 +4625,7 @@
                     "title": "Sentinel Ideals"
                 },
                 {
-                    "_id": "GWYqnazLbQTKhcc0",
+                    "_id": "qq21vLZsH3U1MARd",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "Different sentinels select different callings, called Paths, to follow as they hone their powers. Your calling grants you features at 3rd, 7th, 13th, and 18th level.",
@@ -3991,25 +4668,6 @@
                     "title": "Sentinel Callings"
                 }
             ],
-            "saves": [
-                "dex",
-                "cha"
-            ],
-            "skills": {
-                "number": 3,
-                "choices": [
-                    "acr",
-                    "ani",
-                    "ins",
-                    "itm",
-                    "prc",
-                    "per",
-                    "pil",
-                    "ste",
-                    "tec"
-                ],
-                "value": []
-            },
             "source": "PHB",
             "powercasting": {
                 "force": "3/4",

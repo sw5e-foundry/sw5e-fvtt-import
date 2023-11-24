@@ -59,11 +59,13 @@ class Class(sw5e.Entity.Item):
 		self.force, self.tech = self.loadPowerCasting()
 		self.superiority = self.loadSuperiority()
 		self.formulas = self.loadFormulas()
+		self.weaponProficiencies = self.loadWeaponProficiencies()
+		self.toolProficiencies = self.loadToolProficiencies()
+		self.skillChoices = self.loadSkillChoices()
 		self.advancements = self.loadAdvancements()
 		self.archetypes = []
 		self.archetypesFlavor = ""
 		self.invocationsText = ""
-		self.skillChoices = self.loadSkillChoices()
 
 	def loadDescription(self):
 		out_str = f'<img style="float:right;margin:5px;border:0px" src="{self.getImg(capitalized=False, index="01")}"/>\n'
@@ -214,6 +216,55 @@ class Class(sw5e.Entity.Item):
 
 		return formulas
 
+	def loadToolProficiencies(self):
+		# TODO: make this respect weapon property restrictions
+		tool_mapping = { tool["name"]: tool["id"] for tool in utils.config.tools }
+		generic_mapping = {
+			"none": None,
+			"any one": "*",
+			"one of your choice": "*",
+			"one specialist's kit of your choice": "specialist:*",
+		}
+
+		choices, grants = [], []
+
+		for tool in self.raw_toolProficiencies:
+			tool = tool.lower()
+			if tool_id := tool_mapping.get(tool):
+				grants.append(f'tool:{tool_mapping[tool]}')
+			elif tool_id := generic_mapping.get(tool):
+				choices.append({
+					"count": 1,
+					"pool": [ f'tool:{tool_id}' ]
+				})
+
+		return { "choices": choices, "grants": grants }
+
+	def loadWeaponProficiencies(self):
+		# TODO: make this respect weapon property restrictions
+		mapping = {
+			"all vibroweapons": [ 'svb', 'mvb' ],
+			"simple vibroweapons": [ 'svb' ],
+			"martial vibroweapons": [ 'mvb' ],
+			"exotic vibroweapons": [ 'evw' ],
+
+			"all lightweapons": [ 'slw', 'mlw' ],
+			"simple lightweapons": [ 'slw' ],
+			"martial lightweapons": [ 'mlw' ],
+			"exotic lightweapons": [ 'elw' ],
+
+			"all blasters": [ 'smb', 'mrb' ],
+			"simple blasters": [ 'smb' ],
+			"martial blasters": [ 'mrb' ],
+			"exotic blasters": [ 'exb' ],
+		}
+		return [ wpn for wpns in self.raw_weaponProficiencies for wpn in mapping.get(' '.join(wpns.split(' ')[:2]).lower(), []) ]
+
+	def loadSkillChoices(self):
+		mapping = { skl["name"]: skl["id"] for skl in utils.config.skills }
+		mapping["Any"] = 'any'
+		return [ mapping[skl] for skl in self.raw_skillChoicesList ]
+
 	def loadAdvancements(self):
 		advancements = [ sw5e.Advancement.HitPoints() ]
 
@@ -223,12 +274,37 @@ class Class(sw5e.Entity.Item):
 		for level in self.asi:
 			advancements.append( sw5e.Advancement.AbilityScoreImprovement(level=level) )
 
-		return advancements
+		if self.raw_armorProficiencies:
+			advancements.append( sw5e.Advancement.Trait(grants=[
+				f'armor:{arm.lower().split(" ")[0]}' for arm in self.raw_armorProficiencies
+			], class_restriction='primary') )
 
-	def loadSkillChoices(self):
-		mapping = { skl["name"]: skl["id"] for skl in utils.config.skills }
-		mapping["Any"] = 'any'
-		return [ mapping[skl] for skl in self.raw_skillChoicesList ]
+		if self.weaponProficiencies:
+			advancements.append( sw5e.Advancement.Trait(grants=[
+				f'weapon:{wpn}' for wpn in self.weaponProficiencies
+			], class_restriction='primary') )
+
+		if self.toolProficiencies["choices"] or self.toolProficiencies["grants"]:
+			advancements.append( sw5e.Advancement.Trait(
+				grants=self.toolProficiencies["grants"],
+				choices=self.toolProficiencies["choices"],
+				class_restriction='primary'
+			) )
+
+		if self.raw_savingThrows:
+			advancements.append( sw5e.Advancement.Trait(grants=[
+				f'saves:{save.lower()[:3]}' for save in self.raw_savingThrows
+			], class_restriction='primary') )
+
+		if self.skillChoices:
+			advancements.append( sw5e.Advancement.Trait(choices=[{
+				"count": self.raw_numSkillChoices,
+				"pool": [ f'skills:{skl}' for skl in self.skillChoices],
+			}], allow_replacements=True, class_restriction='primary') )
+
+		# TODO: multiclass proficiencies with self.raw_multiClassProficiencies and utils.text.getTraits
+
+		return advancements
 
 
 
@@ -406,12 +482,6 @@ class Class(sw5e.Entity.Item):
 		data["system"]["hitDice"] = f'd{self.raw_hitDiceDieType}'
 		data["system"]["hitDiceUsed"] = 0
 		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
-		data["system"]["saves"] = [ save[:3].lower() for save in self.raw_savingThrows ]
-		data["system"]["skills"] = {
-			"number": self.raw_numSkillChoices,
-			"choices": self.skillChoices,
-			"value": []
-		}
 		data["system"]["source"] = self.raw_contentSource
 		data["system"]["powercasting"] = { "force": self.force, "tech": self.tech }
 		data["system"]["superiority"] = { "progression": self.superiority }
