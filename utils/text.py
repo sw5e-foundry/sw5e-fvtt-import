@@ -789,14 +789,13 @@ def getStatblocks(text):
 
 	return text, statblocks
 
-def getTraits(text, name):
+def getTraits(text, name, require_prefix=True):
 	_text = text
 	choices, grants = [], []
 
 	if text:
 		types = {
 			"skills": { skl["name"].lower(): skl for skl in utils.config.skills },
-			"armors": { armor["name"].lower(): armor for armor in utils.config.armor_types },
 			"attributes": { attr["name"].lower(): attr for attr in utils.config.attributes },
 			"tools": { tool["name"].lower(): tool for tool in utils.config.tools },
 			"weapons": {
@@ -810,9 +809,11 @@ def getTraits(text, name):
 					),
 				} for wpn_class in utils.config.weapon_classes.values() for wpn in wpn_class
 			},
+			"armors": { armor["name"].lower(): armor for armor in utils.config.armor_types },
 		}
-		for tool in dict(types["tools"]): types["tools"][f'{tool}s'] = types["tools"][tool]
-		for wpn in dict(types["weapons"]): types["weapons"][f'{wpn}s'] = types["weapons"][wpn]
+		for t in types:
+			for trait in dict(types[t]):
+				types[t][getPlural(trait)] = types[t][trait]
 
 		generic_types = {
 			"skills": {
@@ -820,36 +821,39 @@ def getTraits(text, name):
 				for attr in utils.config.attributes
 			},
 			"tools": {
-				"musical instruments": { "id": 'music:*' },
-				"instruments": { "id": 'music:*' },
-				"specialist's kits": { "id": 'specialist:*' },
-				"artisan's implements": { "id": 'artisan:*' },
-				"gaming sets": { "id": 'game:*' },
-				"vehicles": { "id": 'vehicle:*' },
+				"musical instrument": { "id": 'music:*' },
+				"instrument": { "id": 'music:*' },
+				"specialist's kit": { "id": 'specialist:*' },
+				"artisan's implement": { "id": 'artisan:*' },
+				"gaming set": { "id": 'game:*' },
+				"vehicle": { "id": 'vehicle:*' },
 			},
 			"weapons": {
-				"vibroweapons": { "ids": [ 'svb:*', 'mvb:*' ] },
-				"simple or martial vibroweapons": { "ids": [ 'svb:*', 'mvb:*' ] },
-				"simple vibroweapons": { "id": 'svb:*' },
-				"martial vibroweapons": { "id": 'mvb:*' },
-				"exotic vibroweapons": { "id": 'evw:*' },
+				"vibroweapon": { "ids": [ 'svb:*', 'mvb:*' ] },
+				"simple or martial vibroweapon": { "ids": [ 'svb:*', 'mvb:*' ] },
+				"simple vibroweapon": { "id": 'svb:*' },
+				"martial vibroweapon": { "id": 'mvb:*' },
+				"exotic vibroweapon": { "id": 'evw:*' },
 
-				"lightweapons": { "ids": [ 'slw:*', 'mlw:*' ] },
-				"simple or martial lightweapons": { "ids": [ 'slw:*', 'mlw:*' ] },
-				"simple lightweapons": { "id": 'slw:*' },
-				"martial lightweapons": { "id": 'mlw:*' },
-				"exotic lightweapons": { "id": 'elw:*' },
+				"lightweapon": { "ids": [ 'slw:*', 'mlw:*' ] },
+				"simple or martial lightweapon": { "ids": [ 'slw:*', 'mlw:*' ] },
+				"simple lightweapon": { "id": 'slw:*' },
+				"martial lightweapon": { "id": 'mlw:*' },
+				"exotic lightweapon": { "id": 'elw:*' },
 
-				"blasters": { "ids": [ 'smb:*', 'mrb:*' ] },
-				"simple or martial blasters": { "ids": [ 'smb:*', 'mrb:*' ] },
-				"simple blasters": { "id": 'smb:*' },
-				"martial blasters": { "id": 'mrb:*' },
-				"exotic blasters": { "id": 'exb:*' },
+				"blaster": { "ids": [ 'smb:*', 'mrb:*' ] },
+				"simple or martial blaster": { "ids": [ 'smb:*', 'mrb:*' ] },
+				"simple blaster": { "id": 'smb:*' },
+				"martial blaster": { "id": 'mrb:*' },
+				"exotic blaster": { "id": 'exb:*' },
 				# TODO: Find a way to make this work
+				"blaster that deal sonic damage": { "ids": [ 'smb:*', 'mrb:*' ] },
 				"blasters that deal sonic damage": { "ids": [ 'smb:*', 'mrb:*' ] },
 			}
 		}
-		for t in generic_types: generic_types[t][t] = { "id": f'*' }
+		for t in generic_types:
+			for trait in dict(generic_types[t]):
+				generic_types[t][getPlural(trait)] = generic_types[t][trait]
 
 		types_ids = { t: t for t in types }
 		types_ids["armors"] = "armor"
@@ -859,12 +863,13 @@ def getTraits(text, name):
 		p_types = {}
 		cp_types = {}
 		for k, t in types.items():
-			values = [ trait for trait in t ]
-			generic_values = [ f'{k}?' ] + [ f'{trait}?' for trait in generic_types[k] ] if k in generic_types else []
+			values = [ f'{trait}' for trait in reversed(t) ]
+			generic_values = [ f'{k}?' ] + [ f'{trait}' for trait in reversed(generic_types[k]) ] if k in generic_types else []
 			p_types[k] = ncapt(ncapt('|'.join(values + generic_values)) + fr'(?: {k}?)?')
 			cp_types[k] = ncapt(capt('|'.join(values), name=f'type_{k}') + fr'(?: {k}?)?')
 			if k in generic_types:
 				cp_types["generic_"+k] = ncapt(capt('|'.join(generic_values), name=f'gtype_{k}') + fr'(?: {k}?)?')
+		for t in generic_types: generic_types[t][t] = { "id": f'*' }
 
 		p_types["all"] = ncapt('|'.join([p_types[k] for k in p_types]))
 		cp_types["all"] = ncapt('|'.join([cp_types[k] for k in cp_types]))
@@ -894,19 +899,20 @@ def getTraits(text, name):
 		p_trait = ncapt(fr'(?:{p_prefix} )?(?:{p_prepo} )?' + p_types["all"] + fr'(?: {p_posfix})?')
 		cp_trait = ncapt(fr'(?:{p_prefix} )?(?:{cp_prepo} )?' + cp_types["all"] + fr'(?: {p_posfix})?')
 
-		p_traits = ncapt(fr'{p_1trait}(?:{p_sep} {p_trait})*?(?: {p_posfix})?\.')
-		cp_traits = ncapt(fr'(?:{cp_sep} )?{cp_trait}(?P<rest>(?:{p_sep} {p_trait})*?)@@@!!!@@@')
+		p_traits = ncapt(fr'{p_1trait if require_prefix else p_trait}(?:(?:{p_sep} {p_trait})*)')
+		p_traits = ncapt(fr'{p_1trait}(?:(?:{p_sep} {p_trait})*)')
+		cp_traits = ncapt(fr'(?:{cp_sep} )?{cp_trait}(?P<rest>(?:{p_sep} {p_trait})*)')
 
 		def process_group(group, mode):
 			nonlocal choices, grants
-			# if name == 'Anzellan':
-			# 	print('processing group')
-			# 	print(f'{group=}')
-			# 	print(f'{mode=}')
+			# print('processing group')
+			# print(f'{group=}')
+			# print(f'{mode=}')
 
 			for t in group:
 				if t["generic"]:
-					if t["trait"] not in generic_types[t["trait_type"]] and f'{t["trait"]}s' in generic_types[t["trait_type"]]: t["trait"] += 's'
+					if t["trait"] not in generic_types[t["trait_type"]] and getPlural(t["trait"]) in generic_types[t["trait_type"]]:
+						t["trait"] = getPlural(t["trait"])
 					cfg = generic_types[t["trait_type"]][t["trait"]]
 					if "id" in cfg:
 						if mode == 'or':
@@ -935,6 +941,7 @@ def getTraits(text, name):
 								"generic": False,
 								"disabled": False,
 							} for new_t in types[t["trait_type"]].values() if cfg["foo"](t["trait"], new_t) ]
+							traits = { trait["id"]: trait for trait in traits }.values()
 						if mode == 'or':
 							group += traits
 						elif mode == 'and':
@@ -967,13 +974,13 @@ def getTraits(text, name):
 				raise ValueError(mode, group, mode)
 
 		def get_traits(match):
-			subtext = match[0][:-1]
+			subtext = match[0]
 			current = []
 
-			# if name == 'Anzellan':
-			# 	print(f'{text=}')
+			# print(f'{text=}')
+
 			while subtext:
-				submatch = re.search(cp_traits, f'{subtext}@@@!!!@@@')
+				submatch = re.search(cp_traits, f'{subtext}')
 				if not submatch: break
 
 				generic = False
@@ -994,9 +1001,8 @@ def getTraits(text, name):
 				if re.search(r'or', sep): mode = 'or'
 				if re.search(r'and|as well as', sep): mode = 'and'
 
-				# if name == 'Anzellan':
-				# 	print(f'{subtext=}')
-				# 	print(f'{number=} {trait=} {trait_type=} {sep=} {rest=} {mode=}')
+				# print(f'{subtext=}')
+				# print(f'{number=} {trait=} {trait_type=} {sep=} {rest=} {mode=}')
 
 				trait = {
 					"trait_type": trait_type,
@@ -1072,6 +1078,7 @@ def getSingular(Text):
 def getPlural(Text):
 	text = Text.lower()
 	if text in ('sheep', 'series', 'species', 'deer'): return Text
+	elif text.endswith('weapon'): return text+'s'
 	elif re.search('[^aeiou]y$', text): return Text[:-1]+'ies'
 	elif re.search('us$', text): return Text[:-2]+'i'
 	elif re.search('is$', text): return Text[:-2]+'es'
