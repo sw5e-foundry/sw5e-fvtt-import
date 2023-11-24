@@ -24,6 +24,12 @@ class BaseFeature(sw5e.Entity.Item):
 
 		self.raw_text = self.raw_text or self.raw_description
 		self.raw_requirements = self.raw_requirements or self.raw_prerequisite
+		self.traits = self.loadTraits()
+
+	def loadTraits(self):
+		return utils.text.getTraits(self.raw_text.lower(), self.name)
+
+
 
 	def process(self, importer):
 		super().process(importer)

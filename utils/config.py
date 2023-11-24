@@ -1411,7 +1411,7 @@ tools = [
 	},
 	{
 		"type": 'specialist',
-		"name": 'demolition\'s kit',
+		"name": 'demolitions kit',
 		"id": 'demolitionskit',
 	},
 	{

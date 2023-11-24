@@ -796,7 +796,7 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 	if text:
 		types = {
 			"skills": { skl["name"].lower(): skl for skl in utils.config.skills },
-			"attributes": { attr["name"].lower(): attr for attr in utils.config.attributes },
+			"saves": { attr["name"].lower(): attr for attr in utils.config.attributes },
 			"tools": { tool["name"].lower(): tool for tool in utils.config.tools },
 			"weapons": {
 				wpn: {
@@ -817,12 +817,13 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 
 		generic_types = {
 			"skills": {
-				attr["name"].lower(): { "foo": lambda trait, skl: skl["attr"] == types["attributes"][trait]["id"] }
+				attr["name"].lower(): { "foo": lambda trait, skl: skl["attr"] == types["saves"][trait]["id"] }
 				for attr in utils.config.attributes
 			},
 			"tools": {
 				"musical instrument": { "id": 'music:*' },
 				"instrument": { "id": 'music:*' },
+				"kit": { "id": 'specialist:*' },
 				"specialist's kit": { "id": 'specialist:*' },
 				"artisan's implement": { "id": 'artisan:*' },
 				"gaming set": { "id": 'game:*' },
@@ -849,6 +850,17 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 				# TODO: Find a way to make this work
 				"blaster that deal sonic damage": { "ids": [ 'smb:*', 'mrb:*' ] },
 				"blasters that deal sonic damage": { "ids": [ 'smb:*', 'mrb:*' ] },
+
+				"improvised weapon": { "id": 'imp' },
+
+				"simple weapon": { "ids": [ 'svb:*', 'slw:*', 'smb:*' ] },
+				"martial weapon": { "ids": [ 'mvb:*', 'mlw:*', 'mrb:*' ] },
+				"martial light- and vibro- weapon": { "ids": [ 'mvb:*', 'mlw:*' ] },
+				"exotic weapon": { "ids": [ 'evw:*', 'elw:*', 'exb:*' ] },
+			},
+			"saves": {
+				"saving throw": { "id": "*" },
+				"saving throws using the chosen ability": { "id": '*' },
 			}
 		}
 		for t in generic_types:
@@ -862,14 +874,15 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 
 		p_types = {}
 		cp_types = {}
-		for k in (restrict_types or types):
-			values = [ f'{trait}' for trait in reversed(types[k]) ] if k in types else []
-			generic_values = [ f'{k}?' ] + [ f'{trait}' for trait in reversed(generic_types[k]) ] if k in generic_types else []
-			if k in types:
-				p_types[k] = ncapt(ncapt('|'.join(values + generic_values)) + fr'(?: {k}?)?')
-				cp_types[k] = ncapt(capt('|'.join(values), name=f'type_{k}') + fr'(?: {k}?)?')
+		for k in types:
+			if restrict_types and k not in restrict_types: continue
+			values = [ f'{trait}' for trait in reversed(types[k]) ]
+			p_types[k] = ncapt(ncapt('|'.join(values)) + fr'(?: {k}?)?')
+			cp_types[k] = ncapt(capt('|'.join(values), name=f'type_{k}') + fr'(?: {k}?)?')
 			if k in generic_types:
-				cp_types["generic_"+k] = ncapt(capt('|'.join(generic_values), name=f'gtype_{k}') + fr'(?: {k}?)?')
+				generic_values = [ f'{k}?' ] + [ f'{trait}' for trait in reversed(generic_types[k]) ]
+				p_types["generic_"+k] = ncapt(fr'(?:all )?' + ncapt('|'.join(generic_values)) + fr'(?: {k}?)?')
+				cp_types["generic_"+k] = ncapt(fr'(?P<all_{k}>all )?' + capt('|'.join(generic_values), name=f'gtype_{k}') + fr'(?: {k}?)?')
 		for t in generic_types: generic_types[t][t] = { "id": f'*' }
 
 		p_types["all"] = ncapt('|'.join([p_types[k] for k in p_types]))
@@ -880,17 +893,17 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 		p_number = ncapt(fr'one|two|three|four|five|six|seven|eight|nine|ten|\d+')
 		cp_number = capt(fr'one|two|three|four|five|six|seven|eight|nine|ten|\d+', name='number')
 
-		p_choice = ncapt(fr'(?: your choice of)?')
+		p_choice = ncapt(fr'(?: your choice of| any combination of)?')
 		p_sep = ncapt(fr',? or,?|,? and,?|,? as well as|,') + p_choice
 		cp_sep = capt(fr',? or,?|,? and,?|,? as well as|,', name='sep') + p_choice
 
-		p_following = ncapt(fr'{p_number}(?: of the following {p_trait_types}(?: of your choice)?:)?')
-		cp_following = ncapt(fr'{cp_number}(?: of the following {p_trait_types}(?: of your choice)?:)?')
+		p_following = ncapt(fr'{p_number}(?: of)?(?: the)?(?: following {p_trait_types}(?: of your choice)?:)?')
+		cp_following = ncapt(fr'{cp_number}(?: of)?(?: the)?(?: following {p_trait_types}(?: of your choice)?:)?')
 
-		p_prepo = ncapt(fr'the|an?|{p_following}') + ncapt(fr'(?: set of)?')
-		cp_prepo = ncapt(fr'the|an?|{cp_following}') + ncapt(fr'(?: set of)?')
+		p_prepo = ncapt(fr'the(?: chosen)?|an?|that|these|{p_following}') + ncapt(fr'(?: set of)?')
+		cp_prepo = ncapt(fr'the(?: chosen)?|an?|that|these|{cp_following}') + ncapt(fr'(?: set of)?')
 
-		p_prefix1 = ncapt(fr'(?:have|gain) proficiency')
+		p_prefix1 = ncapt(fr'(?:have|gain|grants you) proficiency')
 		p_prefix2 = ncapt(fr'(?:are|become) proficient')
 		p_prefix = ncapt(fr'(?:{p_prefix1}|{p_prefix2}) (?:in|with)') + p_choice
 
@@ -915,11 +928,32 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 						t["trait"] = getPlural(t["trait"])
 					cfg = generic_types[t["trait_type"]][t["trait"]]
 					if "id" in cfg:
-						if mode == 'or':
+						if t["generic"] == 'all':
+							if cfg["id"] == '*':
+								t["disabled"] = True
+								traits = [ {
+									"trait_type": t["trait_type"],
+									"trait": new_t["name"].lower(),
+									"id": new_t["id"],
+									"number": t["number"],
+									"generic": False,
+									"disabled": False,
+								} for new_t in types[t["trait_type"]].values() ]
+								traits = { trait["id"]: trait for trait in traits }.values()
+								if mode == 'and':
+									group += traits
+								elif mode == 'or':
+									raise ValueError('Multiple traits with generic=\'all\' on \'or\' mode', group, traits, mode, generic)
+							elif cfg["id"].endswith(':*'): t["id"] = cfg["id"][:-2]
+							else: t["id"] = cfg["id"]
+						elif cfg["id"].endswith(':*'):
+							if mode == 'or':
+								t["id"] = cfg["id"]
+							elif mode == 'and':
+								process_group([t], 'or')
+								t["disabled"] = True
+						else:
 							t["id"] = cfg["id"]
-						elif mode == 'and':
-							process_group([t], 'or')
-							t["disabled"] = True
 					else:
 						t["disabled"] = True
 						traits = []
@@ -942,10 +976,20 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 								"disabled": False,
 							} for new_t in types[t["trait_type"]].values() if cfg["foo"](t["trait"], new_t) ]
 							traits = { trait["id"]: trait for trait in traits }.values()
-						if mode == 'or':
-							group += traits
-						elif mode == 'and':
-							process_group(traits, 'or')
+
+						if t["generic"] == 'all':
+							for trait in traits:
+								if trait["id"].endswith(':*'):
+									trait["id"] = trait["id"][:-2]
+							if mode == 'and':
+								group += traits
+							elif mode == 'or':
+								raise ValueError('Multiple traits with generic=\'all\' on \'or\' mode', group, traits, mode, generic)
+						else:
+							if mode == 'or':
+								group += traits
+							elif mode == 'and':
+								process_group(traits, 'or')
 				elif not "id" in t:
 					if t["trait"] in types[t["trait_type"]]:
 						t["id"] = types[t["trait_type"]][t["trait"]]["id"]
@@ -997,6 +1041,8 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 				rest = submatch.groupdict().get('rest') or ''
 				sep = submatch.groupdict().get('sep') or ''
 
+				if generic and submatch.groupdict().get('all_'+trait_type): generic = 'all'
+
 				mode = None
 				if re.search(r'or', sep): mode = 'or'
 				if re.search(r'and|as well as', sep): mode = 'and'
@@ -1031,11 +1077,53 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 			return 'PROCESSED'
 		text = re.sub(p_traits, get_traits, text)
 
-		patterns = ['someone proficient', 'must be proficient', 'double your proficiency', 'proficiency bonus', 'considered proficient', 'would already be proficient']
+		patterns = [
+			r'someone proficient',
+			r'must be proficient',
+			r'double your proficiency',
+			r'proficiency bonus',
+			r'considered proficient',
+			r'would already be proficient',
+			r'choose a \w+( or \w+)? you are proficient with',
+			r'not already proficient',
+			r'choose to increase your level of proficiency in that check',
+			r'from \w+ to proficient',
+			r'from proficient to \w+',
+			r'that you are proficient with',
+			r'you are proficient with it',
+			r'in which you are proficient',
+			r'with which you are proficient',
+			r'with which are you proficient',
+			r'if you are proficient',
+			r'if you are already proficient',
+			r'using a \w+ you are proficient in',
+			r'your beast gains proficiency',
+			r'each creature gains proficiency',
+			r'creature was already proficient',
+			r'they instead become proficient',
+			r'give (\w+ )?creatures (\w+ ){0,2}proficiency',
+			r'retain this proficiency',
+			r'are not proficient',
+			r'proficient in initiative',
+			r'must have proficiency',
+			r'to gain proficiency in',
+			r'you require proficiency',
+			r'already have (this )?proficiency',
+			r'lose your proficiency',
+			r'treated as proficient',
+			r'in place of the \w+ proficiency',
+			r'in which you are granted proficiency',
+			r'with proficiency',
+			r'if \w+ gain \w+ proficiency',
+			r'may add \w+ proficiency',
+			r'proficiency from the above list',
+			r'you are proficient in this weapon',
+		]
 		for pat in patterns: text = re.sub(pat, "PROCESSED", text)
 
 		if re.search(f'proficient|proficiency', text):
 			print('Unprocessed proficiency:', text, '\n', _text)
+			a = b
 
 	# if name == 'Anzellan' and (choices or grants): print(f'{choices=} {grants=}')
 

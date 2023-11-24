@@ -340,6 +340,7 @@ class Class(sw5e.Entity.Item):
 			for feature in features.values():
 				if entity := importer.get('feature', uid=feature["uid"]):
 					feature["foundry_id"] = entity.foundry_id
+					feature["traits"] = entity.traits
 				else:
 					print(f'		Unable to find feature {feature=}')
 					self.broken_links += [f'cant find feature {feature["name"]}']
@@ -412,6 +413,13 @@ class Class(sw5e.Entity.Item):
 				else: self.broken_links += [f'missing foundry_id for {feature["name"]}']
 			if len(uids):
 				self.advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
+
+		# Feature Traits
+		for level, features in self.features.items():
+			for name, feature in features.items():
+				choices, grants = feature["traits"]
+				if choices or grants:
+					self.advancements.append( sw5e.Advancement.Trait(level=level, choices=choices, grants=grants) )
 
 		# Choose Invocations
 		for invocation_category, invocations in self.invocations.items():

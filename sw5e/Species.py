@@ -61,7 +61,7 @@ class Species(sw5e.Entity.Item):
 	def getTraits(self):
 		choices, grants = [], []
 		for feature in self.features:
-			fchoices, fgrants = utils.text.getTraits(feature.raw_text.lower(), self.name)
+			fchoices, fgrants = feature.traits
 			if fchoices: choices.extend(fchoices)
 			if fgrants: grants.extend(fgrants)
 
@@ -95,7 +95,7 @@ class Species(sw5e.Entity.Item):
 		advancements.append( sw5e.Advancement.Size(choices=[size]))
 
 		# TODO: support non default traits
-		if len(self.traits["choices"]) or len(self.traits["grants"]):
+		if self.traits["choices"] or self.traits["grants"]:
 			advancements.append( sw5e.Advancement.Trait(choices=self.traits["choices"], grants=self.traits["grants"]) )
 
 		return advancements
