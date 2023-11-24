@@ -63,6 +63,7 @@ class Class(sw5e.Entity.Item):
 		self.weaponProficiencies = self.loadWeaponProficiencies()
 		self.toolProficiencies = self.loadToolProficiencies()
 		self.skillChoices = self.loadSkillChoices()
+		self.multiclassProficiencies = self.loadMulticlassProficiencies()
 		self.advancements = self.loadAdvancements()
 		self.archetypes = []
 		self.archetypesFlavor = ""
@@ -266,6 +267,19 @@ class Class(sw5e.Entity.Item):
 		mapping["any"] = 'skills:*'
 		return [ mapping[skl.lower()] for skl in self.raw_skillChoicesList ]
 
+	def loadMulticlassProficiencies(self):
+		grants = []
+		for prof in self.raw_multiClassProficiencies:
+			prof = prof.lower()
+			if prof.startswith('all'): prof = ' '.join(prof.split(' ')[1:])
+			fchoices, fgrants = utils.text.getTraits(prof, self.name, require_prefix=False)
+			if fchoices:
+				for fchoice in fchoices: fchoice["pool"] = [ trait[:-2] if trait.endswith(':*') else trait for trait in fchoice["pool"] ]
+				grants.extend(fchoice["pool"])
+			if fgrants: grants.extend(fgrants)
+
+		return grants
+
 	def loadAdvancements(self):
 		advancements = [ sw5e.Advancement.HitPoints() ]
 
@@ -301,7 +315,8 @@ class Class(sw5e.Entity.Item):
 				"pool": self.skillChoices,
 			}], allow_replacements=True, class_restriction='primary') )
 
-		# TODO: multiclass proficiencies with self.raw_multiClassProficiencies and utils.text.getTraits
+		if self.multiclassProficiencies:
+			advancements.append( sw5e.Advancement.Trait(name='Multiclass Proficiencies',level=1, grants=self.multiclassProficiencies, class_restriction='secondary') )
 
 		return advancements
 
