@@ -92,7 +92,7 @@ class Species(sw5e.Entity.Item):
 				speed = match.groupdict().get('type')
 				speeds[speed] = 'walk'
 
-		return { speed: (speeds['walk'] if speeds[speed] == 'walk' else speeds[speed]) for speed in speeds }
+		return { speed: (speeds["walk"] if speeds[speed] == 'walk' else speeds[speed]) for speed in speeds }
 
 	def getTraits(self):
 		choices, grants = [], []
