@@ -59,6 +59,7 @@ class Class(sw5e.Entity.Item):
 		self.force, self.tech = self.loadPowerCasting()
 		self.superiority = self.loadSuperiority()
 		self.formulas = self.loadFormulas()
+		self.armorProficiencies = self.loadArmorProficiencies()
 		self.weaponProficiencies = self.loadWeaponProficiencies()
 		self.toolProficiencies = self.loadToolProficiencies()
 		self.skillChoices = self.loadSkillChoices()
@@ -216,6 +217,32 @@ class Class(sw5e.Entity.Item):
 
 		return formulas
 
+	def loadArmorProficiencies(self):
+		mapping = { arm["name"].lower(): [ arm["id"] ] for arm in utils.config.armor_types }
+		mapping["none"] = []
+		mapping["all"] = [ arm["id"] for arm in utils.config.armor_types ]
+		return [ armor for armors in self.raw_armorProficiencies for armor in mapping[armors.lower().split(" ")[0]]]
+
+	def loadWeaponProficiencies(self):
+		# TODO: make this respect weapon property restrictions
+		mapping = {
+			"all vibroweapons": [ 'svb', 'mvb' ],
+			"simple vibroweapons": [ 'svb' ],
+			"martial vibroweapons": [ 'mvb' ],
+			"exotic vibroweapons": [ 'evw' ],
+
+			"all lightweapons": [ 'slw', 'mlw' ],
+			"simple lightweapons": [ 'slw' ],
+			"martial lightweapons": [ 'mlw' ],
+			"exotic lightweapons": [ 'elw' ],
+
+			"all blasters": [ 'smb', 'mrb' ],
+			"simple blasters": [ 'smb' ],
+			"martial blasters": [ 'mrb' ],
+			"exotic blasters": [ 'exb' ],
+		}
+		return [ wpn for wpns in self.raw_weaponProficiencies for wpn in mapping.get(' '.join(wpns.split(' ')[:2]).lower(), []) ]
+
 	def loadToolProficiencies(self):
 		# TODO: make this respect weapon property restrictions
 		tool_mapping = { tool["name"]: tool["id"] for tool in utils.config.tools }
@@ -240,26 +267,6 @@ class Class(sw5e.Entity.Item):
 
 		return { "choices": choices, "grants": grants }
 
-	def loadWeaponProficiencies(self):
-		# TODO: make this respect weapon property restrictions
-		mapping = {
-			"all vibroweapons": [ 'svb', 'mvb' ],
-			"simple vibroweapons": [ 'svb' ],
-			"martial vibroweapons": [ 'mvb' ],
-			"exotic vibroweapons": [ 'evw' ],
-
-			"all lightweapons": [ 'slw', 'mlw' ],
-			"simple lightweapons": [ 'slw' ],
-			"martial lightweapons": [ 'mlw' ],
-			"exotic lightweapons": [ 'elw' ],
-
-			"all blasters": [ 'smb', 'mrb' ],
-			"simple blasters": [ 'smb' ],
-			"martial blasters": [ 'mrb' ],
-			"exotic blasters": [ 'exb' ],
-		}
-		return [ wpn for wpns in self.raw_weaponProficiencies for wpn in mapping.get(' '.join(wpns.split(' ')[:2]).lower(), []) ]
-
 	def loadSkillChoices(self):
 		mapping = { skl["name"]: skl["id"] for skl in utils.config.skills }
 		mapping["Any"] = 'any'
@@ -274,30 +281,30 @@ class Class(sw5e.Entity.Item):
 		for level in self.asi:
 			advancements.append( sw5e.Advancement.AbilityScoreImprovement(level=level) )
 
-		if self.raw_armorProficiencies:
-			advancements.append( sw5e.Advancement.Trait(grants=[
-				f'armor:{arm.lower().split(" ")[0]}' for arm in self.raw_armorProficiencies
+		if self.armorProficiencies:
+			advancements.append( sw5e.Advancement.Trait(level=1, grants=[
+				f'armor:{arm}' for arm in self.armorProficiencies
 			], class_restriction='primary') )
 
 		if self.weaponProficiencies:
-			advancements.append( sw5e.Advancement.Trait(grants=[
+			advancements.append( sw5e.Advancement.Trait(level=1, grants=[
 				f'weapon:{wpn}' for wpn in self.weaponProficiencies
 			], class_restriction='primary') )
 
 		if self.toolProficiencies["choices"] or self.toolProficiencies["grants"]:
-			advancements.append( sw5e.Advancement.Trait(
+			advancements.append( sw5e.Advancement.Trait(level=1, 
 				grants=self.toolProficiencies["grants"],
 				choices=self.toolProficiencies["choices"],
 				class_restriction='primary'
 			) )
 
 		if self.raw_savingThrows:
-			advancements.append( sw5e.Advancement.Trait(grants=[
+			advancements.append( sw5e.Advancement.Trait(level=1, grants=[
 				f'saves:{save.lower()[:3]}' for save in self.raw_savingThrows
 			], class_restriction='primary') )
 
 		if self.skillChoices:
-			advancements.append( sw5e.Advancement.Trait(choices=[{
+			advancements.append( sw5e.Advancement.Trait(level=1, choices=[{
 				"count": self.raw_numSkillChoices,
 				"pool": [ f'skills:{skl}' for skl in self.skillChoices],
 			}], allow_replacements=True, class_restriction='primary') )

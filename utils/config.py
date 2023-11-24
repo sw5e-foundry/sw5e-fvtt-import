@@ -498,10 +498,6 @@ armor_types = (
 		"name": 'Heavy',
 		"id": 'hvy',
 	},
-	{
-		"name": 'Shield',
-		"id": 'sld',
-	},
 )
 
 ammo_types = (
