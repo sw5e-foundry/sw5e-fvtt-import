@@ -37,6 +37,7 @@ class Species(sw5e.Entity.Item):
 
 		self.features = self.getFeatures(importer)
 		self.creature_type = self.getCreatureType()
+		self.speeds = self.getSpeeds()
 		self.traits = self.getTraits()
 		self.advancements = self.getAdvancements(importer)
 
@@ -60,10 +61,7 @@ class Species(sw5e.Entity.Item):
 		return features
 
 	def getCreatureType(self):
-		cType = {
-			"type": 'humanoid',
-			"subtype": '',
-		}
+		cType = { "type": 'humanoid', "subtype": '' }
 
 		for feature in self.features:
 			if feature.name == 'Type':
@@ -76,6 +74,25 @@ class Species(sw5e.Entity.Item):
 				break
 
 		return cType
+
+	def getSpeeds(self):
+		speeds = { "walk": '30' }
+
+		for feature in self.features:
+			text = feature.raw_text.lower()
+			if match := re.search(r'your(?: base)? (?P<type>\w+?)(?:m?ing)? speed is (?P<number>\d+)(?: feet)?\.', text):
+				speed = match.groupdict().get('type')
+				number = match.groupdict().get('number')
+				speeds[speed] = number
+			elif match := re.search(r'you have a(?: base)? (?P<type>\w+?)(?:m?ing)? speed of (?P<number>\d+)(?: feet)?\.', text):
+				speed = match.groupdict().get('type')
+				number = match.groupdict().get('number')
+				speeds[speed] = number
+			elif match := re.search(r'you have a (?P<type>\w+?)(?:m?ing)? speed equal to your(?: base)? walk(?:ing)? speed\.', text):
+				speed = match.groupdict().get('type')
+				speeds[speed] = 'walk'
+
+		return { speed: (speeds['walk'] if speeds[speed] == 'walk' else speeds[speed]) for speed in speeds }
 
 	def getTraits(self):
 		choices, grants = [], []
@@ -127,6 +144,7 @@ class Species(sw5e.Entity.Item):
 		data["system"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
 		data["system"]["details"] = { "isDroid": self.creature_type["type"] == 'droid' }
 		data["system"]["type"] = self.creature_type
+		data["system"]["speeds"] = self.speeds
 		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
 		data["system"]["skinColorOptions"] = { "value": self.raw_skinColorOptions }
 		data["system"]["hairColorOptions"] = { "value": self.raw_hairColorOptions }
