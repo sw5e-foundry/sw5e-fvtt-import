@@ -252,7 +252,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		}
 
 		data["system"]["ammo"] = { "types": self.ammo_types }
-		data["system"]["consume"] = { "type": "", "target": "", "amount": None }
+		data["system"]["consume"] = { "type": "", "target": "", "amount": None, "-=ammount": None }
 
 		return self.getItemVariations(data, importer)
 

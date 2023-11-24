@@ -134,8 +134,6 @@ class Equipment(sw5e.Entity.Item):
 		data["system"]["properties"] = {}
 		data["system"]["proficient"] = None
 
-		data["system"]["consume"]["-=ammount"] = None
-
 		return [data]
 
 	def getFile(self, importer):
