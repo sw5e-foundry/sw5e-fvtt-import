@@ -36,6 +36,7 @@ class Species(sw5e.Entity.Item):
 		super().process(importer)
 
 		self.features = self.getFeatures(importer)
+		self.creature_type = self.getCreatureType()
 		self.traits = self.getTraits()
 		self.advancements = self.getAdvancements(importer)
 
@@ -57,6 +58,24 @@ class Species(sw5e.Entity.Item):
 				if self.foundry_id: print(f'		Unable to find feature {trait_data=}')
 				self.broken_links += ['cant find trait']
 		return features
+
+	def getCreatureType(self):
+		cType = {
+			"type": 'humanoid',
+			"subtype": '',
+		}
+
+		for feature in self.features:
+			if feature.name == 'Type':
+				text = feature.raw_text.lower()
+				if match := re.search(r'your creature type is (?P<type>\w+)\.', text):
+					cType["type"] = match.groupdict().get('type')
+				elif match := re.search(r'your creature type is both (?P<type1>\w+) and (?P<type2>\w+)\.', text):
+					cType["type"] = match.groupdict().get('type1')
+					cType["subtype"] = match.groupdict().get('type2').title()
+				break
+
+		return cType
 
 	def getTraits(self):
 		choices, grants = [], []
@@ -105,20 +124,22 @@ class Species(sw5e.Entity.Item):
 
 		data["system"]["description"] = { "value": self.getDescription() }
 		data["system"]["source"] = self.raw_contentSource
-		data["system"]["-=traits"] = None
 		data["system"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
+		data["system"]["details"] = { "isDroid": self.creature_type["type"] == 'droid' }
+		data["system"]["type"] = self.creature_type
 		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
-		data["system"]["skinColorOptions"] = { "value": self.raw_skinColorOptions}
-		data["system"]["hairColorOptions"] = { "value": self.raw_hairColorOptions}
-		data["system"]["eyeColorOptions"] = { "value": self.raw_eyeColorOptions}
-		data["system"]["colorScheme"] = { "value": self.raw_colorScheme}
-		data["system"]["distinctions"] = { "value": self.raw_distinctions}
-		data["system"]["heightAverage"] = { "value": self.raw_heightAverage}
-		data["system"]["heightRollMod"] = { "value": self.raw_heightRollMod}
-		data["system"]["weightAverage"] = { "value": self.raw_weightAverage}
-		data["system"]["weightRollMod"] = { "value": self.raw_weightRollMod}
-		data["system"]["homeworld"] = { "value": self.raw_homeworld}
-		data["system"]["slanguage"] = { "value": self.raw_language}
+		data["system"]["skinColorOptions"] = { "value": self.raw_skinColorOptions }
+		data["system"]["hairColorOptions"] = { "value": self.raw_hairColorOptions }
+		data["system"]["eyeColorOptions"] = { "value": self.raw_eyeColorOptions }
+		data["system"]["colorScheme"] = { "value": self.raw_colorScheme }
+		data["system"]["distinctions"] = { "value": self.raw_distinctions }
+		data["system"]["heightAverage"] = { "value": self.raw_heightAverage }
+		data["system"]["heightRollMod"] = { "value": self.raw_heightRollMod }
+		data["system"]["weightAverage"] = { "value": self.raw_weightAverage }
+		data["system"]["weightRollMod"] = { "value": self.raw_weightRollMod }
+		data["system"]["homeworld"] = { "value": self.raw_homeworld }
+		data["system"]["slanguage"] = { "value": self.raw_language }
+		data["system"]["-=traits"] = None
 		data["system"]["-=damage"] = None
 		data["system"]["-=armorproperties"] = None
 		data["system"]["-=weaponproperties"] = None
