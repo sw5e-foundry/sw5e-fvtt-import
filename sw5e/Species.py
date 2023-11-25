@@ -160,7 +160,7 @@ class Species(sw5e.Entity.Item):
 		data["system"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
 		data["system"]["details"] = { "isDroid": self.creature_type["value"] == 'droid' }
 		data["system"]["type"] = self.creature_type
-		data["system"]["speeds"] = self.speeds
+		data["system"]["movement"] = self.speeds
 		data["system"]["senses"] = self.senses
 		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
 		data["system"]["skinColorOptions"] = { "value": self.raw_skinColorOptions }
