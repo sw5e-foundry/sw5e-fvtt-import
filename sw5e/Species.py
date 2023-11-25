@@ -38,6 +38,7 @@ class Species(sw5e.Entity.Item):
 		self.features = self.getFeatures(importer)
 		self.creature_type = self.getCreatureType()
 		self.speeds = self.getSpeeds()
+		self.senses = self.getSenses()
 		self.traits = self.getTraits()
 		self.advancements = self.getAdvancements(importer)
 
@@ -82,17 +83,30 @@ class Species(sw5e.Entity.Item):
 			text = feature.raw_text.lower()
 			if match := re.search(r'your(?: base)? (?P<type>\w+?)(?:m?ing)? speed is (?P<number>\d+)(?: feet)?\.', text):
 				speed = match.groupdict().get('type')
-				number = match.groupdict().get('number')
-				speeds[speed] = number
+				speeds[speed] = match.groupdict().get('number')
 			elif match := re.search(r'you have a(?: base)? (?P<type>\w+?)(?:m?ing)? speed of (?P<number>\d+)(?: feet)?\.', text):
 				speed = match.groupdict().get('type')
-				number = match.groupdict().get('number')
-				speeds[speed] = number
+				speeds[speed] = match.groupdict().get('number')
 			elif match := re.search(r'you have a (?P<type>\w+?)(?:m?ing)? speed equal to your(?: base)? walk(?:ing)? speed\.', text):
 				speed = match.groupdict().get('type')
 				speeds[speed] = 'walk'
 
 		return { speed: (speeds["walk"] if speeds[speed] == 'walk' else speeds[speed]) for speed in speeds }
+
+	def getSenses(self):
+		senses = {}
+
+		for feature in self.features:
+			text = feature.raw_text.lower()
+			if match := re.search(r'you can see in dim light within (?P<range>\d+) feet of you as if it were bright light, and in darkness as if it were dim light\.', text):
+				senses["darkvision"] = int(match.groupdict().get('range'))
+			elif match := re.search(r'you have (?P<sense>blindsight|tremorsense) out to (?P<range>\d+) feet\.', text):
+				sense = match.groupdict().get('type')
+				senses[sense] = int(match.groupdict().get('range'))
+			elif match := re.search(r'you are constantly under the effects of the force power \*(?P<special>[^*]*)\*', text):
+				senses["special"] = match.groupdict().get('special').title()
+
+		return senses
 
 	def getTraits(self):
 		choices, grants = [], []
@@ -145,6 +159,7 @@ class Species(sw5e.Entity.Item):
 		data["system"]["details"] = { "isDroid": self.creature_type["type"] == 'droid' }
 		data["system"]["type"] = self.creature_type
 		data["system"]["speeds"] = self.speeds
+		data["system"]["senses"] = self.senses
 		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
 		data["system"]["skinColorOptions"] = { "value": self.raw_skinColorOptions }
 		data["system"]["hairColorOptions"] = { "value": self.raw_hairColorOptions }
