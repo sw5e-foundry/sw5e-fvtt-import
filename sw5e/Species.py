@@ -62,15 +62,15 @@ class Species(sw5e.Entity.Item):
 		return features
 
 	def getCreatureType(self):
-		cType = { "type": 'humanoid', "subtype": '' }
+		cType = { "value": 'humanoid' }
 
 		for feature in self.features:
 			if feature.name == 'Type':
 				text = feature.raw_text.lower()
 				if match := re.search(r'your creature type is (?P<type>\w+)\.', text):
-					cType["type"] = match.groupdict().get('type')
+					cType["value"] = match.groupdict().get('type')
 				elif match := re.search(r'your creature type is both (?P<type1>\w+) and (?P<type2>\w+)\.', text):
-					cType["type"] = match.groupdict().get('type1')
+					cType["value"] = match.groupdict().get('type1')
 					cType["subtype"] = match.groupdict().get('type2').title()
 				break
 
@@ -158,7 +158,7 @@ class Species(sw5e.Entity.Item):
 		data["system"]["description"] = { "value": self.getDescription() }
 		data["system"]["source"] = self.raw_contentSource
 		data["system"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
-		data["system"]["details"] = { "isDroid": self.creature_type["type"] == 'droid' }
+		data["system"]["details"] = { "isDroid": self.creature_type["value"] == 'droid' }
 		data["system"]["type"] = self.creature_type
 		data["system"]["speeds"] = self.speeds
 		data["system"]["senses"] = self.senses
