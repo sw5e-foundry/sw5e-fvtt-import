@@ -103,8 +103,10 @@ class Species(sw5e.Entity.Item):
 			elif match := re.search(r'you have (?P<sense>blindsight|tremorsense) out to (?P<range>\d+) feet\.', text):
 				sense = match.groupdict().get('type')
 				senses[sense] = int(match.groupdict().get('range'))
-			elif match := re.search(r'you are constantly under the effects of the force power \*(?P<special>[^*]*)\*', text):
-				senses["special"] = match.groupdict().get('special').title()
+			elif match := re.search(r'you are constantly under the effects of the \w+ power \*(?P<special>[^*]*)\*', text):
+				special = match.groupdict().get('special').title()
+				senses["special"] = special
+				if special == 'Force Sight': senses["blindsight"] = 30
 
 		return senses
 
