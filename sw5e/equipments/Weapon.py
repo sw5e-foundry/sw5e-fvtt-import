@@ -1,4 +1,4 @@
-import sw5e.Equipment, utils.text, utils.config
+import sw5e.Equipment, utils.config, utils.object, utils.text
 import re, json, copy
 
 class Weapon(sw5e.Equipment.Equipment):
@@ -137,7 +137,7 @@ class Weapon(sw5e.Equipment.Equipment):
 			**utils.text.getProperties(self.raw_description, properties_list),
 		}
 
-		return properties
+		return utils.object.applyType(properties, properties_list)
 
 	def getAutoTargetData(self, data, burst_or_rapid=False):
 		if 'smr' in self.p_properties and type(smr := self.p_properties["smr"].split('/')) == list:

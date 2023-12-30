@@ -1,4 +1,4 @@
-import sw5e.Equipment, utils.text, utils.config
+import sw5e.Equipment, utils.config, utils.text
 import re, json
 
 class Consumable(sw5e.Equipment.Equipment):

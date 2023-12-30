@@ -298,9 +298,15 @@ weapon_properties = (
 	}, {
 		"name": 'Versatile',
 		"id": 'ver',
+		"type": bool,
 	}, {
 		"name": 'Vicious',
 		"id": 'vic',
+	},
+) + (
+	{
+		"name": 'Modal',
+		"id": 'mod',
 	},
 )# + ( #Starship Weapon Properties
 	# {

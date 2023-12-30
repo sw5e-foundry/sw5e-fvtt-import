@@ -1,4 +1,4 @@
-import sw5e.Equipment, utils.text, utils.config
+import sw5e.Equipment, utils.config, utils.object, utils.text
 import re, json
 
 class Equipment(sw5e.Equipment.Equipment):
@@ -79,7 +79,7 @@ class Equipment(sw5e.Equipment.Equipment):
 			**utils.text.getProperties(self.raw_description, properties_list),
 		}
 
-		return properties
+		return utils.object.applyType(properties, properties_list)
 
 	def getBaseItem(self):
 		override = {
