@@ -40,8 +40,34 @@ class Equipment(sw5e.Entity.Item):
 	def process(self, importer):
 		super().process(importer)
 
-		self.uses, self.uses_value, self.recharge = None, None, None
 		self.baseItem = self.getBaseItem()
+
+		self.duration_value, self.duration_unit = self.getDuration()
+		self.target_value, self.target_width, self.target_unit, self.target_type = self.getTarget()
+		self.range_short, self.range_long, self.range_unit = self.getRange()
+		self.uses, self.recharge = self.getUses()
+		self.action_type, self.damage, self.formula, self.save, self.save_dc, _ = self.getAction()
+		self.activation = self.getActivation()
+
+	def getActivation(self):
+		return utils.text.getActivation(self.raw_description or '', self.uses, self.recharge)
+
+	def getDuration(self):
+		return utils.text.getDuration(self.raw_description or '', self.raw_name)
+
+	def getTarget(self):
+		value, unit, ttype = utils.text.getTarget(self.raw_description or '', self.raw_name)
+		return value, None, unit, ttype
+
+	def getRange(self):
+		short, unit = utils.text.getRange(self.raw_description or '', self.raw_name)
+		return short, None, unit
+
+	def getUses(self):
+		return utils.text.getUses(self.raw_description or '', self.raw_name)
+
+	def getAction(self):
+		return utils.text.getAction((self.raw_description or '').lower(), self.raw_name)
 
 	def getImg(self, importer=None, item_type=None, item_subtype=None, no_img=('Unknown',), default_img='systems/sw5e/packs/Icons/Storage/Crate.webp', plural=False):
 		if item_type == None: item_type = self.raw_equipmentCategory
@@ -93,46 +119,42 @@ class Equipment(sw5e.Entity.Item):
 
 		data["system"]["baseItem"] = self.baseItem
 
-		data["system"]["activation"] = {
+		if self.activation: data["system"]["activation"] = {
 			"type": self.activation,
-			"cost": 1,
-			"condition": ''
-		} if self.activation != 'none' else {}
-
-		#TODO: extract duration, target, range, consume, damage and other rolls
-		data["system"]["duration"] = {
-			"value": None,
-			"units": ''
+			"cost": 1 if self.activation != 'none' else None
 		}
-		data["system"]["target"] = {}
-		data["system"]["range"] = {}
-		data["system"]["uses"] = {
-			"value": self.uses_value,
+		if self.duration_value or self.duration_unit: data["system"]["duration"] = {
+			"value": self.duration_value,
+			"units": self.duration_unit
+		}
+		if self.target_value or self.target_width or self.target_unit or self.target_type: data["system"]["target"] = {
+			"value": self.target_value,
+			"width": self.target_width,
+			"units": self.target_unit,
+			"type": self.target_type
+		}
+		if self.range_short or self.range_long or self.range_unit: data["system"]["range"] = {
+			"value": self.range_short,
+			"long": self.range_long,
+			"units": self.range_unit
+		}
+		if self.uses or self.recharge: data["system"]["uses"] = {
+			"value": None,
 			"max": self.uses,
 			"per": self.recharge
 		}
-		data["system"]["consume"] = {}
-		data["system"]["ability"] = ''
-		data["system"]["actionType"] = ''
-		data["system"]["attackBonus"] = 0
-		data["system"]["chatFlavor"] = ''
-		data["system"]["critical"] = None
-		data["system"]["damage"] = {
-			"parts": [],
-			"versatile": '',
+		if self.action_type: data["system"]["actionType"] = self.action_type
+
+		if self.damage: data["system"]["damage"] = {
+			"parts": self.damage["parts"],
+			"versatile": self.damage["versatile"]
 		}
-		data["system"]["formula"] = ''
-		data["system"]["save"] = {}
-		data["system"]["armor"] = {}
-		data["system"]["hp"] = {
-			"value": 0,
-			"max": 0,
-			"dt": None,
-			"conditions": ''
+		if self.formula: data["system"]["formula"] = self.formula
+		if self.save: data["system"]["save"] = {
+			"ability": self.save,
+			"dc": self.save_dc,
+			"scaling": 'flat' if self.save_dc else 'none'
 		}
-		data["system"]["weaponType"] = ''
-		data["system"]["properties"] = {}
-		data["system"]["proficient"] = None
 
 		return [data]
 

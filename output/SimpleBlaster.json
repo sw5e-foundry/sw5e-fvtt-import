@@ -29,12 +29,11 @@
             "baseItem": "blastercarbine",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -47,24 +46,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -74,23 +56,13 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "carbine",
             "properties": {
                 "pcl": "range 70/280",
                 "rel": 16,
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -129,12 +101,11 @@
             "baseItem": "blasterpistol",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -147,24 +118,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -174,22 +128,12 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "pcl": "range 50/200",
                 "rel": 16
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -228,12 +172,11 @@
             "baseItem": "bowcaster",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -246,24 +189,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -273,16 +199,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "heavy",
             "properties": {
                 "bur": 4,
                 "pcl": "range 50/200",
@@ -290,8 +208,6 @@
                 "str": 13,
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -330,16 +246,14 @@
             "baseItem": "bowcaster",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 10,
-                "width": null,
                 "units": "ft",
                 "type": "cube"
             },
@@ -348,24 +262,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "save",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -375,20 +272,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {
-                "ability": "dex",
-                "dc": null,
-                "scaling": "dex"
-            },
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "heavy",
             "properties": {
                 "bur": 4,
                 "pcl": "range 50/200",
@@ -396,12 +281,15 @@
                 "str": 13,
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "powerCell"
                 ]
+            },
+            "save": {
+                "ability": "dex",
+                "dc": null,
+                "scaling": "dex"
             }
         },
         "effects": []
@@ -436,12 +324,11 @@
             "baseItem": "cryocarbine",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -454,24 +341,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -481,24 +351,14 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "carbine",
             "properties": {
                 "pcl": "range 45/180",
                 "rel": 12,
                 "two": true,
                 "vic": 1
             },
-            "proficient": null,
-            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -537,12 +397,11 @@
             "baseItem": "cryopistol",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -555,24 +414,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -582,23 +424,13 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "pcl": "range 30/120",
                 "rel": 8,
                 "vic": 1
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -637,12 +469,11 @@
             "baseItem": "disruptorcarbine",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -655,24 +486,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -682,16 +496,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "carbine",
             "properties": {
                 "dis": 13,
                 "pcl": "range 60/240",
@@ -699,8 +505,6 @@
                 "str": 11,
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -739,12 +543,11 @@
             "baseItem": "disruptorpistol",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -757,24 +560,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -784,24 +570,14 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "dis": 13,
                 "pcl": "range 45/180",
                 "rel": 12,
                 "str": 11
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -840,12 +616,11 @@
             "baseItem": "hold-out",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -858,24 +633,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -885,24 +643,14 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "hid": true,
                 "lgt": true,
                 "pcl": "range 30/120",
                 "rel": 8
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -941,12 +689,11 @@
             "baseItem": "incineratorcarbine",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -959,24 +706,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -986,16 +716,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "carbine",
             "properties": {
                 "dir": 1,
                 "dis": 13,
@@ -1004,8 +726,6 @@
                 "str": 11,
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -1044,12 +764,11 @@
             "baseItem": "incineratorpistol",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -1062,24 +781,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -1089,16 +791,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "dir": 1,
                 "dis": 13,
@@ -1106,8 +800,6 @@
                 "rel": 16,
                 "str": 11
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -1146,12 +838,11 @@
             "baseItem": "ioncarbine",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -1164,24 +855,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -1191,23 +865,13 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "carbine",
             "properties": {
                 "pcl": "range 60/240",
                 "rel": 12,
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -1246,12 +910,11 @@
             "baseItem": "ionpistol",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -1264,24 +927,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -1291,22 +937,12 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "pcl": "range 40/160",
                 "rel": 16
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -1345,12 +981,11 @@
             "baseItem": "lightpistol",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -1363,24 +998,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -1390,23 +1008,13 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "lgt": true,
                 "pcl": "range 40/160",
                 "rel": 8
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -1445,12 +1053,11 @@
             "baseItem": "lightrepeater",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -1463,24 +1070,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "save",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -1490,20 +1080,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {
-                "ability": "dex",
-                "dc": null,
-                "scaling": "dex"
-            },
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "carbine",
             "properties": {
                 "aut": true,
                 "pcl": "range 50/200",
@@ -1511,12 +1089,15 @@
                 "rel": 20,
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "powerCell"
                 ]
+            },
+            "save": {
+                "ability": "dex",
+                "dc": null,
+                "scaling": "dex"
             }
         },
         "effects": []
@@ -1551,12 +1132,11 @@
             "baseItem": "lightslugpistol",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -1569,24 +1149,7 @@
                 "long": 140,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -1596,23 +1159,13 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "lgt": true,
                 "rel": 8,
                 "ran": 35
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "cartridge"
@@ -1651,12 +1204,11 @@
             "baseItem": "scattergun",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -1669,24 +1221,7 @@
                 "long": 120,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -1696,24 +1231,14 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "bur": 2,
                 "rel": 8,
                 "ran": 30,
                 "str": 11
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "cartridge"
@@ -1752,16 +1277,14 @@
             "baseItem": "scattergun",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 10,
-                "width": null,
                 "units": "ft",
                 "type": "cube"
             },
@@ -1770,24 +1293,7 @@
                 "long": 120,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "save",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -1797,32 +1303,23 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {
-                "ability": "dex",
-                "dc": null,
-                "scaling": "dex"
-            },
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "bur": 2,
                 "rel": 8,
                 "ran": 30,
                 "str": 11
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "cartridge"
                 ]
+            },
+            "save": {
+                "ability": "dex",
+                "dc": null,
+                "scaling": "dex"
             }
         },
         "effects": []
@@ -1857,12 +1354,11 @@
             "baseItem": "shotgun",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -1875,24 +1371,7 @@
                 "long": 120,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -1902,16 +1381,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "carbine",
             "properties": {
                 "bur": 2,
                 "rel": 4,
@@ -1919,8 +1390,6 @@
                 "str": 11,
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "cartridge"
@@ -1959,16 +1428,14 @@
             "baseItem": "shotgun",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 10,
-                "width": null,
                 "units": "ft",
                 "type": "cube"
             },
@@ -1977,24 +1444,7 @@
                 "long": 120,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "save",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -2004,20 +1454,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {
-                "ability": "dex",
-                "dc": null,
-                "scaling": "dex"
-            },
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "carbine",
             "properties": {
                 "bur": 2,
                 "rel": 4,
@@ -2025,12 +1463,15 @@
                 "str": 11,
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "cartridge"
                 ]
+            },
+            "save": {
+                "ability": "dex",
+                "dc": null,
+                "scaling": "dex"
             }
         },
         "effects": []
@@ -2065,12 +1506,11 @@
             "baseItem": "slugpistol",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -2083,24 +1523,7 @@
                 "long": 160,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -2110,24 +1533,14 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "rap": 8,
                 "rel": 16,
                 "ran": 40,
                 "str": 11
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "cartridge"
@@ -2166,12 +1579,11 @@
             "baseItem": "slugpistol",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -2184,24 +1596,7 @@
                 "long": 160,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "save",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -2211,32 +1606,23 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {
-                "ability": "dex",
-                "dc": null,
-                "scaling": "dex"
-            },
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "rap": 8,
                 "rel": 16,
                 "ran": 40,
                 "str": 11
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "cartridge"
                 ]
+            },
+            "save": {
+                "ability": "dex",
+                "dc": null,
+                "scaling": "dex"
             }
         },
         "effects": []
@@ -2271,12 +1657,11 @@
             "baseItem": "wristlauncher",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -2289,43 +1674,15 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
-            "damage": {},
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "fix": true,
                 "rel": 1,
                 "spc": "range 30/120",
                 "spz": true
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "dart",
@@ -2368,12 +1725,11 @@
             "baseItem": "wristblaster",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -2386,24 +1742,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -2413,16 +1752,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "dgd": true,
                 "fix": true,
@@ -2430,8 +1761,6 @@
                 "pcl": "range 30/120",
                 "rel": 8
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -2470,12 +1799,11 @@
             "baseItem": "energybow",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -2488,24 +1816,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -2515,24 +1826,14 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "carbine",
             "properties": {
                 "pcl": "range 80/320",
                 "mig": true,
                 "rel": 4,
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -2571,12 +1872,11 @@
             "baseItem": "energyslingshot",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -2589,24 +1889,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -2616,16 +1899,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "pcl": "range 20/80",
                 "dpt": true,
@@ -2634,8 +1909,6 @@
                 "rel": 20,
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -2674,12 +1947,11 @@
             "baseItem": "lightningcarbine",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -2692,24 +1964,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -2719,16 +1974,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "carbine",
             "properties": {
                 "pcl": "range 60/240",
                 "pen": 6,
@@ -2736,8 +1983,6 @@
                 "str": 11,
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -2776,12 +2021,11 @@
             "baseItem": "lightningpistol",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -2794,24 +2038,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -2821,23 +2048,13 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "pcl": "range 30/120",
                 "pen": 8,
                 "rel": 16
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -2876,12 +2093,11 @@
             "baseItem": "needler",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "hour"
             },
             "target": {
                 "value": 1,
@@ -2894,24 +2110,7 @@
                 "long": 160,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -2921,16 +2120,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "ran": 30,
                 "pic": 1,
@@ -2939,8 +2130,6 @@
                 "spc": true,
                 "spz": true
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "cartridge"
@@ -2979,12 +2168,11 @@
             "baseItem": "shatterpistol",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -2997,24 +2185,7 @@
                 "long": 240,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -3024,16 +2195,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "ran": 60,
                 "lgt": true,
@@ -3041,8 +2204,6 @@
                 "sil": true,
                 "str": 11
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "cartridge"
@@ -3081,12 +2242,11 @@
             "baseItem": "shortbow",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -3099,24 +2259,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -3126,16 +2269,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "rifle",
             "properties": {
                 "mig": true,
                 "sil": true,
@@ -3143,8 +2278,6 @@
                 "two": true,
                 "spz": true
             },
-            "proficient": null,
-            "weaponClass": "rifle",
             "ammo": {
                 "types": [
                     "arrow"
@@ -3183,12 +2316,11 @@
             "baseItem": "soniccarbine",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -3201,24 +2333,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -3228,16 +2343,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "carbine",
             "properties": {
                 "pcl": "range 60/240",
                 "dpt": true,
@@ -3245,8 +2352,6 @@
                 "str": 11,
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -3285,12 +2390,11 @@
             "baseItem": "sonicpistol",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -3303,24 +2407,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -3330,23 +2417,13 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "pcl": "range 30/120",
                 "dpt": true,
                 "rel": 16
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -3385,12 +2462,11 @@
             "baseItem": "switchcarbine",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -3403,24 +2479,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -3430,24 +2489,14 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "carbine",
             "properties": {
                 "pcl": "range 70/280",
                 "rel": 16,
                 "swi": "1d4 acid",
                 "two": true
             },
-            "proficient": null,
-            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -3486,12 +2535,11 @@
             "baseItem": "switchpistol",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -3504,24 +2552,7 @@
                 "long": null,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -3531,23 +2562,13 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "sidearm",
             "properties": {
                 "pcl": "range 40/160",
                 "rel": 20,
                 "swi": "1d4 fire"
             },
-            "proficient": null,
-            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -3586,12 +2607,11 @@
             "baseItem": "tranquilizerrifle",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "hour"
             },
             "target": {
                 "value": 1,
@@ -3604,24 +2624,7 @@
                 "long": 240,
                 "units": "ft"
             },
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {
-                "type": "",
-                "target": "",
-                "amount": null
-            },
-            "ability": "",
             "actionType": "rwak",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": {
-                "threshold": null,
-                "damage": ""
-            },
             "damage": {
                 "parts": [
                     [
@@ -3631,16 +2634,8 @@
                 ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
             "weaponType": "simpleB",
+            "weaponClass": "rifle",
             "properties": {
                 "ran": 60,
                 "rel": 4,
@@ -3648,8 +2643,6 @@
                 "spc": true,
                 "spz": true
             },
-            "proficient": null,
-            "weaponClass": "rifle",
             "ammo": {
                 "types": [
                     "cartridge"

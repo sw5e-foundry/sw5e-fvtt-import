@@ -6,14 +6,31 @@ class Weapon(sw5e.Equipment.Equipment):
 		super().load(raw_item)
 
 	def process(self, importer):
-		super().process(importer)
-
-		self.activation = 'action'
-
 		self.weapon_type = self.getWeaponType()
 		self.weapon_class = self.getWeaponClass()
 		self.ammo_types = self.getAmmoTypes()
 		self.p_properties = self.getProperties()
+
+		super().process(importer)
+
+	def getActivation(self):
+		return 'action'
+
+	def getTarget(self):
+		return 1, None, '', 'enemy'
+
+	def getRange(self):
+		short_range, long_range = None, None
+		if rang := (utils.text.getProperty('Ammunition', self.raw_propertiesMap) or utils.text.getProperty('Range', self.raw_propertiesMap)):
+			if rang == 'special': pass
+			elif type(rang) == list: short_range, long_range = rang
+			else: short_range = int(rang)
+		elif utils.text.getProperty('Reach', self.raw_propertiesMap):
+			short_range = 10
+		return short_range, long_range, 'ft'
+
+	def getAction(self):
+		return self.getActionType(), self.getDamage(), None, None, None, None
 
 	def getImg(self, importer=None):
 		kwargs = {
@@ -50,20 +67,6 @@ class Weapon(sw5e.Equipment.Equipment):
 
 		return text
 
-	def getRange(self):
-		short_range, long_range = None, None
-		if rang := (utils.text.getProperty('Ammunition', self.raw_propertiesMap) or utils.text.getProperty('Range', self.raw_propertiesMap)):
-			if rang == 'special': pass
-			elif type(rang) == list: short_range, long_range = rang
-			else: short_range = int(rang)
-		elif utils.text.getProperty('Reach', self.raw_propertiesMap):
-			short_range = 10
-		return {
-			'value': short_range,
-			'long': long_range,
-			'units': 'ft'
-		}
-
 	def getActionType(self):
 		if self.weapon_type in ('simpleB', 'martialB'):
 			return 'rwak'
@@ -76,8 +79,8 @@ class Weapon(sw5e.Equipment.Equipment):
 
 		die = self.raw_damageNumberOfDice
 		if self.raw_damageDieType == -1:
-			_, damage, _, _, _, _ = utils.text.getAction(self.raw_description, self.name)
-			die = damage["parts"][0][0]
+			_, damage, other_formula, _, _, _ = utils.text.getAction(self.raw_description, self.name)
+			die = other_formula or damage["parts"][0][0]
 		elif self.raw_damageDieType > 1:
 			die = f'{die}d{self.raw_damageDieType}'
 		elif self.raw_damageDieType != 1:
@@ -164,27 +167,27 @@ class Weapon(sw5e.Equipment.Equipment):
 			# data.append(original_data)
 			for mode in self.raw_modes:
 				wpn = copy.deepcopy(self)
-				wpn.modes = []
+				wpn.raw_modes = []
 
 				no = ([], {}, (), 0, '0', None, 'None', 'none', 'Unknown', 'unknown')
 
-				if (var := utils.text.clean(mode, "Description")) not in no: wpn.description = var
-				if (var := utils.text.raw(mode, "Cost")) not in no: wpn.cost = var
-				if (var := utils.text.clean(mode, "Weight")) not in no: wpn.weight = var
-				if (var := utils.text.raw(mode, "EquipmentCategoryEnum")) not in no: wpn.equipmentCategoryEnum = var
-				if (var := utils.text.clean(mode, "EquipmentCategory")) not in no: wpn.equipmentCategory = var
-				if (var := utils.text.raw(mode, "DamageNumberOfDice")) not in no: wpn.damageNumberOfDice = var
-				if (var := utils.text.raw(mode, "DamageTypeEnum")) not in no: wpn.damageTypeEnum = var
-				if (var := utils.text.clean(mode, "DamageType")) not in no: wpn.damageType = var
-				if (var := utils.text.raw(mode, "DamageDieModifier")) not in no: wpn.damageDieModifier = var
-				if (var := utils.text.raw(mode, "WeaponClassificationEnum")) not in no: wpn.weaponClassificationEnum = var
-				if (var := utils.text.clean(mode, "WeaponClassification")) not in no: wpn.weaponClassification = var
-				if (var := utils.text.raw(mode, "ArmorClassificationEnum")) not in no: wpn.armorClassificationEnum = var
-				if (var := utils.text.clean(mode, "ArmorClassification")) not in no: wpn.armorClassification = var
-				if (var := utils.text.raw(mode, "DamageDiceDieTypeEnum")) not in no: wpn.damageDiceDieTypeEnum = var
-				if (var := utils.text.raw(mode, "DamageDieType")) not in no: wpn.damageDieType = var
-				if (var := utils.text.cleanJson(mode, "Properties")) not in no: wpn.properties += var
-				if (var := utils.text.cleanJson(mode, "PropertiesMap")) not in no: wpn.propertiesMap.update(var)
+				if (var := utils.text.clean(mode, "Description")) not in no: wpn.raw_description = var
+				if (var := utils.text.raw(mode, "Cost")) not in no: wpn.raw_cost = var
+				if (var := utils.text.clean(mode, "Weight")) not in no: wpn.raw_weight = var
+				if (var := utils.text.raw(mode, "EquipmentCategoryEnum")) not in no: wpn.raw_equipmentCategoryEnum = var
+				if (var := utils.text.clean(mode, "EquipmentCategory")) not in no: wpn.raw_equipmentCategory = var
+				if (var := utils.text.raw(mode, "DamageNumberOfDice")) not in no: wpn.raw_damageNumberOfDice = var
+				if (var := utils.text.raw(mode, "DamageTypeEnum")) not in no: wpn.raw_damageTypeEnum = var
+				if (var := utils.text.clean(mode, "DamageType")) not in no: wpn.raw_damageType = var
+				if (var := utils.text.raw(mode, "DamageDieModifier")) not in no: wpn.raw_damageDieModifier = var
+				if (var := utils.text.raw(mode, "WeaponClassificationEnum")) not in no: wpn.raw_weaponClassificationEnum = var
+				if (var := utils.text.clean(mode, "WeaponClassification")) not in no: wpn.raw_weaponClassification = var
+				if (var := utils.text.raw(mode, "ArmorClassificationEnum")) not in no: wpn.raw_armorClassificationEnum = var
+				if (var := utils.text.clean(mode, "ArmorClassification")) not in no: wpn.raw_armorClassification = var
+				if (var := utils.text.raw(mode, "DamageDiceDieTypeEnum")) not in no: wpn.raw_damageDiceDieTypeEnum = var
+				if (var := utils.text.raw(mode, "DamageDieType")) not in no: wpn.raw_damageDieType = var
+				if (var := utils.text.cleanJson(mode, "Properties")) not in no: wpn.raw_properties += var
+				if (var := utils.text.cleanJson(mode, "PropertiesMap")) not in no: wpn.raw_propertiesMap.update(var)
 
 				wpn.weapon_type = wpn.getWeaponType()
 				wpn.ammo_types = wpn.getAmmoTypes()
@@ -202,10 +205,11 @@ class Weapon(sw5e.Equipment.Equipment):
 				burst_data = copy.deepcopy(original_data)
 				burst_data["name"] = f'{self.name} (Burst)'
 
-				burst_data["system"]["target"]["value"] = 10
-				burst_data["system"]["target"]["units"] = 'ft'
-				burst_data["system"]["target"]["type"] = 'cube'
-
+				burst_data["system"]["target"] = {
+					"value": 10,
+					"units": 'ft',
+					"type": 'cube',
+				}
 				burst_data["system"]["actionType"] = 'save'
 				burst_data["system"]["save"] = {
 					"ability": 'dex',
@@ -235,24 +239,10 @@ class Weapon(sw5e.Equipment.Equipment):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["system"]["target"]["value"] = 1
-		data["system"]["target"]["width"] = None
-		data["system"]["target"]["units"] = ''
-		data["system"]["target"]["type"] = 'enemy'
-
-		data["system"]["range"] = self.getRange()
-		data["system"]["actionType"] = self.getActionType()
-		data["system"]["damage"] = self.getDamage()
 		data["system"]["weaponType"] = self.weapon_type
 		data["system"]["weaponClass"] = self.weapon_class
 		data["system"]["properties"] = self.p_properties
-		data["system"]["critical"] = {
-			"threshold": None,
-			"damage": ""
-		}
-
 		data["system"]["ammo"] = { "types": self.ammo_types }
-		data["system"]["consume"] = { "type": "", "target": "", "amount": None }
 
 		return self.getItemVariations(data, importer)
 

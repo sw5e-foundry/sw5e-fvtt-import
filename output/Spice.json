@@ -29,42 +29,28 @@
             "baseItem": "andris",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": 1,
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "formula": "1d3",
+            "save": {
+                "ability": "wis",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "adrenal",
             "ammoType": null
         },
@@ -100,42 +86,28 @@
             "baseItem": "cilona",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": 1,
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "formula": "1d3",
+            "save": {
+                "ability": "wis",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "adrenal",
             "ammoType": null
         },
@@ -171,42 +143,28 @@
             "baseItem": "giggledust",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": 1,
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "formula": "1d3",
+            "save": {
+                "ability": "wis",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "adrenal",
             "ammoType": null
         },
@@ -242,42 +200,28 @@
             "baseItem": "glitterstim",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": 1,
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "formula": "1d3",
+            "save": {
+                "ability": "wis",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "adrenal",
             "ammoType": null
         },
@@ -313,42 +257,37 @@
             "baseItem": "karrak",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": 1,
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d3",
+                        "temphp"
+                    ],
+                    [
+                        "2d3",
+                        ""
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "formula": "1d3",
+            "save": {
+                "ability": "wis",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "adrenal",
             "ammoType": null
         },
@@ -384,42 +323,28 @@
             "baseItem": "muongold",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": 1,
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "formula": "2d3",
+            "save": {
+                "ability": "wis",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "adrenal",
             "ammoType": null
         },
@@ -455,42 +380,28 @@
             "baseItem": "yaladai",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": 1,
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "formula": "2d3",
+            "save": {
+                "ability": "wis",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "adrenal",
             "ammoType": null
         },
@@ -526,42 +437,28 @@
             "baseItem": "yarrock",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": 1,
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "formula": "1d3",
+            "save": {
+                "ability": "wis",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "adrenal",
             "ammoType": null
         },

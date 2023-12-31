@@ -29,42 +29,32 @@
             "baseItem": "grenade,corrosive",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "30",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d8",
+                        "acid"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -100,42 +90,32 @@
             "baseItem": "grenade,cryo",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "30",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "cold"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -171,42 +151,32 @@
             "baseItem": "grenade,deafening",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "30",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "sonic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -242,42 +212,32 @@
             "baseItem": "grenade,electrifying",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "30",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "lightning"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -313,42 +273,27 @@
             "baseItem": "grenade,flash",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "30",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -384,42 +329,32 @@
             "baseItem": "grenade,fragmentation",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "30",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d10",
+                        "kinetic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -455,42 +390,38 @@
             "baseItem": "grenade,gas",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "target": {
+                "value": 10,
+                "width": null,
+                "units": "ft",
+                "type": "sphere"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "range": {
+                "value": "30",
+                "long": null,
+                "units": "feet"
+            },
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "poison"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -526,42 +457,38 @@
             "baseItem": "grenade,incendiary",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "target": {
+                "value": 10,
+                "width": null,
+                "units": "ft",
+                "type": "radius"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "range": {
+                "value": "30",
+                "long": null,
+                "units": "feet"
+            },
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d8",
+                        "fire"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -597,42 +524,32 @@
             "baseItem": "grenade,ion",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "30",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "ion"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -668,42 +585,32 @@
             "baseItem": "grenade,panic",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "30",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "psychic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "wis",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -739,42 +646,32 @@
             "baseItem": "grenade,plasma",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "30",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d10",
+                        "energy"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -810,42 +707,27 @@
             "baseItem": "grenade,stun",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "30",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -881,42 +763,32 @@
             "baseItem": "mine,corrosive",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "15",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d8",
+                        "acid"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -952,42 +824,32 @@
             "baseItem": "mine,cryo",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "15",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "cold"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -1023,42 +885,32 @@
             "baseItem": "mine,deafening",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "15",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "sonic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -1094,42 +946,32 @@
             "baseItem": "mine,electrifying",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "15",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "lightning"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -1165,42 +1007,27 @@
             "baseItem": "mine,flash",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "15",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -1236,42 +1063,32 @@
             "baseItem": "mine,fragmentation",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "15",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d10",
+                        "kinetic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -1305,44 +1122,15 @@
             "rarity": "",
             "identified": true,
             "baseItem": "mine,gas",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -1378,42 +1166,33 @@
             "baseItem": "mine,incendiary",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "target": {
+                "value": 15,
+                "width": null,
+                "units": "ft",
+                "type": "radius"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d8",
+                        "fire"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -1449,42 +1228,32 @@
             "baseItem": "mine,ion",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "15",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "ion"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -1520,42 +1289,32 @@
             "baseItem": "mine,panic",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "15",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "psychic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "wis",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -1591,42 +1350,32 @@
             "baseItem": "mine,plasma",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "15",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d10",
+                        "energy"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -1662,42 +1411,27 @@
             "baseItem": "mine,stun",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "15",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -1733,42 +1467,36 @@
             "baseItem": "thermaldetonator",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "30",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "fire"
+                    ],
+                    [
+                        "2d10",
+                        "kinetic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -1802,44 +1530,31 @@
             "rarity": "",
             "identified": true,
             "baseItem": "charge,fragmentation",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "target": {
+                "value": 15,
+                "width": null,
+                "units": "ft",
+                "type": "cone"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "20d4",
+                        "kinetic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },
@@ -1873,44 +1588,31 @@
             "rarity": "",
             "identified": true,
             "baseItem": "charge,plasma",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "target": {
+                "value": 15,
+                "width": null,
+                "units": "ft",
+                "type": "cone"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "20d4",
+                        "energy"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "explosive",
             "ammoType": null
         },

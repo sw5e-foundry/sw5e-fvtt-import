@@ -252,7 +252,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			return default
 
 		superdata = super().getData(importer)[0]
-		data = self.base_item.getData(importer)
+		data = copy.deepcopy(self.base_item.getData(importer))
 
 		for item in data:
 			mode = (re.search(r'\.mode-(.*)', item["flags"]["sw5e-importer"]["uid"]) or [None,None])[1]
@@ -275,54 +275,64 @@ class EnhancedItem(sw5e.Entity.Item):
 			item["system"]["attunement"] = 1 if self.raw_requiresAttunement else 0
 			item["system"]["rarity"] = self.rarity
 
+			if "activation" not in item["system"]: item["system"]["activation"] = {}
 			activation = choose(item["system"]["activation"], self.activation, "type", None)
 			item["system"]["activation"] = {
 				"type": activation,
 				"cost": 1 if activation != 'none' else None
 			}
+			if "duration" not in item["system"]: item["system"]["duration"] = {}
 			item["system"]["duration"] = {
 				"value": choose(item["system"]["duration"], self.duration_value, "value", None),
 				"units": choose(item["system"]["duration"], self.duration_unit, "units", 'inst'),
 			}
+			if "target" not in item["system"]: item["system"]["target"] = {}
 			item["system"]["target"] = {
 				"value": choose(item["system"]["target"], self.target_value, "value", None),
 				"width": None,
 				"units": choose(item["system"]["target"], self.target_unit, "units", ''),
 				"type": choose(item["system"]["target"], self.target_type, "type", ''),
 			}
+			if "range" not in item["system"]: item["system"]["range"] = {}
 			item["system"]["range"] = {
 				"value": choose(item["system"]["range"], self.range_value, "value", None),
 				"long": choose(item["system"]["range"], None, "long", None),
 				"units": choose(item["system"]["range"], self.range_unit, "units", ''),
 			}
-			if "per" not in item["system"]["uses"] or item["system"]["uses"]["per"] == None:
+
+			if "uses" not in item["system"]: item["system"]["uses"] = {}
+			if "per" not in item["system"]["uses"]: item["system"]["uses"]["per"] = None
+			if item["system"]["uses"]["per"] == None:
 				item["system"]["uses"] = {
 					"value": None,
 					"max": self.uses,
 					"per": self.recharge
 				}
-			#	item["system"]["consume"] = {}
-			#	item["system"]["ability"] = ''
 
+			if "properties" not in item["system"]: item["system"]["properties"] = {}
 			item["system"]["properties"] = {**item["system"]["properties"], **self.properties}
 
 			item["system"]["actionType"] = choose(item["system"], self.action_type, "actionType", 'other')
+			if "attackBonus" not in item["system"]: item["system"]["attackBonus"] = ''
 			if self.attack_bonus:
 				if item["system"]["attackBonus"]: item["system"]["attackBonus"] += f' + {self.attack_bonus}'
 				else: item["system"]["attackBonus"] = self.attack_bonus
-			#	item["system"]["chatFlavor"] = ''
-			#	item["system"]["critical"] = None
+
+			if "damage" not in item["system"]: item["system"]["damage"] = {}
+			if "parts" not in item["system"]["damage"]: item["system"]["damage"]["parts"] = []
+			if "versatile" not in item["system"]["damage"]: item["system"]["damage"]["versatile"] = ''
 			item["system"]["damage"] = {
-				"parts": (item["system"]["damage"]["parts"] if "parts" in item["system"]["damage"] else []) + self.damage["parts"],
+				"parts": item["system"]["damage"]["parts"] + self.damage["parts"],
 				"versatile": choose(item["system"]["damage"], self.damage["versatile"], "versatile", '')
 			}
-
 			if self.damage_bonus:
 				if len(item["system"]["damage"]["parts"]): item["system"]["damage"]["parts"][0][0] += f' + {self.damage_bonus}'
 				else: item["system"]["damage"]["parts"].append([f'{self.damage_bonus}', ''])
 				if item["system"]["damage"]["versatile"]: item["system"]["damage"]["versatile"] += f' + {self.damage_bonus}'
 
 			item["system"]["formula"] = choose(item["system"], self.formula, 'formula', '')
+
+			if "save" not in item["system"]: item["system"]["save"] = {}
 			item["system"]["save"] = {
 				"ability": choose(item["system"]["save"], self.save, 'ability', ''),
 				"dc": choose(item["system"]["save"], self.save_dc, 'dc', None),

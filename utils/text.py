@@ -383,11 +383,14 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 		pattern = r'(?:succeed on|make|makes|if it fails) (?:an? )?(dc (?P<dc>\d+) )?'
 		pattern += fr'(?P<save1>{sp_ability})(?: or (?P<save2>{sp_ability}))? saving throws?'
 		pattern += r'(?: \(dc (?P<dc2>\d+)\))?'
-		if (match := re.search(pattern, text)):
+		def saving_throw(match):
+			nonlocal action_type, save, save_dc
 			action_type = action_type or 'save'
 			#TODO find a way to use save1 or save2
-			save = match['save1'][:3].lower()
-			save_dc = int(match["dc"]) if match["dc"] else int(match["dc2"]) if match["dc2"] else None
+			save = save or match['save1'][:3].lower()
+			save_dc = save_dc or int(match["dc"]) if match["dc"] else int(match["dc2"]) if match["dc2"] else None
+			return 'SAVINGTHROW'
+		text = re.sub(pattern, saving_throw, text)
 
 		## Dice formula
 		p_plus = r'(?:\s*\+\s*)'
@@ -416,7 +419,6 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 			class_lvl = match.groupdict().get('class_level')
 			ability_mod2 = match.groupdict().get('ability_mod2')
 			prof_bonus = match.groupdict().get('prof_bonus')
-
 
 			if dice and dice.startswith('d'): dice = f'1{dice}'
 			if dice or rolled or flat or ability_mod or class_lvl:
@@ -570,12 +572,14 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 		patterns += [fr'(?P<rolled>roll(?:ing)? (?:the|a)(?: \w+)? die and (?:(?:add|subtract)(?:ing|\'s)?|plus|minus) (?:it|the (?:(?:amount|number) rolled|rolled (?:amount|number)|result)) (?:from|to|is))']
 		patterns += [fr'(?P<rolled>the (?:\w+ die|(?:amount|number) (?:you )?rolled|rolled (?:amount|number)|result) is (?:added|subtracted) (?:from|to))']
 		def simple(match):
-			nonlocal action_type, damage
+			nonlocal action_type, damage, other_formula
 
 			formula = get_formula(match)
 			if formula:
 				action_type = action_type or 'other'
-				damage["parts"].append([ formula, '' ])
+				if other_formula == formula: pass
+				elif other_formula == '': other_formula = formula
+				else: damage["parts"].append([ formula, '' ])
 				return 'FORMULA'
 			else:
 				return match.group(0)

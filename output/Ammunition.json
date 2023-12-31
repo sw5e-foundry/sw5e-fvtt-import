@@ -27,44 +27,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "corrosivecartridge",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d8",
+                        "acid"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "cartridge"
         },
@@ -98,44 +79,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "cryocell",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "hour"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d4",
+                        "cold"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "powerCell"
         },
@@ -169,44 +131,20 @@
             "rarity": "",
             "identified": true,
             "baseItem": "dart",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d6",
+                        "kinetic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "dart"
         },
@@ -242,42 +180,22 @@
             "baseItem": "deafeningcalibrator",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo"
         },
         "effects": []
@@ -310,44 +228,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "deafeningcell",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d6",
+                        "sonic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "powerCell"
         },
@@ -383,42 +282,22 @@
             "baseItem": "deafeningcollimator",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo"
         },
         "effects": []
@@ -451,44 +330,29 @@
             "rarity": "",
             "identified": true,
             "baseItem": "deafeningdart",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d6",
+                        "kinetic"
+                    ],
+                    [
+                        "1d4",
+                        "sonic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "dart"
         },
@@ -524,42 +388,22 @@
             "baseItem": "electrifyingcalibrator",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo"
         },
         "effects": []
@@ -592,44 +436,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "electrifyingcartridge",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d4",
+                        "lightning"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "cartridge"
         },
@@ -665,42 +490,22 @@
             "baseItem": "electrifyingcollimator",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo"
         },
         "effects": []
@@ -733,44 +538,29 @@
             "rarity": "",
             "identified": true,
             "baseItem": "electrifyingdart",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d6",
+                        "kinetic"
+                    ],
+                    [
+                        "1d4",
+                        "lightning"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "dart"
         },
@@ -804,44 +594,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "flechetteclip,fragmentation",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d10",
+                        "kinetic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "flechetteClip"
         },
@@ -875,44 +646,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "flechetteclip,ion",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d6",
+                        "ion"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "flechetteClip"
         },
@@ -946,44 +698,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "flechetteclip,plasma",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d10",
+                        "energy"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "flechetteClip"
         },
@@ -1017,44 +750,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "flechettemag,fragmentation",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d10",
+                        "kinetic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "flechetteMag"
         },
@@ -1088,44 +802,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "flechettemag,ion",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "ion"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "flechetteMag"
         },
@@ -1159,44 +854,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "flechettemag,plasma",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d10",
+                        "energy"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "flechetteMag"
         },
@@ -1232,42 +908,22 @@
             "baseItem": "fluxcollimator",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo"
         },
         "effects": []
@@ -1300,44 +956,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "gascartridge",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d6",
+                        "poison"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "cartridge"
         },
@@ -1371,44 +1008,31 @@
             "rarity": "",
             "identified": true,
             "baseItem": "incendiarycell",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "target": {
+                "value": 5,
+                "width": null,
+                "units": "ft",
+                "type": "square"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d8",
+                        "fire"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "powerCell"
         },
@@ -1442,44 +1066,34 @@
             "rarity": "",
             "identified": true,
             "baseItem": "missile,fragmentation",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d6",
+                        "kinetic"
+                    ],
+                    [
+                        "1d10",
+                        "kinetic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "missile"
         },
@@ -1513,44 +1127,29 @@
             "rarity": "",
             "identified": true,
             "baseItem": "missile,incendiary",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d6",
+                        "kinetic"
+                    ],
+                    [
+                        "1d8",
+                        "fire"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "missile"
         },
@@ -1584,44 +1183,34 @@
             "rarity": "",
             "identified": true,
             "baseItem": "missile,ion",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d6",
+                        "kinetic"
+                    ],
+                    [
+                        "1d6",
+                        "ion"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "missile"
         },
@@ -1657,42 +1246,22 @@
             "baseItem": "oscillationcalibrator",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo"
         },
         "effects": []
@@ -1727,42 +1296,22 @@
             "baseItem": "paniccalibrator",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo"
         },
         "effects": []
@@ -1797,42 +1346,22 @@
             "baseItem": "paniccollimator",
             "activation": {
                 "type": "action",
-                "cost": 1,
-                "condition": ""
+                "cost": 1
             },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "5",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo"
         },
         "effects": []
@@ -1865,44 +1394,29 @@
             "rarity": "",
             "identified": true,
             "baseItem": "panicdart",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d6",
+                        "kinetic"
+                    ],
+                    [
+                        "1d4",
+                        "psychic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "wis",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "dart"
         },
@@ -1936,44 +1450,15 @@
             "rarity": "",
             "identified": true,
             "baseItem": "powercell",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "powerCell"
         },
@@ -2007,44 +1492,15 @@
             "rarity": "",
             "identified": true,
             "baseItem": "powergenerator",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "powerGenerator"
         },
@@ -2078,44 +1534,31 @@
             "rarity": "",
             "identified": true,
             "baseItem": "projectorcanister,corrosive",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "target": {
+                "value": 15,
+                "width": null,
+                "units": "ft",
+                "type": "cone"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d6",
+                        "acid"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "projectorCanister"
         },
@@ -2149,44 +1592,31 @@
             "rarity": "",
             "identified": true,
             "baseItem": "projectorcanister,cryo",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "hour"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "target": {
+                "value": 15,
+                "width": null,
+                "units": "ft",
+                "type": "cone"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d4",
+                        "cold"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "projectorCanister"
         },
@@ -2220,44 +1650,31 @@
             "rarity": "",
             "identified": true,
             "baseItem": "projectorcanister,incendiary",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "target": {
+                "value": 15,
+                "width": null,
+                "units": "ft",
+                "type": "cone"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d8",
+                        "fire"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "projectorCanister"
         },
@@ -2291,44 +1708,31 @@
             "rarity": "",
             "identified": true,
             "baseItem": "projectortank,corrosive",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "target": {
+                "value": 15,
+                "width": null,
+                "units": "ft",
+                "type": "cone"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "acid"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "projectorTank"
         },
@@ -2362,44 +1766,31 @@
             "rarity": "",
             "identified": true,
             "baseItem": "projectortank,cryo",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "hour"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "target": {
+                "value": 15,
+                "width": null,
+                "units": "ft",
+                "type": "cone"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d4",
+                        "cold"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "projectorTank"
         },
@@ -2433,44 +1824,31 @@
             "rarity": "",
             "identified": true,
             "baseItem": "projectortank,incendiary",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "target": {
+                "value": 15,
+                "width": null,
+                "units": "ft",
+                "type": "cone"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d8",
+                        "fire"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "projectorTank"
         },
@@ -2504,44 +1882,34 @@
             "rarity": "",
             "identified": true,
             "baseItem": "rocket,fragmentation",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "15",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "kinetic"
+                    ],
+                    [
+                        "2d10",
+                        "kinetic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "rocket"
         },
@@ -2575,44 +1943,29 @@
             "rarity": "",
             "identified": true,
             "baseItem": "rocket,incendiary",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "kinetic"
+                    ],
+                    [
+                        "2d8",
+                        "fire"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "rocket"
         },
@@ -2646,44 +1999,34 @@
             "rarity": "",
             "identified": true,
             "baseItem": "rocket,ion",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
+            "range": {
+                "value": "15",
+                "long": null,
+                "units": "feet"
             },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "kinetic"
+                    ],
+                    [
+                        "2d6",
+                        "ion"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "rocket"
         },
@@ -2717,44 +2060,15 @@
             "rarity": "",
             "identified": true,
             "baseItem": "slugcartridge",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "cartridge"
         },
@@ -2788,44 +2102,20 @@
             "rarity": "",
             "identified": true,
             "baseItem": "snare",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "5",
+                        "hit"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "snare"
         },
@@ -2859,44 +2149,15 @@
             "rarity": "",
             "identified": true,
             "baseItem": "arrow",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "arrow"
         },
@@ -2930,44 +2191,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "arrow,combustive",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d8",
+                        "fire"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "arrow"
         },
@@ -3001,44 +2243,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "arrow,electroshock",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d3",
+                        "ion"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "arrow"
         },
@@ -3072,44 +2295,25 @@
             "rarity": "",
             "identified": true,
             "baseItem": "arrow,noisemaker",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "1d6",
+                        "sonic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "arrow"
         },
@@ -3143,44 +2347,15 @@
             "rarity": "",
             "identified": true,
             "baseItem": "bolt",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "other",
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "bolt"
         },
@@ -3214,44 +2389,29 @@
             "rarity": "",
             "identified": true,
             "baseItem": "bolt,deafening",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "kinetic"
+                    ],
+                    [
+                        "2d4",
+                        "sonic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "con",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "bolt"
         },
@@ -3285,44 +2445,29 @@
             "rarity": "",
             "identified": true,
             "baseItem": "bolt,electrifying",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "kinetic"
+                    ],
+                    [
+                        "2d4",
+                        "lightning"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "dex",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "bolt"
         },
@@ -3356,44 +2501,29 @@
             "rarity": "",
             "identified": true,
             "baseItem": "bolt,panic",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
-                "value": null,
-                "units": ""
+                "value": "1",
+                "units": "minute"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
+            "actionType": "save",
             "damage": {
-                "parts": [],
+                "parts": [
+                    [
+                        "2d6",
+                        "kinetic"
+                    ],
+                    [
+                        "2d4",
+                        "psychic"
+                    ]
+                ],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
+            "save": {
+                "ability": "wis",
+                "dc": 14,
+                "scaling": "flat"
             },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "bolt"
         },
@@ -3427,44 +2557,14 @@
             "rarity": "",
             "identified": true,
             "baseItem": "torpedo,fragmentation",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "torpedo"
         },
@@ -3498,44 +2598,14 @@
             "rarity": "",
             "identified": true,
             "baseItem": "torpedo,plasma",
-            "activation": {
-                "type": null,
-                "cost": 1,
-                "condition": ""
-            },
             "duration": {
                 "value": null,
-                "units": ""
+                "units": "inst"
             },
-            "target": {},
-            "range": {},
-            "uses": {
-                "value": null,
-                "max": null,
-                "per": null
-            },
-            "consume": {},
-            "ability": "",
-            "actionType": "",
-            "attackBonus": 0,
-            "chatFlavor": "",
-            "critical": null,
             "damage": {
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "",
-            "save": {},
-            "armor": {},
-            "hp": {
-                "value": 0,
-                "max": 0,
-                "dt": null,
-                "conditions": ""
-            },
-            "weaponType": "",
-            "properties": {},
-            "proficient": null,
             "consumableType": "ammo",
             "ammoType": "torpedo"
         },
