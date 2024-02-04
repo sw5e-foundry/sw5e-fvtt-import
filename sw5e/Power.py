@@ -35,7 +35,7 @@ class Power(sw5e.Entity.Item):
 		self.target_val, self.target_unit, self.target_type = target_range["target"]
 		self.range_val, self.range_unit = target_range["range"]
 		self.uses, self.recharge = None, None
-		self.action_type, self.damage, self.formula, self.save, self.save_dc, self.ability, self.scaling = self.getAction()
+		self.action_type, self.damage, self.formula, self.save, self.save_dc, self.scaling = self.getAction()
 
 		self.school = self.getSchool()
 
@@ -109,12 +109,6 @@ class Power(sw5e.Entity.Item):
 
 	def getAction(self):
 		description, scale = self.raw_description, ''
-		ability = ""
-
-		## Get default ability score
-		if self.raw_powerType == 'Tech': ability = 'int'
-		elif self.raw_forceAlignment == 'drl': ability = 'cha'
-		elif self.raw_forceAlignment == 'lgt': ability = 'wis'
 
 		## Leveled power upcasting
 		if match := re.search(r'Force Potency|Overcharge Tech', description):
@@ -125,7 +119,7 @@ class Power(sw5e.Entity.Item):
 
 		action_type, damage, formula, save, save_dc, scaling = utils.text.getAction(description, self.name, scale=scale)
 
-		return action_type, damage, formula, save, save_dc, ability, scaling
+		return action_type, damage, formula, save, save_dc, scaling
 
 	def getSchool(self):
 		if self.raw_powerType == 'Tech': return 'tec'
@@ -174,7 +168,6 @@ class Power(sw5e.Entity.Item):
 		}
 		# data["system"]["consume"] = {}
 
-		data["system"]["ability"] = self.ability
 		data["system"]["actionType"] = self.action_type
 		# data["system"]["attackBonus"] = 0
 		# data["system"]["chatFlavor"] = ''
