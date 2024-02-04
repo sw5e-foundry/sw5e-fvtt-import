@@ -67,27 +67,42 @@ class Power(sw5e.Entity.Item):
 			'range': (None, '')
 		}
 
-		if match := re.search(r'(?P<r_val>\d+) (?P<r_unit>\w+)s?|(?P<self>[Ss]elf)', self.raw_range or ''):
-			if match['self']:
-				target_range['range'] = (None, 'self')
-				if target := utils.text.getTarget(self.raw_range, self.name):
-					target_range['target'] = target
-			else:
-				units = {
-					'feet': 'ft',
-					'mile': 'mi',
-					'miles': 'mi',
-					'meter': 'm',
-					'meters': 'm',
-					'kilometer': 'km',
-					'kilometers': 'km'
-				}
-				unit = units[match['r_unit']] if match['r_unit'] in units else match['r_unit']
+		raw_range = (self.raw_range or '').lower()
 
-				target_range['range'] = match['r_val'], unit
+		special_units = {
+			'self': 'self',
+			'touch': 'touch',
+			'your reach': 'touch',
+			# 'varies': 'spec',
+			'special': 'spec',
+			# 'any': 'any',
+		}
+		if match := re.search(r'(?P<r_val>\d+) (?P<r_unit>\w+)s?', raw_range):
+			units = {
+				'feet': 'ft',
+				'mile': 'mi',
+				'miles': 'mi',
+				'meter': 'm',
+				'meters': 'm',
+				'kilometer': 'km',
+				'kilometers': 'km'
+			}
+			unit  = units.get(match['r_unit'], match['r_unit'])
 
-				if target := utils.text.getTarget(self.raw_description, self.name):
-					target_range['target'] = target
+			target_range['range'] = match['r_val'], unit
+
+			if target := utils.text.getTarget(self.raw_description, self.name):
+				target_range['target'] = target
+		elif match := re.search('|'.join(special_units.keys()), raw_range):
+			unit = special_units[match.group(0)]
+			target_range['range'] = (None, unit)
+			if target := utils.text.getTarget(self.raw_range, self.name):
+				target_range['target'] = target
+		elif match := re.search('|'.join(special_units.keys()), self.raw_description):
+			unit = special_units[match.group(0)]
+			target_range['range'] = (None, unit)
+			if target := utils.text.getTarget(self.raw_description, self.name):
+				target_range['target'] = target
 
 
 		return target_range
