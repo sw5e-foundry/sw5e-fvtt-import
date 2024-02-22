@@ -761,6 +761,30 @@ equipment_mappings = {
 	),
 	"Explosive": (
 		{
+			"pattern": r'Grenade',
+			"type": 'Consumable',
+			"category": 'explosive',
+			"subcategory": 'grenade'
+		},
+		{
+			"pattern": r'Mine',
+			"type": 'Consumable',
+			"category": 'explosive',
+			"subcategory": 'mine'
+		},
+		{
+			"pattern": r'Charge',
+			"type": 'Consumable',
+			"category": 'explosive',
+			"subcategory": 'charge'
+		},
+		{
+			"pattern": r'Thermal Detonator',
+			"type": 'Consumable',
+			"category": 'explosive',
+			"subcategory": 'thermal'
+		},
+		{
 			"type": 'Consumable',
 			"category": 'explosive',
 		},
@@ -813,7 +837,7 @@ equipment_mappings = {
 		{
 			"pattern": r'ration',
 			"type": 'Consumable',
-			"category": 'ration',
+			"category": 'food',
 		},
 		{
 			"type": 'Loot',
@@ -825,8 +849,25 @@ equipment_mappings = {
 			"type": 'Equipment',
 		},
 		{
+			"pattern": r'Poison',
 			"type": 'Consumable',
+			"category": 'poison',
+		},
+		{
+			"pattern": r'Battery|Repair',
+			"type": 'Consumable',
+			"category": 'medical',
+			"subcategory": 'droid',
+		},
+		{
+			"pattern": r'Medpac',
+			"type": 'Consumable',
+			"category": 'medical',
 			"category": 'medpac',
+		},
+		{
+			"type": 'Consumable',
+			"category": 'medical',
 		},
 	),
 	"WeaponOrArmorAccessory": (
@@ -858,12 +899,13 @@ equipment_mappings = {
 		{
 			"pattern": r'ration',
 			"type": 'Consumable',
-			"category": 'ration',
+			"category": 'food',
 		},
 		{
 			"pattern": r'spike',
 			"type": 'Consumable',
 			"category": 'technology',
+			"subcategory": 'spike',
 		},
 		{
 			"type": 'loot',
@@ -897,13 +939,15 @@ equipment_mappings = {
 	"AlcoholicBeverage": (
 		{
 			"type": 'Consumable',
-			"category": 'adrenal',
+			"category": 'substance',
+			"subcategory": 'beverage',
 		},
 	),
 	"Spice": (
 		{
 			"type": 'Consumable',
-			"category": 'adrenal',
+			"category": 'substance',
+			"subcategory": 'spice',
 		},
 	),
 	"Modification": (

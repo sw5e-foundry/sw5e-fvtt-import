@@ -6,8 +6,6 @@ class Consumable(sw5e.Equipment.Equipment):
 		super().load(raw_item)
 
 	def process(self, importer):
-		self.category, self.subcategory = self.getConsumableType()
-
 		super().process(importer)
 
 		self.uses, self.recharge = utils.text.getUses(self.raw_description, self.name)
@@ -35,10 +33,10 @@ class Consumable(sw5e.Equipment.Equipment):
 			raise ValueError(self.raw_name, self.raw_equipmentCategory)
 
 	def getEquipmentCategory(self):
-		return self.category
+		return self.getConsumableType()[0]
 
 	def getEquipmentSubcategory(self):
-		return self.subcategory
+		return self.getConsumableType()[1]
 
 	def getImg(self, importer=None):
 		kwargs = {

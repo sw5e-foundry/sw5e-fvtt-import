@@ -47,6 +47,7 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		self.base_name = self.getBaseName()
 		self.base_item = self.getBaseItem(importer)
+		self.category, self.subcategory = self.getEquipmentCategory()
 
 		self.duration_value, self.duration_unit = self.getDuration()
 		self.target_value, self.target_unit, self.target_type = self.getTarget()
@@ -160,6 +161,69 @@ class EnhancedItem(sw5e.Entity.Item):
 		if self.base_name in (utils.config.enhanced_item_icons + utils.config.enhanced_item_no_icons): return None
 		if self.modifiable_item: return None
 		print(f"		Failed to find base item for '{self.raw_name}', {get_data=}")
+
+	def getEquipmentCategory(self):
+		if self.base_item:
+			return self.base_item.category, self.base_item.subcategory
+
+		if self.raw_type == 'AdventuringGear':
+			if self.raw_subtype in ('body', 'feet', 'hands', 'head', 'shoulders', 'waist', 'wrists', 'forearms', 'forearm', 'legs'):
+				return 'clothing', None
+			elif self.raw_subtype in (None, '', 'finger', 'other', 'neck', 'back', 'wrist'):
+				return 'trinket', None
+		elif self.raw_type == 'Armor':
+			if self.raw_subtypeType in ('AnyHeavy', 'Any'):
+				return 'heavy', None
+			elif self.raw_subtypeType == 'AnyMedium':
+				return 'medium', None
+			elif self.raw_subtypeType == 'AnyLight':
+				return 'light', None
+		elif self.raw_type == 'Consumable':
+			if self.raw_subtype in ('poison',): return self.raw_subtype, None
+			elif self.raw_subtype in ('adrenal', 'stimpac'): return 'substance', self.raw_subtype
+			elif self.raw_subtype == 'substance':
+				if re.search(r'spice', self.base_name.lower()) or re.search(r'spice', self.raw_text.lower()):
+					return 'substance', 'spice'
+				elif re.search(r'alcoholic beverage|liquor|grog|spirit', self.raw_text.lower()):
+					return 'technology', 'beverage'
+				return 'substance', None
+			elif self.raw_subtype == 'technology':
+				if re.search(r'spike', self.base_name.lower()):
+					return 'technology', 'spike'
+				elif re.search(r'teleporter', self.base_name.lower()):
+					return 'technology', 'teleporter'
+				elif re.search(r'repair kit', self.base_name.lower()):
+					return 'medical', 'droid'
+				elif re.search(r'this adrenal', self.raw_text.lower()):
+					return 'substance', 'adrenal'
+				return 'technology', None
+			elif self.raw_subtype == 'barrier':
+				if self.base_name.lower().startswith('physical'):
+					return 'barrier', 'physical'
+				if self.base_name.lower().startswith('enviromental'):
+					return 'barrier', 'enviromental'
+				return 'barrier', None
+			elif self.raw_subtype == 'medpac':
+				if re.search(r'vitapac', self.base_name.lower()):
+					return 'medical', 'vitapac'
+				return 'medical', 'medpac'
+			raise ValueError(self.name, self.raw_subtype)
+			return None, None
+		elif self.raw_type == 'Shield':
+			return 'shield', None
+		elif self.raw_type == 'Weapon':
+			if self.raw_subtypeType in ('AnyBlaster', 'AnyBlasterWithProperty'):
+				return 'simpleB', None
+			elif self.raw_subtypeType in ('AnyVibroweapon', 'AnyVibroweaponWithProperty'):
+				return 'simpleVW', None
+			elif self.raw_subtypeType in ('AnyLightweapon', 'AnyLightweaponWithProperty'):
+				return 'simpleLW', None
+			else:
+				return 'improv', None
+		elif self.is_modification:
+			return ('focusgenerator', None) if self.raw_subtype == 'focus generator' else (self.raw_subtype, None)
+
+		return None, None
 
 	def getDescription(self, base_text = None):
 		text = self.raw_text
@@ -406,6 +470,12 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		data["system"]["properties"] = self.properties
 
+		data["system"]["type"] = {
+			"value": self.category,
+			"subtype": self.subcategory,
+			"baseItem": self.base_item.base_item if self.base_item else None
+		}
+
 		self.applyDataAutoTarget(data)
 		self.applyDataSubtype(data)
 
@@ -434,11 +504,6 @@ class EnhancedItem(sw5e.Entity.Item):
 		return data
 
 	def applyDataSubtype(self, data):
-		if ("type" not in data["system"]): data["system"]["type"] = {
-			"value": None,
-			"subtype": None,
-			"baseItem": None
-		}
 		if self.base_item:
 			return data
 		elif self.raw_type == 'AdventuringGear':
@@ -446,31 +511,22 @@ class EnhancedItem(sw5e.Entity.Item):
 				"value": None,
 				"dex": None,
 			}
-			if self.raw_subtype in ('body', 'feet', 'hands', 'head', 'shoulders', 'waist', 'wrists', 'forearms', 'forearm', 'legs'):
-				data["system"]["type"]["value"] = 'clothing'
-			elif self.raw_subtype in (None, '', 'finger', 'other', 'neck', 'back', 'wrist'):
-				data["system"]["type"]["value"] = 'trinket'
-			else:
-				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
 		elif self.raw_type == 'Armor':
 			if self.raw_subtypeType in ('AnyHeavy', 'Any'):
 				data["system"]["armor"] = {
 					"value": 16,
 					"dex": 0,
 				}
-				data["system"]["type"]["value"] = 'heavy'
 			elif self.raw_subtypeType == 'AnyMedium':
 				data["system"]["armor"] = {
 					"value": 14,
 					"dex": 2,
 				}
-				data["system"]["type"]["value"] = 'medium'
 			elif self.raw_subtypeType == 'AnyLight':
 				data["system"]["armor"] = {
 					"value": 11,
 					"dex": None,
 				}
-				data["system"]["type"]["value"] = 'light'
 			else:
 				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
 		elif self.raw_type == 'Consumable':
@@ -484,7 +540,6 @@ class EnhancedItem(sw5e.Entity.Item):
 				"value": 2,
 				"dex": None,
 			}
-			data["system"]["type"]["value"] = 'shield'
 			if self.raw_subtypeType == 'Light':
 				data["system"]["armor"]["value"] = 1
 			elif self.raw_subtypeType in ('Medium', 'Any'):
@@ -510,17 +565,12 @@ class EnhancedItem(sw5e.Entity.Item):
 			if self.raw_subtypeType in ('Any', 'AnyWithProperty'):
 				if data["system"]["actionType"] == 'other':
 					data["system"]["actionType"] = 'mwak'
-				if (not data["system"]["type"]["value"]):
-					data["system"]["type"]["value"] = 'improv'
 			elif self.raw_subtypeType in ('AnyBlaster', 'AnyBlasterWithProperty'):
 				data["system"]["actionType"] = 'rwak'
-				data["system"]["type"]["value"] = 'simpleB'
 			elif self.raw_subtypeType in ('AnyVibroweapon', 'AnyVibroweaponWithProperty'):
 				data["system"]["actionType"] = 'mwak'
-				data["system"]["type"]["value"] = 'simpleVW'
 			elif self.raw_subtypeType in ('AnyLightweapon', 'AnyLightweaponWithProperty'):
 				data["system"]["actionType"] = 'mwak'
-				data["system"]["type"]["value"] = 'simpleLW'
 			else:
 				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
 		elif self.raw_type == 'Valuable':
@@ -542,7 +592,6 @@ class EnhancedItem(sw5e.Entity.Item):
 		elif self.is_modification:
 			data["system"]["modificationItemType"] = self.modification_item_type
 
-			data["system"]["type"]["value"] = 'focusgenerator' if self.raw_subtype == 'focus generator' else self.raw_subtype
 			data["system"]["-=modificationSlot"] = None
 
 			data["system"]["properties"]["indeterminate"] = { key: False for key in self.properties.keys() }

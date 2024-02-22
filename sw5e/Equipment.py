@@ -37,12 +37,15 @@ class Equipment(sw5e.Entity.Item):
 	def getJsonAttrs(self):
 		return super().getJsonAttrs() + [ "propertiesMap" ]
 
-	def process(self, importer):
-		super().process(importer)
+	def load(self, raw_item):
+		super().load(raw_item)
 
 		self.base_item = self.getBaseItem()
 		self.category = self.getEquipmentCategory()
 		self.subcategory = self.getEquipmentSubcategory()
+
+	def process(self, importer):
+		super().process(importer)
 
 		self.duration_value, self.duration_unit = self.getDuration()
 		self.target_value, self.target_width, self.target_unit, self.target_type = self.getTarget()
