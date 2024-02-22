@@ -6,15 +6,14 @@ class Consumable(sw5e.Equipment.Equipment):
 		super().load(raw_item)
 
 	def process(self, importer):
+		self.category, self.subcategory = self.getConsumableType()
+
 		super().process(importer)
 
 		self.uses, self.recharge = utils.text.getUses(self.raw_description, self.name)
 		self.activation = utils.text.getActivation(self.raw_description, self.uses, self.recharge)
-		self.consumable_type, self.ammo_type = self.getConsumableType()
 
 	def getConsumableType(self):
-		consumable_type, ammo_type = None, None
-
 		mapping = { 
 			k: [
 				val
@@ -35,6 +34,12 @@ class Consumable(sw5e.Equipment.Equipment):
 			print(f'Unexpected equipment category/name, {self.raw_equipmentCategory=}')
 			raise ValueError(self.raw_name, self.raw_equipmentCategory)
 
+	def getEquipmentCategory(self):
+		return self.category
+
+	def getEquipmentSubcategory(self):
+		return self.subcategory
+
 	def getImg(self, importer=None):
 		kwargs = {
 			# 'item_type': self.raw_equipmentCategory,
@@ -42,7 +47,7 @@ class Consumable(sw5e.Equipment.Equipment):
 			'default_img': 'systems/sw5e/packs/Icons/Storage/Canteen.webp',
 			# 'plural': False
 		}
-		if self.ammo_type == 'melee': kwargs["item_subtype"] = 'Melee Consumables'
+		if self.subcategory == 'melee': kwargs["item_subtype"] = 'Melee Consumables'
 		return super().getImg(importer=importer, **kwargs)
 
 	def getDescription(self, importer):
@@ -52,7 +57,7 @@ class Consumable(sw5e.Equipment.Equipment):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["system"]["consumableType"] = self.consumable_type
-		if self.ammo_type != 'melee': data["system"]["ammoType"] = self.ammo_type
+		data["system"]["-=consumableType"] = None
+		data["system"]["-=ammoType"] = None
 
 		return [data]

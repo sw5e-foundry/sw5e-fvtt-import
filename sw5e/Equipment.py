@@ -40,7 +40,9 @@ class Equipment(sw5e.Entity.Item):
 	def process(self, importer):
 		super().process(importer)
 
-		self.baseItem = self.getBaseItem()
+		self.base_item = self.getBaseItem()
+		self.category = self.getEquipmentCategory()
+		self.subcategory = self.getEquipmentSubcategory()
 
 		self.duration_value, self.duration_unit = self.getDuration()
 		self.target_value, self.target_width, self.target_unit, self.target_type = self.getTarget()
@@ -94,11 +96,17 @@ class Equipment(sw5e.Entity.Item):
 		div = re.match(r'(\d+)/(\d+)', self.raw_weight)
 		if div: return int(div.group(1)) / int(div.group(2))
 
+	def getProperty(self, prop):
+		return utils.text.getProperty(prop, self.raw_propertiesMap)
+
 	def getBaseItem(self):
 		return re.sub(r'\'|\s+|\([^)]*\)', '', self.raw_name.lower());
 
-	def getProperty(self, prop):
-		return utils.text.getProperty(prop, self.raw_propertiesMap)
+	def getEquipmentCategory(self):
+		return None
+
+	def getEquipmentSubcategory(self):
+		return None
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
@@ -117,7 +125,12 @@ class Equipment(sw5e.Entity.Item):
 		data["system"]["rarity"] = ''
 		data["system"]["identified"] = True
 
-		data["system"]["baseItem"] = self.baseItem
+		data["system"]["type"] = {
+			"value": self.category,
+			"subtype": self.subcategory,
+			"baseItem": self.base_item,
+		}
+		data["system"]["-=baseItem"] = None
 
 		if self.activation: data["system"]["activation"] = {
 			"type": self.activation,

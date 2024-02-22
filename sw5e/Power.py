@@ -168,6 +168,7 @@ class Power(sw5e.Entity.Item):
 		}
 		# data["system"]["consume"] = {}
 
+		data["system"]["ability"] = None
 		data["system"]["actionType"] = self.action_type
 		# data["system"]["attackBonus"] = 0
 		# data["system"]["chatFlavor"] = ''
@@ -185,7 +186,7 @@ class Power(sw5e.Entity.Item):
 
 		data["system"]["level"] = self.raw_level
 		data["system"]["school"] = self.school
-		data["system"]["components"] = { "concentration": bool(self.concentration) }
+		data["system"]["properties"] = [ "concentration"] if bool(self.concentration) else []
 		data["system"]["materials"] = {}
 		data["system"]["preparation"] = {}
 		data["system"]["scaling"] = self.scaling

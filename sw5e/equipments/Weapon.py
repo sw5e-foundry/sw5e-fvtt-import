@@ -6,12 +6,11 @@ class Weapon(sw5e.Equipment.Equipment):
 		super().load(raw_item)
 
 	def process(self, importer):
-		self.weapon_type = self.getWeaponType()
+		super().process(importer)
+
 		self.weapon_class = self.getWeaponClass()
 		self.ammo_types = self.getAmmoTypes()
 		self.p_properties = self.getProperties()
-
-		super().process(importer)
 
 	def getActivation(self):
 		return 'action'
@@ -68,7 +67,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		return text
 
 	def getActionType(self):
-		if self.weapon_type in ('simpleB', 'martialB'):
+		if self.category in ('simpleB', 'martialB'):
 			return 'rwak'
 		else:
 			return 'mwak'
@@ -94,7 +93,7 @@ class Weapon(sw5e.Equipment.Equipment):
 			"versatile": f'{versatile} +  @mod' if versatile else ''
 		}
 
-	def getWeaponType(self):
+	def getEquipmentCategory(self):
 		wc = self.raw_weaponClassification
 
 		start = ''
@@ -111,7 +110,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		return 'improv'
 
 	def getWeaponClass(self):
-		if self.weapon_type == 'natural' or self.raw_fakeItem: return ''
+		if self.category == 'natural' or self.raw_fakeItem: return ''
 		for (classification, wpns) in utils.config.weapon_classes.items():
 			if self.name.lower() in wpns:
 				return classification
@@ -189,7 +188,8 @@ class Weapon(sw5e.Equipment.Equipment):
 				if (var := utils.text.cleanJson(mode, "Properties")) not in no: wpn.raw_properties += var
 				if (var := utils.text.cleanJson(mode, "PropertiesMap")) not in no: wpn.raw_propertiesMap.update(var)
 
-				wpn.weapon_type = wpn.getWeaponType()
+				wpn.category = wpn.getEquipmentCategory()
+				wpn.subcategory = wpn.getEquipmentSubcategory()
 				wpn.ammo_types = wpn.getAmmoTypes()
 
 				wpn_data = wpn.getData(importer)[0]
@@ -239,7 +239,8 @@ class Weapon(sw5e.Equipment.Equipment):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["system"]["weaponType"] = self.weapon_type
+		data["system"]["-=weaponType"] = None
+
 		data["system"]["weaponClass"] = self.weapon_class
 		data["system"]["properties"] = self.p_properties
 		data["system"]["ammo"] = { "types": self.ammo_types }

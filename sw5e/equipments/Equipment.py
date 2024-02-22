@@ -41,48 +41,53 @@ class Equipment(sw5e.Equipment.Equipment):
 
 		return text
 
-	def getArmor(self):
-		ac = None
-		equipment_type = None
-		max_dex = None
-
+	def getEquipmentCategory(self):
 		if self.raw_armorClassificationEnum == 0:
 			if self.raw_equipmentCategory == 'Clothing':
-				equipment_type = 'clothing'
-			elif self.name.lower().find('focus generator') != -1:
-				equipment_type = 'focusgenerator'
-			elif self.name.lower().find('wristpad') != -1:
-				equipment_type = 'wristpad'
-			else:
-				equipment_type = 'trinket'
-		else:
-			ac = re.search(r'^\+?(\d+)', f'{self.raw_ac}')
-			if ac != None: ac = int(ac.group(1))
-			equipment_type = self.raw_armorClassification.lower()
+				return 'clothing'
+			if self.name.lower().find('focus generator') != -1:
+				return 'focusgenerator'
+			if self.name.lower().find('wristpad') != -1:
+				return 'wristpad'
+			return 'trinket'
+		return self.raw_armorClassification.lower()
 
-		if self.raw_armorClassification == 'Medium': max_dex = 2
-		if self.raw_armorClassification == 'Heavy': max_dex = 0
+	def getArmor(self):
+		ac = None
+		max_dex = None
+
+		ac = re.search(r'^\+?(\d+)', f'{self.raw_ac}')
+		if ac != None: ac = int(ac.group(1))
+
+		if self.isArmor():
+			if self.category == 'medium': max_dex = 2
+			elif self.category == 'heavy': max_dex = 0
 
 		return {
 			"value": ac,
-			"type": equipment_type,
 			"dex": max_dex
 		}
 
 	def getPropertiesList(self):
-		return utils.config.casting_properties if self.armor["type"] in ('focusgenerator', 'wristpad') else utils.config.armor_properties
+		if self.isArmor() or self.category == 'clothing': return utils.config.armor_properties
+		if self.isCastingFocus(): return utils.config.casting_properties
+		return None
 
 	def getProperties(self):
+		properties = {}
 		properties_list = self.getPropertiesList()
-		properties = {
-			**utils.text.getProperties(self.raw_propertiesMap.values(), properties_list, error=True),
-			**utils.text.getProperties(self.raw_description, properties_list),
-		}
+		if properties_list:
+			properties = {
+				**utils.text.getProperties(self.raw_propertiesMap.values(), properties_list, error=True),
+				**utils.text.getProperties(self.raw_description, properties_list),
+			}
+			properties = utils.object.applyType(properties, properties_list)
+		if self.raw_stealthDisadvantage: properties["stealthDisadvantage"] = True
 
-		return utils.object.applyType(properties, properties_list)
+		return properties
 
 	def getBaseItem(self):
-		override = {
+		mapping = {
 			"Bone light shield": 'lightphysicalshield',
 			"Crystadium medium shield": 'mediumphysicalshield',
 			"Quadanium heavy shield": 'heavyphysicalshield',
@@ -102,14 +107,20 @@ class Equipment(sw5e.Equipment.Equipment):
 			"Storing, withering focus generator": 'focusgenerator',
 			"Repelling wristpad": 'wristpad',
 		}
-		return override.get(self.name, super().getBaseItem())
+		return mapping.get(self.name, super().getBaseItem())
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
 		data["system"]["armor"] = self.armor
 		data["system"]["strength"] = self.raw_strengthRequirement or 0
-		data["system"]["stealth"] = self.raw_stealthDisadvantage
 		data["system"]["properties"] = self.p_properties
 
 		return [data]
+
+	def isArmor(self):
+		return self.category in ('light', 'medium', 'heavy', 'shield')
+
+	def isCastingFocus(self):
+		return self.category in ('focusgenerator', 'wristpad')
+

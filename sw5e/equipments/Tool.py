@@ -23,12 +23,12 @@ class Tool(sw5e.Equipment.Equipment):
 		text = self.raw_description
 		return utils.text.markdownToHtml(text)
 
-	def getToolType(self):
+	def getEquipmentCategory(self):
 		tools = {
-			"GamingSet": ('game', 'cha'),
-			"MusicalInstrument": ('music', 'cha'),
-			"ArtisanImplements": ('artisan', 'int'),
-			"SpecialistsKit": ('specialist', 'int'),
+			"GamingSet": 'game',
+			"MusicalInstrument": 'music',
+			"ArtisanImplements": 'artisan',
+			"SpecialistsKit": 'specialist',
 		}
 		category = self.raw_equipmentCategory
 		if self.name.find('implements') != -1: category = 'ArtisanImplements'
@@ -36,11 +36,11 @@ class Tool(sw5e.Equipment.Equipment):
 
 		if category in tools: return tools[category]
 		elif self.name != 'Tool': print(f'		Unable to recognize tool type for {self.name}, {category}')
-		return '', 'int'
+		return None
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["system"]["toolType"], data["system"]["ability"] = self.getToolType()
+		data["system"]["ability"] = ''
 
 		return [data]
