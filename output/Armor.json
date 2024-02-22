@@ -26,7 +26,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "assaultarmor",
+            "type": {
+                "value": "heavy",
+                "subtype": null,
+                "baseItem": "assaultarmor"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -38,14 +43,13 @@
             },
             "armor": {
                 "value": 17,
-                "type": "heavy",
                 "dex": 0
             },
             "strength": 0,
-            "stealth": true,
             "properties": {
                 "Bulky": true,
-                "Strength": 15
+                "Strength": 15,
+                "stealthDisadvantage": true
             }
         },
         "effects": []
@@ -77,7 +81,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "battlearmor",
+            "type": {
+                "value": "heavy",
+                "subtype": null,
+                "baseItem": "battlearmor"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -89,14 +98,13 @@
             },
             "armor": {
                 "value": 16,
-                "type": "heavy",
                 "dex": 0
             },
             "strength": 0,
-            "stealth": true,
             "properties": {
                 "Bulky": true,
-                "Strength": 13
+                "Strength": 13,
+                "stealthDisadvantage": true
             }
         },
         "effects": []
@@ -128,7 +136,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "weavearmor",
+            "type": {
+                "value": "medium",
+                "subtype": null,
+                "baseItem": "weavearmor"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -139,11 +152,9 @@
             },
             "armor": {
                 "value": 14,
-                "type": "medium",
                 "dex": 2
             },
             "strength": 0,
-            "stealth": false,
             "properties": {
                 "Regulated": true,
                 "Strength": 11
@@ -178,7 +189,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "lightphysicalshield",
+            "type": {
+                "value": "shield",
+                "subtype": null,
+                "baseItem": "lightphysicalshield"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -189,11 +205,9 @@
             },
             "armor": {
                 "value": 0,
-                "type": "shield",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {
                 "Spiked": "1d4"
             }
@@ -227,7 +241,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "combatsuit",
+            "type": {
+                "value": "light",
+                "subtype": null,
+                "baseItem": "combatsuit"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -239,11 +258,9 @@
             },
             "armor": {
                 "value": 11,
-                "type": "light",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -275,7 +292,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "compositearmor",
+            "type": {
+                "value": "medium",
+                "subtype": null,
+                "baseItem": "compositearmor"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -287,14 +309,13 @@
             },
             "armor": {
                 "value": 15,
-                "type": "medium",
                 "dex": 2
             },
             "strength": 0,
-            "stealth": true,
             "properties": {
                 "Bulky": true,
-                "Powered": true
+                "Powered": true,
+                "stealthDisadvantage": true
             }
         },
         "effects": []
@@ -326,7 +347,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "mediumphysicalshield",
+            "type": {
+                "value": "shield",
+                "subtype": null,
+                "baseItem": "mediumphysicalshield"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -337,11 +363,9 @@
             },
             "armor": {
                 "value": 2,
-                "type": "shield",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {
                 "Absorptive": 1,
                 "Imbalanced": true,
@@ -377,7 +401,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "durafiberbattlearmor",
+            "type": {
+                "value": "heavy",
+                "subtype": null,
+                "baseItem": "durafiberbattlearmor"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -388,14 +417,13 @@
             },
             "armor": {
                 "value": 15,
-                "type": "heavy",
                 "dex": 0
             },
             "strength": 0,
-            "stealth": true,
             "properties": {
                 "Bulky": true,
-                "Strength": 11
+                "Strength": 11,
+                "stealthDisadvantage": true
             }
         },
         "effects": []
@@ -427,7 +455,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "duraniumcombatsuit",
+            "type": {
+                "value": "light",
+                "subtype": null,
+                "baseItem": "duraniumcombatsuit"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -438,11 +471,9 @@
             },
             "armor": {
                 "value": 11,
-                "type": "light",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {
                 "Cumbersome": true,
                 "Reactive": 1
@@ -477,7 +508,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "heavyexoskeleton",
+            "type": {
+                "value": "heavy",
+                "subtype": null,
+                "baseItem": "heavyexoskeleton"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -488,16 +524,15 @@
             },
             "armor": {
                 "value": 18,
-                "type": "heavy",
                 "dex": 0
             },
             "strength": 0,
-            "stealth": true,
             "properties": {
                 "Bulky": true,
                 "Impermeable": 2,
                 "Rigid": true,
-                "Strength": 17
+                "Strength": 17,
+                "stealthDisadvantage": true
             }
         },
         "effects": []
@@ -529,7 +564,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "fiberarmor",
+            "type": {
+                "value": "light",
+                "subtype": null,
+                "baseItem": "fiberarmor"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -540,11 +580,9 @@
             },
             "armor": {
                 "value": 11,
-                "type": "light",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {
                 "Silent": true
             }
@@ -578,7 +616,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "fiberarmor",
+            "type": {
+                "value": "light",
+                "subtype": null,
+                "baseItem": "fiberarmor"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -590,11 +633,9 @@
             },
             "armor": {
                 "value": 12,
-                "type": "light",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -626,7 +667,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "fiberarmor",
+            "type": {
+                "value": "light",
+                "subtype": null,
+                "baseItem": "fiberarmor"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -637,11 +683,9 @@
             },
             "armor": {
                 "value": 12,
-                "type": "light",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {
                 "Avoidant": 1,
                 "Strength": 11
@@ -676,7 +720,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "heavyexoskeleton",
+            "type": {
+                "value": "heavy",
+                "subtype": null,
+                "baseItem": "heavyexoskeleton"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -688,14 +737,13 @@
             },
             "armor": {
                 "value": 18,
-                "type": "heavy",
                 "dex": 0
             },
             "strength": 0,
-            "stealth": true,
             "properties": {
                 "Bulky": true,
-                "Strength": 17
+                "Strength": 17,
+                "stealthDisadvantage": true
             }
         },
         "effects": []
@@ -727,7 +775,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "heavyphysicalshield",
+            "type": {
+                "value": "shield",
+                "subtype": null,
+                "baseItem": "heavyphysicalshield"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -738,11 +791,9 @@
             },
             "armor": {
                 "value": 3,
-                "type": "shield",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {
                 "Obtrusive": true,
                 "Strength": 15
@@ -777,7 +828,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "heavyshieldgenerator",
+            "type": {
+                "value": "shield",
+                "subtype": null,
+                "baseItem": "heavyshieldgenerator"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -788,11 +844,9 @@
             },
             "armor": {
                 "value": 3,
-                "type": "shield",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -824,7 +878,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "assaultarmor",
+            "type": {
+                "value": "heavy",
+                "subtype": null,
+                "baseItem": "assaultarmor"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -835,16 +894,15 @@
             },
             "armor": {
                 "value": 17,
-                "type": "heavy",
                 "dex": 0
             },
             "strength": 0,
-            "stealth": true,
             "properties": {
                 "Bulky": true,
                 "Cumbersome": true,
                 "Obscured": true,
-                "Strength": 15
+                "Strength": 15,
+                "stealthDisadvantage": true
             }
         },
         "effects": []
@@ -876,7 +934,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "lightphysicalshield",
+            "type": {
+                "value": "shield",
+                "subtype": null,
+                "baseItem": "lightphysicalshield"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -887,11 +950,9 @@
             },
             "armor": {
                 "value": 1,
-                "type": "shield",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -923,7 +984,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "lightshieldgenerator",
+            "type": {
+                "value": "shield",
+                "subtype": null,
+                "baseItem": "lightshieldgenerator"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -934,11 +1000,9 @@
             },
             "armor": {
                 "value": 1,
-                "type": "shield",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -970,7 +1034,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "mediumphysicalshield",
+            "type": {
+                "value": "shield",
+                "subtype": null,
+                "baseItem": "mediumphysicalshield"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -981,11 +1050,9 @@
             },
             "armor": {
                 "value": 2,
-                "type": "shield",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {
                 "Strength": 13
             }
@@ -1019,7 +1086,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "mediumshieldgenerator",
+            "type": {
+                "value": "shield",
+                "subtype": null,
+                "baseItem": "mediumshieldgenerator"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1030,11 +1102,9 @@
             },
             "armor": {
                 "value": 2,
-                "type": "shield",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -1066,7 +1136,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "mesharmor",
+            "type": {
+                "value": "medium",
+                "subtype": null,
+                "baseItem": "mesharmor"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1078,11 +1153,9 @@
             },
             "armor": {
                 "value": 13,
-                "type": "medium",
                 "dex": 2
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -1114,7 +1187,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "mesharmor",
+            "type": {
+                "value": "medium",
+                "subtype": null,
+                "baseItem": "mesharmor"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1125,11 +1203,9 @@
             },
             "armor": {
                 "value": 13,
-                "type": "medium",
                 "dex": 2
             },
             "strength": 0,
-            "stealth": false,
             "properties": {
                 "Insulated": 5,
                 "Strength": 11
@@ -1164,7 +1240,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "compositearmor",
+            "type": {
+                "value": "medium",
+                "subtype": null,
+                "baseItem": "compositearmor"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1175,15 +1256,14 @@
             },
             "armor": {
                 "value": 15,
-                "type": "medium",
                 "dex": 2
             },
             "strength": 0,
-            "stealth": true,
             "properties": {
                 "Bulky": true,
                 "Reinforced": true,
-                "Rigid": true
+                "Rigid": true,
+                "stealthDisadvantage": true
             }
         },
         "effects": []
@@ -1215,7 +1295,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "heavyphysicalshield",
+            "type": {
+                "value": "shield",
+                "subtype": null,
+                "baseItem": "heavyphysicalshield"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1226,11 +1311,9 @@
             },
             "armor": {
                 "value": 3,
-                "type": "shield",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {
                 "Charging": 1,
                 "Cumbersome": true,
@@ -1267,7 +1350,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "weavearmor",
+            "type": {
+                "value": "medium",
+                "subtype": null,
+                "baseItem": "weavearmor"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1279,11 +1367,9 @@
             },
             "armor": {
                 "value": 14,
-                "type": "medium",
                 "dex": 2
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []

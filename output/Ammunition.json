@@ -26,7 +26,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "corrosivecartridge",
+            "type": {
+                "value": "ammo",
+                "subtype": "cartridge",
+                "baseItem": "corrosivecartridge"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -46,8 +51,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "cartridge"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -78,7 +83,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "cryocell",
+            "type": {
+                "value": "ammo",
+                "subtype": "powerCell",
+                "baseItem": "cryocell"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": "1",
                 "units": "hour"
@@ -98,8 +108,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "powerCell"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -130,7 +140,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "dart",
+            "type": {
+                "value": "ammo",
+                "subtype": "dart",
+                "baseItem": "dart"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -145,8 +160,8 @@
                 ],
                 "versatile": ""
             },
-            "consumableType": "ammo",
-            "ammoType": "dart"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -177,7 +192,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "deafeningcalibrator",
+            "type": {
+                "value": "ammo",
+                "subtype": "melee",
+                "baseItem": "deafeningcalibrator"
+            },
+            "-=baseItem": null,
             "activation": {
                 "type": "action",
                 "cost": 1
@@ -196,7 +216,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -227,7 +248,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "deafeningcell",
+            "type": {
+                "value": "ammo",
+                "subtype": "powerCell",
+                "baseItem": "deafeningcell"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -247,8 +273,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "powerCell"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -279,7 +305,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "deafeningcollimator",
+            "type": {
+                "value": "ammo",
+                "subtype": "melee",
+                "baseItem": "deafeningcollimator"
+            },
+            "-=baseItem": null,
             "activation": {
                 "type": "action",
                 "cost": 1
@@ -298,7 +329,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -329,7 +361,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "deafeningdart",
+            "type": {
+                "value": "ammo",
+                "subtype": "dart",
+                "baseItem": "deafeningdart"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": "1",
                 "units": "minute"
@@ -353,8 +390,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "dart"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -385,7 +422,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "electrifyingcalibrator",
+            "type": {
+                "value": "ammo",
+                "subtype": "melee",
+                "baseItem": "electrifyingcalibrator"
+            },
+            "-=baseItem": null,
             "activation": {
                 "type": "action",
                 "cost": 1
@@ -404,7 +446,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -435,7 +478,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "electrifyingcartridge",
+            "type": {
+                "value": "ammo",
+                "subtype": "cartridge",
+                "baseItem": "electrifyingcartridge"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -455,8 +503,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "cartridge"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -487,7 +535,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "electrifyingcollimator",
+            "type": {
+                "value": "ammo",
+                "subtype": "melee",
+                "baseItem": "electrifyingcollimator"
+            },
+            "-=baseItem": null,
             "activation": {
                 "type": "action",
                 "cost": 1
@@ -506,7 +559,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -537,7 +591,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "electrifyingdart",
+            "type": {
+                "value": "ammo",
+                "subtype": "dart",
+                "baseItem": "electrifyingdart"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": "1",
                 "units": "minute"
@@ -561,8 +620,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "dart"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -593,7 +652,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "flechetteclip,fragmentation",
+            "type": {
+                "value": "ammo",
+                "subtype": "flechetteClip",
+                "baseItem": "flechetteclip,fragmentation"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -613,8 +677,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "flechetteClip"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -645,7 +709,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "flechetteclip,ion",
+            "type": {
+                "value": "ammo",
+                "subtype": "flechetteClip",
+                "baseItem": "flechetteclip,ion"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -665,8 +734,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "flechetteClip"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -697,7 +766,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "flechetteclip,plasma",
+            "type": {
+                "value": "ammo",
+                "subtype": "flechetteClip",
+                "baseItem": "flechetteclip,plasma"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -717,8 +791,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "flechetteClip"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -749,7 +823,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "flechettemag,fragmentation",
+            "type": {
+                "value": "ammo",
+                "subtype": "flechetteMag",
+                "baseItem": "flechettemag,fragmentation"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -769,8 +848,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "flechetteMag"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -801,7 +880,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "flechettemag,ion",
+            "type": {
+                "value": "ammo",
+                "subtype": "flechetteMag",
+                "baseItem": "flechettemag,ion"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -821,8 +905,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "flechetteMag"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -853,7 +937,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "flechettemag,plasma",
+            "type": {
+                "value": "ammo",
+                "subtype": "flechetteMag",
+                "baseItem": "flechettemag,plasma"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -873,8 +962,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "flechetteMag"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -905,7 +994,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "fluxcollimator",
+            "type": {
+                "value": "ammo",
+                "subtype": "melee",
+                "baseItem": "fluxcollimator"
+            },
+            "-=baseItem": null,
             "activation": {
                 "type": "action",
                 "cost": 1
@@ -924,7 +1018,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -955,7 +1050,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "gascartridge",
+            "type": {
+                "value": "ammo",
+                "subtype": "cartridge",
+                "baseItem": "gascartridge"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -975,8 +1075,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "cartridge"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1007,7 +1107,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "incendiarycell",
+            "type": {
+                "value": "ammo",
+                "subtype": "powerCell",
+                "baseItem": "incendiarycell"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": "1",
                 "units": "minute"
@@ -1033,8 +1138,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "powerCell"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1065,7 +1170,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "missile,fragmentation",
+            "type": {
+                "value": "ammo",
+                "subtype": "missile",
+                "baseItem": "missile,fragmentation"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1094,8 +1204,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "missile"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1126,7 +1236,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "missile,incendiary",
+            "type": {
+                "value": "ammo",
+                "subtype": "missile",
+                "baseItem": "missile,incendiary"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": "1",
                 "units": "minute"
@@ -1150,8 +1265,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "missile"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1182,7 +1297,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "missile,ion",
+            "type": {
+                "value": "ammo",
+                "subtype": "missile",
+                "baseItem": "missile,ion"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1211,8 +1331,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "missile"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1243,7 +1363,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "oscillationcalibrator",
+            "type": {
+                "value": "ammo",
+                "subtype": "melee",
+                "baseItem": "oscillationcalibrator"
+            },
+            "-=baseItem": null,
             "activation": {
                 "type": "action",
                 "cost": 1
@@ -1262,7 +1387,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1293,7 +1419,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "paniccalibrator",
+            "type": {
+                "value": "ammo",
+                "subtype": "melee",
+                "baseItem": "paniccalibrator"
+            },
+            "-=baseItem": null,
             "activation": {
                 "type": "action",
                 "cost": 1
@@ -1312,7 +1443,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1343,7 +1475,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "paniccollimator",
+            "type": {
+                "value": "ammo",
+                "subtype": "melee",
+                "baseItem": "paniccollimator"
+            },
+            "-=baseItem": null,
             "activation": {
                 "type": "action",
                 "cost": 1
@@ -1362,7 +1499,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1393,7 +1531,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "panicdart",
+            "type": {
+                "value": "ammo",
+                "subtype": "dart",
+                "baseItem": "panicdart"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": "1",
                 "units": "minute"
@@ -1417,8 +1560,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "dart"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1449,7 +1592,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "powercell",
+            "type": {
+                "value": "ammo",
+                "subtype": "powerCell",
+                "baseItem": "powercell"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1459,8 +1607,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo",
-            "ammoType": "powerCell"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1491,7 +1639,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "powergenerator",
+            "type": {
+                "value": "ammo",
+                "subtype": "powerGenerator",
+                "baseItem": "powergenerator"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1501,8 +1654,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo",
-            "ammoType": "powerGenerator"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1533,7 +1686,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "projectorcanister,corrosive",
+            "type": {
+                "value": "ammo",
+                "subtype": "projectorCanister",
+                "baseItem": "projectorcanister,corrosive"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1559,8 +1717,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "projectorCanister"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1591,7 +1749,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "projectorcanister,cryo",
+            "type": {
+                "value": "ammo",
+                "subtype": "projectorCanister",
+                "baseItem": "projectorcanister,cryo"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": "1",
                 "units": "hour"
@@ -1617,8 +1780,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "projectorCanister"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1649,7 +1812,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "projectorcanister,incendiary",
+            "type": {
+                "value": "ammo",
+                "subtype": "projectorCanister",
+                "baseItem": "projectorcanister,incendiary"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1675,8 +1843,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "projectorCanister"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1707,7 +1875,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "projectortank,corrosive",
+            "type": {
+                "value": "ammo",
+                "subtype": "projectorTank",
+                "baseItem": "projectortank,corrosive"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1733,8 +1906,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "projectorTank"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1765,7 +1938,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "projectortank,cryo",
+            "type": {
+                "value": "ammo",
+                "subtype": "projectorTank",
+                "baseItem": "projectortank,cryo"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": "1",
                 "units": "hour"
@@ -1791,8 +1969,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "projectorTank"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1823,7 +2001,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "projectortank,incendiary",
+            "type": {
+                "value": "ammo",
+                "subtype": "projectorTank",
+                "baseItem": "projectortank,incendiary"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1849,8 +2032,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "projectorTank"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1881,7 +2064,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "rocket,fragmentation",
+            "type": {
+                "value": "ammo",
+                "subtype": "rocket",
+                "baseItem": "rocket,fragmentation"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -1910,8 +2098,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "rocket"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1942,7 +2130,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "rocket,incendiary",
+            "type": {
+                "value": "ammo",
+                "subtype": "rocket",
+                "baseItem": "rocket,incendiary"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": "1",
                 "units": "minute"
@@ -1966,8 +2159,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "rocket"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -1998,7 +2191,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "rocket,ion",
+            "type": {
+                "value": "ammo",
+                "subtype": "rocket",
+                "baseItem": "rocket,ion"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -2027,8 +2225,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "rocket"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -2059,7 +2257,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "slugcartridge",
+            "type": {
+                "value": "ammo",
+                "subtype": "cartridge",
+                "baseItem": "slugcartridge"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -2069,8 +2272,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo",
-            "ammoType": "cartridge"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -2101,7 +2304,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "snare",
+            "type": {
+                "value": "ammo",
+                "subtype": "snare",
+                "baseItem": "snare"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -2116,8 +2324,8 @@
                 ],
                 "versatile": ""
             },
-            "consumableType": "ammo",
-            "ammoType": "snare"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -2148,7 +2356,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "arrow",
+            "type": {
+                "value": "ammo",
+                "subtype": "arrow",
+                "baseItem": "arrow"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -2158,8 +2371,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo",
-            "ammoType": "arrow"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -2190,7 +2403,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "arrow,combustive",
+            "type": {
+                "value": "ammo",
+                "subtype": "arrow",
+                "baseItem": "arrow,combustive"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -2210,8 +2428,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "arrow"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -2242,7 +2460,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "arrow,electroshock",
+            "type": {
+                "value": "ammo",
+                "subtype": "arrow",
+                "baseItem": "arrow,electroshock"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -2262,8 +2485,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "arrow"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -2294,7 +2517,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "arrow,noisemaker",
+            "type": {
+                "value": "ammo",
+                "subtype": "arrow",
+                "baseItem": "arrow,noisemaker"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -2314,8 +2542,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "arrow"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -2346,7 +2574,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "bolt",
+            "type": {
+                "value": "ammo",
+                "subtype": "bolt",
+                "baseItem": "bolt"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -2356,8 +2589,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo",
-            "ammoType": "bolt"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -2388,7 +2621,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "bolt,deafening",
+            "type": {
+                "value": "ammo",
+                "subtype": "bolt",
+                "baseItem": "bolt,deafening"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": "1",
                 "units": "minute"
@@ -2412,8 +2650,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "bolt"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -2444,7 +2682,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "bolt,electrifying",
+            "type": {
+                "value": "ammo",
+                "subtype": "bolt",
+                "baseItem": "bolt,electrifying"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": "1",
                 "units": "minute"
@@ -2468,8 +2711,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "bolt"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -2500,7 +2743,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "bolt,panic",
+            "type": {
+                "value": "ammo",
+                "subtype": "bolt",
+                "baseItem": "bolt,panic"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": "1",
                 "units": "minute"
@@ -2524,8 +2772,8 @@
                 "dc": 14,
                 "scaling": "flat"
             },
-            "consumableType": "ammo",
-            "ammoType": "bolt"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -2556,7 +2804,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "torpedo,fragmentation",
+            "type": {
+                "value": "ammo",
+                "subtype": "torpedo",
+                "baseItem": "torpedo,fragmentation"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -2565,8 +2818,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo",
-            "ammoType": "torpedo"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -2597,7 +2850,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "torpedo,plasma",
+            "type": {
+                "value": "ammo",
+                "subtype": "torpedo",
+                "baseItem": "torpedo,plasma"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -2606,8 +2864,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ammo",
-            "ammoType": "torpedo"
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     }

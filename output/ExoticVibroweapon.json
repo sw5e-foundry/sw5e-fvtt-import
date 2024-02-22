@@ -26,7 +26,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "neuronicwhip",
+            "type": {
+                "value": "exoticVW",
+                "subtype": null,
+                "baseItem": "neuronicwhip"
+            },
+            "-=baseItem": null,
             "activation": {
                 "type": "action",
                 "cost": 1
@@ -56,7 +61,7 @@
                 ],
                 "versatile": ""
             },
-            "weaponType": "exoticVW",
+            "-=weaponType": null,
             "weaponClass": "",
             "properties": {
                 "rch": true,

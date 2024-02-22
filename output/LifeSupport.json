@@ -26,7 +26,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "emergencyshelter",
+            "type": {
+                "value": null,
+                "subtype": null,
+                "baseItem": "emergencyshelter"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -66,7 +71,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "respirator",
+            "type": {
+                "value": "trinket",
+                "subtype": null,
+                "baseItem": "respirator"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -78,11 +88,9 @@
             },
             "armor": {
                 "value": null,
-                "type": "trinket",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -114,7 +122,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "underwaterrespirator",
+            "type": {
+                "value": "trinket",
+                "subtype": null,
+                "baseItem": "underwaterrespirator"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": "1",
                 "units": "hour"
@@ -126,11 +139,9 @@
             },
             "armor": {
                 "value": null,
-                "type": "trinket",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -162,7 +173,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "watersuit",
+            "type": {
+                "value": "trinket",
+                "subtype": null,
+                "baseItem": "watersuit"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -174,11 +190,9 @@
             },
             "armor": {
                 "value": null,
-                "type": "trinket",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -210,7 +224,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "chemicalsuit",
+            "type": {
+                "value": "trinket",
+                "subtype": null,
+                "baseItem": "chemicalsuit"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -221,11 +240,9 @@
             },
             "armor": {
                 "value": null,
-                "type": "trinket",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -257,7 +274,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "conductivesuit",
+            "type": {
+                "value": "trinket",
+                "subtype": null,
+                "baseItem": "conductivesuit"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -268,11 +290,9 @@
             },
             "armor": {
                 "value": null,
-                "type": "trinket",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -304,7 +324,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "dampeningsuit",
+            "type": {
+                "value": "trinket",
+                "subtype": null,
+                "baseItem": "dampeningsuit"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -315,11 +340,9 @@
             },
             "armor": {
                 "value": null,
-                "type": "trinket",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -351,7 +374,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "divingsuit",
+            "type": {
+                "value": "trinket",
+                "subtype": null,
+                "baseItem": "divingsuit"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -362,11 +390,9 @@
             },
             "armor": {
                 "value": null,
-                "type": "trinket",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -398,7 +424,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "emergencyraft",
+            "type": {
+                "value": null,
+                "subtype": null,
+                "baseItem": "emergencyraft"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -438,7 +469,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "emergencyrations",
+            "type": {
+                "value": "ration",
+                "subtype": null,
+                "baseItem": "emergencyrations"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -447,8 +483,8 @@
                 "parts": [],
                 "versatile": ""
             },
-            "consumableType": "ration",
-            "ammoType": null
+            "-=consumableType": null,
+            "-=ammoType": null
         },
         "effects": []
     },
@@ -479,7 +515,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "flame-proofsuit",
+            "type": {
+                "value": "trinket",
+                "subtype": null,
+                "baseItem": "flame-proofsuit"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -490,11 +531,9 @@
             },
             "armor": {
                 "value": null,
-                "type": "trinket",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -526,7 +565,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "hazardsuit",
+            "type": {
+                "value": "trinket",
+                "subtype": null,
+                "baseItem": "hazardsuit"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -537,11 +581,9 @@
             },
             "armor": {
                 "value": null,
-                "type": "trinket",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -573,7 +615,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "mind-shieldingsuit",
+            "type": {
+                "value": "trinket",
+                "subtype": null,
+                "baseItem": "mind-shieldingsuit"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -584,11 +631,9 @@
             },
             "armor": {
                 "value": null,
-                "type": "trinket",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -620,7 +665,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "spacesuit",
+            "type": {
+                "value": "trinket",
+                "subtype": null,
+                "baseItem": "spacesuit"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -631,11 +681,9 @@
             },
             "armor": {
                 "value": null,
-                "type": "trinket",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -667,7 +715,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "stabilizersuit",
+            "type": {
+                "value": "trinket",
+                "subtype": null,
+                "baseItem": "stabilizersuit"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
@@ -678,11 +731,9 @@
             },
             "armor": {
                 "value": null,
-                "type": "trinket",
                 "dex": null
             },
             "strength": 0,
-            "stealth": false,
             "properties": {}
         },
         "effects": []
@@ -714,7 +765,12 @@
             "equipped": false,
             "rarity": "",
             "identified": true,
-            "baseItem": "oxygentank",
+            "type": {
+                "value": null,
+                "subtype": null,
+                "baseItem": "oxygentank"
+            },
+            "-=baseItem": null,
             "duration": {
                 "value": null,
                 "units": "inst"
