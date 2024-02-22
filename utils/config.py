@@ -863,7 +863,7 @@ equipment_mappings = {
 			"pattern": r'Medpac',
 			"type": 'Consumable',
 			"category": 'medical',
-			"category": 'medpac',
+			"subcategory": 'medpac',
 		},
 		{
 			"type": 'Consumable',

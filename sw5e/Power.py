@@ -139,7 +139,6 @@ class Power(sw5e.Entity.Item):
 		data = super().getData(importer)[0]
 
 		data["system"]["description"] = { "value": self.getDescription() }
-		data["system"]["requirements"] = self.raw_prerequisite or ''
 		data["system"]["source"] = self.raw_contentSource
 		data["system"]["activation"] = {
 			"type": self.activation_type,
