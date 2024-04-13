@@ -55,7 +55,4 @@ class Consumable(sw5e.Equipment.Equipment):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["system"]["-=consumableType"] = None
-		data["system"]["-=ammoType"] = None
-
 		return [data]

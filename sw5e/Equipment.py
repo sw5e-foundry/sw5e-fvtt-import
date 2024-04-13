@@ -115,7 +115,6 @@ class Equipment(sw5e.Entity.Item):
 		data = super().getData(importer)[0]
 
 		data["system"]["description"] = { "value": self.getDescription(importer) } #will call the child's getDescription
-		data["system"]["requirements"] = ''
 		data["system"]["source"] = self.raw_contentSource
 		data["system"]["quantity"] = 1
 		data["system"]["weight"] = self.getWeight()
@@ -128,18 +127,19 @@ class Equipment(sw5e.Entity.Item):
 		data["system"]["rarity"] = ''
 		data["system"]["identified"] = True
 
-		data["system"]["type"] = {
-			"value": self.category,
-			"subtype": self.subcategory,
-			"baseItem": self.base_item,
-		}
+		if self.category != False:
+			data["system"]["type"] = {
+				"value": self.category,
+				"subtype": self.subcategory,
+				"baseItem": self.base_item,
+			}
 		data["system"]["-=baseItem"] = None
 
 		if self.activation: data["system"]["activation"] = {
 			"type": self.activation,
 			"cost": 1 if self.activation != 'none' else None
 		}
-		if self.duration_value or self.duration_unit: data["system"]["duration"] = {
+		if self.duration_value or (self.duration_unit != 'inst'): data["system"]["duration"] = {
 			"value": self.duration_value,
 			"units": self.duration_unit
 		}
@@ -161,7 +161,7 @@ class Equipment(sw5e.Entity.Item):
 		}
 		if self.action_type: data["system"]["actionType"] = self.action_type
 
-		if self.damage: data["system"]["damage"] = {
+		if self.damage and (self.damage["parts"] or self.damage["versatile"]): data["system"]["damage"] = {
 			"parts": self.damage["parts"],
 			"versatile": self.damage["versatile"]
 		}

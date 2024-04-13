@@ -14,7 +14,6 @@
             "description": {
                 "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>"
             },
-            "requirements": "",
             "source": "WH",
             "quantity": 1,
             "weight": null,
@@ -35,10 +34,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -61,7 +56,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "blade",
             "properties": {
                 "dex": 11,
@@ -89,7 +83,6 @@
             "description": {
                 "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Neuralizing 13</h3>\n<p>When you hit a creature with a weapon with the neuralizing property, you can force it to make a Wisdom saving throw, DC equal to the neuralizing number. On a failed save, the creature takes an additional [[/r 1d4]] psychic damage and becomes frightened of you until the start of its next turn.</p>"
             },
-            "requirements": "",
             "source": "WH",
             "quantity": 1,
             "weight": 2,
@@ -110,10 +103,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -136,7 +125,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "trip",
             "properties": {
                 "dpt": true,
@@ -163,7 +151,6 @@
             "description": {
                 "value": "<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 25/75)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
             },
-            "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": 1,
@@ -184,10 +171,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -210,7 +193,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "crushing",
             "properties": {
                 "lgt": true,
@@ -237,7 +219,6 @@
             "description": {
                 "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
             },
-            "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": null,
@@ -258,10 +239,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -284,7 +261,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "trip",
             "properties": {
                 "fin": true,
@@ -312,7 +288,6 @@
             "description": {
                 "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Special</h3>\n<p>Due to their diminutive size, vibrodarts make ineffective melee weapons. Melee attack rolls made with them are made at disadvantage.</p>"
             },
-            "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": null,
@@ -333,10 +308,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -359,7 +330,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "trip",
             "properties": {
                 "fin": true,
@@ -387,7 +357,6 @@
             "description": {
                 "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
             },
-            "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": null,
@@ -408,10 +377,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -434,7 +399,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "trip",
             "properties": {
                 "hid": true,
@@ -461,7 +425,6 @@
             "description": {
                 "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
             },
-            "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": 7,
@@ -482,10 +445,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -508,7 +467,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "crushing",
             "properties": {
                 "dex": 11,
@@ -536,7 +494,6 @@
             "description": {
                 "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Keen 1</h3>\n<p>When you make a weapon attack with a weapon with the keen property, the critical hit range increases by an amount equal to the keen number.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
             },
-            "requirements": "",
             "source": "WH",
             "quantity": 1,
             "weight": null,
@@ -557,10 +514,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -583,7 +536,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "blade",
             "properties": {
                 "dex": 11,
@@ -611,7 +563,6 @@
             "description": {
                 "value": "<h3>Thrown (range 25/75)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
             },
-            "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": 4,
@@ -632,10 +583,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -658,7 +605,6 @@
                 ],
                 "versatile": "2d4 +  @mod"
             },
-            "-=weaponType": null,
             "weaponClass": "polearm",
             "properties": {
                 "ran": 25,
@@ -685,7 +631,6 @@
             "description": {
                 "value": "<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
             },
-            "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": 4,
@@ -706,10 +651,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -732,7 +673,6 @@
                 ],
                 "versatile": "2d4 +  @mod"
             },
-            "-=weaponType": null,
             "weaponClass": "polearm",
             "properties": {
                 "ver": true
@@ -758,7 +698,6 @@
             "description": {
                 "value": "<h3>Disguised</h3>\n<p>You have advantage on Charisma (Deception) checks made to hide the nature of a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Special</h3>\n<p>This specialized gungan club can be used to throw grenades or similar objects at long distances. If you are wielding this weapon, as part of the action to throw a grenade, you can instead throw it using an atlatl you are holding. The grenade can be thrown at a short distance of 30ft and a long distance of 120ft. When throwing a grenade at long range, creatures within the radius of the grenade's explosion have advantage on the saving throw.  If you lack proficiency in the atlatl, you must roll the damage dice twice and take the lesser total.</p>"
             },
-            "requirements": "",
             "source": "EC",
             "quantity": 1,
             "weight": null,
@@ -779,10 +718,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -805,7 +740,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "crushing",
             "properties": {
                 "dgd": true,
@@ -836,7 +770,6 @@
             "description": {
                 "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
             },
-            "requirements": "",
             "source": "EC",
             "quantity": 1,
             "weight": 6,
@@ -857,10 +790,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -883,7 +812,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "polearm",
             "properties": {
                 "dpt": true,
@@ -911,7 +839,6 @@
             "description": {
                 "value": "<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>\n<h3>Special</h3>\n<p>When you would make a Strength (Athletics) check to attempt to grapple a creature while wielding a weapon with the grappling property, you can instead make a melee weapon attack with it. If the attack hits, the creature becomes grappled by you, and it takes damage equal to your Strength modifier of the same type as the weapon's damage.</p>"
             },
-            "requirements": "",
             "source": "EC",
             "quantity": 1,
             "weight": 7,
@@ -932,10 +859,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -958,7 +881,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "trip",
             "properties": {
                 "rch": true,
@@ -987,7 +909,6 @@
             "description": {
                 "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>"
             },
-            "requirements": "",
             "source": "EC",
             "quantity": 1,
             "weight": null,
@@ -1008,10 +929,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -1034,7 +951,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "crushing",
             "properties": {
                 "dpt": true,
@@ -1062,7 +978,6 @@
             "description": {
                 "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
             },
-            "requirements": "",
             "source": "EC",
             "quantity": 1,
             "weight": null,
@@ -1083,10 +998,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -1109,7 +1020,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "blade",
             "properties": {
                 "fin": true,
@@ -1137,7 +1047,6 @@
             "description": {
                 "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>"
             },
-            "requirements": "",
             "source": "EC",
             "quantity": 1,
             "weight": 1,
@@ -1158,10 +1067,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -1184,7 +1089,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "blade",
             "properties": {
                 "dex": 11
@@ -1210,7 +1114,6 @@
             "description": {
                 "value": "<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>"
             },
-            "requirements": "",
             "source": "EC",
             "quantity": 1,
             "weight": 3,
@@ -1231,10 +1134,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -1257,7 +1156,6 @@
                 ],
                 "versatile": ""
             },
-            "-=weaponType": null,
             "weaponClass": "blade",
             "properties": {
                 "hvy": true

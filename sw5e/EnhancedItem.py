@@ -221,7 +221,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			else:
 				return 'improv', None
 		elif self.is_modification:
-			return ('focusgenerator', None) if self.raw_subtype == 'focus generator' else (self.raw_subtype, None)
+			return False, False
 
 		return None, None
 
@@ -345,63 +345,75 @@ class EnhancedItem(sw5e.Entity.Item):
 				"type": activation,
 				"cost": 1 if activation != 'none' else None
 			}
-			if "duration" not in item["system"]: item["system"]["duration"] = {}
-			item["system"]["duration"] = {
-				"value": choose(item["system"]["duration"], self.duration_value, "value", None),
-				"units": choose(item["system"]["duration"], self.duration_unit, "units", 'inst'),
-			}
-			if "target" not in item["system"]: item["system"]["target"] = {}
-			item["system"]["target"] = {
-				"value": choose(item["system"]["target"], self.target_value, "value", None),
-				"width": None,
-				"units": choose(item["system"]["target"], self.target_unit, "units", ''),
-				"type": choose(item["system"]["target"], self.target_type, "type", ''),
-			}
-			if "range" not in item["system"]: item["system"]["range"] = {}
-			item["system"]["range"] = {
-				"value": choose(item["system"]["range"], self.range_value, "value", None),
-				"long": choose(item["system"]["range"], None, "long", None),
-				"units": choose(item["system"]["range"], self.range_unit, "units", ''),
-			}
-
-			if "uses" not in item["system"]: item["system"]["uses"] = {}
-			if "per" not in item["system"]["uses"]: item["system"]["uses"]["per"] = None
-			if item["system"]["uses"]["per"] == None:
-				item["system"]["uses"] = {
-					"value": None,
-					"max": self.uses,
-					"per": self.recharge
+			if self.duration_value or (self.duration_unit != 'inst'):
+				if "duration" not in item["system"]: item["system"]["duration"] = {}
+				item["system"]["duration"] = {
+					"value": choose(item["system"]["duration"], self.duration_value, "value", None),
+					"units": choose(item["system"]["duration"], self.duration_unit, "units", 'inst'),
+				}
+			if self.target_value or self.target_unit or self.target_type:
+				if "target" not in item["system"]: item["system"]["target"] = {}
+				item["system"]["target"] = {
+					"value": choose(item["system"]["target"], self.target_value, "value", None),
+					"width": None,
+					"units": choose(item["system"]["target"], self.target_unit, "units", ''),
+					"type": choose(item["system"]["target"], self.target_type, "type", ''),
+				}
+			if self.range_value or self.range_unit:
+				if "range" not in item["system"]: item["system"]["range"] = {}
+				item["system"]["range"] = {
+					"value": choose(item["system"]["range"], self.range_value, "value", None),
+					"long": choose(item["system"]["range"], None, "long", None),
+					"units": choose(item["system"]["range"], self.range_unit, "units", ''),
 				}
 
-			if "properties" not in item["system"]: item["system"]["properties"] = {}
-			item["system"]["properties"] = {**item["system"]["properties"], **self.properties}
+			if self.uses or self.recharge:
+				if "uses" not in item["system"]: item["system"]["uses"] = {}
+				if "per" not in item["system"]["uses"]: item["system"]["uses"]["per"] = None
+				if item["system"]["uses"]["per"] == None:
+					item["system"]["uses"] = {
+						"value": None,
+						"max": self.uses,
+						"per": self.recharge
+					}
 
-			item["system"]["actionType"] = choose(item["system"], self.action_type, "actionType", 'other')
-			if "attackBonus" not in item["system"]: item["system"]["attackBonus"] = ''
+			if self.properties:
+				if "properties" not in item["system"]: item["system"]["properties"] = {}
+				item["system"]["properties"] = {**item["system"]["properties"], **self.properties}
+
+			if self.action_type:
+				item["system"]["actionType"] = choose(item["system"], self.action_type, "actionType", 'other')
+
 			if self.attack_bonus:
-				if item["system"]["attackBonus"]: item["system"]["attackBonus"] += f' + {self.attack_bonus}'
-				else: item["system"]["attackBonus"] = self.attack_bonus
+				if "attackBonus" not in item["system"]: item["system"]["attackBonus"] = ''
+				if self.attack_bonus:
+					if item["system"]["attackBonus"]: item["system"]["attackBonus"] += f' + {self.attack_bonus}'
+					else: item["system"]["attackBonus"] = self.attack_bonus
 
-			if "damage" not in item["system"]: item["system"]["damage"] = {}
-			if "parts" not in item["system"]["damage"]: item["system"]["damage"]["parts"] = []
-			if "versatile" not in item["system"]["damage"]: item["system"]["damage"]["versatile"] = ''
-			item["system"]["damage"] = {
-				"parts": item["system"]["damage"]["parts"] + self.damage["parts"],
-				"versatile": choose(item["system"]["damage"], self.damage["versatile"], "versatile", '')
-			}
+			if (self.damage and (self.damage["parts"] or self.damage["versatile"])) or self.damage_bonus:
+				if "damage" not in item["system"]: item["system"]["damage"] = {}
+				if "parts" not in item["system"]["damage"]: item["system"]["damage"]["parts"] = []
+				if "versatile" not in item["system"]["damage"]: item["system"]["damage"]["versatile"] = ''
+				item["system"]["damage"] = {
+					"parts": item["system"]["damage"]["parts"] + self.damage["parts"],
+					"versatile": choose(item["system"]["damage"], self.damage["versatile"], "versatile", '')
+				}
+
 			if self.damage_bonus:
 				if len(item["system"]["damage"]["parts"]): item["system"]["damage"]["parts"][0][0] += f' + {self.damage_bonus}'
 				else: item["system"]["damage"]["parts"].append([f'{self.damage_bonus}', ''])
 				if item["system"]["damage"]["versatile"]: item["system"]["damage"]["versatile"] += f' + {self.damage_bonus}'
 
-			item["system"]["formula"] = choose(item["system"], self.formula, 'formula', '')
+			if self.formula:
+				item["system"]["formula"] = choose(item["system"], self.formula, 'formula', '')
 
-			if "save" not in item["system"]: item["system"]["save"] = {}
-			item["system"]["save"] = {
-				"ability": choose(item["system"]["save"], self.save, 'ability', ''),
-				"dc": choose(item["system"]["save"], self.save_dc, 'dc', None),
-				"scaling": choose(item["system"]["save"], 'flat' if self.save_dc else 'none', 'scaling', 'none')
-			}
+			if self.save or self.save_dc:
+				if "save" not in item["system"]: item["system"]["save"] = {}
+				item["system"]["save"] = {
+					"ability": choose(item["system"]["save"], self.save, 'ability', ''),
+					"dc": choose(item["system"]["save"], self.save_dc, 'dc', None),
+					"scaling": choose(item["system"]["save"], 'flat' if self.save_dc else 'none', 'scaling', 'none')
+				}
 
 			item = self.applyDataAutoTarget(item, burst_or_rapid=mode in ('burst', 'rapid'))
 			item = self.applyDataSubtype(item)
@@ -424,7 +436,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			"type": self.activation,
 			"cost": 1 if self.activation != 'none' else None
 		}
-		if self.duration_value or self.duration_unit: data["system"]["duration"] = {
+		if self.duration_value or (self.duration_unit != 'inst'): data["system"]["duration"] = {
 			"value": self.duration_value,
 			"units": self.duration_unit
 		}
@@ -455,7 +467,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			"threshold": None,
 			"damage": ""
 		}
-		if self.damage: data["system"]["damage"] = {
+		if self.damage["parts"] or self.damage["versatile"]: data["system"]["damage"] = {
 			"parts": self.damage["parts"],
 			"versatile": self.damage["versatile"]
 		}
@@ -470,10 +482,11 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		data["system"]["properties"] = self.properties
 
-		data["system"]["type"] = {
-			"value": self.category,
-			"subtype": self.subcategory,
-			"baseItem": self.base_item.base_item if self.base_item else None
+		if self.category != False:
+			data["system"]["type"] = {
+				"value": self.category,
+				"subtype": self.subcategory,
+				"baseItem": self.base_item.base_item if self.base_item else None
 		}
 
 		self.applyDataAutoTarget(data)

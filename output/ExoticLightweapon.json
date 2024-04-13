@@ -14,7 +14,6 @@
             "description": {
                 "value": "<h3>Modal (double-saber and tech-staff)</h3>\n<p>A weapon with this property can switch between modes. A list of weapons in parentheses appears with the property-the weapons between which an exotic weapon can be switched by using an object interaction.</p>"
             },
-            "requirements": "",
             "source": "EC",
             "quantity": 1,
             "weight": 0,
@@ -36,10 +35,6 @@
                 "type": "action",
                 "cost": 1
             },
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
             "target": {
                 "value": 1,
                 "width": null,
@@ -52,7 +47,6 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "-=weaponType": null,
             "weaponClass": "",
             "properties": {
                 "dou": true
@@ -78,7 +72,6 @@
             "description": {
                 "value": "<h3>Bright 15</h3>\n<p>This weapon's damage becomes fire, and its luminous property sheds bright light in a 5-foot radius and dim light for an additional 5 feet while activated, instead of only dim light in a 5-foot radius. Additionally, when you would make a melee weapon attack with a weapon with the bright property, you can instead force the target to make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon, or the bright number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature takes additional damage of the same type at the start of its next turn equal to your governing ability modifier.</p>\n<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>\n<h3>Special</h3>\n<p>specialized (bright)</p>"
             },
-            "requirements": "",
             "source": "EC",
             "quantity": 1,
             "weight": 0,
@@ -99,10 +92,6 @@
             "activation": {
                 "type": "action",
                 "cost": 1
-            },
-            "duration": {
-                "value": null,
-                "units": "inst"
             },
             "target": {
                 "value": 1,
@@ -125,7 +114,6 @@
                 ],
                 "versatile": "2d4 +  @mod"
             },
-            "-=weaponType": null,
             "weaponClass": "",
             "properties": {
                 "bri": true,

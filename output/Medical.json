@@ -14,7 +14,6 @@
             "description": {
                 "value": "<p>An antitoxkit contained a variety of wide-spectrum antidote hypospray injectors that were designed to neutralize all known poisons. A kit has five charges. As an action, you can administer a charge of the kit to cure a target of one poison affecting them or to give them advantage on saving throws against poison for 1 hour. It confers no benefit to droids or constructs.</p>"
             },
-            "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": 4,
@@ -40,13 +39,7 @@
                 "value": "1",
                 "units": "hour"
             },
-            "actionType": "other",
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
-            "-=consumableType": null,
-            "-=ammoType": null
+            "actionType": "other"
         },
         "effects": []
     },
@@ -65,7 +58,6 @@
             "description": {
                 "value": ""
             },
-            "requirements": "",
             "source": "WH",
             "quantity": 1,
             "weight": 0,
@@ -83,14 +75,6 @@
                 "baseItem": "armprosthesis"
             },
             "-=baseItem": null,
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
             "armor": {
                 "value": null,
                 "dex": null
@@ -115,7 +99,6 @@
             "description": {
                 "value": ""
             },
-            "requirements": "",
             "source": "WH",
             "quantity": 1,
             "weight": null,
@@ -133,14 +116,6 @@
                 "baseItem": "earprosthesis"
             },
             "-=baseItem": null,
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
             "armor": {
                 "value": null,
                 "dex": null
@@ -165,7 +140,6 @@
             "description": {
                 "value": "<p>All non-expendable droids need recharging as they are used. The battery has ten uses. As an action, you can expend one use of the battery to stabilize a droid that has 0 hit points, without needing to make an Intelligence (Technology) check.</p>"
             },
-            "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": 0,
@@ -187,17 +161,7 @@
                 "type": "action",
                 "cost": 1
             },
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "actionType": "other",
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
-            "-=consumableType": null,
-            "-=ammoType": null
+            "actionType": "other"
         },
         "effects": []
     },
@@ -216,7 +180,6 @@
             "description": {
                 "value": ""
             },
-            "requirements": "",
             "source": "WH",
             "quantity": 1,
             "weight": null,
@@ -234,14 +197,6 @@
                 "baseItem": "eyeprosthesis"
             },
             "-=baseItem": null,
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
             "armor": {
                 "value": null,
                 "dex": null
@@ -266,7 +221,6 @@
             "description": {
                 "value": ""
             },
-            "requirements": "",
             "source": "WH",
             "quantity": 1,
             "weight": 0,
@@ -284,14 +238,6 @@
                 "baseItem": "facialprosthesis"
             },
             "-=baseItem": null,
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
             "armor": {
                 "value": null,
                 "dex": null
@@ -316,7 +262,6 @@
             "description": {
                 "value": ""
             },
-            "requirements": "",
             "source": "WH",
             "quantity": 1,
             "weight": 0,
@@ -334,14 +279,6 @@
                 "baseItem": "footprosthesis"
             },
             "-=baseItem": null,
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
             "armor": {
                 "value": null,
                 "dex": null
@@ -366,7 +303,6 @@
             "description": {
                 "value": ""
             },
-            "requirements": "",
             "source": "WH",
             "quantity": 1,
             "weight": 0,
@@ -384,14 +320,6 @@
                 "baseItem": "forearmprosthesis"
             },
             "-=baseItem": null,
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
             "armor": {
                 "value": null,
                 "dex": null
@@ -416,7 +344,6 @@
             "description": {
                 "value": ""
             },
-            "requirements": "",
             "source": "WH",
             "quantity": 1,
             "weight": 0,
@@ -434,14 +361,6 @@
                 "baseItem": "handprosthesis"
             },
             "-=baseItem": null,
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
             "armor": {
                 "value": null,
                 "dex": null
@@ -466,7 +385,6 @@
             "description": {
                 "value": ""
             },
-            "requirements": "",
             "source": "WH",
             "quantity": 1,
             "weight": 0,
@@ -484,14 +402,6 @@
                 "baseItem": "legprosthesis"
             },
             "-=baseItem": null,
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
             "armor": {
                 "value": null,
                 "dex": null
@@ -516,7 +426,6 @@
             "description": {
                 "value": "<p>A medpac is a quick-acting syringe filled with a concentrated dose of kolto. As an action, you can use this medpac to restore hit points to a beast or humanoid within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal to the amount rolled + their Constitution modifier (minimum of one hit point). If the creature has Hit Dice of different sizes, use whichever Hit Die size they have the most of.</p>"
             },
-            "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": null,
@@ -538,22 +447,12 @@
                 "type": "action",
                 "cost": 1
             },
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
             "range": {
                 "value": "5",
                 "long": null,
                 "units": "feet"
             },
-            "actionType": "other",
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
-            "-=consumableType": null,
-            "-=ammoType": null
+            "actionType": "other"
         },
         "effects": []
     },
@@ -572,7 +471,6 @@
             "description": {
                 "value": "<p>As an action, you can use the poison in this vial to coat one vibroweapon, one slug cartridge, or one wrist launcher dart. A creature hit by the poisoned weapon must make a DC 14 Constitution saving throw, taking [[/r 2d4]] poison damage on a failed save or half as much on a successful one. Once applied, the poison retains potency for 1 minute before drying.</p>"
             },
-            "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": null,
@@ -612,9 +510,7 @@
                 "ability": "con",
                 "dc": 14,
                 "scaling": "flat"
-            },
-            "-=consumableType": null,
-            "-=ammoType": null
+            }
         },
         "effects": []
     },
@@ -633,7 +529,6 @@
             "description": {
                 "value": "<p>A repair kit included the basic tools needed to repair a droid or construct after being damaged in combat. The kit has three uses. As an action, you can expend one use of the kit to restore hit points to a droid or construct within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal </p>"
             },
-            "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": 3,
@@ -655,22 +550,12 @@
                 "type": "action",
                 "cost": 1
             },
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
             "range": {
                 "value": "5",
                 "long": null,
                 "units": "feet"
             },
-            "actionType": "other",
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
-            "-=consumableType": null,
-            "-=ammoType": null
+            "actionType": "other"
         },
         "effects": []
     },
@@ -689,7 +574,6 @@
             "description": {
                 "value": ""
             },
-            "requirements": "",
             "source": "WH",
             "quantity": 1,
             "weight": 0,
@@ -707,14 +591,6 @@
                 "baseItem": "throatprosthesis"
             },
             "-=baseItem": null,
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
             "armor": {
                 "value": null,
                 "dex": null
@@ -739,7 +615,6 @@
             "description": {
                 "value": ""
             },
-            "requirements": "",
             "source": "WH",
             "quantity": 1,
             "weight": 0,
@@ -757,14 +632,6 @@
                 "baseItem": "torsoprosthesis"
             },
             "-=baseItem": null,
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
             "armor": {
                 "value": null,
                 "dex": null
@@ -789,7 +656,6 @@
             "description": {
                 "value": "<p>A common traumakit is stocked with essentials for the treatment of wounds. A traumakit has five uses. As an action, you can expend a use of the kit to stabilize a creature that has 0 hit points, without needing to make a Wisdom (Medicine) check. </p>"
             },
-            "requirements": "",
             "source": "PHB",
             "quantity": 1,
             "weight": 3,
@@ -811,17 +677,7 @@
                 "type": "action",
                 "cost": 1
             },
-            "duration": {
-                "value": null,
-                "units": "inst"
-            },
-            "actionType": "other",
-            "damage": {
-                "parts": [],
-                "versatile": ""
-            },
-            "-=consumableType": null,
-            "-=ammoType": null
+            "actionType": "other"
         },
         "effects": []
     }

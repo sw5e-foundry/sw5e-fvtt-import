@@ -239,8 +239,6 @@ class Weapon(sw5e.Equipment.Equipment):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["system"]["-=weaponType"] = None
-
 		data["system"]["weaponClass"] = self.weapon_class
 		data["system"]["properties"] = self.p_properties
 		data["system"]["ammo"] = { "types": self.ammo_types }

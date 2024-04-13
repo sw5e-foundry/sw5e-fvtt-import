@@ -8,8 +8,15 @@ class Backpack(sw5e.Equipment.Equipment):
 	def process(self, importer):
 		super().process(importer)
 
-		self.uses, self.recharge = utils.text.getUses(self.raw_description, self.name)
-		self.activation = utils.text.getActivation(self.raw_description, self.uses, self.recharge)
+		self.duration_value, self.duration_unit = None, 'inst'
+		self.target_value, self.target_width, self.target_unit, self.target_type = None, None, None, None
+		self.range_short, self.range_long, self.range_unit = None, None, None
+		self.uses, self.recharge = None, None
+		self.action_type, self.damage, self.formula, self.save, self.save_dc = None, None, None, None, None
+		self.activation = None
+
+	def getEquipmentCategory(self):
+		return False
 
 	def getImg(self, importer=None):
 		kwargs = {
@@ -23,3 +30,6 @@ class Backpack(sw5e.Equipment.Equipment):
 	def getDescription(self, importer):
 		text = self.raw_description
 		return utils.text.markdownToHtml(text)
+
+	def getType(self):
+		return 'container'
