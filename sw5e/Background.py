@@ -213,7 +213,7 @@ class Background(sw5e.Entity.Item):
 		data["system"]["featureName"] = { "value": self.raw_featureName }
 		data["system"]["featureText"] = { "value": self.raw_featureText }
 		data["system"]["featOptions"] = { "value": self.raw_featOptions }
-		data["system"]["source"] = self.raw_contentSource
+		data["system"]["source"] = { "custom": self.raw_contentSource }
 		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
 
 		data["system"]["-=flavorText"] = None

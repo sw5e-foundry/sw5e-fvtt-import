@@ -115,7 +115,7 @@ class Equipment(sw5e.Entity.Item):
 		data = super().getData(importer)[0]
 
 		data["system"]["description"] = { "value": self.getDescription(importer) } #will call the child's getDescription
-		data["system"]["source"] = self.raw_contentSource
+		data["system"]["source"] = { "custom": self.raw_contentSource }
 		data["system"]["quantity"] = 1
 		data["system"]["weight"] = self.getWeight()
 		data["system"]["price"] = {

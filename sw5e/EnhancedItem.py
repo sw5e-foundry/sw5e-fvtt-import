@@ -335,7 +335,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			item["system"]["description"] = {
 				"value": self.getDescription(base_text = item["system"]["description"]["value"])
 			}
-			item["system"]["source"] = self.raw_contentSource
+			item["system"]["source"] = { "custom": self.raw_contentSource }
 			item["system"]["attunement"] = 1 if self.raw_requiresAttunement else 0
 			item["system"]["rarity"] = self.rarity
 
@@ -428,7 +428,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		data = super().getData(importer)[0]
 
 		data["system"]["description"] = { "value": self.getDescription() }
-		data["system"]["source"] = self.raw_contentSource
+		data["system"]["source"] = { "custom": self.raw_contentSource }
 		data["system"]["attunement"] = 1 if self.raw_requiresAttunement else 0
 		data["system"]["rarity"] = self.rarity
 

@@ -156,7 +156,7 @@ class Species(sw5e.Entity.Item):
 		data = super().getData(importer)[0]
 
 		data["system"]["description"] = { "value": self.getDescription() }
-		data["system"]["source"] = self.raw_contentSource
+		data["system"]["source"] = { "custom": self.raw_contentSource }
 		data["system"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
 		data["system"]["details"] = { "isDroid": self.creature_type["value"] == 'droid' }
 		data["system"]["type"] = self.creature_type

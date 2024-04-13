@@ -79,7 +79,7 @@ class BaseFeature(sw5e.Entity.Item):
 
 		data["system"]["description"] = { "value": self.description }
 		data["system"]["requirements"] = self.raw_requirements
-		data["system"]["source"] = self.raw_contentSource
+		data["system"]["source"] = { "custom": self.raw_contentSource }
 
 		data["system"]["activation"] = {
 			"type": self.activation,

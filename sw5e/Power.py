@@ -139,7 +139,7 @@ class Power(sw5e.Entity.Item):
 		data = super().getData(importer)[0]
 
 		data["system"]["description"] = { "value": self.getDescription() }
-		data["system"]["source"] = self.raw_contentSource
+		data["system"]["source"] = { "custom": self.raw_contentSource }
 		data["system"]["activation"] = {
 			"type": self.activation_type,
 			"cost": self.activation_num,

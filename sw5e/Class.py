@@ -504,7 +504,7 @@ class Class(sw5e.Entity.Item):
 		data["system"]["hitDice"] = f'd{self.raw_hitDiceDieType}'
 		data["system"]["hitDiceUsed"] = 0
 		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
-		data["system"]["source"] = self.raw_contentSource
+		data["system"]["source"] = { "custom": self.raw_contentSource }
 		data["system"]["powercasting"] = { "force": self.force, "tech": self.tech }
 		data["system"]["superiority"] = { "progression": self.superiority }
 

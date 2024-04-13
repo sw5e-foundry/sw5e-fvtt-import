@@ -363,7 +363,7 @@ class Archetype(sw5e.Entity.Item):
 		data["system"]["powercasting"] = { "force": self.force, "tech": self.tech }
 		data["system"]["superiority"] = { "progression": self.superiority }
 		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
-		data["system"]["source"] = self.raw_contentSource
+		data["system"]["source"] = { "custom": self.raw_contentSource }
 
 		data["system"]["-=className"] = None
 		data["system"]["-=classCasterType"] = None

@@ -529,7 +529,7 @@ class Monster(sw5e.Entity.Actor):
 		data = super().getData(importer)[0]
 
 		data["type"] = 'npc'
-		data["system"]["source"] = self.raw_contentSource
+		data["system"]["source"] = { "custom": self.raw_contentSource }
 		data["system"]["details"] = {
 			"biography": {
 				"value": self.biography
