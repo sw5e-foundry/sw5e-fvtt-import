@@ -8,7 +8,6 @@ class Equipment(sw5e.Equipment.Equipment):
 		self.uses, self.recharge = utils.text.getUses(self.raw_description, self.name)
 		self.activation = utils.text.getActivation(self.raw_description, self.uses, self.recharge)
 		self.armor = self.getArmor()
-		self.p_properties = self.getProperties()
 
 	def getImg(self, importer=None):
 		kwargs = {
@@ -114,7 +113,6 @@ class Equipment(sw5e.Equipment.Equipment):
 
 		data["system"]["armor"] = self.armor
 		data["system"]["strength"] = self.raw_strengthRequirement or 0
-		data["system"]["properties"] = self.p_properties
 
 		return [data]
 

@@ -41,8 +41,10 @@ function getUID(item){
 
 	uid += `.name-${clean(item.name)}`
 
-	category = item.data.weaponType || item.data.consumableType || item.data.armor?.type;
+	category = item.data.type.value;
 	if (category) uid += `.equipmentCategory-${clean(category)}`;
+	// subcategory = item.data.type.subtype;
+	// if (subcategory) uid += `.equipmentSubcategory-${clean(subcategory)}`;
 
 	if (item.data.requirements) uid += `.sourceName-${clean(item.data.requirements)}`
 

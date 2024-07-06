@@ -10,7 +10,6 @@ class Weapon(sw5e.Equipment.Equipment):
 
 		self.weapon_class = self.getWeaponClass()
 		self.ammo_types = self.getAmmoTypes()
-		self.p_properties = self.getProperties()
 
 	def getActivation(self):
 		return 'action'
@@ -152,10 +151,11 @@ class Weapon(sw5e.Equipment.Equipment):
 					"scaling": 'flat'
 				}
 			else:
-				data["system"]["ability"] = 'none'
-				data["system"]["attackBonus"] = f'{mod} + {prof}'
+				data["system"]["attack"] = {
+					"bonus": f'{mod} + {prof}',
+					"flat": True
+				}
 
-			data["system"]["proficient"] = False
 			data["system"]["damage"]["parts"][0][0] = f'{self.raw_damageNumberOfDice}d{self.raw_damageDieType} + {mod}'
 		return data
 
@@ -240,7 +240,6 @@ class Weapon(sw5e.Equipment.Equipment):
 		data = super().getData(importer)[0]
 
 		data["system"]["weaponClass"] = self.weapon_class
-		data["system"]["properties"] = self.p_properties
 		data["system"]["ammo"] = { "types": self.ammo_types }
 
 		return self.getItemVariations(data, importer)

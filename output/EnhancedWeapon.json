@@ -23,7 +23,7 @@
                 "value": 1075,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -49,15 +49,21 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "weaponClass": "",
-            "properties": {
+            "propertyValues": {
                 "mod": "blaster rifle and techstaff",
                 "shk": true
             },
+            "properties": [
+                "mod",
+                "shk"
+            ],
+            "weaponClass": "",
             "ammo": {
                 "types": []
             },
-            "attackBonus": "2",
+            "attack": {
+                "bonus": "2"
+            },
             "damage": {
                 "parts": [
                     [
@@ -94,7 +100,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "advanced",
             "identified": true,
@@ -121,7 +127,6 @@
             },
             "actionType": "rwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -152,7 +157,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "artifact",
             "identified": true,
@@ -179,7 +184,6 @@
             },
             "actionType": "rwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -210,7 +214,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "legendary",
             "identified": true,
@@ -237,7 +241,6 @@
             },
             "actionType": "rwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -268,7 +271,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -295,7 +298,6 @@
             },
             "actionType": "rwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -326,7 +328,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -353,7 +355,6 @@
             },
             "actionType": "rwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -384,7 +385,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "standard",
             "identified": true,
@@ -411,7 +412,6 @@
             },
             "actionType": "rwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -442,7 +442,7 @@
                 "value": 100,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "artifact",
             "identified": true,
@@ -468,14 +468,21 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "weaponClass": "trip",
-            "properties": {
+            "propertyValues": {
                 "lgt": true,
                 "spc": true,
                 "ran": 20,
                 "dex": true,
                 "rch": true
             },
+            "properties": [
+                "lgt",
+                "spc",
+                "ran",
+                "dex",
+                "rch"
+            ],
+            "weaponClass": "trip",
             "ammo": {
                 "types": []
             },
@@ -515,7 +522,7 @@
                 "value": 100,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "legendary",
             "identified": true,
@@ -541,14 +548,21 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "weaponClass": "trip",
-            "properties": {
+            "propertyValues": {
                 "lgt": true,
                 "spc": true,
                 "ran": 20,
                 "dex": true,
                 "rch": true
             },
+            "properties": [
+                "lgt",
+                "spc",
+                "ran",
+                "dex",
+                "rch"
+            ],
+            "weaponClass": "trip",
             "ammo": {
                 "types": []
             },
@@ -588,7 +602,7 @@
                 "value": 100,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -614,14 +628,21 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "weaponClass": "trip",
-            "properties": {
+            "propertyValues": {
                 "lgt": true,
                 "spc": true,
                 "ran": 20,
                 "dex": true,
                 "rch": true
             },
+            "properties": [
+                "lgt",
+                "spc",
+                "ran",
+                "dex",
+                "rch"
+            ],
+            "weaponClass": "trip",
             "ammo": {
                 "types": []
             },
@@ -661,7 +682,7 @@
                 "value": 100,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -687,14 +708,21 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "weaponClass": "trip",
-            "properties": {
+            "propertyValues": {
                 "lgt": true,
                 "spc": true,
                 "ran": 20,
                 "dex": true,
                 "rch": true
             },
+            "properties": [
+                "lgt",
+                "spc",
+                "ran",
+                "dex",
+                "rch"
+            ],
+            "weaponClass": "trip",
             "ammo": {
                 "types": []
             },
@@ -734,7 +762,7 @@
                 "value": 100,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "advanced",
             "identified": true,
@@ -760,14 +788,21 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "weaponClass": "trip",
-            "properties": {
+            "propertyValues": {
                 "lgt": true,
                 "spc": true,
                 "ran": 20,
                 "dex": true,
                 "rch": true
             },
+            "properties": [
+                "lgt",
+                "spc",
+                "ran",
+                "dex",
+                "rch"
+            ],
+            "weaponClass": "trip",
             "ammo": {
                 "types": []
             },
@@ -807,7 +842,7 @@
                 "value": 175,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -846,18 +881,25 @@
                 ],
                 "versatile": ""
             },
-            "weaponClass": "sidearm",
-            "properties": {
+            "propertyValues": {
                 "pcl": "range 50/200",
                 "rel": 16,
                 "drm": true
             },
+            "properties": [
+                "pcl",
+                "rel",
+                "drm"
+            ],
+            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
                 ]
             },
-            "attackBonus": "1"
+            "attack": {
+                "bonus": "1"
+            }
         },
         "effects": []
     },
@@ -885,7 +927,7 @@
                 "value": 1300,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "advanced",
             "identified": true,
@@ -924,20 +966,29 @@
                 ],
                 "versatile": ""
             },
-            "weaponClass": "rifle",
-            "properties": {
+            "propertyValues": {
                 "pcl": "range 150/600",
                 "rel": 2,
                 "str": 13,
                 "two": true,
                 "drm": true
             },
+            "properties": [
+                "pcl",
+                "rel",
+                "str",
+                "two",
+                "drm"
+            ],
+            "weaponClass": "rifle",
             "ammo": {
                 "types": [
                     "powerCell"
                 ]
             },
-            "attackBonus": "2"
+            "attack": {
+                "bonus": "2"
+            }
         },
         "effects": []
     },
@@ -965,7 +1016,7 @@
                 "value": 550,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "legendary",
             "identified": true,
@@ -1004,16 +1055,23 @@
                 ],
                 "versatile": "1d10 +  @mod + 3"
             },
-            "weaponClass": "blade",
-            "properties": {
+            "propertyValues": {
                 "hid": true,
                 "lum": true,
                 "ver": true
             },
+            "properties": [
+                "hid",
+                "lum",
+                "ver"
+            ],
+            "weaponClass": "blade",
             "ammo": {
                 "types": []
             },
-            "attackBonus": "3"
+            "attack": {
+                "bonus": "3"
+            }
         },
         "effects": []
     },
@@ -1041,7 +1099,7 @@
                 "value": 300,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -1080,11 +1138,15 @@
                 ],
                 "versatile": ""
             },
-            "weaponClass": "sidearm",
-            "properties": {
+            "propertyValues": {
                 "pcl": "range 45/180",
                 "rel": 16
             },
+            "properties": [
+                "pcl",
+                "rel"
+            ],
+            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -1117,7 +1179,7 @@
                 "value": 1800,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "artifact",
             "identified": true,
@@ -1143,14 +1205,21 @@
                 "units": "ft"
             },
             "actionType": "rwak",
-            "weaponClass": "heavy",
-            "properties": {
+            "propertyValues": {
                 "rel": 1,
                 "spc": "range 90/360",
                 "str": true,
                 "two": true,
                 "ran": true
             },
+            "properties": [
+                "rel",
+                "spc",
+                "str",
+                "two",
+                "ran"
+            ],
+            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "grenade"
@@ -1183,7 +1252,7 @@
                 "value": 1800,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "legendary",
             "identified": true,
@@ -1209,14 +1278,21 @@
                 "units": "ft"
             },
             "actionType": "rwak",
-            "weaponClass": "heavy",
-            "properties": {
+            "propertyValues": {
                 "rel": 1,
                 "spc": "range 90/360",
                 "str": true,
                 "two": true,
                 "ran": true
             },
+            "properties": [
+                "rel",
+                "spc",
+                "str",
+                "two",
+                "ran"
+            ],
+            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "grenade"
@@ -1249,7 +1325,7 @@
                 "value": 1800,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -1275,14 +1351,21 @@
                 "units": "ft"
             },
             "actionType": "rwak",
-            "weaponClass": "heavy",
-            "properties": {
+            "propertyValues": {
                 "rel": 1,
                 "spc": "range 90/360",
                 "str": true,
                 "two": true,
                 "ran": true
             },
+            "properties": [
+                "rel",
+                "spc",
+                "str",
+                "two",
+                "ran"
+            ],
+            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "grenade"
@@ -1315,7 +1398,7 @@
                 "value": 1800,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -1341,14 +1424,21 @@
                 "units": "ft"
             },
             "actionType": "rwak",
-            "weaponClass": "heavy",
-            "properties": {
+            "propertyValues": {
                 "rel": 1,
                 "spc": "range 90/360",
                 "str": true,
                 "two": true,
                 "ran": true
             },
+            "properties": [
+                "rel",
+                "spc",
+                "str",
+                "two",
+                "ran"
+            ],
+            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "grenade"
@@ -1381,7 +1471,7 @@
                 "value": 1800,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "advanced",
             "identified": true,
@@ -1407,14 +1497,21 @@
                 "units": "ft"
             },
             "actionType": "rwak",
-            "weaponClass": "heavy",
-            "properties": {
+            "propertyValues": {
                 "rel": 1,
                 "spc": "range 90/360",
                 "str": true,
                 "two": true,
                 "ran": true
             },
+            "properties": [
+                "rel",
+                "spc",
+                "str",
+                "two",
+                "ran"
+            ],
+            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "grenade"
@@ -1447,7 +1544,7 @@
                 "value": 200,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "advanced",
             "identified": true,
@@ -1486,10 +1583,13 @@
                 ],
                 "versatile": "1d10 +  @mod + 1"
             },
-            "weaponClass": "blade",
-            "properties": {
+            "propertyValues": {
                 "ver": true
             },
+            "properties": [
+                "ver"
+            ],
+            "weaponClass": "blade",
             "ammo": {
                 "types": []
             },
@@ -1498,7 +1598,9 @@
                 "max": 6,
                 "per": "lr"
             },
-            "attackBonus": "1"
+            "attack": {
+                "bonus": "1"
+            }
         },
         "effects": []
     },
@@ -1520,18 +1622,15 @@
             "source": {
                 "custom": "WH"
             },
-            "attunement": 1,
+            "attunement": "required",
             "rarity": "prototype",
             "activation": {
                 "type": "bonus",
                 "cost": 1
             },
             "actionType": "mwak",
-            "attackBonus": "1",
-            "damageBonus": "1",
-            "critical": {
-                "threshold": null,
-                "damage": ""
+            "attack": {
+                "bonus": "1"
             },
             "properties": {},
             "type": {
@@ -1570,7 +1669,7 @@
                 "value": 1075,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -1596,15 +1695,21 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "weaponClass": "",
-            "properties": {
+            "propertyValues": {
                 "mod": "blaster rifle and techstaff",
                 "shk": true
             },
+            "properties": [
+                "mod",
+                "shk"
+            ],
+            "weaponClass": "",
             "ammo": {
                 "types": []
             },
-            "attackBonus": "1",
+            "attack": {
+                "bonus": "1"
+            },
             "damage": {
                 "parts": [
                     [
@@ -1641,7 +1746,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "advanced",
             "identified": true,
@@ -1668,7 +1773,6 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -1699,7 +1803,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "artifact",
             "identified": true,
@@ -1726,7 +1830,6 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -1757,7 +1860,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "legendary",
             "identified": true,
@@ -1784,7 +1887,6 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -1815,7 +1917,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -1842,7 +1944,6 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -1873,7 +1974,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -1900,7 +2001,6 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -1931,7 +2031,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "standard",
             "identified": true,
@@ -1958,7 +2058,6 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -1989,7 +2088,7 @@
                 "value": 300,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "artifact",
             "identified": true,
@@ -2015,8 +2114,7 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "weaponClass": "trip",
-            "properties": {
+            "propertyValues": {
                 "lgt": true,
                 "fin": true,
                 "spc": true,
@@ -2024,6 +2122,15 @@
                 "str": true,
                 "rch": true
             },
+            "properties": [
+                "lgt",
+                "fin",
+                "spc",
+                "ran",
+                "str",
+                "rch"
+            ],
+            "weaponClass": "trip",
             "ammo": {
                 "types": []
             },
@@ -2063,7 +2170,7 @@
                 "value": 300,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "legendary",
             "identified": true,
@@ -2089,8 +2196,7 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "weaponClass": "trip",
-            "properties": {
+            "propertyValues": {
                 "lgt": true,
                 "fin": true,
                 "spc": true,
@@ -2098,6 +2204,15 @@
                 "str": true,
                 "rch": true
             },
+            "properties": [
+                "lgt",
+                "fin",
+                "spc",
+                "ran",
+                "str",
+                "rch"
+            ],
+            "weaponClass": "trip",
             "ammo": {
                 "types": []
             },
@@ -2137,7 +2252,7 @@
                 "value": 300,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -2163,8 +2278,7 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "weaponClass": "trip",
-            "properties": {
+            "propertyValues": {
                 "lgt": true,
                 "fin": true,
                 "spc": true,
@@ -2172,6 +2286,15 @@
                 "str": true,
                 "rch": true
             },
+            "properties": [
+                "lgt",
+                "fin",
+                "spc",
+                "ran",
+                "str",
+                "rch"
+            ],
+            "weaponClass": "trip",
             "ammo": {
                 "types": []
             },
@@ -2211,7 +2334,7 @@
                 "value": 300,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -2237,8 +2360,7 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "weaponClass": "trip",
-            "properties": {
+            "propertyValues": {
                 "lgt": true,
                 "fin": true,
                 "spc": true,
@@ -2246,6 +2368,15 @@
                 "str": true,
                 "rch": true
             },
+            "properties": [
+                "lgt",
+                "fin",
+                "spc",
+                "ran",
+                "str",
+                "rch"
+            ],
+            "weaponClass": "trip",
             "ammo": {
                 "types": []
             },
@@ -2285,7 +2416,7 @@
                 "value": 300,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "advanced",
             "identified": true,
@@ -2311,8 +2442,7 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "weaponClass": "trip",
-            "properties": {
+            "propertyValues": {
                 "lgt": true,
                 "fin": true,
                 "spc": true,
@@ -2320,6 +2450,15 @@
                 "str": true,
                 "rch": true
             },
+            "properties": [
+                "lgt",
+                "fin",
+                "spc",
+                "ran",
+                "str",
+                "rch"
+            ],
+            "weaponClass": "trip",
             "ammo": {
                 "types": []
             },
@@ -2359,7 +2498,7 @@
                 "value": 725,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -2402,14 +2541,21 @@
                 ],
                 "versatile": ""
             },
-            "weaponClass": "carbine",
-            "properties": {
+            "propertyValues": {
                 "bur": 2,
                 "rel": 4,
                 "ran": 30,
                 "str": 11,
                 "two": true
             },
+            "properties": [
+                "bur",
+                "rel",
+                "ran",
+                "str",
+                "two"
+            ],
+            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "cartridge"
@@ -2442,7 +2588,7 @@
                 "value": 725,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -2484,14 +2630,21 @@
                 ],
                 "versatile": ""
             },
-            "weaponClass": "carbine",
-            "properties": {
+            "propertyValues": {
                 "bur": 2,
                 "rel": 4,
                 "ran": 30,
                 "str": 11,
                 "two": true
             },
+            "properties": [
+                "bur",
+                "rel",
+                "ran",
+                "str",
+                "two"
+            ],
+            "weaponClass": "carbine",
             "ammo": {
                 "types": [
                     "cartridge"
@@ -2529,7 +2682,7 @@
                 "value": 1625,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "artifact",
             "identified": true,
@@ -2563,8 +2716,7 @@
                 ],
                 "versatile": ""
             },
-            "weaponClass": "heavy",
-            "properties": {
+            "propertyValues": {
                 "aut": true,
                 "bur": 8,
                 "pcl": "range 60/240",
@@ -2573,6 +2725,16 @@
                 "spc": true,
                 "str": true
             },
+            "properties": [
+                "aut",
+                "bur",
+                "pcl",
+                "rel",
+                "smr",
+                "spc",
+                "str"
+            ],
+            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -2582,8 +2744,9 @@
                 "dc": 12,
                 "scaling": "flat"
             },
-            "proficient": false,
-            "attackBonus": "3"
+            "attack": {
+                "bonus": "3"
+            }
         },
         "effects": []
     },
@@ -2611,7 +2774,7 @@
                 "value": 1625,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "legendary",
             "identified": true,
@@ -2645,8 +2808,7 @@
                 ],
                 "versatile": ""
             },
-            "weaponClass": "heavy",
-            "properties": {
+            "propertyValues": {
                 "aut": true,
                 "bur": 8,
                 "pcl": "range 60/240",
@@ -2655,6 +2817,16 @@
                 "spc": true,
                 "str": true
             },
+            "properties": [
+                "aut",
+                "bur",
+                "pcl",
+                "rel",
+                "smr",
+                "spc",
+                "str"
+            ],
+            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -2664,8 +2836,9 @@
                 "dc": 12,
                 "scaling": "flat"
             },
-            "proficient": false,
-            "attackBonus": "3"
+            "attack": {
+                "bonus": "3"
+            }
         },
         "effects": []
     },
@@ -2693,7 +2866,7 @@
                 "value": 1625,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -2727,8 +2900,7 @@
                 ],
                 "versatile": ""
             },
-            "weaponClass": "heavy",
-            "properties": {
+            "propertyValues": {
                 "aut": true,
                 "bur": 8,
                 "pcl": "range 60/240",
@@ -2737,6 +2909,16 @@
                 "spc": true,
                 "str": true
             },
+            "properties": [
+                "aut",
+                "bur",
+                "pcl",
+                "rel",
+                "smr",
+                "spc",
+                "str"
+            ],
+            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -2746,8 +2928,9 @@
                 "dc": 12,
                 "scaling": "flat"
             },
-            "proficient": false,
-            "attackBonus": "1"
+            "attack": {
+                "bonus": "1"
+            }
         },
         "effects": []
     },
@@ -2775,7 +2958,7 @@
                 "value": 1625,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -2809,8 +2992,7 @@
                 ],
                 "versatile": ""
             },
-            "weaponClass": "heavy",
-            "properties": {
+            "propertyValues": {
                 "aut": true,
                 "bur": 8,
                 "pcl": "range 60/240",
@@ -2819,6 +3001,16 @@
                 "spc": true,
                 "str": true
             },
+            "properties": [
+                "aut",
+                "bur",
+                "pcl",
+                "rel",
+                "smr",
+                "spc",
+                "str"
+            ],
+            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -2828,8 +3020,9 @@
                 "dc": 12,
                 "scaling": "flat"
             },
-            "proficient": false,
-            "attackBonus": "2"
+            "attack": {
+                "bonus": "2"
+            }
         },
         "effects": []
     },
@@ -2857,7 +3050,7 @@
                 "value": 1625,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "advanced",
             "identified": true,
@@ -2891,8 +3084,7 @@
                 ],
                 "versatile": ""
             },
-            "weaponClass": "heavy",
-            "properties": {
+            "propertyValues": {
                 "aut": true,
                 "bur": 8,
                 "pcl": "range 60/240",
@@ -2901,6 +3093,16 @@
                 "spc": true,
                 "str": true
             },
+            "properties": [
+                "aut",
+                "bur",
+                "pcl",
+                "rel",
+                "smr",
+                "spc",
+                "str"
+            ],
+            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -2910,8 +3112,9 @@
                 "dc": 12,
                 "scaling": "flat"
             },
-            "proficient": false,
-            "attackBonus": "3"
+            "attack": {
+                "bonus": "3"
+            }
         },
         "effects": []
     },
@@ -2939,7 +3142,7 @@
                 "value": 250,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -2978,12 +3181,17 @@
                 ],
                 "versatile": ""
             },
-            "weaponClass": "sidearm",
-            "properties": {
+            "propertyValues": {
                 "lgt": true,
                 "pcl": "range 40/160",
                 "rel": 8
             },
+            "properties": [
+                "lgt",
+                "pcl",
+                "rel"
+            ],
+            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -3016,7 +3224,7 @@
                 "value": 175,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -3055,17 +3263,23 @@
                 ],
                 "versatile": ""
             },
-            "weaponClass": "sidearm",
-            "properties": {
+            "propertyValues": {
                 "pcl": "range 50/200",
                 "rel": 16
             },
+            "properties": [
+                "pcl",
+                "rel"
+            ],
+            "weaponClass": "sidearm",
             "ammo": {
                 "types": [
                     "powerCell"
                 ]
             },
-            "attackBonus": "1"
+            "attack": {
+                "bonus": "1"
+            }
         },
         "effects": []
     },
@@ -3093,7 +3307,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "advanced",
             "identified": true,
@@ -3120,7 +3334,6 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -3151,7 +3364,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "artifact",
             "identified": true,
@@ -3178,7 +3391,6 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -3209,7 +3421,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "legendary",
             "identified": true,
@@ -3236,7 +3448,6 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -3267,7 +3478,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -3294,7 +3505,6 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -3325,7 +3535,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -3352,7 +3562,6 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -3383,7 +3592,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "standard",
             "identified": true,
@@ -3410,7 +3619,6 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -3441,7 +3649,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "artifact",
             "identified": true,
@@ -3468,11 +3676,12 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             },
-            "attackBonus": "3",
+            "attack": {
+                "bonus": "3"
+            },
             "damage": {
                 "parts": [
                     [
@@ -3509,7 +3718,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "legendary",
             "identified": true,
@@ -3536,11 +3745,12 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             },
-            "attackBonus": "3",
+            "attack": {
+                "bonus": "3"
+            },
             "damage": {
                 "parts": [
                     [
@@ -3577,7 +3787,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -3604,11 +3814,12 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             },
-            "attackBonus": "1",
+            "attack": {
+                "bonus": "1"
+            },
             "damage": {
                 "parts": [
                     [
@@ -3645,7 +3856,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -3672,11 +3883,12 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             },
-            "attackBonus": "2",
+            "attack": {
+                "bonus": "2"
+            },
             "damage": {
                 "parts": [
                     [
@@ -3713,7 +3925,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "advanced",
             "identified": true,
@@ -3740,11 +3952,12 @@
             },
             "actionType": "mwak",
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             },
-            "attackBonus": "3",
+            "attack": {
+                "bonus": "3"
+            },
             "damage": {
                 "parts": [
                     [
@@ -3781,7 +3994,7 @@
                 "value": 1075,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -3816,14 +4029,21 @@
                 ],
                 "versatile": ""
             },
-            "weaponClass": "rifle",
-            "properties": {
+            "propertyValues": {
                 "pcl": "range 125/500",
                 "rel": 2,
                 "sil": true,
                 "str": 11,
                 "two": true
             },
+            "properties": [
+                "pcl",
+                "rel",
+                "sil",
+                "str",
+                "two"
+            ],
+            "weaponClass": "rifle",
             "ammo": {
                 "types": [
                     "powerCell"
@@ -3856,7 +4076,7 @@
                 "value": 15000,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -3882,20 +4102,29 @@
                 "units": "ft"
             },
             "actionType": "rwak",
-            "weaponClass": "heavy",
-            "properties": {
+            "propertyValues": {
                 "spc": "range 1200/3600",
                 "rel": 1,
                 "two": true,
                 "spz": true,
                 "dex": true
             },
+            "properties": [
+                "spc",
+                "rel",
+                "two",
+                "spz",
+                "dex"
+            ],
+            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "torpedo"
                 ]
             },
-            "attackBonus": "1"
+            "attack": {
+                "bonus": "1"
+            }
         },
         "effects": []
     },
@@ -3923,7 +4152,7 @@
                 "value": 15000,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -3949,20 +4178,29 @@
                 "units": "ft"
             },
             "actionType": "rwak",
-            "weaponClass": "heavy",
-            "properties": {
+            "propertyValues": {
                 "spc": "range 1200/3600",
                 "rel": 1,
                 "two": true,
                 "spz": true,
                 "dex": true
             },
+            "properties": [
+                "spc",
+                "rel",
+                "two",
+                "spz",
+                "dex"
+            ],
+            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "torpedo"
                 ]
             },
-            "attackBonus": "2"
+            "attack": {
+                "bonus": "2"
+            }
         },
         "effects": []
     },
@@ -3990,7 +4228,7 @@
                 "value": 15000,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "advanced",
             "identified": true,
@@ -4016,20 +4254,29 @@
                 "units": "ft"
             },
             "actionType": "rwak",
-            "weaponClass": "heavy",
-            "properties": {
+            "propertyValues": {
                 "spc": "range 1200/3600",
                 "rel": 1,
                 "two": true,
                 "spz": true,
                 "dex": true
             },
+            "properties": [
+                "spc",
+                "rel",
+                "two",
+                "spz",
+                "dex"
+            ],
+            "weaponClass": "heavy",
             "ammo": {
                 "types": [
                     "torpedo"
                 ]
             },
-            "attackBonus": "3"
+            "attack": {
+                "bonus": "3"
+            }
         },
         "effects": []
     },
@@ -4057,7 +4304,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "standard",
             "identified": true,
@@ -4093,7 +4340,6 @@
                 "versatile": ""
             },
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -4124,7 +4370,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "artifact",
             "identified": true,
@@ -4160,11 +4406,12 @@
                 "versatile": ""
             },
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             },
-            "attackBonus": "3"
+            "attack": {
+                "bonus": "3"
+            }
         },
         "effects": []
     },
@@ -4192,7 +4439,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "legendary",
             "identified": true,
@@ -4228,11 +4475,12 @@
                 "versatile": ""
             },
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             },
-            "attackBonus": "3"
+            "attack": {
+                "bonus": "3"
+            }
         },
         "effects": []
     },
@@ -4260,7 +4508,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -4296,11 +4544,12 @@
                 "versatile": ""
             },
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             },
-            "attackBonus": "1"
+            "attack": {
+                "bonus": "1"
+            }
         },
         "effects": []
     },
@@ -4328,7 +4577,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -4364,11 +4613,12 @@
                 "versatile": ""
             },
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             },
-            "attackBonus": "2"
+            "attack": {
+                "bonus": "2"
+            }
         },
         "effects": []
     },
@@ -4396,7 +4646,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 0,
+            "attunement": "",
             "equipped": false,
             "rarity": "advanced",
             "identified": true,
@@ -4432,11 +4682,12 @@
                 "versatile": ""
             },
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             },
-            "attackBonus": "3"
+            "attack": {
+                "bonus": "3"
+            }
         },
         "effects": []
     },
@@ -4464,7 +4715,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "advanced",
             "identified": true,
@@ -4500,7 +4751,6 @@
                 "versatile": ""
             },
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -4531,7 +4781,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "artifact",
             "identified": true,
@@ -4567,7 +4817,6 @@
                 "versatile": ""
             },
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -4598,7 +4847,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "legendary",
             "identified": true,
@@ -4634,7 +4883,6 @@
                 "versatile": ""
             },
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -4665,7 +4913,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "premium",
             "identified": true,
@@ -4701,7 +4949,6 @@
                 "versatile": ""
             },
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -4732,7 +4979,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "prototype",
             "identified": true,
@@ -4768,7 +5015,6 @@
                 "versatile": ""
             },
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }
@@ -4799,7 +5045,7 @@
                 "value": 0,
                 "denomination": "gc"
             },
-            "attunement": 1,
+            "attunement": "required",
             "equipped": false,
             "rarity": "standard",
             "identified": true,
@@ -4835,7 +5081,6 @@
                 "versatile": ""
             },
             "weaponClass": "",
-            "properties": {},
             "ammo": {
                 "types": []
             }

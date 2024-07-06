@@ -53,6 +53,7 @@ class Equipment(sw5e.Entity.Item):
 		self.uses, self.recharge = self.getUses()
 		self.action_type, self.damage, self.formula, self.save, self.save_dc, _ = self.getAction()
 		self.activation = self.getActivation()
+		self.p_properties = self.getProperties()
 
 	def getActivation(self):
 		return utils.text.getActivation(self.raw_description or '', self.uses, self.recharge)
@@ -102,6 +103,12 @@ class Equipment(sw5e.Entity.Item):
 	def getProperty(self, prop):
 		return utils.text.getProperty(prop, self.raw_propertiesMap)
 
+	def getPropertiesList(self):
+		return None
+
+	def getProperties(self):
+		return None
+
 	def getBaseItem(self):
 		return re.sub(r'\'|\s+|\([^)]*\)', '', self.raw_name.lower());
 
@@ -122,7 +129,7 @@ class Equipment(sw5e.Entity.Item):
 			"value": self.raw_cost,
 			"denomination": "gc"
 		}
-		data["system"]["attunement"] = 0
+		data["system"]["attunement"] = ''
 		data["system"]["equipped"] = False
 		data["system"]["rarity"] = ''
 		data["system"]["identified"] = True
@@ -171,6 +178,9 @@ class Equipment(sw5e.Entity.Item):
 			"dc": self.save_dc,
 			"scaling": 'flat' if self.save_dc else 'none'
 		}
+		if self.p_properties:
+			data["system"]["propertyValues"] = { key: value for key, value in self.p_properties.items() if value }
+			data["system"]["properties"] = list(data["system"]["propertyValues"].keys())
 
 		return [data]
 

@@ -21,7 +21,7 @@ class Maneuvers(sw5e.Feature.BaseFeature):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["system"]["maneuverType"] = self.raw_type.lower()
+		data["system"]["type"] = { "value": self.raw_type.lower() }
 
 		return [data]
 

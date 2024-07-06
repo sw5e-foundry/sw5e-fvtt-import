@@ -97,8 +97,8 @@ casting_properties = (
 		"name": 'Absorbing',
 		"id": 'c_Absorbing',
 	}, {
-		"name": 'Acessing',
-		"id": 'c_Acessing',
+		"name": 'Accessing',
+		"id": 'c_Accessing',
 	}, {
 		"name": 'Amplifying',
 		"id": 'c_Amplifying',

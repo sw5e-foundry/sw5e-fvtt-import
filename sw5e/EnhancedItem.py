@@ -336,7 +336,7 @@ class EnhancedItem(sw5e.Entity.Item):
 				"value": self.getDescription(base_text = item["system"]["description"]["value"])
 			}
 			item["system"]["source"] = { "custom": self.raw_contentSource }
-			item["system"]["attunement"] = 1 if self.raw_requiresAttunement else 0
+			item["system"]["attunement"] = 'required' if self.raw_requiresAttunement else ''
 			item["system"]["rarity"] = self.rarity
 
 			if "activation" not in item["system"]: item["system"]["activation"] = {}
@@ -378,17 +378,17 @@ class EnhancedItem(sw5e.Entity.Item):
 					}
 
 			if self.properties:
-				if "properties" not in item["system"]: item["system"]["properties"] = {}
-				item["system"]["properties"] = {**item["system"]["properties"], **self.properties}
+				if "propertyValues" not in item["system"]: item["system"]["propertyValues"] = {}
+				item["system"]["propertyValues"] = {**item["system"]["propertyValues"], **{key: value for key,value in self.properties.items() if value}}
+				item["system"]["properties"] = list(item["system"]["propertyValues"].keys())
 
 			if self.action_type:
 				item["system"]["actionType"] = choose(item["system"], self.action_type, "actionType", 'other')
 
 			if self.attack_bonus:
-				if "attackBonus" not in item["system"]: item["system"]["attackBonus"] = ''
-				if self.attack_bonus:
-					if item["system"]["attackBonus"]: item["system"]["attackBonus"] += f' + {self.attack_bonus}'
-					else: item["system"]["attackBonus"] = self.attack_bonus
+				if "attack" not in item["system"]: item["system"]["attack"] = { "bonus": '' }
+				if item["system"]["attack"]["bonus"]: item["system"]["attack"]["bonus"] += f' + {self.attack_bonus}'
+				else: item["system"]["attack"]["bonus"] = self.attack_bonus
 
 			if (self.damage and (self.damage["parts"] or self.damage["versatile"])) or self.damage_bonus:
 				if "damage" not in item["system"]: item["system"]["damage"] = {}
@@ -429,7 +429,7 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		data["system"]["description"] = { "value": self.getDescription() }
 		data["system"]["source"] = { "custom": self.raw_contentSource }
-		data["system"]["attunement"] = 1 if self.raw_requiresAttunement else 0
+		data["system"]["attunement"] = 'required' if self.raw_requiresAttunement else ''
 		data["system"]["rarity"] = self.rarity
 
 		if self.activation: data["system"]["activation"] = {
@@ -456,21 +456,25 @@ class EnhancedItem(sw5e.Entity.Item):
 			"max": self.uses,
 			"per": self.recharge
 		}
-		#	item["system"]["consume"] = {}
-		#	item["system"]["ability"] = ''
+		# data["system"]["consume"] = {}
+		# data["system"]["ability"] = ''
 
 		if self.action_type: data["system"]["actionType"] = self.action_type
-		if self.attack_bonus: data["system"]["attackBonus"] = self.attack_bonus
-		if self.damage_bonus: data["system"]["damageBonus"] = self.damage_bonus
-		#	item["system"]["chatFlavor"] = ''
-		data["system"]["critical"] = {
-			"threshold": None,
-			"damage": ""
-		}
-		if self.damage["parts"] or self.damage["versatile"]: data["system"]["damage"] = {
-			"parts": self.damage["parts"],
-			"versatile": self.damage["versatile"]
-		}
+		if self.attack_bonus: data["system"]["attack"] = { "bonus": self.attack_bonus }
+		# data["system"]["chatFlavor"] = ''
+		# data["system"]["critical"] = {
+		# 	"threshold": None,
+		# 	"damage": ""
+		# }
+		if self.damage["parts"] or self.damage["versatile"]:
+			data["system"]["damage"] = {
+				"parts": self.damage["parts"],
+				"versatile": self.damage["versatile"]
+			}
+			if self.damage_bonus:
+				if len(data["system"]["damage"]["parts"]): data["system"]["damage"]["parts"][0][0] += f' + {self.damage_bonus}'
+				else: data["system"]["damage"]["parts"].append([f'{self.damage_bonus}', ''])
+				if data["system"]["damage"]["versatile"]: data["system"]["damage"]["versatile"] += f' + {self.damage_bonus}'
 		if self.formula: data["system"]["formula"] = self.formula
 		if self.save: data["system"]["save"] = {
 			"ability": self.save,
@@ -508,10 +512,11 @@ class EnhancedItem(sw5e.Entity.Item):
 						"scaling": 'flat'
 					}
 				else:
-					data["system"]["ability"] = 'none'
-					data["system"]["attackBonus"] = f'{mod} + {prof}'
+					data["system"]["attack"] = {
+						"bonus": f'{mod} + {prof}',
+						"flat": True
+					}
 
-				data["system"]["proficient"] = False
 				data["system"]["damage"]["parts"][0][0] = f'{self.base_item.raw_damageNumberOfDice}d{self.base_item.raw_damageDieType} + {mod}'
 
 		return data
