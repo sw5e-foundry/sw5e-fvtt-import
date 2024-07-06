@@ -141,6 +141,11 @@ class Equipment(sw5e.Entity.Item):
 				"baseItem": self.base_item,
 			}
 		data["system"]["-=baseItem"] = None
+		data["system"]["-=weaponType"] = None
+		data["system"]["-=consumableType"] = None
+		data["system"]["-=ammoType"] = None
+		data["system"]["-=toolType"] = None
+		if "armor" in data["system"]: data["system"]["armor"]["-=type"] = None
 
 		if self.activation: data["system"]["activation"] = {
 			"type": self.activation,

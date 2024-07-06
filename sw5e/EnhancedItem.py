@@ -484,14 +484,18 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		if self.modifiable_item: data["system"]["modify"] = self.modifiable_item
 
-		data["system"]["properties"] = self.properties
-
 		if self.category != False:
 			data["system"]["type"] = {
 				"value": self.category,
 				"subtype": self.subcategory,
 				"baseItem": self.base_item.base_item if self.base_item else None
 		}
+		data["system"]["-=baseItem"] = None
+		data["system"]["-=weaponType"] = None
+		data["system"]["-=consumableType"] = None
+		data["system"]["-=ammoType"] = None
+		data["system"]["-=toolType"] = None
+		if "armor" in data["system"]: data["system"]["armor"]["-=type"] = None
 
 		self.applyDataAutoTarget(data)
 		self.applyDataSubtype(data)
@@ -612,7 +616,7 @@ class EnhancedItem(sw5e.Entity.Item):
 
 			data["system"]["-=modificationSlot"] = None
 
-			data["system"]["properties"]["indeterminate"] = { key: False for key in self.properties.keys() }
+			# data["system"]["properties"]["indeterminate"] = { key: False for key in self.properties.keys() }
 		else:
 			raise ValueError(self.raw_name, self.raw_type)
 
