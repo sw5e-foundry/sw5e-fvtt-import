@@ -27,3 +27,6 @@ class Loot(sw5e.Equipment.Equipment):
 	def getDescription(self, importer):
 		text = self.raw_description
 		return utils.text.markdownToHtml(text)
+
+	def getEquipmentCategory(self):
+		return 'gear'
