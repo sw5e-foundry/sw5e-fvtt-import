@@ -200,8 +200,8 @@ class EnhancedItem(sw5e.Entity.Item):
 			elif self.raw_subtype == 'barrier':
 				if self.base_name.lower().startswith('physical'):
 					return 'barrier', 'physical'
-				if self.base_name.lower().startswith('enviromental'):
-					return 'barrier', 'enviromental'
+				if self.base_name.lower().startswith('environmental'):
+					return 'barrier', 'environmental'
 				return 'barrier', None
 			elif self.raw_subtype == 'medpac':
 				if re.search(r'vitapac', self.base_name.lower()):
