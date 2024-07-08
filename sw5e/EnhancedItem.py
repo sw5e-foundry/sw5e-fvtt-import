@@ -322,7 +322,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			mode = (re.search(r'\.mode-(.*)', item["flags"]["sw5e-importer"]["uid"]) or [None,None])[1]
 
 			for key in superdata:
-				if key in ("system", "img"): continue
+				if key in ("system", "img", "type"): continue
 				item[key] = copy.deepcopy(superdata[key])
 
 			if (img := self.getImg(importer=importer)) != 'icons/svg/item-bag.svg':
