@@ -378,9 +378,9 @@ class EnhancedItem(sw5e.Entity.Item):
 					}
 
 			if self.properties:
-				if "propertyValues" not in item["system"]: item["system"]["propertyValues"] = {}
-				item["system"]["propertyValues"] = {**item["system"]["propertyValues"], **{key: value for key,value in self.properties.items() if value}}
-				item["system"]["properties"] = list(item["system"]["propertyValues"].keys())
+				if "_propertyValues" not in item["system"]: item["system"]["_propertyValues"] = {}
+				item["system"]["_propertyValues"] = {**item["system"]["_propertyValues"], **{key: value for key,value in self.properties.items() if value}}
+				item["system"]["properties"] = list(item["system"]["_propertyValues"].keys())
 
 			if self.action_type:
 				item["system"]["actionType"] = choose(item["system"], self.action_type, "actionType", 'other')

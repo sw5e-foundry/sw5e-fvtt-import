@@ -137,7 +137,15 @@ class JournalEntry(Entity):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["content"] = self.getContent()
+		data["pages"] = [
+			{
+				"name": data["name"],
+				"_id": "0000000000000000",
+				"text": { "content": self.getContent() },
+				"src": None,
+				"flags": data["flags"],
+			}
+		]
 
 		return [data]
 
@@ -149,3 +157,19 @@ class Property(JournalEntry):
 		content = self.raw_content
 		if val: content = re.sub(r'#### [\w-]+', f'#### {val.capitalize()}', content)
 		return utils.text.markdownToHtml(content)
+
+class Rule(JournalEntry):
+	def getRuleType(self):
+		return 'rule'
+
+	def getData(self, importer):
+		data = super().getData(importer)[0]
+		page = data["pages"][0]
+
+		page["type"] = 'rule'
+		page["system"] = {
+			"tooltip": self.getContent(),
+			"type": self.getRuleType(),
+		}
+
+		return [data]

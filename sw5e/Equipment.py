@@ -184,8 +184,8 @@ class Equipment(sw5e.Entity.Item):
 			"scaling": 'flat' if self.save_dc else 'none'
 		}
 		if self.p_properties:
-			data["system"]["propertyValues"] = { key: value for key, value in self.p_properties.items() if value }
-			data["system"]["properties"] = list(data["system"]["propertyValues"].keys())
+			data["system"]["_propertyValues"] = { key: value for key, value in self.p_properties.items() if value }
+			data["system"]["properties"] = list(data["system"]["_propertyValues"].keys())
 
 		return [data]
 
