@@ -360,15 +360,14 @@ class Archetype(sw5e.Entity.Item):
 		data["system"]["invocations"] = { "value": self.invocationsText }
 		data["system"]["identifier"] = utils.text.slugify(self.name, capitalized=False)
 		data["system"]["classIdentifier"] = utils.text.slugify(self.raw_className, capitalized=False)
-		data["system"]["powercasting"] = { "force": self.force, "tech": self.tech }
+		data["system"]["spellcasting"] = { "forceProgression": self.force, "techProgression": self.tech }
 		data["system"]["superiority"] = { "progression": self.superiority }
 		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
 		data["system"]["source"] = { "custom": self.raw_contentSource }
 
 		data["system"]["-=className"] = None
 		data["system"]["-=classCasterType"] = None
-		data["system"]["powercasting"]["-=progression"] = None
-		data["system"]["powercasting"]["-=ability"] = None
+		data["system"]["-=powercasting"] = None
 
 		return [data]
 
