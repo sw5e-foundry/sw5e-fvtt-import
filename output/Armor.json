@@ -6,10 +6,17 @@
                 "timestamp": "2023-03-09T01:51:54.4044985+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-assault_armor.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "bulky": true,
+                    "strength": 15,
+                    "stealthDisadvantage": true
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/AssaultArmor.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/AssaultArmor.webp",
         "system": {
             "description": {
                 "value": "<h3>Bulky</h3>\n<p>While wearing armor with this property, you have disadvantage on Dexterity (Stealth) checks that rely on sound.</p>\n<h3>Strength 15</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number. </p>\n<hr/>\n<p>Assault armor improved on battle armor, with the benefit of micro-hydraulics that boost the efficacy of the operator. It offers better protection, but increased weight.</p>"
@@ -21,7 +28,7 @@
             "weight": 60,
             "price": {
                 "value": 2000,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -38,14 +45,9 @@
             "-=ammoType": null,
             "-=toolType": null,
             "actionType": "other",
-            "_propertyValues": {
-                "Bulky": true,
-                "Strength": 15,
-                "stealthDisadvantage": true
-            },
             "properties": [
-                "Bulky",
-                "Strength",
+                "bulky",
+                "strength",
                 "stealthDisadvantage"
             ],
             "armor": {
@@ -63,10 +65,17 @@
                 "timestamp": "2023-03-09T01:51:54.4034987+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-battle_armor.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "bulky": true,
+                    "strength": 13,
+                    "stealthDisadvantage": true
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/BattleArmor.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/BattleArmor.webp",
         "system": {
             "description": {
                 "value": "<h3>Bulky</h3>\n<p>While wearing armor with this property, you have disadvantage on Dexterity (Stealth) checks that rely on sound.</p>\n<h3>Strength 13</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number. </p>\n<hr/>\n<p>Battle armor is an armor that reduced weight, but restricts movement. The armor is commonly used by mercenaries, bounty hunters, soldiers, and civilians that live in dangerous areas.</p>"
@@ -78,7 +87,7 @@
             "weight": 55,
             "price": {
                 "value": 750,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -95,14 +104,9 @@
             "-=ammoType": null,
             "-=toolType": null,
             "actionType": "other",
-            "_propertyValues": {
-                "Bulky": true,
-                "Strength": 13,
-                "stealthDisadvantage": true
-            },
             "properties": [
-                "Bulky",
-                "Strength",
+                "bulky",
+                "strength",
                 "stealthDisadvantage"
             ],
             "armor": {
@@ -120,10 +124,16 @@
                 "timestamp": "2023-03-09T01:52:06.1057133+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-beskar_weave_armor.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "regulated": true,
+                    "strength": 11
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/WH/BeskarWeaveArmor.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/WH/BeskarWeaveArmor.webp",
         "system": {
             "description": {
                 "value": "<h3>Regulated</h3>\n<p>When you are wearing armor or wielding a shield with this property and a creature rolls the maximum on a weapon damage die against you, they must reroll and use the new roll, even if the new roll is the maximum on the weapon damage die.</p>\n<h3>Strength 11</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number. </p>"
@@ -135,7 +145,7 @@
             "weight": 25,
             "price": {
                 "value": 3000,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -151,13 +161,9 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Regulated": true,
-                "Strength": 11
-            },
             "properties": [
-                "Regulated",
-                "Strength"
+                "regulated",
+                "strength"
             ],
             "armor": {
                 "value": 14,
@@ -174,10 +180,15 @@
                 "timestamp": "2023-03-09T01:52:06.1077116+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-bone_light_shield.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "spiked": "1d4"
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/WH/BoneLightShield.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/WH/BoneLightShield.webp",
         "system": {
             "description": {
                 "value": "<h3>Spiked ([[/r 1d4]])</h3>\n<p>When you succeed on a Strength (Athletics) check to shove or trip a creature while wielding a shield with this property, the creature takes kinetic damage using the spiked damage (which appears in parentheses with the property) + your Strength modifier. If you use a shield with this property as an improvised weapon, the damage increases by one step (from [[/r d4]] to [[/r d6]], [[/r d6]] to [[/r d8]], or [[/r d8]] to [[/r 2d4]]).</p>"
@@ -189,7 +200,7 @@
             "weight": 0,
             "price": {
                 "value": 300,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -205,11 +216,8 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Spiked": "1d4"
-            },
             "properties": [
-                "Spiked"
+                "spiked"
             ],
             "armor": {
                 "value": 0,
@@ -229,7 +237,7 @@
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/CombatSuit.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/CombatSuit.webp",
         "system": {
             "description": {
                 "value": "<p>Combat suits are seen all over the galaxy, and can be found for sale by almost any merchant who dealt in weapons and armor. Many such suits are used by military organizations, such as the Galactic Republic's military, as well as by mercenaries, criminals, bounty hunters and even some Jedi.</p>\n<p>The suit itself offers decent protection from most types of attacks while maintaining maximum flexibility and minimum weight. However this armor is only recommended for light skirmishes.</p>"
@@ -241,7 +249,7 @@
             "weight": 10,
             "price": {
                 "value": 100,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -273,10 +281,17 @@
                 "timestamp": "2023-03-09T01:51:54.4034987+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-composite_armor.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "bulky": true,
+                    "powered": true,
+                    "stealthDisadvantage": true
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/CompositeArmor.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/CompositeArmor.webp",
         "system": {
             "description": {
                 "value": "<h3>Bulky</h3>\n<p>While wearing armor with this property, you have disadvantage on Dexterity (Stealth) checks that rely on sound.</p>\n<hr/>\n<p>Composite armor is a type of armored suit that offers a good balance of mobility and protection against most types of weapons. The micro-hydraulics of this type of powered armor provide the operator with protection, but are more bulky than mesh or weave armors. This type of armor is rarely seen outside of professional mercenaries' and soldiers' use.</p>"
@@ -288,7 +303,7 @@
             "weight": 45,
             "price": {
                 "value": 2500,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -305,14 +320,9 @@
             "-=ammoType": null,
             "-=toolType": null,
             "actionType": "other",
-            "_propertyValues": {
-                "Bulky": true,
-                "Powered": true,
-                "stealthDisadvantage": true
-            },
             "properties": [
-                "Bulky",
-                "Powered",
+                "bulky",
+                "powered",
                 "stealthDisadvantage"
             ],
             "armor": {
@@ -330,10 +340,17 @@
                 "timestamp": "2023-03-09T01:52:06.1077116+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-crystadium_medium_shield.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "absorptive": 1,
+                    "imbalanced": true,
+                    "strength": 13
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/WH/CrystadiumMediumShield.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/WH/CrystadiumMediumShield.webp",
         "system": {
             "description": {
                 "value": "<h3>Absorptive 1</h3>\n<p>When you are wearing armor or wielding a shield with this property, damage that you take from weapons is reduced by an amount equal to the absorptive number. If this would reduce the damage to 0, the damage is instead reduced to 1.</p>\n<h3>Imbalanced</h3>\n<p>When you are critically hit while wielding a shield with this property, you can't take reactions until the start of your next turn, and you gain no AC benefit from your shield against the next attack against you before the start of your next turn.</p>\n<h3>Strength 13</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number. </p>"
@@ -345,7 +362,7 @@
             "weight": 18,
             "price": {
                 "value": 900,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -361,15 +378,10 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Absorptive": 1,
-                "Imbalanced": true,
-                "Strength": 13
-            },
             "properties": [
-                "Absorptive",
-                "Imbalanced",
-                "Strength"
+                "absorptive",
+                "imbalanced",
+                "strength"
             ],
             "armor": {
                 "value": 2,
@@ -386,10 +398,17 @@
                 "timestamp": "2023-03-09T01:52:06.1067123+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-durafiber_battle_armor.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "bulky": true,
+                    "strength": 11,
+                    "stealthDisadvantage": true
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/WH/DurafiberBattleArmor.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/WH/DurafiberBattleArmor.webp",
         "system": {
             "description": {
                 "value": "<h3>Bulky</h3>\n<p>While wearing armor with this property, you have disadvantage on Dexterity (Stealth) checks that rely on sound.</p>\n<h3>Strength 11</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number. </p>"
@@ -401,7 +420,7 @@
             "weight": 55,
             "price": {
                 "value": 6750,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -417,14 +436,9 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Bulky": true,
-                "Strength": 11,
-                "stealthDisadvantage": true
-            },
             "properties": [
-                "Bulky",
-                "Strength",
+                "bulky",
+                "strength",
                 "stealthDisadvantage"
             ],
             "armor": {
@@ -442,10 +456,16 @@
                 "timestamp": "2023-03-09T01:52:06.1057133+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-duranium_combat_suit.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "cumbersome": true,
+                    "reactive": 1
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/WH/DuraniumCombatSuit.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/WH/DuraniumCombatSuit.webp",
         "system": {
             "description": {
                 "value": "<h3>Cumbersome</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 5.</p>\n<h3>Reactive 1</h3>\n<p>When you are wearing armor with this property and a creature hits you with an attack roll, you gain a bonus to AC against the next attack from that creature before the start of your next turn equal to the reactive number.</p>"
@@ -457,7 +477,7 @@
             "weight": 10,
             "price": {
                 "value": 1100,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -473,13 +493,9 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Cumbersome": true,
-                "Reactive": 1
-            },
             "properties": [
-                "Cumbersome",
-                "Reactive"
+                "cumbersome",
+                "reactive"
             ],
             "armor": {
                 "value": 11,
@@ -496,10 +512,19 @@
                 "timestamp": "2023-03-09T01:52:06.1067123+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-durasteel_exoskeleton.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "bulky": true,
+                    "impermeable": 2,
+                    "rigid": true,
+                    "strength": 17,
+                    "stealthDisadvantage": true
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/WH/DurasteelExoskeleton.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/WH/DurasteelExoskeleton.webp",
         "system": {
             "description": {
                 "value": "<h3>Bulky</h3>\n<p>While wearing armor with this property, you have disadvantage on Dexterity (Stealth) checks that rely on sound.</p>\n<h3>Impermeable 2 2</h3>\n<p>Armor with this property includes the limited functions of a number of enviromental suits equal the impermeable number from the list below, which are either included in parentheses with the property or determined by the GM. Additionally, it includes 4 hours' capacity of oxygen, which can be replenished by oxygen tanks.</p>\n<ul>\n<li><strong>Chemical Suit:</strong> You are immune to the corroded condition.</li>\n<li><strong>Conductive Suit:</strong> You are immune to the shocked condition.</li>\n<li><strong>Dampening Suit:</strong> You are immune to the deafened condition, and you can't have disadvantage on Wisdom (Perception) and Intelligence (Investigation) checks that rely on sound.</li>\n<li><strong>Diving Suit:</strong> You are protected from the hazards associated with high pressure environments.</li>\n<li><strong>Flame-Proof Suit:</strong> You are immune to the ignited condition.</li>\n<li><strong>Hazard Suit:</strong> You are immune to the poisoned condition.</li>\n<li><strong>Mind-Shielding Suit:</strong> You have advantage on saving throws to avoid being frightened, and you have advantage on saving throws to avoid having your mind read or affected.</li>\n<li><strong>Space Suit:</strong> You are protected from the hazards associated with low pressure environments.</li>\n<li><strong>Stabilizer Suit:</strong> You have advantage on ability checks and saving throws to avoid being moved.</li>\n<h3>Rigid</h3>\n<p>While wearing armor with this property, you add half your Dexterity modifier (rounded down), instead of your full Dexterity modifier, to Dexterity saving throws you make. If your Dexterity modifier is negative, you instead subtract the full modifier.</p>\n<h3>Strength 17</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number. </p>"
@@ -511,7 +536,7 @@
             "weight": 65,
             "price": {
                 "value": 15000,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -527,18 +552,11 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Bulky": true,
-                "Impermeable": 2,
-                "Rigid": true,
-                "Strength": 17,
-                "stealthDisadvantage": true
-            },
             "properties": [
-                "Bulky",
-                "Impermeable",
-                "Rigid",
-                "Strength",
+                "bulky",
+                "impermeable",
+                "rigid",
+                "strength",
                 "stealthDisadvantage"
             ],
             "armor": {
@@ -556,10 +574,15 @@
                 "timestamp": "2023-03-09T01:52:06.1057133+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-duravlex_fiber_armor.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "silentEquipment": true
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/WH/DuravlexFiberArmor.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/WH/DuravlexFiberArmor.webp",
         "system": {
             "description": {
                 "value": "<h3>Silent</h3>\n<p>While wearing armor with this property, you have advantage on Dexterity (Stealth) checks that rely on sound.</p>"
@@ -571,7 +594,7 @@
             "weight": 13,
             "price": {
                 "value": 1450,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -587,11 +610,8 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Silent": true
-            },
             "properties": [
-                "Silent"
+                "silentEquipment"
             ],
             "armor": {
                 "value": 11,
@@ -611,7 +631,7 @@
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/FiberArmor.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/FiberArmor.webp",
         "system": {
             "description": {
                 "value": "<p>Fiber armor is a type of armor that offers more protection than the lighter combat suit. Fiber armor is heavier overall than combat suits, and not quite as flexible, but many consider the trade-offs worthwhile. It is a good source of defense from physical attacks and light blaster fire.</p>"
@@ -623,7 +643,7 @@
             "weight": 13,
             "price": {
                 "value": 450,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -655,10 +675,16 @@
                 "timestamp": "2023-03-09T01:52:06.1057133+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-fleximetal_fiber_armor.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "avoidant": 1,
+                    "strength": 11
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/WH/FleximetalFiberArmor.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/WH/FleximetalFiberArmor.webp",
         "system": {
             "description": {
                 "value": "<h3>Avoidant 1</h3>\n<p>When wearing armor or wielding a shield with this property and a creature makes an attack against you, the critical hit range decreases by an amount equal to the avoidant number, to a minimum of 1.</p>\n<h3>Strength 11</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number. </p>"
@@ -670,7 +696,7 @@
             "weight": 13,
             "price": {
                 "value": 1450,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -686,13 +712,9 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Avoidant": 1,
-                "Strength": 11
-            },
             "properties": [
-                "Avoidant",
-                "Strength"
+                "avoidant",
+                "strength"
             ],
             "armor": {
                 "value": 12,
@@ -709,10 +731,17 @@
                 "timestamp": "2023-03-09T01:51:54.4044985+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-heavy_exoskeleton.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "bulky": true,
+                    "strength": 17,
+                    "stealthDisadvantage": true
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/HeavyExoskeleton.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/HeavyExoskeleton.webp",
         "system": {
             "description": {
                 "value": "<h3>Bulky</h3>\n<p>While wearing armor with this property, you have disadvantage on Dexterity (Stealth) checks that rely on sound.</p>\n<h3>Strength 17</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number. </p>\n<hr/>\n<p>Heavy exoskeletons are virtually the heaviest armor acquirable during the Galactic War. It is ideal for extreme combat situations that involved direct damage and also offers a very good level of protection in sacrifice of dexterity. Some consider it claustrophobic but that was the trade-off for safety.</p>"
@@ -724,7 +753,7 @@
             "weight": 65,
             "price": {
                 "value": 9000,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -741,14 +770,9 @@
             "-=ammoType": null,
             "-=toolType": null,
             "actionType": "other",
-            "_propertyValues": {
-                "Bulky": true,
-                "Strength": 17,
-                "stealthDisadvantage": true
-            },
             "properties": [
-                "Bulky",
-                "Strength",
+                "bulky",
+                "strength",
                 "stealthDisadvantage"
             ],
             "armor": {
@@ -766,10 +790,16 @@
                 "timestamp": "2023-03-09T01:51:54.405497+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-heavy_physical_shield.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "obtrusive": true,
+                    "strength": 15
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/HeavyPhysicalShield.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/HeavyPhysicalShield.webp",
         "system": {
             "description": {
                 "value": "Obtrusive\n<h3>Strength 15</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number. </p>"
@@ -781,7 +811,7 @@
             "weight": 36,
             "price": {
                 "value": 500,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -797,13 +827,9 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Obtrusive": true,
-                "Strength": 15
-            },
             "properties": [
-                "Obtrusive",
-                "Strength"
+                "obtrusive",
+                "strength"
             ],
             "armor": {
                 "value": 3,
@@ -823,7 +849,7 @@
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/HeavyShieldGenerator.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/HeavyShieldGenerator.webp",
         "system": {
             "description": {
                 "value": ""
@@ -835,7 +861,7 @@
             "weight": 12,
             "price": {
                 "value": 1250,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -866,10 +892,19 @@
                 "timestamp": "2023-03-09T01:52:06.1067123+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-laminanium_assault.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "bulky": true,
+                    "cumbersome": true,
+                    "obscured": true,
+                    "strength": 15,
+                    "stealthDisadvantage": true
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/WH/LaminaniumAssault.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/WH/LaminaniumAssault.webp",
         "system": {
             "description": {
                 "value": "<h3>Bulky</h3>\n<p>While wearing armor with this property, you have disadvantage on Dexterity (Stealth) checks that rely on sound.</p>\n<h3>Cumbersome</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 5.</p>\n<h3>Obscured</h3>\n<p>While wearing armor or wielding a shield with this property, electronic sensors and cameras have disadvantage on Wisdom (Perception) and Intelligence (Investigation) checks against you that rely on sight.</p>\n<h3>Strength 15</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number. </p>"
@@ -881,7 +916,7 @@
             "weight": 60,
             "price": {
                 "value": 8000,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -897,18 +932,11 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Bulky": true,
-                "Cumbersome": true,
-                "Obscured": true,
-                "Strength": 15,
-                "stealthDisadvantage": true
-            },
             "properties": [
-                "Bulky",
-                "Cumbersome",
-                "Obscured",
-                "Strength",
+                "bulky",
+                "cumbersome",
+                "obscured",
+                "strength",
                 "stealthDisadvantage"
             ],
             "armor": {
@@ -929,7 +957,7 @@
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/LightPhysicalShield.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/LightPhysicalShield.webp",
         "system": {
             "description": {
                 "value": ""
@@ -941,7 +969,7 @@
             "weight": 0,
             "price": {
                 "value": 50,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -975,7 +1003,7 @@
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/LightShieldGenerator.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/LightShieldGenerator.webp",
         "system": {
             "description": {
                 "value": ""
@@ -987,7 +1015,7 @@
             "weight": 0,
             "price": {
                 "value": 125,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1018,10 +1046,15 @@
                 "timestamp": "2023-03-09T01:51:54.4044985+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-medium_physical_shield.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "strength": 13
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/MediumPhysicalShield.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/MediumPhysicalShield.webp",
         "system": {
             "description": {
                 "value": "<h3>Strength 13</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number. </p>"
@@ -1033,7 +1066,7 @@
             "weight": 18,
             "price": {
                 "value": 150,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1049,11 +1082,8 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Strength": 13
-            },
             "properties": [
-                "Strength"
+                "strength"
             ],
             "armor": {
                 "value": 2,
@@ -1073,7 +1103,7 @@
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/MediumShieldGenerator.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/MediumShieldGenerator.webp",
         "system": {
             "description": {
                 "value": ""
@@ -1085,7 +1115,7 @@
             "weight": 0,
             "price": {
                 "value": 375,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1119,7 +1149,7 @@
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/MeshArmor.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/MeshArmor.webp",
         "system": {
             "description": {
                 "value": "<p>Providing solid protection for a minimal cost, mesh armor is considered excellent protection for entrenched troops or guards. However, this protection comes at a cost of mobility, limiting its uses by rapidly advancing infantry. Still, it provides more mobility than battle armor.</p>"
@@ -1131,7 +1161,7 @@
             "weight": 20,
             "price": {
                 "value": 500,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1163,10 +1193,16 @@
                 "timestamp": "2023-03-09T01:52:06.1057133+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-neutronium_mesh.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "insulated": 5,
+                    "strength": 11
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/WH/NeutroniumMesh.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/WH/NeutroniumMesh.webp",
         "system": {
             "description": {
                 "value": "<h3>Insulated 5</h3>\n<p>When you make a saving throw against an effect that would deal ion or lightning damage while wearing armor or wielding a shield with this property, you can treat a [[/r d20]] roll of below the insulated number as the insulated number.</p>\n<h3>Strength 11</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number. </p>"
@@ -1178,7 +1214,7 @@
             "weight": 20,
             "price": {
                 "value": 2500,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1194,13 +1230,9 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Insulated": 5,
-                "Strength": 11
-            },
             "properties": [
-                "Insulated",
-                "Strength"
+                "insulated",
+                "strength"
             ],
             "armor": {
                 "value": 13,
@@ -1217,10 +1249,18 @@
                 "timestamp": "2023-03-09T01:52:06.1067123+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-plastoid_composite.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "bulky": true,
+                    "reinforced": true,
+                    "rigid": true,
+                    "stealthDisadvantage": true
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/WH/PlastoidComposite.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/WH/PlastoidComposite.webp",
         "system": {
             "description": {
                 "value": "<h3>Bulky</h3>\n<p>While wearing armor with this property, you have disadvantage on Dexterity (Stealth) checks that rely on sound.</p>\n<h3>Reinforced</h3>\n<p>When you make a long jump while wearing armor with this property, you can cover a number of feet up to twice your Strength score. When you make a high jump, you can leap a number of feet up into the air equal to 3 + twice your Strength modifier.</p>\n<h3>Rigid</h3>\n<p>While wearing armor with this property, you add half your Dexterity modifier (rounded down), instead of your full Dexterity modifier, to Dexterity saving throws you make. If your Dexterity modifier is negative, you instead subtract the full modifier.</p>"
@@ -1232,7 +1272,7 @@
             "weight": 45,
             "price": {
                 "value": 4500,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1248,16 +1288,10 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Bulky": true,
-                "Reinforced": true,
-                "Rigid": true,
-                "stealthDisadvantage": true
-            },
             "properties": [
-                "Bulky",
-                "Reinforced",
-                "Rigid",
+                "bulky",
+                "reinforced",
+                "rigid",
                 "stealthDisadvantage"
             ],
             "armor": {
@@ -1275,10 +1309,18 @@
                 "timestamp": "2023-03-09T01:52:06.1077116+00:00",
                 "importer_version": 3,
                 "uid": "Equipment.name-quadanium_heavy_shield.equipmentCategory-armor"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "charging": 1,
+                    "cumbersome": true,
+                    "obtrusive": true,
+                    "strength": 15
+                }
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/WH/QuadaniumHeavyShield.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/WH/QuadaniumHeavyShield.webp",
         "system": {
             "description": {
                 "value": "<h3>Charging 1</h3>\n<p>When you take damage while wearing armor or wielding a shield with this property, you gain a charge. You can store a maximum number of charges equal to the charging number, and the charges last for 1 minute. The next time you hit with a melee weapon attack while you have charges, you deal additional damage of the same type as the weapon's damage equal to the number of charges stored, and the charges are expended.</p>\n<h3>Cumbersome</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 5.</p>\nObtrusive\n<h3>Strength 15</h3>\n<p>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number. </p>"
@@ -1290,7 +1332,7 @@
             "weight": 36,
             "price": {
                 "value": 2000,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1306,17 +1348,11 @@
             "-=consumableType": null,
             "-=ammoType": null,
             "-=toolType": null,
-            "_propertyValues": {
-                "Charging": 1,
-                "Cumbersome": true,
-                "Obtrusive": true,
-                "Strength": 15
-            },
             "properties": [
-                "Charging",
-                "Cumbersome",
-                "Obtrusive",
-                "Strength"
+                "charging",
+                "cumbersome",
+                "obtrusive",
+                "strength"
             ],
             "armor": {
                 "value": 3,
@@ -1336,7 +1372,7 @@
             }
         },
         "type": "equipment",
-        "img": "systems/sw5e/packs/Icons/Armor/PHB/WeaveArmor.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Armor/PHB/WeaveArmor.webp",
         "system": {
             "description": {
                 "value": "<p>Weave armor was constructed from a mesh of metal or composite plates and a padded jumpsuit. Variants of the armor included less plates and more padding for a lighter, though less protect-ive armor, and heavier plating with molded pieces to fit the wearer. Though the armor was available unmodified, most users personalized their armor.</p>"
@@ -1348,7 +1384,7 @@
             "weight": 25,
             "price": {
                 "value": 1000,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,

@@ -6,10 +6,17 @@
                 "timestamp": "2023-03-09T01:51:54.3965032+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-chakram.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "fin": true,
+                    "ret": true,
+                    "range": 30
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Chakram.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Chakram.webp",
         "system": {
             "description": {
                 "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Returning </h3>\n<p>When you throw a weapon with this property, it automatically returns to your hand after the attack is complete, whether you hit or miss.</p>\n<h3>Thrown (range 30/90)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
@@ -21,7 +28,7 @@
             "weight": 3,
             "price": {
                 "value": 175,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -62,15 +69,10 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "fin": true,
-                "ret": true,
-                "ran": 30
-            },
             "properties": [
                 "fin",
                 "ret",
-                "ran"
+                "range"
             ],
             "weaponClass": "trip",
             "ammo": {
@@ -86,10 +88,17 @@
                 "timestamp": "2023-03-09T01:52:06.0977176+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-dire_vibroblade.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 13,
+                    "dire": 1,
+                    "ver": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/DireVibroblade.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/DireVibroblade.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Versatile ([[/r 1d10]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
@@ -101,7 +110,7 @@
             "weight": 7,
             "price": {
                 "value": 550,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -142,14 +151,9 @@
                 ],
                 "versatile": "1d10 +  @mod"
             },
-            "_propertyValues": {
-                "dex": 13,
-                "dir": 1,
-                "ver": true
-            },
             "properties": [
-                "dex",
-                "dir",
+                "dexRq",
+                "dire",
                 "ver"
             ],
             "weaponClass": "blade",
@@ -166,10 +170,17 @@
                 "timestamp": "2023-03-09T01:51:54.3965032+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-doubleblade.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "double": "1d6 kinetic",
+                    "fin": true,
+                    "lgt": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Doubleblade.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Doubleblade.webp",
         "system": {
             "description": {
                 "value": "<h3>Double ([[/r 1d6]] kinetic)</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with Double-Weapon Fighting. See the rules for Double-Weapon Fighting in chapter 9.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
@@ -181,7 +192,7 @@
             "weight": null,
             "price": {
                 "value": 400,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -222,13 +233,8 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dou": "1d6 kinetic",
-                "fin": true,
-                "lgt": true
-            },
             "properties": [
-                "dou",
+                "double",
                 "fin",
                 "lgt"
             ],
@@ -246,10 +252,16 @@
                 "timestamp": "2023-03-09T01:51:54.3965032+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-doublesword.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "double": "1d8 kinetic",
+                    "fin": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Doublesword.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Doublesword.webp",
         "system": {
             "description": {
                 "value": "<h3>Double ([[/r 1d8]] kinetic)</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with Double-Weapon Fighting. See the rules for Double-Weapon Fighting in chapter 9.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>"
@@ -261,7 +273,7 @@
             "weight": null,
             "price": {
                 "value": 450,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -302,12 +314,8 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dou": "1d8 kinetic",
-                "fin": true
-            },
             "properties": [
-                "dou",
+                "double",
                 "fin"
             ],
             "weaponClass": "blade",
@@ -324,10 +332,17 @@
                 "timestamp": "2023-03-09T01:52:06.0977176+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-echostaff.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "double": "1d6 kinetic",
+                    "fin": true,
+                    "sonorous": 13
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Echostaff.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Echostaff.webp",
         "system": {
             "description": {
                 "value": "<h3>Double ([[/r 1d6]] kinetic)</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with Double-Weapon Fighting. See the rules for Double-Weapon Fighting in chapter 9.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Sonorous 13</h3>\n<p>When you hit a creature with a weapon with the sonorous property, you can force it to make a Constitution saving throw, DC equal to the sonorous number. On a failed save, the creature takes an additional [[/r 1d4]] sonic damage and becomes deafened until the end of its next turn.</p>"
@@ -339,7 +354,7 @@
             "weight": 5,
             "price": {
                 "value": 600,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -380,15 +395,10 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dou": "1d6 kinetic",
-                "fin": true,
-                "son": 13
-            },
             "properties": [
-                "dou",
+                "double",
                 "fin",
-                "son"
+                "sonorous"
             ],
             "weaponClass": "polearm",
             "ammo": {
@@ -404,10 +414,17 @@
                 "timestamp": "2023-03-09T01:52:06.0977176+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-electrobaton.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "fin": true,
+                    "lgt": true,
+                    "shocking": 13
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Electrobaton.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Electrobaton.webp",
         "system": {
             "description": {
                 "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>"
@@ -419,7 +436,7 @@
             "weight": 1,
             "price": {
                 "value": 275,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -460,15 +477,10 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "fin": true,
-                "lgt": true,
-                "shk": 13
-            },
             "properties": [
                 "fin",
                 "lgt",
-                "shk"
+                "shocking"
             ],
             "weaponClass": "trip",
             "ammo": {
@@ -484,10 +496,18 @@
                 "timestamp": "2023-03-09T01:52:06.0987176+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-electrohammer.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 11,
+                    "hvy": true,
+                    "shocking": 13,
+                    "two": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Electrohammer.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Electrohammer.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
@@ -499,7 +519,7 @@
             "weight": null,
             "price": {
                 "value": 950,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -540,16 +560,10 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dex": 11,
-                "hvy": true,
-                "shk": 13,
-                "two": true
-            },
             "properties": [
-                "dex",
+                "dexRq",
                 "hvy",
-                "shk",
+                "shocking",
                 "two"
             ],
             "weaponClass": "crushing",
@@ -566,10 +580,17 @@
                 "timestamp": "2023-03-09T01:52:06.0987176+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-electrostaff.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "double": "1d6 kinetic",
+                    "fin": true,
+                    "shocking": 13
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Electrostaff.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Electrostaff.webp",
         "system": {
             "description": {
                 "value": "<h3>Double ([[/r 1d6]] kinetic)</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with Double-Weapon Fighting. See the rules for Double-Weapon Fighting in chapter 9.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>"
@@ -581,7 +602,7 @@
             "weight": 5,
             "price": {
                 "value": 600,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -622,15 +643,10 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dou": "1d6 kinetic",
-                "fin": true,
-                "shk": 13
-            },
             "properties": [
-                "dou",
+                "double",
                 "fin",
-                "shk"
+                "shocking"
             ],
             "weaponClass": "polearm",
             "ammo": {
@@ -646,10 +662,18 @@
                 "timestamp": "2023-03-09T01:51:54.3975015+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-hidden_blade.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "fin": true,
+                    "fixed": true,
+                    "hidden": true,
+                    "lgt": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/HiddenBlade.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/HiddenBlade.webp",
         "system": {
             "description": {
                 "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
@@ -661,7 +685,7 @@
             "weight": 1,
             "price": {
                 "value": 75,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -702,16 +726,10 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "fin": true,
-                "fix": true,
-                "hid": true,
-                "lgt": true
-            },
             "properties": [
                 "fin",
-                "fix",
-                "hid",
+                "fixed",
+                "hidden",
                 "lgt"
             ],
             "weaponClass": "trip",
@@ -728,10 +746,20 @@
                 "timestamp": "2023-03-09T01:51:54.3975015+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-net.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "lgt": true,
+                    "fin": true,
+                    "special": true,
+                    "range": 15,
+                    "strRq": true,
+                    "rch": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Net.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Net.webp",
         "system": {
             "description": {
                 "value": "<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Thrown (range 15)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Special</h3>\n<p>A Large or smaller creature hit by a net is restrained until it is freed. A net has no effect on formless or Huge or larger creatures. A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. The net has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the net frees the creature without harming it and immediately ends the net's effects. While a creature is restrained by a net, you can make no further attacks with it.</p>"
@@ -743,7 +771,7 @@
             "weight": 3,
             "price": {
                 "value": 300,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -775,20 +803,12 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "_propertyValues": {
-                "lgt": true,
-                "fin": true,
-                "spc": true,
-                "ran": 15,
-                "str": true,
-                "rch": true
-            },
             "properties": [
                 "lgt",
                 "fin",
-                "spc",
-                "ran",
-                "str",
+                "special",
+                "range",
+                "strRq",
                 "rch"
             ],
             "weaponClass": "trip",
@@ -805,10 +825,16 @@
                 "timestamp": "2023-03-09T01:51:54.3975015+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-techblade.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "fin": true,
+                    "lgt": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Techblade.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Techblade.webp",
         "system": {
             "description": {
                 "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
@@ -820,7 +846,7 @@
             "weight": null,
             "price": {
                 "value": 100,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -861,10 +887,6 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "fin": true,
-                "lgt": true
-            },
             "properties": [
                 "fin",
                 "lgt"
@@ -883,10 +905,17 @@
                 "timestamp": "2023-03-09T01:51:54.3975015+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-techstaff.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 11,
+                    "double": "2d4 kinetic",
+                    "lgt": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Techstaff.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Techstaff.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Double ([[/r 2d4]] kinetic)</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with Double-Weapon Fighting. See the rules for Double-Weapon Fighting in chapter 9.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
@@ -898,7 +927,7 @@
             "weight": null,
             "price": {
                 "value": 650,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -939,14 +968,9 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dex": 11,
-                "dou": "2d4 kinetic",
-                "lgt": true
-            },
             "properties": [
-                "dex",
-                "dou",
+                "dexRq",
+                "double",
                 "lgt"
             ],
             "weaponClass": "polearm",
@@ -963,10 +987,17 @@
                 "timestamp": "2023-03-09T01:51:54.3975015+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibroaxe.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 11,
+                    "hvy": true,
+                    "two": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibroaxe.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibroaxe.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
@@ -978,7 +1009,7 @@
             "weight": null,
             "price": {
                 "value": 950,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1019,13 +1050,8 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dex": 11,
-                "hvy": true,
-                "two": true
-            },
             "properties": [
-                "dex",
+                "dexRq",
                 "hvy",
                 "two"
             ],
@@ -1043,10 +1069,18 @@
                 "timestamp": "2023-03-09T01:52:06.0987176+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibrobattleaxe.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "brutal": 1,
+                    "dexRq": 13,
+                    "hvy": true,
+                    "two": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibrobattleaxe.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibrobattleaxe.webp",
         "system": {
             "description": {
                 "value": "<h3>Brutal 1</h3>\n<p>When you score a critical hit with a weapon with the brutal property, you roll a number of additional weapon damage dice equal to the brutal number.</p>\n<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
@@ -1058,7 +1092,7 @@
             "weight": 10,
             "price": {
                 "value": 1200,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1099,15 +1133,9 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "bru": 1,
-                "dex": 13,
-                "hvy": true,
-                "two": true
-            },
             "properties": [
-                "bru",
-                "dex",
+                "brutal",
+                "dexRq",
                 "hvy",
                 "two"
             ],
@@ -1125,10 +1153,15 @@
                 "timestamp": "2023-03-09T01:51:54.3985013+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibroblade.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "ver": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibroblade.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibroblade.webp",
         "system": {
             "description": {
                 "value": "<h3>Versatile ([[/r 1d10]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
@@ -1140,7 +1173,7 @@
             "weight": 5,
             "price": {
                 "value": 200,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1181,9 +1214,6 @@
                 ],
                 "versatile": "1d10 +  @mod"
             },
-            "_propertyValues": {
-                "ver": true
-            },
             "properties": [
                 "ver"
             ],
@@ -1201,10 +1231,20 @@
                 "timestamp": "2023-03-09T01:52:06.0987176+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibrobuster.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "brutal": 1,
+                    "dexRq": 19,
+                    "hvy": true,
+                    "keen": 1,
+                    "rch": true,
+                    "two": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibrobuster.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibrobuster.webp",
         "system": {
             "description": {
                 "value": "<h3>Brutal 1</h3>\n<p>When you score a critical hit with a weapon with the brutal property, you roll a number of additional weapon damage dice equal to the brutal number.</p>\n<h3>Dexterity 19</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Keen 1</h3>\n<p>When you make a weapon attack with a weapon with the keen property, the critical hit range increases by an amount equal to the keen number.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
@@ -1216,7 +1256,7 @@
             "weight": null,
             "price": {
                 "value": 1850,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1257,19 +1297,11 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "bru": 1,
-                "dex": 19,
-                "hvy": true,
-                "ken": 1,
-                "rch": true,
-                "two": true
-            },
             "properties": [
-                "bru",
-                "dex",
+                "brutal",
+                "dexRq",
                 "hvy",
-                "ken",
+                "keen",
                 "rch",
                 "two"
             ],
@@ -1287,10 +1319,16 @@
                 "timestamp": "2023-03-09T01:52:06.0997158+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibroflail.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 11,
+                    "reckless": 1
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibroflail.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibroflail.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\nReckless 1"
@@ -1302,7 +1340,7 @@
             "weight": null,
             "price": {
                 "value": 500,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1343,13 +1381,9 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dex": 11,
-                "rck": 1
-            },
             "properties": [
-                "dex",
-                "rck"
+                "dexRq",
+                "reckless"
             ],
             "weaponClass": "crushing",
             "ammo": {
@@ -1365,10 +1399,18 @@
                 "timestamp": "2023-03-09T01:52:06.0997158+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibroglaive.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "brutal": 1,
+                    "dexRq": 13,
+                    "rch": true,
+                    "two": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibroglaive.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibroglaive.webp",
         "system": {
             "description": {
                 "value": "<h3>Brutal 1</h3>\n<p>When you score a critical hit with a weapon with the brutal property, you roll a number of additional weapon damage dice equal to the brutal number.</p>\n<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
@@ -1380,7 +1422,7 @@
             "weight": 10,
             "price": {
                 "value": 1200,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1421,15 +1463,9 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "bru": 1,
-                "dex": 13,
-                "rch": true,
-                "two": true
-            },
             "properties": [
-                "bru",
-                "dex",
+                "brutal",
+                "dexRq",
                 "rch",
                 "two"
             ],
@@ -1447,10 +1483,17 @@
                 "timestamp": "2023-03-09T01:52:06.0997158+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibrohammer.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "hvy": true,
+                    "two": true,
+                    "vicious": 1
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibrohammer.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibrohammer.webp",
         "system": {
             "description": {
                 "value": "<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>\n<h3>Vicious 1</h3>\n<p>Whenever you deal damage with a weapon with the vicious property and roll the maximum on a weapon damage die, you gain a bonus to damage equal to the vicious number.</p>"
@@ -1462,7 +1505,7 @@
             "weight": null,
             "price": {
                 "value": 600,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1503,15 +1546,10 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "hvy": true,
-                "two": true,
-                "vic": 1
-            },
             "properties": [
                 "hvy",
                 "two",
-                "vic"
+                "vicious"
             ],
             "weaponClass": "crushing",
             "ammo": {
@@ -1527,10 +1565,17 @@
                 "timestamp": "2023-03-09T01:52:06.0997158+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibrokatana.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 11,
+                    "piercing": 1,
+                    "ver": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibrokatana.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibrokatana.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Piercing 1</h3>\n<p>Before you make a weapon attack with a weapon with the piercing property, you can choose to gain a bonus to the attack roll up to the piercing number. If you do so and you hit with it, you suffer an equivalent penalty to the damage roll.</p>\n<h3>Versatile ([[/r 1d10]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
@@ -1542,7 +1587,7 @@
             "weight": null,
             "price": {
                 "value": 450,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1583,14 +1628,9 @@
                 ],
                 "versatile": "1d10 +  @mod"
             },
-            "_propertyValues": {
-                "dex": 11,
-                "pic": 1,
-                "ver": true
-            },
             "properties": [
-                "dex",
-                "pic",
+                "dexRq",
+                "piercing",
                 "ver"
             ],
             "weaponClass": "blade",
@@ -1607,10 +1647,17 @@
                 "timestamp": "2023-03-09T01:52:06.0997158+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibroknife.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "fin": true,
+                    "lgt": true,
+                    "piercing": 1
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibroknife.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibroknife.webp",
         "system": {
             "description": {
                 "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Piercing 1</h3>\n<p>Before you make a weapon attack with a weapon with the piercing property, you can choose to gain a bonus to the attack roll up to the piercing number. If you do so and you hit with it, you suffer an equivalent penalty to the damage roll.</p>"
@@ -1622,7 +1669,7 @@
             "weight": 1,
             "price": {
                 "value": 225,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1663,15 +1710,10 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "fin": true,
-                "lgt": true,
-                "pic": 1
-            },
             "properties": [
                 "fin",
                 "lgt",
-                "pic"
+                "piercing"
             ],
             "weaponClass": "blade",
             "ammo": {
@@ -1687,10 +1729,18 @@
                 "timestamp": "2023-03-09T01:52:06.1007159+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibronodachi.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 17,
+                    "piercing": 1,
+                    "two": true,
+                    "vicious": 1
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibronodachi.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibronodachi.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 17</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Piercing 1</h3>\n<p>Before you make a weapon attack with a weapon with the piercing property, you can choose to gain a bonus to the attack roll up to the piercing number. If you do so and you hit with it, you suffer an equivalent penalty to the damage roll.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>\n<h3>Vicious 1</h3>\n<p>Whenever you deal damage with a weapon with the vicious property and roll the maximum on a weapon damage die, you gain a bonus to damage equal to the vicious number.</p>"
@@ -1702,7 +1752,7 @@
             "weight": 12,
             "price": {
                 "value": 2200,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1743,17 +1793,11 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dex": 17,
-                "pic": 1,
-                "two": true,
-                "vic": 1
-            },
             "properties": [
-                "dex",
-                "pic",
+                "dexRq",
+                "piercing",
                 "two",
-                "vic"
+                "vicious"
             ],
             "weaponClass": "polearm",
             "ammo": {
@@ -1769,10 +1813,17 @@
                 "timestamp": "2023-03-09T01:51:54.3985013+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibropike.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 11,
+                    "rch": true,
+                    "two": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibropike.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibropike.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
@@ -1784,7 +1835,7 @@
             "weight": null,
             "price": {
                 "value": 950,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1825,13 +1876,8 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dex": 11,
-                "rch": true,
-                "two": true
-            },
             "properties": [
-                "dex",
+                "dexRq",
                 "rch",
                 "two"
             ],
@@ -1849,10 +1895,15 @@
                 "timestamp": "2023-03-09T01:51:54.3985013+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibrorapier.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "fin": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibrorapier.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibrorapier.webp",
         "system": {
             "description": {
                 "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>"
@@ -1864,7 +1915,7 @@
             "weight": null,
             "price": {
                 "value": 150,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1905,9 +1956,6 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "fin": true
-            },
             "properties": [
                 "fin"
             ],
@@ -1925,10 +1973,16 @@
                 "timestamp": "2023-03-09T01:52:06.1007159+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibroshield.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "defensive": 1,
+                    "fixed": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibroshield.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibroshield.webp",
         "system": {
             "description": {
                 "value": "<h3>Defensive 1</h3>\n<p>When you make your first attack on your turn with a weapon with the defensive property, you can choose to suffer a penalty to attack and damage rolls with that weapon up to the defensive number. If you do so, you gain the same bonus to AC. These effects last until the start of your next turn, as long as you're holding the weapon.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>"
@@ -1940,7 +1994,7 @@
             "weight": null,
             "price": {
                 "value": 325,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -1981,13 +2035,9 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "def": 1,
-                "fix": true
-            },
             "properties": [
-                "def",
-                "fix"
+                "defensive",
+                "fixed"
             ],
             "weaponClass": "crushing",
             "ammo": {
@@ -2003,10 +2053,18 @@
                 "timestamp": "2023-03-09T01:52:06.1007159+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibrostiletto.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "fin": true,
+                    "keen": 1,
+                    "lgt": true,
+                    "range": 30
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibrostiletto.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibrostiletto.webp",
         "system": {
             "description": {
                 "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Keen 1</h3>\n<p>When you make a weapon attack with a weapon with the keen property, the critical hit range increases by an amount equal to the keen number.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 30/90)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
@@ -2018,7 +2076,7 @@
             "weight": 1,
             "price": {
                 "value": 250,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -2059,17 +2117,11 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "fin": true,
-                "ken": 1,
-                "lgt": true,
-                "ran": 30
-            },
             "properties": [
                 "fin",
-                "ken",
+                "keen",
                 "lgt",
-                "ran"
+                "range"
             ],
             "weaponClass": "trip",
             "ammo": {
@@ -2085,10 +2137,16 @@
                 "timestamp": "2023-03-09T01:51:54.3985013+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibrosword.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 11,
+                    "two": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibrosword.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibrosword.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
@@ -2100,7 +2158,7 @@
             "weight": null,
             "price": {
                 "value": 1150,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -2141,12 +2199,8 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dex": 11,
-                "two": true
-            },
             "properties": [
-                "dex",
+                "dexRq",
                 "two"
             ],
             "weaponClass": "blade",
@@ -2163,10 +2217,17 @@
                 "timestamp": "2023-03-09T01:52:06.1007159+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibrotonfa.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "defensive": 1,
+                    "fin": true,
+                    "lgt": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibrotonfa.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibrotonfa.webp",
         "system": {
             "description": {
                 "value": "<h3>Defensive 1</h3>\n<p>When you make your first attack on your turn with a weapon with the defensive property, you can choose to suffer a penalty to attack and damage rolls with that weapon up to the defensive number. If you do so, you gain the same bonus to AC. These effects last until the start of your next turn, as long as you're holding the weapon.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
@@ -2178,7 +2239,7 @@
             "weight": 1,
             "price": {
                 "value": 225,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -2219,13 +2280,8 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "def": 1,
-                "fin": true,
-                "lgt": true
-            },
             "properties": [
-                "def",
+                "defensive",
                 "fin",
                 "lgt"
             ],
@@ -2243,10 +2299,16 @@
                 "timestamp": "2023-03-09T01:51:54.3995014+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibrowhip.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "fin": true,
+                    "rch": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibrowhip.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibrowhip.webp",
         "system": {
             "description": {
                 "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>"
@@ -2258,7 +2320,7 @@
             "weight": null,
             "price": {
                 "value": 275,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -2299,10 +2361,6 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "fin": true,
-                "rch": true
-            },
             "properties": [
                 "fin",
                 "rch"
@@ -2321,10 +2379,18 @@
                 "timestamp": "2023-03-09T01:52:06.1007159+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-war_hat.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "defensive": 1,
+                    "disguised": true,
+                    "ret": true,
+                    "range": 30
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/WarHat.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/WarHat.webp",
         "system": {
             "description": {
                 "value": "<h3>Defensive 1</h3>\n<p>When you make your first attack on your turn with a weapon with the defensive property, you can choose to suffer a penalty to attack and damage rolls with that weapon up to the defensive number. If you do so, you gain the same bonus to AC. These effects last until the start of your next turn, as long as you're holding the weapon.</p>\n<h3>Disguised</h3>\n<p>You have advantage on Charisma (Deception) checks made to hide the nature of a weapon with this property.</p>\n<h3>Returning </h3>\n<p>When you throw a weapon with this property, it automatically returns to your hand after the attack is complete, whether you hit or miss.</p>\n<h3>Thrown (range 30/90)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
@@ -2336,7 +2402,7 @@
             "weight": null,
             "price": {
                 "value": 350,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -2377,17 +2443,11 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "def": 1,
-                "dgd": true,
-                "ret": true,
-                "ran": 30
-            },
             "properties": [
-                "def",
-                "dgd",
+                "defensive",
+                "disguised",
                 "ret",
-                "ran"
+                "range"
             ],
             "weaponClass": "trip",
             "ammo": {
@@ -2403,10 +2463,18 @@
                 "timestamp": "2023-03-09T01:52:06.1017149+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-warsword.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 15,
+                    "reckless": 1,
+                    "two": true,
+                    "vicious": 1
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Warsword.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Warsword.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 15</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\nReckless 1\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>\n<h3>Vicious 1</h3>\n<p>Whenever you deal damage with a weapon with the vicious property and roll the maximum on a weapon damage die, you gain a bonus to damage equal to the vicious number.</p>"
@@ -2418,7 +2486,7 @@
             "weight": null,
             "price": {
                 "value": 1650,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -2459,17 +2527,11 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dex": 15,
-                "rck": 1,
-                "two": true,
-                "vic": 1
-            },
             "properties": [
-                "dex",
-                "rck",
+                "dexRq",
+                "reckless",
                 "two",
-                "vic"
+                "vicious"
             ],
             "weaponClass": "crushing",
             "ammo": {
@@ -2485,10 +2547,19 @@
                 "timestamp": "2023-03-09T01:52:13.4594492+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-bolas.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "lgt": true,
+                    "special": true,
+                    "range": 20,
+                    "dexRq": true,
+                    "rch": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Bolas.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Bolas.webp",
         "system": {
             "description": {
                 "value": "<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Special</h3>\n<p>A Large or smaller creature hit by a bolas is restrained until it is freed. A bolas has no effect on formless or Huge or larger creatures. A creature can use its action to make a DC 13 Dexterity check, freeing itself or another creature within its reach on a success. The bolas has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the bolas frees the creature without harming it and immediately ends the bolas's effects. While a creature is restrained by a bolas, you can make no further attacks with it.</p>\n<p>Due to their unwieldy nature, bolas make ineffective melee weapons. Melee attack rolls made with them are made at disadvantage.</p>"
@@ -2500,7 +2571,7 @@
             "weight": 2,
             "price": {
                 "value": 100,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -2532,18 +2603,11 @@
                 "units": "ft"
             },
             "actionType": "mwak",
-            "_propertyValues": {
-                "lgt": true,
-                "spc": true,
-                "ran": 20,
-                "dex": true,
-                "rch": true
-            },
             "properties": [
                 "lgt",
-                "spc",
-                "ran",
-                "dex",
+                "special",
+                "range",
+                "dexRq",
                 "rch"
             ],
             "weaponClass": "trip",
@@ -2560,10 +2624,21 @@
                 "timestamp": "2023-03-09T01:52:13.4594492+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-cesta.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "disguised": true,
+                    "double": "1d8",
+                    "fin": true,
+                    "special": true,
+                    "specialized": true,
+                    "thr": true,
+                    "range": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Cesta.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Cesta.webp",
         "system": {
             "description": {
                 "value": "<h3>Disguised</h3>\n<p>You have advantage on Charisma (Deception) checks made to hide the nature of a weapon with this property.</p>\n<h3>Double ([[/r 1d8]]) finesse</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with Double-Weapon Fighting. See the rules for Double-Weapon Fighting in chapter 9.</p>\n<h3>Special</h3>\n<p>This specialized gungan staff can be used to throw grenades or similar objects at long distances. If you are wielding this weapon, as part of the action to throw a grenade, you can instead throw it using a cesta you are holding. The grenade can be thrown at a short distance of 60ft and a long distance of 240ft. When throwing a grenade at long range, creatures within the radius of the grenade's explosion have advantage on the saving throw. If you lack proficiency in the cesta, you must roll the damage dice twice and take the lesser total.</p>"
@@ -2575,7 +2650,7 @@
             "weight": null,
             "price": {
                 "value": 975,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -2616,23 +2691,14 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dgd": true,
-                "dou": "1d8",
-                "fin": true,
-                "spc": true,
-                "spz": true,
-                "thr": true,
-                "ran": true
-            },
             "properties": [
-                "dgd",
-                "dou",
+                "disguised",
+                "double",
                 "fin",
-                "spc",
-                "spz",
+                "special",
+                "specialized",
                 "thr",
-                "ran"
+                "range"
             ],
             "weaponClass": "polearm",
             "ammo": {
@@ -2648,10 +2714,17 @@
                 "timestamp": "2023-03-09T01:52:13.4594492+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-chained_dagger.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "disarming": true,
+                    "fin": true,
+                    "rch": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/ChainedDagger.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/ChainedDagger.webp",
         "system": {
             "description": {
                 "value": "<h3>Disarming</h3>\n<p>When you score a critical hit with a weapon with the disarming property against a creature that is holding an object, you can attempt to disarm the target (no action required). If the target is no more than one size larger than you (your size or smaller if your weapon has the light property), it must succeed on a Strength saving throw (DC = 8 + your bonus to attacks with the weapon) or it drops an object of your choice at its feet.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>"
@@ -2663,7 +2736,7 @@
             "weight": null,
             "price": {
                 "value": 350,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -2704,13 +2777,8 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "drm": true,
-                "fin": true,
-                "rch": true
-            },
             "properties": [
-                "drm",
+                "disarming",
                 "fin",
                 "rch"
             ],
@@ -2728,10 +2796,18 @@
                 "timestamp": "2023-03-09T01:52:13.4594492+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-disguised_blade.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "disarming": true,
+                    "disguised": true,
+                    "fin": true,
+                    "lgt": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/DisguisedBlade.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/DisguisedBlade.webp",
         "system": {
             "description": {
                 "value": "<h3>Disarming</h3>\n<p>When you score a critical hit with a weapon with the disarming property against a creature that is holding an object, you can attempt to disarm the target (no action required). If the target is no more than one size larger than you (your size or smaller if your weapon has the light property), it must succeed on a Strength saving throw (DC = 8 + your bonus to attacks with the weapon) or it drops an object of your choice at its feet.</p>\n<h3>Disguised</h3>\n<p>You have advantage on Charisma (Deception) checks made to hide the nature of a weapon with this property.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
@@ -2743,7 +2819,7 @@
             "weight": 1,
             "price": {
                 "value": 125,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -2784,15 +2860,9 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "drm": true,
-                "dgd": true,
-                "fin": true,
-                "lgt": true
-            },
             "properties": [
-                "drm",
-                "dgd",
+                "disarming",
+                "disguised",
                 "fin",
                 "lgt"
             ],
@@ -2810,10 +2880,17 @@
                 "timestamp": "2023-03-09T01:52:13.4604494+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-disruptorshiv.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "disruptive": true,
+                    "fin": true,
+                    "shocking": 13
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Disruptorshiv.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Disruptorshiv.webp",
         "system": {
             "description": {
                 "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>"
@@ -2825,7 +2902,7 @@
             "weight": null,
             "price": {
                 "value": 425,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -2866,15 +2943,10 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dpt": true,
-                "fin": true,
-                "shk": 13
-            },
             "properties": [
-                "dpt",
+                "disruptive",
                 "fin",
-                "shk"
+                "shocking"
             ],
             "weaponClass": "blade",
             "ammo": {
@@ -2890,10 +2962,18 @@
                 "timestamp": "2023-03-09T01:52:13.4604494+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-electrovoulge.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 13,
+                    "rch": true,
+                    "shocking": 13,
+                    "two": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Electrovoulge.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Electrovoulge.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
@@ -2905,7 +2985,7 @@
             "weight": 10,
             "price": {
                 "value": 1250,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -2946,16 +3026,10 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dex": 13,
-                "rch": true,
-                "shk": 13,
-                "two": true
-            },
             "properties": [
-                "dex",
+                "dexRq",
                 "rch",
-                "shk",
+                "shocking",
                 "two"
             ],
             "weaponClass": "polearm",
@@ -2972,10 +3046,18 @@
                 "timestamp": "2023-03-09T01:52:13.4604494+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-electrowhip.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 11,
+                    "disruptive": true,
+                    "rch": true,
+                    "shocking": 13
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Electrowhip.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Electrowhip.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>"
@@ -2987,7 +3069,7 @@
             "weight": null,
             "price": {
                 "value": 725,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -3028,17 +3110,11 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dex": 11,
-                "dpt": true,
-                "rch": true,
-                "shk": 13
-            },
             "properties": [
-                "dex",
-                "dpt",
+                "dexRq",
+                "disruptive",
                 "rch",
-                "shk"
+                "shocking"
             ],
             "weaponClass": "trip",
             "ammo": {
@@ -3054,10 +3130,16 @@
                 "timestamp": "2023-03-09T01:52:13.4604494+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-hooked_vibroblade.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "disarming": true,
+                    "fin": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/HookedVibroblade.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/HookedVibroblade.webp",
         "system": {
             "description": {
                 "value": "<h3>Disarming</h3>\n<p>When you score a critical hit with a weapon with the disarming property against a creature that is holding an object, you can attempt to disarm the target (no action required). If the target is no more than one size larger than you (your size or smaller if your weapon has the light property), it must succeed on a Strength saving throw (DC = 8 + your bonus to attacks with the weapon) or it drops an object of your choice at its feet.</p>\n<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>"
@@ -3069,7 +3151,7 @@
             "weight": null,
             "price": {
                 "value": 225,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -3110,12 +3192,8 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "drm": true,
-                "fin": true
-            },
             "properties": [
-                "drm",
+                "disarming",
                 "fin"
             ],
             "weaponClass": "polearm",
@@ -3132,10 +3210,17 @@
                 "timestamp": "2023-03-09T01:52:13.4604494+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-jagged_vibroblade.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 13,
+                    "keen": 1,
+                    "ver": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/JaggedVibroblade.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/JaggedVibroblade.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Keen 1</h3>\n<p>When you make a weapon attack with a weapon with the keen property, the critical hit range increases by an amount equal to the keen number.</p>\n<h3>Versatile ([[/r 1d12]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
@@ -3147,7 +3232,7 @@
             "weight": 7,
             "price": {
                 "value": 650,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -3188,14 +3273,9 @@
                 ],
                 "versatile": "1d12 +  @mod"
             },
-            "_propertyValues": {
-                "dex": 13,
-                "ken": 1,
-                "ver": true
-            },
             "properties": [
-                "dex",
-                "ken",
+                "dexRq",
+                "keen",
                 "ver"
             ],
             "weaponClass": "blade",
@@ -3212,10 +3292,16 @@
                 "timestamp": "2023-03-09T01:52:13.4604494+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-riot_baton.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "defensive": 1,
+                    "lgt": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/RiotBaton.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/RiotBaton.webp",
         "system": {
             "description": {
                 "value": "<h3>Defensive 1</h3>\n<p>When you make your first attack on your turn with a weapon with the defensive property, you can choose to suffer a penalty to attack and damage rolls with that weapon up to the defensive number. If you do so, you gain the same bonus to AC. These effects last until the start of your next turn, as long as you're holding the weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
@@ -3227,7 +3313,7 @@
             "weight": null,
             "price": {
                 "value": 250,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -3268,12 +3354,8 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "def": 1,
-                "lgt": true
-            },
             "properties": [
-                "def",
+                "defensive",
                 "lgt"
             ],
             "weaponClass": "crushing",
@@ -3290,10 +3372,17 @@
                 "timestamp": "2023-03-09T01:52:13.4604494+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-riot_shocker.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "defensive": 1,
+                    "lgt": true,
+                    "shocking": 13
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/RiotShocker.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/RiotShocker.webp",
         "system": {
             "description": {
                 "value": "<h3>Defensive 1</h3>\n<p>When you make your first attack on your turn with a weapon with the defensive property, you can choose to suffer a penalty to attack and damage rolls with that weapon up to the defensive number. If you do so, you gain the same bonus to AC. These effects last until the start of your next turn, as long as you're holding the weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>"
@@ -3305,7 +3394,7 @@
             "weight": 1,
             "price": {
                 "value": 425,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -3346,15 +3435,10 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "def": 1,
-                "lgt": true,
-                "shk": 13
-            },
             "properties": [
-                "def",
+                "defensive",
                 "lgt",
-                "shk"
+                "shocking"
             ],
             "weaponClass": "crushing",
             "ammo": {
@@ -3370,10 +3454,16 @@
                 "timestamp": "2023-03-09T01:52:13.4614475+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-shock_whip.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "rch": true,
+                    "shocking": 13
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/ShockWhip.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/ShockWhip.webp",
         "system": {
             "description": {
                 "value": "<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>"
@@ -3385,7 +3475,7 @@
             "weight": null,
             "price": {
                 "value": 475,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -3426,13 +3516,9 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "rch": true,
-                "shk": 13
-            },
             "properties": [
                 "rch",
-                "shk"
+                "shocking"
             ],
             "weaponClass": "trip",
             "ammo": {
@@ -3451,7 +3537,7 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibrobaton.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibrobaton.webp",
         "system": {
             "description": {
                 "value": "—"
@@ -3463,7 +3549,7 @@
             "weight": 4,
             "price": {
                 "value": 250,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -3518,10 +3604,16 @@
                 "timestamp": "2023-03-09T01:52:13.4614475+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibroclaymore.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 13,
+                    "two": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibroclaymore.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibroclaymore.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
@@ -3533,7 +3625,7 @@
             "weight": null,
             "price": {
                 "value": 1700,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -3574,12 +3666,8 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dex": 13,
-                "two": true
-            },
             "properties": [
-                "dex",
+                "dexRq",
                 "two"
             ],
             "weaponClass": "crushing",
@@ -3596,10 +3684,17 @@
                 "timestamp": "2023-05-30T20:15:25.5767259+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-vibrolance.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "dexRq": 13,
+                    "rch": true,
+                    "special": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Vibrolance.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Vibrolance.webp",
         "system": {
             "description": {
                 "value": "<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Special</h3>\n<p>You have disadvantage when you use a vibrolance to attack a target within 5 feet of you. Also, a lance requires two hands to wield when you aren't mounted.</p>"
@@ -3611,7 +3706,7 @@
             "weight": null,
             "price": {
                 "value": 1500,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -3652,15 +3747,10 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "dex": 13,
-                "rch": true,
-                "spc": true
-            },
             "properties": [
-                "dex",
+                "dexRq",
                 "rch",
-                "spc"
+                "special"
             ],
             "weaponClass": "polearm",
             "ammo": {
@@ -3676,10 +3766,17 @@
                 "timestamp": "2023-03-09T01:52:13.4614475+00:00",
                 "importer_version": 3,
                 "uid": "Weapon.name-wristblade.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "fixed": true,
+                    "lgt": true,
+                    "piercing": 1
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Martial%20Vibroweapons/Wristblade.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Martial%20Vibroweapons/Wristblade.webp",
         "system": {
             "description": {
                 "value": "<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Piercing 1</h3>\n<p>Before you make a weapon attack with a weapon with the piercing property, you can choose to gain a bonus to the attack roll up to the piercing number. If you do so and you hit with it, you suffer an equivalent penalty to the damage roll.</p>"
@@ -3691,7 +3788,7 @@
             "weight": null,
             "price": {
                 "value": 275,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -3732,15 +3829,10 @@
                 ],
                 "versatile": ""
             },
-            "_propertyValues": {
-                "fix": true,
-                "lgt": true,
-                "pic": 1
-            },
             "properties": [
-                "fix",
+                "fixed",
                 "lgt",
-                "pic"
+                "piercing"
             ],
             "weaponClass": "crushing",
             "ammo": {

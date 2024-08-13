@@ -9,7 +9,7 @@
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Naturals/UnarmedStrike.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Naturals/UnarmedStrike.webp",
         "system": {
             "description": {
                 "value": ""
@@ -21,7 +21,7 @@
             "weight": 0,
             "price": {
                 "value": 0,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -76,10 +76,15 @@
                 "timestamp": "?",
                 "importer_version": 3,
                 "uid": "Weapon.name-martial_arts.equipmentCategory-weapon"
+            },
+            "sw5e-module-test": {
+                "properties": {
+                    "fin": true
+                }
             }
         },
         "type": "weapon",
-        "img": "systems/sw5e/packs/Icons/Naturals/MartialArts.webp",
+        "img": "modules/sw5e-module-test/icons/packs/Naturals/MartialArts.webp",
         "system": {
             "description": {
                 "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>"
@@ -91,7 +96,7 @@
             "weight": 0,
             "price": {
                 "value": 0,
-                "denomination": "gc"
+                "denomination": "gp"
             },
             "attunement": "",
             "equipped": false,
@@ -131,9 +136,6 @@
                     ]
                 ],
                 "versatile": ""
-            },
-            "_propertyValues": {
-                "fin": true
             },
             "properties": [
                 "fin"
