@@ -4,4 +4,4 @@ import re, json
 class FightingMastery(sw5e.Feature.CustomizationOption):
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)
-		return f'systems/sw5e/packs/Icons/Fighting%20Styles%20and%20Masteries/{name}.webp'
+		return f'modules/sw5e-module-test/icons/packs/Fighting%20Styles%20and%20Masteries/{name}.webp'

@@ -409,7 +409,7 @@ class Class(sw5e.Entity.Item):
 		for level, features in self.features.items():
 			uids = []
 			for name, feature in features.items():
-				if 'foundry_id' in feature: uids.append(f'Compendium.sw5e.classfeatures.{feature["foundry_id"]}')
+				if 'foundry_id' in feature: uids.append(f'Compendium.sw5e-module-test.classfeatures.{feature["foundry_id"]}')
 				else: self.broken_links += [f'missing foundry_id for {feature["name"]}']
 			if len(uids):
 				self.advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
@@ -428,7 +428,7 @@ class Class(sw5e.Entity.Item):
 			for name, invocation in invocations.items():
 				if name.startswith('_'): continue
 				# TODO: Once 'ItemChoice' supports levels, change this to use it
-				if 'foundry_id' in invocation: uids.append(f'Compendium.sw5e.invocations.{invocation["foundry_id"]}')
+				if 'foundry_id' in invocation: uids.append(f'Compendium.sw5e-module-test.invocations.{invocation["foundry_id"]}')
 				else: self.broken_links += [f'missing foundry_id for {invocation["name"]}']
 
 			# Determine the header row used for the choices
@@ -471,7 +471,7 @@ class Class(sw5e.Entity.Item):
 		# Choose Archetype
 		if len(self.archetypes) > 0:
 			# Prepare the pool of archetypes
-			uids = [ f'Compendium.sw5e.archetypes.{arch["fid"]}' for arch in self.archetypes ]
+			uids = [ f'Compendium.sw5e-module-test.archetypes.{arch["fid"]}' for arch in self.archetypes ]
 
 			# Prepare the choices
 			choices = { "3": 1 }
@@ -491,7 +491,7 @@ class Class(sw5e.Entity.Item):
 		if index: index = f'_{index}'
 		name = utils.text.slugify(self.name, capitalized=capitalized)
 		name = re.sub(f'-Depreciated', '', name)
-		return f'systems/sw5e/packs/Icons/Classes/{name}{index}.webp'
+		return f'modules/sw5e-module-test/icons/packs/Classes/{name}{index}.webp'
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]

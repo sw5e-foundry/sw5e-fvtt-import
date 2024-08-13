@@ -34,7 +34,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		kwargs = {
 			'item_type': self.raw_weaponClassification,
 			# 'no_img': ('Unknown',),
-			'default_img': 'systems/sw5e/packs/Icons/Simple%20Blasters/Hold-out.webp',
+			'default_img': 'modules/sw5e-module-test/icons/packs/Simple%20Blasters/Hold-out.webp',
 			'plural': True
 		}
 		return super().getImg(importer=importer, **kwargs)
@@ -86,6 +86,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		die = f'{die} + @mod'
 
 		damage_type = self.raw_damageType.lower() if self.raw_damageType != 'Unknown' else ''
+		if damage_type == 'sonic': damage_type = 'thunder'
 		versatile = utils.text.getProperty('Versatile', self.raw_propertiesMap) or ''
 		return {
 			"parts": [[ die, damage_type ]],

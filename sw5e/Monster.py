@@ -523,7 +523,7 @@ class Monster(sw5e.Entity.Actor):
 		#TODO: removed this after icons are fixed in the system
 		return f'icons/svg/hazard.svg'
 		name = utils.text.slugify(self.name);
-		return f'systems/sw5e/packs/Icons/monsters/{name}/{"token" if token else "avatar"}.webp'
+		return f'modules/sw5e-module-test/icons/packs/monsters/{name}/{"token" if token else "avatar"}.webp'
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]

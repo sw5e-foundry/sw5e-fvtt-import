@@ -92,7 +92,7 @@ class Background(sw5e.Entity.Item):
 		# Choose Feat
 		if len(self.featOptions) > 0:
 			# Prepare the pool of archetypes
-			uids = [ f'Compendium.sw5e.feats.{feat["foundry_id"]}' for feat in self.featOptions ]
+			uids = [ f'Compendium.sw5e-module-test.feats.{feat["foundry_id"]}' for feat in self.featOptions ]
 
 			# Prepare the choices
 			choices = { "0": 1 }
@@ -199,7 +199,7 @@ class Background(sw5e.Entity.Item):
 
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)
-		return f'systems/sw5e/packs/Icons/Backgrounds/{name}.webp'
+		return f'modules/sw5e-module-test/icons/packs/Backgrounds/{name}.webp'
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]

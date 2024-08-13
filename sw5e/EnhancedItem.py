@@ -89,7 +89,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		return 0, 0, text
 
 	def getRarity(self):
-		return self.raw_rarityText
+		return utils.config.rarities[self.raw_rarityText]
 
 	def getModificationItemType(self):
 		if self.raw_subtype in ('armor', 'clothing', 'focusgenerator', 'wristpad'): return 'equipment'
@@ -260,7 +260,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		# First check if it's an item with a specific icon for it's enhanced version
 		if name in utils.config.enhanced_item_icons:
 			name = utils.text.slugify(name)
-			return f'systems/sw5e/packs/Icons/Enhanced%20Items/{name}.webp'
+			return f'modules/sw5e-module-test/icons/packs/Enhanced%20Items/{name}.webp'
 
 		# Use the base item's icon
 		if self.base_item:
@@ -274,7 +274,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			if self.raw_type == 'CyberneticAugmentation': subtype = f'Cybernetic'
 			elif self.raw_type == 'DroidCustomization': subtype = f'Droid'
 			if subtype != 'Augment': subtype = f'{subtype}Mod'
-			return f'systems/sw5e/packs/Icons/Modifications/{subtype}.webp'
+			return f'modules/sw5e-module-test/icons/packs/Modifications/{subtype}.webp'
 
 		# Otherwise use the default item bag icon
 		if name in utils.config.enhanced_item_no_icons:
@@ -378,9 +378,11 @@ class EnhancedItem(sw5e.Entity.Item):
 					}
 
 			if self.properties:
-				if "_propertyValues" not in item["system"]: item["system"]["_propertyValues"] = {}
-				item["system"]["_propertyValues"] = {**item["system"]["_propertyValues"], **{key: value for key,value in self.properties.items() if value}}
-				item["system"]["properties"] = list(item["system"]["_propertyValues"].keys())
+				if "flags" not in item: item["flags"] = {}
+				if "sw5e-module-test" not in item["flags"]: item["flags"]["sw5e-module-test"] = {}
+				properties = {**item["flags"]["sw5e-module-test"]["properties"], **{key: value for key,value in self.properties.items() if value}}
+				item["flags"]["sw5e-module-test"]["properties"] = properties
+				item["system"]["properties"] = list(properties.keys())
 
 			if self.action_type:
 				item["system"]["actionType"] = choose(item["system"], self.action_type, "actionType", 'other')

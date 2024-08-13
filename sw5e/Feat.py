@@ -33,4 +33,4 @@ class Feat(sw5e.Feature.BaseFeature):
 
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)
-		return f'systems/sw5e/packs/Icons/Feats/{name}.webp'
+		return f'modules/sw5e-module-test/icons/packs/Feats/{name}.webp'

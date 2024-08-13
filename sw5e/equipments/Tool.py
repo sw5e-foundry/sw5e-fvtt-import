@@ -14,7 +14,7 @@ class Tool(sw5e.Equipment.Equipment):
 		kwargs = {
 			# 'item_type': self.raw_equipmentCategory,
 			'no_img': ('Unknown', 'Tool'),
-			'default_img': 'systems/sw5e/packs/Icons/Kit/DemolitionsKit.webp',
+			'default_img': 'modules/sw5e-module-test/icons/packs/Kit/DemolitionsKit.webp',
 			# 'plural': False
 		}
 		return super().getImg(importer=importer, **kwargs)

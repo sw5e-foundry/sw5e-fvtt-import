@@ -127,7 +127,7 @@ class Power(sw5e.Entity.Item):
 
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)
-		return f'systems/sw5e/packs/Icons/{self.raw_powerType}%20Powers/{name}.webp'
+		return f'modules/sw5e-module-test/icons/packs/{self.raw_powerType}%20Powers/{name}.webp'
 
 	def getDescription(self):
 		text = self.raw_description
@@ -180,7 +180,7 @@ class Power(sw5e.Entity.Item):
 		data["system"]["save"] = {
 			"ability": self.save,
 			"dc": self.save_dc,
-			"scaling": "flat" if self.save_dc else "power"
+			"scaling": "flat" if self.save_dc else "spell"
 		}
 
 		data["system"]["level"] = self.raw_level
@@ -194,3 +194,6 @@ class Power(sw5e.Entity.Item):
 
 	def getFile(self, importer):
 		return f'{self.raw_powerType}Power'
+
+	def getType(self):
+		return 'spell'

@@ -1,294 +1,294 @@
 armor_properties = (
 	{
 		"name": 'Absorptive',
-		"id": 'Absorptive',
+		"id": 'absorptive',
 	}, {
 		"name": 'Agile',
-		"id": 'Agile',
+		"id": 'agile',
 	}, {
 		"name": 'Anchor',
-		"id": 'Anchor',
+		"id": 'anchor',
 	}, {
 		"name": 'Avoidant',
-		"id": 'Avoidant',
+		"id": 'avoidant',
 	}, {
 		"name": 'Barbed',
-		"id": 'Barbed',
+		"id": 'barbed',
 	}, {
 		"name": 'Bulky',
-		"id": 'Bulky',
+		"id": 'bulky',
 	}, {
 		"name": 'Charging',
-		"id": 'Charging',
+		"id": 'charging',
 	}, {
 		"name": 'Concealing',
-		"id": 'Concealing',
+		"id": 'concealing',
 	}, {
 		"name": 'Cumbersome',
-		"id": 'Cumbersome',
+		"id": 'cumbersome',
 	}, {
 		"name": 'Gauntleted',
-		"id": 'Gauntleted',
+		"id": 'gauntleted',
 	}, {
 		"name": 'Imbalanced',
-		"id": 'Imbalanced',
+		"id": 'imbalanced',
 	}, {
 		"name": 'Impermeable',
-		"id": 'Impermeable',
+		"id": 'impermeable',
 	}, {
 		"name": 'Insulated',
-		"id": 'Insulated',
+		"id": 'insulated',
 	}, {
 		"name": 'Interlocking',
-		"id": 'Interlocking',
+		"id": 'interlockingEquipment',
 	}, {
 		"name": 'Lambent',
-		"id": 'Lambent',
+		"id": 'lambent',
 	}, {
 		"name": 'Lightweight',
-		"id": 'Lightweight',
+		"id": 'lightweight',
 	}, {
 		"name": 'Magnetic',
-		"id": 'Magnetic',
+		"id": 'magnetic',
 	}, {
 		"name": 'Obscured',
-		"id": 'Obscured',
+		"id": 'obscured',
 	}, {
 		"name": 'Obtrusive',
-		"id": 'Obtrusive',
+		"id": 'obtrusive',
 	}, {
 		"name": 'Powered',
-		"id": 'Powered',
+		"id": 'powered',
 	}, {
 		"name": 'Reactive',
-		"id": 'Reactive',
+		"id": 'reactive',
 	}, {
 		"name": 'Regulated',
-		"id": 'Regulated',
+		"id": 'regulated',
 	}, {
 		"name": 'Reinforced',
-		"id": 'Reinforced',
+		"id": 'reinforced',
 	}, {
 		"name": 'Responsive',
-		"id": 'Responsive',
+		"id": 'responsive',
 	}, {
 		"name": 'Rigid',
-		"id": 'Rigid',
+		"id": 'rigid',
 	}, {
 		"name": 'Silent',
-		"id": 'Silent',
+		"id": 'silentEquipment',
 	}, {
 		"name": 'Spiked',
-		"id": 'Spiked',
+		"id": 'spiked',
 	}, {
 		"name": 'Strength',
-		"id": 'Strength',
+		"id": 'strength',
 	}, {
 		"name": 'Steadfast',
-		"id": 'Steadfast',
+		"id": 'steadfast',
 	}, {
 		"name": 'Versatile',
-		"id": 'Versatile',
+		"id": 'versatileEquipment',
 	}
 )
 
 casting_properties = (
 	{
 		"name": 'Absorbing',
-		"id": 'c_Absorbing',
+		"id": 'absorbing',
 	}, {
 		"name": 'Accessing',
-		"id": 'c_Accessing',
+		"id": 'accessing',
 	}, {
 		"name": 'Amplifying',
-		"id": 'c_Amplifying',
+		"id": 'amplifying',
 	}, {
 		"name": 'Bolstering',
-		"id": 'c_Bolstering',
+		"id": 'bolstering',
 	}, {
 		"name": 'Constitution',
-		"id": 'c_Constitution',
+		"id": 'constitution',
 	}, {
 		"name": 'Dispelling',
-		"id": 'c_Dispelling',
+		"id": 'dispelling',
 	}, {
 		"name": 'Elongating',
-		"id": 'c_Elongating',
+		"id": 'elongating',
 	}, {
 		"name": 'Enlarging',
-		"id": 'c_Enlarging',
+		"id": 'enlarging',
 	}, {
 		"name": 'Expanding',
-		"id": 'c_Expanding',
+		"id": 'expanding',
 	}, {
 		"name": 'Extending',
-		"id": 'c_Extending',
+		"id": 'extending',
 	}, {
 		"name": 'Fading',
-		"id": 'c_Fading',
+		"id": 'fading',
 	}, {
 		"name": 'Focused',
-		"id": 'c_Focused',
+		"id": 'focused',
 	}, {
 		"name": 'Increasing',
-		"id": 'c_Increasing',
+		"id": 'increasing',
 	}, {
 		"name": 'Inflating',
-		"id": 'c_Inflating',
+		"id": 'inflating',
 	}, {
 		"name": 'Mitigating',
-		"id": 'c_Mitigating',
+		"id": 'mitigating',
 	}, {
 		"name": 'Ranging',
-		"id": 'c_Ranging',
+		"id": 'ranging',
 	}, {
 		"name": 'Rending',
-		"id": 'c_Rending',
+		"id": 'rending',
 	}, {
 		"name": 'Repelling',
-		"id": 'c_Repelling',
+		"id": 'repelling',
 	}, {
 		"name": 'Storing',
-		"id": 'c_Storing',
+		"id": 'storing',
 	}, {
 		"name": 'Surging',
-		"id": 'c_Surging',
+		"id": 'surging',
 	}, {
 		"name": 'Withering',
-		"id": 'c_Withering',
+		"id": 'withering',
 	},
 )
 
 weapon_properties = (
 	{
 		"name": 'Special',
-		"id": 'spc',
+		"id": 'special',
 	}, {
 		"name": 'Auto',
-		"id": 'aut',
+		"id": 'auto',
 	}, {
 		"name": 'Biting',
-		"id": 'bit',
+		"id": 'biting',
 	}, {
 		"name": 'Bright',
-		"id": 'bri',
+		"id": 'bright',
 	}, {
 		"name": 'Brutal',
-		"id": 'bru',
+		"id": 'brutal',
 	}, {
 		"name": 'Burst',
-		"id": 'bur',
+		"id": 'burst',
 	}, {
 		"name": 'Corruption',
-		"id": 'cor',
+		"id": 'corruption',
 	}, {
 		"name": 'Defensive',
-		"id": 'def',
+		"id": 'defensive',
 	}, {
 		"name": 'Dexterity',
-		"id": 'dex',
+		"id": 'dexRq',
 	}, {
 		"name": 'Dire',
-		"id": 'dir',
+		"id": 'dire',
 	}, {
 		"name": 'Disarming',
-		"id": 'drm',
+		"id": 'disarming',
 	}, {
 		"name": 'Disguised',
-		"id": 'dgd',
+		"id": 'disguised',
 	}, {
 		"name": 'Disintegrate',
-		"id": 'dis',
+		"id": 'disintegrate',
 	}, {
 		"name": 'Disruptive',
-		"id": 'dpt',
+		"id": 'disruptive',
 	}, {
 		"name": 'Double',
-		"id": 'dou',
+		"id": 'double',
 	}, {
 		"name": 'Finesse',
 		"id": 'fin',
 	}, {
 		"name": 'Fixed',
-		"id": 'fix',
+		"id": 'fixed',
 	}, {
 		"name": 'Heavy',
 		"id": 'hvy',
 	}, {
 		"name": 'Hidden',
-		"id": 'hid',
+		"id": 'hidden',
 	}, {
 		"name": 'Interlocking',
-		"id": 'ilk',
+		"id": 'interlockingWeapon',
 	}, {
 		"name": 'Keen',
-		"id": 'ken',
+		"id": 'keen',
 	}, {
 		"name": 'Light',
 		"id": 'lgt',
 	}, {
 		"name": 'Luminous',
-		"id": 'lum',
+		"id": 'luminous',
 	}, {
 		"name": 'Mighty',
-		"id": 'mig',
+		"id": 'mighty',
 	}, {
 		"name": 'Modal',
-		"id": 'mod',
+		"id": 'modal',
 	}, {
 		"name": 'Neuralizing',
-		"id": 'neu',
+		"id": 'neuralizing',
 	}, {
 		"name": 'Penetrating',
-		"id": 'pen',
+		"id": 'penetrating',
 	}, {
 		"name": 'Piercing',
-		"id": 'pic',
+		"id": 'piercing',
 	}, {
 		"name": 'Power Cell',
-		"id": 'pcl',
+		"id": 'powerCell',
 	}, {
 		"name": 'Range',
-		"id": 'ran',
+		"id": 'range',
 	}, {
 		"name": 'Rapid',
-		"id": 'rap',
+		"id": 'rapid',
 	}, {
 		"name": 'Reach',
 		"id": 'rch',
 	}, {
 		"name": 'Reckless',
-		"id": 'rck',
+		"id": 'reckless',
 	}, {
 		"name": 'Reload',
-		"id": 'rel',
+		"id": 'reload',
 	}, {
 		"name": 'Returning',
 		"id": 'ret',
 	}, {
 		"name": 'Shocking',
-		"id": 'shk',
+		"id": 'shocking',
 	}, {
 		"name": 'Silent',
-		"id": 'sil',
+		"id": 'silentWeapon',
 	}, {
 		"name": 'Slug Cartridge',
-		"id": 'slg',
+		"id": 'slug',
 	}, { # Autotarget/Smart
 		"name": 'Smart',
-		"id": 'smr',
+		"id": 'smart',
 	}, {
 		"name": 'Sonorous',
-		"id": 'son',
+		"id": 'sonorous',
 	}, {
 		"name": 'Specialized',
-		"id": 'spz',
+		"id": 'specialized',
 	}, {
 		"name": 'Strength',
-		"id": 'str',
+		"id": 'strRq',
 	}, {
 		"name": 'Switch',
-		"id": 'swi',
+		"id": 'switch',
 	}, {
 		"name": 'Thrown',
 		"id": 'thr',
@@ -301,43 +301,41 @@ weapon_properties = (
 		"type": bool,
 	}, {
 		"name": 'Vicious',
-		"id": 'vic',
+		"id": 'vicious',
 	},
-) + (
+#Starship Weapon Properties
 	{
-		"name": 'Modal',
-		"id": 'mod',
-	},
-)# + ( #Starship Weapon Properties
-	# {
-	# 	"name": 'Constitution',
-	# 	"id": 'con',
-	# }, {
-	# 	"name": 'Explosive',
-	# 	"id": 'exp',
+		"name": 'Constitution',
+		"id": 'conRq',
+	}, {
+		"name": 'Explosive',
+		"id": 'explosive',
 	# }, {
 	# 	"name": 'Focus',
 	# 	"id": 'foc',
-	# }, {
-	# 	"name": 'Homing',
-	# 	"id": 'hom',
-	# }, {
-	# 	"name": 'Ionizing',
-	# 	"id": 'ion',
-	# }, {
-	# 	"name": 'Melt',
-	# 	"id": 'mlt',
-	# }, {
-	# 	"name": 'Overheat',
-	# 	"id": 'ovr',
-	# }, {
-	# 	"name": 'Power',
-	# 	"id": 'pow',
-	# }, {
-	# 	"name": 'Saturate',
-	# 	"id": 'sat',
-	# },
-# )
+	}, {
+		"name": 'Homing',
+		"id": 'homing',
+	}, {
+		"name": 'Ionizing',
+		"id": 'ionizing',
+	}, {
+		"name": 'Melt',
+		"id": 'melt',
+	}, {
+		"name": 'Overheat',
+		"id": 'overheat',
+	}, {
+		"name": 'Power',
+		"id": 'power',
+	}, {
+		"name": 'Saturate',
+		"id": 'saturate',
+	}, {
+		"name": 'Zone',
+		"id": 'zone',
+	},
+)
 
 modification_slots = {
 	"armor": {
@@ -1530,3 +1528,12 @@ tools = [
 		"id": 'water',
 	},
 ]
+
+rarities = {
+	"standard": 'common',
+	"premium": 'uncommon',
+	"prototype": 'rare',
+	"advanced": 'veryRare',
+	"legendary": 'legendary',
+	"artifact": 'artifact',
+}

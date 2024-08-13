@@ -113,7 +113,7 @@ class BaseFeature(sw5e.Entity.Item):
 		data["system"]["save"] = {
 			"ability": self.save,
 			"dc": self.save_dc,
-			"scaling": "flat" if self.save_dc else "power"
+			"scaling": "flat" if self.save_dc else "spell"
 		}
 		if self.getType() == 'feat':
 			data["system"]["type"] = {
@@ -156,9 +156,9 @@ class Feature(BaseFeature):
 				'none': 'Passive',
 				None: 'Passive',
 			}.get(self.activation, 'Passive')
-			return f'systems/sw5e/packs/Icons/Class%20Features/{class_abbr}{"-ARCH" if self.raw_source == "Archetype" else ""}-{activation}.webp'
+			return f'modules/sw5e-module-test/icons/packs/Class%20Features/{class_abbr}{"-ARCH" if self.raw_source == "Archetype" else ""}-{activation}.webp'
 		else:
-			return f'systems/sw5e/packs/Icons/{self.raw_source}/{utils.text.slugify(self.raw_sourceName)}.webp'
+			return f'modules/sw5e-module-test/icons/packs/{self.raw_source}/{utils.text.slugify(self.raw_sourceName)}.webp'
 
 	def getClassName(self, importer):
 		if self.raw_source in ('Archetype', 'ArchetypeInvocation'):
