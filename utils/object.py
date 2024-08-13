@@ -10,7 +10,10 @@ def setProperty(obj, path, value, force=False):
 	for part in parts[:-1]:
 		if part not in obj and force: obj[part] = {}
 		obj = obj[part]
-	if (force == 'weak' and obj[parts[-1]] == None) or (force != 'weak'): obj[parts[-1]] = value
+	if (force == 'weak' and ((parts[-1] not in obj) or (obj[parts[-1]] == None))) or (force != 'weak'): obj[parts[-1]] = value
+
+def setPropertyWeak(obj, path, value):
+	setProperty(obj, path, value, force='weak')
 
 def applyType(obj, mapping, key='id'):
 	if type(mapping) in (list, tuple):

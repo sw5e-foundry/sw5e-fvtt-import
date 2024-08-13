@@ -89,7 +89,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		return 0, 0, text
 
 	def getRarity(self):
-		return utils.config.rarities[self.raw_rarityText]
+		return utils.config.rarities[self.raw_rarityText.lower()]
 
 	def getModificationItemType(self):
 		if self.raw_subtype in ('armor', 'clothing', 'focusgenerator', 'wristpad'): return 'equipment'
@@ -339,20 +339,20 @@ class EnhancedItem(sw5e.Entity.Item):
 			item["system"]["attunement"] = 'required' if self.raw_requiresAttunement else ''
 			item["system"]["rarity"] = self.rarity
 
-			if "activation" not in item["system"]: item["system"]["activation"] = {}
+			utils.object.setPropertyWeak(item, 'system.activation', {})
 			activation = choose(item["system"]["activation"], self.activation, "type", None)
 			item["system"]["activation"] = {
 				"type": activation,
 				"cost": 1 if activation != 'none' else None
 			}
 			if self.duration_value or (self.duration_unit != 'inst'):
-				if "duration" not in item["system"]: item["system"]["duration"] = {}
+				utils.object.setPropertyWeak(item, 'system.duration', {})
 				item["system"]["duration"] = {
 					"value": choose(item["system"]["duration"], self.duration_value, "value", None),
 					"units": choose(item["system"]["duration"], self.duration_unit, "units", 'inst'),
 				}
 			if self.target_value or self.target_unit or self.target_type:
-				if "target" not in item["system"]: item["system"]["target"] = {}
+				utils.object.setPropertyWeak(item, 'system.target', {})
 				item["system"]["target"] = {
 					"value": choose(item["system"]["target"], self.target_value, "value", None),
 					"width": None,
@@ -360,7 +360,7 @@ class EnhancedItem(sw5e.Entity.Item):
 					"type": choose(item["system"]["target"], self.target_type, "type", ''),
 				}
 			if self.range_value or self.range_unit:
-				if "range" not in item["system"]: item["system"]["range"] = {}
+				utils.object.setPropertyWeak(item, 'system.range', {})
 				item["system"]["range"] = {
 					"value": choose(item["system"]["range"], self.range_value, "value", None),
 					"long": choose(item["system"]["range"], None, "long", None),
@@ -368,8 +368,7 @@ class EnhancedItem(sw5e.Entity.Item):
 				}
 
 			if self.uses or self.recharge:
-				if "uses" not in item["system"]: item["system"]["uses"] = {}
-				if "per" not in item["system"]["uses"]: item["system"]["uses"]["per"] = None
+				utils.object.setPropertyWeak(item, 'system.uses.per', None)
 				if item["system"]["uses"]["per"] == None:
 					item["system"]["uses"] = {
 						"value": None,
@@ -378,8 +377,7 @@ class EnhancedItem(sw5e.Entity.Item):
 					}
 
 			if self.properties:
-				if "flags" not in item: item["flags"] = {}
-				if "sw5e-module-test" not in item["flags"]: item["flags"]["sw5e-module-test"] = {}
+				utils.object.setPropertyWeak(item, 'flags.sw5e-module-test.properties', {})
 				properties = {**item["flags"]["sw5e-module-test"]["properties"], **{key: value for key,value in self.properties.items() if value}}
 				item["flags"]["sw5e-module-test"]["properties"] = properties
 				item["system"]["properties"] = list(properties.keys())
@@ -388,14 +386,13 @@ class EnhancedItem(sw5e.Entity.Item):
 				item["system"]["actionType"] = choose(item["system"], self.action_type, "actionType", 'other')
 
 			if self.attack_bonus:
-				if "attack" not in item["system"]: item["system"]["attack"] = { "bonus": '' }
+				utils.object.setPropertyWeak(item, 'system.attack.bonus', '')
 				if item["system"]["attack"]["bonus"]: item["system"]["attack"]["bonus"] += f' + {self.attack_bonus}'
 				else: item["system"]["attack"]["bonus"] = self.attack_bonus
 
 			if (self.damage and (self.damage["parts"] or self.damage["versatile"])) or self.damage_bonus:
-				if "damage" not in item["system"]: item["system"]["damage"] = {}
-				if "parts" not in item["system"]["damage"]: item["system"]["damage"]["parts"] = []
-				if "versatile" not in item["system"]["damage"]: item["system"]["damage"]["versatile"] = ''
+				utils.object.setPropertyWeak(item, 'system.damage.parts', [])
+				utils.object.setPropertyWeak(item, 'system.damage.versatile', '')
 				item["system"]["damage"] = {
 					"parts": item["system"]["damage"]["parts"] + self.damage["parts"],
 					"versatile": choose(item["system"]["damage"], self.damage["versatile"], "versatile", '')
@@ -410,7 +407,7 @@ class EnhancedItem(sw5e.Entity.Item):
 				item["system"]["formula"] = choose(item["system"], self.formula, 'formula', '')
 
 			if self.save or self.save_dc:
-				if "save" not in item["system"]: item["system"]["save"] = {}
+				utils.object.setPropertyWeak(item, 'system.save', {})
 				item["system"]["save"] = {
 					"ability": choose(item["system"]["save"], self.save, 'ability', ''),
 					"dc": choose(item["system"]["save"], self.save_dc, 'dc', None),
@@ -573,10 +570,8 @@ class EnhancedItem(sw5e.Entity.Item):
 			else:
 				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
 		elif self.raw_type == 'Weapon':
-			if not utils.object.getProperty(data, 'system.activation.type'):
-				utils.object.setProperty(data, 'system.activation', { "type": 'action', "cost": 1 }, force=True)
-			if not utils.object.getProperty(data, 'system.target.type'):
-				utils.object.setProperty(data, 'system.target', { "value": 1 , "type": 'enemy' }, force=True)
+			utils.object.setPropertyWeak(data, 'system.activation', { "type": 'action', "cost": 1 })
+			utils.object.setPropertyWeak(data, 'system.target', { "value": 1 , "type": 'enemy' })
 
 			if self.raw_subtypeType in ('AnyWithProperty', 'AnyBlasterWithProperty', 'AnyVibroweaponWithProperty', 'AnyLightweaponWithProperty'):
 				print(f"	'{self.raw_subtypeType}' enhanced weapon detected. This kind of item is not supported since there currently no examples to know what they should look like.")
