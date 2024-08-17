@@ -6,8 +6,12 @@ def main():
 
 	print(mode)
 
-	imp = importer.Importer(refresh=(mode=="refresh"))
-	imp.output()
+	if mode == 'cleanfoundrydata':
+		import utils.foundryData
+		utils.foundryData.cleanFoundryData()
+	else:
+		imp = importer.Importer(refresh=(mode=="refresh"))
+		imp.output()
 
 if __name__ == '__main__':
 	main()
