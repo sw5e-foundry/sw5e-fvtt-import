@@ -245,7 +245,7 @@ class Class(sw5e.Entity.Item):
 			"none": None,
 			"any one": "*",
 			"one of your choice": "*",
-			"one specialist's kit of your choice": "specialist:*",
+			"one specialist's kit of your choice": "kit:*",
 		}
 
 		choices, grants = [], []
