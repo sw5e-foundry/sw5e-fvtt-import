@@ -846,21 +846,21 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 				"martial lightweapon": { "id": 'mlw:*' },
 				"exotic lightweapon": { "id": 'elw:*' },
 
-				"blaster": { "ids": [ 'smb:*', 'mrb:*' ] },
-				"simple or martial blaster": { "ids": [ 'smb:*', 'mrb:*' ] },
-				"simple blaster": { "id": 'smb:*' },
-				"martial blaster": { "id": 'mrb:*' },
-				"exotic blaster": { "id": 'exb:*' },
+				"blaster": { "ids": [ 'sbl:*', 'mbl:*' ] },
+				"simple or martial blaster": { "ids": [ 'sbl:*', 'mbl:*' ] },
+				"simple blaster": { "id": 'sbl:*' },
+				"martial blaster": { "id": 'mbl:*' },
+				"exotic blaster": { "id": 'ebl:*' },
 				# TODO: Find a way to make this work
-				"blaster that deal sonic damage": { "ids": [ 'smb:*', 'mrb:*' ] },
-				"blasters that deal sonic damage": { "ids": [ 'smb:*', 'mrb:*' ] },
+				"blaster that deal sonic damage": { "ids": [ 'sbl:*', 'mbl:*' ] },
+				"blasters that deal sonic damage": { "ids": [ 'sbl:*', 'mbl:*' ] },
 
 				"improvised weapon": { "id": 'imp' },
 
-				"simple weapon": { "ids": [ 'svb:*', 'slw:*', 'smb:*' ] },
-				"martial weapon": { "ids": [ 'mvb:*', 'mlw:*', 'mrb:*' ] },
+				"simple weapon": { "ids": [ 'svb:*', 'slw:*', 'sbl:*' ] },
+				"martial weapon": { "ids": [ 'mvb:*', 'mlw:*', 'mbl:*' ] },
 				"martial light- and vibro- weapon": { "ids": [ 'mvb:*', 'mlw:*' ] },
-				"exotic weapon": { "ids": [ 'evw:*', 'elw:*', 'exb:*' ] },
+				"exotic weapon": { "ids": [ 'evw:*', 'elw:*', 'ebl:*' ] },
 			},
 			"saves": {
 				"saving throw": { "id": "*" },
