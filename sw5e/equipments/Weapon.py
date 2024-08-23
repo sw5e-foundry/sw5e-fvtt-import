@@ -117,7 +117,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		else: raise ValueError(self.name)
 
 	def getAmmoTypes(self):
-		if (self.name == "Rotary Cannon"): return ['powerGenerator']
+		if (self.name == "Blaster Cannon"): return ['powerGenerator']
 		elif (self.name == "Flechette Cannon"): return ['flechetteMag']
 		elif (self.name == "Vapor Projector"): return ['projectorTank']
 		elif (self.name == "Wrist launcher"): return ['dart', 'flechetteClip', 'missile', 'projectorCanister', 'snare']
@@ -136,7 +136,7 @@ class Weapon(sw5e.Equipment.Equipment):
 
 		properties = {
 			**utils.text.getProperties(self.raw_propertiesMap.values(), properties_list, error=True),
-			**utils.text.getProperties(self.raw_description, properties_list),
+			# **utils.text.getProperties(self.raw_description, properties_list),
 		}
 
 		return utils.object.applyType(properties, properties_list)
