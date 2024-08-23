@@ -827,9 +827,9 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 			"tools": {
 				"musical instrument": { "id": 'music:*' },
 				"instrument": { "id": 'music:*' },
-				"kit": { "id": 'specialist:*' },
-				"specialist's kit": { "id": 'specialist:*' },
-				"artisan's implement": { "id": 'artisan:*' },
+				"kit": { "id": 'kit:*' },
+				"specialist's kit": { "id": 'kit:*' },
+				"artisan's implement": { "id": 'art:*' },
 				"gaming set": { "id": 'game:*' },
 				"vehicle": { "id": 'vehicle:*' },
 			},
