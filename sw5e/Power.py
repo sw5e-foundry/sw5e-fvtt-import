@@ -38,6 +38,7 @@ class Power(sw5e.Entity.Item):
 		self.action_type, self.damage, self.formula, self.save, self.save_dc, self.scaling = self.getAction()
 
 		self.school = self.getSchool()
+		self.consume = self.getConsume()
 
 	def getActivation(self):
 		activation_type = ('none', 'action', 'bonus', 'reaction', 'minute', 'hour')[self.raw_castingPeriodEnum] or 'none'
@@ -125,6 +126,15 @@ class Power(sw5e.Entity.Item):
 		if self.raw_powerType == 'Tech': return 'tec'
 		return ('', 'uni', 'drk', 'lgt')[self.raw_forceAlignmentEnum]
 
+	def getConsume(self):
+		if self.raw_level == 0: return None
+		return {
+			"ammount": self.raw_level + 1,
+			"scale": True,
+			"target": f'powercasting.{"tech" if self.school == "tec" else "force"}.points.value',
+			"type": 'attribute',
+		}
+
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)
 		return f'modules/sw5e-module-test/icons/packs/{self.raw_powerType}%20Powers/{name}.webp'
@@ -165,7 +175,7 @@ class Power(sw5e.Entity.Item):
 			"max": None,
 			"per": ''
 		}
-		# data["system"]["consume"] = {}
+		if self.consume: data["system"]["consume"] = self.consume
 
 		data["system"]["ability"] = None
 		data["system"]["actionType"] = self.action_type

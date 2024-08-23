@@ -22,13 +22,16 @@ let verbose = false;
 function clean(str){
 	str = str || '';
 	str = str.toLowerCase();
-	str = str.replaceAll(/[^\w\s-]/g, '');
-	str = str.replaceAll(/[\s-]+/g, '_');
-	str = str.replaceAll(/[-_]+/g, '');
+	str = str.replaceAll(/\'|\s+|\([^)]*\)/g, '');
+	// re.sub(r'\'|\s+|\([^)]*\)', '', self.raw_name.lower())
+	// str = str.replaceAll(/[^\w\s-]/g, '');
+	// str = str.replaceAll(/[\s-]+/g, '_');
+	// str = str.replaceAll(/[-_]+/g, '');
 	// str = str.replaceAll(/^[-_]+/g, '');
 	// str = str.replaceAll(/[-_]+$/g, '');
 	return str;
 }
+
 
 /**
  * Sort an object's keys.
