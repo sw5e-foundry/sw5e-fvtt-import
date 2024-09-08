@@ -129,7 +129,7 @@ class Power(sw5e.Entity.Item):
 	def getConsume(self):
 		if self.raw_level == 0: return None
 		return {
-			"ammount": self.raw_level + 1,
+			"amount": self.raw_level + 1,
 			"scale": True,
 			"target": f'powercasting.{"tech" if self.school == "tec" else "force"}.points.value',
 			"type": 'attribute',
