@@ -137,7 +137,7 @@ class Power(sw5e.Entity.Item):
 
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)
-		return f'modules/sw5e-module-test/icons/packs/{self.raw_powerType}%20Powers/{name}.webp'
+		return f'modules/sw5e/icons/packs/{self.raw_powerType}%20Powers/{name}.webp'
 
 	def getDescription(self):
 		text = self.raw_description

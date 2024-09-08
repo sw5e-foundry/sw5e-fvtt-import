@@ -117,9 +117,9 @@ for (const type of Object.keys(item_types)) {
 		}
 	}
 
-	const pack = await game.packs.get(`sw5e-module-test.${type}`);
+	const pack = await game.packs.get(`sw5e.${type}`);
 	if (!pack) {
-		console.log(`Compendium pack sw5e-module-test.${type} not found`);
+		console.log(`Compendium pack sw5e.${type} not found`);
 		continue;
 	}
 
@@ -166,10 +166,10 @@ for (const type of Object.keys(item_types)) {
 		console.debug(`to_create: ${to_create}`);
 	}
 
-	if (allow_delete) await Item.deleteDocuments(to_delete, {pack: `sw5e-module-test.${type}`});
-	if (allow_update) await Item.updateDocuments(to_update, {pack: `sw5e-module-test.${type}`});
+	if (allow_delete) await Item.deleteDocuments(to_delete, {pack: `sw5e.${type}`});
+	if (allow_update) await Item.updateDocuments(to_update, {pack: `sw5e.${type}`});
 	if (allow_create) {
-		const items = await Item.createDocuments(to_create, { pack: `sw5e-module-test.${type}` });
+		const items = await Item.createDocuments(to_create, { pack: `sw5e.${type}` });
 		for (const item of items) {
 			const uid = item.flags["sw5e-importer"]?.uid ?? item.flags.uid;
 
@@ -196,9 +196,9 @@ for (const type of Object.keys(journal_entry_types)) {
 		}
 	}
 
-	const pack = await game.packs.get(`sw5e-module-test.${type}`);
+	const pack = await game.packs.get(`sw5e.${type}`);
 	if (!pack) {
-		console.log(`Compendium pack sw5e-module-test.${type} not found`);
+		console.log(`Compendium pack sw5e.${type} not found`);
 		continue;
 	}
 
@@ -242,10 +242,10 @@ for (const type of Object.keys(journal_entry_types)) {
 		console.debug(`to_create: ${to_create}`);
 	}
 
-	if (allow_delete) await JournalEntry.deleteDocuments(to_delete, {pack: `sw5e-module-test.${type}`});
-	if (allow_update) await JournalEntry.updateDocuments(to_update, {pack: `sw5e-module-test.${type}`});
+	if (allow_delete) await JournalEntry.deleteDocuments(to_delete, {pack: `sw5e.${type}`});
+	if (allow_update) await JournalEntry.updateDocuments(to_update, {pack: `sw5e.${type}`});
 	if (allow_create) {
-		const entries = await JournalEntry.createDocuments(to_create, { pack: `sw5e-module-test.${type}` });
+		const entries = await JournalEntry.createDocuments(to_create, { pack: `sw5e.${type}` });
 		for (const entry of entries) {
 			const uid = entry.flags["sw5e-importer"]?.uid ?? entry.flags.uid;
 			foundry_data[uid] = { id: entry._id };
@@ -268,9 +268,9 @@ for (const type of Object.keys(actor_types)) {
 		}
 	}
 
-	const pack = await game.packs.get(`sw5e-module-test.${type}`);
+	const pack = await game.packs.get(`sw5e.${type}`);
 	if (!pack) {
-		console.log(`Compendium pack sw5e-module-test.${type} not found`);
+		console.log(`Compendium pack sw5e.${type} not found`);
 		continue;
 	}
 
@@ -335,10 +335,10 @@ for (const type of Object.keys(actor_types)) {
 		console.debug(`to_create: ${to_create}`);
 	}
 
-	if (allow_delete) await Actor.deleteDocuments(to_delete, {pack: `sw5e-module-test.${type}`});
-	if (allow_update) await Actor.updateDocuments(to_update, {pack: `sw5e-module-test.${type}`});
+	if (allow_delete) await Actor.deleteDocuments(to_delete, {pack: `sw5e.${type}`});
+	if (allow_update) await Actor.updateDocuments(to_update, {pack: `sw5e.${type}`});
 	if (allow_create) {
-		const actors = await Actor.createDocuments(to_create, { pack: `sw5e-module-test.${type}` });
+		const actors = await Actor.createDocuments(to_create, { pack: `sw5e.${type}` });
 		for (const actor of actors) {
 			const uid = actor.flags["sw5e-importer"]?.uid ?? actor.flags.uid;
 

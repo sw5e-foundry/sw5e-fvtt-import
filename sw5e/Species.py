@@ -44,7 +44,7 @@ class Species(sw5e.Entity.Item):
 
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)
-		return f'modules/sw5e-module-test/icons/packs/Species/{name}.webp'
+		return f'modules/sw5e/icons/packs/Species/{name}.webp'
 
 	def getDescription(self):
 		return utils.text.markdownToHtml(self.raw_flavorText)
@@ -122,7 +122,7 @@ class Species(sw5e.Entity.Item):
 	def getAdvancements(self, importer):
 		advancements = []
 
-		uids = [ f'Compendium.sw5e-module-test.speciesfeatures.{feature.foundry_id}' for feature in self.features if feature.foundry_id ]
+		uids = [ f'Compendium.sw5e.speciesfeatures.{feature.foundry_id}' for feature in self.features if feature.foundry_id ]
 		if len(uids): advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=0, optional=True) )
 
 		# TODO: Change this once/if we get the ability to restrict the choices you can spend points on

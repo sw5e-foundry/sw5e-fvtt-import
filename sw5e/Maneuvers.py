@@ -13,7 +13,7 @@ class Maneuvers(sw5e.Feature.BaseFeature):
 
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)
-		return f'modules/sw5e-module-test/icons/packs/Maneuvers/{name}.webp'
+		return f'modules/sw5e/icons/packs/Maneuvers/{name}.webp'
 
 	def getAction(self):
 		return utils.text.getAction(self.raw_text, self.name, rolled_formula='@scale.superiority.die')

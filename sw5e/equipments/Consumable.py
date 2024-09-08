@@ -44,7 +44,7 @@ class Consumable(sw5e.Equipment.Equipment):
 		kwargs = {
 			# 'item_type': self.raw_equipmentCategory,
 			'no_img': ('Unknown', 'AlcoholicBeverage'),
-			'default_img': 'modules/sw5e-module-test/icons/packs/Storage/Canteen.webp',
+			'default_img': 'modules/sw5e/icons/packs/Storage/Canteen.webp',
 			# 'plural': False
 		}
 		if self.subcategory == 'melee': kwargs["item_subtype"] = 'Melee Consumables'

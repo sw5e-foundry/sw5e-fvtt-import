@@ -75,12 +75,12 @@ class Equipment(sw5e.Entity.Item):
 	def getAction(self):
 		return utils.text.getAction((self.raw_description or '').lower(), self.raw_name)
 
-	def getImg(self, importer=None, item_type=None, item_subtype=None, no_img=('Unknown',), default_img='modules/sw5e-module-test/icons/packs/Storage/Crate.webp', plural=False):
+	def getImg(self, importer=None, item_type=None, item_subtype=None, no_img=('Unknown',), default_img='modules/sw5e/icons/packs/Storage/Crate.webp', plural=False):
 		if item_type == None: item_type = self.raw_equipmentCategory
 
 		name = utils.text.slugify(self.raw_name)
 
-		if self.raw_fakeItem: return f'modules/sw5e-module-test/icons/packs/Enhanced%20Items/Generic/{name}.webp'
+		if self.raw_fakeItem: return f'modules/sw5e/icons/packs/Enhanced%20Items/Generic/{name}.webp'
 
 		#TODO: Remove this once there are icons for those categories
 		if item_type in no_img: return default_img
@@ -93,7 +93,7 @@ class Equipment(sw5e.Entity.Item):
 
 		if item_subtype: item_type = f'{item_type}/{item_subtype}'
 
-		return f'modules/sw5e-module-test/icons/packs/{item_type}/{name}.webp'
+		return f'modules/sw5e/icons/packs/{item_type}/{name}.webp'
 
 	def getWeight(self):
 		if type(self.raw_weight) == int: return self.raw_weight
@@ -185,9 +185,9 @@ class Equipment(sw5e.Entity.Item):
 		}
 		if self.p_properties:
 			if "flags" not in data: data["flags"] = {}
-			if "sw5e-module-test" not in data["flags"]: data["flags"]["sw5e-module-test"] = {}
+			if "sw5e" not in data["flags"]: data["flags"]["sw5e"] = {}
 			properties = { key: value for key, value in self.p_properties.items() if value }
-			data["flags"]["sw5e-module-test"]["properties"] = properties
+			data["flags"]["sw5e"]["properties"] = properties
 			data["system"]["properties"] = list(properties.keys())
 
 		return [data]

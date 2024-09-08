@@ -74,9 +74,9 @@ for (let [pack_id, pack_types] of Object.entries(packs)){
 
 	console.log(`Extracting item IDs from ${pack_id} compendium`)
 
-	let pack = await game.packs.get(`sw5e-module-test.${pack_id}`);
+	let pack = await game.packs.get(`sw5e.${pack_id}`);
 	if (!pack){
-		console.log(`Compendium pack sw5e-module-test.${pack_id} not found`);
+		console.log(`Compendium pack sw5e.${pack_id} not found`);
 		continue;
 	}
 

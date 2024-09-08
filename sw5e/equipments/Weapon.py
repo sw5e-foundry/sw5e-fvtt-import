@@ -34,7 +34,7 @@ class Weapon(sw5e.Equipment.Equipment):
 		kwargs = {
 			'item_type': self.raw_weaponClassification,
 			# 'no_img': ('Unknown',),
-			'default_img': 'modules/sw5e-module-test/icons/packs/Simple%20Blasters/Hold-out.webp',
+			'default_img': 'modules/sw5e/icons/packs/Simple%20Blasters/Hold-out.webp',
 			'plural': True
 		}
 		return super().getImg(importer=importer, **kwargs)

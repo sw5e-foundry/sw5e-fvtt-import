@@ -22,7 +22,7 @@ class Backpack(sw5e.Equipment.Equipment):
 		kwargs = {
 			# 'item_type': self.equipmentCategory,
 			# 'no_img': ('Unknown',),
-			'default_img': 'modules/sw5e-module-test/icons/packs/Storage/Crate.webp',
+			'default_img': 'modules/sw5e/icons/packs/Storage/Crate.webp',
 			# 'plural': False
 		}
 		return super().getImg(importer=importer, **kwargs)

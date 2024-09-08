@@ -156,9 +156,9 @@ class Feature(BaseFeature):
 				'none': 'Passive',
 				None: 'Passive',
 			}.get(self.activation, 'Passive')
-			return f'modules/sw5e-module-test/icons/packs/Class%20Features/{class_abbr}{"-ARCH" if self.raw_source == "Archetype" else ""}-{activation}.webp'
+			return f'modules/sw5e/icons/packs/Class%20Features/{class_abbr}{"-ARCH" if self.raw_source == "Archetype" else ""}-{activation}.webp'
 		else:
-			return f'modules/sw5e-module-test/icons/packs/{self.raw_source}/{utils.text.slugify(self.raw_sourceName)}.webp'
+			return f'modules/sw5e/icons/packs/{self.raw_source}/{utils.text.slugify(self.raw_sourceName)}.webp'
 
 	def getClassName(self, importer):
 		if self.raw_source in ('Archetype', 'ArchetypeInvocation'):

@@ -260,7 +260,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		# First check if it's an item with a specific icon for it's enhanced version
 		if name in utils.config.enhanced_item_icons:
 			name = utils.text.slugify(name)
-			return f'modules/sw5e-module-test/icons/packs/Enhanced%20Items/{name}.webp'
+			return f'modules/sw5e/icons/packs/Enhanced%20Items/{name}.webp'
 
 		# Use the base item's icon
 		if self.base_item:
@@ -274,7 +274,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			if self.raw_type == 'CyberneticAugmentation': subtype = f'Cybernetic'
 			elif self.raw_type == 'DroidCustomization': subtype = f'Droid'
 			if subtype != 'Augment': subtype = f'{subtype}Mod'
-			return f'modules/sw5e-module-test/icons/packs/Modifications/{subtype}.webp'
+			return f'modules/sw5e/icons/packs/Modifications/{subtype}.webp'
 
 		# Otherwise use the default item bag icon
 		if name in utils.config.enhanced_item_no_icons:
@@ -377,9 +377,9 @@ class EnhancedItem(sw5e.Entity.Item):
 					}
 
 			if self.properties:
-				utils.object.setPropertyWeak(item, 'flags.sw5e-module-test.properties', {})
-				properties = {**item["flags"]["sw5e-module-test"]["properties"], **{key: value for key,value in self.properties.items() if value}}
-				item["flags"]["sw5e-module-test"]["properties"] = properties
+				utils.object.setPropertyWeak(item, 'flags.sw5e.properties', {})
+				properties = {**item["flags"]["sw5e"]["properties"], **{key: value for key,value in self.properties.items() if value}}
+				item["flags"]["sw5e"]["properties"] = properties
 				item["system"]["properties"] = list(properties.keys())
 
 			if self.action_type:
