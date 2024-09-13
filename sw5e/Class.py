@@ -505,14 +505,11 @@ class Class(sw5e.Entity.Item):
 		data["system"]["hitDiceUsed"] = 0
 		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
 		data["system"]["source"] = { "custom": self.raw_contentSource }
-		data["system"]["spellcasting"] = { "forceProgression": self.force, "techProgression": self.tech }
-		data["system"]["superiority"] = { "progression": self.superiority }
-
-		data["system"]["-=className"] = None
-		data["system"]["-=archetypes"] = None
-		data["system"]["-=classFeatures"] = None
-		data["system"]["-=levelsTable"] = None
-		data["system"]["-=powercasting"] = None
+		data["system"]["spellcasting"] = {
+			"forceProgression": self.force,
+			"techProgression": self.tech,
+			"superiorityProgression": self.superiority
+		}
 
 		return [data]
 
