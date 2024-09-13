@@ -22,7 +22,7 @@ class Maneuvers(sw5e.Feature.BaseFeature):
 		data = super().getData(importer)[0]
 
 		data["system"]["type"] = { "value": self.raw_type.lower() }
-		data["consume"] = {
+		data["system"]["consume"] = {
 			"amount": 1,
 			"target": 'superiority.dice.value',
 			"type": 'attribute',

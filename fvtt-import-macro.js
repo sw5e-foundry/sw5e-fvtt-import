@@ -57,7 +57,7 @@ let item_types = {
 
 	'forcepowers': ['ForcePower'],
 	'techpowers': ['TechPower'],
-	// 'maneuvers': ['Maneuver'],
+	'maneuvers': ['Maneuver'],
 
 	'archetypes': ['Archetype'],
 	'archetypefeatures': ['ArchetypeFeature'],
