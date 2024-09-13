@@ -187,9 +187,9 @@ class Class(sw5e.Entity.Item):
 
 	def loadSuperiority(self):
 		# TODO: Figure out how to do this without a hard coded list
-		if self.name == 'Scholar': return '1'
-		elif self.name == 'Fighter': return '0.5'
-		return '0'
+		if self.name == 'Scholar': return 'full'
+		elif self.name == 'Fighter': return 'half'
+		return 'none'
 
 	def loadFormulas(self):
 		formulas = {}

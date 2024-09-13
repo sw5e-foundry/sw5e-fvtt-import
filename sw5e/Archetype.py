@@ -135,7 +135,7 @@ class Archetype(sw5e.Entity.Item):
 		return features, invocations
 
 	def loadProgression(self):
-		force, tech, superiority = 'none', 'none', '0'
+		force, tech, superiority = 'none', 'none', 'none'
 
 		features = [feature for features in self.features.values() for feature in features.values()]
 
@@ -146,7 +146,7 @@ class Archetype(sw5e.Entity.Item):
 			tech = 'arch'
 
 		if len(filtered := [ feature for feature in features if re.match(fr"(?:Improved )?Superiority$", feature["name"]) ]):
-			superiority = '0.5'
+			superiority = 'half'
 
 		return force, tech, superiority
 
@@ -260,9 +260,9 @@ class Archetype(sw5e.Entity.Item):
 				elif self.sourceClass.tech == 'half': self.tech = '3/4'
 				elif self.sourceClass.tech == '3/4': self.tech = 'full'
 				else: raise ValueError(self.sourceClass.tech)
-			if self.superiority != '0' and self.sourceClass.superiority:
-				if self.sourceClass.superiority == '0': pass
-				elif self.sourceClass.superiority == '0.5': self.superiority = '1.0'
+			if self.superiority != 'none' and self.sourceClass.superiority:
+				if self.sourceClass.superiority == 'none': pass
+				elif self.sourceClass.superiority == 'half': self.superiority = 'full'
 				else: raise ValueError(self.sourceClass.superiority)
 		else:
 			self.broken_links += ['no source class']
