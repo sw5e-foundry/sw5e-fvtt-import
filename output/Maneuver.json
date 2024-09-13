@@ -8,7 +8,7 @@
                 "uid": "Maneuvers.name-administer_aid"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/AdministerAid.webp",
         "system": {
             "description": {
@@ -45,7 +45,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die + @mod",
+                        "1d@superiority.die + @mod",
                         "healing"
                     ]
                 ],
@@ -61,7 +61,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-administer_aid_greater": {
         "name": "Administer Aid (Greater)",
@@ -72,7 +77,7 @@
                 "uid": "Maneuvers.name-administer_aid_greater"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/AdministerAid-Greater.webp",
         "system": {
             "description": {
@@ -120,7 +125,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-administer_aid_improved": {
         "name": "Administer Aid (Improved)",
@@ -131,7 +141,7 @@
                 "uid": "Maneuvers.name-administer_aid_improved"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/AdministerAid-Improved.webp",
         "system": {
             "description": {
@@ -179,7 +189,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-adrenaline_hit": {
         "name": "Adrenaline Hit",
@@ -190,7 +205,7 @@
                 "uid": "Maneuvers.name-adrenaline_hit"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/AdrenalineHit.webp",
         "system": {
             "description": {
@@ -227,7 +242,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die",
+                        "1d@superiority.die",
                         "healing"
                     ]
                 ],
@@ -243,7 +258,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-assist": {
         "name": "Assist",
@@ -254,7 +274,7 @@
                 "uid": "Maneuvers.name-assist"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Assist.webp",
         "system": {
             "description": {
@@ -292,7 +312,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -302,7 +322,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-automatic_startup_sequence": {
         "name": "Automatic Startup Sequence",
@@ -313,7 +338,7 @@
                 "uid": "Maneuvers.name-automatic_startup_sequence"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/AutomaticStartupSequence.webp",
         "system": {
             "description": {
@@ -351,7 +376,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -361,7 +386,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-body_over_bother": {
         "name": "Body Over Bother",
@@ -372,7 +402,7 @@
                 "uid": "Maneuvers.name-body_over_bother"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/BodyOverBother.webp",
         "system": {
             "description": {
@@ -420,7 +450,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-call_the_guards": {
         "name": "Call the Guards",
@@ -431,7 +466,7 @@
                 "uid": "Maneuvers.name-call_the_guards"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/CallTheGuards.webp",
         "system": {
             "description": {
@@ -469,7 +504,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -479,7 +514,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-call_to_arms": {
         "name": "Call to Arms",
@@ -490,7 +530,7 @@
                 "uid": "Maneuvers.name-call_to_arms"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/CallToArms.webp",
         "system": {
             "description": {
@@ -538,7 +578,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-call_to_arms_improved": {
         "name": "Call to Arms (Improved)",
@@ -549,7 +594,7 @@
                 "uid": "Maneuvers.name-call_to_arms_improved"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/CallToArms-Improved.webp",
         "system": {
             "description": {
@@ -587,7 +632,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -597,7 +642,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-calling_card": {
         "name": "Calling Card",
@@ -608,7 +658,7 @@
                 "uid": "Maneuvers.name-calling_card"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/CallingCard.webp",
         "system": {
             "description": {
@@ -645,7 +695,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die",
+                        "1d@superiority.die",
                         "sonic"
                     ]
                 ],
@@ -661,7 +711,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-charge": {
         "name": "Charge",
@@ -672,7 +727,7 @@
                 "uid": "Maneuvers.name-charge"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Charge.webp",
         "system": {
             "description": {
@@ -710,7 +765,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "5 * (@scale.superiority.die)",
+            "formula": "5 * (1d@superiority.die)",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -720,7 +775,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-charging_attack": {
         "name": "Charging Attack",
@@ -731,7 +791,7 @@
                 "uid": "Maneuvers.name-charging_attack"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/ChargingAttack.webp",
         "system": {
             "description": {
@@ -769,7 +829,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "str",
                 "dc": null,
@@ -779,7 +839,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-charming_presence": {
         "name": "Charming Presence",
@@ -790,7 +855,7 @@
                 "uid": "Maneuvers.name-charming_presence"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/CharmingPresence.webp",
         "system": {
             "description": {
@@ -828,7 +893,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -838,7 +903,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-commanders_strike": {
         "name": "Commander's Strike",
@@ -849,7 +919,7 @@
                 "uid": "Maneuvers.name-commanders_strike"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/CommanderSStrike.webp",
         "system": {
             "description": {
@@ -887,7 +957,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -897,7 +967,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-commanders_strike_greater": {
         "name": "Commander's Strike (Greater)",
@@ -908,7 +983,7 @@
                 "uid": "Maneuvers.name-commanders_strike_greater"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/CommanderSStrike-Greater.webp",
         "system": {
             "description": {
@@ -956,7 +1031,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-commanders_strike_improved": {
         "name": "Commander's Strike (Improved)",
@@ -967,7 +1047,7 @@
                 "uid": "Maneuvers.name-commanders_strike_improved"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/CommanderSStrike-Improved.webp",
         "system": {
             "description": {
@@ -1015,7 +1095,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-conceal": {
         "name": "Conceal",
@@ -1026,7 +1111,7 @@
                 "uid": "Maneuvers.name-conceal"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Conceal.webp",
         "system": {
             "description": {
@@ -1064,7 +1149,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -1074,7 +1159,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-crippling_blow": {
         "name": "Crippling Blow",
@@ -1085,7 +1175,7 @@
                 "uid": "Maneuvers.name-crippling_blow"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/CripplingBlow.webp",
         "system": {
             "description": {
@@ -1123,7 +1213,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -1133,7 +1223,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-deceive": {
         "name": "Deceive",
@@ -1144,7 +1239,7 @@
                 "uid": "Maneuvers.name-deceive"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Deceive.webp",
         "system": {
             "description": {
@@ -1182,7 +1277,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -1192,7 +1287,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-disarming_blow": {
         "name": "Disarming Blow",
@@ -1203,7 +1303,7 @@
                 "uid": "Maneuvers.name-disarming_blow"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/DisarmingBlow.webp",
         "system": {
             "description": {
@@ -1241,7 +1341,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "str",
                 "dc": null,
@@ -1251,7 +1351,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-distracting_blow": {
         "name": "Distracting Blow",
@@ -1262,7 +1367,7 @@
                 "uid": "Maneuvers.name-distracting_blow"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/DistractingBlow.webp",
         "system": {
             "description": {
@@ -1300,7 +1405,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -1310,7 +1415,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-effective_flanking": {
         "name": "Effective Flanking",
@@ -1321,7 +1431,7 @@
                 "uid": "Maneuvers.name-effective_flanking"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/EffectiveFlanking.webp",
         "system": {
             "description": {
@@ -1359,7 +1469,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "wis",
                 "dc": null,
@@ -1369,7 +1479,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-effective_flanking_greater": {
         "name": "Effective Flanking (Greater)",
@@ -1380,7 +1495,7 @@
                 "uid": "Maneuvers.name-effective_flanking_greater"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/EffectiveFlanking-Greater.webp",
         "system": {
             "description": {
@@ -1428,7 +1543,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-effective_flanking_improved": {
         "name": "Effective Flanking (Improved)",
@@ -1439,7 +1559,7 @@
                 "uid": "Maneuvers.name-effective_flanking_improved"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/EffectiveFlanking-Improved.webp",
         "system": {
             "description": {
@@ -1487,7 +1607,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-empathize": {
         "name": "Empathize",
@@ -1498,7 +1623,7 @@
                 "uid": "Maneuvers.name-empathize"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Empathize.webp",
         "system": {
             "description": {
@@ -1536,7 +1661,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -1546,7 +1671,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-encouraging_pace": {
         "name": "Encouraging Pace",
@@ -1557,7 +1687,7 @@
                 "uid": "Maneuvers.name-encouraging_pace"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/EncouragingPace.webp",
         "system": {
             "description": {
@@ -1595,7 +1725,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "5 * (@scale.superiority.die)",
+            "formula": "5 * (1d@superiority.die)",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -1605,7 +1735,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-encouraging_speech": {
         "name": "Encouraging Speech",
@@ -1616,7 +1751,7 @@
                 "uid": "Maneuvers.name-encouraging_speech"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/EncouragingSpeech.webp",
         "system": {
             "description": {
@@ -1664,7 +1799,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-enhancement_injection": {
         "name": "Enhancement Injection",
@@ -1675,7 +1815,7 @@
                 "uid": "Maneuvers.name-enhancement_injection"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/EnhancementInjection.webp",
         "system": {
             "description": {
@@ -1712,7 +1852,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die",
+                        "1d@superiority.die",
                         "temphp"
                     ]
                 ],
@@ -1728,7 +1868,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-evasive_footwork": {
         "name": "Evasive Footwork",
@@ -1739,7 +1884,7 @@
                 "uid": "Maneuvers.name-evasive_footwork"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/EvasiveFootwork.webp",
         "system": {
             "description": {
@@ -1777,7 +1922,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -1787,7 +1932,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-exploit_weakness": {
         "name": "Exploit Weakness",
@@ -1798,7 +1948,7 @@
                 "uid": "Maneuvers.name-exploit_weakness"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/ExploitWeakness.webp",
         "system": {
             "description": {
@@ -1835,7 +1985,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die",
+                        "1d@superiority.die",
                         "true"
                     ]
                 ],
@@ -1851,7 +2001,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-fast_access_programs": {
         "name": "Fast Access Programs",
@@ -1862,7 +2017,7 @@
                 "uid": "Maneuvers.name-fast_access_programs"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/FastAccessPrograms.webp",
         "system": {
             "description": {
@@ -1910,7 +2065,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-feinting_attack": {
         "name": "Feinting Attack",
@@ -1921,7 +2081,7 @@
                 "uid": "Maneuvers.name-feinting_attack"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/FeintingAttack.webp",
         "system": {
             "description": {
@@ -1959,7 +2119,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -1969,7 +2129,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-firewall": {
         "name": "Firewall",
@@ -1980,7 +2145,7 @@
                 "uid": "Maneuvers.name-firewall"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Firewall.webp",
         "system": {
             "description": {
@@ -2018,7 +2183,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -2028,7 +2193,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-flex": {
         "name": "Flex",
@@ -2039,7 +2209,7 @@
                 "uid": "Maneuvers.name-flex"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Flex.webp",
         "system": {
             "description": {
@@ -2077,7 +2247,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -2087,7 +2257,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-flourish": {
         "name": "Flourish",
@@ -2098,7 +2273,7 @@
                 "uid": "Maneuvers.name-flourish"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Flourish.webp",
         "system": {
             "description": {
@@ -2136,7 +2311,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -2146,7 +2321,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-force_resonance": {
         "name": "Force Resonance",
@@ -2157,7 +2337,7 @@
                 "uid": "Maneuvers.name-force_resonance"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/ForceResonance.webp",
         "system": {
             "description": {
@@ -2194,7 +2374,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die + @mod",
+                        "1d@superiority.die + @mod",
                         "force"
                     ]
                 ],
@@ -2210,7 +2390,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-fortune_and_glory": {
         "name": "Fortune and Glory",
@@ -2221,7 +2406,7 @@
                 "uid": "Maneuvers.name-fortune_and_glory"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/FortuneAndGlory.webp",
         "system": {
             "description": {
@@ -2259,7 +2444,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -2269,7 +2454,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-goading_attack": {
         "name": "Goading Attack",
@@ -2280,7 +2470,7 @@
                 "uid": "Maneuvers.name-goading_attack"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/GoadingAttack.webp",
         "system": {
             "description": {
@@ -2318,7 +2508,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "wis",
                 "dc": null,
@@ -2328,7 +2518,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-hacked_communications": {
         "name": "Hacked Communications",
@@ -2339,7 +2534,7 @@
                 "uid": "Maneuvers.name-hacked_communications"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/HackedCommunications.webp",
         "system": {
             "description": {
@@ -2376,7 +2571,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die",
+                        "1d@superiority.die",
                         "sonic"
                     ]
                 ],
@@ -2392,7 +2587,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-handle_animal": {
         "name": "Handle Animal",
@@ -2403,7 +2603,7 @@
                 "uid": "Maneuvers.name-handle_animal"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/HandleAnimal.webp",
         "system": {
             "description": {
@@ -2441,7 +2641,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -2451,7 +2651,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-heads_up": {
         "name": "Heads Up",
@@ -2462,7 +2667,7 @@
                 "uid": "Maneuvers.name-heads_up"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/HeadsUp.webp",
         "system": {
             "description": {
@@ -2500,7 +2705,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -2510,7 +2715,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-incite": {
         "name": "Incite",
@@ -2521,7 +2731,7 @@
                 "uid": "Maneuvers.name-incite"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Incite.webp",
         "system": {
             "description": {
@@ -2569,7 +2779,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-inner_strength": {
         "name": "Inner Strength",
@@ -2580,7 +2795,7 @@
                 "uid": "Maneuvers.name-inner_strength"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/InnerStrength.webp",
         "system": {
             "description": {
@@ -2617,7 +2832,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die + @mod",
+                        "1d@superiority.die + @mod",
                         "temphp"
                     ]
                 ],
@@ -2633,7 +2848,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-intimidating_presence": {
         "name": "Intimidating Presence",
@@ -2644,7 +2864,7 @@
                 "uid": "Maneuvers.name-intimidating_presence"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/IntimidatingPresence.webp",
         "system": {
             "description": {
@@ -2682,7 +2902,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -2692,7 +2912,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-investigate": {
         "name": "Investigate",
@@ -2703,7 +2928,7 @@
                 "uid": "Maneuvers.name-investigate"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Investigate.webp",
         "system": {
             "description": {
@@ -2741,7 +2966,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -2751,7 +2976,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-lunging_attack": {
         "name": "Lunging Attack",
@@ -2762,7 +2992,7 @@
                 "uid": "Maneuvers.name-lunging_attack"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/LungingAttack.webp",
         "system": {
             "description": {
@@ -2800,7 +3030,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -2810,7 +3040,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-maneuvering_attack": {
         "name": "Maneuvering Attack",
@@ -2821,7 +3056,7 @@
                 "uid": "Maneuvers.name-maneuvering_attack"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/ManeuveringAttack.webp",
         "system": {
             "description": {
@@ -2859,7 +3094,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -2869,7 +3104,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-menacing_attack": {
         "name": "Menacing Attack",
@@ -2880,7 +3120,7 @@
                 "uid": "Maneuvers.name-menacing_attack"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/MenacingAttack.webp",
         "system": {
             "description": {
@@ -2918,7 +3158,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "wis",
                 "dc": null,
@@ -2928,7 +3168,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-mind_over_matter": {
         "name": "Mind Over Matter",
@@ -2939,7 +3184,7 @@
                 "uid": "Maneuvers.name-mind_over_matter"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/MindOverMatter.webp",
         "system": {
             "description": {
@@ -2987,7 +3232,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-naturalize": {
         "name": "Naturalize",
@@ -2998,7 +3248,7 @@
                 "uid": "Maneuvers.name-naturalize"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Naturalize.webp",
         "system": {
             "description": {
@@ -3036,7 +3286,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -3046,7 +3296,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-neuroblock": {
         "name": "Neuroblock",
@@ -3057,7 +3312,7 @@
                 "uid": "Maneuvers.name-neuroblock"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Neuroblock.webp",
         "system": {
             "description": {
@@ -3095,7 +3350,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -3105,7 +3360,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-no_escape": {
         "name": "No Escape",
@@ -3116,7 +3376,7 @@
                 "uid": "Maneuvers.name-no_escape"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/NoEscape.webp",
         "system": {
             "description": {
@@ -3154,7 +3414,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -3164,7 +3424,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-one_step_ahead": {
         "name": "One Step Ahead",
@@ -3175,7 +3440,7 @@
                 "uid": "Maneuvers.name-one_step_ahead"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/OneStepAhead.webp",
         "system": {
             "description": {
@@ -3223,7 +3488,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-one_with_shadows": {
         "name": "One With Shadows",
@@ -3234,7 +3504,7 @@
                 "uid": "Maneuvers.name-one_with_shadows"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/OneWithShadows.webp",
         "system": {
             "description": {
@@ -3282,7 +3552,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-one_with_the_force": {
         "name": "One with the Force",
@@ -3293,7 +3568,7 @@
                 "uid": "Maneuvers.name-one_with_the_force"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/OneWithTheForce.webp",
         "system": {
             "description": {
@@ -3331,7 +3606,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "con",
                 "dc": null,
@@ -3341,7 +3616,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-overcapacity_powers": {
         "name": "Overcapacity Powers",
@@ -3352,7 +3632,7 @@
                 "uid": "Maneuvers.name-overcapacity_powers"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/OvercapacityPowers.webp",
         "system": {
             "description": {
@@ -3390,7 +3670,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -3400,7 +3680,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-overwhelming_wit": {
         "name": "Overwhelming Wit",
@@ -3411,7 +3696,7 @@
                 "uid": "Maneuvers.name-overwhelming_wit"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/OverwhelmingWit.webp",
         "system": {
             "description": {
@@ -3459,7 +3744,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-parry": {
         "name": "Parry",
@@ -3470,7 +3760,7 @@
                 "uid": "Maneuvers.name-parry"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Parry.webp",
         "system": {
             "description": {
@@ -3507,7 +3797,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die + @mod",
+                        "1d@superiority.die + @mod",
                         "temphp"
                     ]
                 ],
@@ -3523,7 +3813,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-parry_improved": {
         "name": "Parry (Improved)",
@@ -3534,7 +3829,7 @@
                 "uid": "Maneuvers.name-parry_improved"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Parry-Improved.webp",
         "system": {
             "description": {
@@ -3582,7 +3877,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-penetrating_shot": {
         "name": "Penetrating Shot",
@@ -3593,7 +3893,7 @@
                 "uid": "Maneuvers.name-penetrating_shot"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/PenetratingShot.webp",
         "system": {
             "description": {
@@ -3631,7 +3931,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -3641,7 +3941,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-perceive": {
         "name": "Perceive",
@@ -3652,7 +3957,7 @@
                 "uid": "Maneuvers.name-perceive"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Perceive.webp",
         "system": {
             "description": {
@@ -3690,7 +3995,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -3700,7 +4005,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-perform": {
         "name": "Perform",
@@ -3711,7 +4021,7 @@
                 "uid": "Maneuvers.name-perform"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Perform.webp",
         "system": {
             "description": {
@@ -3749,7 +4059,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -3759,7 +4069,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-persuade": {
         "name": "Persuade",
@@ -3770,7 +4085,7 @@
                 "uid": "Maneuvers.name-persuade"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Persuade.webp",
         "system": {
             "description": {
@@ -3808,7 +4123,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -3818,7 +4133,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-pilot": {
         "name": "Pilot",
@@ -3829,7 +4149,7 @@
                 "uid": "Maneuvers.name-pilot"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Pilot.webp",
         "system": {
             "description": {
@@ -3867,7 +4187,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -3877,7 +4197,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-precise_movements": {
         "name": "Precise Movements",
@@ -3888,7 +4213,7 @@
                 "uid": "Maneuvers.name-precise_movements"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/PreciseMovements.webp",
         "system": {
             "description": {
@@ -3926,7 +4251,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "5 * (@scale.superiority.die)",
+            "formula": "5 * (1d@superiority.die)",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -3936,7 +4261,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-precision_attack": {
         "name": "Precision Attack",
@@ -3947,7 +4277,7 @@
                 "uid": "Maneuvers.name-precision_attack"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/PrecisionAttack.webp",
         "system": {
             "description": {
@@ -3985,7 +4315,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -3995,7 +4325,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-program": {
         "name": "Program",
@@ -4006,7 +4341,7 @@
                 "uid": "Maneuvers.name-program"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Program.webp",
         "system": {
             "description": {
@@ -4044,7 +4379,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -4054,7 +4389,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-pure_sabacc": {
         "name": "Pure Sabacc",
@@ -4065,7 +4405,7 @@
                 "uid": "Maneuvers.name-pure_sabacc"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/PureSabacc.webp",
         "system": {
             "description": {
@@ -4113,7 +4453,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-pushing_attack": {
         "name": "Pushing Attack",
@@ -4124,7 +4469,7 @@
                 "uid": "Maneuvers.name-pushing_attack"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/PushingAttack.webp",
         "system": {
             "description": {
@@ -4162,7 +4507,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "str",
                 "dc": null,
@@ -4172,7 +4517,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-rally": {
         "name": "Rally",
@@ -4183,7 +4533,7 @@
                 "uid": "Maneuvers.name-rally"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Rally.webp",
         "system": {
             "description": {
@@ -4220,7 +4570,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die",
+                        "1d@superiority.die",
                         "temphp"
                     ]
                 ],
@@ -4236,7 +4586,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-rampage": {
         "name": "Rampage",
@@ -4247,7 +4602,7 @@
                 "uid": "Maneuvers.name-rampage"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Rampage.webp",
         "system": {
             "description": {
@@ -4285,7 +4640,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -4295,7 +4650,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-rattle": {
         "name": "Rattle",
@@ -4306,7 +4666,7 @@
                 "uid": "Maneuvers.name-rattle"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Rattle.webp",
         "system": {
             "description": {
@@ -4343,7 +4703,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die",
+                        "1d@superiority.die",
                         "psychic"
                     ]
                 ],
@@ -4359,7 +4719,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-reassure": {
         "name": "Reassure",
@@ -4370,7 +4735,7 @@
                 "uid": "Maneuvers.name-reassure"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Reassure.webp",
         "system": {
             "description": {
@@ -4408,7 +4773,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -4418,7 +4783,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-remove_toxins": {
         "name": "Remove Toxins",
@@ -4429,7 +4799,7 @@
                 "uid": "Maneuvers.name-remove_toxins"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/RemoveToxins.webp",
         "system": {
             "description": {
@@ -4466,7 +4836,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die",
+                        "1d@superiority.die",
                         "healing"
                     ]
                 ],
@@ -4482,7 +4852,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-return_fire": {
         "name": "Return Fire",
@@ -4493,7 +4868,7 @@
                 "uid": "Maneuvers.name-return_fire"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/ReturnFire.webp",
         "system": {
             "description": {
@@ -4531,7 +4906,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -4541,7 +4916,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-riposte": {
         "name": "Riposte",
@@ -4552,7 +4932,7 @@
                 "uid": "Maneuvers.name-riposte"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Riposte.webp",
         "system": {
             "description": {
@@ -4590,7 +4970,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -4600,7 +4980,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-riposte_improved": {
         "name": "Riposte (Improved)",
@@ -4611,7 +4996,7 @@
                 "uid": "Maneuvers.name-riposte_improved"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Riposte-Improved.webp",
         "system": {
             "description": {
@@ -4649,7 +5034,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -4659,7 +5044,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-runtime_extension": {
         "name": "Runtime Extension",
@@ -4670,7 +5060,7 @@
                 "uid": "Maneuvers.name-runtime_extension"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/RuntimeExtension.webp",
         "system": {
             "description": {
@@ -4708,7 +5098,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -4718,7 +5108,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-self_preservation": {
         "name": "Self-Preservation",
@@ -4729,7 +5124,7 @@
                 "uid": "Maneuvers.name-self_preservation"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Self-Preservation.webp",
         "system": {
             "description": {
@@ -4767,7 +5162,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -4777,7 +5172,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-short_round": {
         "name": "Short Round",
@@ -4788,7 +5188,7 @@
                 "uid": "Maneuvers.name-short_round"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/ShortRound.webp",
         "system": {
             "description": {
@@ -4836,7 +5236,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-steady_the_nerves": {
         "name": "Steady the Nerves",
@@ -4847,7 +5252,7 @@
                 "uid": "Maneuvers.name-steady_the_nerves"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/SteadyTheNerves.webp",
         "system": {
             "description": {
@@ -4885,7 +5290,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -4895,7 +5300,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-strikeforce": {
         "name": "Strikeforce",
@@ -4906,7 +5316,7 @@
                 "uid": "Maneuvers.name-strikeforce"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Strikeforce.webp",
         "system": {
             "description": {
@@ -4943,7 +5353,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die",
+                        "1d@superiority.die",
                         "force"
                     ]
                 ],
@@ -4959,7 +5369,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-study": {
         "name": "Study",
@@ -4970,7 +5385,7 @@
                 "uid": "Maneuvers.name-study"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Study.webp",
         "system": {
             "description": {
@@ -5008,7 +5423,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -5018,7 +5433,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-subtle_execution": {
         "name": "Subtle Execution",
@@ -5029,7 +5449,7 @@
                 "uid": "Maneuvers.name-subtle_execution"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/SubtleExecution.webp",
         "system": {
             "description": {
@@ -5077,7 +5497,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-survive": {
         "name": "Survive",
@@ -5088,7 +5513,7 @@
                 "uid": "Maneuvers.name-survive"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Survive.webp",
         "system": {
             "description": {
@@ -5126,7 +5551,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -5136,7 +5561,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-sweeping_attack": {
         "name": "Sweeping Attack",
@@ -5147,7 +5577,7 @@
                 "uid": "Maneuvers.name-sweeping_attack"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/SweepingAttack.webp",
         "system": {
             "description": {
@@ -5185,7 +5615,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -5195,7 +5625,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-sweeping_attack_improved": {
         "name": "Sweeping Attack (Improved)",
@@ -5206,7 +5641,7 @@
                 "uid": "Maneuvers.name-sweeping_attack_improved"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/SweepingAttack-Improved.webp",
         "system": {
             "description": {
@@ -5254,7 +5689,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-targeted_strike": {
         "name": "Targeted Strike",
@@ -5265,7 +5705,7 @@
                 "uid": "Maneuvers.name-targeted_strike"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/TargetedStrike.webp",
         "system": {
             "description": {
@@ -5303,7 +5743,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -5313,7 +5753,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-tenacity": {
         "name": "Tenacity",
@@ -5324,7 +5769,7 @@
                 "uid": "Maneuvers.name-tenacity"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Tenacity.webp",
         "system": {
             "description": {
@@ -5362,7 +5807,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "5 * (@scale.superiority.die)",
+            "formula": "5 * (1d@superiority.die)",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -5372,7 +5817,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-threaten": {
         "name": "Threaten",
@@ -5383,7 +5833,7 @@
                 "uid": "Maneuvers.name-threaten"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Threaten.webp",
         "system": {
             "description": {
@@ -5421,7 +5871,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -5431,7 +5881,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-trip_attack": {
         "name": "Trip Attack",
@@ -5442,7 +5897,7 @@
                 "uid": "Maneuvers.name-trip_attack"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/TripAttack.webp",
         "system": {
             "description": {
@@ -5480,7 +5935,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "str",
                 "dc": null,
@@ -5490,7 +5945,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-tumble": {
         "name": "Tumble",
@@ -5501,7 +5961,7 @@
                 "uid": "Maneuvers.name-tumble"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Tumble.webp",
         "system": {
             "description": {
@@ -5539,7 +5999,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -5549,7 +6009,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-tyrannical_strike": {
         "name": "Tyrannical Strike",
@@ -5560,7 +6025,7 @@
                 "uid": "Maneuvers.name-tyrannical_strike"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/TyrannicalStrike.webp",
         "system": {
             "description": {
@@ -5598,7 +6063,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "wis",
                 "dc": null,
@@ -5608,7 +6073,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-unrelenting_grasp": {
         "name": "Unrelenting Grasp",
@@ -5619,7 +6089,7 @@
                 "uid": "Maneuvers.name-unrelenting_grasp"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/UnrelentingGrasp.webp",
         "system": {
             "description": {
@@ -5657,7 +6127,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -5667,7 +6137,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-vanity": {
         "name": "Vanity",
@@ -5678,7 +6153,7 @@
                 "uid": "Maneuvers.name-vanity"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Vanity.webp",
         "system": {
             "description": {
@@ -5715,7 +6190,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die + @mod",
+                        "1d@superiority.die + @mod",
                         "healing"
                     ]
                 ],
@@ -5731,7 +6206,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-weak_point_strike": {
         "name": "Weak Point Strike",
@@ -5742,7 +6222,7 @@
                 "uid": "Maneuvers.name-weak_point_strike"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/WeakPointStrike.webp",
         "system": {
             "description": {
@@ -5780,7 +6260,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "con",
                 "dc": null,
@@ -5790,7 +6270,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-world_on_fire": {
         "name": "World on Fire",
@@ -5801,7 +6286,7 @@
                 "uid": "Maneuvers.name-world_on_fire"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/WorldOnFire.webp",
         "system": {
             "description": {
@@ -5838,7 +6323,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die",
+                        "1d@superiority.die",
                         "fire"
                     ]
                 ],
@@ -5854,7 +6339,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-wrestle_and_drag": {
         "name": "Wrestle and Drag",
@@ -5865,7 +6355,7 @@
                 "uid": "Maneuvers.name-wrestle_and_drag"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/WrestleAndDrag.webp",
         "system": {
             "description": {
@@ -5902,7 +6392,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die",
+                        "1d@superiority.die",
                         "kinetic"
                     ]
                 ],
@@ -5918,7 +6408,12 @@
                 "value": "physical"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-you_call_this_archaeology": {
         "name": "You Call This Archaeology?",
@@ -5929,7 +6424,7 @@
                 "uid": "Maneuvers.name-you_call_this_archaeology"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/YouCallThisArchaeology.webp",
         "system": {
             "description": {
@@ -5966,7 +6461,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die + @mod",
+                        "1d@superiority.die + @mod",
                         "temphp"
                     ]
                 ],
@@ -5982,7 +6477,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-agonizing_lethargy": {
         "name": "Agonizing Lethargy",
@@ -5993,7 +6493,7 @@
                 "uid": "Maneuvers.name-agonizing_lethargy"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/AgonizingLethargy.webp",
         "system": {
             "description": {
@@ -6046,7 +6546,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-assess_the_situation": {
         "name": "Assess the Situation",
@@ -6057,7 +6562,7 @@
                 "uid": "Maneuvers.name-assess_the_situation"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/AssessTheSituation.webp",
         "system": {
             "description": {
@@ -6095,7 +6600,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -6105,7 +6610,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-befogging_ichor": {
         "name": "Befogging Ichor",
@@ -6116,7 +6626,7 @@
                 "uid": "Maneuvers.name-befogging_ichor"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/BefoggingIchor.webp",
         "system": {
             "description": {
@@ -6164,7 +6674,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-chains_of_transfixing": {
         "name": "Chains of Transfixing",
@@ -6175,7 +6690,7 @@
                 "uid": "Maneuvers.name-chains_of_transfixing"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/ChainsOfTransfixing.webp",
         "system": {
             "description": {
@@ -6223,7 +6738,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-daring_escape": {
         "name": "Daring Escape",
@@ -6234,7 +6754,7 @@
                 "uid": "Maneuvers.name-daring_escape"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/DaringEscape.webp",
         "system": {
             "description": {
@@ -6282,7 +6802,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-dark_transference": {
         "name": "Dark Transference",
@@ -6293,7 +6818,7 @@
                 "uid": "Maneuvers.name-dark_transference"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/DarkTransference.webp",
         "system": {
             "description": {
@@ -6331,7 +6856,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "con",
                 "dc": null,
@@ -6341,7 +6866,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-deathseek": {
         "name": "Deathseek",
@@ -6352,7 +6882,7 @@
                 "uid": "Maneuvers.name-deathseek"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Deathseek.webp",
         "system": {
             "description": {
@@ -6400,7 +6930,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-deliberate_movement": {
         "name": "Deliberate Movement",
@@ -6411,7 +6946,7 @@
                 "uid": "Maneuvers.name-deliberate_movement"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/DeliberateMovement.webp",
         "system": {
             "description": {
@@ -6459,7 +6994,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-go_get_em": {
         "name": "Go Get 'Em",
@@ -6470,7 +7010,7 @@
                 "uid": "Maneuvers.name-go_get_em"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/GoGetEm.webp",
         "system": {
             "description": {
@@ -6508,7 +7048,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "5 * (@scale.superiority.die)",
+            "formula": "5 * (1d@superiority.die)",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -6518,7 +7058,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-loyal_bond": {
         "name": "Loyal Bond",
@@ -6529,7 +7074,7 @@
                 "uid": "Maneuvers.name-loyal_bond"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/LoyalBond.webp",
         "system": {
             "description": {
@@ -6567,7 +7112,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -6577,7 +7122,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-pin_down": {
         "name": "Pin Down",
@@ -6588,7 +7138,7 @@
                 "uid": "Maneuvers.name-pin_down"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/PinDown.webp",
         "system": {
             "description": {
@@ -6626,7 +7176,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -6636,7 +7186,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-primal_endurance": {
         "name": "Primal Endurance",
@@ -6647,7 +7202,7 @@
                 "uid": "Maneuvers.name-primal_endurance"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/PrimalEndurance.webp",
         "system": {
             "description": {
@@ -6685,7 +7240,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -6695,7 +7250,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-reverse_curse": {
         "name": "Reverse Curse",
@@ -6706,7 +7266,7 @@
                 "uid": "Maneuvers.name-reverse_curse"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/ReverseCurse.webp",
         "system": {
             "description": {
@@ -6744,7 +7304,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "wis",
                 "dc": null,
@@ -6754,7 +7314,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-shadow_puppetry": {
         "name": "Shadow Puppetry",
@@ -6765,7 +7330,7 @@
                 "uid": "Maneuvers.name-shadow_puppetry"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/ShadowPuppetry.webp",
         "system": {
             "description": {
@@ -6803,7 +7368,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "5 * (@scale.superiority.die)",
+            "formula": "5 * (1d@superiority.die)",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -6813,7 +7378,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-sic_em": {
         "name": "Sic 'Em",
@@ -6824,7 +7394,7 @@
                 "uid": "Maneuvers.name-sic_em"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/SicEm.webp",
         "system": {
             "description": {
@@ -6872,7 +7442,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-spine_chilling_howls": {
         "name": "Spine-Chilling Howls",
@@ -6883,7 +7458,7 @@
                 "uid": "Maneuvers.name-spine_chilling_howls"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/Spine-ChillingHowls.webp",
         "system": {
             "description": {
@@ -6931,7 +7506,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-water_of_life": {
         "name": "Water of Life",
@@ -6942,7 +7522,7 @@
                 "uid": "Maneuvers.name-water_of_life"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/WaterOfLife.webp",
         "system": {
             "description": {
@@ -6979,7 +7559,7 @@
             "damage": {
                 "parts": [
                     [
-                        "@scale.superiority.die + @mod",
+                        "1d@superiority.die + @mod",
                         "healing"
                     ]
                 ],
@@ -6995,7 +7575,12 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-wild_senses": {
         "name": "Wild Senses",
@@ -7006,7 +7591,7 @@
                 "uid": "Maneuvers.name-wild_senses"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/WildSenses.webp",
         "system": {
             "description": {
@@ -7044,7 +7629,7 @@
                 "parts": [],
                 "versatile": ""
             },
-            "formula": "@scale.superiority.die",
+            "formula": "1d@superiority.die",
             "save": {
                 "ability": "",
                 "dc": null,
@@ -7054,7 +7639,12 @@
                 "value": "general"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     },
     "Maneuvers.name-wracking_torment": {
         "name": "Wracking Torment",
@@ -7065,7 +7655,7 @@
                 "uid": "Maneuvers.name-wracking_torment"
             }
         },
-        "type": "maneuver",
+        "type": "sw5e.maneuver",
         "img": "modules/sw5e/icons/packs/Maneuvers/WrackingTorment.webp",
         "system": {
             "description": {
@@ -7113,6 +7703,11 @@
                 "value": "mental"
             }
         },
-        "effects": []
+        "effects": [],
+        "consume": {
+            "amount": 1,
+            "target": "superiority.dice.value",
+            "type": "attribute"
+        }
     }
 }
