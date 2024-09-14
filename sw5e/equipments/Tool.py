@@ -8,7 +8,8 @@ class Tool(sw5e.Equipment.Equipment):
 	def process(self, importer):
 		super().process(importer)
 
-		self.activation = 'action'
+	def getActivation(self):
+		return 'action'
 
 	def getImg(self, importer=None):
 		kwargs = {
@@ -19,11 +20,28 @@ class Tool(sw5e.Equipment.Equipment):
 		}
 		return super().getImg(importer=importer, **kwargs)
 
+	def getData(self, importer):
+		data = super().getData(importer)[0]
+
+		data["system"]["ability"] = ''
+
+		return [data]
+
+	############################
+	#    Template Functions    #
+	############################
+
+	# templates.Activities
+
+	# templates.ItemDescription
 	def getDescription(self, importer):
 		text = self.raw_description
 		return utils.text.markdownToHtml(text)
 
-	def getEquipmentCategory(self):
+	# templates.Identifiable
+
+	# template.ItemType
+	def getCategory(self):
 		tools = {
 			"GamingSet": 'game',
 			"MusicalInstrument": 'music',
@@ -38,9 +56,8 @@ class Tool(sw5e.Equipment.Equipment):
 		elif self.name != 'Tool': print(f'		Unable to recognize tool type for {self.name}, {category}')
 		return None
 
-	def getData(self, importer):
-		data = super().getData(importer)[0]
+	# template.PhysicalItem
 
-		data["system"]["ability"] = ''
+	# templates.EquippableItem
 
-		return [data]
+#

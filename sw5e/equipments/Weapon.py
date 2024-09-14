@@ -1,7 +1,10 @@
-import sw5e.Equipment, utils.config, utils.object, utils.text
+import sw5e.Equipment, sw5e.templates, utils.config, utils.object, utils.text
 import re, json, copy
 
-class Weapon(sw5e.Equipment.Equipment):
+class Weapon(
+	sw5e.Equipment.Equipment,
+	# sw5e.templates.Mountable, # NotImplemented
+):
 	def load(self, raw_item):
 		super().load(raw_item)
 
@@ -39,32 +42,6 @@ class Weapon(sw5e.Equipment.Equipment):
 		}
 		return super().getImg(importer=importer, **kwargs)
 
-	def getDescription(self, importer):
-		properties = {prop: self.raw_propertiesMap[prop] for prop in self.raw_propertiesMap if prop != 'Special'}
-
-		text = ''
-
-		if importer:
-			def getContent(prop_name):
-				prop = importer.get('weaponProperty', data={'name': prop_name})
-				if prop: return prop.getContent(val=properties[prop_name])
-				else: return properties[prop_name].capitalize()
-			text = '\n'.join([getContent(prop) for prop in properties])
-		else:
-			text = ', '.join([properties[prop].capitalize() for prop in properties if prop != 'Ammunition'])
-			text = utils.text.markdownToHtml(text)
-
-		if 'Special' in self.raw_propertiesMap:
-			if text: text += '\n'
-			if (special := self.raw_propertiesMap["Special"]).lower() != "special":
-				text += utils.text.markdownToHtml('#### Special\n' + special)
-			elif self.raw_description:
-				text += utils.text.markdownToHtml('#### Special\n' + self.raw_description)
-			else:
-				raise ValueError
-
-		return text
-
 	def getActionType(self):
 		if self.category in ('simpleB', 'martialB'):
 			return 'rwak'
@@ -92,22 +69,6 @@ class Weapon(sw5e.Equipment.Equipment):
 			"parts": [[ die, damage_type ]],
 			"versatile": f'{versatile} +  @mod' if versatile else ''
 		}
-
-	def getEquipmentCategory(self):
-		wc = self.raw_weaponClassification
-
-		start = ''
-		for training in ('Simple', 'Martial', 'Exotic'):
-			if wc.startswith(training): start = training.lower()
-
-		if wc.endswith('Blaster') or self.getProperty('Ammunition') or self.getProperty('Reload'):
-			return f'{start}B'
-		for mode in ('Vibroweapon', 'Lightweapon'):
-			if wc.endswith(mode): return f'{start}{mode[0]}W'
-
-		if wc == 'Natural': return 'natural'
-
-		return 'improv'
 
 	def getWeaponClass(self):
 		if self.category == 'natural' or self.raw_fakeItem: return ''
@@ -247,3 +208,61 @@ class Weapon(sw5e.Equipment.Equipment):
 
 	def getFile(self, importer):
 		return self.raw_weaponClassification
+
+	############################
+	#    Template Functions    #
+	############################
+
+	# templates.Activities
+
+	# templates.ItemDescription
+	def getDescription(self, importer):
+		properties = {prop: self.raw_propertiesMap[prop] for prop in self.raw_propertiesMap if prop != 'Special'}
+
+		text = ''
+
+		if importer:
+			def getContent(prop_name):
+				prop = importer.get('weaponProperty', data={'name': prop_name})
+				if prop: return prop.getContent(val=properties[prop_name])
+				else: return properties[prop_name].capitalize()
+			text = '\n'.join([getContent(prop) for prop in properties])
+		else:
+			text = ', '.join([properties[prop].capitalize() for prop in properties if prop != 'Ammunition'])
+			text = utils.text.markdownToHtml(text)
+
+		if 'Special' in self.raw_propertiesMap:
+			if text: text += '\n'
+			if (special := self.raw_propertiesMap["Special"]).lower() != "special":
+				text += utils.text.markdownToHtml('#### Special\n' + special)
+			elif self.raw_description:
+				text += utils.text.markdownToHtml('#### Special\n' + self.raw_description)
+			else:
+				raise ValueError
+
+		return text
+
+	# templates.Identifiable
+
+	# template.ItemType
+	def getCategory(self):
+		wc = self.raw_weaponClassification
+
+		start = ''
+		for training in ('Simple', 'Martial', 'Exotic'):
+			if wc.startswith(training): start = training.lower()
+
+		if wc.endswith('Blaster') or self.getProperty('Ammunition') or self.getProperty('Reload'):
+			return f'{start}B'
+		for mode in ('Vibroweapon', 'Lightweapon'):
+			if wc.endswith(mode): return f'{start}{mode[0]}W'
+
+		if wc == 'Natural': return 'natural'
+
+		return 'improv'
+
+	# template.PhysicalItem
+
+	# templates.EquippableItem
+
+#

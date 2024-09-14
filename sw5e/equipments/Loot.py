@@ -24,9 +24,32 @@ class Loot(sw5e.Equipment.Equipment):
 		}
 		return super().getImg(importer=importer, **kwargs)
 
+	############################
+	#    Template Functions    #
+	############################
+
+	# templates.Activities
+	def getActivities(self):
+		return None
+
+	# templates.ItemDescription
 	def getDescription(self, importer):
 		text = self.raw_description
 		return utils.text.markdownToHtml(text)
 
-	def getEquipmentCategory(self):
+	# templates.Identifiable
+
+	# template.ItemType
+	def getCategory(self):
 		return 'gear'
+
+	# template.PhysicalItem
+
+	# templates.EquippableItem
+	def getAttunement(self):
+		return None
+	def getAttuned(self):
+		return None
+	def getEquipped(self):
+		return None
+#

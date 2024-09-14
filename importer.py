@@ -19,35 +19,35 @@ class Importer:
 	__raw_path = "raw/"
 	__extras_path = "extras/"
 	__entity_types = [
-		'archetype',
-		'armorProperty',
-		'background',
-		'class',
-		'conditions',
-		'enhancedItem',
+		# 'archetype',
+		# 'armorProperty',
+		# 'background',
+		# 'class',
+		# 'conditions',
+		# 'enhancedItem',
 		'equipment',
-		'feat',
-		'feature',
-		'fightingMastery',
-		'fightingStyle',
-		'lightsaberForm',
-		'maneuvers',
-		'monster',
-		'power',
-		# 'referenceTable',
-		# 'skills',
-		'species',
-		# # 'starshipDeployment',
-		# # 'starshipEquipment',
-		# # 'starshipModification',
-		# # 'starshipBaseSize',
-		# # 'starshipVenture',
-		'weaponProperty',
-		'ClassImprovement',
-		'MulticlassImprovement',
-		'SplashclassImprovement',
-		'WeaponFocus',
-		'WeaponSupremacy',
+		# 'feat',
+		# 'feature',
+		# 'fightingMastery',
+		# 'fightingStyle',
+		# 'lightsaberForm',
+		# 'maneuvers',
+		# 'monster',
+		# 'power',
+		# # 'referenceTable',
+		# # 'skills',
+		# 'species',
+		# # # 'starshipDeployment',
+		# # # 'starshipEquipment',
+		# # # 'starshipModification',
+		# # # 'starshipBaseSize',
+		# # # 'starshipVenture',
+		# 'weaponProperty',
+		# 'ClassImprovement',
+		# 'MulticlassImprovement',
+		# 'SplashclassImprovement',
+		# 'WeaponFocus',
+		# 'WeaponSupremacy',
 	]
 	__stored_types = __entity_types
 
@@ -254,7 +254,7 @@ class Importer:
 					printed = True
 				if len(entity.broken_links) or not entity.processed:
 					try:
-						entity.process(importer=self)
+						entity._process(importer=self)
 					except:
 						print(f'		{uid=} {depth=}')
 						raise

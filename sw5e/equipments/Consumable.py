@@ -32,14 +32,6 @@ class Consumable(sw5e.Equipment.Equipment):
 			print(f'Unexpected equipment category/name, {self.raw_equipmentCategory=}')
 			raise ValueError(self.raw_name, self.raw_equipmentCategory)
 
-	def getEquipmentCategory(self):
-		return self.getConsumableType()[0]
-
-	def getEquipmentSubcategory(self):
-		ans = self.getConsumableType()[1]
-		if ans == 'bolt': return'crossbowBolt'
-		else: return ans
-
 	def getImg(self, importer=None):
 		kwargs = {
 			# 'item_type': self.raw_equipmentCategory,
@@ -50,11 +42,33 @@ class Consumable(sw5e.Equipment.Equipment):
 		if self.subcategory == 'melee': kwargs["item_subtype"] = 'Melee Consumables'
 		return super().getImg(importer=importer, **kwargs)
 
-	def getDescription(self, importer):
-		text = self.raw_description
-		return utils.text.markdownToHtml(text)
-
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
 		return [data]
+
+	############################
+	#    Template Functions    #
+	############################
+
+	# templates.Activities
+
+	# templates.ItemDescription
+	def getDescription(self, importer):
+		text = self.raw_description
+		return utils.text.markdownToHtml(text)
+
+	# templates.Identifiable
+
+	# template.ItemType
+	def getCategory(self):
+		return self.getConsumableType()[0]
+
+	def getSubcategory(self):
+		subcategory = self.getConsumableType()[1]
+		if subcategory == 'bolt': return 'crossbowBolt'
+		else: return subcategory
+
+	# template.PhysicalItem
+
+	# templates.EquippableItem

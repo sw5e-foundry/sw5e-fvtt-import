@@ -1,7 +1,10 @@
-import sw5e.Equipment, utils.text
+import sw5e.Equipment, sw5e.templates, utils.text
 import re, json
 
-class Backpack(sw5e.Equipment.Equipment):
+class Backpack(
+	sw5e.Equipment.Equipment,
+	sw5e.templates.Currency,
+):
 	def load(self, raw_item):
 		super().load(raw_item)
 
@@ -15,9 +18,6 @@ class Backpack(sw5e.Equipment.Equipment):
 		self.action_type, self.damage, self.formula, self.save, self.save_dc = None, None, None, None, None
 		self.activation = None
 
-	def getEquipmentCategory(self):
-		return False
-
 	def getImg(self, importer=None):
 		kwargs = {
 			# 'item_type': self.equipmentCategory,
@@ -27,9 +27,30 @@ class Backpack(sw5e.Equipment.Equipment):
 		}
 		return super().getImg(importer=importer, **kwargs)
 
+	def getType(self):
+		return 'container'
+
+	############################
+	#    Template Functions    #
+	############################
+
+	# templates.Activities
+	def getActivities(self):
+		return None
+
+	# templates.ItemDescription
 	def getDescription(self, importer):
 		text = self.raw_description
 		return utils.text.markdownToHtml(text)
 
-	def getType(self):
-		return 'container'
+	# templates.Identifiable
+
+	# template.ItemType
+	def getCategory(self):
+		return None
+
+	# template.PhysicalItem
+
+	# templates.EquippableItem
+
+	# templates.Currency

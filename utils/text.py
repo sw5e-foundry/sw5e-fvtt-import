@@ -375,8 +375,8 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 		## Power Attack
 		pattern = r'(make|making) a (?P<range>ranged|melee) (force|tech) attack'
 		if (match := re.search(pattern, text)):
-			if match['range'] == 'ranged': action_type = 'rpak'
-			else: action_type = 'mpak'
+			if match['range'] == 'ranged': action_type = 'rsak'
+			else: action_type = 'msak'
 
 		## Saving Throw
 		sp_ability = r'strength|dexterity|constitution|intelligence|wisdom|charisma'
@@ -474,6 +474,39 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 				return match.group(0)
 		for pat in patterns: text = re.sub(pat, healing, text)
 
+		## Ability Check
+		patterns = [
+			fr'make a (?:dc (?P<dc>\d+) )?(?P<type>(?:universal|light|dark) force|tech)casting ability check(?P<proficient> with proficiency)?',
+			fr'make a (?:dc (?P<dc>\d+) )?(?P<ability>strength|dexterity|constitution|intelligence|wisdom|charisma) (?:\((?P<skill>(?: ?\w+)+)\)|ability) check(?P<proficient> with proficiency)?',
+		]
+		def ability_check(match):
+			nonlocal action_type, other_formula
+
+			ctype = match.groupdict().get('type')
+			abil = match.groupdict().get('ability')
+			skill = match.groupdict().get('skill')
+			prof = match.groupdict().get('proficient')
+
+			if ctype or abil:
+				action_type = action_type or 'abil'
+
+				ability = '@mod'
+				if ctype == 'universal force': ability = 'max(@abilities.wis.mod, @abilities.cha.mod)'
+				elif ctype == 'light force': ability = '@abilities.wis.mod'
+				elif ctype == 'dark force': ability = '@abilities.cha.mod'
+				elif ctype == 'tech': ability = '@abilities.int.mod'
+				elif abil:
+					ability = f'@abilities.{abil[:3]}.mod'
+					if skill: prof = True
+
+				other_formula = f'1d20 + {ability}'
+				if prof: other_formula += ' + @prof'
+
+				return 'FORMULA'
+			else:
+				return match.group(0)
+		for pat in patterns: text = re.sub(pat, ability_check, text)
+
 		## Damage
 		opt1 = fr'(?:takes?|taking|deals?|dealing|do|suffer)(?:(?: an)? (?:extra|additional)| up to)?'
 		opt2 = fr','
@@ -519,32 +552,6 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 			formula = get_formula(match)
 			damage["versatile"] = formula
 		for pat in patterns: text = re.sub(pat, versatile, text)
-
-		## Ability Check
-		patterns = [fr'to make a (?P<type>(?:universal|light|dark) force|tech)casting ability check(?P<proficient> with proficiency)?']
-		def ability_check(match):
-			nonlocal action_type, other_formula
-
-			ctype = match.groupdict().get('type')
-			prof = match.groupdict().get('proficient')
-
-			if ctype:
-				dmg_type = match.groupdict().get('type') or match.groupdict().get('type2') or ''
-				action_type = action_type or 'abil'
-
-				ability = '@mod'
-				if ctype == 'universal force': ability = 'max(@abilities.wis.mod, @abilities.cha.mod)'
-				elif ctype == 'light force': ability = '@abilities.wis.mod'
-				elif ctype == 'dark force': ability = '@abilities.cha.mod'
-				elif ctype == 'tech': ability = '@abilities.int.mod'
-
-				other_formula = f'1d20 + {ability}'
-				if prof: other_formula += ' + @prof'
-
-				return 'FORMULA'
-			else:
-				return match.group(0)
-		for pat in patterns: text = re.sub(pat, ability_check, text)
 
 		## Other dice
 		prefixes = fr'roll(?:ing)?(?: a| two)?'

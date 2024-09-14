@@ -1,5 +1,5 @@
 import re, json
-import utils.text
+import utils.text, utils.object, sw5e.Activity
 
 class Entity:
 	def __init__(self, raw_entity, uid, importer, importer_version=None):
@@ -36,10 +36,17 @@ class Entity:
 
 		self.name = self.raw_name
 
+	def _process(self, importer):
+		self.process(importer)
+		self.processTemplates(importer)
+
 	def process(self, importer):
 		# if not self.foundry_id: raise AssertionError('Entities should have foundry_id by now', self.uid)
 		self.processed = True
 		self.broken_links = []
+
+	def processTemplates(self, importer):
+		pass
 
 	def getData(self, importer):
 		data = {}
@@ -104,10 +111,10 @@ class Item(Entity):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["type"] = self.getType()
-		data["img"] = self.getImg(importer=importer)
-		data["system"] = {}
-		data["effects"] = self.effects
+		utils.object.setProperty(data, 'type', self.getType(), force=True)
+		utils.object.setProperty(data, 'img', self.getImg(importer=importer), force=True)
+		utils.object.setProperty(data, 'system', {}, force='weak')
+		utils.object.setProperty(data, 'effects', self.effects, force=True)
 
 		return [data]
 
@@ -122,8 +129,8 @@ class Actor(Entity):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["img"] = self.getImg(importer=importer)
-		data["system"] = {}
+		utils.object.setProperty(data, 'img', self.getImg(importer=importer), force=True)
+		utils.object.setProperty(data, 'system', {}, force='weak')
 
 		return [data]
 
@@ -137,15 +144,13 @@ class JournalEntry(Entity):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["pages"] = [
-			{
-				"name": data["name"],
-				"_id": "0000000000000000",
-				"text": { "content": self.getContent() },
-				"src": None,
-				"flags": data["flags"],
-			}
-		]
+		utils.object.setProperty(data, 'pages', [{
+			"name": data["name"],
+			"_id": "0000000000000000",
+			"text": { "content": self.getContent() },
+			"src": None,
+			"flags": data["flags"],
+		}], force='weak')
 
 		return [data]
 
@@ -166,10 +171,8 @@ class Rule(JournalEntry):
 		data = super().getData(importer)[0]
 		page = data["pages"][0]
 
-		page["type"] = 'rule'
-		page["system"] = {
-			"tooltip": self.getContent(),
-			"type": self.getRuleType(),
-		}
+		utils.object.setProperty(page, 'type', 'rule', force=True)
+		utils.object.setProperty(page, 'system.tooltip', self.getContent(), force=True)
+		utils.object.setProperty(page, 'system.type', self.getRuleType(), force=True)
 
 		return [data]

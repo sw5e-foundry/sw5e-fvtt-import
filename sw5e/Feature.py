@@ -1,7 +1,10 @@
-import sw5e.Entity, utils.text, utils.config
+import sw5e.Entity, sw5e.templates, utils.text, utils.config
 import re, json
 
-class BaseFeature(sw5e.Entity.Item):
+class BaseFeature(
+	sw5e.Entity.Item,
+	sw5e.templates.Activities,
+):
 	def getType(self):
 		return 'feat'
 
@@ -74,53 +77,84 @@ class BaseFeature(sw5e.Entity.Item):
 	def getImg(self, importer=None):
 		raise NotImplementedError
 
+	def getActivitiesData(self):
+		return {}
+		return {
+			"action_type": self.action_type,
+
+			# "name": "",
+			"activation": {
+				"type": self.activation,
+				"cost": 1 if self.activation else None
+			},
+			# "consumption": {},
+			"description": { "value": self.description },
+			"duration": {
+				"value": self.duration_value,
+				"units": self.duration_unit
+			},
+			# "effects": {},
+			"range": self.range,
+			"target": {
+				"value": self.target_val,
+				"width": None,
+				"units": self.target_unit,
+				"type": self.target_type
+			},
+			# "uses": {},
+
+			"attack": {
+				"ability": "",
+				"bonus": "",
+				"classification": "spell",
+				"flat": False,
+				"type": "melee",
+			},
+			"check": {
+				"ability": "",
+				"associated": [],
+				"dc": {
+					"calculation": "",
+					"formula": "",
+				}
+			},
+			"damage": {
+				"critical": { "allow": True },
+				"parts": self.damage["parts"],
+			},
+			"versatile": self.damage["versatile"],
+			"effects": {},
+			"enchant": {},
+			"healing": self.damage["parts"],
+			"save": {
+				"ability": self.save,
+				"dc": {
+					"calculation": "" if self.save_dc else "spell",
+					"formula": self.save_dc or ""
+				}
+			},
+			"roll": self.formula,
+		}
+
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
 		data["system"]["description"] = { "value": self.description }
+		# data["system"]["enchant"] = {}
+		# data["system"]["identifier"] = ?
+		# data["system"]["prerequisites"] = { "level": ? }
+		# data["system"]["properties"] = []
 		data["system"]["requirements"] = self.raw_requirements
 		data["system"]["source"] = { "custom": self.raw_contentSource }
-
-		data["system"]["activation"] = {
-			"type": self.activation,
-			"cost": 1 if self.activation else None
+		if self.getType() == 'feat': data["system"]["type"] = {
+			"value": self.featType or "",
+			"subtype": self.featSubtype or ""
 		}
-		data["system"]["duration"] = {
-			"value": self.duration_value,
-			"units": self.duration_unit
-		}
-		data["system"]["target"] = {
-			"value": self.target_val,
-			"width": None,
-			"units": self.target_unit,
-			"type": self.target_type
-		}
-		data["system"]["range"] = self.range
 		data["system"]["uses"] = {
 			"value": None,
 			"max": self.uses,
 			"per": self.recharge
 		}
-		# data["system"]["consume"] = {}
-		# data["system"]["ability"] = ''
-
-		data["system"]["actionType"] = self.action_type
-		# data["system"]["attackBonus"] = 0
-		# data["system"]["chatFlavor"] = ''
-		# data["system"]["critical"] = None
-		data["system"]["damage"] = self.damage
-		data["system"]["formula"] = self.formula
-		data["system"]["save"] = {
-			"ability": self.save,
-			"dc": self.save_dc,
-			"scaling": "flat" if self.save_dc else "spell"
-		}
-		if self.getType() == 'feat':
-			data["system"]["type"] = {
-				"value": self.featType or "",
-				"subtype": self.featSubtype or ""
-			}
-		# data["system"]["recharge"] = ''
 
 		return [data]
 

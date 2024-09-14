@@ -1,7 +1,15 @@
-import sw5e.Entity, utils.text
+import sw5e.Entity, sw5e.templates, utils.text
 import re, json
 
-class Equipment(sw5e.Entity.Item):
+class Equipment(
+	sw5e.Entity.Item,
+	sw5e.templates.Activities,
+	sw5e.templates.ItemDescription,
+	sw5e.templates.ItemType,
+	sw5e.templates.Identifiable,
+	sw5e.templates.PhysicalItem,
+	sw5e.templates.EquippableItem,
+):
 	def getAttrs(self):
 		return super().getAttrs() + [
 			"name",
@@ -39,10 +47,6 @@ class Equipment(sw5e.Entity.Item):
 
 	def load(self, raw_item):
 		super().load(raw_item)
-
-		self.base_item = self.getBaseItem()
-		self.category = self.getEquipmentCategory()
-		self.subcategory = self.getEquipmentSubcategory()
 
 	def process(self, importer):
 		super().process(importer)
@@ -95,11 +99,6 @@ class Equipment(sw5e.Entity.Item):
 
 		return f'modules/sw5e/icons/packs/{item_type}/{name}.webp'
 
-	def getWeight(self):
-		if type(self.raw_weight) == int: return self.raw_weight
-		div = re.match(r'(\d+)/(\d+)', self.raw_weight)
-		if div: return int(div.group(1)) / int(div.group(2))
-
 	def getProperty(self, prop):
 		return utils.text.getProperty(prop, self.raw_propertiesMap)
 
@@ -109,43 +108,16 @@ class Equipment(sw5e.Entity.Item):
 	def getProperties(self):
 		return None
 
-	def getBaseItem(self):
-		return re.sub(r'\'|\s+|\([^)]*\)', '', self.raw_name.lower());
-
-	def getEquipmentCategory(self):
-		return None
-
-	def getEquipmentSubcategory(self):
-		return None
-
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["system"]["description"] = { "value": self.getDescription(importer) } #will call the child's getDescription
-		data["system"]["source"] = { "custom": self.raw_contentSource }
-		data["system"]["quantity"] = 1
-		data["system"]["weight"] = self.getWeight()
-		data["system"]["price"] = {
-			"value": self.raw_cost,
-			"denomination": "gp"
-		}
-		data["system"]["attunement"] = ''
-		data["system"]["equipped"] = False
-		data["system"]["rarity"] = ''
-		data["system"]["identified"] = True
-
-		if self.category != False:
-			data["system"]["type"] = {
-				"value": self.category,
-				"subtype": self.subcategory,
-				"baseItem": self.base_item,
-			}
-		data["system"]["-=baseItem"] = None
-		data["system"]["-=weaponType"] = None
-		data["system"]["-=consumableType"] = None
-		data["system"]["-=ammoType"] = None
-		data["system"]["-=toolType"] = None
-		if "armor" in data["system"]: data["system"]["armor"]["-=type"] = None
+		# templates.Activities
+		# templates.ItemDescription
+		# templates.Identifiable
+		# templates.ItemType
+		# templates.PhysicalItem
+		# templates.EquippableItem
+		## templates.Mountable -- NotImplemented
 
 		if self.activation: data["system"]["activation"] = {
 			"type": self.activation,
@@ -223,3 +195,87 @@ class Equipment(sw5e.Entity.Item):
 
 		klass = getattr(getattr(sw5e.equipments, equipment_type.capitalize()), equipment_type.capitalize())
 		return klass
+
+	############################
+	#    Template Functions    #
+	############################
+
+	# templates.Activities
+	def getActivitiesData(self):
+		return {
+			# "name": "",
+			"activation": {
+				"type": self.activation,
+				"cost": 1 if self.activation else None
+			},
+			# "consumption": {},
+			"description": { "value": self.description },
+			"duration": {
+				"value": self.duration_value,
+				"units": self.duration_unit
+			},
+			# "effects": {},
+			"range": self.range_short,
+			"target": {
+				"value": self.target_value,
+				"width": None,
+				"units": self.target_unit,
+				"type": self.target_type
+			},
+			# "uses": {},
+
+			"attack": {
+				"ability": "",
+				"bonus": "",
+				"classification": "spell",
+				"flat": False,
+				"type": "melee",
+			},
+			"check": {
+				"ability": "",
+				"associated": [],
+				"dc": {
+					"calculation": "",
+					"formula": "",
+				}
+			},
+			"damage": {
+				"critical": { "allow": True },
+				"parts": self.damage.get("parts")
+			},
+			"effects": {},
+			"enchant": {},
+			"healing": self.damage.get("parts"),
+			"save": {
+				"ability": self.save,
+				"dc": {
+					"calculation": "" if self.save_dc else "spell",
+					"formula": self.save_dc or ""
+				}
+			},
+			"roll": self.formula,
+		}
+
+	# templates.ItemDescription
+	# getDescription - NotImplemented
+
+	# templates.Identifiable
+
+	# template.ItemType
+	def getCategory(self):
+		return None
+	def getSubcategory(self):
+		return None
+	def getBaseItem(self):
+		return re.sub(r'\'|\s+|\([^)]*\)', '', self.raw_name.lower());
+
+	# template.PhysicalItem
+	def getWeight(self):
+		if type(self.raw_weight) == int: return self.raw_weight
+		div = re.match(r'(\d+)/(\d+)', self.raw_weight)
+		if div: return int(div.group(1)) / int(div.group(2))
+	def getPrice(self):
+		return self.raw_cost
+
+	# templates.EquippableItem
+#

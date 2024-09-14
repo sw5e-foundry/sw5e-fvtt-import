@@ -1,7 +1,10 @@
-import sw5e.Equipment, utils.config, utils.object, utils.text
+import sw5e.Equipment, sw5e.templates, utils.config, utils.object, utils.text
 import re, json
 
-class Equipment(sw5e.Equipment.Equipment):
+class Equipment(
+	sw5e.Equipment.Equipment,
+	# sw5e.templates.Mountable, # NotImplemented
+):
 	def process(self, importer):
 		super().process(importer)
 
@@ -18,38 +21,6 @@ class Equipment(sw5e.Equipment.Equipment):
 		}
 		if self.raw_equipmentCategory == 'Armor': kwargs["item_type"] += '/' + self.raw_contentSource
 		return super().getImg(importer=importer, **kwargs)
-
-	def getDescription(self, importer):
-		properties = {prop: self.raw_propertiesMap[prop] for prop in self.raw_propertiesMap if prop != 'Special'}
-
-		text = ''
-
-		if importer:
-			def getContent(prop_name):
-				prop = importer.get('armorProperty', data={'name': prop_name})
-				if prop: return prop.getContent(val=properties[prop_name])
-				else: return properties[prop_name].capitalize()
-			text = '\n'.join([getContent(prop) for prop in properties])
-		else:
-			text = ', '.join([properties[prop].capitalize() for prop in properties])
-			text = utils.text.markdownToHtml(text)
-
-		if self.raw_description:
-			if text: text += '\n<hr/>\n'
-			text += utils.text.markdownToHtml(self.raw_description)
-
-		return text
-
-	def getEquipmentCategory(self):
-		if self.raw_armorClassificationEnum == 0:
-			if self.raw_equipmentCategory == 'Clothing':
-				return 'clothing'
-			if self.name.lower().find('focus generator') != -1:
-				return 'focusgenerator'
-			if self.name.lower().find('wristpad') != -1:
-				return 'wristpad'
-			return 'trinket'
-		return self.raw_armorClassification.lower()
 
 	def getArmor(self):
 		ac = None
@@ -85,6 +56,61 @@ class Equipment(sw5e.Equipment.Equipment):
 
 		return properties
 
+	def getData(self, importer):
+		data = super().getData(importer)[0]
+
+		data["system"]["armor"] = self.armor
+		data["system"]["strength"] = self.raw_strengthRequirement or 0
+
+		return [data]
+
+	def isArmor(self):
+		return self.category in ('light', 'medium', 'heavy', 'shield')
+
+	def isCastingFocus(self):
+		return self.category in ('focusgenerator', 'wristpad')
+
+	############################
+	#    Template Functions    #
+	############################
+
+	# templates.Activities
+
+	# templates.ItemDescription
+	def getDescription(self, importer):
+		properties = {prop: self.raw_propertiesMap[prop] for prop in self.raw_propertiesMap if prop != 'Special'}
+
+		text = ''
+
+		if importer:
+			def getContent(prop_name):
+				prop = importer.get('armorProperty', data={'name': prop_name})
+				if prop: return prop.getContent(val=properties[prop_name])
+				else: return properties[prop_name].capitalize()
+			text = '\n'.join([getContent(prop) for prop in properties])
+		else:
+			text = ', '.join([properties[prop].capitalize() for prop in properties])
+			text = utils.text.markdownToHtml(text)
+
+		if self.raw_description:
+			if text: text += '\n<hr/>\n'
+			text += utils.text.markdownToHtml(self.raw_description)
+
+		return text
+
+	# templates.Identifiable
+
+	# template.ItemType
+	def getCategory(self):
+		if self.raw_armorClassificationEnum == 0:
+			if self.raw_equipmentCategory == 'Clothing':
+				return 'clothing'
+			if self.name.lower().find('focus generator') != -1:
+				return 'focusgenerator'
+			if self.name.lower().find('wristpad') != -1:
+				return 'wristpad'
+			return 'trinket'
+		return self.raw_armorClassification.lower()
 	def getBaseItem(self):
 		mapping = {
 			"Bone light shield": 'lightphysicalshield',
@@ -108,17 +134,8 @@ class Equipment(sw5e.Equipment.Equipment):
 		}
 		return mapping.get(self.name, super().getBaseItem())
 
-	def getData(self, importer):
-		data = super().getData(importer)[0]
+	# template.PhysicalItem
 
-		data["system"]["armor"] = self.armor
-		data["system"]["strength"] = self.raw_strengthRequirement or 0
+	# templates.EquippableItem
 
-		return [data]
-
-	def isArmor(self):
-		return self.category in ('light', 'medium', 'heavy', 'shield')
-
-	def isCastingFocus(self):
-		return self.category in ('focusgenerator', 'wristpad')
-
+#

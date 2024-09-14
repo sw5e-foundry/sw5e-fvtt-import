@@ -161,9 +161,9 @@ for (const type of Object.keys(item_types)) {
 	}
 
 	if (verbose) {
-		console.debug(`to_delete: ${to_delete}`);
-		console.debug(`to_update: ${to_update}`);
-		console.debug(`to_create: ${to_create}`);
+		console.log(`to_delete: ${to_delete}`);
+		console.log(`to_update: ${to_update}`);
+		console.log(`to_create: ${to_create}`);
 	}
 
 	if (allow_delete) await Item.deleteDocuments(to_delete, {pack: `sw5e.${type}`});
@@ -237,9 +237,9 @@ for (const type of Object.keys(journal_entry_types)) {
 	}
 
 	if (verbose) {
-		console.debug(`to_delete: ${to_delete}`);
-		console.debug(`to_update: ${to_update}`);
-		console.debug(`to_create: ${to_create}`);
+		console.log(`to_delete: ${to_delete}`);
+		console.log(`to_update: ${to_update}`);
+		console.log(`to_create: ${to_create}`);
 	}
 
 	if (allow_delete) await JournalEntry.deleteDocuments(to_delete, {pack: `sw5e.${type}`});
@@ -330,9 +330,9 @@ for (const type of Object.keys(actor_types)) {
 	}
 
 	if (verbose) {
-		console.debug(`to_delete: ${to_delete}`);
-		console.debug(`to_update: ${to_update}`);
-		console.debug(`to_create: ${to_create}`);
+		console.log(`to_delete: ${to_delete}`);
+		console.log(`to_update: ${to_update}`);
+		console.log(`to_create: ${to_create}`);
 	}
 
 	if (allow_delete) await Actor.deleteDocuments(to_delete, {pack: `sw5e.${type}`});
