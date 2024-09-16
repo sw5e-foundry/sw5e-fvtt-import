@@ -119,48 +119,10 @@ class Equipment(
 		# templates.EquippableItem
 		## templates.Mountable -- NotImplemented
 
-		if self.activation: data["system"]["activation"] = {
-			"type": self.activation,
-			"cost": 1 if self.activation != 'none' else None
-		}
-		if self.duration_value or (self.duration_unit != 'inst'): data["system"]["duration"] = {
-			"value": self.duration_value,
-			"units": self.duration_unit
-		}
-		if self.target_value or self.target_width or self.target_unit or self.target_type: data["system"]["target"] = {
-			"value": self.target_value,
-			"width": self.target_width,
-			"units": self.target_unit,
-			"type": self.target_type
-		}
-		if self.range_short or self.range_long or self.range_unit: data["system"]["range"] = {
-			"value": self.range_short,
-			"long": self.range_long,
-			"units": self.range_unit
-		}
-		if self.uses or self.recharge: data["system"]["uses"] = {
-			"value": None,
-			"max": self.uses,
-			"per": self.recharge
-		}
-		if self.action_type: data["system"]["actionType"] = self.action_type
-
-		if self.damage and (self.damage["parts"] or self.damage["versatile"]): data["system"]["damage"] = {
-			"parts": self.damage["parts"],
-			"versatile": self.damage["versatile"]
-		}
-		if self.formula: data["system"]["formula"] = self.formula
-		if self.save: data["system"]["save"] = {
-			"ability": self.save,
-			"dc": self.save_dc,
-			"scaling": 'flat' if self.save_dc else 'none'
-		}
 		if self.p_properties:
-			if "flags" not in data: data["flags"] = {}
-			if "sw5e" not in data["flags"]: data["flags"]["sw5e"] = {}
 			properties = { key: value for key, value in self.p_properties.items() if value }
-			data["flags"]["sw5e"]["properties"] = properties
-			data["system"]["properties"] = list(properties.keys())
+			utils.object.setProperty(data, 'flags.sw5e.properties', properties, force=True)
+			utils.object.setProperty(data, 'system.properties', list(properties.keys()), force=True)
 
 		return [data]
 
@@ -203,6 +165,7 @@ class Equipment(
 	# templates.Activities
 	def getActivitiesData(self):
 		return {
+			"action_type": self.action_type,
 			# "name": "",
 			"activation": {
 				"type": self.activation,

@@ -45,6 +45,12 @@ class Consumable(sw5e.Equipment.Equipment):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
+		# TODO: Read these from description
+		# utils.object.setProperty(data, 'system.damage.base', 1)
+		# utils.object.setProperty(data, 'system.damage.replace', False)
+		# utils.object.setProperty(data, 'system.magicalBonus', 0)
+		# utils.object.setProperty(data, 'system.uses.autoDestroy', True)
+
 		return [data]
 
 	############################

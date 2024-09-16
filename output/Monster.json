@@ -10637,11 +10637,12 @@
                         "value": "1",
                         "units": "hour"
                     },
-                    "actionType": "other",
+                    "actionType": "abil",
                     "damage": {
                         "parts": [],
                         "versatile": ""
                     },
+                    "formula": "1d20 + @abilities.cha.mod + @prof",
                     "source": "SnV"
                 }
             },
@@ -22953,11 +22954,12 @@
                         "value": null,
                         "units": "inst"
                     },
-                    "actionType": "other",
+                    "actionType": "abil",
                     "damage": {
                         "parts": [],
                         "versatile": ""
                     },
+                    "formula": "1d20 + @abilities.wis.mod + @prof",
                     "source": "SnV"
                 }
             },

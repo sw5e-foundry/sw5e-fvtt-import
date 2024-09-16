@@ -1,4 +1,4 @@
-import sw5e.Equipment, sw5e.templates, utils.text
+import sw5e.Equipment, sw5e.templates, utils.text, utils.object
 import re, json
 
 class Backpack(
@@ -29,6 +29,15 @@ class Backpack(
 
 	def getType(self):
 		return 'container'
+
+	def getData(self, importer):
+		data = super().getData(importer)[0]
+
+		# TODO: Read capacity from the item's description
+		# utils.object.setProperty(data, 'system.capacity.type', 'weight')
+		# utils.object.setProperty(data, 'system.capacity.value', 0)
+
+		return [data]
 
 	############################
 	#    Template Functions    #

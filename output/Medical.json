@@ -8,45 +8,55 @@
                 "uid": "Consumable.name-antitoxkit.equipmentCategory-medical"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Medical/Antitoxkit.webp",
         "system": {
-            "description": {
-                "value": "<p>An antitoxkit contained a variety of wide-spectrum antidote hypospray injectors that were designed to neutralize all known poisons. A kit has five charges. As an action, you can administer a charge of the kit to cure a target of one poison affecting them or to give them advantage on saving throws against poison for 1 hour. It confers no benefit to droids or constructs.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 4,
             "price": {
                 "value": 600,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "medical",
-                "subtype": null,
                 "baseItem": "antitoxkit"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>An antitoxkit contained a variety of wide-spectrum antidote hypospray injectors that were designed to neutralize all known poisons. A kit has five charges. As an action, you can administer a charge of the kit to cure a target of one poison affecting them or to give them advantage on saving throws against poison for 1 hour. It confers no benefit to droids or constructs.</p>"
             },
-            "duration": {
-                "value": "1",
-                "units": "hour"
+            "source": {
+                "custom": "PHB"
             },
-            "actionType": "other"
+            "activities": {
+                "hC0lSoDOuwE1FmUy": {
+                    "type": "Utility",
+                    "_id": "hC0lSoDOuwE1FmUy",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "hour"
+                    },
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>An antitoxkit contained a variety of wide-spectrum antidote hypospray injectors that were designed to neutralize all known poisons. A kit has five charges. As an action, you can administer a charge of the kit to cure a target of one poison affecting them or to give them advantage on saving throws against poison for 1 hour. It confers no benefit to droids or constructs.</p>"
+                    }
+                }
+            }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Medical/Antitoxkit.webp",
         "effects": []
     },
     "Equipment.name-arm_prosthesis.equipmentCategory-medical": {
@@ -58,41 +68,35 @@
                 "uid": "Equipment.name-arm_prosthesis.equipmentCategory-medical"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Medical/ArmProsthesis.webp",
         "system": {
-            "description": {
-                "value": ""
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 450,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "armprosthesis"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
+            "source": {
+                "custom": "WH"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Medical/ArmProsthesis.webp",
         "effects": []
     },
     "Equipment.name-ear_prosthesis.equipmentCategory-medical": {
@@ -104,41 +108,35 @@
                 "uid": "Equipment.name-ear_prosthesis.equipmentCategory-medical"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Medical/EarProsthesis.webp",
         "system": {
-            "description": {
-                "value": ""
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": null,
             "price": {
                 "value": 100,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "earprosthesis"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
+            "source": {
+                "custom": "WH"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Medical/EarProsthesis.webp",
         "effects": []
     },
     "Consumable.name-emergency_battery.equipmentCategory-medical": {
@@ -150,23 +148,16 @@
                 "uid": "Consumable.name-emergency_battery.equipmentCategory-medical"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Medical/EmergencyBattery.webp",
         "system": {
-            "description": {
-                "value": "<p>All non-expendable droids need recharging as they are used. The battery has ten uses. As an action, you can expend one use of the battery to stabilize a droid that has 0 hit points, without needing to make an Intelligence (Technology) check.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 70,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
@@ -174,17 +165,39 @@
                 "subtype": "droid",
                 "baseItem": "emergencybattery"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>All non-expendable droids need recharging as they are used. The battery has ten uses. As an action, you can expend one use of the battery to stabilize a droid that has 0 hit points, without needing to make an Intelligence (Technology) check.</p>"
             },
-            "actionType": "other"
+            "source": {
+                "custom": "PHB"
+            },
+            "activities": {
+                "EeElAHifvKtCs5yk": {
+                    "type": "Utility",
+                    "_id": "EeElAHifvKtCs5yk",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>All non-expendable droids need recharging as they are used. The battery has ten uses. As an action, you can expend one use of the battery to stabilize a droid that has 0 hit points, without needing to make an Intelligence (Technology) check.</p>"
+                    }
+                }
+            }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Medical/EmergencyBattery.webp",
         "effects": []
     },
     "Equipment.name-eye_prosthesis.equipmentCategory-medical": {
@@ -196,41 +209,35 @@
                 "uid": "Equipment.name-eye_prosthesis.equipmentCategory-medical"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Medical/EyeProsthesis.webp",
         "system": {
-            "description": {
-                "value": ""
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": null,
             "price": {
                 "value": 250,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "eyeprosthesis"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
+            "source": {
+                "custom": "WH"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Medical/EyeProsthesis.webp",
         "effects": []
     },
     "Equipment.name-facial_prosthesis.equipmentCategory-medical": {
@@ -242,41 +249,35 @@
                 "uid": "Equipment.name-facial_prosthesis.equipmentCategory-medical"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Medical/FacialProsthesis.webp",
         "system": {
-            "description": {
-                "value": ""
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 300,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "facialprosthesis"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
+            "source": {
+                "custom": "WH"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Medical/FacialProsthesis.webp",
         "effects": []
     },
     "Equipment.name-foot_prosthesis.equipmentCategory-medical": {
@@ -288,41 +289,35 @@
                 "uid": "Equipment.name-foot_prosthesis.equipmentCategory-medical"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Medical/FootProsthesis.webp",
         "system": {
-            "description": {
-                "value": ""
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 150,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "footprosthesis"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
+            "source": {
+                "custom": "WH"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Medical/FootProsthesis.webp",
         "effects": []
     },
     "Equipment.name-forearm_prosthesis.equipmentCategory-medical": {
@@ -334,41 +329,35 @@
                 "uid": "Equipment.name-forearm_prosthesis.equipmentCategory-medical"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Medical/ForearmProsthesis.webp",
         "system": {
-            "description": {
-                "value": ""
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 300,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "forearmprosthesis"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
+            "source": {
+                "custom": "WH"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Medical/ForearmProsthesis.webp",
         "effects": []
     },
     "Equipment.name-hand_prosthesis.equipmentCategory-medical": {
@@ -380,41 +369,35 @@
                 "uid": "Equipment.name-hand_prosthesis.equipmentCategory-medical"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Medical/HandProsthesis.webp",
         "system": {
-            "description": {
-                "value": ""
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 225,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "handprosthesis"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
+            "source": {
+                "custom": "WH"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Medical/HandProsthesis.webp",
         "effects": []
     },
     "Equipment.name-leg_prosthesis.equipmentCategory-medical": {
@@ -426,41 +409,35 @@
                 "uid": "Equipment.name-leg_prosthesis.equipmentCategory-medical"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Medical/LegProsthesis.webp",
         "system": {
-            "description": {
-                "value": ""
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 450,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "legprosthesis"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
+            "source": {
+                "custom": "WH"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Medical/LegProsthesis.webp",
         "effects": []
     },
     "Consumable.name-medpac.equipmentCategory-medical": {
@@ -472,23 +449,16 @@
                 "uid": "Consumable.name-medpac.equipmentCategory-medical"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Medical/Medpac.webp",
         "system": {
-            "description": {
-                "value": "<p>A medpac is a quick-acting syringe filled with a concentrated dose of kolto. As an action, you can use this medpac to restore hit points to a beast or humanoid within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal to the amount rolled + their Constitution modifier (minimum of one hit point). If the creature has Hit Dice of different sizes, use whichever Hit Die size they have the most of.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": null,
             "price": {
                 "value": 300,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
@@ -496,22 +466,40 @@
                 "subtype": "medpac",
                 "baseItem": "medpac"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>A medpac is a quick-acting syringe filled with a concentrated dose of kolto. As an action, you can use this medpac to restore hit points to a beast or humanoid within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal to the amount rolled + their Constitution modifier (minimum of one hit point). If the creature has Hit Dice of different sizes, use whichever Hit Die size they have the most of.</p>"
             },
-            "range": {
-                "value": "5",
-                "long": null,
-                "units": "feet"
+            "source": {
+                "custom": "PHB"
             },
-            "actionType": "other"
+            "activities": {
+                "zXgqpT55nZa110NG": {
+                    "type": "Utility",
+                    "_id": "zXgqpT55nZa110NG",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": "5",
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>A medpac is a quick-acting syringe filled with a concentrated dose of kolto. As an action, you can use this medpac to restore hit points to a beast or humanoid within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal to the amount rolled + their Constitution modifier (minimum of one hit point). If the creature has Hit Dice of different sizes, use whichever Hit Die size they have the most of.</p>"
+                    }
+                }
+            }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Medical/Medpac.webp",
         "effects": []
     },
     "Consumable.name-poison.equipmentCategory-medical": {
@@ -523,59 +511,73 @@
                 "uid": "Consumable.name-poison.equipmentCategory-medical"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Medical/Poison.webp",
         "system": {
-            "description": {
-                "value": "<p>As an action, you can use the poison in this vial to coat one vibroweapon, one slug cartridge, or one wrist launcher dart. A creature hit by the poisoned weapon must make a DC 14 Constitution saving throw, taking [[/r 2d4]] poison damage on a failed save or half as much on a successful one. Once applied, the poison retains potency for 1 minute before drying.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": null,
             "price": {
                 "value": 125,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "poison",
-                "subtype": null,
                 "baseItem": "poison"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>As an action, you can use the poison in this vial to coat one vibroweapon, one slug cartridge, or one wrist launcher dart. A creature hit by the poisoned weapon must make a DC 14 Constitution saving throw, taking [[/r 2d4]] poison damage on a failed save or half as much on a successful one. Once applied, the poison retains potency for 1 minute before drying.</p>"
             },
-            "duration": {
-                "value": "1",
-                "units": "minute"
+            "source": {
+                "custom": "PHB"
             },
-            "actionType": "save",
-            "damage": {
-                "parts": [
-                    [
-                        "2d4",
-                        "poison"
-                    ]
-                ],
-                "versatile": ""
-            },
-            "save": {
-                "ability": "con",
-                "dc": 14,
-                "scaling": "flat"
+            "activities": {
+                "Zvd5IOwlxUs1bKY8": {
+                    "type": "Save",
+                    "_id": "Zvd5IOwlxUs1bKY8",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "save": {
+                        "ability": "con",
+                        "dc": {
+                            "calculation": "",
+                            "formula": 14
+                        }
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>As an action, you can use the poison in this vial to coat one vibroweapon, one slug cartridge, or one wrist launcher dart. A creature hit by the poisoned weapon must make a DC 14 Constitution saving throw, taking [[/r 2d4]] poison damage on a failed save or half as much on a successful one. Once applied, the poison retains potency for 1 minute before drying.</p>"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "2d4",
+                                "poison"
+                            ]
+                        ]
+                    }
+                }
             }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Medical/Poison.webp",
         "effects": []
     },
     "Consumable.name-repair_kit.equipmentCategory-medical": {
@@ -587,23 +589,16 @@
                 "uid": "Consumable.name-repair_kit.equipmentCategory-medical"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Medical/RepairKit.webp",
         "system": {
-            "description": {
-                "value": "<p>A repair kit included the basic tools needed to repair a droid or construct after being damaged in combat. The kit has three uses. As an action, you can expend one use of the kit to restore hit points to a droid or construct within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal </p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 3,
             "price": {
                 "value": 750,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
@@ -611,22 +606,40 @@
                 "subtype": "droid",
                 "baseItem": "repairkit"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>A repair kit included the basic tools needed to repair a droid or construct after being damaged in combat. The kit has three uses. As an action, you can expend one use of the kit to restore hit points to a droid or construct within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal </p>"
             },
-            "range": {
-                "value": "5",
-                "long": null,
-                "units": "feet"
+            "source": {
+                "custom": "PHB"
             },
-            "actionType": "other"
+            "activities": {
+                "GCI72Z9q70O4qW7F": {
+                    "type": "Utility",
+                    "_id": "GCI72Z9q70O4qW7F",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": "5",
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>A repair kit included the basic tools needed to repair a droid or construct after being damaged in combat. The kit has three uses. As an action, you can expend one use of the kit to restore hit points to a droid or construct within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal </p>"
+                    }
+                }
+            }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Medical/RepairKit.webp",
         "effects": []
     },
     "Equipment.name-throat_prosthesis.equipmentCategory-medical": {
@@ -638,41 +651,35 @@
                 "uid": "Equipment.name-throat_prosthesis.equipmentCategory-medical"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Medical/ThroatProsthesis.webp",
         "system": {
-            "description": {
-                "value": ""
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 325,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "throatprosthesis"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
+            "source": {
+                "custom": "WH"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Medical/ThroatProsthesis.webp",
         "effects": []
     },
     "Equipment.name-torso_prosthesis.equipmentCategory-medical": {
@@ -684,41 +691,35 @@
                 "uid": "Equipment.name-torso_prosthesis.equipmentCategory-medical"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Medical/TorsoProsthesis.webp",
         "system": {
-            "description": {
-                "value": ""
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 600,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "torsoprosthesis"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
+            "source": {
+                "custom": "WH"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Medical/TorsoProsthesis.webp",
         "effects": []
     },
     "Consumable.name-traumakit.equipmentCategory-medical": {
@@ -730,41 +731,63 @@
                 "uid": "Consumable.name-traumakit.equipmentCategory-medical"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Medical/Traumakit.webp",
         "system": {
-            "description": {
-                "value": "<p>A common traumakit is stocked with essentials for the treatment of wounds. A traumakit has five uses. As an action, you can expend a use of the kit to stabilize a creature that has 0 hit points, without needing to make a Wisdom (Medicine) check. </p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 3,
             "price": {
                 "value": 50,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "medical",
-                "subtype": null,
                 "baseItem": "traumakit"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>A common traumakit is stocked with essentials for the treatment of wounds. A traumakit has five uses. As an action, you can expend a use of the kit to stabilize a creature that has 0 hit points, without needing to make a Wisdom (Medicine) check. </p>"
             },
-            "actionType": "other"
+            "source": {
+                "custom": "PHB"
+            },
+            "activities": {
+                "1rauyyTyohgpy34s": {
+                    "type": "Check",
+                    "_id": "1rauyyTyohgpy34s",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>A common traumakit is stocked with essentials for the treatment of wounds. A traumakit has five uses. As an action, you can expend a use of the kit to stabilize a creature that has 0 hit points, without needing to make a Wisdom (Medicine) check. </p>"
+                    },
+                    "check": {
+                        "ability": "",
+                        "associated": [],
+                        "dc": {
+                            "calculation": "",
+                            "formula": ""
+                        }
+                    }
+                }
+            }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Medical/Traumakit.webp",
         "effects": []
     }
 }

@@ -1,4 +1,4 @@
-import sw5e.Equipment, sw5e.templates, utils.config, utils.object, utils.text
+import sw5e.Equipment, sw5e.Activity, sw5e.templates, utils.config, utils.object, utils.text
 import re, json, copy
 
 class Weapon(
@@ -159,50 +159,18 @@ class Weapon(
 				wpn_data["flags"]["sw5e-importer"]["uid"] = f'{self.uid}.mode-{mode["Name"]}'
 				data.append(wpn_data)
 		else:
-			if not (utils.text.getProperty('Auto', self.raw_propertiesMap) == True):
-				normal_data = copy.deepcopy(original_data)
-				normal_data = self.getAutoTargetData(normal_data)
-				data.append(normal_data)
-			if burst := utils.text.getProperty('Burst', self.raw_propertiesMap):
-				burst_data = copy.deepcopy(original_data)
-				burst_data["name"] = f'{self.name} (Burst)'
-
-				burst_data["system"]["target"] = {
-					"value": 10,
-					"units": 'ft',
-					"type": 'cube',
-				}
-				burst_data["system"]["actionType"] = 'save'
-				burst_data["system"]["save"] = {
-					"ability": 'dex',
-					"dc": None,
-					"scaling": 'dex'
-				}
-				burst_data["flags"]["sw5e-importer"]["uid"] = f'{self.uid}.mode-burst'
-				burst_data = self.getAutoTargetData(burst_data, burst_or_rapid=True)
-				data.append(burst_data)
-			if rapid := utils.text.getProperty('Rapid', self.raw_propertiesMap):
-				rapid_data = copy.deepcopy(original_data)
-				rapid_data["name"] = f'{self.name} (Rapid)'
-
-				rapid_data["system"]["actionType"] = 'save'
-				rapid_data["system"]["damage"]["parts"][0][0] = re.sub(r'^(\d+)d', lambda m: f'{int(m[1])*2}d', rapid_data["system"]["damage"]["parts"][0][0])
-				rapid_data["system"]["save"] = {
-					"ability": 'dex',
-					"dc": None,
-					"scaling": 'dex'
-				}
-				rapid_data["flags"]["sw5e-importer"]["uid"] = f'{self.uid}.mode-rapid'
-				rapid_data = self.getAutoTargetData(rapid_data, burst_or_rapid=True)
-				data.append(rapid_data)
+			data = [original_data]
 
 		return data
 
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["system"]["weaponClass"] = self.weapon_class
-		data["system"]["ammo"] = { "types": self.ammo_types }
+		utils.object.setProperty(data, 'system.weaponClass', self.weapon_class, force=True)
+		utils.object.setProperty(data, 'system.damage.base', self.damage, force=True)
+		utils.object.setProperty(data, 'system.damage.versatile', self.damage, force=True)
+
+		utils.object.setProperty(data, 'flags.sw5e.reload.types', self.ammo_types, force=True)
 
 		return self.getItemVariations(data, importer)
 
@@ -214,6 +182,47 @@ class Weapon(
 	############################
 
 	# templates.Activities
+	def getActivities(self):
+		activities = super().getActivities()
+
+		rapid = utils.text.getProperty('Rapid', self.raw_propertiesMap)
+		burst = utils.text.getProperty('Burst', self.raw_propertiesMap)
+
+		if attackActivity := next((a for a in activities if a.getType() == 'Attack'), False):
+			if not (utils.text.getProperty('Auto', self.raw_propertiesMap) == True):
+				activities.remove(attackActivity)
+			if burst:
+				burst_data = copy.deepcopy(attackActivity.raw_data)
+				burst_data["name"] = f'Burst Attack'
+				burst_data["target"] = {
+					"value": 10,
+					"units": 'ft',
+					"type": 'cube',
+				}
+				burst_data["save"] = {
+					"ability": 'dex',
+					"dc": None,
+					"scaling": 'dex'
+				}
+				# TODO: set 'consume' to the ammount of ammo burst uses
+				# burst_data = self.getAutoTargetData(burst_data, burst_or_rapid=True)
+				activities.append(sw5e.Activity.Save(burst_data))
+			if rapid:
+				rapid_data = copy.deepcopy(attackActivity.raw_data)
+				rapid_data["name"] = f'Rapid Attack'
+				rapid_data["damage"]["parts"][0][0] = re.sub(r'^(\d+)d', lambda m: f'{int(m[1])*2}d', rapid_data["damage"]["parts"][0][0])
+				rapid_data["save"] = {
+					"ability": 'dex',
+					"dc": None,
+					"scaling": 'dex'
+				}
+				# TODO: set 'consume' to the ammount of ammo rapid uses
+				# rapid_data = self.getAutoTargetData(rapid_data, burst_or_rapid=True)
+				activities.append(sw5e.Activity.Save(rapid_data))
+		elif burst or rapid:
+			raise ValueError('Burst or Rapid weapon, with no Attack activity')
+
+		return activities
 
 	# templates.ItemDescription
 	def getDescription(self, importer):
@@ -239,6 +248,8 @@ class Weapon(
 				text += utils.text.markdownToHtml('#### Special\n' + self.raw_description)
 			else:
 				raise ValueError
+		elif self.raw_description:
+			text += utils.text.markdownToHtml('#### Description\n' + self.raw_description)
 
 		return text
 

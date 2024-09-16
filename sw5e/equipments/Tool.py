@@ -23,7 +23,10 @@ class Tool(sw5e.Equipment.Equipment):
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["system"]["ability"] = ''
+		utils.object.setProperty(data, 'system.ability', '')
+		utils.object.setProperty(data, 'system.chatFlavor', '')
+		utils.object.setProperty(data, 'system.proficient', None)
+		utils.object.setProperty(data, 'system.bonus', 0)
 
 		return [data]
 

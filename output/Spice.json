@@ -8,23 +8,16 @@
                 "uid": "Consumable.name-andris.equipmentCategory-spice"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Spice/Andris.webp",
         "system": {
-            "description": {
-                "value": "<p>Refined andris crystal, a spice mined most commonly on Sevarcos II, sharpens a creature's mind when smoked. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Wisdom. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Wisdom. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 75,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
@@ -32,32 +25,53 @@
                 "subtype": "spice",
                 "baseItem": "andris"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>Refined andris crystal, a spice mined most commonly on Sevarcos II, sharpens a creature's mind when smoked. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Wisdom. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Wisdom. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
             },
-            "duration": {
-                "value": 1,
-                "units": "minute"
+            "source": {
+                "custom": "WH"
             },
-            "range": {
-                "value": "5",
-                "long": null,
-                "units": "feet"
-            },
-            "actionType": "save",
-            "formula": "1d3",
-            "save": {
-                "ability": "wis",
-                "dc": 14,
-                "scaling": "flat"
+            "activities": {
+                "8L2pR50wUB0JeIj0": {
+                    "type": "Save",
+                    "_id": "8L2pR50wUB0JeIj0",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "save": {
+                        "ability": "wis",
+                        "dc": {
+                            "calculation": "",
+                            "formula": 14
+                        }
+                    },
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
+                    "range": "5",
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>Refined andris crystal, a spice mined most commonly on Sevarcos II, sharpens a creature's mind when smoked. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Wisdom. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Wisdom. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    }
+                }
             }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Spice/Andris.webp",
         "effects": []
     },
     "Consumable.name-cilona.equipmentCategory-spice": {
@@ -69,23 +83,16 @@
                 "uid": "Consumable.name-cilona.equipmentCategory-spice"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Spice/Cilona.webp",
         "system": {
-            "description": {
-                "value": "<p>Cilona, the active ingredient in deathsticks, is a hallucinogen that causes an ecstatic feeling that improves strength. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Strength. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Strength. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 60,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
@@ -93,32 +100,53 @@
                 "subtype": "spice",
                 "baseItem": "cilona"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>Cilona, the active ingredient in deathsticks, is a hallucinogen that causes an ecstatic feeling that improves strength. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Strength. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Strength. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
             },
-            "duration": {
-                "value": 1,
-                "units": "minute"
+            "source": {
+                "custom": "WH"
             },
-            "range": {
-                "value": "5",
-                "long": null,
-                "units": "feet"
-            },
-            "actionType": "save",
-            "formula": "1d3",
-            "save": {
-                "ability": "wis",
-                "dc": 14,
-                "scaling": "flat"
+            "activities": {
+                "1M7WdIg7yFVilI6l": {
+                    "type": "Save",
+                    "_id": "1M7WdIg7yFVilI6l",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "save": {
+                        "ability": "wis",
+                        "dc": {
+                            "calculation": "",
+                            "formula": 14
+                        }
+                    },
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
+                    "range": "5",
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>Cilona, the active ingredient in deathsticks, is a hallucinogen that causes an ecstatic feeling that improves strength. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Strength. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Strength. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    }
+                }
             }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Spice/Cilona.webp",
         "effects": []
     },
     "Consumable.name-giggledust.equipmentCategory-spice": {
@@ -130,23 +158,16 @@
                 "uid": "Consumable.name-giggledust.equipmentCategory-spice"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Spice/Giggledust.webp",
         "system": {
-            "description": {
-                "value": "<p>This sandy-brown powder makes everything humorous while enhancing a creature's nimbleness. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Dexterity. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Dexterity. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 80,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
@@ -154,32 +175,53 @@
                 "subtype": "spice",
                 "baseItem": "giggledust"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>This sandy-brown powder makes everything humorous while enhancing a creature's nimbleness. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Dexterity. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Dexterity. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
             },
-            "duration": {
-                "value": 1,
-                "units": "minute"
+            "source": {
+                "custom": "WH"
             },
-            "range": {
-                "value": "5",
-                "long": null,
-                "units": "feet"
-            },
-            "actionType": "save",
-            "formula": "1d3",
-            "save": {
-                "ability": "wis",
-                "dc": 14,
-                "scaling": "flat"
+            "activities": {
+                "1j7MTCm4aa5A1anr": {
+                    "type": "Save",
+                    "_id": "1j7MTCm4aa5A1anr",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "save": {
+                        "ability": "wis",
+                        "dc": {
+                            "calculation": "",
+                            "formula": 14
+                        }
+                    },
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
+                    "range": "5",
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>This sandy-brown powder makes everything humorous while enhancing a creature's nimbleness. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Dexterity. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Dexterity. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    }
+                }
             }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Spice/Giggledust.webp",
         "effects": []
     },
     "Consumable.name-glitterstim.equipmentCategory-spice": {
@@ -191,23 +233,16 @@
                 "uid": "Consumable.name-glitterstim.equipmentCategory-spice"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Spice/Glitterstim.webp",
         "system": {
-            "description": {
-                "value": "<p>A silvery-green webbing sharp to the touch, yet when liquidized causes a heightened mental state and pleasurable boost. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Intelligence. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Intelligence. At the end of the low, the creature must make a DC 14 Constitution </p>\n<p>saving throw to resist addiction.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 95,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
@@ -215,32 +250,53 @@
                 "subtype": "spice",
                 "baseItem": "glitterstim"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>A silvery-green webbing sharp to the touch, yet when liquidized causes a heightened mental state and pleasurable boost. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Intelligence. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Intelligence. At the end of the low, the creature must make a DC 14 Constitution </p>\n<p>saving throw to resist addiction.</p>"
             },
-            "duration": {
-                "value": 1,
-                "units": "minute"
+            "source": {
+                "custom": "WH"
             },
-            "range": {
-                "value": "5",
-                "long": null,
-                "units": "feet"
-            },
-            "actionType": "save",
-            "formula": "1d3",
-            "save": {
-                "ability": "wis",
-                "dc": 14,
-                "scaling": "flat"
+            "activities": {
+                "1pqtYw4ekyBkP1bO": {
+                    "type": "Save",
+                    "_id": "1pqtYw4ekyBkP1bO",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "save": {
+                        "ability": "wis",
+                        "dc": {
+                            "calculation": "",
+                            "formula": 14
+                        }
+                    },
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
+                    "range": "5",
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>A silvery-green webbing sharp to the touch, yet when liquidized causes a heightened mental state and pleasurable boost. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Intelligence. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Intelligence. At the end of the low, the creature must make a DC 14 Constitution </p>\n<p>saving throw to resist addiction.</p>"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    }
+                }
             }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Spice/Glitterstim.webp",
         "effects": []
     },
     "Consumable.name-karrak.equipmentCategory-spice": {
@@ -252,23 +308,16 @@
                 "uid": "Consumable.name-karrak.equipmentCategory-spice"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Spice/Karrak.webp",
         "system": {
-            "description": {
-                "value": "<p>A powerful painkiller, karrak allows creatures to continue through the most grievous injuries. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check or saving throw using Constitution, and at the start of each of the creature's turns it gains [[/r 2d3]] temporary hit points. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check or saving throw using Constitution, and for the duration their current and maximum hit points are reduced by [[/r 2d3]]. If this would reduce your maximum hit points below 1, it instead becomes 1. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 90,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
@@ -276,45 +325,62 @@
                 "subtype": "spice",
                 "baseItem": "karrak"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>A powerful painkiller, karrak allows creatures to continue through the most grievous injuries. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check or saving throw using Constitution, and at the start of each of the creature's turns it gains [[/r 2d3]] temporary hit points. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check or saving throw using Constitution, and for the duration their current and maximum hit points are reduced by [[/r 2d3]]. If this would reduce your maximum hit points below 1, it instead becomes 1. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
             },
-            "duration": {
-                "value": 1,
-                "units": "minute"
+            "source": {
+                "custom": "WH"
             },
-            "range": {
-                "value": "5",
-                "long": null,
-                "units": "feet"
-            },
-            "actionType": "save",
-            "damage": {
-                "parts": [
-                    [
-                        "2d3",
-                        "temphp"
-                    ],
-                    [
-                        "2d3",
-                        ""
-                    ]
-                ],
-                "versatile": ""
-            },
-            "formula": "1d3",
-            "save": {
-                "ability": "wis",
-                "dc": 14,
-                "scaling": "flat"
+            "activities": {
+                "1TNtmcpUIfWS1EUw": {
+                    "type": "Save",
+                    "_id": "1TNtmcpUIfWS1EUw",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "save": {
+                        "ability": "wis",
+                        "dc": {
+                            "calculation": "",
+                            "formula": 14
+                        }
+                    },
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
+                    "range": "5",
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>A powerful painkiller, karrak allows creatures to continue through the most grievous injuries. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check or saving throw using Constitution, and at the start of each of the creature's turns it gains [[/r 2d3]] temporary hit points. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check or saving throw using Constitution, and for the duration their current and maximum hit points are reduced by [[/r 2d3]]. If this would reduce your maximum hit points below 1, it instead becomes 1. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "2d3",
+                                "temphp"
+                            ],
+                            [
+                                "2d3",
+                                ""
+                            ]
+                        ]
+                    }
+                }
             }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Spice/Karrak.webp",
         "effects": []
     },
     "Consumable.name-muon_gold.equipmentCategory-spice": {
@@ -326,23 +392,16 @@
                 "uid": "Consumable.name-muon_gold.equipmentCategory-spice"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Spice/MuonGold.webp",
         "system": {
-            "description": {
-                "value": "<p>Muon gold is a lubricant-based spice that gives users intensified mental clarity and focus for a short time. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that increases their current and maximum tech points by [[/r 2d3]]. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, their current and maximum tech points are reduced by [[/r 2d3]]. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 65,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
@@ -350,32 +409,53 @@
                 "subtype": "spice",
                 "baseItem": "muongold"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>Muon gold is a lubricant-based spice that gives users intensified mental clarity and focus for a short time. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that increases their current and maximum tech points by [[/r 2d3]]. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, their current and maximum tech points are reduced by [[/r 2d3]]. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
             },
-            "duration": {
-                "value": 1,
-                "units": "minute"
+            "source": {
+                "custom": "WH"
             },
-            "range": {
-                "value": "5",
-                "long": null,
-                "units": "feet"
-            },
-            "actionType": "save",
-            "formula": "2d3",
-            "save": {
-                "ability": "wis",
-                "dc": 14,
-                "scaling": "flat"
+            "activities": {
+                "1kgJJdQz9tjihAk6": {
+                    "type": "Save",
+                    "_id": "1kgJJdQz9tjihAk6",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "save": {
+                        "ability": "wis",
+                        "dc": {
+                            "calculation": "",
+                            "formula": 14
+                        }
+                    },
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
+                    "range": "5",
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>Muon gold is a lubricant-based spice that gives users intensified mental clarity and focus for a short time. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that increases their current and maximum tech points by [[/r 2d3]]. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, their current and maximum tech points are reduced by [[/r 2d3]]. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    }
+                }
             }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Spice/MuonGold.webp",
         "effects": []
     },
     "Consumable.name-yaladai.equipmentCategory-spice": {
@@ -387,23 +467,16 @@
                 "uid": "Consumable.name-yaladai.equipmentCategory-spice"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Spice/Yaladai.webp",
         "system": {
-            "description": {
-                "value": "<p>Yaladai is a powerful stimulant that grants extreme clarity, improving relaxation and focus. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that increases their current and maximum force points by [[/r 2d3]]. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, their current and maximum force points are reduced by [[/r 2d3]]. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 70,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
@@ -411,32 +484,53 @@
                 "subtype": "spice",
                 "baseItem": "yaladai"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>Yaladai is a powerful stimulant that grants extreme clarity, improving relaxation and focus. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that increases their current and maximum force points by [[/r 2d3]]. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, their current and maximum force points are reduced by [[/r 2d3]]. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
             },
-            "duration": {
-                "value": 1,
-                "units": "minute"
+            "source": {
+                "custom": "WH"
             },
-            "range": {
-                "value": "5",
-                "long": null,
-                "units": "feet"
-            },
-            "actionType": "save",
-            "formula": "2d3",
-            "save": {
-                "ability": "wis",
-                "dc": 14,
-                "scaling": "flat"
+            "activities": {
+                "1muR6n3rzQ92Hf36": {
+                    "type": "Save",
+                    "_id": "1muR6n3rzQ92Hf36",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "save": {
+                        "ability": "wis",
+                        "dc": {
+                            "calculation": "",
+                            "formula": 14
+                        }
+                    },
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
+                    "range": "5",
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>Yaladai is a powerful stimulant that grants extreme clarity, improving relaxation and focus. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that increases their current and maximum force points by [[/r 2d3]]. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, their current and maximum force points are reduced by [[/r 2d3]]. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    }
+                }
             }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Spice/Yaladai.webp",
         "effects": []
     },
     "Consumable.name-yarrock.equipmentCategory-spice": {
@@ -448,23 +542,16 @@
                 "uid": "Consumable.name-yarrock.equipmentCategory-spice"
             }
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Spice/Yarrock.webp",
         "system": {
-            "description": {
-                "value": "<p>Yarrock is a hallucinogen which is said to instill a creature with a clear vision of \"the meaning of life\", granting a boost to confidence. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Charisma. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Charisma. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 85,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
@@ -472,32 +559,53 @@
                 "subtype": "spice",
                 "baseItem": "yarrock"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>Yarrock is a hallucinogen which is said to instill a creature with a clear vision of \"the meaning of life\", granting a boost to confidence. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Charisma. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Charisma. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
             },
-            "duration": {
-                "value": 1,
-                "units": "minute"
+            "source": {
+                "custom": "WH"
             },
-            "range": {
-                "value": "5",
-                "long": null,
-                "units": "feet"
-            },
-            "actionType": "save",
-            "formula": "1d3",
-            "save": {
-                "ability": "wis",
-                "dc": 14,
-                "scaling": "flat"
+            "activities": {
+                "z5vVQG0kist1RvoC": {
+                    "type": "Save",
+                    "_id": "z5vVQG0kist1RvoC",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "save": {
+                        "ability": "wis",
+                        "dc": {
+                            "calculation": "",
+                            "formula": 14
+                        }
+                    },
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
+                    "range": "5",
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>Yarrock is a hallucinogen which is said to instill a creature with a clear vision of \"the meaning of life\", granting a boost to confidence. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Charisma. At the end of the high, the creature must succeed on a DC 14 Wisdom saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Charisma. At the end of the low, the creature must make a DC 14 Constitution saving throw to resist addiction.</p>"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    }
+                }
             }
         },
+        "type": "consumable",
+        "img": "modules/sw5e/icons/packs/Spice/Yarrock.webp",
         "effects": []
     }
 }

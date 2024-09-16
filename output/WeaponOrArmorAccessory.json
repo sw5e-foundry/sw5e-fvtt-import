@@ -8,42 +8,38 @@
                 "uid": "Equipment.name-ammo_feed_belt.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Ammo-FeedBelt.webp",
         "system": {
-            "description": {
-                "value": "<p>This belt has slots to hold 60 slug cartridges, and can be connected to directly fuel a single blaster weapon that uses slug cartridges. Once per turn, if the powered weapon would be reloaded, it can be done without using an action using any ammunition in the belt. Connecting or disconnecting a weapon takes an action. Replacing 10 slug cartridges takes an action.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 1,
             "price": {
                 "value": 450,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "ammo-feedbelt"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "actionType": "other",
+            "description": {
+                "value": "<p>This belt has slots to hold 60 slug cartridges, and can be connected to directly fuel a single blaster weapon that uses slug cartridges. Once per turn, if the powered weapon would be reloaded, it can be done without using an action using any ammunition in the belt. Connecting or disconnecting a weapon takes an action. Replacing 10 slug cartridges takes an action.</p>"
+            },
+            "source": {
+                "custom": "WH"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Ammo-FeedBelt.webp",
         "effects": []
     },
     "Equipment.name-bandolier.equipmentCategory-weaponorarmoraccessory": {
@@ -55,42 +51,38 @@
                 "uid": "Equipment.name-bandolier.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Bandolier.webp",
         "system": {
-            "description": {
-                "value": "<p>A bandolier is worn across the chest. It has 12 pockets that can each hold a single item that weighs less than 2.00 lb, such as a vibrodagger, a fragmentation grenade, or a power cell. Once per turn, drawing an item from a bandolier does not require your object interaction.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 2,
             "price": {
                 "value": 100,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "bandolier"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "actionType": "other",
+            "description": {
+                "value": "<p>A bandolier is worn across the chest. It has 12 pockets that can each hold a single item that weighs less than 2.00 lb, such as a vibrodagger, a fragmentation grenade, or a power cell. Once per turn, drawing an item from a bandolier does not require your object interaction.</p>"
+            },
+            "source": {
+                "custom": "PHB"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Bandolier.webp",
         "effects": []
     },
     "Equipment.name-bipod.equipmentCategory-weaponorarmoraccessory": {
@@ -102,46 +94,62 @@
                 "uid": "Equipment.name-bipod.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Bipod.webp",
         "system": {
-            "description": {
-                "value": "<p>A bipod is a device mounted to a two-handed blaster that lacks the fixed property to offer increased stability while prone. As an action, you can deploy or collapse the bipod. While deployed, you ignore the Strength requirement on the attached blaster with the strength property while you are prone, and your speed is reduced to 0. Additionally, while deployed and prone, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of the weapon.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 2,
             "price": {
                 "value": 200,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "bipod"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>A bipod is a device mounted to a two-handed blaster that lacks the fixed property to offer increased stability while prone. As an action, you can deploy or collapse the bipod. While deployed, you ignore the Strength requirement on the attached blaster with the strength property while you are prone, and your speed is reduced to 0. Additionally, while deployed and prone, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of the weapon.</p>"
             },
-            "actionType": "other",
+            "source": {
+                "custom": "PHB"
+            },
+            "activities": {
+                "Tq7tKylQXlB1dr1G": {
+                    "type": "Utility",
+                    "_id": "Tq7tKylQXlB1dr1G",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>A bipod is a device mounted to a two-handed blaster that lacks the fixed property to offer increased stability while prone. As an action, you can deploy or collapse the bipod. While deployed, you ignore the Strength requirement on the attached blaster with the strength property while you are prone, and your speed is reduced to 0. Additionally, while deployed and prone, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of the weapon.</p>"
+                    }
+                }
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Bipod.webp",
         "effects": []
     },
     "Equipment.name-friction_grip_gear.equipmentCategory-weaponorarmoraccessory": {
@@ -153,42 +161,38 @@
                 "uid": "Equipment.name-friction_grip_gear.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Friction-GripGear.webp",
         "system": {
-            "description": {
-                "value": "<p>A special set of gloves and boots that allow the wearer to stick to and climb surfaces. While wearing these items, you gain the ability to move along vertical surfaces and ceilings while leaving your hands free. You also gain a climbing speed equal your walking speed.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 12,
             "price": {
                 "value": 2000,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "friction-gripgear"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "actionType": "other",
+            "description": {
+                "value": "<p>A special set of gloves and boots that allow the wearer to stick to and climb surfaces. While wearing these items, you gain the ability to move along vertical surfaces and ceilings while leaving your hands free. You also gain a climbing speed equal your walking speed.</p>"
+            },
+            "source": {
+                "custom": "PHB"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Friction-GripGear.webp",
         "effects": []
     },
     "Equipment.name-holster.equipmentCategory-weaponorarmoraccessory": {
@@ -200,51 +204,62 @@
                 "uid": "Equipment.name-holster.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Holster.webp",
         "system": {
-            "description": {
-                "value": "<p>A holster can be worn on the leg, hip, or back, and can be used to store a single weapon. You can draw a weapon stored in a holster without using an action. Once you've done so, you can't do so again until you store a weapon in the holster as an action.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 2,
             "price": {
                 "value": 75,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "holster"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>A holster can be worn on the leg, hip, or back, and can be used to store a single weapon. You can draw a weapon stored in a holster without using an action. Once you've done so, you can't do so again until you store a weapon in the holster as an action.</p>"
             },
-            "uses": {
-                "value": null,
-                "max": 1,
-                "per": "charges"
+            "source": {
+                "custom": "WH"
             },
-            "actionType": "other",
+            "activities": {
+                "1ujXWHVI0TSj1MbB": {
+                    "type": "Utility",
+                    "_id": "1ujXWHVI0TSj1MbB",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>A holster can be worn on the leg, hip, or back, and can be used to store a single weapon. You can draw a weapon stored in a holster without using an action. Once you've done so, you can't do so again until you store a weapon in the holster as an action.</p>"
+                    }
+                }
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Holster.webp",
         "effects": []
     },
     "Equipment.name-jetpack.equipmentCategory-weaponorarmoraccessory": {
@@ -256,50 +271,62 @@
                 "uid": "Equipment.name-jetpack.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Jetpack.webp",
         "system": {
-            "description": {
-                "value": "<p>Jetpacks are personal aerial transportation devices that allow the operator to fly into and through the air with great mobility. Activating or deactivating the jetpack requires a bonus action and, while active, you have a flying speed of 30 feet. The jetpack last for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 20,
             "price": {
                 "value": 4500,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "jetpack"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "bonus",
-                "cost": 1
+            "description": {
+                "value": "<p>Jetpacks are personal aerial transportation devices that allow the operator to fly into and through the air with great mobility. Activating or deactivating the jetpack requires a bonus action and, while active, you have a flying speed of 30 feet. The jetpack last for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
             },
-            "duration": {
-                "value": "1",
-                "units": "minute"
+            "source": {
+                "custom": "PHB"
             },
-            "actionType": "other",
+            "activities": {
+                "1p1XG1waDSwj1lxO": {
+                    "type": "Utility",
+                    "_id": "1p1XG1waDSwj1lxO",
+                    "img": null,
+                    "activation": {
+                        "type": "bonus",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>Jetpacks are personal aerial transportation devices that allow the operator to fly into and through the air with great mobility. Activating or deactivating the jetpack requires a bonus action and, while active, you have a flying speed of 30 feet. The jetpack last for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
+                    }
+                }
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Jetpack.webp",
         "effects": []
     },
     "Equipment.name-power_belt.equipmentCategory-weaponorarmoraccessory": {
@@ -311,42 +338,38 @@
                 "uid": "Equipment.name-power_belt.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/PowerBelt.webp",
         "system": {
-            "description": {
-                "value": "<p>This belt has slots to hold six power cells, and can be connected to directly power a single blaster weapon that uses power cells. Once per turn, if the powered weapon would be reloaded, it can be done without using an action using any ammunition in the belt. Connecting or disconnecting a weapon takes an action. Replacing an expended power cell takes an action.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 1,
             "price": {
                 "value": 400,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "powerbelt"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "actionType": "other",
+            "description": {
+                "value": "<p>This belt has slots to hold six power cells, and can be connected to directly power a single blaster weapon that uses power cells. Once per turn, if the powered weapon would be reloaded, it can be done without using an action using any ammunition in the belt. Connecting or disconnecting a weapon takes an action. Replacing an expended power cell takes an action.</p>"
+            },
+            "source": {
+                "custom": "WH"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/PowerBelt.webp",
         "effects": []
     },
     "Equipment.name-remote_detonator.equipmentCategory-weaponorarmoraccessory": {
@@ -358,51 +381,63 @@
                 "uid": "Equipment.name-remote_detonator.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/RemoteDetonator.webp",
         "system": {
-            "description": {
-                "value": "<p>A small handhold device with a single button, used to activate explosives. Over the course of 1 minute, you can pair the detonator with up to two mines within 10 feet. As an action, you can remotely detonate all of the paired mines. You must be within 30 feet of the mines to detonate them.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 1,
             "price": {
                 "value": 150,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "remotedetonator"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<p>A small handhold device with a single button, used to activate explosives. Over the course of 1 minute, you can pair the detonator with up to two mines within 10 feet. As an action, you can remotely detonate all of the paired mines. You must be within 30 feet of the mines to detonate them.</p>"
             },
-            "range": {
-                "value": "10",
-                "long": null,
-                "units": "feet"
+            "source": {
+                "custom": "PHB"
             },
-            "actionType": "other",
+            "activities": {
+                "1CwIAhNWecmZ18NP": {
+                    "type": "Utility",
+                    "_id": "1CwIAhNWecmZ18NP",
+                    "img": null,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": "10",
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>A small handhold device with a single button, used to activate explosives. Over the course of 1 minute, you can pair the detonator with up to two mines within 10 feet. As an action, you can remotely detonate all of the paired mines. You must be within 30 feet of the mines to detonate them.</p>"
+                    }
+                }
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/RemoteDetonator.webp",
         "effects": []
     },
     "Equipment.name-rocket_boots.equipmentCategory-weaponorarmoraccessory": {
@@ -414,50 +449,62 @@
                 "uid": "Equipment.name-rocket_boots.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/RocketBoots.webp",
         "system": {
-            "description": {
-                "value": "<p>Rocket boots are a form of rocket propulsion system affixed to a pair of boots instead of being worn on the back like a standard jetpack. Activating or deactivating the boots requires a bonus action and, while active, you have a flying speed of 25 feet. The rocket boots last for 1 minute and can be recharged by a power source or replacing the power cells.\t</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 3,
             "price": {
                 "value": 2500,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "rocketboots"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "bonus",
-                "cost": 1
+            "description": {
+                "value": "<p>Rocket boots are a form of rocket propulsion system affixed to a pair of boots instead of being worn on the back like a standard jetpack. Activating or deactivating the boots requires a bonus action and, while active, you have a flying speed of 25 feet. The rocket boots last for 1 minute and can be recharged by a power source or replacing the power cells.\t</p>"
             },
-            "duration": {
-                "value": "1",
-                "units": "minute"
+            "source": {
+                "custom": "PHB"
             },
-            "actionType": "other",
+            "activities": {
+                "190minHXIW6M1NO2": {
+                    "type": "Utility",
+                    "_id": "190minHXIW6M1NO2",
+                    "img": null,
+                    "activation": {
+                        "type": "bonus",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>Rocket boots are a form of rocket propulsion system affixed to a pair of boots instead of being worn on the back like a standard jetpack. Activating or deactivating the boots requires a bonus action and, while active, you have a flying speed of 25 feet. The rocket boots last for 1 minute and can be recharged by a power source or replacing the power cells.\t</p>"
+                    }
+                }
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/RocketBoots.webp",
         "effects": []
     },
     "Equipment.name-rocketpack.equipmentCategory-weaponorarmoraccessory": {
@@ -469,50 +516,62 @@
                 "uid": "Equipment.name-rocketpack.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Rocketpack.webp",
         "system": {
-            "description": {
-                "value": "<p>Rocketpacks combine the aerial transportation of a jetpack with the firepower of a rocket launcher. Activating or deactivating the rocketpack's flight capabilities requires a bonus action and, while active, you have a flying speed of 25 feet. The jetpack last for 1 minute per power cell (to a maximum of 5 minutes) and can be recharged by a power source or replacing the power cells.</p>\n<p>Additionally, your rocketpack comes with an integrated rocket launcher with the Ammunition (range 100/400) and reload 1 properties. Rather than traditional power cells, this rocket launcher fires specialized projectiles in the form of rockets. Whenever you would make a ranged weapon attack, you can instead fire this rocket launcher. When firing a rocket at long range, creatures within the radius of the rocket's explosion have advantage on the saving throw. Reloading this rocket launcher takes 1 minute.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 35,
             "price": {
                 "value": 10000,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "rocketpack"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "bonus",
-                "cost": 1
+            "description": {
+                "value": "<p>Rocketpacks combine the aerial transportation of a jetpack with the firepower of a rocket launcher. Activating or deactivating the rocketpack's flight capabilities requires a bonus action and, while active, you have a flying speed of 25 feet. The jetpack last for 1 minute per power cell (to a maximum of 5 minutes) and can be recharged by a power source or replacing the power cells.</p>\n<p>Additionally, your rocketpack comes with an integrated rocket launcher with the Ammunition (range 100/400) and reload 1 properties. Rather than traditional power cells, this rocket launcher fires specialized projectiles in the form of rockets. Whenever you would make a ranged weapon attack, you can instead fire this rocket launcher. When firing a rocket at long range, creatures within the radius of the rocket's explosion have advantage on the saving throw. Reloading this rocket launcher takes 1 minute.</p>"
             },
-            "duration": {
-                "value": "1",
-                "units": "minute"
+            "source": {
+                "custom": "WH"
             },
-            "actionType": "other",
+            "activities": {
+                "oa8Bnis1cHy1HgjX": {
+                    "type": "Utility",
+                    "_id": "oa8Bnis1cHy1HgjX",
+                    "img": null,
+                    "activation": {
+                        "type": "bonus",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>Rocketpacks combine the aerial transportation of a jetpack with the firepower of a rocket launcher. Activating or deactivating the rocketpack's flight capabilities requires a bonus action and, while active, you have a flying speed of 25 feet. The jetpack last for 1 minute per power cell (to a maximum of 5 minutes) and can be recharged by a power source or replacing the power cells.</p>\n<p>Additionally, your rocketpack comes with an integrated rocket launcher with the Ammunition (range 100/400) and reload 1 properties. Rather than traditional power cells, this rocket launcher fires specialized projectiles in the form of rockets. Whenever you would make a ranged weapon attack, you can instead fire this rocket launcher. When firing a rocket at long range, creatures within the radius of the rocket's explosion have advantage on the saving throw. Reloading this rocket launcher takes 1 minute.</p>"
+                    }
+                }
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Rocketpack.webp",
         "effects": []
     },
     "Equipment.name-stealth_field_generator.equipmentCategory-weaponorarmoraccessory": {
@@ -524,50 +583,62 @@
                 "uid": "Equipment.name-stealth_field_generator.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/StealthFieldGenerator.webp",
         "system": {
-            "description": {
-                "value": "<p>Stealth field generators are special devices typically worn on belts that function as a portable, personal cloaking device. Activating or deactivating the generator requires a bonus action and, while active, you have advantage on Dexterity (Stealth) ability checks that rely on sight. The generator lasts for 1 minute and can be recharged by a power source or replacing the power cell. This effect ends early if you make an attack or cast a force or tech power.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 3,
             "price": {
                 "value": 8000,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "stealthfieldgenerator"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "bonus",
-                "cost": 1
+            "description": {
+                "value": "<p>Stealth field generators are special devices typically worn on belts that function as a portable, personal cloaking device. Activating or deactivating the generator requires a bonus action and, while active, you have advantage on Dexterity (Stealth) ability checks that rely on sight. The generator lasts for 1 minute and can be recharged by a power source or replacing the power cell. This effect ends early if you make an attack or cast a force or tech power.</p>"
             },
-            "duration": {
-                "value": "1",
-                "units": "minute"
+            "source": {
+                "custom": "PHB"
             },
-            "actionType": "other",
+            "activities": {
+                "ASotbqVvvBb1MSmP": {
+                    "type": "Utility",
+                    "_id": "ASotbqVvvBb1MSmP",
+                    "img": null,
+                    "activation": {
+                        "type": "bonus",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>Stealth field generators are special devices typically worn on belts that function as a portable, personal cloaking device. Activating or deactivating the generator requires a bonus action and, while active, you have advantage on Dexterity (Stealth) ability checks that rely on sight. The generator lasts for 1 minute and can be recharged by a power source or replacing the power cell. This effect ends early if you make an attack or cast a force or tech power.</p>"
+                    }
+                }
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/StealthFieldGenerator.webp",
         "effects": []
     },
     "Equipment.name-tracker_utility_vest.equipmentCategory-weaponorarmoraccessory": {
@@ -579,42 +650,38 @@
                 "uid": "Equipment.name-tracker_utility_vest.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/TrackerUtilityVest.webp",
         "system": {
-            "description": {
-                "value": "<p>A utility vest is a sleeveless item of clothing that includes several evenly-distributed pockets, popular among hunters, smugglers, and adventurers. The vest is made of leathery, hide material to resist rips, corrosion and water. The wearer can carry up to 10 light items (up to 1.00 lb each) without increasing their total encumbrance.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 3,
             "price": {
                 "value": 150,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "trackerutilityvest"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "actionType": "other",
+            "description": {
+                "value": "<p>A utility vest is a sleeveless item of clothing that includes several evenly-distributed pockets, popular among hunters, smugglers, and adventurers. The vest is made of leathery, hide material to resist rips, corrosion and water. The wearer can carry up to 10 light items (up to 1.00 lb each) without increasing their total encumbrance.</p>"
+            },
+            "source": {
+                "custom": "PHB"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/TrackerUtilityVest.webp",
         "effects": []
     },
     "Equipment.name-tripod.equipmentCategory-weaponorarmoraccessory": {
@@ -626,42 +693,38 @@
                 "uid": "Equipment.name-tripod.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Tripod.webp",
         "system": {
-            "description": {
-                "value": "<p>A tripod is a device mounted to a two-handed blaster that lacks the fixed property to offer increased stability. Over the course of 1 minute, you can deploy or collapse the tripod. While deployed, you ignore the Strength requirement on the attached blaster with the strength property, and your speed is reduced to 0. Additionally, while deployed, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of the weapon.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 16,
             "price": {
                 "value": 450,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "tripod"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "actionType": "other",
+            "description": {
+                "value": "<p>A tripod is a device mounted to a two-handed blaster that lacks the fixed property to offer increased stability. Over the course of 1 minute, you can deploy or collapse the tripod. While deployed, you ignore the Strength requirement on the attached blaster with the strength property, and your speed is reduced to 0. Additionally, while deployed, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of the weapon.</p>"
+            },
+            "source": {
+                "custom": "PHB"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Tripod.webp",
         "effects": []
     },
     "Equipment.name-ammo_pouch.equipmentCategory-weaponorarmoraccessory": {
@@ -673,42 +736,38 @@
                 "uid": "Equipment.name-ammo_pouch.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/AmmoPouch.webp",
         "system": {
-            "description": {
-                "value": "<p>An ammo pouch is a small pouch, usually worn around the waist or chest, which holds 20 slug cartridges. When you reload a weapon, you can draw as much ammunition needed from this pouch without using an object interaction to do so. Instead of slug cartridges, you can instead store a power cell which takes up the space of 10 cartridges.</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 15,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "ammopouch"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "actionType": "other",
+            "description": {
+                "value": "<p>An ammo pouch is a small pouch, usually worn around the waist or chest, which holds 20 slug cartridges. When you reload a weapon, you can draw as much ammunition needed from this pouch without using an object interaction to do so. Instead of slug cartridges, you can instead store a power cell which takes up the space of 10 cartridges.</p>"
+            },
+            "source": {
+                "custom": "EC"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/AmmoPouch.webp",
         "effects": []
     },
     "Equipment.name-propulsion_pack.equipmentCategory-weaponorarmoraccessory": {
@@ -720,50 +779,62 @@
                 "uid": "Equipment.name-propulsion_pack.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/PropulsionPack.webp",
         "system": {
-            "description": {
-                "value": "<p>Propulsion packs enhance underwater movement. Activating or deactivating the propulsion pack requires a bonus action and, while active, you have a swimming speed of 30 feet. The propulsion pack lasts for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 20,
             "price": {
                 "value": 400,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "propulsionpack"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "bonus",
-                "cost": 1
+            "description": {
+                "value": "<p>Propulsion packs enhance underwater movement. Activating or deactivating the propulsion pack requires a bonus action and, while active, you have a swimming speed of 30 feet. The propulsion pack lasts for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
             },
-            "duration": {
-                "value": "1",
-                "units": "minute"
+            "source": {
+                "custom": "EC"
             },
-            "actionType": "other",
+            "activities": {
+                "15auwWaCipCc1JeG": {
+                    "type": "Utility",
+                    "_id": "15auwWaCipCc1JeG",
+                    "img": null,
+                    "activation": {
+                        "type": "bonus",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>Propulsion packs enhance underwater movement. Activating or deactivating the propulsion pack requires a bonus action and, while active, you have a swimming speed of 30 feet. The propulsion pack lasts for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
+                    }
+                }
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/PropulsionPack.webp",
         "effects": []
     },
     "Equipment.name-quiver.equipmentCategory-weaponorarmoraccessory": {
@@ -775,42 +846,38 @@
                 "uid": "Equipment.name-quiver.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Quiver.webp",
         "system": {
-            "description": {
-                "value": "<p>A quiver which can hold up to 20 arrows, 10 bolts, or 10 darts. Drawing an item from the quiver does not require an object interaction.</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 0,
             "price": {
                 "value": 10,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "quiver"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "actionType": "other",
+            "description": {
+                "value": "<p>A quiver which can hold up to 20 arrows, 10 bolts, or 10 darts. Drawing an item from the quiver does not require an object interaction.</p>"
+            },
+            "source": {
+                "custom": "EC"
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/Quiver.webp",
         "effects": []
     },
     "Equipment.name-repulsor_pack.equipmentCategory-weaponorarmoraccessory": {
@@ -822,50 +889,62 @@
                 "uid": "Equipment.name-repulsor_pack.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/RepulsorPack.webp",
         "system": {
-            "description": {
-                "value": "<p>Repulsor packs are used to slow descent from a high elevation. Activating or deactivating the repulsor pack requires a bonus action and, while active, your rate of descent slow to 60 feet per round, and you ignore the effects of wind of less than moderate speed (no more than 10 mph). The repulsor pack lasts for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 10,
             "price": {
                 "value": 300,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "repulsorpack"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "bonus",
-                "cost": 1
+            "description": {
+                "value": "<p>Repulsor packs are used to slow descent from a high elevation. Activating or deactivating the repulsor pack requires a bonus action and, while active, your rate of descent slow to 60 feet per round, and you ignore the effects of wind of less than moderate speed (no more than 10 mph). The repulsor pack lasts for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
             },
-            "duration": {
-                "value": "1",
-                "units": "minute"
+            "source": {
+                "custom": "EC"
             },
-            "actionType": "other",
+            "activities": {
+                "uvr2ZU55mfW2iuLS": {
+                    "type": "Utility",
+                    "_id": "uvr2ZU55mfW2iuLS",
+                    "img": null,
+                    "activation": {
+                        "type": "bonus",
+                        "cost": 1
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>Repulsor packs are used to slow descent from a high elevation. Activating or deactivating the repulsor pack requires a bonus action and, while active, your rate of descent slow to 60 feet per round, and you ignore the effects of wind of less than moderate speed (no more than 10 mph). The repulsor pack lasts for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
+                    }
+                }
+            },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/RepulsorPack.webp",
         "effects": []
     },
     "Equipment.name-shock_gloves.equipmentCategory-weaponorarmoraccessory": {
@@ -877,51 +956,73 @@
                 "uid": "Equipment.name-shock_gloves.equipmentCategory-weaponorarmoraccessory"
             }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/ShockGloves.webp",
         "system": {
-            "description": {
-                "value": "<p>A shock glove is a type of armored glove that is coated with a webbed lacing. When used for an attack, this webbing carries a charge that deals [[/r 1d4]] lightning damage to any objects that the glove come in contact with. If you are engaged in combat with the target of the attack, you must make a grapple check instead of an attack roll, using a Strength (Athletics) check contested by the target's Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use).</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 1,
             "price": {
                 "value": 500,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "trinket",
-                "subtype": null,
                 "baseItem": "shockgloves"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "actionType": "other",
-            "damage": {
-                "parts": [
-                    [
-                        "1d4",
-                        "lightning"
-                    ]
-                ],
-                "versatile": ""
+            "description": {
+                "value": "<p>A shock glove is a type of armored glove that is coated with a webbed lacing. When used for an attack, this webbing carries a charge that deals [[/r 1d4]] lightning damage to any objects that the glove come in contact with. If you are engaged in combat with the target of the attack, you must make a grapple check instead of an attack roll, using a Strength (Athletics) check contested by the target's Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use).</p>"
+            },
+            "source": {
+                "custom": "EC"
+            },
+            "activities": {
+                "Cj81mM95zzkB06Ib": {
+                    "type": "Damage",
+                    "_id": "Cj81mM95zzkB06Ib",
+                    "img": null,
+                    "activation": {
+                        "type": null,
+                        "cost": null
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "description": {
+                        "value": "<p>A shock glove is a type of armored glove that is coated with a webbed lacing. When used for an attack, this webbing carries a charge that deals [[/r 1d4]] lightning damage to any objects that the glove come in contact with. If you are engaged in combat with the target of the attack, you must make a grapple check instead of an attack roll, using a Strength (Athletics) check contested by the target's Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use).</p>"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4",
+                                "lightning"
+                            ]
+                        ]
+                    }
+                }
             },
             "armor": {
                 "value": null,
-                "dex": null
+                "dex": null,
+                "magicalBonus": 0
             },
-            "strength": 0
+            "strength": null,
+            "proficient": null
         },
+        "type": "equipment",
+        "img": "modules/sw5e/icons/packs/Weapon%20or%20Armor%20Accessory/ShockGloves.webp",
         "effects": []
     }
 }

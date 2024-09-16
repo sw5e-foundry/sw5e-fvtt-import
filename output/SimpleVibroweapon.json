@@ -12,62 +12,33 @@
                     "dexRq": 11,
                     "dire": 1,
                     "hvy": true
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Diresword.webp",
         "system": {
-            "description": {
-                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": null,
             "price": {
                 "value": 300,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "diresword"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": null,
-                "long": null,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d6 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "WH"
             },
             "properties": [
                 "dexRq",
@@ -75,10 +46,29 @@
                 "hvy"
             ],
             "weaponClass": "blade",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Diresword.webp",
         "effects": []
     },
     "Weapon.name-nervebaton.equipmentCategory-weapon": {
@@ -93,72 +83,62 @@
                 "properties": {
                     "disruptive": true,
                     "neuralizing": 13
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Nervebaton.webp",
         "system": {
-            "description": {
-                "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Neuralizing 13</h3>\n<p>When you hit a creature with a weapon with the neuralizing property, you can force it to make a Wisdom saving throw, DC equal to the neuralizing number. On a failed save, the creature takes an additional [[/r 1d4]] psychic damage and becomes frightened of you until the start of its next turn.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 2,
             "price": {
                 "value": 375,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "nervebaton"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Neuralizing 13</h3>\n<p>When you hit a creature with a weapon with the neuralizing property, you can force it to make a Wisdom saving throw, DC equal to the neuralizing number. On a failed save, the creature takes an additional [[/r 1d4]] psychic damage and becomes frightened of you until the start of its next turn.</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": null,
-                "long": null,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d4 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "WH"
             },
             "properties": [
                 "disruptive",
                 "neuralizing"
             ],
             "weaponClass": "trip",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d4 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d4 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Nervebaton.webp",
         "effects": []
     },
     "Weapon.name-techaxe.equipmentCategory-weapon": {
@@ -173,72 +153,62 @@
                 "properties": {
                     "lgt": true,
                     "range": 25
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Techaxe.webp",
         "system": {
-            "description": {
-                "value": "<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 25/75)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 1,
             "price": {
                 "value": 75,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "techaxe"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 25/75)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": 25,
-                "long": 75,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d6 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "PHB"
             },
             "properties": [
                 "lgt",
                 "range"
             ],
             "weaponClass": "crushing",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Techaxe.webp",
         "effects": []
     },
     "Weapon.name-vibrodagger.equipmentCategory-weapon": {
@@ -254,62 +224,33 @@
                     "fin": true,
                     "lgt": true,
                     "range": 20
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrodagger.webp",
         "system": {
-            "description": {
-                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": null,
             "price": {
                 "value": 50,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "vibrodagger"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": 20,
-                "long": 60,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d4 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "PHB"
             },
             "properties": [
                 "fin",
@@ -317,10 +258,29 @@
                 "range"
             ],
             "weaponClass": "trip",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d4 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d4 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrodagger.webp",
         "effects": []
     },
     "Weapon.name-vibrodart.equipmentCategory-weapon": {
@@ -336,62 +296,33 @@
                     "fin": true,
                     "special": true,
                     "range": 20
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrodart.webp",
         "system": {
-            "description": {
-                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Special</h3>\n<p>Due to their diminutive size, vibrodarts make ineffective melee weapons. Melee attack rolls made with them are made at disadvantage.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": null,
             "price": {
                 "value": 5,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "vibrodart"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Special</h3>\n<p>Due to their diminutive size, vibrodarts make ineffective melee weapons. Melee attack rolls made with them are made at disadvantage.</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": 20,
-                "long": 60,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d4 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "PHB"
             },
             "properties": [
                 "fin",
@@ -399,10 +330,29 @@
                 "range"
             ],
             "weaponClass": "trip",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d4 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d4 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrodart.webp",
         "effects": []
     },
     "Weapon.name-vibroknuckler.equipmentCategory-weapon": {
@@ -417,72 +367,62 @@
                 "properties": {
                     "hidden": true,
                     "lgt": true
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibroknuckler.webp",
         "system": {
-            "description": {
-                "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": null,
             "price": {
                 "value": 75,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "vibroknuckler"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": null,
-                "long": null,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d6 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "PHB"
             },
             "properties": [
                 "hidden",
                 "lgt"
             ],
             "weaponClass": "trip",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibroknuckler.webp",
         "effects": []
     },
     "Weapon.name-vibromace.equipmentCategory-weapon": {
@@ -498,62 +438,33 @@
                     "dexRq": 11,
                     "hvy": true,
                     "two": true
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibromace.webp",
         "system": {
-            "description": {
-                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 7,
             "price": {
                 "value": 700,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "vibromace"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": null,
-                "long": null,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d10 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "PHB"
             },
             "properties": [
                 "dexRq",
@@ -561,10 +472,29 @@
                 "two"
             ],
             "weaponClass": "crushing",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d10 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d10 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibromace.webp",
         "effects": []
     },
     "Weapon.name-vibrosabre.equipmentCategory-weapon": {
@@ -580,62 +510,33 @@
                     "dexRq": 11,
                     "keen": 1,
                     "lgt": true
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrosabre.webp",
         "system": {
-            "description": {
-                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Keen 1</h3>\n<p>When you make a weapon attack with a weapon with the keen property, the critical hit range increases by an amount equal to the keen number.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": null,
             "price": {
                 "value": 300,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "vibrosabre"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Keen 1</h3>\n<p>When you make a weapon attack with a weapon with the keen property, the critical hit range increases by an amount equal to the keen number.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": null,
-                "long": null,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d6 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "WH"
             },
             "properties": [
                 "dexRq",
@@ -643,10 +544,29 @@
                 "lgt"
             ],
             "weaponClass": "blade",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrosabre.webp",
         "effects": []
     },
     "Weapon.name-vibrospear.equipmentCategory-weapon": {
@@ -661,72 +581,62 @@
                 "properties": {
                     "range": 25,
                     "ver": true
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrospear.webp",
         "system": {
-            "description": {
-                "value": "<h3>Thrown (range 25/75)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 4,
             "price": {
                 "value": 125,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "vibrospear"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Thrown (range 25/75)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": 25,
-                "long": 75,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d6 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": "2d4 +  @mod"
+            "source": {
+                "custom": "PHB"
             },
             "properties": [
                 "range",
                 "ver"
             ],
             "weaponClass": "polearm",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": "2d4 +  @mod"
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": "2d4 +  @mod"
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrospear.webp",
         "effects": []
     },
     "Weapon.name-vibrostaff.equipmentCategory-weapon": {
@@ -740,71 +650,61 @@
             "sw5e": {
                 "properties": {
                     "ver": true
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrostaff.webp",
         "system": {
-            "description": {
-                "value": "<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 4,
             "price": {
                 "value": 100,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "vibrostaff"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": null,
-                "long": null,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d6 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": "2d4 +  @mod"
+            "source": {
+                "custom": "PHB"
             },
             "properties": [
                 "ver"
             ],
             "weaponClass": "polearm",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": "2d4 +  @mod"
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": "2d4 +  @mod"
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrostaff.webp",
         "effects": []
     },
     "Weapon.name-atlatl.equipmentCategory-weapon": {
@@ -820,62 +720,33 @@
                     "disguised": true,
                     "lgt": true,
                     "special": true
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Atlatl.webp",
         "system": {
-            "description": {
-                "value": "<h3>Disguised</h3>\n<p>You have advantage on Charisma (Deception) checks made to hide the nature of a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Special</h3>\n<p>This specialized gungan club can be used to throw grenades or similar objects at long distances. If you are wielding this weapon, as part of the action to throw a grenade, you can instead throw it using an atlatl you are holding. The grenade can be thrown at a short distance of 30ft and a long distance of 120ft. When throwing a grenade at long range, creatures within the radius of the grenade's explosion have advantage on the saving throw.  If you lack proficiency in the atlatl, you must roll the damage dice twice and take the lesser total.</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": null,
             "price": {
                 "value": 375,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "atlatl"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Disguised</h3>\n<p>You have advantage on Charisma (Deception) checks made to hide the nature of a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Special</h3>\n<p>This specialized gungan club can be used to throw grenades or similar objects at long distances. If you are wielding this weapon, as part of the action to throw a grenade, you can instead throw it using an atlatl you are holding. The grenade can be thrown at a short distance of 30ft and a long distance of 120ft. When throwing a grenade at long range, creatures within the radius of the grenade's explosion have advantage on the saving throw.  If you lack proficiency in the atlatl, you must roll the damage dice twice and take the lesser total.</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": null,
-                "long": null,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d6 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "EC"
             },
             "properties": [
                 "disguised",
@@ -883,10 +754,29 @@
                 "special"
             ],
             "weaponClass": "crushing",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Atlatl.webp",
         "effects": []
     },
     "Weapon.name-electroprod.equipmentCategory-weapon": {
@@ -902,62 +792,33 @@
                     "disruptive": true,
                     "shocking": 13,
                     "two": true
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Electroprod.webp",
         "system": {
-            "description": {
-                "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 6,
             "price": {
                 "value": 650,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "electroprod"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": null,
-                "long": null,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d8 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "EC"
             },
             "properties": [
                 "disruptive",
@@ -965,10 +826,29 @@
                 "two"
             ],
             "weaponClass": "polearm",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d8 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d8 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Electroprod.webp",
         "effects": []
     },
     "Weapon.name-mancatcher.equipmentCategory-weapon": {
@@ -984,62 +864,33 @@
                     "rch": true,
                     "special": true,
                     "two": true
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Mancatcher.webp",
         "system": {
-            "description": {
-                "value": "<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>\n<h3>Special</h3>\n<p>When you would make a Strength (Athletics) check to attempt to grapple a creature while wielding a weapon with the grappling property, you can instead make a melee weapon attack with it. If the attack hits, the creature becomes grappled by you, and it takes damage equal to your Strength modifier of the same type as the weapon's damage.</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 7,
             "price": {
                 "value": 800,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "mancatcher"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>\n<h3>Special</h3>\n<p>When you would make a Strength (Athletics) check to attempt to grapple a creature while wielding a weapon with the grappling property, you can instead make a melee weapon attack with it. If the attack hits, the creature becomes grappled by you, and it takes damage equal to your Strength modifier of the same type as the weapon's damage.</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": 10,
-                "long": null,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d8 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "EC"
             },
             "properties": [
                 "rch",
@@ -1047,10 +898,29 @@
                 "two"
             ],
             "weaponClass": "trip",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d8 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d8 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Mancatcher.webp",
         "effects": []
     },
     "Weapon.name-stun_gauntlet.equipmentCategory-weapon": {
@@ -1066,62 +936,33 @@
                     "disruptive": true,
                     "fixed": true,
                     "shocking": 13
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/StunGauntlet.webp",
         "system": {
-            "description": {
-                "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": null,
             "price": {
                 "value": 400,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "stungauntlet"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": null,
-                "long": null,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d4 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "EC"
             },
             "properties": [
                 "disruptive",
@@ -1129,10 +970,29 @@
                 "shocking"
             ],
             "weaponClass": "crushing",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d4 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d4 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/StunGauntlet.webp",
         "effects": []
     },
     "Weapon.name-vibroclaw.equipmentCategory-weapon": {
@@ -1148,62 +1008,33 @@
                     "fin": true,
                     "fixed": true,
                     "lgt": true
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibroclaw.webp",
         "system": {
-            "description": {
-                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": null,
             "price": {
                 "value": 50,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "vibroclaw"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": null,
-                "long": null,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d4 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "EC"
             },
             "properties": [
                 "fin",
@@ -1211,10 +1042,29 @@
                 "lgt"
             ],
             "weaponClass": "blade",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d4 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d4 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibroclaw.webp",
         "effects": []
     },
     "Weapon.name-vibrocutlass.equipmentCategory-weapon": {
@@ -1228,71 +1078,61 @@
             "sw5e": {
                 "properties": {
                     "dexRq": 11
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrocutlass.webp",
         "system": {
-            "description": {
-                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 1,
             "price": {
                 "value": 600,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "vibrocutlass"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": null,
-                "long": null,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "2d4 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "EC"
             },
             "properties": [
                 "dexRq"
             ],
             "weaponClass": "blade",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "2d4 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "2d4 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrocutlass.webp",
         "effects": []
     },
     "Weapon.name-vibrocutter.equipmentCategory-weapon": {
@@ -1306,71 +1146,61 @@
             "sw5e": {
                 "properties": {
                     "hvy": true
+                },
+                "reload": {
+                    "types": []
                 }
             }
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrocutter.webp",
         "system": {
-            "description": {
-                "value": "<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
+            "attunement": "",
+            "attuned": false,
+            "equipped": false,
             "quantity": 1,
             "weight": 3,
             "price": {
                 "value": 50,
                 "denomination": "gp"
             },
-            "attunement": "",
-            "equipped": false,
             "rarity": "",
             "identified": true,
             "type": {
                 "value": "simpleVW",
-                "subtype": null,
                 "baseItem": "vibrocutter"
             },
-            "-=baseItem": null,
-            "-=weaponType": null,
-            "-=consumableType": null,
-            "-=ammoType": null,
-            "-=toolType": null,
-            "activation": {
-                "type": "action",
-                "cost": 1
+            "description": {
+                "value": "<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>"
             },
-            "target": {
-                "value": 1,
-                "width": null,
-                "units": "",
-                "type": "enemy"
-            },
-            "range": {
-                "value": null,
-                "long": null,
-                "units": "ft"
-            },
-            "actionType": "mwak",
-            "damage": {
-                "parts": [
-                    [
-                        "1d6 + @mod",
-                        "kinetic"
-                    ]
-                ],
-                "versatile": ""
+            "source": {
+                "custom": "EC"
             },
             "properties": [
                 "hvy"
             ],
             "weaponClass": "blade",
-            "ammo": {
-                "types": []
+            "damage": {
+                "base": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                },
+                "versatile": {
+                    "parts": [
+                        [
+                            "1d6 + @mod",
+                            "kinetic"
+                        ]
+                    ],
+                    "versatile": ""
+                }
             }
         },
+        "type": "weapon",
+        "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrocutter.webp",
         "effects": []
     }
 }

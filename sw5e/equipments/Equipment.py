@@ -35,7 +35,8 @@ class Equipment(
 
 		return {
 			"value": ac,
-			"dex": max_dex
+			"dex": max_dex,
+			"magicalBonus": 0,
 		}
 
 	def getPropertiesList(self):
@@ -59,8 +60,9 @@ class Equipment(
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["system"]["armor"] = self.armor
-		data["system"]["strength"] = self.raw_strengthRequirement or 0
+		utils.object.setProperty(data, 'system.armor', self.armor)
+		utils.object.setProperty(data, 'system.strength', self.raw_strengthRequirement)
+		utils.object.setProperty(data, 'system.proficient', None)
 
 		return [data]
 
