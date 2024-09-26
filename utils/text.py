@@ -344,6 +344,10 @@ def getTarget(text, name):
 		if match := re.search(pattern, text):
 			return int(match['size']), 'ft', ('sphere' if match['sphere'] else 'radius')
 
+		pattern = r'each creature within (?P<size>\d+) feet'
+		if match := re.search(pattern, text):
+			return int(match['size']), 'ft', 'radius'
+
 		pattern = r'(?P<size>\d+)-foot[- ](?P<shape>cube|square|line|cone)'
 		if match := re.search(pattern, text):
 			return int(match['size']), 'ft', match['shape']

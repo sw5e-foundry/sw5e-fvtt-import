@@ -53,7 +53,7 @@ class Species(sw5e.Entity.Item):
 		features = []
 		for trait in self.raw_traits:
 			trait_data = { "name": trait["name"], "source": 'Species', "sourceName": self.name, "level": None }
-			if trait := importer.get('feature', data=trait_data):
+			if trait := importer.get('Feature', data=trait_data):
 				if trait.foundry_id: features.append(trait)
 				else: self.broken_links += ['no foundry id']
 			else:

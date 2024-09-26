@@ -8,12 +8,15 @@ def getProperty(obj, path, default=None):
 def setProperty(obj, path, value, force=False):
 	parts = path.split('.')
 	for part in parts[:-1]:
-		if part not in obj and force: obj[part] = {}
+		if part not in obj:
+			if force: obj[part] = dict()
+			else: return None
 		obj = obj[part]
 	if (force == 'weak' and ((parts[-1] not in obj) or (obj[parts[-1]] == None))) or (force != 'weak'): obj[parts[-1]] = value
+	return obj[parts[-1]]
 
 def setPropertyWeak(obj, path, value):
-	setProperty(obj, path, value, force='weak')
+	return setProperty(obj, path, value, force='weak')
 
 def applyType(obj, mapping, key='id'):
 	if type(mapping) in (list, tuple):

@@ -500,10 +500,10 @@ class Monster(sw5e.Entity.Actor):
 			behavior_data["sourceImg"] = self.getImg()
 			behavior_data["sourceProf"] = self.proficiency_bonus
 			behavior_data["sourceAbil"] = self.abilities
+			behavior_data["entity_type"] = "MonsterBehavior"
 
-			uid = MonsterBehavior.getUID(behavior_data, "MonsterBehavior")
-			behavior = MonsterBehavior(behavior_data, uid, None, importer_version=self.importer_version)
-			behaviors[uid] = behavior
+			behavior = MonsterBehavior(behavior_data, importer_version=self.importer_version)
+			behaviors[behavior.uid] = behavior
 
 		return behaviors
 

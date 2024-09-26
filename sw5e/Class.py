@@ -338,7 +338,7 @@ class Class(sw5e.Entity.Item):
 		all_features = {}
 		for level, features in self.features.items():
 			for feature in features.values():
-				if entity := importer.get('feature', uid=feature["uid"]):
+				if entity := importer.get('Feature', uid=feature["uid"]):
 					feature["foundry_id"] = entity.foundry_id
 					feature["traits"] = entity.traits
 				else:
@@ -349,7 +349,7 @@ class Class(sw5e.Entity.Item):
 		for invocation_category, invocations in self.invocations.items():
 			for name, invocation in invocations.items():
 				if name.startswith('_'): continue
-				if entity := importer.get('feature', uid=invocation["uid"]):
+				if entity := importer.get('Feature', uid=invocation["uid"]):
 					invocation["foundry_id"] = entity.foundry_id
 				else:
 					print(f'		Unable to find invocation {invocation=}')

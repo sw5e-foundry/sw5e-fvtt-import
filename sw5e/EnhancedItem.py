@@ -1,4 +1,4 @@
-import sw5e.Entity, utils.text, utils.config, utils.object
+import sw5e.Entity, sw5e.Equipment, utils.text, utils.config, utils.object
 import re, json, copy
 
 class EnhancedItem(sw5e.Entity.Item):
@@ -134,7 +134,7 @@ class EnhancedItem(sw5e.Entity.Item):
 		if self.raw_subtypeType == 'Specific':
 			get_data = {
 				'name': self.raw_subtype.title(),
-				'equipmentCategory': self.raw_type.title(),
+				'equipmentCategory': (self.raw_type.title(),),
 			}
 		elif self.raw_name != self.base_name:
 			get_data = {
@@ -152,15 +152,15 @@ class EnhancedItem(sw5e.Entity.Item):
 			for category in get_data["equipmentCategory"]:
 				data = { k:v for k,v in get_data.items() }
 				data["equipmentCategory"] = category
-				if base_item := importer.get('equipment', data=data):
+				equipment_type = sw5e.Equipment.Equipment.getEquipmentType(data)
+				if base_item := importer.get(equipment_type, data=data):
 					return base_item
-		elif base_item := importer.get('equipment', data=get_data):
-			return base_item
 
 		if self.raw_subtypeType.startswith('Any'): return None
 		if self.base_name in (utils.config.enhanced_item_icons + utils.config.enhanced_item_no_icons): return None
 		if self.modifiable_item: return None
 		print(f"		Failed to find base item for '{self.raw_name}', {get_data=}")
+		raise ValueError()
 
 	def getEquipmentCategory(self):
 		if self.base_item:
@@ -333,7 +333,7 @@ class EnhancedItem(sw5e.Entity.Item):
 				item["flags"]["sw5e-importer"]["uid"] += f'.mode-{mode}'
 
 			item["system"]["description"] = {
-				"value": self.getDescription(base_text = item["system"]["description"]["value"])
+				"value": self.getDescription(base_text = utils.object.getProperty(item, 'system.description.value'))
 			}
 			item["system"]["source"] = { "custom": self.raw_contentSource }
 			item["system"]["attunement"] = 'required' if self.raw_requiresAttunement else ''
@@ -390,18 +390,21 @@ class EnhancedItem(sw5e.Entity.Item):
 				if item["system"]["attack"]["bonus"]: item["system"]["attack"]["bonus"] += f' + {self.attack_bonus}'
 				else: item["system"]["attack"]["bonus"] = self.attack_bonus
 
-			if (self.damage and (self.damage["parts"] or self.damage["versatile"])) or self.damage_bonus:
-				utils.object.setPropertyWeak(item, 'system.damage.parts', [])
-				utils.object.setPropertyWeak(item, 'system.damage.versatile', '')
-				item["system"]["damage"] = {
-					"parts": item["system"]["damage"]["parts"] + self.damage["parts"],
-					"versatile": choose(item["system"]["damage"], self.damage["versatile"], "versatile", '')
-				}
+			if self.damage and (base := self.damage["parts"]):
+				base_parts = utils.object.setPropertyWeak(item, 'system.damage.base.parts', [])
+				base_parts.append(base)
+			if self.damage and (vers := self.damage["versatile"]):
+				vers_parts = utils.object.setPropertyWeak(item, 'system.damage.versatile.parts', [])
+				vers_parts.append([vers, ''])
 
 			if self.damage_bonus:
-				if len(item["system"]["damage"]["parts"]): item["system"]["damage"]["parts"][0][0] += f' + {self.damage_bonus}'
-				else: item["system"]["damage"]["parts"].append([f'{self.damage_bonus}', ''])
-				if item["system"]["damage"]["versatile"]: item["system"]["damage"]["versatile"] += f' + {self.damage_bonus}'
+				base = utils.object.setPropertyWeak(item, f'system.damage.base.parts', [])
+				if len(base) == 0: base.append([f'{self.damage_bonus}', ''])
+				else: base[0][0] = f'{base[0][0]} + {self.damage_bonus}'
+
+				vers = utils.object.setPropertyWeak(item, f'system.damage.versatile.parts', [])
+				if len(vers) == 0: pass
+				else: vers[0][0] = f'{vers[0][0]} + {self.damage_bonus}'
 
 			if self.formula:
 				item["system"]["formula"] = choose(item["system"], self.formula, 'formula', '')

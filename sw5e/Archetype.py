@@ -199,34 +199,37 @@ class Archetype(sw5e.Entity.Item):
 
 	def processSourceClass(self, importer):
 		class_data = { "name": self.raw_className }
-		self.sourceClass = importer.get('class', data=class_data)
+		self.sourceClass = importer.get('Class', data=class_data)
 
 	def processFeatures(self, importer):
 		all_features = {}
 		for level, features in self.features.items():
 			for feature in features.values():
-				if entity := importer.get('feature', uid=feature["uid"]):
+				if entity := importer.get('Feature', uid=feature["uid"]):
 					feature["foundry_id"] = entity.foundry_id
 					feature["traits"] = entity.traits
 				else:
 					print(f'		Unable to find feature {feature=}')
 					self.broken_links += [f'cant find feature {feature["name"]}']
 				all_features[feature["name"]] = feature
-		for level, features in self.sourceClass.features.items():
-			for feature in features.values():
-				all_features[feature["name"]] = feature
+		if self.sourceClass:
+			for level, features in self.sourceClass.features.items():
+				for feature in features.values():
+					all_features[feature["name"]] = feature
+		else:
+			self.broken_links += ['no source class']
 
 		for invocation_category, invocations in self.invocations.items():
 			for name, invocation in invocations.items():
 				if name.startswith('_'): continue
-				if entity := importer.get('feature', uid=invocation["uid"]):
+				if entity := importer.get('Feature', uid=invocation["uid"]):
 					invocation["foundry_id"] = entity.foundry_id
 				else:
 					print(f'		Unable to find invocation {invocation=}')
 					self.broken_links += [f'cant find invocation {invocation["name"]}']
 
 			# Enginner Modifications don't have a specific feature
-			if self.sourceClass.name == 'Engineer' or self.name in ['Enhancement Specialist', 'Totem Specialist']:
+			if (self.sourceClass and self.sourceClass.name == 'Engineer') or self.name in ['Enhancement Specialist', 'Totem Specialist']:
 				invocations["_feature_name"] = utils.text.getSingular(invocation_category)[0]
 				continue
 

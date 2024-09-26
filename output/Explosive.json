@@ -32,14 +32,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "fQv8ZrG77DIl00mp": {
+                "1Phoz9M2xiIk1iUW": {
                     "type": "Save",
-                    "_id": "fQv8ZrG77DIl00mp",
+                    "_id": "1Phoz9M2xiIk1iUW",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "30",
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -47,19 +44,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": "30",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Constitution saving throw. A creature takes [[/r 2d8]] acid damage on a failed save, or half as much as on a successful one. If this damage reduces a creature to 0 hit points, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.</p>"
+                    },
+                    "target": {
+                        "value": 10,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -71,6 +67,10 @@
                                 "acid"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     }
                 }
             }
@@ -112,14 +112,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "uAMR52HPSqJ1dzvj": {
+                "1V5vzwowe2Ri1l6u": {
                     "type": "Save",
-                    "_id": "uAMR52HPSqJ1dzvj",
+                    "_id": "1V5vzwowe2Ri1l6u",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "30",
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -127,19 +124,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "range": "30",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Constitution saving throw. A creature takes [[/r 2d6]] cold damage on a failed save, or half as much as on a successful one. Additionally, on a failed save, a creature gains 1 slowed level for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
+                    "target": {
+                        "value": 10,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -151,6 +147,10 @@
                                 "cold"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -192,14 +192,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "1P7xXZm7Uw4q11EH": {
+                "m9gzo5oPs6rO5rLc": {
                     "type": "Save",
-                    "_id": "1P7xXZm7Uw4q11EH",
+                    "_id": "m9gzo5oPs6rO5rLc",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "30",
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -207,19 +204,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "range": "30",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Constitution saving throw. A creature takes [[/r 2d6]] sonic damage on a failed save, or half as much as on a successful one. </p>\n<p>Additionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
+                    "target": {
+                        "value": 10,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -231,6 +227,10 @@
                                 "sonic"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -272,14 +272,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "1dE62LNid8f11xBD": {
+                "1QF8TpVvwBJ11fTd": {
                     "type": "Save",
-                    "_id": "1dE62LNid8f11xBD",
+                    "_id": "1QF8TpVvwBJ11fTd",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "30",
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -287,19 +284,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "range": "30",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d6]] lightning damage on a failed save, or half as much as on a successful one. </p>\n<p>Additionally, on a failed save, a creature is shocked for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
+                    "target": {
+                        "value": 10,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -311,6 +307,10 @@
                                 "lightning"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -352,14 +352,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "Ht4br8zrMcy1rS7a": {
+                "1wRXaLRVrwh9IrUe": {
                     "type": "Save",
-                    "_id": "Ht4br8zrMcy1rS7a",
+                    "_id": "1wRXaLRVrwh9IrUe",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "30",
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -367,25 +364,28 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "range": "30",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Constitution saving throw. On a failed save, a creature is blinded for 1 minute. At the start of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
+                    "target": {
+                        "value": 10,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": []
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -427,14 +427,11 @@
                 "custom": "PHB"
             },
             "activities": {
-                "sDuKEIryiim1swto": {
+                "1DLZmAoLgangnrnb": {
                     "type": "Save",
-                    "_id": "sDuKEIryiim1swto",
+                    "_id": "1DLZmAoLgangnrnb",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "30",
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -442,19 +439,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": "30",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d10]] kinetic damage on a failed save, or half as much as on a successful one.</p>"
+                    },
+                    "target": {
+                        "value": 10,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -466,6 +462,10 @@
                                 "kinetic"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     }
                 }
             }
@@ -507,14 +507,11 @@
                 "custom": "PHB"
             },
             "activities": {
-                "xrM9QgNbj8V1aWsJ": {
+                "xFw8XzZsN2f1PtXG": {
                     "type": "Save",
-                    "_id": "xrM9QgNbj8V1aWsJ",
+                    "_id": "xFw8XzZsN2f1PtXG",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "30",
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -522,19 +519,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
+                    "description": {
+                        "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. The grenade explodes, filling the air in a 10-foot-radius sphere with yellow-green fog for 1 minute. The fog spreads around corners, and its area is heavily obscured. It lasts for 1 minute or until a wind of at least 10 miles per hour disperses it.</p>\n<p>When a creature enters the fog or starts its turn there, it creature must make a DC 14 Constitution saving throw. The creature takes [[/r 2d6]] poison damage on a failed save, or half as much damage on a successful one. Additionally, on a failed save, the creature is poisoned while it is in the cloud. Droids, constructs and humanoids wearing appropriate protective equipment are unaffected.</p>"
                     },
-                    "range": "30",
                     "target": {
                         "value": 10,
                         "width": null,
                         "units": "ft",
                         "type": "sphere"
                     },
-                    "description": {
-                        "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. The grenade explodes, filling the air in a 10-foot-radius sphere with yellow-green fog for 1 minute. The fog spreads around corners, and its area is heavily obscured. It lasts for 1 minute or until a wind of at least 10 miles per hour disperses it.</p>\n<p>When a creature enters the fog or starts its turn there, it creature must make a DC 14 Constitution saving throw. The creature takes [[/r 2d6]] poison damage on a failed save, or half as much damage on a successful one. Additionally, on a failed save, the creature is poisoned while it is in the cloud. Droids, constructs and humanoids wearing appropriate protective equipment are unaffected.</p>"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -546,6 +542,10 @@
                                 "poison"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -587,14 +587,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "1zneCRzx5Pi3rT2c": {
+                "1ArPwSDFk6uA1qbH": {
                     "type": "Save",
-                    "_id": "1zneCRzx5Pi3rT2c",
+                    "_id": "1ArPwSDFk6uA1qbH",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "30",
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -602,19 +599,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
+                    "description": {
+                        "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. The grenade explodes, setting the ground in a 10-foot radius ablaze for 1 minute. The fire ignites any flammable objects in the area that aren't being worn or carried.</p>\n<p>When a creature enters the fire or starts its turn there, it creature must make a DC 14 Dexterity saving throw. The creature takes [[/r 2d8]] fire damage on a failed save, or half as much damage on a successful one. </p>"
                     },
-                    "range": "30",
                     "target": {
                         "value": 10,
                         "width": null,
                         "units": "ft",
                         "type": "radius"
                     },
-                    "description": {
-                        "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. The grenade explodes, setting the ground in a 10-foot radius ablaze for 1 minute. The fire ignites any flammable objects in the area that aren't being worn or carried.</p>\n<p>When a creature enters the fire or starts its turn there, it creature must make a DC 14 Dexterity saving throw. The creature takes [[/r 2d8]] fire damage on a failed save, or half as much damage on a successful one. </p>"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -626,6 +622,10 @@
                                 "fire"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -667,14 +667,11 @@
                 "custom": "PHB"
             },
             "activities": {
-                "a7WkoMyxGWfYbeah": {
+                "10lDlUt99yr3YIxi": {
                     "type": "Save",
-                    "_id": "a7WkoMyxGWfYbeah",
+                    "_id": "10lDlUt99yr3YIxi",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "30",
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -682,19 +679,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": "30",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d6]] ion damage on a failed save, or half as much as on a successful one. Any electronics within the blast radius are disabled until rebooted. </p>"
+                    },
+                    "target": {
+                        "value": 10,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -706,6 +702,10 @@
                                 "ion"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     }
                 }
             }
@@ -747,14 +747,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "ZXc1v6lrQLjOBkV5": {
+                "1ptYAQ4YC2o1E8wI": {
                     "type": "Save",
-                    "_id": "ZXc1v6lrQLjOBkV5",
+                    "_id": "1ptYAQ4YC2o1E8wI",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "30",
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -762,19 +759,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "range": "30",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Wisdom saving throw. A creature takes [[/r 2d6]] psychic damage on a failed save, or half as much as on a successful one. </p>\n<p>Additionally, on a failed save, a creature becomes frightened of you for 1 minute. At the start of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
+                    "target": {
+                        "value": 10,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -786,6 +782,10 @@
                                 "psychic"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -827,14 +827,11 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1xbOzLWJpHLHZfKL": {
+                "1nRgOW9S1BYg1ACY": {
                     "type": "Save",
-                    "_id": "1xbOzLWJpHLHZfKL",
+                    "_id": "1nRgOW9S1BYg1ACY",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "30",
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -842,19 +839,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": "30",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d10]] energy damage on a failed save, or half as much as on a successful one.</p>"
+                    },
+                    "target": {
+                        "value": 10,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -866,6 +862,10 @@
                                 "energy"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     }
                 }
             }
@@ -907,14 +907,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "DRCMy89lN801APHo": {
+                "1kbQbTfR0BlU4qsh": {
                     "type": "Save",
-                    "_id": "DRCMy89lN801APHo",
+                    "_id": "1kbQbTfR0BlU4qsh",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "30",
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -922,25 +919,28 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "range": "30",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Constitution saving throw. On a failed save, a creature is stunned until the end of their next turn.</p>\n<p>Additionally, on a failed save, a creature is unconscious for 1 minute, until it takes damage, or until someone uses an action to shake or slap the creature awake. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
+                    "target": {
+                        "value": 10,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": []
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -982,14 +982,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "9cqS6A3vOB84UGEI": {
+                "zkhux8u6GO8ZfK5j": {
                     "type": "Save",
-                    "_id": "9cqS6A3vOB84UGEI",
+                    "_id": "zkhux8u6GO8ZfK5j",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "15",
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -997,19 +994,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": "15",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, each creature within 15 feet of it must make a DC 14 Constitution saving throw. A creature takes [[/r 2d8]] acid damage on a failed save, or half as much as on a successful one. If this damage reduces a creature to 0 hit points, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.</p>"
+                    },
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -1021,6 +1017,10 @@
                                 "acid"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     }
                 }
             }
@@ -1062,14 +1062,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "4TnO37NwzsqBDcrd": {
+                "1GlgYlx5z0xHAYUq": {
                     "type": "Save",
-                    "_id": "4TnO37NwzsqBDcrd",
+                    "_id": "1GlgYlx5z0xHAYUq",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "15",
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -1077,19 +1074,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "range": "15",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, each creature within 15 feet of it must make a DC 14 Constitution saving throw. A creature takes [[/r 2d6]] cold damage on a failed save, or half as much as on a successful one. </p>\n<p>Additionally, on a failed save, a creature gains 1 slowed level for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -1101,6 +1097,10 @@
                                 "cold"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -1142,14 +1142,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "RKGezcOb5Zd1LE2V": {
+                "1zgqdfdQJswT1IrY": {
                     "type": "Save",
-                    "_id": "RKGezcOb5Zd1LE2V",
+                    "_id": "1zgqdfdQJswT1IrY",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "15",
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -1157,19 +1154,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "range": "15",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, each creature within 15 feet of it must make a DC 14 Constitution saving throw. A creature takes [[/r 2d6]] sonic damage on a failed save, or half as much as on a successful one. </p>\n<p>Additionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -1181,6 +1177,10 @@
                                 "sonic"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -1222,14 +1222,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "19KBi04ORcyRIuyZ": {
+                "8DILkTTEfwC1DjFQ": {
                     "type": "Save",
-                    "_id": "19KBi04ORcyRIuyZ",
+                    "_id": "8DILkTTEfwC1DjFQ",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "15",
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1237,19 +1234,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "range": "15",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, each creature within 15 feet of it must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d6]] lightning damage on a failed save, or half as much as on a successful one. </p>\n<p>Additionally, on a failed save, a creature is shocked for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -1261,6 +1257,10 @@
                                 "lightning"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -1302,14 +1302,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "1FPVKsb9yRoHOrtg": {
+                "Doh4WOPDIXQFCujd": {
                     "type": "Save",
-                    "_id": "1FPVKsb9yRoHOrtg",
+                    "_id": "Doh4WOPDIXQFCujd",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "15",
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -1317,25 +1314,28 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "range": "15",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, each creature within 15 feet of it must make a DC 14 Constitution saving throw. On a failed save, a creature is blinded for 1 minute. At the start of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": []
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -1377,14 +1377,11 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1SjGBg9TAH9oTOvp": {
+                "1Jpn37a1G3xEjiLW": {
                     "type": "Save",
-                    "_id": "1SjGBg9TAH9oTOvp",
+                    "_id": "1Jpn37a1G3xEjiLW",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "15",
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1392,19 +1389,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": "15",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, each creature within 15 feet of it must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d10]] kinetic damage on a failed save, or half as much as on a successful one.</p>"
+                    },
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -1416,6 +1412,10 @@
                                 "kinetic"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     }
                 }
             }
@@ -1494,14 +1494,10 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1K76RAtEqUae1aBq": {
+                "uWoYC8mwm0eOaGsT": {
                     "type": "Save",
-                    "_id": "1K76RAtEqUae1aBq",
+                    "_id": "uWoYC8mwm0eOaGsT",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1509,9 +1505,8 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
+                    "description": {
+                        "value": "<p>Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, the mine sets the ground in a 15-foot radius ablaze for 1 minute. The fire ignites any flammable objects in the area that aren't being worn or carried.</p>\n<p>When a creature enters the fire or starts its turn there, it creature must make a DC 14 Dexterity saving throw. The creature takes [[/r 2d8]] fire damage on a failed save, or half as much damage on a successful one. </p>"
                     },
                     "target": {
                         "value": 15,
@@ -1519,8 +1514,9 @@
                         "units": "ft",
                         "type": "radius"
                     },
-                    "description": {
-                        "value": "<p>Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, the mine sets the ground in a 15-foot radius ablaze for 1 minute. The fire ignites any flammable objects in the area that aren't being worn or carried.</p>\n<p>When a creature enters the fire or starts its turn there, it creature must make a DC 14 Dexterity saving throw. The creature takes [[/r 2d8]] fire damage on a failed save, or half as much damage on a successful one. </p>"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -1532,6 +1528,10 @@
                                 "fire"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -1573,14 +1573,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "eGyCEhTe7gy1E4yr": {
+                "zE7qPJo2WHEGU03r": {
                     "type": "Save",
-                    "_id": "eGyCEhTe7gy1E4yr",
+                    "_id": "zE7qPJo2WHEGU03r",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "15",
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1588,19 +1585,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": "15",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, each creature within 15 feet of it must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d6]] ion damage on a failed save, or half as much as on a successful one. Any electronics within the blast radius that aren't being worn or carried are disabled until rebooted.</p>"
+                    },
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -1612,6 +1608,10 @@
                                 "ion"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     }
                 }
             }
@@ -1653,14 +1653,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "1AoBJFI7UWc3ImYb": {
+                "wrcFY7wDsJ312ix1": {
                     "type": "Save",
-                    "_id": "1AoBJFI7UWc3ImYb",
+                    "_id": "wrcFY7wDsJ312ix1",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "15",
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -1668,19 +1665,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "range": "15",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, each creature within 15 feet of it must make a DC 14 Wisdom saving throw. A creature takes [[/r 2d6]] psychic damage on a failed save, or half as much as on a successful one. </p>\n<p>Additionally, on a failed save, a creature becomes frightened of you for 1 minute. At the start of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -1692,6 +1688,10 @@
                                 "psychic"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -1733,14 +1733,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "DQ6oRFpGFv74eOMV": {
+                "1U65EsE7bCGr1xPF": {
                     "type": "Save",
-                    "_id": "DQ6oRFpGFv74eOMV",
+                    "_id": "1U65EsE7bCGr1xPF",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "15",
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1748,19 +1745,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": "15",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, each creature within 15 feet of it must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d10]] energy damage on a failed save, or half as much as on a successful one.</p>"
+                    },
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -1772,6 +1768,10 @@
                                 "energy"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     }
                 }
             }
@@ -1813,14 +1813,11 @@
                 "custom": "WH"
             },
             "activities": {
-                "tdioJ9E5db31EbD3": {
+                "1e7ybaLmxPwL52eI": {
                     "type": "Save",
-                    "_id": "tdioJ9E5db31EbD3",
+                    "_id": "1e7ybaLmxPwL52eI",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "15",
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -1828,25 +1825,28 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "range": "15",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, each creature within 15 feet of it must make a DC 14 Constitution saving throw. On a failed save, a creature is stunned until the end of their next turn.</p>\n<p>Additionally, on a failed save, a creature is unconscious for 1 minute, until it takes damage, or until someone uses an action to shake or slap the creature awake. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": []
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     }
                 }
             }
@@ -1888,14 +1888,11 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1nxfGkffLeRryXu2": {
+                "1SLdHE5oHnGGyWsd": {
                     "type": "Save",
-                    "_id": "1nxfGkffLeRryXu2",
+                    "_id": "1SLdHE5oHnGGyWsd",
                     "img": null,
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "30",
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1903,19 +1900,18 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": "30",
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
                     "description": {
                         "value": "<p>Thermal detonators are unique in that can only be turned off by whoever turned them on. They can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 20 feet must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d6]] fire and [[/r 2d10]] kinetic damage on a failed save, or half as much as on a successful one. Additionally, on a failed save, the creature is knocked prone. </p>"
+                    },
+                    "target": {
+                        "value": 20,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "damage": {
                         "critical": {
@@ -1931,6 +1927,10 @@
                                 "kinetic"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     }
                 }
             }
@@ -1972,14 +1972,10 @@
                 "custom": "EC"
             },
             "activities": {
-                "18T2q1pw8RezLAu8": {
+                "xOOe1xbZ1UtvL2Bh": {
                     "type": "Save",
-                    "_id": "18T2q1pw8RezLAu8",
+                    "_id": "xOOe1xbZ1UtvL2Bh",
                     "img": null,
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1987,9 +1983,8 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
+                    "description": {
+                        "value": "<p>A device used to blow holes in larger constructs and structures, a breaching charge creates a devastating explosion focused in a specific direction. Installing a breaching charge takes 1 minute. The charge can be set with a 6-second timer, or detonated remotely using a remote detonator.</p>\n<p>When detonated, the breaching charge explodes in a 15-foot cone. Each creature within the cone must make a DC 14 Dexterity saving throw, taking [[/r 20d4]] kinetic damage on a failed save or half as much on a successful one. If affixed to a creature, that creature has disadvantage on the saving throw. Objects, structures, and other surfaces have disadvantage on the saving throw. If affixed to the object, structure, or surface, it instead automatically fails this saving throw.</p>"
                     },
                     "target": {
                         "value": 15,
@@ -1997,8 +1992,9 @@
                         "units": "ft",
                         "type": "cone"
                     },
-                    "description": {
-                        "value": "<p>A device used to blow holes in larger constructs and structures, a breaching charge creates a devastating explosion focused in a specific direction. Installing a breaching charge takes 1 minute. The charge can be set with a 6-second timer, or detonated remotely using a remote detonator.</p>\n<p>When detonated, the breaching charge explodes in a 15-foot cone. Each creature within the cone must make a DC 14 Dexterity saving throw, taking [[/r 20d4]] kinetic damage on a failed save or half as much on a successful one. If affixed to a creature, that creature has disadvantage on the saving throw. Objects, structures, and other surfaces have disadvantage on the saving throw. If affixed to the object, structure, or surface, it instead automatically fails this saving throw.</p>"
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -2010,6 +2006,10 @@
                                 "kinetic"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     }
                 }
             }
@@ -2051,14 +2051,10 @@
                 "custom": "EC"
             },
             "activities": {
-                "sAg872kvjpiVSg7j": {
+                "3i1kqjHtjLY1BMjj": {
                     "type": "Save",
-                    "_id": "sAg872kvjpiVSg7j",
+                    "_id": "3i1kqjHtjLY1BMjj",
                     "img": null,
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -2066,9 +2062,8 @@
                             "formula": 14
                         }
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
+                    "description": {
+                        "value": "<p>A device used to blow holes in larger constructs and structures, a breaching charge creates a devastating explosion focused in a specific direction. Installing a breaching charge takes 1 minute. The charge can be set with a 6-second timer, or detonated remotely using a remote detonator.</p>\n<p>When detonated, the breaching charge explodes in a 15-foot cone. Each creature within the cone must make a DC 14 Dexterity saving throw, taking [[/r 20d4]] energy damage on a failed save or half as much on a successful one. If affixed to a creature, that creature has disadvantage on the saving throw. Objects, structures, and other surfaces have disadvantage on the saving throw. If affixed to the object, structure, or surface, it instead automatically fails this saving throw.</p>"
                     },
                     "target": {
                         "value": 15,
@@ -2076,8 +2071,9 @@
                         "units": "ft",
                         "type": "cone"
                     },
-                    "description": {
-                        "value": "<p>A device used to blow holes in larger constructs and structures, a breaching charge creates a devastating explosion focused in a specific direction. Installing a breaching charge takes 1 minute. The charge can be set with a 6-second timer, or detonated remotely using a remote detonator.</p>\n<p>When detonated, the breaching charge explodes in a 15-foot cone. Each creature within the cone must make a DC 14 Dexterity saving throw, taking [[/r 20d4]] energy damage on a failed save or half as much on a successful one. If affixed to a creature, that creature has disadvantage on the saving throw. Objects, structures, and other surfaces have disadvantage on the saving throw. If affixed to the object, structure, or surface, it instead automatically fails this saving throw.</p>"
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -2089,6 +2085,10 @@
                                 "energy"
                             ]
                         ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     }
                 }
             }

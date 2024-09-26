@@ -251,9 +251,9 @@ class Feature(BaseFeature):
 				feature["uid"] = entity.uid
 
 	def getSourceType(self):
-		if self.raw_source in ('Archetype', 'ArchetypeInvocation'): return 'archetype'
-		elif self.raw_source in ('Class', 'ClassInvocation'): return 'class'
-		elif self.raw_source in ('Species',): return 'species'
+		if self.raw_source in ('Archetype', 'ArchetypeInvocation'): return 'Archetype'
+		elif self.raw_source in ('Class', 'ClassInvocation'): return 'Class'
+		elif self.raw_source in ('Species',): return 'Species'
 
 	def getSourceItem(self, importer):
 		if importer and (item := importer.get(self.getSourceType(), data={ "name": self.raw_sourceName })):

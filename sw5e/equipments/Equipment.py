@@ -86,7 +86,7 @@ class Equipment(
 
 		if importer:
 			def getContent(prop_name):
-				prop = importer.get('armorProperty', data={'name': prop_name})
+				prop = importer.get('ArmorProperty', data={'name': prop_name})
 				if prop: return prop.getContent(val=properties[prop_name])
 				else: return properties[prop_name].capitalize()
 			text = '\n'.join([getContent(prop) for prop in properties])

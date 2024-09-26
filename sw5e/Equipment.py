@@ -10,6 +10,18 @@ class Equipment(
 	sw5e.templates.PhysicalItem,
 	sw5e.templates.EquippableItem,
 ):
+	_equipment_types_registry = {}
+
+	def __init_subclass__(cls, **kwargs):
+		super().__init_subclass__(**kwargs)
+		cls._equipment_types_registry[cls.__name__.lower()] = cls
+
+	def __new__(cls, raw_item, importer=None, importer_version=None):
+		equipment_type = cls.getEquipmentType(raw_item)
+
+		subclass = cls._equipment_types_registry[equipment_type.lower()]
+		return object.__new__(subclass)
+
 	def getAttrs(self):
 		return super().getAttrs() + [
 			"name",
@@ -130,9 +142,7 @@ class Equipment(
 		return self.raw_equipmentCategory
 
 	@classmethod
-	def getClass(cls, raw_item):
-		from sw5e.equipments import Backpack, Consumable, Equipment, Loot, Tool, Weapon
-
+	def getEquipmentType(cls, raw_item):
 		name = raw_item["name"].lower()
 		mapping = utils.config.equipment_mappings
 		equipment_mapping = None
@@ -145,8 +155,6 @@ class Equipment(
 			print(f'Unexpected item type, {raw_item=}')
 			raise ValueError(cls, raw_item["name"], raw_item["equipmentCategory"], raw_item)
 		for cur in equipment_mapping:
-			# print(f'		{cur=}');
-			# print(f'		{raw_item=}');
 			pattern = cur.get("pattern", "")
 			if re.search(pattern, name):
 				equipment_type = cur["type"]
@@ -155,8 +163,7 @@ class Equipment(
 			print(f'Unexpected item type, {raw_item=}')
 			raise ValueError(cls, raw_item["name"], raw_item["equipmentCategory"], raw_item, equipment_mapping)
 
-		klass = getattr(getattr(sw5e.equipments, equipment_type.capitalize()), equipment_type.capitalize())
-		return klass
+		return equipment_type
 
 	############################
 	#    Template Functions    #

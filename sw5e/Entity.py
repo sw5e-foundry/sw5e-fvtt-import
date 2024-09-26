@@ -2,9 +2,21 @@ import re, json
 import utils.text, utils.object, sw5e.Activity
 
 class Entity:
-	def __init__(self, raw_entity, uid, importer, importer_version=None):
-		self.uid = uid
-		self.importer_version = importer_version if importer_version else importer.version
+	_entity_types_registry = {}
+
+	def __init_subclass__(cls, **kwargs):
+		super().__init_subclass__(**kwargs)
+		cls._entity_types_registry[cls.__name__.lower()] = cls
+
+	def __new__(cls, raw_entity, importer=None, importer_version=None):
+		entity_type = raw_entity["entity_type"].lower()
+		subclass = cls._entity_types_registry[entity_type]
+		if cls == subclass: return super().__new__(subclass)
+		else: return subclass.__new__(subclass, raw_entity, importer=importer, importer_version=importer_version)
+
+	def __init__(self, raw_entity, importer=None, importer_version=None):
+		self.uid = self.getUID(raw_entity)
+		self.importer_version = importer_version or importer.version
 
 		self.effects = []
 		self.broken_links = []
@@ -73,10 +85,6 @@ class Entity:
 
 	def isValid(self):
 		return True
-
-	@classmethod
-	def getClass(cls, raw_entity):
-		return cls
 
 	@classmethod
 	def getUID(cls, raw_entity, entity_type=None):

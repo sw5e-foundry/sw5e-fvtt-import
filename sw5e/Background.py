@@ -82,7 +82,7 @@ class Background(sw5e.Entity.Item):
 
 	def processFeatOptions(self, importer):
 		for feat in self.featOptions:
-			if entity := importer.get('feat', uid=feat["uid"]):
+			if entity := importer.get('Feat', uid=feat["uid"]):
 				feat["foundry_id"] = entity.foundry_id
 			else:
 				print(f'		Unable to find {feat=}')

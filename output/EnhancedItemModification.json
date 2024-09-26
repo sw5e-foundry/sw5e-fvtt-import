@@ -24968,6 +24968,12 @@
                 "type": "bonus",
                 "cost": 1
             },
+            "target": {
+                "value": 5,
+                "width": null,
+                "units": "ft",
+                "type": "radius"
+            },
             "range": {
                 "value": "5",
                 "long": null,
@@ -32213,7 +32219,7 @@
                 "max": "@attributes.prof",
                 "per": "lr"
             },
-            "actionType": "rpak",
+            "actionType": "rsak",
             "-=baseItem": null,
             "-=weaponType": null,
             "-=consumableType": null,

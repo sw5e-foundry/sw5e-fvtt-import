@@ -9,7 +9,7 @@ class ItemDescription(sw5e.Entity.Entity):
 	def process(self, importer):
 		self.description = self.getDescription(importer)
 
-	def getDescription(self):
+	def getDescription(self, importer):
 		raise NotImplementedError()
 
 	def getIdentifier(self):

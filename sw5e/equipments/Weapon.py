@@ -65,9 +65,10 @@ class Weapon(
 		damage_type = self.raw_damageType.lower() if self.raw_damageType != 'Unknown' else ''
 		if damage_type == 'sonic': damage_type = 'thunder'
 		versatile = utils.text.getProperty('Versatile', self.raw_propertiesMap) or ''
+
 		return {
-			"parts": [[ die, damage_type ]],
-			"versatile": f'{versatile} +  @mod' if versatile else ''
+			"base": { "parts": [[ die, damage_type ]] },
+			"versatile": { "parts": [[ f'{versatile} +  @mod' if versatile else '', damage_type ]] },
 		}
 
 	def getWeaponClass(self):
@@ -167,8 +168,7 @@ class Weapon(
 		data = super().getData(importer)[0]
 
 		utils.object.setProperty(data, 'system.weaponClass', self.weapon_class, force=True)
-		utils.object.setProperty(data, 'system.damage.base', self.damage, force=True)
-		utils.object.setProperty(data, 'system.damage.versatile', self.damage, force=True)
+		utils.object.setProperty(data, 'system.damage', self.damage, force=True)
 
 		utils.object.setProperty(data, 'flags.sw5e.reload.types', self.ammo_types, force=True)
 
@@ -210,7 +210,9 @@ class Weapon(
 			if rapid:
 				rapid_data = copy.deepcopy(attackActivity.raw_data)
 				rapid_data["name"] = f'Rapid Attack'
-				rapid_data["damage"]["parts"][0][0] = re.sub(r'^(\d+)d', lambda m: f'{int(m[1])*2}d', rapid_data["damage"]["parts"][0][0])
+				for dmg in rapid_data["damage"].values():
+					if dmg and "parts" in dmg and dmg["parts"][0][0]:
+						dmg["parts"][0][0] = re.sub(r'^(\d+)d', lambda m: f'{int(m[1])*2}d', dmg["parts"][0][0])
 				rapid_data["save"] = {
 					"ability": 'dex',
 					"dc": None,
@@ -232,7 +234,7 @@ class Weapon(
 
 		if importer:
 			def getContent(prop_name):
-				prop = importer.get('weaponProperty', data={'name': prop_name})
+				prop = importer.get('WeaponProperty', data={'name': prop_name})
 				if prop: return prop.getContent(val=properties[prop_name])
 				else: return properties[prop_name].capitalize()
 			text = '\n'.join([getContent(prop) for prop in properties])

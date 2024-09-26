@@ -42,10 +42,7 @@
                 "double"
             ],
             "weaponClass": "",
-            "damage": {
-                "base": {},
-                "versatile": {}
-            }
+            "damage": {}
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Exotic%20Lightweapons/Saberstaff.webp",
@@ -107,17 +104,15 @@
                             "1d6 + @mod",
                             "fire"
                         ]
-                    ],
-                    "versatile": "2d4 +  @mod"
+                    ]
                 },
                 "versatile": {
                     "parts": [
                         [
-                            "1d6 + @mod",
+                            "2d4 +  @mod",
                             "fire"
                         ]
-                    ],
-                    "versatile": "2d4 +  @mod"
+                    ]
                 }
             }
         },
