@@ -1,7 +1,15 @@
 import sw5e.Entity, sw5e.Equipment, utils.text, utils.config, utils.object
 import re, json, copy
 
-class EnhancedItem(sw5e.Entity.Item):
+class EnhancedItem(
+	sw5e.Entity.Item,
+	sw5e.templates.Activities,
+	sw5e.templates.ItemDescription,
+	sw5e.templates.ItemType,
+	sw5e.templates.Identifiable,
+	sw5e.templates.PhysicalItem,
+	sw5e.templates.EquippableItem,
+):
 	def getAttrs(self):
 		return super().getAttrs() + [
 			"name",
@@ -37,9 +45,21 @@ class EnhancedItem(sw5e.Entity.Item):
 				break
 
 		self.is_modification = self.raw_type.endswith('Modification') or self.raw_type in ('CyberneticAugmentation', 'DroidCustomization')
-		self.rarity = self.getRarity()
 		self.modification_item_type = self.getModificationItemType()
 		self.modifiable_item = self.getModifiableItem() or False
+
+	def getModificationItemType(self):
+		if self.raw_subtype in ('armor', 'clothing', 'focusgenerator', 'wristpad'): return 'equipment'
+		elif self.raw_subtype in ('blaster', 'vibroweapon', 'lightweapon'): return 'weapon'
+
+	def getModifiableItem(self):
+		if self.is_modification: return
+		if self.raw_name.find("Chassis") != -1:
+			return {
+				'chassis': 'chassis',
+				'augmentSlots': utils.config.chassis_slots.get(self.getRarity(), 4) - 4
+			}
+
 
 
 	def process(self, importer):
@@ -47,11 +67,10 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		self.base_name = self.getBaseName()
 		self.base_item = self.getBaseItem(importer)
-		self.category, self.subcategory = self.getEquipmentCategory()
 
 		self.duration_value, self.duration_unit = self.getDuration()
 		self.target_value, self.target_unit, self.target_type = self.getTarget()
-		self.range_value, self.range_unit = self.getRange()
+		self.range_short, self.range_long, self.range_unit = self.getRange()
 		self.uses, self.recharge = self.getUses()
 		self.attack_bonus, self.damage_bonus, text = self.getAttackBonus()
 		self.action_type, self.damage, self.formula, self.save, self.save_dc, _ = self.getAction(text)
@@ -59,22 +78,45 @@ class EnhancedItem(sw5e.Entity.Item):
 		self.properties = self.getProperties()
 
 	def getActivation(self):
-		return utils.text.getActivation(self.raw_text, self.uses, self.recharge)
+		default = self.base_item.activation if self.base_item else None
+		return utils.text.getActivation(self.raw_text, self.uses, self.recharge, default=default)
 
 	def getDuration(self):
-		return utils.text.getDuration(self.raw_text, self.raw_name)
+		default=(self.base_item.duration_unit, self.base_item.duration_value) if self.base_item else (None, 'inst')
+		return utils.text.getDuration(self.raw_text, self.raw_name, default=default)
 
 	def getTarget(self):
-		return utils.text.getTarget(self.raw_text, self.raw_name)
+		default=(self.base_item.target_value, self.base_item.target_unit, self.base_item.target_type) if self.base_item else (None, '', '')
+		return utils.text.getTarget(self.raw_text, self.raw_name, default=default)
 
 	def getRange(self):
-		return utils.text.getRange(self.raw_text, self.raw_name)
+		default=(self.base_item.range_short, self.base_item.range_unit) if self.base_item else (None, '')
+		short, unit = utils.text.getRange(self.raw_text, self.raw_name, default=default)
+		return short, self.base_item.range_long if self.base_item else None, unit
 
 	def getUses(self):
-		return utils.text.getUses(self.raw_text, self.raw_name)
+		default=(self.base_item.uses, self.base_item.recharge) if self.base_item else (None, None)
+		return utils.text.getUses(self.raw_text, self.raw_name, default=default)
 
 	def getAction(self, text):
-		return utils.text.getAction(text, self.raw_name)
+		default=(
+			self.base_item.action_type,
+			self.base_item.damage,
+			self.base_item.formula,
+			self.base_item.save,
+			self.base_item.save_dc,
+			{}
+		) if self.base_item else (
+			'',
+			{ "base": { "parts": [] }, "versatile": { "parts": [] } },
+			'',
+			'',
+			None,
+			{ "mode": 'none'}
+		)
+		action_type, damage, other_formula, save, save_dc, scaling = utils.text.getAction(text, self.raw_name, default=default)
+		return action_type, damage, other_formula, save, save_dc, scaling
+
 
 	def getAttackBonus(self):
 		text = self.raw_text.lower()
@@ -88,22 +130,7 @@ class EnhancedItem(sw5e.Entity.Item):
 			return tuple(match["bonus"] if match["up"] == opt else "-"+match["penalty"] for opt in ('attack', 'damage')) + (replaceText(text, match),)
 		return 0, 0, text
 
-	def getRarity(self):
-		return utils.config.rarities[self.raw_rarityText.lower()]
-
-	def getModificationItemType(self):
-		if self.raw_subtype in ('armor', 'clothing', 'focusgenerator', 'wristpad'): return 'equipment'
-		elif self.raw_subtype in ('blaster', 'vibroweapon', 'lightweapon'): return 'weapon'
-
-	def getModifiableItem(self):
-		if self.is_modification: return
-		if self.raw_name.find("Chassis") != -1:
-			return {
-				'chassis': 'chassis',
-				'augmentSlots': utils.config.chassis_slots.get(self.rarity, 4) - 4
-			}
-
-	def getProperties(self):
+	def getPropertiesList(self):
 		target_type = self.modification_item_type or (self.base_item and self.base_item.getType())
 
 		if target_type == 'equipment':
@@ -114,7 +141,13 @@ class EnhancedItem(sw5e.Entity.Item):
 		else:
 			return {}
 
-		return utils.text.getProperties(self.raw_text, properties_list, needs_end=True)
+	def getProperties(self):
+		properties_list = self.getPropertiesList()
+
+		properties = utils.text.getProperties(self.raw_text, properties_list, needs_end=True) if properties_list else {}
+
+		if self.base_item and self.base_item.p_properties: return { **self.base_item.p_properties, **properties }
+		return properties
 
 	def getBaseName(self):
 		# Remove any modifiers to it's name
@@ -164,7 +197,7 @@ class EnhancedItem(sw5e.Entity.Item):
 
 	def getEquipmentCategory(self):
 		if self.base_item:
-			return self.base_item.category, self.base_item.subcategory
+			return self.base_item.getCategory(), self.base_item.getSubcategory()
 
 		if self.raw_type == 'AdventuringGear':
 			if self.raw_subtype in ('body', 'feet', 'hands', 'head', 'shoulders', 'waist', 'wrists', 'forearms', 'forearm', 'legs'):
@@ -225,35 +258,6 @@ class EnhancedItem(sw5e.Entity.Item):
 
 		return None, None
 
-	def getDescription(self, base_text = None):
-		text = self.raw_text
-
-		header = ''
-		if self.raw_requiresAttunement:
-			if text.startswith('_**Requires attunement'):
-				match = re.search('\n', text)
-				header, text = text[:match.end()], text[match.end():]
-			else:
-				header += f'_**Requires attunement**_\r\n'
-
-		if self.raw_prerequisite:
-			header += f'_Prerequisite: {self.raw_prerequisite}_\r\n'
-
-		if header: header += '<hr/>\n'
-
-		text = header + text
-
-		text = utils.text.markdownToHtml(text)
-		if base_text:
-			base_text = utils.text.markdownToHtml(f'### {self.base_item.name}') + '\n' + base_text
-			text = text + '\n<p>&nbsp;</p>\n' + base_text
-		header = re.sub(r'([a-z])([A-Z])', r'\1 \2', self.raw_type)
-		header = f'##### {header}'
-		if self.raw_subtype:
-			header += f' ({self.raw_subtype.title()})'
-		text = f'{utils.text.markdownToHtml(header)}\n {text}'
-		return text
-
 	def getImg(self, importer=None):
 		name = self.base_name
 
@@ -309,200 +313,25 @@ class EnhancedItem(sw5e.Entity.Item):
 		]
 		return mapping[self.raw_typeEnum] or 'loot'
 
-	def getDataSpecific(self, importer):
-		def choose(base, enhanced, field, default):
-			if enhanced != default: return enhanced
-			if field in base: return base[field]
-			return default
-
-		superdata = super().getData(importer)[0]
-		data = copy.deepcopy(self.base_item.getData(importer))
-
-		for item in data:
-			mode = (re.search(r'\.mode-(.*)', item["flags"]["sw5e-importer"]["uid"]) or [None,None])[1]
-
-			for key in superdata:
-				if key in ("system", "img", "type"): continue
-				item[key] = copy.deepcopy(superdata[key])
-
-			if (img := self.getImg(importer=importer)) != 'icons/svg/item-bag.svg':
-				item["img"] = img
-
-			if mode:
-				item["name"] += f' ({mode.title()})'
-				item["flags"]["sw5e-importer"]["uid"] += f'.mode-{mode}'
-
-			item["system"]["description"] = {
-				"value": self.getDescription(base_text = utils.object.getProperty(item, 'system.description.value'))
-			}
-			item["system"]["source"] = { "custom": self.raw_contentSource }
-			item["system"]["attunement"] = 'required' if self.raw_requiresAttunement else ''
-			item["system"]["rarity"] = self.rarity
-
-			utils.object.setPropertyWeak(item, 'system.activation', {})
-			activation = choose(item["system"]["activation"], self.activation, "type", None)
-			item["system"]["activation"] = {
-				"type": activation,
-				"cost": 1 if activation != 'none' else None
-			}
-			if self.duration_value or (self.duration_unit != 'inst'):
-				utils.object.setPropertyWeak(item, 'system.duration', {})
-				item["system"]["duration"] = {
-					"value": choose(item["system"]["duration"], self.duration_value, "value", None),
-					"units": choose(item["system"]["duration"], self.duration_unit, "units", 'inst'),
-				}
-			if self.target_value or self.target_unit or self.target_type:
-				utils.object.setPropertyWeak(item, 'system.target', {})
-				item["system"]["target"] = {
-					"value": choose(item["system"]["target"], self.target_value, "value", None),
-					"width": None,
-					"units": choose(item["system"]["target"], self.target_unit, "units", ''),
-					"type": choose(item["system"]["target"], self.target_type, "type", ''),
-				}
-			if self.range_value or self.range_unit:
-				utils.object.setPropertyWeak(item, 'system.range', {})
-				item["system"]["range"] = {
-					"value": choose(item["system"]["range"], self.range_value, "value", None),
-					"long": choose(item["system"]["range"], None, "long", None),
-					"units": choose(item["system"]["range"], self.range_unit, "units", ''),
-				}
-
-			if self.uses or self.recharge:
-				utils.object.setPropertyWeak(item, 'system.uses.per', None)
-				if item["system"]["uses"]["per"] == None:
-					item["system"]["uses"] = {
-						"value": None,
-						"max": self.uses,
-						"per": self.recharge
-					}
-
-			if self.properties:
-				utils.object.setPropertyWeak(item, 'flags.sw5e.properties', {})
-				properties = {**item["flags"]["sw5e"]["properties"], **{key: value for key,value in self.properties.items() if value}}
-				item["flags"]["sw5e"]["properties"] = properties
-				item["system"]["properties"] = list(properties.keys())
-
-			if self.action_type:
-				item["system"]["actionType"] = choose(item["system"], self.action_type, "actionType", 'other')
-
-			if self.attack_bonus:
-				utils.object.setPropertyWeak(item, 'system.attack.bonus', '')
-				if item["system"]["attack"]["bonus"]: item["system"]["attack"]["bonus"] += f' + {self.attack_bonus}'
-				else: item["system"]["attack"]["bonus"] = self.attack_bonus
-
-			if self.damage and (base := self.damage["parts"]):
-				base_parts = utils.object.setPropertyWeak(item, 'system.damage.base.parts', [])
-				base_parts.append(base)
-			if self.damage and (vers := self.damage["versatile"]):
-				vers_parts = utils.object.setPropertyWeak(item, 'system.damage.versatile.parts', [])
-				vers_parts.append([vers, ''])
-
-			if self.damage_bonus:
-				base = utils.object.setPropertyWeak(item, f'system.damage.base.parts', [])
-				if len(base) == 0: base.append([f'{self.damage_bonus}', ''])
-				else: base[0][0] = f'{base[0][0]} + {self.damage_bonus}'
-
-				vers = utils.object.setPropertyWeak(item, f'system.damage.versatile.parts', [])
-				if len(vers) == 0: pass
-				else: vers[0][0] = f'{vers[0][0]} + {self.damage_bonus}'
-
-			if self.formula:
-				item["system"]["formula"] = choose(item["system"], self.formula, 'formula', '')
-
-			if self.save or self.save_dc:
-				utils.object.setPropertyWeak(item, 'system.save', {})
-				item["system"]["save"] = {
-					"ability": choose(item["system"]["save"], self.save, 'ability', ''),
-					"dc": choose(item["system"]["save"], self.save_dc, 'dc', None),
-					"scaling": choose(item["system"]["save"], 'flat' if self.save_dc else 'none', 'scaling', 'none')
-				}
-
-			item = self.applyDataAutoTarget(item, burst_or_rapid=mode in ('burst', 'rapid'))
-			item = self.applyDataSubtype(item)
-
-			#	item["system"]["recharge"] = ''
-
-		return data
-
 	def getData(self, importer):
-		if self.base_item: return self.getDataSpecific(importer)
-
 		data = super().getData(importer)[0]
 
-		data["system"]["description"] = { "value": self.getDescription() }
-		data["system"]["source"] = { "custom": self.raw_contentSource }
-		data["system"]["attunement"] = 'required' if self.raw_requiresAttunement else ''
-		data["system"]["rarity"] = self.rarity
-
-		if self.activation: data["system"]["activation"] = {
-			"type": self.activation,
-			"cost": 1 if self.activation != 'none' else None
-		}
-		if self.duration_value or (self.duration_unit != 'inst'): data["system"]["duration"] = {
-			"value": self.duration_value,
-			"units": self.duration_unit
-		}
-		if self.target_value or self.target_unit or self.target_type: data["system"]["target"] = {
-			"value": self.target_value,
-			"width": None,
-			"units": self.target_unit,
-			"type": self.target_type
-		}
-		if self.range_value or self.range_unit: data["system"]["range"] = {
-			"value": self.range_value,
-			"long": None,
-			"units": self.range_unit
-		}
-		if self.uses or self.recharge: data["system"]["uses"] = {
-			"value": None,
-			"max": self.uses,
-			"per": self.recharge
-		}
-		# data["system"]["consume"] = {}
-		# data["system"]["ability"] = ''
-
-		if self.action_type: data["system"]["actionType"] = self.action_type
-		if self.attack_bonus: data["system"]["attack"] = { "bonus": self.attack_bonus }
-		# data["system"]["chatFlavor"] = ''
-		# data["system"]["critical"] = {
-		# 	"threshold": None,
-		# 	"damage": ""
-		# }
-		if self.damage["parts"] or self.damage["versatile"]:
-			data["system"]["damage"] = {
-				"parts": self.damage["parts"],
-				"versatile": self.damage["versatile"]
-			}
-			if self.damage_bonus:
-				if len(data["system"]["damage"]["parts"]): data["system"]["damage"]["parts"][0][0] += f' + {self.damage_bonus}'
-				else: data["system"]["damage"]["parts"].append([f'{self.damage_bonus}', ''])
-				if data["system"]["damage"]["versatile"]: data["system"]["damage"]["versatile"] += f' + {self.damage_bonus}'
-		if self.formula: data["system"]["formula"] = self.formula
-		if self.save: data["system"]["save"] = {
-			"ability": self.save,
-			"dc": self.save_dc,
-			"scaling": 'flat' if self.save_dc else 'none'
-		}
+		# templates.Activities
+		# templates.ItemDescription
+		# templates.Identifiable
+		# templates.ItemType
+		# templates.PhysicalItem
+		# templates.EquippableItem
+		## templates.Mountable -- NotImplemented
 
 		if self.modifiable_item: data["system"]["modify"] = self.modifiable_item
 
-		if self.category != False:
-			data["system"]["type"] = {
-				"value": self.category,
-				"subtype": self.subcategory,
-				"baseItem": self.base_item.base_item if self.base_item else None
-		}
-		data["system"]["-=baseItem"] = None
-		data["system"]["-=weaponType"] = None
-		data["system"]["-=consumableType"] = None
-		data["system"]["-=ammoType"] = None
-		data["system"]["-=toolType"] = None
-		if "armor" in data["system"]: data["system"]["armor"]["-=type"] = None
+		if self.properties:
+			properties = { key: value for key, value in self.properties.items() if value }
+			utils.object.setProperty(data, 'flags.sw5e.properties', properties, force=True)
+			utils.object.setProperty(data, 'system.properties', list(properties.keys()), force=True)
 
-		self.applyDataAutoTarget(data)
 		self.applyDataSubtype(data)
-
-		#	data["system"]["recharge"] = ''
 
 		return [data]
 
@@ -513,28 +342,49 @@ class EnhancedItem(sw5e.Entity.Item):
 				prof = int(smr[1])
 
 				if burst_or_rapid:
-					data["system"]["save"] = {
-						"dc": 8 + mod + prof + self.attack_bonus,
-						"scaling": 'flat'
-					}
+					data["save"]["dc"]["calculation"] = ''
+					data["save"]["dc"]["formula"] = 8 + mod + prof + self.attack_bonus
+					data["save"]["ability"] = 'dex'
 				else:
-					data["system"]["attack"] = {
-						"bonus": f'{mod} + {prof}',
-						"flat": True
-					}
+					data["attack"]["bonus"] = f'{mod} + {prof}'
+					data["attack"]["flat"]: True
 
-				data["system"]["damage"]["parts"][0][0] = f'{self.base_item.raw_damageNumberOfDice}d{self.base_item.raw_damageDieType} + {mod}'
+				data["damage"]["base"]["parts"][0][0] = f'{self.base_item.raw_damageNumberOfDice}d{self.base_item.raw_damageDieType} + {mod}'
 
 		return data
 
 	def applyDataSubtype(self, data):
 		if self.base_item:
-			return data
+			item_type = self.base_item.getType()
+			if item_type == 'container':
+				# TODO: Read capacity from the item's description
+				# utils.object.setProperty(data, 'system.capacity.type', 'weight')
+				# utils.object.setProperty(data, 'system.capacity.value', 0)
+				pass
+			elif item_type == 'consumable':
+				# TODO: Read these from description
+				# utils.object.setProperty(data, 'system.damage.base', 1)
+				# utils.object.setProperty(data, 'system.damage.replace', False)
+				# utils.object.setProperty(data, 'system.magicalBonus', 0)
+				# utils.object.setProperty(data, 'system.uses.autoDestroy', True)
+				pass
+			elif item_type == 'equipment':
+				utils.object.setProperty(data, 'system.armor', self.base_item.armor)
+				utils.object.setProperty(data, 'system.strength', self.base_item.raw_strengthRequirement)
+			elif item_type == 'loot':
+				pass
+			elif item_type == 'tool':
+				pass
+			elif item_type == 'weapon':
+				utils.object.setProperty(data, 'system.weaponClass', self.base_item.weapon_class, force=True)
+				utils.object.setProperty(data, 'system.damage', self.base_item.damage, force=True)
+				utils.object.setProperty(data, 'flags.sw5e.reload.types', self.base_item.ammo_types, force=True)
+
+
+		if self.base_item:
+			pass
 		elif self.raw_type == 'AdventuringGear':
-			data["system"]["armor"] = {
-				"value": None,
-				"dex": None,
-			}
+			pass
 		elif self.raw_type == 'Armor':
 			if self.raw_subtypeType in ('AnyHeavy', 'Any'):
 				data["system"]["armor"] = {
@@ -560,16 +410,13 @@ class EnhancedItem(sw5e.Entity.Item):
 		elif self.raw_type == 'DroidCustomization':
 			data["system"]["modificationType"] = 'droidcustomization'
 		elif self.raw_type == 'Shield':
-			data["system"]["armor"] = {
-				"value": 2,
-				"dex": None,
-			}
+			utils.object.setPropertyWeak(data, 'system.armor.dex', None)
 			if self.raw_subtypeType == 'Light':
-				data["system"]["armor"]["value"] = 1
+				utils.object.setPropertyWeak(data, 'system.armor.value', 1)
 			elif self.raw_subtypeType in ('Medium', 'Any'):
-				data["system"]["armor"]["value"] = 2
+				utils.object.setPropertyWeak(data, 'system.armor.value', 2)
 			elif self.raw_subtypeType == 'Heavy':
-				data["system"]["armor"]["value"] = 3
+				utils.object.setPropertyWeak(data, 'system.armor.value', 3)
 			else:
 				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
 		elif self.raw_type == 'Weapon':
@@ -614,8 +461,6 @@ class EnhancedItem(sw5e.Entity.Item):
 		elif self.is_modification:
 			data["system"]["modificationItemType"] = self.modification_item_type
 
-			data["system"]["-=modificationSlot"] = None
-
 			# data["system"]["properties"]["indeterminate"] = { key: False for key in self.properties.keys() }
 		else:
 			raise ValueError(self.raw_name, self.raw_type)
@@ -624,3 +469,126 @@ class EnhancedItem(sw5e.Entity.Item):
 
 	def getFile(self, importer):
 		return f'Enhanced{self.raw_type}'
+
+
+	# templates.Activities
+	def getActivitiesData(self):
+		return {}
+	def processActivitiesData(self, importer):
+		data = {
+			"action_type": self.action_type,
+			# "name": "",
+			"activation": {
+				"type": self.activation,
+				"cost": 1 if self.activation else None
+			},
+			# "consumption": {},
+			"description": { "value": self.description },
+			"duration": {
+				"value": self.duration_value,
+				"units": self.duration_unit
+			},
+			# "effects": {},
+			"range": self.range_short,
+			"target": {
+				"value": self.target_value,
+				"width": None,
+				"units": self.target_unit,
+				"type": self.target_type
+			},
+			# "uses": {},
+
+			"attack": {
+				"ability": "",
+				"bonus": "",
+				"classification": "spell",
+				"flat": False,
+				"type": "melee",
+			},
+			"check": {
+				"ability": "",
+				"associated": [],
+				"dc": {
+					"calculation": "",
+					"formula": "",
+				}
+			},
+			"damage": {
+				"critical": { "allow": True },
+				"parts": [dmg for dmg in self.damage["base"]["parts"] if dmg[1] not in ('healing', 'temphp')] if self.damage else [],
+			},
+			"versatile": self.damage["versatile"] if self.damage else {},
+			"effects": {},
+			"enchant": {},
+			"healing": [heal for heal in self.damage["base"]["parts"] if heal[1] in ('healing', 'temphp')] if self.damage else [],
+			"save": {
+				"ability": self.save,
+				"dc": {
+					"calculation": "" if self.save_dc else "spell",
+					"formula": self.save_dc or ""
+				}
+			},
+			"roll": self.formula,
+			"properties": self.properties,
+		}
+		self.applyDataAutoTarget(data)
+		return data
+
+	# templates.ItemDescription
+	def getDescription(self):
+		text = self.raw_text
+
+		header = ''
+		if self.raw_requiresAttunement:
+			if text.startswith('_**Requires attunement'):
+				match = re.search('\n', text)
+				header, text = text[:match.end()], text[match.end():]
+			else:
+				header += f'_**Requires attunement**_\r\n'
+
+		if self.raw_prerequisite:
+			header += f'_Prerequisite: {self.raw_prerequisite}_\r\n'
+
+		if header: header += '<hr/>\n'
+
+		text = header + text
+
+		text = utils.text.markdownToHtml(text)
+		header = re.sub(r'([a-z])([A-Z])', r'\1 \2', self.raw_type)
+		header = f'##### {header}'
+		if self.raw_subtype:
+			header += f' ({self.raw_subtype.title()})'
+		text = f'{utils.text.markdownToHtml(header)}\n {text}'
+		return text
+	def processDescription(self, importer):
+		if self.base_item and (base_text := self.base_item.description):
+			base_text = utils.text.markdownToHtml(f'### {self.base_item.name}') + '\n' + base_text
+			self.description = self.description + '\n<p>&nbsp;</p>\n' + base_text
+
+	# templates.Identifiable
+
+	# template.ItemType
+	def getCategory(self):
+		return None
+	def getSubcategory(self):
+		return None
+	def getBaseItemName(self):
+		return None
+	def processCategory(self, importer):
+		self.category, self.subcategory = self.getEquipmentCategory()
+	def processBaseItemName(self, importer):
+		self.baseItemName = self.base_item.name if self.base_item else None
+
+	# template.PhysicalItem
+	def getWeight(self):
+		return None
+	def getPrice(self):
+		return None
+	def getRarity(self):
+		return utils.config.rarities[self.raw_rarityText.lower()]
+	def processPrice(self, importer):
+		if self.base_item: self.price = self.base_item.price
+
+	# templates.EquippableItem
+	def getAttunement(self):
+		return 'required' if self.raw_requiresAttunement else ''

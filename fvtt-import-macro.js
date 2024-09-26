@@ -102,7 +102,7 @@ const foundry_data = {};
 const allow_delete = true;
 const allow_update = true;
 const allow_create = true;
-const verbose = false;
+const verbose = true;
 
 for (const type of Object.keys(item_types)) {
 	console.log(`Updating ${type} compendium`);
@@ -161,14 +161,21 @@ for (const type of Object.keys(item_types)) {
 	}
 
 	if (verbose) {
-		console.log(`to_delete: ${to_delete}`);
-		console.log(`to_update: ${to_update}`);
-		console.log(`to_create: ${to_create}`);
+		console.log('to_delete:', to_delete);
+		console.log('to_update:', to_update);
+		console.log('to_create:', to_create);
 	}
 
-	if (allow_delete) await Item.deleteDocuments(to_delete, {pack: `sw5e.${type}`});
-	if (allow_update) await Item.updateDocuments(to_update, {pack: `sw5e.${type}`});
+	if (allow_delete) {
+		if (verbose) console.log('deleting');
+		await Item.deleteDocuments(to_delete, {pack: `sw5e.${type}`});
+	}
+	if (allow_update) {
+		if (verbose) console.log('updating');
+		await Item.updateDocuments(to_update, {pack: `sw5e.${type}`});
+	}
 	if (allow_create) {
+		if (verbose) console.log('creating');
 		const items = await Item.createDocuments(to_create, { pack: `sw5e.${type}` });
 		for (const item of items) {
 			const uid = item.flags["sw5e-importer"]?.uid ?? item.flags.uid;

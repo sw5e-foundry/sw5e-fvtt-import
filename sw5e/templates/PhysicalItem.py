@@ -1,13 +1,16 @@
-import sw5e.Entity, utils.object
+from sw5e.templates import Template
+import utils.object
 
-class PhysicalItem(sw5e.Entity.Entity):
-	def load(self, raw_entity):
-		super().load(raw_entity)
-		self.quantity = self.getQuantity()
-		self.weight = self.getWeight()
-		self.price = self.getPrice()
-		self.price_denomination = self.getPriceDenomination()
-		self.rarity = self.getRarity()
+class PhysicalItem(Template):
+	def dataMap(self):
+		return {
+			**super().dataMap(),
+			'system.quantity': 'quantity',
+			'system.weight': 'weight',
+			'system.price.value': 'price',
+			'system.price.denomination': 'priceDenomination',
+			'system.rarity': 'rarity',
+		}
 
 	def getQuantity(self):
 		return 1
@@ -20,13 +23,13 @@ class PhysicalItem(sw5e.Entity.Entity):
 	def getRarity(self):
 		return ''
 
-	def getData(self, importer):
-		data = super().getData(importer)[0]
-
-		utils.object.setProperty(data, 'system.quantity', self.quantity, force=True)
-		utils.object.setProperty(data, 'system.weight', self.weight, force=True)
-		utils.object.setProperty(data, 'system.price.value', self.price, force=True)
-		utils.object.setProperty(data, 'system.price.denomination', self.price_denomination, force=True)
-		utils.object.setProperty(data, 'system.rarity', self.rarity, force=True)
-
-		return [data]
+	def processQuantity(self, importer):
+		pass
+	def processWeight(self, importer):
+		pass
+	def processPrice(self, importer):
+		pass
+	def processPriceDenomination(self, importer):
+		pass
+	def processRarity(self, importer):
+		pass

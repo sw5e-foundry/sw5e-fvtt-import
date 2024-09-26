@@ -174,10 +174,6 @@ class Species(sw5e.Entity.Item):
 		data["system"]["weightRollMod"] = { "value": self.raw_weightRollMod }
 		data["system"]["homeworld"] = { "value": self.raw_homeworld }
 		data["system"]["slanguage"] = { "value": self.raw_language }
-		data["system"]["-=traits"] = None
-		data["system"]["-=damage"] = None
-		data["system"]["-=armorproperties"] = None
-		data["system"]["-=weaponproperties"] = None
 
 		return [data]
 

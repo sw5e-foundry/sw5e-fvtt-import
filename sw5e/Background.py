@@ -216,19 +216,4 @@ class Background(sw5e.Entity.Item):
 		data["system"]["source"] = { "custom": self.raw_contentSource }
 		data["system"]["advancement"] = [ adv.getData(importer) for adv in self.advancements ]
 
-		data["system"]["-=flavorText"] = None
-		data["system"]["-=flavorName"] = None
-		data["system"]["-=flavorDescription"] = None
-		data["system"]["-=flavorOptions"] = None
-
-		data["system"]["-=suggestedCharacteristics"] = None
-		data["system"]["-=personalityTraitOptions"] = None
-		data["system"]["-=idealOptions"] = None
-		data["system"]["-=flawOptions"] = None
-		data["system"]["-=bondOptions"] = None
-
-		data["system"]["-=damage"] = None
-		data["system"]["-=armorproperties"] = None
-		data["system"]["-=weaponproperties"] = None
-
 		return [data]

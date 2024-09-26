@@ -3,7 +3,7 @@ import re, json
 
 class BaseFeature(
 	sw5e.Entity.Item,
-	sw5e.templates.Activities,
+	# sw5e.templates.Activities,
 ):
 	def getType(self):
 		return 'feat'

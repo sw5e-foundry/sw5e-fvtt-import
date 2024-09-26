@@ -1,25 +1,25 @@
-import sw5e.Entity, utils.object
+from sw5e.templates import Template
+import utils.object
 
-class EquippableItem(sw5e.Entity.Entity):
-	def load(self, raw_entity):
-		super().load(raw_entity)
-
-		self.attunement = self.getAttunement()
-		self.attuned = self.getAttuned()
-		self.equipped = self.getEquipped()
+class EquippableItem(Template):
+	def dataMap(self):
+		return {
+			**super().dataMap(),
+			'system.attunement': 'attunement',
+			'system.attuned': 'attuned',
+			'system.equipped': 'equipped',
+		}
 
 	def getAttunement(self):
-		return ''
+		return None
 	def getAttuned(self):
-		return False
+		return None
 	def getEquipped(self):
-		return False
+		return None
 
-	def getData(self, importer):
-		data = super().getData(importer)[0]
-
-		if self.attunement != None: utils.object.setProperty(data, 'system.attunement', self.attunement, force=True)
-		if self.attuned != None: utils.object.setProperty(data, 'system.attuned', self.attuned, force=True)
-		if self.equipped != None: utils.object.setProperty(data, 'system.equipped', self.equipped, force=True)
-
-		return [data]
+	def processAttunement(self, importer):
+		pass
+	def processAttuned(self, importer):
+		pass
+	def processEquipped(self, importer):
+		pass

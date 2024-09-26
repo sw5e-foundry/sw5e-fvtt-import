@@ -50,7 +50,10 @@ class Weapon(
 
 	def getDamage(self):
 		if (not self.raw_damageNumberOfDice) or (not self.raw_damageDieType):
-			return {}
+			return {
+				"base": { "parts": [] },
+				"versatile": { "parts": [] },
+			}
 
 		die = self.raw_damageNumberOfDice
 		if self.raw_damageDieType == -1:
@@ -182,65 +185,15 @@ class Weapon(
 	############################
 
 	# templates.Activities
-	def getActivities(self):
-		activities = super().getActivities()
-
-		rapid = utils.text.getProperty('Rapid', self.raw_propertiesMap)
-		burst = utils.text.getProperty('Burst', self.raw_propertiesMap)
-
-		if attackActivity := next((a for a in activities if a.getType() == 'Attack'), False):
-			if not (utils.text.getProperty('Auto', self.raw_propertiesMap) == True):
-				activities.remove(attackActivity)
-			if burst:
-				burst_data = copy.deepcopy(attackActivity.raw_data)
-				burst_data["name"] = f'Burst Attack'
-				burst_data["target"] = {
-					"value": 10,
-					"units": 'ft',
-					"type": 'cube',
-				}
-				burst_data["save"] = {
-					"ability": 'dex',
-					"dc": None,
-					"scaling": 'dex'
-				}
-				# TODO: set 'consume' to the ammount of ammo burst uses
-				# burst_data = self.getAutoTargetData(burst_data, burst_or_rapid=True)
-				activities.append(sw5e.Activity.Save(burst_data))
-			if rapid:
-				rapid_data = copy.deepcopy(attackActivity.raw_data)
-				rapid_data["name"] = f'Rapid Attack'
-				for dmg in rapid_data["damage"].values():
-					if dmg and "parts" in dmg and dmg["parts"][0][0]:
-						dmg["parts"][0][0] = re.sub(r'^(\d+)d', lambda m: f'{int(m[1])*2}d', dmg["parts"][0][0])
-				rapid_data["save"] = {
-					"ability": 'dex',
-					"dc": None,
-					"scaling": 'dex'
-				}
-				# TODO: set 'consume' to the ammount of ammo rapid uses
-				# rapid_data = self.getAutoTargetData(rapid_data, burst_or_rapid=True)
-				activities.append(sw5e.Activity.Save(rapid_data))
-		elif burst or rapid:
-			raise ValueError('Burst or Rapid weapon, with no Attack activity')
-
-		return activities
 
 	# templates.ItemDescription
-	def getDescription(self, importer):
+	def getDescription(self):
 		properties = {prop: self.raw_propertiesMap[prop] for prop in self.raw_propertiesMap if prop != 'Special'}
 
 		text = ''
 
-		if importer:
-			def getContent(prop_name):
-				prop = importer.get('WeaponProperty', data={'name': prop_name})
-				if prop: return prop.getContent(val=properties[prop_name])
-				else: return properties[prop_name].capitalize()
-			text = '\n'.join([getContent(prop) for prop in properties])
-		else:
-			text = ', '.join([properties[prop].capitalize() for prop in properties if prop != 'Ammunition'])
-			text = utils.text.markdownToHtml(text)
+		text = ', '.join([properties[prop].capitalize() for prop in properties if prop != 'Ammunition'])
+		text = utils.text.markdownToHtml(text) or ''
 
 		if 'Special' in self.raw_propertiesMap:
 			if text: text += '\n'
@@ -254,6 +207,30 @@ class Weapon(
 			text += utils.text.markdownToHtml('#### Description\n' + self.raw_description)
 
 		return text
+	def processDescription(self, importer):
+		if importer:
+			properties = {prop: self.raw_propertiesMap[prop] for prop in self.raw_propertiesMap if prop != 'Special'}
+
+			text = ''
+
+			def getContent(prop_name):
+				prop = importer.get('WeaponProperty', data={'name': prop_name})
+				if prop: return prop.getContent(val=properties[prop_name])
+				else: return properties[prop_name].capitalize()
+			text = '\n'.join([getContent(prop) for prop in properties])
+
+			if 'Special' in self.raw_propertiesMap:
+				if text: text += '\n'
+				if (special := self.raw_propertiesMap["Special"]).lower() != "special":
+					text += utils.text.markdownToHtml('#### Special\n' + special)
+				elif self.raw_description:
+					text += utils.text.markdownToHtml('#### Special\n' + self.raw_description)
+				else:
+					raise ValueError
+			elif self.raw_description:
+				text += utils.text.markdownToHtml('#### Description\n' + self.raw_description)
+
+			self.description = text
 
 	# templates.Identifiable
 

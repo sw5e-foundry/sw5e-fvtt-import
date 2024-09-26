@@ -429,17 +429,21 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [
-                            [
-                                "7d6 + 4",
-                                "energy"
-                            ],
-                            [
-                                "7d6",
-                                "energy"
+                        "base": {
+                            "parts": [
+                                [
+                                    "7d6 + 4",
+                                    "energy"
+                                ],
+                                [
+                                    "7d6",
+                                    "energy"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -830,8 +834,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -919,8 +927,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -1163,8 +1175,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -1259,8 +1275,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -1297,13 +1317,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "4d12",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "4d12",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -1350,13 +1374,17 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [
-                            [
-                                "6d6",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "6d6",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -1449,13 +1477,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "8d12",
-                                "fire"
+                        "base": {
+                            "parts": [
+                                [
+                                    "8d12",
+                                    "fire"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -1790,8 +1822,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -1828,13 +1864,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "12d8",
-                                "energy"
+                        "base": {
+                            "parts": [
+                                [
+                                    "12d8",
+                                    "energy"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -1927,8 +1967,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -1965,8 +2009,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "wis",
@@ -2008,8 +2056,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -2046,8 +2098,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "formula": "1d4 + 2",
                     "source": "SnV"
@@ -2251,8 +2307,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -2340,13 +2400,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "4d6",
-                                ""
+                        "base": {
+                            "parts": [
+                                [
+                                    "4d6",
+                                    ""
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -2388,8 +2452,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -2661,8 +2729,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -2750,13 +2822,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "6d12",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "6d12",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -2798,8 +2874,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "wis",
@@ -3162,8 +3242,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -3200,13 +3284,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "6d10",
-                                "energy"
+                        "base": {
+                            "parts": [
+                                [
+                                    "6d10",
+                                    "energy"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -3300,8 +3388,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -3338,8 +3430,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "formula": "1d4 + 2",
                     "source": "SnV"
@@ -4602,8 +4698,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -4861,13 +4961,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "1d12 + 3",
-                                "energy"
+                        "base": {
+                            "parts": [
+                                [
+                                    "1d12 + 3",
+                                    "energy"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -5035,8 +5139,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -5073,13 +5181,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "4d6",
-                                "psychic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "4d6",
+                                    "psychic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "wis",
@@ -5824,8 +5936,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -6101,8 +6217,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -6190,13 +6310,22 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "8d8",
-                                "energy"
+                        "base": {
+                            "parts": [
+                                [
+                                    "8d8",
+                                    "energy"
+                                ]
                             ]
-                        ],
-                        "versatile": "4d8"
+                        },
+                        "versatile": {
+                            "parts": [
+                                [
+                                    "4d8",
+                                    ""
+                                ]
+                            ]
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -6377,8 +6506,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -6521,8 +6654,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -6707,8 +6844,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -6851,8 +6992,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -6898,13 +7043,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "8d6",
-                                "fire"
+                        "base": {
+                            "parts": [
+                                [
+                                    "8d6",
+                                    "fire"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -7353,8 +7502,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -7494,8 +7647,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -7810,8 +7967,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -8498,8 +8659,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -9081,8 +9246,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -9119,13 +9288,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "1d10 + 4",
-                                "energy"
+                        "base": {
+                            "parts": [
+                                [
+                                    "1d10 + 4",
+                                    "energy"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -9171,13 +9344,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "8d8",
-                                "fire"
+                        "base": {
+                            "parts": [
+                                [
+                                    "8d8",
+                                    "fire"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -9223,17 +9400,21 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "4d6",
-                                "kinetic"
-                            ],
-                            [
-                                "4d6",
-                                "fire"
+                        "base": {
+                            "parts": [
+                                [
+                                    "4d6",
+                                    "kinetic"
+                                ],
+                                [
+                                    "4d6",
+                                    "fire"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -9275,8 +9456,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -9313,8 +9498,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -9351,8 +9540,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -9999,8 +10192,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -10511,8 +10708,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -10549,8 +10750,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -10591,13 +10796,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "5d10 + 5",
-                                "psychic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "5d10 + 5",
+                                    "psychic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "int",
@@ -10639,8 +10848,12 @@
                     },
                     "actionType": "abil",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "formula": "1d20 + @abilities.cha.mod + @prof",
                     "source": "SnV"
@@ -10678,13 +10891,17 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [
-                            [
-                                "1d4",
-                                "psychic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "1d4",
+                                    "psychic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -10721,13 +10938,17 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [
-                            [
-                                "3d6",
-                                "psychic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "3d6",
+                                    "psychic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -10764,8 +10985,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -10941,8 +11166,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -11031,13 +11260,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "2d10",
-                                "psychic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "2d10",
+                                    "psychic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "formula": "3d6",
                     "save": {
@@ -11080,13 +11313,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "20",
-                                "points"
+                        "base": {
+                            "parts": [
+                                [
+                                    "20",
+                                    "points"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -11557,8 +11794,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -12134,8 +12375,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -12638,8 +12883,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -13083,8 +13332,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -13245,13 +13498,17 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [
-                            [
-                                "1d8",
-                                ""
+                        "base": {
+                            "parts": [
+                                [
+                                    "1d8",
+                                    ""
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -13288,8 +13545,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -13326,8 +13587,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -13369,13 +13634,17 @@
                     },
                     "actionType": "heal",
                     "damage": {
-                        "parts": [
-                            [
-                                "1d10 + 15",
-                                "temphp"
+                        "base": {
+                            "parts": [
+                                [
+                                    "1d10 + 15",
+                                    "temphp"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -13668,8 +13937,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -14200,13 +14473,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "1d12 + 3",
-                                "energy"
+                        "base": {
+                            "parts": [
+                                [
+                                    "1d12 + 3",
+                                    "energy"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -14299,13 +14576,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "6d6",
-                                "fire"
+                        "base": {
+                            "parts": [
+                                [
+                                    "6d6",
+                                    "fire"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -14654,13 +14935,17 @@
                     },
                     "actionType": "heal",
                     "damage": {
-                        "parts": [
-                            [
-                                "2d4 + 2",
-                                "healing"
+                        "base": {
+                            "parts": [
+                                [
+                                    "2d4 + 2",
+                                    "healing"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -14904,8 +15189,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -14993,8 +15282,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -15031,8 +15324,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -15121,8 +15418,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -15366,13 +15667,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "1d8 + 3",
-                                "psychic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "1d8 + 3",
+                                    "psychic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "wis",
@@ -15418,13 +15723,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "2d8 + 3",
-                                "psychic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "2d8 + 3",
+                                    "psychic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "wis",
@@ -15751,8 +16060,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -15896,13 +16209,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "4d8 + 4",
-                                "energy"
+                        "base": {
+                            "parts": [
+                                [
+                                    "4d8 + 4",
+                                    "energy"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -16116,8 +16433,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -16200,8 +16521,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -16243,8 +16568,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -16413,8 +16742,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -16687,8 +17020,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -16959,8 +17296,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -17262,8 +17603,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -17403,13 +17748,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "2d6 + 3",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "2d6 + 3",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -17615,8 +17964,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -17995,8 +18348,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -18033,8 +18390,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -18122,8 +18483,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -18160,8 +18525,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -18198,8 +18567,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -19142,8 +19515,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -19533,8 +19910,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -21079,8 +21460,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -21910,8 +22295,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -22004,13 +22393,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "6d8",
-                                "lightning"
+                        "base": {
+                            "parts": [
+                                [
+                                    "6d8",
+                                    "lightning"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -22052,8 +22445,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -22090,13 +22487,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "3d10",
-                                "lightning"
+                        "base": {
+                            "parts": [
+                                [
+                                    "3d10",
+                                    "lightning"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -22138,21 +22539,25 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "4d10",
-                                "sonic"
-                            ],
-                            [
-                                "4d10",
-                                "sonic"
-                            ],
-                            [
-                                "1d6",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "4d10",
+                                    "sonic"
+                                ],
+                                [
+                                    "4d10",
+                                    "sonic"
+                                ],
+                                [
+                                    "1d6",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -22388,8 +22793,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -22691,8 +23100,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -22956,8 +23369,12 @@
                     },
                     "actionType": "abil",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "formula": "1d20 + @abilities.wis.mod + @prof",
                     "source": "SnV"
@@ -22999,13 +23416,17 @@
                     },
                     "actionType": "heal",
                     "damage": {
-                        "parts": [
-                            [
-                                "2d4 + 2",
-                                "healing"
+                        "base": {
+                            "parts": [
+                                [
+                                    "2d4 + 2",
+                                    "healing"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -23046,8 +23467,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -23635,8 +24060,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -23775,17 +24204,21 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "3d6",
-                                "acid"
-                            ],
-                            [
-                                "25",
-                                ""
+                        "base": {
+                            "parts": [
+                                [
+                                    "3d6",
+                                    "acid"
+                                ],
+                                [
+                                    "25",
+                                    ""
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -24017,13 +24450,17 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [
-                            [
-                                "4d6",
-                                "acid"
+                        "base": {
+                            "parts": [
+                                [
+                                    "4d6",
+                                    "acid"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -24870,8 +25307,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -25395,8 +25836,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -25593,8 +26038,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -25631,8 +26080,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -25669,8 +26122,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -25707,8 +26164,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -25745,8 +26206,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -26153,8 +26618,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -26404,8 +26873,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -26705,8 +27178,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -26829,8 +27306,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -27059,8 +27540,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -27328,8 +27813,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -27630,8 +28119,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -27776,8 +28269,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -27814,8 +28311,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -27852,8 +28353,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -27890,8 +28395,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -29530,8 +30039,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -29672,8 +30185,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -30011,8 +30528,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -30146,8 +30667,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -30184,8 +30709,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -30222,8 +30751,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -30261,8 +30794,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -30299,8 +30836,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -30480,8 +31021,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -30620,13 +31165,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "2d8 + 5",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "2d8 + 5",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "str",
@@ -30840,8 +31389,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -31079,8 +31632,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -31514,8 +32071,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -31656,8 +32217,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -31694,8 +32259,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -31853,8 +32422,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -31994,8 +32567,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -32174,8 +32751,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -32212,13 +32793,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "8d6",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "8d6",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -32302,25 +32887,29 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "6d6",
-                                "fire"
-                            ],
-                            [
-                                "6d6",
-                                "kinetic"
-                            ],
-                            [
-                                "6d6",
-                                "fire"
-                            ],
-                            [
-                                "6d6",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "6d6",
+                                    "fire"
+                                ],
+                                [
+                                    "6d6",
+                                    "kinetic"
+                                ],
+                                [
+                                    "6d6",
+                                    "fire"
+                                ],
+                                [
+                                    "6d6",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -32613,8 +33202,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -32761,8 +33354,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -32845,8 +33442,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -33656,8 +34257,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -34025,8 +34630,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -34165,8 +34774,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -34340,8 +34953,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -34541,8 +35158,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -34910,8 +35531,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -35907,8 +36532,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -36049,8 +36678,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -36453,13 +37086,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "2d4",
-                                "ion"
+                        "base": {
+                            "parts": [
+                                [
+                                    "2d4",
+                                    "ion"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -36718,8 +37355,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -36922,8 +37563,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -37499,8 +38144,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -37780,8 +38429,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -39131,8 +39784,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -39224,8 +39881,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -39667,8 +40328,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -39811,8 +40476,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -39961,8 +40630,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -40151,8 +40824,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -40301,8 +40978,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -40445,8 +41126,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -40483,8 +41168,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -40633,8 +41322,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -40823,8 +41516,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -40861,8 +41558,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -41009,8 +41710,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -41201,8 +41906,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -41349,8 +42058,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -41490,8 +42203,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -41641,8 +42358,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -41835,8 +42556,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "wis",
@@ -41882,13 +42607,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "16d6",
-                                "poison"
+                        "base": {
+                            "parts": [
+                                [
+                                    "16d6",
+                                    "poison"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -41930,8 +42659,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -41968,8 +42701,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "str",
@@ -42011,8 +42748,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -42150,8 +42891,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -42341,8 +43086,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "wis",
@@ -42388,13 +43137,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "15d8",
-                                "toxin"
+                        "base": {
+                            "parts": [
+                                [
+                                    "15d8",
+                                    "toxin"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -42436,8 +43189,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -42474,8 +43231,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -42512,13 +43273,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "2d6 + 10",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "2d6 + 10",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -42661,8 +43426,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -42805,13 +43574,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "12d8",
-                                "tocin"
+                        "base": {
+                            "parts": [
+                                [
+                                    "12d8",
+                                    "tocin"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -42996,8 +43769,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -43251,13 +44028,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "6d6 + 3",
-                                "sonic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "6d6 + 3",
+                                    "sonic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -43431,8 +44212,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -43784,8 +44569,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -44187,8 +44976,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -44276,8 +45069,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "wis",
@@ -44371,8 +45168,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -45035,8 +45836,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -45124,13 +45929,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "4d6 + 4",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "4d6 + 4",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "str",
@@ -45172,8 +45981,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -45348,8 +46161,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -45667,8 +46484,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -45808,8 +46629,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -46085,8 +46910,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -46227,8 +47056,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -46403,8 +47236,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -48523,8 +49360,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -48652,13 +49493,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "8d8",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "8d8",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -48700,13 +49545,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "10d12 + 5",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "10d12 + 5",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "str",
@@ -48915,8 +49764,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "str",
@@ -49332,8 +50185,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -50025,8 +50882,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -50063,8 +50924,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -50289,8 +51154,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -50327,8 +51196,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -50365,8 +51238,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -50970,8 +51847,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -52155,8 +53036,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -52445,8 +53330,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -52591,8 +53480,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -53316,8 +54209,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -53586,8 +54483,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -53910,8 +54811,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -54102,17 +55007,21 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [
-                            [
-                                "6d6",
-                                ""
-                            ],
-                            [
-                                "25",
-                                ""
+                        "base": {
+                            "parts": [
+                                [
+                                    "6d6",
+                                    ""
+                                ],
+                                [
+                                    "25",
+                                    ""
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -54317,8 +55226,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -54509,8 +55422,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -54547,17 +55464,21 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [
-                            [
-                                "10d6",
-                                ""
-                            ],
-                            [
-                                "35",
-                                ""
+                        "base": {
+                            "parts": [
+                                [
+                                    "10d6",
+                                    ""
+                                ],
+                                [
+                                    "35",
+                                    ""
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -54594,8 +55515,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -54632,8 +55557,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -54670,8 +55599,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -54807,8 +55740,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -55085,8 +56022,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -55225,13 +56166,17 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [
-                            [
-                                "2d8",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "2d8",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -55486,8 +56431,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -55626,8 +56575,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -56189,8 +57142,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -56927,8 +57884,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -57017,8 +57978,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -57055,8 +58020,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -57362,8 +58331,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -57556,8 +58529,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "wis",
@@ -57603,17 +58580,21 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "12d6",
-                                "kinetic"
-                            ],
-                            [
-                                "12d6",
-                                "cold"
+                        "base": {
+                            "parts": [
+                                [
+                                    "12d6",
+                                    "kinetic"
+                                ],
+                                [
+                                    "12d6",
+                                    "cold"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -57655,17 +58636,21 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "12d6",
-                                "acid"
-                            ],
-                            [
-                                "50",
-                                ""
+                        "base": {
+                            "parts": [
+                                [
+                                    "12d6",
+                                    "acid"
+                                ],
+                                [
+                                    "50",
+                                    ""
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -57707,8 +58692,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -57745,8 +58734,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -57783,13 +58776,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "6d8",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "6d8",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "formula": "3d6",
                     "save": {
@@ -58066,8 +59063,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -58104,8 +59105,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -58194,17 +59199,21 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "10d6",
-                                "psychic"
-                            ],
-                            [
-                                "40",
-                                ""
+                        "base": {
+                            "parts": [
+                                [
+                                    "10d6",
+                                    "psychic"
+                                ],
+                                [
+                                    "40",
+                                    ""
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -58250,8 +59259,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -58293,13 +59306,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "6d10 + 8",
-                                "sonic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "6d10 + 8",
+                                    "sonic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -58341,8 +59358,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -58379,8 +59400,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -58610,8 +59635,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -60553,8 +61582,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -60821,8 +61854,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -61226,8 +62263,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -61320,17 +62361,21 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "6d6",
-                                "psychic"
-                            ],
-                            [
-                                "6d6",
-                                "necrotic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "6d6",
+                                    "psychic"
+                                ],
+                                [
+                                    "6d6",
+                                    "necrotic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "wis",
@@ -62507,8 +63552,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -62545,8 +63594,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -62583,8 +63636,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -62621,8 +63678,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -62659,8 +63720,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -62867,8 +63932,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -63007,17 +64076,21 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [
-                            [
-                                "2d6",
-                                "kinetic"
-                            ],
-                            [
-                                "2d6",
-                                "acid"
+                        "base": {
+                            "parts": [
+                                [
+                                    "2d6",
+                                    "kinetic"
+                                ],
+                                [
+                                    "2d6",
+                                    "acid"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -63189,8 +64262,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -64052,8 +65129,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -64140,13 +65221,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "5d6",
-                                "energy"
+                        "base": {
+                            "parts": [
+                                [
+                                    "5d6",
+                                    "energy"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -64188,8 +65273,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "wis",
@@ -64549,8 +65638,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -64976,8 +66069,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -65111,13 +66208,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "1d8 + 3",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "1d8 + 3",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -65159,8 +66260,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -65398,8 +66503,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -65749,8 +66858,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -65944,8 +67057,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -65982,8 +67099,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -66371,8 +67492,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -66460,8 +67585,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -66498,8 +67627,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -66536,8 +67669,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -66574,8 +67711,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -66813,8 +67954,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -67439,8 +68584,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -67533,13 +68682,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "2d6",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "2d6",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -67634,8 +68787,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -67777,13 +68934,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "2d6",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "2d6",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -67829,13 +68990,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "3d6",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "3d6",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -67881,17 +69046,21 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "3d6",
-                                "fire"
-                            ],
-                            [
-                                "3d6",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "3d6",
+                                    "fire"
+                                ],
+                                [
+                                    "3d6",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -68090,13 +69259,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "3d8",
-                                "fire"
+                        "base": {
+                            "parts": [
+                                [
+                                    "3d8",
+                                    "fire"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -68669,13 +69842,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "1d10 + 3",
-                                "energy"
+                        "base": {
+                            "parts": [
+                                [
+                                    "1d10 + 3",
+                                    "energy"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -68898,8 +70075,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -69380,13 +70561,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "3d6",
-                                "fire"
+                        "base": {
+                            "parts": [
+                                [
+                                    "3d6",
+                                    "fire"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -69574,8 +70759,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -69822,8 +71011,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -69966,17 +71159,21 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "2d6",
-                                "fire"
-                            ],
-                            [
-                                "2d6",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "2d6",
+                                    "fire"
+                                ],
+                                [
+                                    "2d6",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -70436,8 +71633,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -70526,13 +71727,22 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "8d8",
-                                "kinetic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "8d8",
+                                    "kinetic"
+                                ]
                             ]
-                        ],
-                        "versatile": "4d8"
+                        },
+                        "versatile": {
+                            "parts": [
+                                [
+                                    "4d8",
+                                    ""
+                                ]
+                            ]
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -70764,8 +71974,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -71354,8 +72568,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -71586,8 +72804,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -71730,8 +72952,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -72386,8 +73612,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -72947,8 +74177,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -73465,8 +74699,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -73503,8 +74741,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -73541,8 +74783,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -73688,8 +74934,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -74216,13 +75466,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "6d6",
-                                "fire"
+                        "base": {
+                            "parts": [
+                                [
+                                    "6d6",
+                                    "fire"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -74644,8 +75898,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -74790,13 +76048,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "5d10 + 5",
-                                "sonic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "5d10 + 5",
+                                    "sonic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -75226,8 +76488,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -75316,8 +76582,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -75604,8 +76874,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -75744,8 +77018,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -75788,8 +77066,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -75826,8 +77108,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -76448,8 +77734,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -76592,13 +77882,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "5d6",
-                                "sonic"
+                        "base": {
+                            "parts": [
+                                [
+                                    "5d6",
+                                    "sonic"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "con",
@@ -77081,8 +78375,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -77364,8 +78662,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -77499,13 +78801,17 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [
-                            [
-                                "1d10 + 4",
-                                "energy"
+                        "base": {
+                            "parts": [
+                                [
+                                    "1d10 + 4",
+                                    "energy"
+                                ]
                             ]
-                        ],
-                        "versatile": ""
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "dex",
@@ -77737,8 +79043,12 @@
                     },
                     "actionType": "save",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "save": {
                         "ability": "str",
@@ -77912,8 +79222,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -78979,8 +80293,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }
@@ -79178,8 +80496,12 @@
                     },
                     "actionType": "other",
                     "damage": {
-                        "parts": [],
-                        "versatile": ""
+                        "base": {
+                            "parts": []
+                        },
+                        "versatile": {
+                            "parts": []
+                        }
                     },
                     "source": "SnV"
                 }

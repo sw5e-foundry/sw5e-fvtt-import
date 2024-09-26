@@ -21,11 +21,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 425,
                 "denomination": "gp"
@@ -41,6 +37,88 @@
             },
             "source": {
                 "custom": "PHB"
+            },
+            "activities": {
+                "1Lzaft1NCd8I17Vz": {
+                    "type": "Attack",
+                    "_id": "1Lzaft1NCd8I17Vz",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 70/280) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1oOF3B1qd5kpjHg8": {
+                    "type": "Attack",
+                    "_id": "1oOF3B1qd5kpjHg8",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 70/280) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -92,11 +170,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 175,
                 "denomination": "gp"
@@ -112,6 +186,88 @@
             },
             "source": {
                 "custom": "PHB"
+            },
+            "activities": {
+                "G1ymgkMKsZO1cvwN": {
+                    "type": "Attack",
+                    "_id": "G1ymgkMKsZO1cvwN",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 50/200) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1G2k0o9MfmSr6Z21": {
+                    "type": "Attack",
+                    "_id": "1G2k0o9MfmSr6Z21",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 50/200) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -165,9 +321,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 11,
             "price": {
@@ -187,23 +340,25 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1rgfhmUTscOVlUBo": {
-                    "type": "Save",
-                    "_id": "1rgfhmUTscOVlUBo",
+                "1CGQk60m0w8X1bFN": {
+                    "type": "Attack",
+                    "_id": "1CGQk60m0w8X1bFN",
                     "img": null,
-                    "name": "Burst Attack",
-                    "save": {
-                        "ability": "dex",
-                        "dc": null,
-                        "scaling": "dex"
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
                     },
                     "description": {
                         "value": "<h3>Burst 4</h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead spray a 10-foot-cube area within range with shots, consuming ammunition equal to the burst number. Each creature in the area must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon) or take the weapon's normal damage. Before you use this property, you can declare one creature that would be affected by it. If the creature fails its save, in addition to the weapon's normal damage, it is subjected to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</p>\n<h3>Power cell (range 50/200) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 4</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 13</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
                     },
                     "target": {
-                        "value": 10,
-                        "units": "ft",
-                        "type": "cube"
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
                     },
                     "activation": {
                         "type": "action",
@@ -213,7 +368,93 @@
                         "critical": {
                             "allow": true
                         },
-                        "parts": null
+                        "parts": [
+                            [
+                                "1d10 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "16cWV5ExEF7iuMAn": {
+                    "type": "Attack",
+                    "_id": "16cWV5ExEF7iuMAn",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Burst 4</h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead spray a 10-foot-cube area within range with shots, consuming ammunition equal to the burst number. Each creature in the area must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon) or take the weapon's normal damage. Before you use this property, you can declare one creature that would be affected by it. If the creature fails its save, in addition to the weapon's normal damage, it is subjected to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</p>\n<h3>Power cell (range 50/200) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 4</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 13</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d10 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1vdCfLkZ8z9EMyxN": {
+                    "type": "Save",
+                    "_id": "1vdCfLkZ8z9EMyxN",
+                    "img": null,
+                    "name": "Burst Attack",
+                    "description": {
+                        "value": "<h3>Burst 4</h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead spray a 10-foot-cube area within range with shots, consuming ammunition equal to the burst number. Each creature in the area must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon) or take the weapon's normal damage. Before you use this property, you can declare one creature that would be affected by it. If the creature fails its save, in addition to the weapon's normal damage, it is subjected to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</p>\n<h3>Power cell (range 50/200) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 4</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 13</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 10,
+                        "width": null,
+                        "units": "ft",
+                        "type": "cube"
+                    },
+                    "save": {
+                        "ability": "dex",
+                        "dc": {
+                            "calculation": "spell",
+                            "formula": ""
+                        }
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d10 + @mod",
+                                "energy"
+                            ]
+                        ]
                     },
                     "duration": {
                         "value": null,
@@ -275,9 +516,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 6,
             "price": {
@@ -295,6 +533,88 @@
             },
             "source": {
                 "custom": "WH"
+            },
+            "activities": {
+                "19iJitKjVptyXPpf": {
+                    "type": "Attack",
+                    "_id": "19iJitKjVptyXPpf",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 45/180) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>\n<h3>Vicious 1</h3>\n<p>Whenever you deal damage with a weapon with the vicious property and roll the maximum on a weapon damage die, you gain a bonus to damage equal to the vicious number.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "cold"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1FIViEZfxjDijPbE": {
+                    "type": "Attack",
+                    "_id": "1FIViEZfxjDijPbE",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 45/180) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>\n<h3>Vicious 1</h3>\n<p>Whenever you deal damage with a weapon with the vicious property and roll the maximum on a weapon damage die, you gain a bonus to damage equal to the vicious number.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "cold"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -348,9 +668,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 2,
             "price": {
@@ -368,6 +685,88 @@
             },
             "source": {
                 "custom": "WH"
+            },
+            "activities": {
+                "MWxp3IswqRVc94Zg": {
+                    "type": "Attack",
+                    "_id": "MWxp3IswqRVc94Zg",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 30/120) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Vicious 1</h3>\n<p>Whenever you deal damage with a weapon with the vicious property and roll the maximum on a weapon damage die, you gain a bonus to damage equal to the vicious number.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "cold"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1qmzPQfnmcpWzZpM": {
+                    "type": "Attack",
+                    "_id": "1qmzPQfnmcpWzZpM",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 30/120) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Vicious 1</h3>\n<p>Whenever you deal damage with a weapon with the vicious property and roll the maximum on a weapon damage die, you gain a bonus to damage equal to the vicious number.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "cold"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -422,11 +821,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 1450,
                 "denomination": "gp"
@@ -442,6 +837,88 @@
             },
             "source": {
                 "custom": "WH"
+            },
+            "activities": {
+                "Xdmja0sQKHDk0hNL": {
+                    "type": "Attack",
+                    "_id": "Xdmja0sQKHDk0hNL",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Disintegrate 13</h3>\n<p>When a creature is reduced to 0 hit points by a weapon with the disintegrate property, it must make a Constitution saving throw, DC equal to the disintegrate number. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.</p>\n<h3>Power cell (range 60/240) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d8 + @mod",
+                                "acid"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "FQaZhCIexpY195f4": {
+                    "type": "Attack",
+                    "_id": "FQaZhCIexpY195f4",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Disintegrate 13</h3>\n<p>When a creature is reduced to 0 hit points by a weapon with the disintegrate property, it must make a Constitution saving throw, DC equal to the disintegrate number. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.</p>\n<h3>Power cell (range 60/240) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d8 + @mod",
+                                "acid"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "disintegrate",
@@ -497,11 +974,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 750,
                 "denomination": "gp"
@@ -517,6 +990,88 @@
             },
             "source": {
                 "custom": "WH"
+            },
+            "activities": {
+                "Vw0qUUVh8Wq1IGO7": {
+                    "type": "Attack",
+                    "_id": "Vw0qUUVh8Wq1IGO7",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Disintegrate 13</h3>\n<p>When a creature is reduced to 0 hit points by a weapon with the disintegrate property, it must make a Constitution saving throw, DC equal to the disintegrate number. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.</p>\n<h3>Power cell (range 45/180) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "acid"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1IgIYT0Qry4f1FWl": {
+                    "type": "Attack",
+                    "_id": "1IgIYT0Qry4f1FWl",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Disintegrate 13</h3>\n<p>When a creature is reduced to 0 hit points by a weapon with the disintegrate property, it must make a Constitution saving throw, DC equal to the disintegrate number. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.</p>\n<h3>Power cell (range 45/180) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "acid"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "disintegrate",
@@ -571,11 +1126,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 225,
                 "denomination": "gp"
@@ -591,6 +1142,88 @@
             },
             "source": {
                 "custom": "PHB"
+            },
+            "activities": {
+                "T6zjonbiaWutmUyJ": {
+                    "type": "Attack",
+                    "_id": "T6zjonbiaWutmUyJ",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Power cell (range 30/120) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1gwreOXBtquE13tM": {
+                    "type": "Attack",
+                    "_id": "1gwreOXBtquE13tM",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Power cell (range 30/120) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "hidden",
@@ -647,11 +1280,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 1650,
                 "denomination": "gp"
@@ -667,6 +1296,88 @@
             },
             "source": {
                 "custom": "WH"
+            },
+            "activities": {
+                "1HuWMK8yzRPux2Ip": {
+                    "type": "Attack",
+                    "_id": "1HuWMK8yzRPux2Ip",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Disintegrate 13</h3>\n<p>When a creature is reduced to 0 hit points by a weapon with the disintegrate property, it must make a Constitution saving throw, DC equal to the disintegrate number. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.</p>\n<h3>Power cell (range 60/240) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "fire"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "4TNmfB5vrq7JkgTZ": {
+                    "type": "Attack",
+                    "_id": "4TNmfB5vrq7JkgTZ",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Disintegrate 13</h3>\n<p>When a creature is reduced to 0 hit points by a weapon with the disintegrate property, it must make a Constitution saving throw, DC equal to the disintegrate number. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.</p>\n<h3>Power cell (range 60/240) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "fire"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "dire",
@@ -724,11 +1435,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 1250,
                 "denomination": "gp"
@@ -744,6 +1451,88 @@
             },
             "source": {
                 "custom": "WH"
+            },
+            "activities": {
+                "1sujNLFesovREHEA": {
+                    "type": "Attack",
+                    "_id": "1sujNLFesovREHEA",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Disintegrate 13</h3>\n<p>When a creature is reduced to 0 hit points by a weapon with the disintegrate property, it must make a Constitution saving throw, DC equal to the disintegrate number. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.</p>\n<h3>Power cell (range 40/160) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "fire"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1jaVj7DHBwezQjR0": {
+                    "type": "Attack",
+                    "_id": "1jaVj7DHBwezQjR0",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Disintegrate 13</h3>\n<p>When a creature is reduced to 0 hit points by a weapon with the disintegrate property, it must make a Constitution saving throw, DC equal to the disintegrate number. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized.</p>\n<h3>Power cell (range 40/160) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "fire"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "dire",
@@ -798,9 +1587,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 6,
             "price": {
@@ -818,6 +1604,88 @@
             },
             "source": {
                 "custom": "PHB"
+            },
+            "activities": {
+                "4FJ3YiTz00Q1wGda": {
+                    "type": "Attack",
+                    "_id": "4FJ3YiTz00Q1wGda",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 60/240) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "ion"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "E2xYSKHObEgZTpu9": {
+                    "type": "Attack",
+                    "_id": "E2xYSKHObEgZTpu9",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 60/240) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "ion"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -869,9 +1737,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 1,
             "price": {
@@ -889,6 +1754,88 @@
             },
             "source": {
                 "custom": "PHB"
+            },
+            "activities": {
+                "2QnpFY00YvgR048p": {
+                    "type": "Attack",
+                    "_id": "2QnpFY00YvgR048p",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 40/160) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d3 + @mod",
+                                "ion"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "tzqAfhLOi1y1K5r1": {
+                    "type": "Attack",
+                    "_id": "tzqAfhLOi1y1K5r1",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 40/160) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d3 + @mod",
+                                "ion"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -940,11 +1887,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 250,
                 "denomination": "gp"
@@ -960,6 +1903,88 @@
             },
             "source": {
                 "custom": "PHB"
+            },
+            "activities": {
+                "p2gUfeH4qHMLEHpN": {
+                    "type": "Attack",
+                    "_id": "p2gUfeH4qHMLEHpN",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Power cell (range 40/160) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "H5C49XfKtXCQ9RKG": {
+                    "type": "Attack",
+                    "_id": "H5C49XfKtXCQ9RKG",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Power cell (range 40/160) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "lgt",
@@ -1014,9 +2039,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 6,
             "price": {
@@ -1036,9 +2058,9 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1JNAE7SHXypfuHOF": {
+                "7xpqM6QKxRz1mGFn": {
                     "type": "Attack",
-                    "_id": "1JNAE7SHXypfuHOF",
+                    "_id": "7xpqM6QKxRz1mGFn",
                     "img": null,
                     "attack": {
                         "ability": "",
@@ -1064,23 +2086,23 @@
                         "critical": {
                             "allow": true
                         },
-                        "parts": null
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "energy"
+                            ]
+                        ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     }
                 },
-                "1iretnzKi5ETYWlY": {
+                "1FqG5vCbTWsy1cd0": {
                     "type": "Save",
-                    "_id": "1iretnzKi5ETYWlY",
+                    "_id": "1FqG5vCbTWsy1cd0",
                     "img": null,
                     "name": "Rapid Attack",
-                    "save": {
-                        "ability": "dex",
-                        "dc": null,
-                        "scaling": "dex"
-                    },
                     "description": {
                         "value": "<h3>Auto</h3>\n<p>Weapons with this property can only fire in burst, penetrating, or rapid modes. If the weapon has any combination of burst, penetrating, and rapid modes, you choose which mode to use. You can only use one mode at a time.</p>\n<h3>Power cell (range 50/200) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Rapid 5</h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead unload on a single target, consuming ammunition equal to the rapid number. The target must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon). On a failed save, roll the weapon's damage dice twice and add them together, adding relevant modifiers as normal and subjecting the target to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</p>\n<h3>Reload 20</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
                     },
@@ -1090,6 +2112,13 @@
                         "units": "",
                         "type": "enemy"
                     },
+                    "save": {
+                        "ability": "dex",
+                        "dc": {
+                            "calculation": "spell",
+                            "formula": ""
+                        }
+                    },
                     "activation": {
                         "type": "action",
                         "cost": 1
@@ -1098,7 +2127,12 @@
                         "critical": {
                             "allow": true
                         },
-                        "parts": null
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "energy"
+                            ]
+                        ]
                     },
                     "duration": {
                         "value": null,
@@ -1159,9 +2193,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 1,
             "price": {
@@ -1179,6 +2210,90 @@
             },
             "source": {
                 "custom": "PHB"
+            },
+            "activities": {
+                "Qy3XVTtlmux1Bv5y": {
+                    "type": "Attack",
+                    "_id": "Qy3XVTtlmux1Bv5y",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Slug cartridge (range 35/140)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "range": 35,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1m6pYUSjLPqwCRa5": {
+                    "type": "Attack",
+                    "_id": "1m6pYUSjLPqwCRa5",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Slug cartridge (range 35/140)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "range": 35,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "lgt",
@@ -1232,9 +2347,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 2,
             "price": {
@@ -1254,25 +2366,27 @@
                 "custom": "PHB"
             },
             "activities": {
-                "T0urHhSrwnY1SEpn": {
-                    "type": "Save",
-                    "_id": "T0urHhSrwnY1SEpn",
+                "ZmmrvU7dEfw11I0s": {
+                    "type": "Attack",
+                    "_id": "ZmmrvU7dEfw11I0s",
                     "img": null,
-                    "name": "Burst Attack",
-                    "range": 30,
-                    "save": {
-                        "ability": "dex",
-                        "dc": null,
-                        "scaling": "dex"
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
                     },
                     "description": {
                         "value": "<h3>Burst 2</h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead spray a 10-foot-cube area within range with shots, consuming ammunition equal to the burst number. Each creature in the area must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon) or take the weapon's normal damage. Before you use this property, you can declare one creature that would be affected by it. If the creature fails its save, in addition to the weapon's normal damage, it is subjected to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Slug cartridge (range 30/120)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>"
                     },
                     "target": {
-                        "value": 10,
-                        "units": "ft",
-                        "type": "cube"
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
                     },
+                    "range": 30,
                     "activation": {
                         "type": "action",
                         "cost": 1
@@ -1281,7 +2395,95 @@
                         "critical": {
                             "allow": true
                         },
-                        "parts": null
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "t8pPxEGjXyEM5rqM": {
+                    "type": "Attack",
+                    "_id": "t8pPxEGjXyEM5rqM",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Burst 2</h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead spray a 10-foot-cube area within range with shots, consuming ammunition equal to the burst number. Each creature in the area must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon) or take the weapon's normal damage. Before you use this property, you can declare one creature that would be affected by it. If the creature fails its save, in addition to the weapon's normal damage, it is subjected to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Slug cartridge (range 30/120)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "range": 30,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1LN41Cy7sTOfJ99I": {
+                    "type": "Save",
+                    "_id": "1LN41Cy7sTOfJ99I",
+                    "img": null,
+                    "name": "Burst Attack",
+                    "description": {
+                        "value": "<h3>Burst 2</h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead spray a 10-foot-cube area within range with shots, consuming ammunition equal to the burst number. Each creature in the area must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon) or take the weapon's normal damage. Before you use this property, you can declare one creature that would be affected by it. If the creature fails its save, in addition to the weapon's normal damage, it is subjected to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Slug cartridge (range 30/120)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>"
+                    },
+                    "target": {
+                        "value": 10,
+                        "width": null,
+                        "units": "ft",
+                        "type": "cube"
+                    },
+                    "save": {
+                        "ability": "dex",
+                        "dc": {
+                            "calculation": "spell",
+                            "formula": ""
+                        }
+                    },
+                    "range": 30,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "kinetic"
+                            ]
+                        ]
                     },
                     "duration": {
                         "value": null,
@@ -1343,11 +2545,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 725,
                 "denomination": "gp"
@@ -1365,25 +2563,27 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1KW6hkbqAXjb1BaF": {
-                    "type": "Save",
-                    "_id": "1KW6hkbqAXjb1BaF",
+                "1wkK37NNmpEF1hGr": {
+                    "type": "Attack",
+                    "_id": "1wkK37NNmpEF1hGr",
                     "img": null,
-                    "name": "Burst Attack",
-                    "range": 30,
-                    "save": {
-                        "ability": "dex",
-                        "dc": null,
-                        "scaling": "dex"
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
                     },
                     "description": {
                         "value": "<h3>Burst 2</h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead spray a 10-foot-cube area within range with shots, consuming ammunition equal to the burst number. Each creature in the area must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon) or take the weapon's normal damage. Before you use this property, you can declare one creature that would be affected by it. If the creature fails its save, in addition to the weapon's normal damage, it is subjected to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</p>\n<h3>Reload 4</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Slug cartridge (range 30/120)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
                     },
                     "target": {
-                        "value": 10,
-                        "units": "ft",
-                        "type": "cube"
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
                     },
+                    "range": 30,
                     "activation": {
                         "type": "action",
                         "cost": 1
@@ -1392,7 +2592,95 @@
                         "critical": {
                             "allow": true
                         },
-                        "parts": null
+                        "parts": [
+                            [
+                                "2d4 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "fxu2AzHxJHf1HKGR": {
+                    "type": "Attack",
+                    "_id": "fxu2AzHxJHf1HKGR",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Burst 2</h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead spray a 10-foot-cube area within range with shots, consuming ammunition equal to the burst number. Each creature in the area must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon) or take the weapon's normal damage. Before you use this property, you can declare one creature that would be affected by it. If the creature fails its save, in addition to the weapon's normal damage, it is subjected to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</p>\n<h3>Reload 4</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Slug cartridge (range 30/120)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "range": 30,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "2d4 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1SBYK70PQoR2J5ab": {
+                    "type": "Save",
+                    "_id": "1SBYK70PQoR2J5ab",
+                    "img": null,
+                    "name": "Burst Attack",
+                    "description": {
+                        "value": "<h3>Burst 2</h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead spray a 10-foot-cube area within range with shots, consuming ammunition equal to the burst number. Each creature in the area must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon) or take the weapon's normal damage. Before you use this property, you can declare one creature that would be affected by it. If the creature fails its save, in addition to the weapon's normal damage, it is subjected to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</p>\n<h3>Reload 4</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Slug cartridge (range 30/120)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 10,
+                        "width": null,
+                        "units": "ft",
+                        "type": "cube"
+                    },
+                    "save": {
+                        "ability": "dex",
+                        "dc": {
+                            "calculation": "spell",
+                            "formula": ""
+                        }
+                    },
+                    "range": 30,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "2d4 + @mod",
+                                "kinetic"
+                            ]
+                        ]
                     },
                     "duration": {
                         "value": null,
@@ -1454,9 +2742,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 3,
             "price": {
@@ -1476,16 +2761,16 @@
                 "custom": "PHB"
             },
             "activities": {
-                "pM4AS8kghsYgqfV5": {
-                    "type": "Save",
-                    "_id": "pM4AS8kghsYgqfV5",
+                "10vg6YtbNCxl13Q2": {
+                    "type": "Attack",
+                    "_id": "10vg6YtbNCxl13Q2",
                     "img": null,
-                    "name": "Rapid Attack",
-                    "range": 40,
-                    "save": {
-                        "ability": "dex",
-                        "dc": null,
-                        "scaling": "dex"
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
                     },
                     "description": {
                         "value": "<h3>Rapid 8</h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead unload on a single target, consuming ammunition equal to the rapid number. The target must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon). On a failed save, roll the weapon's damage dice twice and add them together, adding relevant modifiers as normal and subjecting the target to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Slug cartridge (range 40/160)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>"
@@ -1496,6 +2781,7 @@
                         "units": "",
                         "type": "enemy"
                     },
+                    "range": 40,
                     "activation": {
                         "type": "action",
                         "cost": 1
@@ -1504,7 +2790,95 @@
                         "critical": {
                             "allow": true
                         },
-                        "parts": null
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1M1LTFJMXZpPbrZF": {
+                    "type": "Attack",
+                    "_id": "1M1LTFJMXZpPbrZF",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Rapid 8</h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead unload on a single target, consuming ammunition equal to the rapid number. The target must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon). On a failed save, roll the weapon's damage dice twice and add them together, adding relevant modifiers as normal and subjecting the target to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Slug cartridge (range 40/160)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "range": 40,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1Mrv29VQFNZ11iMV": {
+                    "type": "Save",
+                    "_id": "1Mrv29VQFNZ11iMV",
+                    "img": null,
+                    "name": "Rapid Attack",
+                    "description": {
+                        "value": "<h3>Rapid 8</h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead unload on a single target, consuming ammunition equal to the rapid number. The target must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon). On a failed save, roll the weapon's damage dice twice and add them together, adding relevant modifiers as normal and subjecting the target to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Slug cartridge (range 40/160)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "save": {
+                        "ability": "dex",
+                        "dc": {
+                            "calculation": "spell",
+                            "formula": ""
+                        }
+                    },
+                    "range": 40,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "kinetic"
+                            ]
+                        ]
                     },
                     "duration": {
                         "value": null,
@@ -1568,9 +2942,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 2,
             "price": {
@@ -1589,13 +2960,92 @@
             "source": {
                 "custom": "PHB"
             },
+            "activities": {
+                "C3KehFuHU4V119jP": {
+                    "type": "Attack",
+                    "_id": "C3KehFuHU4V119jP",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Reload 1</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Special (range 30/120)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p><h3>Description</h3>\n<p>Rather than traditional power cells, the wrist launcher fires specialized projectiles in the form of darts, small missiles, or specialized canisters. </p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "13DrGy58fUZjOzTI": {
+                    "type": "Attack",
+                    "_id": "13DrGy58fUZjOzTI",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Reload 1</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Special (range 30/120)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p><h3>Description</h3>\n<p>Rather than traditional power cells, the wrist launcher fires specialized projectiles in the form of darts, small missiles, or specialized canisters. </p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
+            },
             "properties": [
                 "fixed",
                 "reload",
                 "special"
             ],
             "weaponClass": "sidearm",
-            "damage": {}
+            "damage": {
+                "base": {
+                    "parts": []
+                },
+                "versatile": {
+                    "parts": []
+                }
+            }
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Blasters/WristLauncher.webp",
@@ -1625,11 +3075,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 200,
                 "denomination": "gp"
@@ -1645,6 +3091,88 @@
             },
             "source": {
                 "custom": "PHB"
+            },
+            "activities": {
+                "p1l9jTErcVP1IOJR": {
+                    "type": "Attack",
+                    "_id": "p1l9jTErcVP1IOJR",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Disguised</h3>\n<p>You have advantage on Charisma (Deception) checks made to hide the nature of a weapon with this property.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Power cell (range 30/120) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "EwtV0uczEq1Kd530": {
+                    "type": "Attack",
+                    "_id": "EwtV0uczEq1Kd530",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Disguised</h3>\n<p>You have advantage on Charisma (Deception) checks made to hide the nature of a weapon with this property.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Power cell (range 30/120) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 8</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "disguised",
@@ -1700,11 +3228,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 475,
                 "denomination": "gp"
@@ -1720,6 +3244,88 @@
             },
             "source": {
                 "custom": "EC"
+            },
+            "activities": {
+                "1gDuHwK4PWEz1lg8": {
+                    "type": "Attack",
+                    "_id": "1gDuHwK4PWEz1lg8",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 80/320) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Mighty</h3>\n<p>When making an attack with a mighty weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Reload 4</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "EDW5Nx6wBVi1euTO": {
+                    "type": "Attack",
+                    "_id": "EDW5Nx6wBVi1euTO",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 80/320) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Mighty</h3>\n<p>When making an attack with a mighty weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Reload 4</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -1776,9 +3382,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 4,
             "price": {
@@ -1796,6 +3399,88 @@
             },
             "source": {
                 "custom": "EC"
+            },
+            "activities": {
+                "1EeC7RIUlztA1Ml3": {
+                    "type": "Attack",
+                    "_id": "1EeC7RIUlztA1Ml3",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 20/80) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Mighty</h3>\n<p>When making an attack with a mighty weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Reload 20</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1HekeXQvSzIGiTbR": {
+                    "type": "Attack",
+                    "_id": "1HekeXQvSzIGiTbR",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 20/80) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Mighty</h3>\n<p>When making an attack with a mighty weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Reload 20</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -1853,9 +3538,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 7,
             "price": {
@@ -1873,6 +3555,88 @@
             },
             "source": {
                 "custom": "EC"
+            },
+            "activities": {
+                "b9WrIRDA8zw1syTY": {
+                    "type": "Attack",
+                    "_id": "b9WrIRDA8zw1syTY",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 60/240) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Penetrating 6 </h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead attempt to penetrate and hit a creature behind the target, consuming ammunition equal to the penetrating number. Make an attack roll against the initial target. If the attack hits, there is a creature within 15 feet of that creature and directly behind it, and the original attack roll would hit the second creature, it also takes normal weapon damage. Alternatively, you can use this property to fire at a creature through partial cover. When you do so, you reduce the target's cover by one step (from three-quarters to half or half to one-quarter), rather than targeting a second creature.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "lightning"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "L6Camilqkxw8wnnz": {
+                    "type": "Attack",
+                    "_id": "L6Camilqkxw8wnnz",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 60/240) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Penetrating 6 </h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead attempt to penetrate and hit a creature behind the target, consuming ammunition equal to the penetrating number. Make an attack roll against the initial target. If the attack hits, there is a creature within 15 feet of that creature and directly behind it, and the original attack roll would hit the second creature, it also takes normal weapon damage. Alternatively, you can use this property to fire at a creature through partial cover. When you do so, you reduce the target's cover by one step (from three-quarters to half or half to one-quarter), rather than targeting a second creature.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "lightning"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -1927,9 +3691,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 2,
             "price": {
@@ -1947,6 +3708,88 @@
             },
             "source": {
                 "custom": "EC"
+            },
+            "activities": {
+                "1dc0LHrozsof11zp": {
+                    "type": "Attack",
+                    "_id": "1dc0LHrozsof11zp",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 30/120) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Penetrating 8 </h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead attempt to penetrate and hit a creature behind the target, consuming ammunition equal to the penetrating number. Make an attack roll against the initial target. If the attack hits, there is a creature within 15 feet of that creature and directly behind it, and the original attack roll would hit the second creature, it also takes normal weapon damage. Alternatively, you can use this property to fire at a creature through partial cover. When you do so, you reduce the target's cover by one step (from three-quarters to half or half to one-quarter), rather than targeting a second creature.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "lightning"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1agZdzB857Ju11ro": {
+                    "type": "Attack",
+                    "_id": "1agZdzB857Ju11ro",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 30/120) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Penetrating 8 </h3>\n<p>When you would make a ranged weapon attack with a weapon with this property, you can instead attempt to penetrate and hit a creature behind the target, consuming ammunition equal to the penetrating number. Make an attack roll against the initial target. If the attack hits, there is a creature within 15 feet of that creature and directly behind it, and the original attack roll would hit the second creature, it also takes normal weapon damage. Alternatively, you can use this property to fire at a creature through partial cover. When you do so, you reduce the target's cover by one step (from three-quarters to half or half to one-quarter), rather than targeting a second creature.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "lightning"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -2001,9 +3844,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 3,
             "price": {
@@ -2021,6 +3861,90 @@
             },
             "source": {
                 "custom": "EC"
+            },
+            "activities": {
+                "1fYFbWyNET66s8Ld": {
+                    "type": "Attack",
+                    "_id": "1fYFbWyNET66s8Ld",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Slug cartridge (range 30/160)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Piercing 1</h3>\n<p>Before you make a weapon attack with a weapon with the piercing property, you can choose to gain a bonus to the attack roll up to the piercing number. If you do so and you hit with it, you suffer an equivalent penalty to the damage roll.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Silent</h3>\n<p>When you make a ranged weapon attack with a weapon with the silent property while hidden, it does not automatically reveal your presence. Make a Dexterity (Stealth) check contested by your targets' Wisdom (Perception) check. On a success, you remain hidden.</p>\n<h3>Special</h3>\n<p>The needler includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 10 shots fired by the weapon.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "range": 30,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "hour"
+                    }
+                },
+                "1HOFB1yLYQff1cfh": {
+                    "type": "Attack",
+                    "_id": "1HOFB1yLYQff1cfh",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Slug cartridge (range 30/160)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Piercing 1</h3>\n<p>Before you make a weapon attack with a weapon with the piercing property, you can choose to gain a bonus to the attack roll up to the piercing number. If you do so and you hit with it, you suffer an equivalent penalty to the damage roll.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Silent</h3>\n<p>When you make a ranged weapon attack with a weapon with the silent property while hidden, it does not automatically reveal your presence. Make a Dexterity (Stealth) check contested by your targets' Wisdom (Perception) check. On a success, you remain hidden.</p>\n<h3>Special</h3>\n<p>The needler includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 10 shots fired by the weapon.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "range": 30,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "hour"
+                    }
+                }
             },
             "properties": [
                 "range",
@@ -2077,9 +4001,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 2,
             "price": {
@@ -2097,6 +4018,90 @@
             },
             "source": {
                 "custom": "EC"
+            },
+            "activities": {
+                "1eB8biMcUgq6cLph": {
+                    "type": "Attack",
+                    "_id": "1eB8biMcUgq6cLph",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Slug cartridge (range 60/240)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Silent</h3>\n<p>When you make a ranged weapon attack with a weapon with the silent property while hidden, it does not automatically reveal your presence. Make a Dexterity (Stealth) check contested by your targets' Wisdom (Perception) check. On a success, you remain hidden.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "range": 60,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1umU96vL65c61Jgx": {
+                    "type": "Attack",
+                    "_id": "1umU96vL65c61Jgx",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Slug cartridge (range 60/240)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Silent</h3>\n<p>When you make a ranged weapon attack with a weapon with the silent property while hidden, it does not automatically reveal your presence. Make a Dexterity (Stealth) check contested by your targets' Wisdom (Perception) check. On a success, you remain hidden.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "range": 60,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "range",
@@ -2152,9 +4157,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 4,
             "price": {
@@ -2172,6 +4174,88 @@
             },
             "source": {
                 "custom": "EC"
+            },
+            "activities": {
+                "1LSTQf6Z989N1RA9": {
+                    "type": "Attack",
+                    "_id": "1LSTQf6Z989N1RA9",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Mighty</h3>\n<p>When making an attack with a mighty weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Silent</h3>\n<p>When you make a ranged weapon attack with a weapon with the silent property while hidden, it does not automatically reveal your presence. Make a Dexterity (Stealth) check contested by your targets' Wisdom (Perception) check. On a success, you remain hidden.</p>\n<h3>Special (range 60/240)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p><h3>Description</h3>\n<p>Rather than traditional power cells, the shortbow fires specialized projectiles in the form of arrows. You can make a ranged weapon attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one arrow. </p>\n<p>Drawing the ammunition from a quiver, case, or other container is part of the attack. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "hh8QOSLg8y31TonG": {
+                    "type": "Attack",
+                    "_id": "hh8QOSLg8y31TonG",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Mighty</h3>\n<p>When making an attack with a mighty weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Silent</h3>\n<p>When you make a ranged weapon attack with a weapon with the silent property while hidden, it does not automatically reveal your presence. Make a Dexterity (Stealth) check contested by your targets' Wisdom (Perception) check. On a success, you remain hidden.</p>\n<h3>Special (range 60/240)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p><h3>Description</h3>\n<p>Rather than traditional power cells, the shortbow fires specialized projectiles in the form of arrows. You can make a ranged weapon attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one arrow. </p>\n<p>Drawing the ammunition from a quiver, case, or other container is part of the attack. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "mighty",
@@ -2227,9 +4311,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 7,
             "price": {
@@ -2247,6 +4328,88 @@
             },
             "source": {
                 "custom": "EC"
+            },
+            "activities": {
+                "1Cot6vwRNGrhTaGd": {
+                    "type": "Attack",
+                    "_id": "1Cot6vwRNGrhTaGd",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 60/240) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "thunder"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1SPW7JTQUhJ81ncZ": {
+                    "type": "Attack",
+                    "_id": "1SPW7JTQUhJ81ncZ",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 60/240) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Reload 12</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Strength 11</h3>\n<p>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "thunder"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -2301,9 +4464,6 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
             "weight": 2,
             "price": {
@@ -2321,6 +4481,88 @@
             },
             "source": {
                 "custom": "EC"
+            },
+            "activities": {
+                "IwPKdem6Sj21C9fy": {
+                    "type": "Attack",
+                    "_id": "IwPKdem6Sj21C9fy",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 30/120) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "thunder"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "orAqf7Kv8zs1kKwG": {
+                    "type": "Attack",
+                    "_id": "orAqf7Kv8zs1kKwG",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 30/120) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "thunder"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -2374,11 +4616,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 925,
                 "denomination": "gp"
@@ -2394,6 +4632,88 @@
             },
             "source": {
                 "custom": "EC"
+            },
+            "activities": {
+                "ROvF7Q4OVJqINVg4": {
+                    "type": "Attack",
+                    "_id": "ROvF7Q4OVJqINVg4",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 70/280) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Switch ([[/r 1d4]] acid)</h3>\n<p>A weapon with the switch property can deal an alternate type of damage. A damage value appears in parentheses appears with the property-the damage when the weapon uses its alternate damage type. On your turn, you can use your object interaction to change the weapon's damage type.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1qA9djo77q4E1A68": {
+                    "type": "Attack",
+                    "_id": "1qA9djo77q4E1A68",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 70/280) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 16</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Switch ([[/r 1d4]] acid)</h3>\n<p>A weapon with the switch property can deal an alternate type of damage. A damage value appears in parentheses appears with the property-the damage when the weapon uses its alternate damage type. On your turn, you can use your object interaction to change the weapon's damage type.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -2447,11 +4767,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 675,
                 "denomination": "gp"
@@ -2467,6 +4783,88 @@
             },
             "source": {
                 "custom": "EC"
+            },
+            "activities": {
+                "kmmHGs1m8qrwplJX": {
+                    "type": "Attack",
+                    "_id": "kmmHGs1m8qrwplJX",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 40/160) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 20</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Switch ([[/r 1d4]] fire)</h3>\n<p>A weapon with the switch property can deal an alternate type of damage. A damage value appears in parentheses appears with the property-the damage when the weapon uses its alternate damage type. On your turn, you can use your object interaction to change the weapon's damage type.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                },
+                "1dMxdQhZQDv11Hzs": {
+                    "type": "Attack",
+                    "_id": "1dMxdQhZQDv11Hzs",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Power cell (range 40/160) Cell</h3>\n<p>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon's reload number.</p>\n<h3>Reload 20</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Switch ([[/r 1d4]] fire)</h3>\n<p>A weapon with the switch property can deal an alternate type of damage. A damage value appears in parentheses appears with the property-the damage when the weapon uses its alternate damage type. On your turn, you can use your object interaction to change the weapon's damage type.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d6 + @mod",
+                                "energy"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    }
+                }
             },
             "properties": [
                 "powerCell",
@@ -2520,11 +4918,7 @@
             }
         },
         "system": {
-            "attunement": "",
-            "attuned": false,
-            "equipped": false,
             "quantity": 1,
-            "weight": null,
             "price": {
                 "value": 275,
                 "denomination": "gp"
@@ -2540,6 +4934,90 @@
             },
             "source": {
                 "custom": "EC"
+            },
+            "activities": {
+                "v1TTp4VW7urKsfFN": {
+                    "type": "Attack",
+                    "_id": "v1TTp4VW7urKsfFN",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Slug cartridge (range 60/240)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Reload 4</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Silent</h3>\n<p>When you make a ranged weapon attack with a weapon with the silent property while hidden, it does not automatically reveal your presence. Make a Dexterity (Stealth) check contested by your targets' Wisdom (Perception) check. On a success, you remain hidden.</p>\n<h3>Special</h3>\n<p>The tranquilizer rifle includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 4 shots fired by the weapon. Additionally, creatures reduced to 0 hit points by this weapon are immediately stabilized, unless that damage would instantly kill them.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "range": 60,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "hour"
+                    }
+                },
+                "m4xFNy2UyET1uBCh": {
+                    "type": "Attack",
+                    "_id": "m4xFNy2UyET1uBCh",
+                    "img": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "ranged"
+                    },
+                    "description": {
+                        "value": "<h3>Slug cartridge (range 60/240)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Reload 4</h3>\n<p>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</p>\n<h3>Silent</h3>\n<p>When you make a ranged weapon attack with a weapon with the silent property while hidden, it does not automatically reveal your presence. Make a Dexterity (Stealth) check contested by your targets' Wisdom (Perception) check. On a success, you remain hidden.</p>\n<h3>Special</h3>\n<p>The tranquilizer rifle includes a specialized compartment for poison. One dose of poison, when installed in this compartment, retains its potency for 1 hour before drying. One dose of poison is effective for the next 4 shots fired by the weapon. Additionally, creatures reduced to 0 hit points by this weapon are immediately stabilized, unless that damage would instantly kill them.</p>"
+                    },
+                    "target": {
+                        "value": 1,
+                        "width": null,
+                        "units": "",
+                        "type": "enemy"
+                    },
+                    "range": 60,
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            [
+                                "1d4 + @mod",
+                                "kinetic"
+                            ]
+                        ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "hour"
+                    }
+                }
             },
             "properties": [
                 "range",

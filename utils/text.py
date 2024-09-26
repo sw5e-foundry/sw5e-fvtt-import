@@ -1,4 +1,4 @@
-import re, json, random, math, string, utils.config
+import re, json, random, math, string, utils.config, copy
 
 def ncapt(patt): return f'(?:{patt})'
 def capt(patt, name=None): return f'(?P<{name}>{patt})' if name else f'({patt})'
@@ -108,7 +108,7 @@ def makeRollTable(table, name):
 		align = [ 'center', 'center' ]
 		return makeTable(content, header=header, align=align)
 
-def getActivation(text, uses, recharge):
+def getActivation(text, uses, recharge, default=None):
 	if text:
 		text = text.lower()
 
@@ -120,10 +120,10 @@ def getActivation(text, uses, recharge):
 			return 'action'
 		elif uses or recharge:
 			return 'special'
-	return None
+	return default
 
-def getUses(text, name):
-	uses, recharge = None, None
+def getUses(text, name, default=(None, None)):
+	uses, recharge = default
 
 	found = False
 
@@ -328,7 +328,7 @@ def getUses(text, name):
 
 	return uses, recharge
 
-def getTarget(text, name):
+def getTarget(text, name, default=(None, '', '')):
 	if text:
 		text = text.lower()
 
@@ -358,19 +358,27 @@ def getTarget(text, name):
 			elif match['attitude'] == 'allied': return 1, '', 'ally'
 			else: return 1, '', match['type']
 
-	return None, '', ''
+	return default
 
-def getRange(text, name):
+def getRange(text, name, default=(None, '')):
 	pattern = r'within (?P<value>\d+) (?P<unit>\w+)'
 	if match := re.search(pattern, text):
 		return match["value"], match["unit"]
 
-	return None, ''
+	return default
 
-def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
-	action_type, damage, other_formula, save, save_dc, scaling = '', { "parts": [], "versatile": '' }, '', '', None, { "mode": 'none'}
+def getAction(text, name, scale=None, rolled_formula='@ROLLED', default=(
+		'',
+		{ "base": { "parts": [] }, "versatile": { "parts": [] } },
+		'',
+		'',
+		None,
+		{ "mode": 'none'}
+	)):
+	action_type, damage, other_formula, save, save_dc, scaling = copy.deepcopy(default)
 
 	has_rolled = False
+	damage_type = ''
 
 	if text:
 		text = text.lower()
@@ -472,7 +480,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 			if formula:
 				temp = match['temp']
 				action_type = action_type or 'heal'
-				damage["parts"].append([ formula, 'temphp' if temp else 'healing' ])
+				damage["base"]["parts"].append([ formula, 'temphp' if temp else 'healing' ])
 				return 'FORMULA'
 			else:
 				return match.group(0)
@@ -533,7 +541,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 		patterns += [fr'{prefix3} {p_formula}']
 		patterns += [fr'the (?P<type>\w+) damage (?:equals|is equal to) {p_formula}']
 		def dmg(match):
-			nonlocal action_type, damage, other_formula
+			nonlocal action_type, damage, other_formula, damage_type
 
 			formula = get_formula(match)
 			if formula:
@@ -542,7 +550,8 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 				if dmg_type == '' and formula == rolled_formula:
 					other_formula = formula
 				else:
-					damage["parts"].append([ formula, dmg_type ])
+					damage["base"]["parts"].append([ formula, dmg_type ])
+					if damage_type == None: damage_type = dmg_type
 				return 'FORMULA'
 			else:
 				return match.group(0)
@@ -553,8 +562,10 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 		patterns += [fr', or \d+ \({p_formula}\)(?= [^.]+ damage)']
 		patterns += [fr', or {p_formula}(?= [^.]+ damage)']
 		def versatile(match):
+			nonlocal damage, damage_type
+
 			formula = get_formula(match)
-			damage["versatile"] = formula
+			damage["versatile"]["parts"].append([ formula, damage_type ])
 		for pat in patterns: text = re.sub(pat, versatile, text)
 
 		## Other dice
@@ -590,7 +601,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 				action_type = action_type or 'other'
 				if other_formula == formula: pass
 				elif other_formula == '': other_formula = formula
-				else: damage["parts"].append([ formula, '' ])
+				else: damage["base"]["parts"].append([ formula, '' ])
 				return 'FORMULA'
 			else:
 				return match.group(0)
@@ -643,8 +654,8 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 		scale = scale.lower()
 		scaling["mode"] = "level" if re.search(r'force potency|overcharge tech', scale) else "atwill"
 
-		if scaling["mode"] == "atwill" and len(damage["parts"]) == 1:
-			if initial_match := re.search(r'd(?P<die>\d+)', damage["parts"][0][0]):
+		if scaling["mode"] == "atwill" and len(damage["base"]["parts"]) == 1:
+			if initial_match := re.search(r'd(?P<die>\d+)', damage["base"]["parts"][0][0]):
 				initial_die = int(initial_match["die"])
 				first_change, prev, prevdiff, cur, diff = None, None, None, None, None
 				pattern = fr'a d(?P<die>\d+) at (?P<lvl>\d+)(?:st|nd|rd|th) level'
@@ -659,14 +670,14 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED'):
 					else:
 						die_diff, level_diff = prevdiff
 						scaled_die = f'd({initial_die}+{die_diff}*floor((@details.level+{level_diff - first_change})/{level_diff}))'
-						damage["parts"][0][0] = re.sub(fr'd{initial_die}', scaled_die, damage["parts"][0][0], 1)
+						damage["base"]["parts"][0][0] = re.sub(fr'd{initial_die}', scaled_die, damage["base"]["parts"][0][0], 1)
 
 		pattern = r'increases by (?P<die>\d*d\d+) for each slot level above'
 		if match := re.search(pattern, scale): scaling["formula"] = match["die"]
 
 	return action_type, damage, other_formula, save, save_dc, scaling
 
-def getDuration(text, name):
+def getDuration(text, name, default=(None, 'inst')):
 	if text:
 		text = text.lower()
 
@@ -690,7 +701,7 @@ def getDuration(text, name):
 		if match := re.search(pattern, text):
 			return 1, 'turn'
 
-	return None, 'inst'
+	return default
 
 def raw(raw_item, attr):
 	return raw_item[attr] if (attr and attr in raw_item) else None

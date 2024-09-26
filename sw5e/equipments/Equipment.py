@@ -79,26 +79,36 @@ class Equipment(
 	# templates.Activities
 
 	# templates.ItemDescription
-	def getDescription(self, importer):
+	def getDescription(self):
 		properties = {prop: self.raw_propertiesMap[prop] for prop in self.raw_propertiesMap if prop != 'Special'}
 
 		text = ''
 
-		if importer:
-			def getContent(prop_name):
-				prop = importer.get('ArmorProperty', data={'name': prop_name})
-				if prop: return prop.getContent(val=properties[prop_name])
-				else: return properties[prop_name].capitalize()
-			text = '\n'.join([getContent(prop) for prop in properties])
-		else:
-			text = ', '.join([properties[prop].capitalize() for prop in properties])
-			text = utils.text.markdownToHtml(text)
+		text = ', '.join([properties[prop].capitalize() for prop in properties])
+		text = utils.text.markdownToHtml(text) or ''
 
 		if self.raw_description:
 			if text: text += '\n<hr/>\n'
 			text += utils.text.markdownToHtml(self.raw_description)
 
 		return text
+	def processDescription(self, importer):
+		if importer:
+			properties = {prop: self.raw_propertiesMap[prop] for prop in self.raw_propertiesMap if prop != 'Special'}
+
+			text = ''
+
+			def getContent(prop_name):
+				prop = importer.get('ArmorProperty', data={'name': prop_name})
+				if prop: return prop.getContent(val=properties[prop_name])
+				else: return properties[prop_name].capitalize()
+			text = '\n'.join([getContent(prop) for prop in properties])
+
+			if self.raw_description:
+				if text: text += '\n<hr/>\n'
+				text += utils.text.markdownToHtml(self.raw_description)
+
+			self.description = text
 
 	# templates.Identifiable
 

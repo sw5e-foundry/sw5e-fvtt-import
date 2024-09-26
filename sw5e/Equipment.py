@@ -59,10 +59,6 @@ class Equipment(
 
 	def load(self, raw_item):
 		super().load(raw_item)
-
-	def process(self, importer):
-		super().process(importer)
-
 		self.duration_value, self.duration_unit = self.getDuration()
 		self.target_value, self.target_width, self.target_unit, self.target_type = self.getTarget()
 		self.range_short, self.range_long, self.range_unit = self.getRange()
@@ -70,6 +66,9 @@ class Equipment(
 		self.action_type, self.damage, self.formula, self.save, self.save_dc, _ = self.getAction()
 		self.activation = self.getActivation()
 		self.p_properties = self.getProperties()
+
+	def process(self, importer):
+		super().process(importer)
 
 	def getActivation(self):
 		return utils.text.getActivation(self.raw_description or '', self.uses, self.recharge)
@@ -171,6 +170,8 @@ class Equipment(
 
 	# templates.Activities
 	def getActivitiesData(self):
+		return {}
+	def processActivitiesData(self, importer):
 		return {
 			"action_type": self.action_type,
 			# "name": "",
@@ -211,11 +212,12 @@ class Equipment(
 			},
 			"damage": {
 				"critical": { "allow": True },
-				"parts": self.damage.get("parts")
+				"parts": [dmg for dmg in self.damage["base"]["parts"] if dmg[1] not in ('healing', 'temphp')] if self.damage else [],
 			},
+			"versatile": self.damage["versatile"] if self.damage else {},
 			"effects": {},
 			"enchant": {},
-			"healing": self.damage.get("parts"),
+			"healing": [heal for heal in self.damage["base"]["parts"] if heal[1] in ('healing', 'temphp')] if self.damage else [],
 			"save": {
 				"ability": self.save,
 				"dc": {
@@ -224,6 +226,7 @@ class Equipment(
 				}
 			},
 			"roll": self.formula,
+			"properties": self.p_properties,
 		}
 
 	# templates.ItemDescription
@@ -236,7 +239,7 @@ class Equipment(
 		return None
 	def getSubcategory(self):
 		return None
-	def getBaseItem(self):
+	def getBaseItemName(self):
 		return re.sub(r'\'|\s+|\([^)]*\)', '', self.raw_name.lower());
 
 	# template.PhysicalItem
@@ -248,4 +251,3 @@ class Equipment(
 		return self.raw_cost
 
 	# templates.EquippableItem
-#

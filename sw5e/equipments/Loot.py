@@ -33,7 +33,7 @@ class Loot(sw5e.Equipment.Equipment):
 		return None
 
 	# templates.ItemDescription
-	def getDescription(self, importer):
+	def getDescription(self):
 		text = self.raw_description
 		return utils.text.markdownToHtml(text)
 

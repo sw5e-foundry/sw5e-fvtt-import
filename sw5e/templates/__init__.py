@@ -1,3 +1,5 @@
+from sw5e.templates.Template import Template
+
 from sw5e.templates.Activities import Activities
 from sw5e.templates.Currency import Currency
 from sw5e.templates.Identifiable import Identifiable
