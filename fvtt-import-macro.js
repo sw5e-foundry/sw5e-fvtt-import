@@ -172,7 +172,12 @@ for (const type of Object.keys(item_types)) {
 	}
 	if (allow_update) {
 		if (verbose) console.log('updating');
-		await Item.updateDocuments(to_update, {pack: `sw5e.${type}`});
+		for (const update of to_update) {
+			console.debug('update');
+			console.debug(update);
+			await Item.updateDocuments([update], {pack: `sw5e.${type}`});
+		}
+		// await Item.updateDocuments(to_update, {pack: `sw5e.${type}`});
 	}
 	if (allow_create) {
 		if (verbose) console.log('creating');

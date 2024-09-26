@@ -1,7 +1,11 @@
-import sw5e.Entity, utils.text
+import sw5e.Entity, sw5e.templates, utils.text
 import re, json
 
-class Power(sw5e.Entity.Item):
+class Power(
+	sw5e.Entity.Item,
+	sw5e.templates.ItemDescription,
+	sw5e.templates.Activities,
+):
 	def getAttrs(self):
 		return super().getAttrs() + [
 			"powerTypeEnum",
@@ -26,8 +30,8 @@ class Power(sw5e.Entity.Item):
 			"rowKey",
 		]
 
-	def process(self, importer):
-		super().process(importer)
+	def load(self, raw_entity):
+		super().load(raw_entity)
 
 		self.activation_type, self.activation_num, self.activation_condition = self.getActivation()
 		self.duration_value, self.duration_unit, self.concentration = self.getDuration()
@@ -39,6 +43,9 @@ class Power(sw5e.Entity.Item):
 
 		self.school = self.getSchool()
 		self.consume = self.getConsume()
+
+	def process(self, importer):
+		super().process(importer)
 
 	def getActivation(self):
 		activation_type = ('none', 'action', 'bonus', 'reaction', 'minute', 'hour')[self.raw_castingPeriodEnum] or 'none'
@@ -139,17 +146,13 @@ class Power(sw5e.Entity.Item):
 		name = utils.text.slugify(self.name)
 		return f'modules/sw5e/icons/packs/{self.raw_powerType}%20Powers/{name}.webp'
 
-	def getDescription(self):
-		text = self.raw_description
-		if self.raw_prerequisite:
-			text = f'_**Prerequisite**: {self.raw_prerequisite}_\n{text}'
-		return utils.text.markdownToHtml(text)
-
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		data["system"]["description"] = { "value": self.getDescription() }
-		data["system"]["source"] = { "custom": self.raw_contentSource }
+		# templates.Activities
+		# templates.ItemDescription
+
+		data["system"]["ability"] = None
 		data["system"]["activation"] = {
 			"type": self.activation_type,
 			"cost": self.activation_num,
@@ -159,46 +162,23 @@ class Power(sw5e.Entity.Item):
 			"value": self.duration_value,
 			"units": self.duration_unit
 		}
+		data["system"]["level"] = self.raw_level
+		data["system"]["materials"] = {}
+		data["system"]["preparation"] = {}
+		data["system"]["properties"] = [ "concentration"] if bool(self.concentration) else []
+		data["system"]["range"] = {
+			"value": self.range_val,
+			"long": None,
+			"units": self.range_unit
+		}
+		data["system"]["school"] = self.school
+		data["system"]["sourceClass"] = None
 		data["system"]["target"] = {
 			"value": self.target_val,
 			"width": None,
 			"units": self.target_unit,
 			"type": self.target_type
 		}
-		data["system"]["range"] = {
-			"value": self.range_val,
-			"long": None,
-			"units": self.range_unit
-		}
-		data["system"]["uses"] = {
-			"value": None,
-			"max": None,
-			"per": ''
-		}
-		if self.consume: data["system"]["consume"] = self.consume
-
-		data["system"]["ability"] = None
-		data["system"]["actionType"] = self.action_type
-		# data["system"]["attackBonus"] = 0
-		# data["system"]["chatFlavor"] = ''
-		data["system"]["critical"] = {
-			"threshold": None,
-			"damage": ""
-		}
-		data["system"]["damage"] = self.damage
-		data["system"]["formula"] = self.formula
-		data["system"]["save"] = {
-			"ability": self.save,
-			"dc": self.save_dc,
-			"scaling": "flat" if self.save_dc else "spell"
-		}
-
-		data["system"]["level"] = self.raw_level
-		data["system"]["school"] = self.school
-		data["system"]["properties"] = [ "concentration"] if bool(self.concentration) else []
-		data["system"]["materials"] = {}
-		data["system"]["preparation"] = {}
-		data["system"]["scaling"] = self.scaling
 
 		return [data]
 
@@ -207,3 +187,79 @@ class Power(sw5e.Entity.Item):
 
 	def getType(self):
 		return 'spell'
+
+
+
+	############################
+	#    Template Functions    #
+	############################
+
+	# templates.Activities
+	def getActivitiesData(self):
+		return {}
+	def processActivitiesData(self, importer):
+		return {
+			"action_type": self.action_type,
+			# "name": "",
+			"activation": {
+				"type": self.activation_type,
+				"cost": self.activation_num,
+				"condition": self.activation_condition,
+			},
+			# "consumption": {},
+			"description": { "value": self.description },
+			"duration": {
+				"value": self.duration_value,
+				"units": self.duration_unit
+			},
+			# "effects": {},
+			"range": self.range_val,
+			"target": {
+				"value": self.target_val,
+				"width": None,
+				"units": self.target_unit,
+				"type": self.target_type
+			},
+			# "uses": {},
+
+			"attack": {
+				"ability": "",
+				"bonus": "",
+				"classification": "spell",
+				"flat": False,
+				"type": "melee",
+			},
+			"check": {
+				"ability": "",
+				"associated": [],
+				"dc": {
+					"calculation": "",
+					"formula": "",
+				}
+			},
+			"damage": {
+				"critical": { "allow": True },
+				"parts": [dmg for dmg in self.damage["base"]["parts"] if dmg[1] not in ('healing', 'temphp')] if self.damage else [],
+			},
+			"effects": {},
+			"enchant": {},
+			"healing": [heal for heal in self.damage["base"]["parts"] if heal[1] in ('healing', 'temphp')] if self.damage else [],
+			"save": {
+				"ability": self.save,
+				"dc": {
+					"calculation": "" if self.save_dc else "spell",
+					"formula": self.save_dc or ""
+				}
+			},
+			"roll": self.formula,
+		}
+
+	# templates.ItemDescription
+	def getDescription(self):
+		text = self.raw_description
+		if self.raw_prerequisite:
+			text = f'_**Prerequisite**: {self.raw_prerequisite}_\n{text}'
+		return utils.text.markdownToHtml(text)
+
+
+#
