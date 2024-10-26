@@ -243,7 +243,7 @@ class Weapon(
 			if wc.startswith(training): start = training.lower()
 
 		if wc.endswith('Blaster') or self.getProperty('Ammunition') or self.getProperty('Reload'):
-			return f'{start}B'
+			return f'{start}BL'
 		for mode in ('Vibroweapon', 'Lightweapon'):
 			if wc.endswith(mode): return f'{start}{mode[0]}W'
 
