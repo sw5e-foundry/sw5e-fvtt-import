@@ -577,7 +577,7 @@ class EnhancedItem(
 	def processCategory(self, importer):
 		self.category, self.subcategory = self.getEquipmentCategory()
 	def processBaseItemName(self, importer):
-		self.baseItemName = self.base_item.name if self.base_item else None
+		self.baseItemName = self.base_item.name.lower() if self.base_item else None
 
 	# template.PhysicalItem
 	def getWeight(self):
