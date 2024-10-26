@@ -108,10 +108,17 @@
                 "custom": "PHB"
             },
             "activities": {
-                "cZkVEFnaWcS15KgT": {
+                "6zkLYAMirjymR09C": {
                     "type": "Utility",
-                    "_id": "cZkVEFnaWcS15KgT",
+                    "_id": "6zkLYAMirjymR09C",
                     "img": null,
+                    "description": {
+                        "value": "<p>A bipod is a device mounted to a two-handed blaster that lacks the fixed property to offer increased stability while prone. As an action, you can deploy or collapse the bipod. While deployed, you ignore the Strength requirement on the attached blaster with the strength property while you are prone, and your speed is reduced to 0. Additionally, while deployed and prone, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of the weapon.</p>"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "duration": {
                         "value": null,
                         "units": "inst"
@@ -121,13 +128,6 @@
                         "width": null,
                         "units": "",
                         "type": ""
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>A bipod is a device mounted to a two-handed blaster that lacks the fixed property to offer increased stability while prone. As an action, you can deploy or collapse the bipod. While deployed, you ignore the Strength requirement on the attached blaster with the strength property while you are prone, and your speed is reduced to 0. Additionally, while deployed and prone, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of the weapon.</p>"
                     }
                 }
             },
@@ -212,10 +212,17 @@
                 "custom": "WH"
             },
             "activities": {
-                "157LIAMVQvFQRsrn": {
+                "1kx0N1BMe8Aeuy8y": {
                     "type": "Utility",
-                    "_id": "157LIAMVQvFQRsrn",
+                    "_id": "1kx0N1BMe8Aeuy8y",
                     "img": null,
+                    "description": {
+                        "value": "<p>A holster can be worn on the leg, hip, or back, and can be used to store a single weapon. You can draw a weapon stored in a holster without using an action. Once you've done so, you can't do so again until you store a weapon in the holster as an action.</p>"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "duration": {
                         "value": null,
                         "units": "inst"
@@ -225,13 +232,6 @@
                         "width": null,
                         "units": "",
                         "type": ""
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>A holster can be worn on the leg, hip, or back, and can be used to store a single weapon. You can draw a weapon stored in a holster without using an action. Once you've done so, you can't do so again until you store a weapon in the holster as an action.</p>"
                     }
                 }
             },
@@ -276,10 +276,17 @@
                 "custom": "PHB"
             },
             "activities": {
-                "wgacfIa0Bu11Bwbi": {
+                "1xs5p5SM5PlFHKLu": {
                     "type": "Utility",
-                    "_id": "wgacfIa0Bu11Bwbi",
+                    "_id": "1xs5p5SM5PlFHKLu",
                     "img": null,
+                    "description": {
+                        "value": "<p>Jetpacks are personal aerial transportation devices that allow the operator to fly into and through the air with great mobility. Activating or deactivating the jetpack requires a bonus action and, while active, you have a flying speed of 30 feet. The jetpack last for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
+                    },
+                    "activation": {
+                        "type": "bonus",
+                        "cost": 1
+                    },
                     "duration": {
                         "value": "1",
                         "units": "minute"
@@ -289,13 +296,6 @@
                         "width": null,
                         "units": "",
                         "type": ""
-                    },
-                    "activation": {
-                        "type": "bonus",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>Jetpacks are personal aerial transportation devices that allow the operator to fly into and through the air with great mobility. Activating or deactivating the jetpack requires a bonus action and, while active, you have a flying speed of 30 feet. The jetpack last for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
                     }
                 }
             },
@@ -380,11 +380,17 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1A0c2pUmJJrV1geO": {
+                "MNtTl6QZF9i18HKL": {
                     "type": "Utility",
-                    "_id": "1A0c2pUmJJrV1geO",
+                    "_id": "MNtTl6QZF9i18HKL",
                     "img": null,
-                    "range": "10",
+                    "description": {
+                        "value": "<p>A small handhold device with a single button, used to activate explosives. Over the course of 1 minute, you can pair the detonator with up to two mines within 10 feet. As an action, you can remotely detonate all of the paired mines. You must be within 30 feet of the mines to detonate them.</p>"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "duration": {
                         "value": null,
                         "units": "inst"
@@ -395,13 +401,7 @@
                         "units": "",
                         "type": ""
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>A small handhold device with a single button, used to activate explosives. Over the course of 1 minute, you can pair the detonator with up to two mines within 10 feet. As an action, you can remotely detonate all of the paired mines. You must be within 30 feet of the mines to detonate them.</p>"
-                    }
+                    "range": "10"
                 }
             },
             "armor": {
@@ -445,10 +445,17 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1TI6C5f3yeoY1gh6": {
+                "UgBtq6SkuPu1hNfP": {
                     "type": "Utility",
-                    "_id": "1TI6C5f3yeoY1gh6",
+                    "_id": "UgBtq6SkuPu1hNfP",
                     "img": null,
+                    "description": {
+                        "value": "<p>Rocket boots are a form of rocket propulsion system affixed to a pair of boots instead of being worn on the back like a standard jetpack. Activating or deactivating the boots requires a bonus action and, while active, you have a flying speed of 25 feet. The rocket boots last for 1 minute and can be recharged by a power source or replacing the power cells.\t</p>"
+                    },
+                    "activation": {
+                        "type": "bonus",
+                        "cost": 1
+                    },
                     "duration": {
                         "value": "1",
                         "units": "minute"
@@ -458,13 +465,6 @@
                         "width": null,
                         "units": "",
                         "type": ""
-                    },
-                    "activation": {
-                        "type": "bonus",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>Rocket boots are a form of rocket propulsion system affixed to a pair of boots instead of being worn on the back like a standard jetpack. Activating or deactivating the boots requires a bonus action and, while active, you have a flying speed of 25 feet. The rocket boots last for 1 minute and can be recharged by a power source or replacing the power cells.\t</p>"
                     }
                 }
             },
@@ -509,10 +509,17 @@
                 "custom": "WH"
             },
             "activities": {
-                "SWiHtHsnA8Z1eA2p": {
+                "6MzRtaGgpBCEVi6R": {
                     "type": "Utility",
-                    "_id": "SWiHtHsnA8Z1eA2p",
+                    "_id": "6MzRtaGgpBCEVi6R",
                     "img": null,
+                    "description": {
+                        "value": "<p>Rocketpacks combine the aerial transportation of a jetpack with the firepower of a rocket launcher. Activating or deactivating the rocketpack's flight capabilities requires a bonus action and, while active, you have a flying speed of 25 feet. The jetpack last for 1 minute per power cell (to a maximum of 5 minutes) and can be recharged by a power source or replacing the power cells.</p>\n<p>Additionally, your rocketpack comes with an integrated rocket launcher with the Ammunition (range 100/400) and reload 1 properties. Rather than traditional power cells, this rocket launcher fires specialized projectiles in the form of rockets. Whenever you would make a ranged weapon attack, you can instead fire this rocket launcher. When firing a rocket at long range, creatures within the radius of the rocket's explosion have advantage on the saving throw. Reloading this rocket launcher takes 1 minute.</p>"
+                    },
+                    "activation": {
+                        "type": "bonus",
+                        "cost": 1
+                    },
                     "duration": {
                         "value": "1",
                         "units": "minute"
@@ -522,13 +529,6 @@
                         "width": null,
                         "units": "",
                         "type": ""
-                    },
-                    "activation": {
-                        "type": "bonus",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>Rocketpacks combine the aerial transportation of a jetpack with the firepower of a rocket launcher. Activating or deactivating the rocketpack's flight capabilities requires a bonus action and, while active, you have a flying speed of 25 feet. The jetpack last for 1 minute per power cell (to a maximum of 5 minutes) and can be recharged by a power source or replacing the power cells.</p>\n<p>Additionally, your rocketpack comes with an integrated rocket launcher with the Ammunition (range 100/400) and reload 1 properties. Rather than traditional power cells, this rocket launcher fires specialized projectiles in the form of rockets. Whenever you would make a ranged weapon attack, you can instead fire this rocket launcher. When firing a rocket at long range, creatures within the radius of the rocket's explosion have advantage on the saving throw. Reloading this rocket launcher takes 1 minute.</p>"
                     }
                 }
             },
@@ -573,10 +573,17 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1T7DeOeAM4mvwLLD": {
+                "HwpPW1yyjLWpdm19": {
                     "type": "Utility",
-                    "_id": "1T7DeOeAM4mvwLLD",
+                    "_id": "HwpPW1yyjLWpdm19",
                     "img": null,
+                    "description": {
+                        "value": "<p>Stealth field generators are special devices typically worn on belts that function as a portable, personal cloaking device. Activating or deactivating the generator requires a bonus action and, while active, you have advantage on Dexterity (Stealth) ability checks that rely on sight. The generator lasts for 1 minute and can be recharged by a power source or replacing the power cell. This effect ends early if you make an attack or cast a force or tech power.</p>"
+                    },
+                    "activation": {
+                        "type": "bonus",
+                        "cost": 1
+                    },
                     "duration": {
                         "value": "1",
                         "units": "minute"
@@ -586,13 +593,6 @@
                         "width": null,
                         "units": "",
                         "type": ""
-                    },
-                    "activation": {
-                        "type": "bonus",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>Stealth field generators are special devices typically worn on belts that function as a portable, personal cloaking device. Activating or deactivating the generator requires a bonus action and, while active, you have advantage on Dexterity (Stealth) ability checks that rely on sight. The generator lasts for 1 minute and can be recharged by a power source or replacing the power cell. This effect ends early if you make an attack or cast a force or tech power.</p>"
                     }
                 }
             },
@@ -757,10 +757,17 @@
                 "custom": "EC"
             },
             "activities": {
-                "1is0knE38CfnFzZi": {
+                "gMefGXUyh8y1cAq9": {
                     "type": "Utility",
-                    "_id": "1is0knE38CfnFzZi",
+                    "_id": "gMefGXUyh8y1cAq9",
                     "img": null,
+                    "description": {
+                        "value": "<p>Propulsion packs enhance underwater movement. Activating or deactivating the propulsion pack requires a bonus action and, while active, you have a swimming speed of 30 feet. The propulsion pack lasts for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
+                    },
+                    "activation": {
+                        "type": "bonus",
+                        "cost": 1
+                    },
                     "duration": {
                         "value": "1",
                         "units": "minute"
@@ -770,13 +777,6 @@
                         "width": null,
                         "units": "",
                         "type": ""
-                    },
-                    "activation": {
-                        "type": "bonus",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>Propulsion packs enhance underwater movement. Activating or deactivating the propulsion pack requires a bonus action and, while active, you have a swimming speed of 30 feet. The propulsion pack lasts for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
                     }
                 }
             },
@@ -861,10 +861,17 @@
                 "custom": "EC"
             },
             "activities": {
-                "rP2hADC6oI3NKIbm": {
+                "lwgc5LdhZnBNTZvi": {
                     "type": "Utility",
-                    "_id": "rP2hADC6oI3NKIbm",
+                    "_id": "lwgc5LdhZnBNTZvi",
                     "img": null,
+                    "description": {
+                        "value": "<p>Repulsor packs are used to slow descent from a high elevation. Activating or deactivating the repulsor pack requires a bonus action and, while active, your rate of descent slow to 60 feet per round, and you ignore the effects of wind of less than moderate speed (no more than 10 mph). The repulsor pack lasts for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
+                    },
+                    "activation": {
+                        "type": "bonus",
+                        "cost": 1
+                    },
                     "duration": {
                         "value": "1",
                         "units": "minute"
@@ -874,13 +881,6 @@
                         "width": null,
                         "units": "",
                         "type": ""
-                    },
-                    "activation": {
-                        "type": "bonus",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>Repulsor packs are used to slow descent from a high elevation. Activating or deactivating the repulsor pack requires a bonus action and, while active, your rate of descent slow to 60 feet per round, and you ignore the effects of wind of less than moderate speed (no more than 10 mph). The repulsor pack lasts for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</p>"
                     }
                 }
             },
@@ -925,10 +925,21 @@
                 "custom": "EC"
             },
             "activities": {
-                "naVByzc5oENEcOt5": {
+                "k40dkjaGX9szrL4f": {
                     "type": "Damage",
-                    "_id": "naVByzc5oENEcOt5",
+                    "_id": "k40dkjaGX9szrL4f",
                     "img": null,
+                    "description": {
+                        "value": "<p>A shock glove is a type of armored glove that is coated with a webbed lacing. When used for an attack, this webbing carries a charge that deals [[/r 1d4]] lightning damage to any objects that the glove come in contact with. If you are engaged in combat with the target of the attack, you must make a grapple check instead of an attack roll, using a Strength (Athletics) check contested by the target's Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use).</p>"
+                    },
+                    "activation": {
+                        "type": null,
+                        "cost": null
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
                     "damage": {
                         "critical": {
                             "allow": true
@@ -940,22 +951,11 @@
                             ]
                         ]
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>A shock glove is a type of armored glove that is coated with a webbed lacing. When used for an attack, this webbing carries a charge that deals [[/r 1d4]] lightning damage to any objects that the glove come in contact with. If you are engaged in combat with the target of the attack, you must make a grapple check instead of an attack roll, using a Strength (Athletics) check contested by the target's Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use).</p>"
                     }
                 }
             },

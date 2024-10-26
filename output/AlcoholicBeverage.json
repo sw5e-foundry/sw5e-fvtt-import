@@ -29,10 +29,17 @@
                 "custom": "WH"
             },
             "activities": {
-                "cDuKlxikEsg1eGEn": {
+                "1LSa8CwFAheq1rAa": {
                     "type": "Save",
-                    "_id": "cDuKlxikEsg1eGEn",
+                    "_id": "1LSa8CwFAheq1rAa",
                     "img": null,
+                    "description": {
+                        "value": "<p>This alcoholic beverage, favored amongst ruffians, features a terrible flavor and strong aftertaste. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Strength. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Strength. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -40,16 +47,15 @@
                             "formula": 14
                         }
                     },
-                    "range": "5",
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": []
-                    },
-                    "duration": {
-                        "value": 1,
-                        "units": "minute"
                     },
                     "target": {
                         "value": null,
@@ -57,13 +63,7 @@
                         "units": "",
                         "type": ""
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>This alcoholic beverage, favored amongst ruffians, features a terrible flavor and strong aftertaste. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Strength. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Strength. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
-                    }
+                    "range": "5"
                 }
             }
         },
@@ -101,10 +101,17 @@
                 "custom": "WH"
             },
             "activities": {
-                "1zYByGmUz5Vu1nxH": {
+                "1ilGZlbNQJyn107E": {
                     "type": "Save",
-                    "_id": "1zYByGmUz5Vu1nxH",
+                    "_id": "1ilGZlbNQJyn107E",
                     "img": null,
+                    "description": {
+                        "value": "<p>Mummergy is a strong-smelling liquor derived from a plant of the same name. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Intelligence. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Intelligence. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -112,16 +119,15 @@
                             "formula": 14
                         }
                     },
-                    "range": "5",
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": []
-                    },
-                    "duration": {
-                        "value": 1,
-                        "units": "minute"
                     },
                     "target": {
                         "value": null,
@@ -129,13 +135,7 @@
                         "units": "",
                         "type": ""
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>Mummergy is a strong-smelling liquor derived from a plant of the same name. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Intelligence. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Intelligence. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
-                    }
+                    "range": "5"
                 }
             }
         },
@@ -173,10 +173,17 @@
                 "custom": "WH"
             },
             "activities": {
-                "jXvzQhmvAs0twi3A": {
+                "IJaCX6Puvla1082q": {
                     "type": "Save",
-                    "_id": "jXvzQhmvAs0twi3A",
+                    "_id": "IJaCX6Puvla1082q",
                     "img": null,
+                    "description": {
+                        "value": "<p>This grog features a pungent odor and a strong kick. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that increases their current and maximum tech points by [[/r 2d3]]. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, their current and maximum tech points are reduced by [[/r 2d3]]. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -184,16 +191,15 @@
                             "formula": 14
                         }
                     },
-                    "range": "5",
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": []
-                    },
-                    "duration": {
-                        "value": 1,
-                        "units": "minute"
                     },
                     "target": {
                         "value": null,
@@ -201,13 +207,7 @@
                         "units": "",
                         "type": ""
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>This grog features a pungent odor and a strong kick. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that increases their current and maximum tech points by [[/r 2d3]]. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, their current and maximum tech points are reduced by [[/r 2d3]]. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
-                    }
+                    "range": "5"
                 }
             }
         },
@@ -245,10 +245,17 @@
                 "custom": "WH"
             },
             "activities": {
-                "1RlAKbpfgpAK1MAn": {
+                "sPFMAajqNrsZvDzO": {
                     "type": "Save",
-                    "_id": "1RlAKbpfgpAK1MAn",
+                    "_id": "sPFMAajqNrsZvDzO",
                     "img": null,
+                    "description": {
+                        "value": "<p>Raava is a traditional liquor breed from zsajhira berries. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Dexterity. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Dexterity. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -256,16 +263,15 @@
                             "formula": 14
                         }
                     },
-                    "range": "5",
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": []
-                    },
-                    "duration": {
-                        "value": 1,
-                        "units": "minute"
                     },
                     "target": {
                         "value": null,
@@ -273,13 +279,7 @@
                         "units": "",
                         "type": ""
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>Raava is a traditional liquor breed from zsajhira berries. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Dexterity. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Dexterity. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
-                    }
+                    "range": "5"
                 }
             }
         },
@@ -317,10 +317,17 @@
                 "custom": "WH"
             },
             "activities": {
-                "mayjPrdZ6ljcgWfI": {
+                "1G01FvBhHgbK1s7d": {
                     "type": "Save",
-                    "_id": "mayjPrdZ6ljcgWfI",
+                    "_id": "1G01FvBhHgbK1s7d",
                     "img": null,
+                    "description": {
+                        "value": "<p>Spicebrew, a popular drink across the galaxy, is a tanned alcoholic beverage topped with foam. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that increases their current and maximum force points by [[/r 2d3]]. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, their current and maximum force points are reduced by [[/r 2d3]]. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -328,16 +335,15 @@
                             "formula": 14
                         }
                     },
-                    "range": "5",
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": []
-                    },
-                    "duration": {
-                        "value": 1,
-                        "units": "minute"
                     },
                     "target": {
                         "value": null,
@@ -345,13 +351,7 @@
                         "units": "",
                         "type": ""
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>Spicebrew, a popular drink across the galaxy, is a tanned alcoholic beverage topped with foam. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that increases their current and maximum force points by [[/r 2d3]]. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, their current and maximum force points are reduced by [[/r 2d3]]. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
-                    }
+                    "range": "5"
                 }
             }
         },
@@ -389,10 +389,17 @@
                 "custom": "WH"
             },
             "activities": {
-                "1fnMZ7OZ00Qp1Id1": {
+                "12BOQOTt7PlB14ih": {
                     "type": "Save",
-                    "_id": "1fnMZ7OZ00Qp1Id1",
+                    "_id": "12BOQOTt7PlB14ih",
                     "img": null,
+                    "description": {
+                        "value": "<p>This colorless spirit, favored by Mandalorians, burns the mouth and throat when consumed. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check or saving throw using Constitution, and at the start of each of the creature's turns it gains [[/r 2d3]] temporary hit points. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check or saving throw using Constitution, and for the duration their current and maximum hit points are reduced by [[/r 2d3]]. If this would reduce your maximum hit points below 1, it instead becomes 1. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -400,7 +407,10 @@
                             "formula": 14
                         }
                     },
-                    "range": "5",
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
                     "damage": {
                         "critical": {
                             "allow": true
@@ -412,35 +422,31 @@
                             ]
                         ]
                     },
-                    "duration": {
-                        "value": 1,
-                        "units": "minute"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
+                    "range": "5"
+                },
+                "aXeJqAhfn25dvpwo": {
+                    "type": "Heal",
+                    "_id": "aXeJqAhfn25dvpwo",
+                    "img": null,
                     "description": {
                         "value": "<p>This colorless spirit, favored by Mandalorians, burns the mouth and throat when consumed. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check or saving throw using Constitution, and at the start of each of the creature's turns it gains [[/r 2d3]] temporary hit points. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check or saving throw using Constitution, and for the duration their current and maximum hit points are reduced by [[/r 2d3]]. If this would reduce your maximum hit points below 1, it instead becomes 1. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
-                    }
-                },
-                "1lq5a5ClCtmrkshr": {
-                    "type": "Heal",
-                    "_id": "1lq5a5ClCtmrkshr",
-                    "img": null,
-                    "range": "5",
+                    },
                     "healing": [
                         [
                             "2d3",
                             "temphp"
                         ]
                     ],
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "duration": {
                         "value": 1,
                         "units": "minute"
@@ -451,13 +457,7 @@
                         "units": "",
                         "type": ""
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>This colorless spirit, favored by Mandalorians, burns the mouth and throat when consumed. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check or saving throw using Constitution, and at the start of each of the creature's turns it gains [[/r 2d3]] temporary hit points. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check or saving throw using Constitution, and for the duration their current and maximum hit points are reduced by [[/r 2d3]]. If this would reduce your maximum hit points below 1, it instead becomes 1. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
-                    }
+                    "range": "5"
                 }
             }
         },
@@ -495,10 +495,17 @@
                 "custom": "WH"
             },
             "activities": {
-                "1mS2rsgNGbVu1m7X": {
+                "BSjLEdtJsFq1Jt26": {
                     "type": "Save",
-                    "_id": "1mS2rsgNGbVu1m7X",
+                    "_id": "BSjLEdtJsFq1Jt26",
                     "img": null,
+                    "description": {
+                        "value": "<p>Tsiraki is a blue-colored alcoholic beverage crafted from fermented salakberries and pickling spices. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Charisma. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Charisma. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -506,16 +513,15 @@
                             "formula": 14
                         }
                     },
-                    "range": "5",
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": []
-                    },
-                    "duration": {
-                        "value": 1,
-                        "units": "minute"
                     },
                     "target": {
                         "value": null,
@@ -523,13 +529,7 @@
                         "units": "",
                         "type": ""
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>Tsiraki is a blue-colored alcoholic beverage crafted from fermented salakberries and pickling spices. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Charisma. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Charisma. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
-                    }
+                    "range": "5"
                 }
             }
         },
@@ -567,10 +567,17 @@
                 "custom": "WH"
             },
             "activities": {
-                "5GpsGXACTvTJDgxG": {
+                "1iUdsQRnzkBHZIxZ": {
                     "type": "Save",
-                    "_id": "5GpsGXACTvTJDgxG",
+                    "_id": "1iUdsQRnzkBHZIxZ",
                     "img": null,
+                    "description": {
+                        "value": "<p>Vayerbok is a thick, green, vegetable-based alcoholic beverage typically served hot. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Wisdom. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Wisdom. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -578,16 +585,15 @@
                             "formula": 14
                         }
                     },
-                    "range": "5",
+                    "duration": {
+                        "value": 1,
+                        "units": "minute"
+                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": []
-                    },
-                    "duration": {
-                        "value": 1,
-                        "units": "minute"
                     },
                     "target": {
                         "value": null,
@@ -595,13 +601,7 @@
                         "units": "",
                         "type": ""
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<p>Vayerbok is a thick, green, vegetable-based alcoholic beverage typically served hot. As an action, you can apply this substance to a creature within 5 feet. For the next minute, the creature experiences a high that allows them to roll an additional [[/r d3]] when making an ability check, attack roll, or saving throw using Wisdom. At the end of the high, the creature must succeed on a DC 14 Constitution saving throw or experience a low that lasts 10 minutes, during which they must roll a [[/r d3]] and subtract the result when making an ability check, attack roll, or saving throw using Wisdom. At the end of the low, the creature must make a DC 14 Wisdom saving throw to resist addiction.</p>"
-                    }
+                    "range": "5"
                 }
             }
         },
