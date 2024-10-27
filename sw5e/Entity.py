@@ -93,7 +93,7 @@ class Entity:
 		for key in ('name', 'source', 'sourceName', 'equipmentCategory', 'level', 'subtype'):
 			if key in raw_entity:
 				value = raw_entity[key]
-				if not value: continue
+				if value in ('', None): continue
 				if type(value) == str:
 					value = value.lower()
 					value = re.sub(r'[^\w\s-]', '', value)

@@ -288,6 +288,9 @@ class EnhancedItem(
 		return 'icons/svg/item-bag.svg'
 
 	def getType(self):
+		if self.base_item:
+			return self.base_item.getType()
+
 		mapping = [
 			None, ## 0 = Unknown
 			'equipment', ## 1 = AdventuringGear
