@@ -102,6 +102,9 @@ const foundry_data = {};
 const allow_delete = true;
 const allow_update = true;
 const allow_create = true;
+const slow_delete = false;
+const slow_update = true;
+const slow_create = false;
 const verbose = true;
 
 for (const type of Object.keys(item_types)) {
@@ -168,20 +171,22 @@ for (const type of Object.keys(item_types)) {
 
 	if (allow_delete) {
 		if (verbose) console.log('deleting');
-		await Item.deleteDocuments(to_delete, {pack: `sw5e.${type}`});
+		if (slow_delete) for (const entry of to_delete) await Item.deleteDocuments([entry], {pack: `sw5e.${type}`});
+		else await Item.deleteDocuments(to_delete, {pack: `sw5e.${type}`});
 	}
 	if (allow_update) {
 		if (verbose) console.log('updating');
-		for (const update of to_update) {
-			console.debug('update');
-			console.debug(update);
-			await Item.updateDocuments([update], {pack: `sw5e.${type}`});
+		if (slow_update) for (const entry of to_update) {
+			console.log("Updating", entry);
+			await Item.updateDocuments([entry], {pack: `sw5e.${type}`});
 		}
-		// await Item.updateDocuments(to_update, {pack: `sw5e.${type}`});
+		else await Item.updateDocuments(to_update, {pack: `sw5e.${type}`});
 	}
 	if (allow_create) {
 		if (verbose) console.log('creating');
-		const items = await Item.createDocuments(to_create, { pack: `sw5e.${type}` });
+		let items = [];
+		if (slow_create) for (const entry of to_create) items.push(await Item.createDocuments([entry], { pack: `sw5e.${type}` }));
+		else items = await Item.createDocuments(to_create, { pack: `sw5e.${type}` });
 		for (const item of items) {
 			const uid = item.flags["sw5e-importer"]?.uid ?? item.flags.uid;
 
