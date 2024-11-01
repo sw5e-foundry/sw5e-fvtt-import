@@ -536,6 +536,9 @@ class EnhancedItem(
 		}
 		self.applyDataAutoTarget(data)
 		return data
+	def processActivities(self, importer):
+		if self.base_item and self.base_item.getType() in ('loot', 'container'): return None
+		else: return super().processActivities(importer)
 
 	# templates.ItemDescription
 	def getDescription(self):
@@ -594,4 +597,4 @@ class EnhancedItem(
 
 	# templates.EquippableItem
 	def getAttunement(self):
-		return 'required' if self.raw_requiresAttunement else ''
+		return 'required' if self.raw_requiresAttunement else None

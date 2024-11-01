@@ -31,6 +31,8 @@ class Loot(sw5e.Equipment.Equipment):
 	# templates.Activities
 	def getActivities(self):
 		return None
+	def processActivities(self, importer):
+		return None
 
 	# templates.ItemDescription
 	def getDescription(self):
