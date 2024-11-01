@@ -81,7 +81,7 @@
             },
             "advancement": [
                 {
-                    "_id": "gCtvIL1pE3Mn7IFk",
+                    "_id": "hFDD8UMJjfu9hbaH",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -120,7 +120,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "hPQt2pjlK4Smc8cx",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Agent",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Agent",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Agent.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-bounty_hunter": {
         "name": "Bounty Hunter",
@@ -204,7 +247,7 @@
             },
             "advancement": [
                 {
-                    "_id": "VWJ0Pj3yK2k15ppH",
+                    "_id": "1dJ04WZCdIWu1or4",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -243,7 +286,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "AES1kmGDANS8qc5O",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Bounty Hunter",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Bounty Hunter",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/BountyHunter.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-criminal": {
         "name": "Criminal",
@@ -327,7 +413,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1z89Ph7SLxmG1xpb",
+                    "_id": "1TbXl8vhRa6R1eG3",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -366,7 +452,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "CBjlNw7fMiCaFVq5",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Criminal",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Criminal",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Criminal.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-entertainer": {
         "name": "Entertainer",
@@ -450,7 +579,7 @@
             },
             "advancement": [
                 {
-                    "_id": "dV3VvctLs621LpkK",
+                    "_id": "DUZDlHCZiZJ1xeqD",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -489,7 +618,62 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "NZQldvQYhovAn0p5",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Entertainer",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "disg",
+                        "mode": 2,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "music",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Entertainer",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Entertainer.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-force_adept": {
         "name": "Force Adept",
@@ -573,7 +757,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1h4WMW32aLdr1BlY",
+                    "_id": "1N8kq3VPSUHx1JZ9",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -612,7 +796,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "uJ1cnO49Ohql0wlv",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Force Adept",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Force Adept",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/ForceAdept.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-gambler": {
         "name": "Gambler",
@@ -696,7 +923,7 @@
             },
             "advancement": [
                 {
-                    "_id": "NugGYIpv1wYTqvBM",
+                    "_id": "7FY2G39z1NqzXy7a",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -735,7 +962,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "9HkjNgqUUwqVm64c",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Gambler",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "game",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Gambler",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Gambler.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-investigator": {
         "name": "Investigator",
@@ -819,7 +1095,7 @@
             },
             "advancement": [
                 {
-                    "_id": "Rt3tXYdvwapj0c0l",
+                    "_id": "aYR6KzEsEDT0qO6f",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -858,7 +1134,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "aKDNPThH7s8K5G8Y",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Investigator",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Investigator",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Investigator.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-jedi": {
         "name": "Jedi",
@@ -942,7 +1261,7 @@
             },
             "advancement": [
                 {
-                    "_id": "wRdt3AknLJHtw6lo",
+                    "_id": "1hrs34vwtTmwsi9M",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -981,7 +1300,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "0LDgG6pA8ETk7nfy",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "mode": 5,
+                        "value": "Jedi",
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.tools.artificersimplements.prof",
+                        "mode": 0,
+                        "value": "1",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Jedi",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Jedi.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-mandalorian": {
         "name": "Mandalorian",
@@ -1065,7 +1433,7 @@
             },
             "advancement": [
                 {
-                    "_id": "QraWCJCEci9eURip",
+                    "_id": "1GvZLvwn98pr1JP3",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -1104,7 +1472,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "Ak1vZkXH57KiTblz",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Mandalorian",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.languages.value",
+                        "value": "mandoa",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Mandalorian",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Mandalorian.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-mercenary": {
         "name": "Mercenary",
@@ -1188,7 +1605,7 @@
             },
             "advancement": [
                 {
-                    "_id": "QrfHavBsvqf1tupf",
+                    "_id": "1HZLWg3xOl9RbjRV",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -1227,7 +1644,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "gLabPSWBP29hTaiU",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Mercenary",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "game",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Mercenary",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Mercenary.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-noble": {
         "name": "Noble",
@@ -1311,7 +1777,7 @@
             },
             "advancement": [
                 {
-                    "_id": "ASW8HGKv9KluQvKB",
+                    "_id": "1IYq4JNhPUzlgKpk",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -1350,7 +1816,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "pV8uhEEDmSoxc2a7",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Noble",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "game",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Noble",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Noble.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-nomad": {
         "name": "Nomad",
@@ -1434,7 +1949,7 @@
             },
             "advancement": [
                 {
-                    "_id": "pcsJcsCg7iU1V5pE",
+                    "_id": "1foi8Bfh4Ey11nuU",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -1473,7 +1988,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "9i2Wqxl58NK5ZsY5",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Nomad",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "music",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Nomad",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Nomad.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-outlaw": {
         "name": "Outlaw",
@@ -1557,7 +2121,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1RjhqkCvkqvc1ZhH",
+                    "_id": "ixQRkH2Xzjr1B9lT",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -1596,7 +2160,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "JX4bhDE2SZifvcok",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Outlaw",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "disg",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Outlaw",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Outlaw.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-pirate": {
         "name": "Pirate",
@@ -1680,7 +2293,7 @@
             },
             "advancement": [
                 {
-                    "_id": "nss5aTWcLBm13G1J",
+                    "_id": "XcmAsptTVUbYkao2",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -1719,7 +2332,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "mb0hwrFG3TRTF5CZ",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Pirate",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "game",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Pirate",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Pirate.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-scientist": {
         "name": "Scientist",
@@ -1803,7 +2465,7 @@
             },
             "advancement": [
                 {
-                    "_id": "gvUvhm5W5mf1KA4I",
+                    "_id": "1pMQO66D91PT1kRg",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -1842,7 +2504,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "K7ZiRe5yiOulgEIy",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Scientist",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Scientist",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Scientist.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-scoundrel": {
         "name": "Scoundrel",
@@ -1926,7 +2631,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1K4rlpbzpajl16AS",
+                    "_id": "1hrQRzySvCCs6duk",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -1965,7 +2670,62 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "zxbZwq5rUD0VZ4jl",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Scoundrel",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "disg",
+                        "mode": 2,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "forg",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Scoundrel",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Scoundrel.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-sith": {
         "name": "Sith",
@@ -2049,7 +2809,7 @@
             },
             "advancement": [
                 {
-                    "_id": "LnWfnEkobN612eRP",
+                    "_id": "XgnrmDdDFvw1O7wI",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -2088,7 +2848,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "i12GFAM3dRlnJuBL",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Sith",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "arti",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Sith",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Sith.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-smuggler": {
         "name": "Smuggler",
@@ -2172,7 +2981,7 @@
             },
             "advancement": [
                 {
-                    "_id": "TfiKH6snAOwN0Ehl",
+                    "_id": "mSWMYd95WyP1tNZW",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -2211,7 +3020,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "ICTn4aQwmyndSpfG",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Smuggler",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "game",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Smuggler",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Smuggler.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-soldier": {
         "name": "Soldier",
@@ -2295,7 +3153,7 @@
             },
             "advancement": [
                 {
-                    "_id": "66D3VRNhmKJnZL2L",
+                    "_id": "Zp5sMO2rE6JFAowN",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -2334,7 +3192,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "50FJ87E6jpgibwLx",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "mode": 5,
+                        "value": "Soldier",
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Soldier",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Soldier.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-spacer": {
         "name": "Spacer",
@@ -2418,7 +3319,7 @@
             },
             "advancement": [
                 {
-                    "_id": "h3mdyldT03KSFvoZ",
+                    "_id": "1OvqrGlLnfpi1nGU",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -2457,7 +3358,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "P2R1BJSV5j400pV3",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Spacer",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Spacer",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Spacer.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-unretired_adventurer": {
         "name": "(Un)Retired Adventurer",
@@ -2541,7 +3485,7 @@
             },
             "advancement": [
                 {
-                    "_id": "RCg6XVy3XeL1hnod",
+                    "_id": "uPpfeRCvMZP1JEo8",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -2580,7 +3524,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "21y2muk4TLqvNhpR",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "(Un)Retired Adventurer",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "(Un)Retired Adventurer",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Un-RetiredAdventurer.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-addict": {
         "name": "Addict",
@@ -2664,7 +3651,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1wc3dOQirXdH1ggN",
+                    "_id": "x2NAZI1TK0U1UIYv",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -2703,7 +3690,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "8CglKXcVxBkb79Dg",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Addict",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Addict",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Addict.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-amnesiac": {
         "name": "Amnesiac",
@@ -2787,7 +3817,7 @@
             },
             "advancement": [
                 {
-                    "_id": "QsBhQYSNKRPlljiA",
+                    "_id": "zE2MmsRMIMV15x9q",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -2910,7 +3940,7 @@
             },
             "advancement": [
                 {
-                    "_id": "O9dcuijIcgy1QESR",
+                    "_id": "6zx806nzfDB1NimC",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -3033,7 +4063,7 @@
             },
             "advancement": [
                 {
-                    "_id": "F8PBmafe4ct1M8Ho",
+                    "_id": "JLkvmuqf0ru1Ni7x",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -3072,7 +4102,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "ODRxYdzp4EFEgpTg",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Barbarian",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Barbarian",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Barbarian.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-bartender": {
         "name": "Bartender",
@@ -3156,7 +4229,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1dkLoMDr9XHT18yQ",
+                    "_id": "1nHLrMMeQY21qg60",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -3279,7 +4352,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1FLlpPZq8O8nbH49",
+                    "_id": "17xr1Vepbmg5qcQa",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -3402,7 +4475,7 @@
             },
             "advancement": [
                 {
-                    "_id": "TH0hIlGsT0nAUshs",
+                    "_id": "1ky8LXOoArafuHYs",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -3525,7 +4598,7 @@
             },
             "advancement": [
                 {
-                    "_id": "6Co7m54IVQy4pqkT",
+                    "_id": "1kxjUOsEdYmJNqOK",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -3564,7 +4637,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "ccy1OO6PwsSoWbte",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "City Watch",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "City Watch",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/CityWatch.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-clone": {
         "name": "Clone",
@@ -3648,7 +4764,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1JwKyCGdFpb010Nc",
+                    "_id": "m4Ao10pCwKUAZuKd",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -3687,7 +4803,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "0j3DdcBsllbba2Tu",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Clone",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Clone",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Clone.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-clone_trooper": {
         "name": "Clone Trooper",
@@ -3771,7 +4930,7 @@
             },
             "advancement": [
                 {
-                    "_id": "f92ykyP7FUF1jJ1q",
+                    "_id": "15tcCl8hZHCS1oxv",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -3810,7 +4969,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "db9s1qhtskgWjc2Z",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Clone Trooper",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Clone Trooper",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/CloneTrooper.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-companion": {
         "name": "Companion",
@@ -3894,7 +5096,7 @@
             },
             "advancement": [
                 {
-                    "_id": "12AmSg2QgrBjKW5C",
+                    "_id": "Muot2xcnu3cMTdbZ",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -3933,7 +5135,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "vkjxLXTTqcu51mT0",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Companion",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Companion",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Companion.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-courtier": {
         "name": "Courtier",
@@ -4017,7 +5262,7 @@
             },
             "advancement": [
                 {
-                    "_id": "A0QDxkEa2KUTuWjg",
+                    "_id": "1ukne4wi7Fi7OwvM",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -4056,7 +5301,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "J2pXAY3HF4uS6AiR",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Courtier",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Courtier",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Courtier.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-crime_lord": {
         "name": "Crime Lord",
@@ -4140,7 +5428,7 @@
             },
             "advancement": [
                 {
-                    "_id": "YtwjQCv02y1mk2kK",
+                    "_id": "1F7htHyWOKXV1ev3",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -4179,7 +5467,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "LLE0jXL2Pxlkz1pH",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Crime Lord",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Crime Lord",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/CrimeLord.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-dathomir_witch": {
         "name": "Dathomir Witch",
@@ -4263,7 +5594,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1qjWROhjJnLb18Ap",
+                    "_id": "cGKE5ViWitwPI9OL",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -4302,7 +5633,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "H8tkC3iluj7HjyAJ",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Dathomir Witch",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "bioa",
+                        "mode": 0,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Dathomir Witch",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/DathomirWitch.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-ex_cultist": {
         "name": "Ex-Cultist",
@@ -4386,7 +5766,7 @@
             },
             "advancement": [
                 {
-                    "_id": "tuTVAXuZPpy1ljge",
+                    "_id": "qwHXM3F0ZhzvE3kI",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -4509,7 +5889,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1MzLOMZ0xKCFHEzl",
+                    "_id": "1BZpe6JelWwIz6X1",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -4548,7 +5928,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "7OyIWtpW5O5MsJyt",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Faction Adventurer",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Faction Adventurer",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/FactionAdventurer.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-faction_artisan": {
         "name": "Faction Artisan",
@@ -4632,7 +6055,7 @@
             },
             "advancement": [
                 {
-                    "_id": "pygetKArPNI11ECd",
+                    "_id": "G0JfhnErokRQI5y4",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -4671,7 +6094,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "XLWkOngF0epU9QvV",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Faction Artisan",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Faction Artisan",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/FactionArtisan.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-faction_merchant": {
         "name": "Faction Merchant",
@@ -4755,7 +6221,7 @@
             },
             "advancement": [
                 {
-                    "_id": "ZEnQxh0uG3B1dOq1",
+                    "_id": "dcMsCHOTQaC5TyCw",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -4794,7 +6260,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "htF1pjUGahRpbqxy",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Faction Merchant",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Faction Merchant",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/FactionMerchant.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-far_traveler": {
         "name": "Far Traveler",
@@ -4878,7 +6387,7 @@
             },
             "advancement": [
                 {
-                    "_id": "unUOPcBhImROGiTC",
+                    "_id": "14w3ZG38QtDvXMue",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -4917,7 +6426,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "rYKZAqQqtPCw5t64",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Far Traveler",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Far Traveler",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/FarTraveler.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-farmer": {
         "name": "Farmer",
@@ -5001,7 +6553,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1sH92wZ5x6Ct4Tsj",
+                    "_id": "t4hNgh36KhAY7jic",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -5040,7 +6592,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "NOLBlvnVIjhLqouk",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Farmer",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "music",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Farmer",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Farmer.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-folk_hero": {
         "name": "Folk Hero",
@@ -5124,7 +6725,7 @@
             },
             "advancement": [
                 {
-                    "_id": "11lIgegPgLCMexXz",
+                    "_id": "FWYsSJuIMUS1EUq6",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -5163,7 +6764,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "vT9EY11Z0B58gu83",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Folk Hero",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Folk Hero",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/FolkHero.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-gladiator": {
         "name": "Gladiator",
@@ -5247,7 +6891,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1CQsT0xzGVXMTUsP",
+                    "_id": "1ggXwae42mR3yLPN",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -5286,7 +6930,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "xwL56xjuHQXDpfkj",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Gladiator",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "music",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Gladiator",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Gladiator.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-hermit": {
         "name": "Hermit",
@@ -5370,7 +7063,7 @@
             },
             "advancement": [
                 {
-                    "_id": "48m6HVCoRmdax9Eu",
+                    "_id": "19ZAlCVKVH1aJk3d",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -5409,7 +7102,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "hW43OgFqBYThXhl6",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Hermit",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "bioa",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Hermit",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Hermit.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-holonet_technician": {
         "name": "Holonet Technician",
@@ -5493,7 +7235,7 @@
             },
             "advancement": [
                 {
-                    "_id": "sESqbqQIaPfc5tv3",
+                    "_id": "1nHlu6MGfVGQMIcE",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -5532,7 +7274,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "39CFIfrRCO58Z3zM",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Holonet Technician",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Holonet Technician",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/HolonetTechnician.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-imperial_knight": {
         "name": "Imperial Knight",
@@ -5616,7 +7401,7 @@
             },
             "advancement": [
                 {
-                    "_id": "P5wGHdlFWdv1eIGH",
+                    "_id": "1uEgUTLsSE2bOphu",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -5655,7 +7440,62 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "OVNP5frv9EwvkrtZ",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Imperial Knight",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "armor",
+                        "mode": 4,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "arti",
+                        "mode": 4,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Imperial Knight",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/ImperialKnight.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-independent_droid": {
         "name": "Independent Droid",
@@ -5739,7 +7579,7 @@
             },
             "advancement": [
                 {
-                    "_id": "e69ZhtPjHPNHKK74",
+                    "_id": "1DhWW2hatxgvJtNa",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -5862,7 +7702,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1LYS2nUqo5NkF6qZ",
+                    "_id": "OVGPwgnfiGg1vPwu",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -5985,7 +7825,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1ABj2KUgTljEtT6J",
+                    "_id": "1gJvbU3k0rRY15YK",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -6024,7 +7864,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "bHgvM2GogP4JMnXK",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Jensaari",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "armor",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Jensaari",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Jensaarai.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-jizz_wailer": {
         "name": "Jizz Wailer",
@@ -6108,7 +7997,7 @@
             },
             "advancement": [
                 {
-                    "_id": "IA0f5McNqO11dM2v",
+                    "_id": "iq84Tl13JVD15sun",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -6231,7 +8120,7 @@
             },
             "advancement": [
                 {
-                    "_id": "hAyHxSi51ZUnmwdJ",
+                    "_id": "1d2UrzPY5Cz71bmb",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -6270,7 +8159,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "1sqFA4OkQBHSy1mI",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Laborer",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "game",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Laborer",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Laborer.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-lawyer": {
         "name": "Lawyer",
@@ -6354,7 +8292,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1ujtE7UCMtsB1oo5",
+                    "_id": "NCtHUu9qZWAqPFVb",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -6393,7 +8331,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "DSwb2coYtzmub2Zz",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Lawyer",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Lawyer",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Lawyer.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-office_worker": {
         "name": "Office Worker",
@@ -6477,7 +8458,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1UoCgTZb1C28Blsw",
+                    "_id": "1HNW24mtwu8h1v9Y",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -6516,7 +8497,56 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "D6PdP2IpQh5eyeWL",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Office Worker",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "game",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Office Worker",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/OfficeWorker.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-politician": {
         "name": "Politician",
@@ -6600,7 +8630,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1tKliHjT78pnTUFh",
+                    "_id": "B5jF9h3Z2ep7NZM0",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -6723,7 +8753,7 @@
             },
             "advancement": [
                 {
-                    "_id": "EX9AnV8gEeR1lMiE",
+                    "_id": "6ONddVBGuCDhbwKe",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -6762,7 +8792,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "DEgaT0vZNnQAfYnp",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Racer",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Racer",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Racer.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-scavenger": {
         "name": "Scavenger",
@@ -6846,7 +8919,7 @@
             },
             "advancement": [
                 {
-                    "_id": "TJgqueCnGUL1TkZF",
+                    "_id": "X9djnRfFKWc1tQEL",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -6885,7 +8958,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "8CglKXcVxBkb79Dg",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Scavenger",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Scavenger",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Scavenger.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-servant": {
         "name": "Servant",
@@ -6969,7 +9085,7 @@
             },
             "advancement": [
                 {
-                    "_id": "NOyBpILgBBc1B3xs",
+                    "_id": "IaEihj9Cx3t1PwGl",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -7008,7 +9124,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "meA1PscX391ozjlU",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Servant",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Servant",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Servant.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-student": {
         "name": "Student",
@@ -7092,7 +9251,7 @@
             },
             "advancement": [
                 {
-                    "_id": "OnNoZNWQOG61T7jZ",
+                    "_id": "1xM5MXLCsUgH1pPe",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -7131,7 +9290,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "m9GimK5lM9wkGQl3",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Student",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Student",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Student.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-survivor": {
         "name": "Survivor",
@@ -7215,7 +9417,7 @@
             },
             "advancement": [
                 {
-                    "_id": "dE35fSpmx4GVqCAX",
+                    "_id": "1qUHZzvekWre1nqi",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -7338,7 +9540,7 @@
             },
             "advancement": [
                 {
-                    "_id": "K5BD5WtI8w2NZFqi",
+                    "_id": "bdaLt6fITT1OOFoV",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -7377,7 +9579,50 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "Z7oI1Zoo2YU4XNfI",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Teacher",
+                        "mode": 5,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Teacher",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Teacher.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     },
     "Background.name-urchin": {
         "name": "Urchin",
@@ -7461,7 +9706,7 @@
             },
             "advancement": [
                 {
-                    "_id": "1Ih9SHppHDO1plPh",
+                    "_id": "1qBDrZIkOQcGlFdO",
                     "type": "ItemChoice",
                     "configuration": {
                         "hint": "These feats are only suggestions, you can choose any feat without a level prerequisite, provided you meet any other prerequisite.",
@@ -7500,6 +9745,61 @@
                 }
             ]
         },
-        "effects": []
+        "effects": [
+            {
+                "_id": "MmxMSEE6PlFniWzE",
+                "changes": [
+                    {
+                        "key": "system.details.background",
+                        "value": "Urchin",
+                        "mode": 5,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "disg",
+                        "mode": 2,
+                        "priority": 20
+                    },
+                    {
+                        "key": "system.traits.toolProf.value",
+                        "value": "secur",
+                        "mode": 2,
+                        "priority": 20
+                    }
+                ],
+                "disabled": false,
+                "duration": {
+                    "startTime": null,
+                    "seconds": null,
+                    "combat": null,
+                    "rounds": null,
+                    "turns": null,
+                    "startRound": null,
+                    "startTurn": null
+                },
+                "tint": "#ffffff",
+                "transfer": true,
+                "flags": {},
+                "origin": null,
+                "name": "Urchin",
+                "description": "",
+                "statuses": [],
+                "_stats": {
+                    "coreVersion": "12.330",
+                    "systemId": null,
+                    "systemVersion": null,
+                    "createdTime": null,
+                    "modifiedTime": null,
+                    "lastModifiedBy": null,
+                    "compendiumSource": null,
+                    "duplicateSource": null
+                },
+                "img": "modules/sw5e/icons/packs/Backgrounds/Urchin.webp",
+                "type": "base",
+                "system": {},
+                "sort": 0
+            }
+        ]
     }
 }
