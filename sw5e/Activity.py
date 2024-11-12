@@ -18,7 +18,7 @@ class Activity():
 			if "allow" not in self.data["damage"]["critical"]: self.data["damage"]["critical"]["allow"] = True
 
 	def getType(self):
-		return self.__class__.__name__
+		return self.__class__.__name__.lower()
 	def attrList(self):
 		return {
 			"name",

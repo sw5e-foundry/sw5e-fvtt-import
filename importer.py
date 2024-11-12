@@ -203,6 +203,8 @@ class Importer:
 						if entity.raw_fakeItem: continue
 						## TODO: Remove this once starship items are done
 						if re.search(r'EnhancedItem\.name-ship', uid): continue
+						## TODO: Remove this once modifications are done
+						if entity_type == 'enhancedItem' and entity.is_modification: continue
 						## TODO: Find a way to set the foundry_ids of the weapon modes
 						if entity.__class__.__name__ == 'Weapon' and utils.text.getProperty('Auto', entity.raw_propertiesMap): continue
 						if entity.__class__.__name__ == 'Weapon' and entity.raw_modes: continue
