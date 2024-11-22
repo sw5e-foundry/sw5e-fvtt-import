@@ -1,12 +1,7 @@
 {
     "Weapon.name-neuronic_whip.equipmentCategory-weapon": {
-        "name": "Neuronic whip",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4624479+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-neuronic_whip.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "rch": true,
@@ -15,32 +10,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4624479+00:00",
+                "uid": "Weapon.name-neuronic_whip.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Exotic%20Vibroweapons/NeuronicWhip.webp",
+        "name": "Neuronic whip",
         "system": {
-            "quantity": 1,
-            "weight": 0,
-            "price": {
-                "value": 725,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "exoticVW",
-                "baseItem": "neuronicwhip"
-            },
-            "description": {
-                "value": "<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Shocking 15</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>\n<h3>Special</h3>\n<p>specialized (shocking)</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -48,58 +34,72 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": 10,
-                    "description": {
-                        "value": "<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Shocking 15</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>\n<h3>Special</h3>\n<p>specialized (shocking)</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 1,
                                 "denomination": null,
-                                "bonus": null,
+                                "number": 1,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "kinetic"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Shocking 15</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>\n<h3>Special</h3>\n<p>specialized (shocking)</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": 10,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "description": {
+                "value": "<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Shocking 15</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>\n<h3>Special</h3>\n<p>specialized (shocking)</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 725
             },
             "properties": [
                 "rch",
                 "shocking"
             ],
-            "weaponClass": ""
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "EC"
+            },
+            "type": {
+                "baseItem": "neuronicwhip",
+                "value": "exoticVW"
+            },
+            "weaponClass": "",
+            "weight": 0
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Exotic%20Vibroweapons/NeuronicWhip.webp",
-        "effects": []
+        "type": "weapon"
     }
 }

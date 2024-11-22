@@ -1,12 +1,7 @@
 {
     "Weapon.name-lightblade.equipmentCategory-weapon": {
-        "name": "Lightblade",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:54.3995014+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-lightblade.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "fin": true,
@@ -16,31 +11,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:51:54.3995014+00:00",
+                "uid": "Weapon.name-lightblade.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightblade.webp",
+        "name": "Lightblade",
         "system": {
-            "quantity": 1,
-            "price": {
-                "value": 375,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "simpleLW",
-                "baseItem": "lightblade"
-            },
-            "description": {
-                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -48,69 +35,77 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 1,
                                 "denomination": null,
-                                "bonus": null,
+                                "number": 1,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "energy"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "description": {
+                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 375
             },
             "properties": [
                 "fin",
                 "hidden",
                 "luminous"
             ],
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "PHB"
+            },
+            "type": {
+                "baseItem": "lightblade",
+                "value": "simpleLW"
+            },
             "weaponClass": "blade"
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightblade.webp",
-        "effects": []
+        "type": "weapon"
     },
     "Weapon.name-lightclub.equipmentCategory-weapon": {
-        "name": "Lightclub",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:54.3995014+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-lightclub.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "dexRq": 11,
@@ -121,31 +116,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:51:54.3995014+00:00",
+                "uid": "Weapon.name-lightclub.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightclub.webp",
+        "name": "Lightclub",
         "system": {
-            "quantity": 1,
-            "price": {
-                "value": 1300,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "simpleLW",
-                "baseItem": "lightclub"
-            },
-            "description": {
-                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -153,49 +140,55 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 1,
                                 "denomination": null,
-                                "bonus": null,
+                                "number": 1,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "energy"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 1300
             },
             "properties": [
                 "dexRq",
@@ -203,20 +196,22 @@
                 "luminous",
                 "two"
             ],
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "PHB"
+            },
+            "type": {
+                "baseItem": "lightclub",
+                "value": "simpleLW"
+            },
             "weaponClass": "crushing"
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightclub.webp",
-        "effects": []
+        "type": "weapon"
     },
     "Weapon.name-lightdagger.equipmentCategory-weapon": {
-        "name": "Lightdagger",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:54.3995014+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-lightdagger.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "fin": true,
@@ -228,32 +223,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:51:54.3995014+00:00",
+                "uid": "Weapon.name-lightdagger.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightdagger.webp",
+        "name": "Lightdagger",
         "system": {
-            "quantity": 1,
-            "weight": 1,
-            "price": {
-                "value": 425,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "simpleLW",
-                "baseItem": "lightdagger"
-            },
-            "description": {
-                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -261,49 +247,55 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": 20,
-                    "description": {
-                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 1,
                                 "denomination": null,
-                                "bonus": null,
+                                "number": 1,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "energy"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": 20,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "description": {
+                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 425
             },
             "properties": [
                 "fin",
@@ -312,20 +304,23 @@
                 "luminous",
                 "range"
             ],
-            "weaponClass": "trip"
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "PHB"
+            },
+            "type": {
+                "baseItem": "lightdagger",
+                "value": "simpleLW"
+            },
+            "weaponClass": "trip",
+            "weight": 1
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightdagger.webp",
-        "effects": []
+        "type": "weapon"
     },
     "Weapon.name-lightsaber.equipmentCategory-weapon": {
-        "name": "Lightsaber",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:54.4005016+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-lightsaber.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "hidden": true,
@@ -335,31 +330,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:51:54.4005016+00:00",
+                "uid": "Weapon.name-lightsaber.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightsaber.webp",
+        "name": "Lightsaber",
         "system": {
-            "quantity": 1,
-            "price": {
-                "value": 450,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "simpleLW",
-                "baseItem": "lightsaber"
-            },
-            "description": {
-                "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -367,88 +354,96 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 1,
                                 "denomination": null,
-                                "bonus": null,
+                                "number": 1,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "energy"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "damage": {
+                "versatile": {
+                    "bonus": null,
+                    "custom": {
+                        "enabled": false,
+                        "formula": null
+                    },
+                    "denomination": "4",
+                    "number": "2",
+                    "scaling": {
+                        "formula": null,
+                        "mode": "whole",
+                        "number": 1
+                    },
+                    "types": [
+                        "energy"
+                    ]
+                }
+            },
+            "description": {
+                "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 450
             },
             "properties": [
                 "hidden",
                 "luminous",
                 "ver"
             ],
-            "weaponClass": "blade",
-            "damage": {
-                "versatile": {
-                    "custom": {
-                        "enabled": false,
-                        "formula": null
-                    },
-                    "number": "2",
-                    "denomination": "4",
-                    "bonus": null,
-                    "types": [
-                        "energy"
-                    ],
-                    "scaling": {
-                        "mode": "whole",
-                        "number": 1,
-                        "formula": null
-                    }
-                }
-            }
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "PHB"
+            },
+            "type": {
+                "baseItem": "lightsaber",
+                "value": "simpleLW"
+            },
+            "weaponClass": "blade"
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightsaber.webp",
-        "effects": []
+        "type": "weapon"
     },
     "Weapon.name-lightstaff.equipmentCategory-weapon": {
-        "name": "Lightstaff",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:54.4005016+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-lightstaff.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "dexRq": 11,
@@ -459,31 +454,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:51:54.4005016+00:00",
+                "uid": "Weapon.name-lightstaff.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightstaff.webp",
+        "name": "Lightstaff",
         "system": {
-            "quantity": 1,
-            "price": {
-                "value": 1275,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "simpleLW",
-                "baseItem": "lightstaff"
-            },
-            "description": {
-                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
-            },
-            "source": {
-                "custom": "PHB"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -491,49 +478,55 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": 10,
-                    "description": {
-                        "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 2,
                                 "denomination": null,
-                                "bonus": null,
+                                "number": 2,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "energy"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": 10,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 1275
             },
             "properties": [
                 "dexRq",
@@ -541,20 +534,22 @@
                 "rch",
                 "two"
             ],
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "PHB"
+            },
+            "type": {
+                "baseItem": "lightstaff",
+                "value": "simpleLW"
+            },
             "weaponClass": "polearm"
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightstaff.webp",
-        "effects": []
+        "type": "weapon"
     },
     "Weapon.name-sabermace.equipmentCategory-weapon": {
-        "name": "Sabermace",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:06.1017149+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-sabermace.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "brutal": 1,
@@ -566,31 +561,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:06.1017149+00:00",
+                "uid": "Weapon.name-sabermace.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Sabermace.webp",
+        "name": "Sabermace",
         "system": {
-            "quantity": 1,
-            "price": {
-                "value": 950,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "simpleLW",
-                "baseItem": "sabermace"
-            },
-            "description": {
-                "value": "<h3>Brutal 1</h3>\n<p>When you score a critical hit with a weapon with the brutal property, you roll a number of additional weapon damage dice equal to the brutal number.</p>\n<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 1d10]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -598,49 +585,74 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h3>Brutal 1</h3>\n<p>When you score a critical hit with a weapon with the brutal property, you roll a number of additional weapon damage dice equal to the brutal number.</p>\n<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 1d10]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 1,
                                 "denomination": null,
-                                "bonus": null,
+                                "number": 1,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "energy"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Brutal 1</h3>\n<p>When you score a critical hit with a weapon with the brutal property, you roll a number of additional weapon damage dice equal to the brutal number.</p>\n<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 1d10]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "damage": {
+                "versatile": {
+                    "bonus": null,
+                    "custom": {
+                        "enabled": false,
+                        "formula": null
+                    },
+                    "denomination": "10",
+                    "number": "1",
+                    "scaling": {
+                        "formula": null,
+                        "mode": "whole",
+                        "number": 1
+                    },
+                    "types": [
+                        "energy"
+                    ]
+                }
+            },
+            "description": {
+                "value": "<h3>Brutal 1</h3>\n<p>When you score a critical hit with a weapon with the brutal property, you roll a number of additional weapon damage dice equal to the brutal number.</p>\n<h3>Dexterity 13</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Versatile ([[/r 1d10]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 950
             },
             "properties": [
                 "brutal",
@@ -649,39 +661,22 @@
                 "luminous",
                 "ver"
             ],
-            "weaponClass": "crushing",
-            "damage": {
-                "versatile": {
-                    "custom": {
-                        "enabled": false,
-                        "formula": null
-                    },
-                    "number": "1",
-                    "denomination": "10",
-                    "bonus": null,
-                    "types": [
-                        "energy"
-                    ],
-                    "scaling": {
-                        "mode": "whole",
-                        "number": 1,
-                        "formula": null
-                    }
-                }
-            }
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "baseItem": "sabermace",
+                "value": "simpleLW"
+            },
+            "weaponClass": "crushing"
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Sabermace.webp",
-        "effects": []
+        "type": "weapon"
     },
     "Weapon.name-sicklesaber.equipmentCategory-weapon": {
-        "name": "Sicklesaber",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:06.1017149+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-sicklesaber.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "dexRq": 11,
@@ -693,32 +688,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:06.1017149+00:00",
+                "uid": "Weapon.name-sicklesaber.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Sicklesaber.webp",
+        "name": "Sicklesaber",
         "system": {
-            "quantity": 1,
-            "weight": 1,
-            "price": {
-                "value": 700,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "simpleLW",
-                "baseItem": "sicklesaber"
-            },
-            "description": {
-                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -726,49 +712,55 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 1,
                                 "denomination": null,
-                                "bonus": null,
+                                "number": 1,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "energy"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 700
             },
             "properties": [
                 "dexRq",
@@ -777,20 +769,23 @@
                 "lgt",
                 "luminous"
             ],
-            "weaponClass": "blade"
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "baseItem": "sicklesaber",
+                "value": "simpleLW"
+            },
+            "weaponClass": "blade",
+            "weight": 1
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Sicklesaber.webp",
-        "effects": []
+        "type": "weapon"
     },
     "Weapon.name-lightbaton.equipmentCategory-weapon": {
-        "name": "Lightbaton",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4554523+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-lightbaton.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "hidden": true,
@@ -800,31 +795,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4554523+00:00",
+                "uid": "Weapon.name-lightbaton.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightbaton.webp",
+        "name": "Lightbaton",
         "system": {
-            "quantity": 1,
-            "price": {
-                "value": 400,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "simpleLW",
-                "baseItem": "lightbaton"
-            },
-            "description": {
-                "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -832,69 +819,77 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 1,
                                 "denomination": null,
-                                "bonus": null,
+                                "number": 1,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "energy"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "description": {
+                "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 400
             },
             "properties": [
                 "hidden",
                 "lgt",
                 "luminous"
             ],
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "EC"
+            },
+            "type": {
+                "baseItem": "lightbaton",
+                "value": "simpleLW"
+            },
             "weaponClass": "crushing"
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightbaton.webp",
-        "effects": []
+        "type": "weapon"
     },
     "Weapon.name-lightcutlass.equipmentCategory-weapon": {
-        "name": "Lightcutlass",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4554523+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-lightcutlass.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "dexRq": 11,
@@ -904,31 +899,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4554523+00:00",
+                "uid": "Weapon.name-lightcutlass.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightcutlass.webp",
+        "name": "Lightcutlass",
         "system": {
-            "quantity": 1,
-            "price": {
-                "value": 725,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "simpleLW",
-                "baseItem": "lightcutlass"
-            },
-            "description": {
-                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -936,69 +923,77 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 2,
                                 "denomination": null,
-                                "bonus": null,
+                                "number": 2,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "energy"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "description": {
+                "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 725
             },
             "properties": [
                 "dexRq",
                 "hidden",
                 "luminous"
             ],
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "EC"
+            },
+            "type": {
+                "baseItem": "lightcutlass",
+                "value": "simpleLW"
+            },
             "weaponClass": "blade"
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Lightcutlass.webp",
-        "effects": []
+        "type": "weapon"
     },
     "Weapon.name-saberspear.equipmentCategory-weapon": {
-        "name": "Saberspear",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.456451+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-saberspear.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "luminous": true,
@@ -1008,32 +1003,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.456451+00:00",
+                "uid": "Weapon.name-saberspear.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Saberspear.webp",
+        "name": "Saberspear",
         "system": {
-            "quantity": 1,
-            "weight": 2,
-            "price": {
-                "value": 450,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "simpleLW",
-                "baseItem": "saberspear"
-            },
-            "description": {
-                "value": "<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -1041,88 +1027,97 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": 20,
-                    "description": {
-                        "value": "<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 1,
                                 "denomination": null,
-                                "bonus": null,
+                                "number": 1,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "energy"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": 20,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "damage": {
+                "versatile": {
+                    "bonus": null,
+                    "custom": {
+                        "enabled": false,
+                        "formula": null
+                    },
+                    "denomination": "4",
+                    "number": "2",
+                    "scaling": {
+                        "formula": null,
+                        "mode": "whole",
+                        "number": 1
+                    },
+                    "types": [
+                        "energy"
+                    ]
+                }
+            },
+            "description": {
+                "value": "<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 450
             },
             "properties": [
                 "luminous",
                 "range",
                 "ver"
             ],
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "EC"
+            },
+            "type": {
+                "baseItem": "saberspear",
+                "value": "simpleLW"
+            },
             "weaponClass": "polearm",
-            "damage": {
-                "versatile": {
-                    "custom": {
-                        "enabled": false,
-                        "formula": null
-                    },
-                    "number": "2",
-                    "denomination": "4",
-                    "bonus": null,
-                    "types": [
-                        "energy"
-                    ],
-                    "scaling": {
-                        "mode": "whole",
-                        "number": 1,
-                        "formula": null
-                    }
-                }
-            }
+            "weight": 2
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Saberspear.webp",
-        "effects": []
+        "type": "weapon"
     },
     "Weapon.name-wristsaber.equipmentCategory-weapon": {
-        "name": "Wristsaber",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.456451+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-wristsaber.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "fin": true,
@@ -1133,32 +1128,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.456451+00:00",
+                "uid": "Weapon.name-wristsaber.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Wristsaber.webp",
+        "name": "Wristsaber",
         "system": {
-            "quantity": 1,
-            "weight": 1,
-            "price": {
-                "value": 375,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "simpleLW",
-                "baseItem": "wristsaber"
-            },
-            "description": {
-                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -1166,49 +1152,55 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 1,
                                 "denomination": null,
-                                "bonus": null,
+                                "number": 1,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "energy"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "description": {
+                "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Luminous</h3>\n<p>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 375
             },
             "properties": [
                 "fin",
@@ -1216,10 +1208,18 @@
                 "lgt",
                 "luminous"
             ],
-            "weaponClass": "trip"
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "EC"
+            },
+            "type": {
+                "baseItem": "wristsaber",
+                "value": "simpleLW"
+            },
+            "weaponClass": "trip",
+            "weight": 1
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Simple%20Lightweapons/Wristsaber.webp",
-        "effects": []
+        "type": "weapon"
     }
 }

@@ -1,12 +1,7 @@
 {
     "Weapon.name-saberstaff.equipmentCategory-weapon": {
-        "name": "Saberstaff",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-05-30T20:15:25.5767259+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-saberstaff.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "double": true
@@ -14,32 +9,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-05-30T20:15:25.5767259+00:00",
+                "uid": "Weapon.name-saberstaff.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Exotic%20Lightweapons/Saberstaff.webp",
+        "name": "Saberstaff",
         "system": {
-            "quantity": 1,
-            "weight": 0,
-            "price": {
-                "value": 1375,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "exoticLW",
-                "baseItem": "saberstaff"
-            },
-            "description": {
-                "value": "<h3>Modal (double-saber and tech-staff)</h3>\n<p>A weapon with this property can switch between modes. A list of weapons in parentheses appears with the property-the weapons between which an exotic weapon can be switched by using an object interaction.</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -47,65 +33,74 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h3>Modal (double-saber and tech-staff)</h3>\n<p>A weapon with this property can switch between modes. A list of weapons in parentheses appears with the property-the weapons between which an exotic weapon can be switched by using an object interaction.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 1,
                                 "denomination": null,
-                                "bonus": null,
-                                "types": [],
+                                "number": 1,
                                 "scaling": {
+                                    "formula": null,
                                     "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                    "number": 1
+                                },
+                                "types": []
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Modal (double-saber and tech-staff)</h3>\n<p>A weapon with this property can switch between modes. A list of weapons in parentheses appears with the property-the weapons between which an exotic weapon can be switched by using an object interaction.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "description": {
+                "value": "<h3>Modal (double-saber and tech-staff)</h3>\n<p>A weapon with this property can switch between modes. A list of weapons in parentheses appears with the property-the weapons between which an exotic weapon can be switched by using an object interaction.</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 1375
             },
             "properties": [
                 "double"
             ],
-            "weaponClass": ""
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "EC"
+            },
+            "type": {
+                "baseItem": "saberstaff",
+                "value": "exoticLW"
+            },
+            "weaponClass": "",
+            "weight": 0
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Exotic%20Lightweapons/Saberstaff.webp",
-        "effects": []
+        "type": "weapon"
     },
     "Weapon.name-sunsaber.equipmentCategory-weapon": {
-        "name": "Sunsaber",
+        "effects": [],
         "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4624479+00:00",
-                "importer_version": 3,
-                "uid": "Weapon.name-sunsaber.equipmentCategory-weapon"
-            },
             "sw5e": {
                 "properties": {
                     "bright": true,
@@ -116,32 +111,23 @@
                 "reload": {
                     "types": []
                 }
+            },
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4624479+00:00",
+                "uid": "Weapon.name-sunsaber.equipmentCategory-weapon"
             }
         },
+        "img": "modules/sw5e/icons/packs/Exotic%20Lightweapons/Sunsaber.webp",
+        "name": "Sunsaber",
         "system": {
-            "quantity": 1,
-            "weight": 0,
-            "price": {
-                "value": 1875,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "exoticLW",
-                "baseItem": "sunsaber"
-            },
-            "description": {
-                "value": "<h3>Bright 15</h3>\n<p>This weapon's damage becomes fire, and its luminous property sheds bright light in a 5-foot radius and dim light for an additional 5 feet while activated, instead of only dim light in a 5-foot radius. Additionally, when you would make a melee weapon attack with a weapon with the bright property, you can instead force the target to make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon, or the bright number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature takes additional damage of the same type at the start of its next turn equal to your governing ability modifier.</p>\n<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>\n<h3>Special</h3>\n<p>specialized (bright)</p>"
-            },
-            "source": {
-                "custom": "EC"
-            },
             "activities": {
                 "0attack000000000": {
                     "_id": "0attack000000000",
-                    "type": "attack",
-                    "img": null,
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
                     "attack": {
                         "ability": "",
                         "bonus": "",
@@ -149,49 +135,74 @@
                         "flat": false,
                         "type": "melee"
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h3>Bright 15</h3>\n<p>This weapon's damage becomes fire, and its luminous property sheds bright light in a 5-foot radius and dim light for an additional 5 feet while activated, instead of only dim light in a 5-foot radius. Additionally, when you would make a melee weapon attack with a weapon with the bright property, you can instead force the target to make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon, or the bright number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature takes additional damage of the same type at the start of its next turn equal to your governing ability modifier.</p>\n<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>\n<h3>Special</h3>\n<p>specialized (bright)</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": 1,
                                 "denomination": null,
-                                "bonus": null,
+                                "number": 1,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "fire"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h3>Bright 15</h3>\n<p>This weapon's damage becomes fire, and its luminous property sheds bright light in a 5-foot radius and dim light for an additional 5 feet while activated, instead of only dim light in a 5-foot radius. Additionally, when you would make a melee weapon attack with a weapon with the bright property, you can instead force the target to make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon, or the bright number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature takes additional damage of the same type at the start of its next turn equal to your governing ability modifier.</p>\n<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>\n<h3>Special</h3>\n<p>specialized (bright)</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "target": {
-                        "value": 1,
-                        "width": null,
+                        "type": "enemy",
                         "units": "",
-                        "type": "enemy"
-                    }
+                        "value": 1,
+                        "width": null
+                    },
+                    "type": "attack"
                 }
+            },
+            "damage": {
+                "versatile": {
+                    "bonus": null,
+                    "custom": {
+                        "enabled": false,
+                        "formula": null
+                    },
+                    "denomination": "4",
+                    "number": "2",
+                    "scaling": {
+                        "formula": null,
+                        "mode": "whole",
+                        "number": 1
+                    },
+                    "types": [
+                        "fire"
+                    ]
+                }
+            },
+            "description": {
+                "value": "<h3>Bright 15</h3>\n<p>This weapon's damage becomes fire, and its luminous property sheds bright light in a 5-foot radius and dim light for an additional 5 feet while activated, instead of only dim light in a 5-foot radius. Additionally, when you would make a melee weapon attack with a weapon with the bright property, you can instead force the target to make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon, or the bright number, whichever is lower). If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw. On a failed save, the target takes normal weapon damage and is subjected to any additional effects that would occur on a hit, and the creature takes additional damage of the same type at the start of its next turn equal to your governing ability modifier.</p>\n<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>\n<h3>Special</h3>\n<p>specialized (bright)</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 1875
             },
             "properties": [
                 "bright",
@@ -199,29 +210,18 @@
                 "hidden",
                 "ver"
             ],
+            "quantity": 1,
+            "rarity": "",
+            "source": {
+                "custom": "EC"
+            },
+            "type": {
+                "baseItem": "sunsaber",
+                "value": "exoticLW"
+            },
             "weaponClass": "",
-            "damage": {
-                "versatile": {
-                    "custom": {
-                        "enabled": false,
-                        "formula": null
-                    },
-                    "number": "2",
-                    "denomination": "4",
-                    "bonus": null,
-                    "types": [
-                        "fire"
-                    ],
-                    "scaling": {
-                        "mode": "whole",
-                        "number": 1,
-                        "formula": null
-                    }
-                }
-            }
+            "weight": 0
         },
-        "type": "weapon",
-        "img": "modules/sw5e/icons/packs/Exotic%20Lightweapons/Sunsaber.webp",
-        "effects": []
+        "type": "weapon"
     }
 }

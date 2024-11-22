@@ -30,3 +30,9 @@ def applyType(obj, mapping, key='id'):
 		for prop in obj
 		if prop in mapping
 	}
+
+def deep_sort(obj):
+	if isinstance(obj, dict): return { k: deep_sort(v) for k, v in sorted(obj.items()) }
+	elif isinstance(obj, list): return list([deep_sort(v) for v in obj])
+	elif isinstance(obj, tuple): return tuple((deep_sort(v) for v in obj))
+	else: return obj

@@ -1,6 +1,6 @@
 import pickle, json, requests, os, re, sys
 import sw5e
-import utils.text
+import utils.text, utils.object
 
 def withEntityTypes(cls):
 	for entity_type in cls._Importer__stored_types:
@@ -52,7 +52,6 @@ class Importer:
 	warn_limit = 5
 
 	def __init__(self, refresh=False):
-
 		if refresh:
 			print('Refreshing raw data...')
 			for entity_type in self.__entity_types:
@@ -303,6 +302,7 @@ class Importer:
 				if entity.raw_fakeItem: continue
 				try:
 					entity_data, file = entity.getData(importer=self), entity.getFile(importer=self)
+					entity_data = utils.object.deep_sort(entity_data)
 					if file not in data:
 						data[file] = {}
 					for mode in entity_data:

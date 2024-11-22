@@ -1,272 +1,240 @@
 {
     "EnhancedItem.name-analysis_protocol.subtype-protocol": {
-        "name": "Analysis Protocol",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5430388+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5430388+00:00",
                 "uid": "EnhancedItem.name-analysis_protocol.subtype-protocol"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Analysis Protocol",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "uncommon",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
             "description": {
                 "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em>Prerequisite:  Class I droid</em></p>\n<hr/>\n<p>You know the <em>detect enhancement</em> and <em>toxin scan</em> tech powers. You can cast each power once per day. Intelligence is your techcasting ability for these powers. You do not require use of a wristpad for these powers.</p>"
             },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-blaster_integration.subtype-part": {
-        "name": "Blaster Integration",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.544039+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-blaster_integration.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "common",
-            "identified": true,
+            "quantity": 1,
+            "rarity": "uncommon",
+            "source": {
+                "custom": "WH"
+            },
             "type": {
-                "value": false,
-                "subtype": false
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-blaster_integration.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.544039+00:00",
+                "uid": "EnhancedItem.name-blaster_integration.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Blaster Integration",
+        "system": {
+            "activities": {
+                "0utility00000000": {
+                    "_id": "0utility00000000",
+                    "activation": {
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>You can now integrate a single simple or martial blaster into your droid chassis. Over the course of a short or long rest, you can insert and integrate this blaster into your frame. As a bonus action, you can open or close a small hatch located somewhere on your droid body, permitting you to wield and fire the weapon normally when you want to attack with it. While the hatch is open, your hands are not considered occupied by this blaster. All other rules and conditions apply normally as if you were wielding this blaster in either one or two hands (your choice). </p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
             },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>You can now integrate a single simple or martial blaster into your droid chassis. Over the course of a short or long rest, you can insert and integrate this blaster into your frame. As a bonus action, you can open or close a small hatch located somewhere on your droid body, permitting you to wield and fire the weapon normally when you want to attack with it. While the hatch is open, your hands are not considered occupied by this blaster. All other rules and conditions apply normally as if you were wielding this blaster in either one or two hands (your choice). </p>"
             },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
             "source": {
                 "custom": "WH"
             },
-            "activities": {
-                "0utility00000000": {
-                    "_id": "0utility00000000",
-                    "type": "utility",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "roll": "",
-                    "range": null,
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>You can now integrate a single simple or martial blaster into your droid chassis. Over the course of a short or long rest, you can insert and integrate this blaster into your frame. As a bonus action, you can open or close a small hatch located somewhere on your droid body, permitting you to wield and fire the weapon normally when you want to attack with it. While the hatch is open, your hands are not considered occupied by this blaster. All other rules and conditions apply normally as if you were wielding this blaster in either one or two hands (your choice). </p>"
-                    },
-                    "activation": {
-                        "type": "bonus",
-                        "cost": 1
-                    },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    }
-                }
-            },
-            "modificationType": "droidcustomization"
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-droid_dura_plating_mk_i.subtype-part": {
-        "name": "Droid Dura Plating Mk I",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.544039+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.544039+00:00",
                 "uid": "EnhancedItem.name-droid_dura_plating_mk_i.subtype-part"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Droid Dura Plating Mk I",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "rare",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Proficiency with heavy armor</em></p>\n<hr/>\n<p>Your base AC becomes 19. </p>\n<p><em>Originally used on starship hulls, durasteel is the most cost-effective way to prevent the destruction of your droids.</em></p>"
             },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "rare",
             "source": {
                 "custom": "WH"
             },
-            "modificationType": "droidcustomization"
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-droid_dura_plating_mk_ii.subtype-part": {
-        "name": "Droid Dura Plating Mk II",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.544039+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.544039+00:00",
                 "uid": "EnhancedItem.name-droid_dura_plating_mk_ii.subtype-part"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Droid Dura Plating Mk II",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "veryRare",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Proficiency with heavy armor</em></p>\n<hr/>\n<p>Your base AC becomes 20.</p>\n<p><em>Originally used on starship hulls, durasteel is the most cost-effective way to prevent the destruction of your droids.</em></p>"
             },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "veryRare",
             "source": {
                 "custom": "WH"
             },
-            "modificationType": "droidcustomization"
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-droid_dura_plating_mk_iii.subtype-part": {
-        "name": "Droid Dura Plating Mk III",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.544039+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.544039+00:00",
                 "uid": "EnhancedItem.name-droid_dura_plating_mk_iii.subtype-part"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Droid Dura Plating Mk III",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "legendary",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Proficiency with heavy armor</em></p>\n<hr/>\n<p>Your base AC becomes 21. </p>\n<p><em>Originally used on starship hulls, durasteel is the most cost-effective way to prevent the destruction of your droids.</em></p>"
             },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "legendary",
             "source": {
                 "custom": "WH"
             },
-            "modificationType": "droidcustomization"
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-enhanced_reconstructor.subtype-protocol": {
-        "name": "Enhanced Reconstructor",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.544039+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.544039+00:00",
                 "uid": "EnhancedItem.name-enhanced_reconstructor.subtype-protocol"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Enhanced Reconstructor",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "uncommon",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
             "description": {
                 "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em>Prerequisite:  Class IV droid</em></p>\n<hr/>\n<p>Whenever you roll a Hit Die to recover hit points, you add your Intelligence modifier to the roll (minimum of +1).</p>"
             },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-fortitude_protocol_mk_i.subtype-protocol": {
-        "name": "Fortitude Protocol Mk I",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5450377+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-fortitude_protocol_mk_i.subtype-protocol"
-            }
-        },
-        "system": {
-            "attunement": "required",
-            "quantity": 1,
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
+            "quantity": 1,
             "rarity": "uncommon",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Strength saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-            },
             "source": {
                 "custom": "WH"
             },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-fortitude_protocol_mk_i.subtype-protocol": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5450377+00:00",
+                "uid": "EnhancedItem.name-fortitude_protocol_mk_i.subtype-protocol"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Fortitude Protocol Mk I",
+        "system": {
             "activities": {
                 "0save00000000000": {
                     "_id": "0save00000000000",
-                    "type": "save",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Strength saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-                    },
-                    "save": {
-                        "ability": "str",
-                        "dc": {
-                            "calculation": "spell",
-                            "formula": ""
-                        }
-                    },
                     "activation": {
-                        "type": null,
-                        "cost": null
+                        "cost": null,
+                        "type": null
                     },
                     "damage": {
                         "critical": {
@@ -274,60 +242,86 @@
                         },
                         "parts": []
                     },
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Strength saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
+                    "save": {
+                        "ability": "str",
+                        "dc": {
+                            "calculation": "spell",
+                            "formula": ""
+                        }
+                    },
                     "target": {
-                        "value": null,
-                        "width": null,
+                        "type": "",
                         "units": "",
-                        "type": ""
-                    }
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "save"
                 }
             },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-fortitude_protocol_mk_ii.subtype-protocol": {
-        "name": "Fortitude Protocol Mk II",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5450377+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-fortitude_protocol_mk_ii.subtype-protocol"
-            }
-        },
-        "system": {
             "attunement": "required",
-            "quantity": 1,
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Strength saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "veryRare",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Constitution saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-            },
+            "quantity": 1,
+            "rarity": "uncommon",
             "source": {
                 "custom": "WH"
             },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-fortitude_protocol_mk_ii.subtype-protocol": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5450377+00:00",
+                "uid": "EnhancedItem.name-fortitude_protocol_mk_ii.subtype-protocol"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Fortitude Protocol Mk II",
+        "system": {
             "activities": {
                 "0save00000000000": {
                     "_id": "0save00000000000",
-                    "type": "save",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
+                    "activation": {
+                        "cost": null,
+                        "type": null
                     },
-                    "range": null,
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    },
                     "description": {
                         "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Constitution saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
                     },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -335,9 +329,54 @@
                             "formula": ""
                         }
                     },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "save"
+                }
+            },
+            "attunement": "required",
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Constitution saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "veryRare",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-fortitude_protocol_mk_iii.subtype-protocol": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5450377+00:00",
+                "uid": "EnhancedItem.name-fortitude_protocol_mk_iii.subtype-protocol"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Fortitude Protocol Mk III",
+        "system": {
+            "activities": {
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "activation": {
-                        "type": null,
-                        "cost": null
+                        "cost": null,
+                        "type": null
                     },
                     "damage": {
                         "critical": {
@@ -345,60 +384,15 @@
                         },
                         "parts": []
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    }
-                }
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-fortitude_protocol_mk_iii.subtype-protocol": {
-        "name": "Fortitude Protocol Mk III",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5450377+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-fortitude_protocol_mk_iii.subtype-protocol"
-            }
-        },
-        "system": {
-            "attunement": "required",
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "artifact",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Strength or Constitution saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "activities": {
-                "0save00000000000": {
-                    "_id": "0save00000000000",
-                    "type": "save",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
                     "description": {
                         "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Strength or Constitution saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
                     },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -406,9 +400,586 @@
                             "formula": ""
                         }
                     },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "save"
+                }
+            },
+            "attunement": "required",
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Strength or Constitution saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "artifact",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-four_armed_combatant.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5450377+00:00",
+                "uid": "EnhancedItem.name-four_armed_combatant.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Four-Armed Combatant",
+        "system": {
+            "description": {
+                "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class IV droid</em></p>\n<hr/>\n<p>You install two additional arms which you can use independently of one another. You can only gain the benefit of items held by two of your arms at any given time, and once per round you can switch which arms your are benefiting from (no action required).</p>\n<p>While you have at least 3 arms free, you have a climbing speed equal to your walking speed.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-humanoid_replicant.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5460374+00:00",
+                "uid": "EnhancedItem.name-humanoid_replicant.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Humanoid Replicant",
+        "system": {
+            "description": {
+                "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Humanoid proportions</em></p>\n<hr/>\n<p>Your droid gains an exterior layer that makes it indistinguishable from a species of your choice of the same size. Additionally, you have advantage on checks made to conceal your nature, and scanners of standard rarity or lower automatically fail to determine that you are a droid.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-interface_protocol.subtype-protocol": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5460374+00:00",
+                "uid": "EnhancedItem.name-interface_protocol.subtype-protocol"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Interface Protocol",
+        "system": {
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p>You become a valid target for the <em>tracker droid interface</em> tech power. </p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-interfaced_assistance_protocol.subtype-protocol": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5460374+00:00",
+                "uid": "EnhancedItem.name-interfaced_assistance_protocol.subtype-protocol"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Interfaced Assistance Protocol",
+        "system": {
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p>While you are interfaced via the <em>tracker droid interface</em> tech power, whenever your handler has advantage on an ability check or attack roll granted by you taking the Help action, they can reroll one of the dice once.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-interfaced_crafting_protocol.subtype-protocol": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5460374+00:00",
+                "uid": "EnhancedItem.name-interfaced_crafting_protocol.subtype-protocol"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Interfaced Crafting Protocol",
+        "system": {
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p>While you are interfaced via the <em>tracker droid interface</em> tech power, whenever your handler makes an ability check using tools with which the you are also proficient, they have advantage on the check. If they already have advantage, they can instead reroll one of the dice once.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-interfaced_distraction_protocol.subtype-protocol": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5460374+00:00",
+                "uid": "EnhancedItem.name-interfaced_distraction_protocol.subtype-protocol"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Interfaced Distraction Protocol",
+        "system": {
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p>While you are interfaced via the <em>tracker droid interface</em> tech power, when you are within 5 feet of a target, your handler does not provoke opportunity attacks when moving out of that creature's reach.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-interfaced_healing_protocol.subtype-protocol": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5460374+00:00",
+                "uid": "EnhancedItem.name-interfaced_healing_protocol.subtype-protocol"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Interfaced Healing Protocol",
+        "system": {
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p>While you are interfaced via the <em>tracker droid interface</em> tech power, when your handler restores hit points to a creature that is within 5 feet of you, they can roll the dice twice and take either total.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-interfaced_tracking_protocol.subtype-protocol": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5470372+00:00",
+                "uid": "EnhancedItem.name-interfaced_tracking_protocol.subtype-protocol"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Interfaced Tracking Protocol",
+        "system": {
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p>While you are interfaced via the <em>tracker droid interface</em> tech power, when your handler makes a Wisdom (Survival) check to track a target, and you are also tracking that target, your handler gains advantage on the check. If they already have advantage, they can instead reroll one of the dice once.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-leg_reinforcements.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5470372+00:00",
+                "uid": "EnhancedItem.name-leg_reinforcements.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Leg Reinforcements",
+        "system": {
+            "description": {
+                "value": "<h4>Droid Customization (Part)</h4>\n <p>When you make a long jump, you can cover a number of feet up to twice your Strength score. When you make a high jump, you can leap a number of feet up into the air equal to 3 + twice your Strength modifier.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-manipulator_upgrade.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5470372+00:00",
+                "uid": "EnhancedItem.name-manipulator_upgrade.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Manipulator Upgrade",
+        "system": {
+            "description": {
+                "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class II droid</em></p>\n<hr/>\n<p>You lose the Undersized special trait.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-mechanic.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5470372+00:00",
+                "uid": "EnhancedItem.name-mechanic.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Mechanic",
+        "system": {
+            "activities": {
+                "0heal00000000000": {
+                    "_id": "0heal00000000000",
                     "activation": {
-                        "type": null,
-                        "cost": null
+                        "cost": 1,
+                        "type": "action"
+                    },
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>As an action, you can activate the repair tools, choosing one of the following options:</p>\n<ul>\n<li>You can stabilize a droid within 5 feet of you that has 0 hit points, without needing to make an Intelligence (Technology) check.</li>\n<li>You can restore [[/r 2d4+2]] hit points to a droid or construct within 5 feet.</li>\n</ul>\n<p>You can use each feature once. You regain all expended uses when you complete a long rest.</p>\n<p><em>This part equips the droid with a series of machine repair tools.</em></p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "healing": {
+                        "bonus": " + 2",
+                        "custom": {
+                            "enabled": false,
+                            "formula": null
+                        },
+                        "denomination": "4",
+                        "number": "2",
+                        "scaling": {
+                            "formula": null,
+                            "mode": "whole",
+                            "number": 1
+                        },
+                        "types": [
+                            "healing"
+                        ]
+                    },
+                    "img": null,
+                    "range": "5",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "heal"
+                }
+            },
+            "description": {
+                "value": "<h4>Droid Customization (Part)</h4>\n <p>As an action, you can activate the repair tools, choosing one of the following options:</p>\n<ul>\n<li>You can stabilize a droid within 5 feet of you that has 0 hit points, without needing to make an Intelligence (Technology) check.</li>\n<li>You can restore [[/r 2d4+2]] hit points to a droid or construct within 5 feet.</li>\n</ul>\n<p>You can use each feature once. You regain all expended uses when you complete a long rest.</p>\n<p><em>This part equips the droid with a series of machine repair tools.</em></p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-medic.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.548036+00:00",
+                "uid": "EnhancedItem.name-medic.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Medic",
+        "system": {
+            "activities": {
+                "0heal00000000000": {
+                    "_id": "0heal00000000000",
+                    "activation": {
+                        "cost": 1,
+                        "type": "action"
+                    },
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>As an action, you can activate the medical kit, choosing one of the following options:</p>\n<ul>\n<li>You can stabilize a creature within 5 feet of you that has 0 hit points, without needing to make a Wisdom (Medicine) check.</li>\n<li>You can restore [[/r 1d4+1]] hit points to a creature within 5 feet.</li>\n<li>You can cure a target of one poison affecting them or to give them advantage on saving throws against poison for 1 hour.</li>\n</ul>\n<p>This medical kit has no effect on droids or constructs. You can use each feature once. You regain all expended uses when you complete a long rest.</p>\n<p><em>This part equips the droid with a compact medical kit.</em></p>"
+                    },
+                    "duration": {
+                        "units": "hour",
+                        "value": "1"
+                    },
+                    "healing": {
+                        "bonus": " + 1",
+                        "custom": {
+                            "enabled": false,
+                            "formula": null
+                        },
+                        "denomination": "4",
+                        "number": "1",
+                        "scaling": {
+                            "formula": null,
+                            "mode": "whole",
+                            "number": 1
+                        },
+                        "types": [
+                            "healing"
+                        ]
+                    },
+                    "img": null,
+                    "range": "5",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "heal"
+                }
+            },
+            "description": {
+                "value": "<h4>Droid Customization (Part)</h4>\n <p>As an action, you can activate the medical kit, choosing one of the following options:</p>\n<ul>\n<li>You can stabilize a creature within 5 feet of you that has 0 hit points, without needing to make a Wisdom (Medicine) check.</li>\n<li>You can restore [[/r 1d4+1]] hit points to a creature within 5 feet.</li>\n<li>You can cure a target of one poison affecting them or to give them advantage on saving throws against poison for 1 hour.</li>\n</ul>\n<p>This medical kit has no effect on droids or constructs. You can use each feature once. You regain all expended uses when you complete a long rest.</p>\n<p><em>This part equips the droid with a compact medical kit.</em></p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-mighty_build.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.548036+00:00",
+                "uid": "EnhancedItem.name-mighty_build.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Mighty Build",
+        "system": {
+            "description": {
+                "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class V droid</em></p>\n<hr/>\n<p>Your carrying capacity and the weight you can push, drag, or lift doubles. If it would already double, it instead triples.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "uncommon",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-power_supply_port.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.548036+00:00",
+                "uid": "EnhancedItem.name-power_supply_port.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Power Supply Port",
+        "system": {
+            "description": {
+                "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class V droid</em></p>\n<hr/>\n<p>You gain the ability to charge expended power cells and power generators within your reach. You have a charging capacity of 1 hour. You can spend 10 minutes of this charging capacity to replenish an expended power cell, or 1 hour replenishing an expended power generator. Alternatively, you can directly connect to and power a single blaster weapon that uses power cells or power generators. Once per turn, if the powered weapon would be reloaded, it can be done without using an action, instead expending 10 minutes of your charging capacity if it uses power cells or 1 hour if it uses a power generator. Connecting or disconnecting a weapon takes an action. </p>\n<p>If you attempt to replenish an enhanced power cell or power generator, or a specialized power cell, it loses its enhanced or specialized properties.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-reflex_protocol_mk_i.subtype-protocol": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.548036+00:00",
+                "uid": "EnhancedItem.name-reflex_protocol_mk_i.subtype-protocol"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Reflex Protocol Mk I",
+        "system": {
+            "activities": {
+                "0save00000000000": {
+                    "_id": "0save00000000000",
+                    "activation": {
+                        "cost": null,
+                        "type": null
                     },
                     "damage": {
                         "critical": {
@@ -416,592 +987,15 @@
                         },
                         "parts": []
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    }
-                }
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-four_armed_combatant.subtype-part": {
-        "name": "Four-Armed Combatant",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5450377+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-four_armed_combatant.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class IV droid</em></p>\n<hr/>\n<p>You install two additional arms which you can use independently of one another. You can only gain the benefit of items held by two of your arms at any given time, and once per round you can switch which arms your are benefiting from (no action required).</p>\n<p>While you have at least 3 arms free, you have a climbing speed equal to your walking speed.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-humanoid_replicant.subtype-part": {
-        "name": "Humanoid Replicant",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5460374+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-humanoid_replicant.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Humanoid proportions</em></p>\n<hr/>\n<p>Your droid gains an exterior layer that makes it indistinguishable from a species of your choice of the same size. Additionally, you have advantage on checks made to conceal your nature, and scanners of standard rarity or lower automatically fail to determine that you are a droid.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-interface_protocol.subtype-protocol": {
-        "name": "Interface Protocol",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5460374+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-interface_protocol.subtype-protocol"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p>You become a valid target for the <em>tracker droid interface</em> tech power. </p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-interfaced_assistance_protocol.subtype-protocol": {
-        "name": "Interfaced Assistance Protocol",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5460374+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-interfaced_assistance_protocol.subtype-protocol"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p>While you are interfaced via the <em>tracker droid interface</em> tech power, whenever your handler has advantage on an ability check or attack roll granted by you taking the Help action, they can reroll one of the dice once.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-interfaced_crafting_protocol.subtype-protocol": {
-        "name": "Interfaced Crafting Protocol",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5460374+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-interfaced_crafting_protocol.subtype-protocol"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p>While you are interfaced via the <em>tracker droid interface</em> tech power, whenever your handler makes an ability check using tools with which the you are also proficient, they have advantage on the check. If they already have advantage, they can instead reroll one of the dice once.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-interfaced_distraction_protocol.subtype-protocol": {
-        "name": "Interfaced Distraction Protocol",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5460374+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-interfaced_distraction_protocol.subtype-protocol"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p>While you are interfaced via the <em>tracker droid interface</em> tech power, when you are within 5 feet of a target, your handler does not provoke opportunity attacks when moving out of that creature's reach.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-interfaced_healing_protocol.subtype-protocol": {
-        "name": "Interfaced Healing Protocol",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5460374+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-interfaced_healing_protocol.subtype-protocol"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p>While you are interfaced via the <em>tracker droid interface</em> tech power, when your handler restores hit points to a creature that is within 5 feet of you, they can roll the dice twice and take either total.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-interfaced_tracking_protocol.subtype-protocol": {
-        "name": "Interfaced Tracking Protocol",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5470372+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-interfaced_tracking_protocol.subtype-protocol"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p>While you are interfaced via the <em>tracker droid interface</em> tech power, when your handler makes a Wisdom (Survival) check to track a target, and you are also tracking that target, your handler gains advantage on the check. If they already have advantage, they can instead reroll one of the dice once.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-leg_reinforcements.subtype-part": {
-        "name": "Leg Reinforcements",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5470372+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-leg_reinforcements.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Part)</h4>\n <p>When you make a long jump, you can cover a number of feet up to twice your Strength score. When you make a high jump, you can leap a number of feet up into the air equal to 3 + twice your Strength modifier.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-manipulator_upgrade.subtype-part": {
-        "name": "Manipulator Upgrade",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5470372+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-manipulator_upgrade.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class II droid</em></p>\n<hr/>\n<p>You lose the Undersized special trait.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-mechanic.subtype-part": {
-        "name": "Mechanic",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5470372+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-mechanic.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Part)</h4>\n <p>As an action, you can activate the repair tools, choosing one of the following options:</p>\n<ul>\n<li>You can stabilize a droid within 5 feet of you that has 0 hit points, without needing to make an Intelligence (Technology) check.</li>\n<li>You can restore [[/r 2d4+2]] hit points to a droid or construct within 5 feet.</li>\n</ul>\n<p>You can use each feature once. You regain all expended uses when you complete a long rest.</p>\n<p><em>This part equips the droid with a series of machine repair tools.</em></p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "activities": {
-                "0heal00000000000": {
-                    "_id": "0heal00000000000",
-                    "type": "heal",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": "5",
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>As an action, you can activate the repair tools, choosing one of the following options:</p>\n<ul>\n<li>You can stabilize a droid within 5 feet of you that has 0 hit points, without needing to make an Intelligence (Technology) check.</li>\n<li>You can restore [[/r 2d4+2]] hit points to a droid or construct within 5 feet.</li>\n</ul>\n<p>You can use each feature once. You regain all expended uses when you complete a long rest.</p>\n<p><em>This part equips the droid with a series of machine repair tools.</em></p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "healing": {
-                        "custom": {
-                            "enabled": false,
-                            "formula": null
-                        },
-                        "number": "2",
-                        "denomination": "4",
-                        "bonus": " + 2",
-                        "types": [
-                            "healing"
-                        ],
-                        "scaling": {
-                            "mode": "whole",
-                            "number": 1,
-                            "formula": null
-                        }
-                    },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    }
-                }
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-medic.subtype-part": {
-        "name": "Medic",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.548036+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-medic.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Part)</h4>\n <p>As an action, you can activate the medical kit, choosing one of the following options:</p>\n<ul>\n<li>You can stabilize a creature within 5 feet of you that has 0 hit points, without needing to make a Wisdom (Medicine) check.</li>\n<li>You can restore [[/r 1d4+1]] hit points to a creature within 5 feet.</li>\n<li>You can cure a target of one poison affecting them or to give them advantage on saving throws against poison for 1 hour.</li>\n</ul>\n<p>This medical kit has no effect on droids or constructs. You can use each feature once. You regain all expended uses when you complete a long rest.</p>\n<p><em>This part equips the droid with a compact medical kit.</em></p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "activities": {
-                "0heal00000000000": {
-                    "_id": "0heal00000000000",
-                    "type": "heal",
-                    "img": null,
-                    "duration": {
-                        "value": "1",
-                        "units": "hour"
-                    },
-                    "range": "5",
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>As an action, you can activate the medical kit, choosing one of the following options:</p>\n<ul>\n<li>You can stabilize a creature within 5 feet of you that has 0 hit points, without needing to make a Wisdom (Medicine) check.</li>\n<li>You can restore [[/r 1d4+1]] hit points to a creature within 5 feet.</li>\n<li>You can cure a target of one poison affecting them or to give them advantage on saving throws against poison for 1 hour.</li>\n</ul>\n<p>This medical kit has no effect on droids or constructs. You can use each feature once. You regain all expended uses when you complete a long rest.</p>\n<p><em>This part equips the droid with a compact medical kit.</em></p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "healing": {
-                        "custom": {
-                            "enabled": false,
-                            "formula": null
-                        },
-                        "number": "1",
-                        "denomination": "4",
-                        "bonus": " + 1",
-                        "types": [
-                            "healing"
-                        ],
-                        "scaling": {
-                            "mode": "whole",
-                            "number": 1,
-                            "formula": null
-                        }
-                    },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    }
-                }
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-mighty_build.subtype-part": {
-        "name": "Mighty Build",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.548036+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-mighty_build.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "uncommon",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class V droid</em></p>\n<hr/>\n<p>Your carrying capacity and the weight you can push, drag, or lift doubles. If it would already double, it instead triples.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-power_supply_port.subtype-part": {
-        "name": "Power Supply Port",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.548036+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-power_supply_port.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class V droid</em></p>\n<hr/>\n<p>You gain the ability to charge expended power cells and power generators within your reach. You have a charging capacity of 1 hour. You can spend 10 minutes of this charging capacity to replenish an expended power cell, or 1 hour replenishing an expended power generator. Alternatively, you can directly connect to and power a single blaster weapon that uses power cells or power generators. Once per turn, if the powered weapon would be reloaded, it can be done without using an action, instead expending 10 minutes of your charging capacity if it uses power cells or 1 hour if it uses a power generator. Connecting or disconnecting a weapon takes an action. </p>\n<p>If you attempt to replenish an enhanced power cell or power generator, or a specialized power cell, it loses its enhanced or specialized properties.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-reflex_protocol_mk_i.subtype-protocol": {
-        "name": "Reflex Protocol Mk I",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.548036+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-reflex_protocol_mk_i.subtype-protocol"
-            }
-        },
-        "system": {
-            "attunement": "required",
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "uncommon",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Intelligence saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
-            "activities": {
-                "0save00000000000": {
-                    "_id": "0save00000000000",
-                    "type": "save",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
                     "description": {
                         "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Intelligence saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
                     },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "save": {
                         "ability": "int",
                         "dc": {
@@ -1009,70 +1003,70 @@
                             "formula": ""
                         }
                     },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": []
-                    },
                     "target": {
-                        "value": null,
-                        "width": null,
+                        "type": "",
                         "units": "",
-                        "type": ""
-                    }
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "save"
                 }
             },
-            "modificationType": "droidcustomization"
+            "attunement": "required",
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Intelligence saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "uncommon",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-reflex_protocol_mk_ii.subtype-protocol": {
-        "name": "Reflex Protocol Mk II",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.549036+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.549036+00:00",
                 "uid": "EnhancedItem.name-reflex_protocol_mk_ii.subtype-protocol"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Reflex Protocol Mk II",
         "system": {
-            "attunement": "required",
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "veryRare",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
             "activities": {
                 "0save00000000000": {
                     "_id": "0save00000000000",
-                    "type": "save",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
+                    "activation": {
+                        "cost": null,
+                        "type": null
                     },
-                    "range": null,
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    },
                     "description": {
                         "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
                     },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1080,80 +1074,54 @@
                             "formula": ""
                         }
                     },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": []
-                    },
                     "target": {
-                        "value": null,
-                        "width": null,
+                        "type": "",
                         "units": "",
-                        "type": ""
-                    }
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "save"
                 }
             },
-            "modificationType": "droidcustomization"
+            "attunement": "required",
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "veryRare",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-reflex_protocol_mk_iii.subtype-protocol": {
-        "name": "Reflex Protocol Mk III",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.549036+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.549036+00:00",
                 "uid": "EnhancedItem.name-reflex_protocol_mk_iii.subtype-protocol"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Reflex Protocol Mk III",
         "system": {
-            "attunement": "required",
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "artifact",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Dexterity or Intelligence saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
             "activities": {
                 "0save00000000000": {
                     "_id": "0save00000000000",
-                    "type": "save",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Dexterity or Intelligence saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-                    },
-                    "save": {
-                        "ability": "dex",
-                        "dc": {
-                            "calculation": "spell",
-                            "formula": ""
-                        }
-                    },
                     "activation": {
-                        "type": null,
-                        "cost": null
+                        "cost": null,
+                        "type": null
                     },
                     "damage": {
                         "critical": {
@@ -1161,532 +1129,540 @@
                         },
                         "parts": []
                     },
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Dexterity or Intelligence saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
+                    "save": {
+                        "ability": "dex",
+                        "dc": {
+                            "calculation": "spell",
+                            "formula": ""
+                        }
+                    },
                     "target": {
-                        "value": null,
-                        "width": null,
+                        "type": "",
                         "units": "",
-                        "type": ""
-                    }
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "save"
                 }
             },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-reinforced_chassis.subtype-part": {
-        "name": "Reinforced Chassis",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.549036+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-reinforced_chassis.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
+            "attunement": "required",
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Dexterity or Intelligence saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Part)</h4>\n <p>You've reinforced your chassis. When you don't have armor integrated, your AC is 13 + your Dexterity modifier.</p>"
-            },
+            "quantity": 1,
+            "rarity": "artifact",
             "source": {
                 "custom": "WH"
             },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-repulsor_lifts_basic.subtype-part": {
-        "name": "Repulsor Lifts (Basic)",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.549036+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-repulsor_lifts_basic.subtype-part"
+            "type": {
+                "subtype": false,
+                "value": false
             }
         },
+        "type": "modification"
+    },
+    "EnhancedItem.name-reinforced_chassis.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.549036+00:00",
+                "uid": "EnhancedItem.name-reinforced_chassis.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Reinforced Chassis",
         "system": {
-            "quantity": 1,
+            "description": {
+                "value": "<h4>Droid Customization (Part)</h4>\n <p>You've reinforced your chassis. When you don't have armor integrated, your AC is 13 + your Dexterity modifier.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
+            "quantity": 1,
             "rarity": "common",
-            "identified": true,
+            "source": {
+                "custom": "WH"
+            },
             "type": {
-                "value": false,
-                "subtype": false
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-repulsor_lifts_basic.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.549036+00:00",
+                "uid": "EnhancedItem.name-repulsor_lifts_basic.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Repulsor Lifts (Basic)",
+        "system": {
+            "activities": {
+                "0utility00000000": {
+                    "_id": "0utility00000000",
+                    "activation": {
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 25 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
+                    },
+                    "duration": {
+                        "units": "minute",
+                        "value": "1"
+                    },
+                    "img": null,
+                    "range": null,
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
             },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 25 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
             },
-            "source": {
-                "custom": "WH"
-            },
-            "activities": {
-                "0utility00000000": {
-                    "_id": "0utility00000000",
-                    "type": "utility",
-                    "img": null,
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "roll": "",
-                    "range": null,
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 25 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
-                    },
-                    "activation": {
-                        "type": "bonus",
-                        "cost": 1
-                    },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    }
-                }
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-repulsor_lifts_champion.subtype-part": {
-        "name": "Repulsor Lifts (Champion)",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.549036+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-repulsor_lifts_champion.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "artifact",
-            "identified": true,
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
             "type": {
-                "value": false,
-                "subtype": false
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-repulsor_lifts_champion.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.549036+00:00",
+                "uid": "EnhancedItem.name-repulsor_lifts_champion.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Repulsor Lifts (Champion)",
+        "system": {
+            "activities": {
+                "0utility00000000": {
+                    "_id": "0utility00000000",
+                    "activation": {
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 50 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
+                    },
+                    "duration": {
+                        "units": "minute",
+                        "value": "1"
+                    },
+                    "img": null,
+                    "range": null,
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
             },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 50 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
             },
-            "source": {
-                "custom": "WH"
-            },
-            "activities": {
-                "0utility00000000": {
-                    "_id": "0utility00000000",
-                    "type": "utility",
-                    "img": null,
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "roll": "",
-                    "range": null,
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 50 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
-                    },
-                    "activation": {
-                        "type": "bonus",
-                        "cost": 1
-                    },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    }
-                }
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-repulsor_lifts_exceptional.subtype-part": {
-        "name": "Repulsor Lifts (Exceptional)",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5500349+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-repulsor_lifts_exceptional.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "legendary",
-            "identified": true,
+            "quantity": 1,
+            "rarity": "artifact",
+            "source": {
+                "custom": "WH"
+            },
             "type": {
-                "value": false,
-                "subtype": false
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-repulsor_lifts_exceptional.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5500349+00:00",
+                "uid": "EnhancedItem.name-repulsor_lifts_exceptional.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Repulsor Lifts (Exceptional)",
+        "system": {
+            "activities": {
+                "0utility00000000": {
+                    "_id": "0utility00000000",
+                    "activation": {
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 45 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
+                    },
+                    "duration": {
+                        "units": "minute",
+                        "value": "1"
+                    },
+                    "img": null,
+                    "range": null,
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
             },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 45 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
             },
-            "source": {
-                "custom": "WH"
-            },
-            "activities": {
-                "0utility00000000": {
-                    "_id": "0utility00000000",
-                    "type": "utility",
-                    "img": null,
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "roll": "",
-                    "range": null,
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 45 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
-                    },
-                    "activation": {
-                        "type": "bonus",
-                        "cost": 1
-                    },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    }
-                }
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-repulsor_lifts_fine.subtype-part": {
-        "name": "Repulsor Lifts (Fine)",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5500349+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-repulsor_lifts_fine.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "uncommon",
-            "identified": true,
+            "quantity": 1,
+            "rarity": "legendary",
+            "source": {
+                "custom": "WH"
+            },
             "type": {
-                "value": false,
-                "subtype": false
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-repulsor_lifts_fine.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5500349+00:00",
+                "uid": "EnhancedItem.name-repulsor_lifts_fine.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Repulsor Lifts (Fine)",
+        "system": {
+            "activities": {
+                "0utility00000000": {
+                    "_id": "0utility00000000",
+                    "activation": {
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 30 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
+                    },
+                    "duration": {
+                        "units": "minute",
+                        "value": "1"
+                    },
+                    "img": null,
+                    "range": null,
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
             },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 30 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
             },
-            "source": {
-                "custom": "WH"
-            },
-            "activities": {
-                "0utility00000000": {
-                    "_id": "0utility00000000",
-                    "type": "utility",
-                    "img": null,
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "roll": "",
-                    "range": null,
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 30 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
-                    },
-                    "activation": {
-                        "type": "bonus",
-                        "cost": 1
-                    },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    }
-                }
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-repulsor_lifts_improved.subtype-part": {
-        "name": "Repulsor Lifts (Improved)",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5500349+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-repulsor_lifts_improved.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "rare",
-            "identified": true,
+            "quantity": 1,
+            "rarity": "uncommon",
+            "source": {
+                "custom": "WH"
+            },
             "type": {
-                "value": false,
-                "subtype": false
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-repulsor_lifts_improved.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5500349+00:00",
+                "uid": "EnhancedItem.name-repulsor_lifts_improved.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Repulsor Lifts (Improved)",
+        "system": {
+            "activities": {
+                "0utility00000000": {
+                    "_id": "0utility00000000",
+                    "activation": {
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 35 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
+                    },
+                    "duration": {
+                        "units": "minute",
+                        "value": "1"
+                    },
+                    "img": null,
+                    "range": null,
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
             },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 35 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
             },
-            "source": {
-                "custom": "WH"
-            },
-            "activities": {
-                "0utility00000000": {
-                    "_id": "0utility00000000",
-                    "type": "utility",
-                    "img": null,
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "roll": "",
-                    "range": null,
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 35 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
-                    },
-                    "activation": {
-                        "type": "bonus",
-                        "cost": 1
-                    },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    }
-                }
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-repulsor_lifts_superior.subtype-part": {
-        "name": "Repulsor Lifts (Superior)",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5500349+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-repulsor_lifts_superior.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "veryRare",
-            "identified": true,
+            "quantity": 1,
+            "rarity": "rare",
+            "source": {
+                "custom": "WH"
+            },
             "type": {
-                "value": false,
-                "subtype": false
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-repulsor_lifts_superior.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5500349+00:00",
+                "uid": "EnhancedItem.name-repulsor_lifts_superior.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Repulsor Lifts (Superior)",
+        "system": {
+            "activities": {
+                "0utility00000000": {
+                    "_id": "0utility00000000",
+                    "activation": {
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 40 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
+                    },
+                    "duration": {
+                        "units": "minute",
+                        "value": "1"
+                    },
+                    "img": null,
+                    "range": null,
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
             },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 40 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
             },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "veryRare",
             "source": {
                 "custom": "WH"
             },
-            "activities": {
-                "0utility00000000": {
-                    "_id": "0utility00000000",
-                    "type": "utility",
-                    "img": null,
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "roll": "",
-                    "range": null,
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 40 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
-                    },
-                    "activation": {
-                        "type": "bonus",
-                        "cost": 1
-                    },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    }
-                }
-            },
-            "modificationType": "droidcustomization"
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-resourceful_drive.subtype-part": {
-        "name": "Resourceful Drive",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5510336+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5510336+00:00",
                 "uid": "EnhancedItem.name-resourceful_drive.subtype-part"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Resourceful Drive",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class III droid</em></p>\n<hr/>\n<p>Your speed increases by 5 feet, and you gain proficiency in one blaster or vibroweapon of your choice.</p>"
             },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-sentry.subtype-part": {
-        "name": "Sentry",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5510336+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-sentry.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
+            "quantity": 1,
             "rarity": "common",
-            "identified": true,
+            "source": {
+                "custom": "WH"
+            },
             "type": {
-                "value": false,
-                "subtype": false
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-sentry.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5510336+00:00",
+                "uid": "EnhancedItem.name-sentry.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Sentry",
+        "system": {
+            "activities": {
+                "0utility00000000": {
+                    "_id": "0utility00000000",
+                    "activation": {
+                        "cost": 1,
+                        "type": "special"
+                    },
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>You learn the <em>alarm</em> tech power. You can cast it once, without the use of a wristpad and without spending tech points, and you regain the ability to do so when you finish a long rest. Intelligence is your techcasting ability for this power.</p>\n<p><em>This part equips a droid with a small rotating sensory dish.</em></p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
             },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>You learn the <em>alarm</em> tech power. You can cast it once, without the use of a wristpad and without spending tech points, and you regain the ability to do so when you finish a long rest. Intelligence is your techcasting ability for this power.</p>\n<p><em>This part equips a droid with a small rotating sensory dish.</em></p>"
             },
-            "source": {
-                "custom": "WH"
-            },
-            "activities": {
-                "0utility00000000": {
-                    "_id": "0utility00000000",
-                    "type": "utility",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "roll": "",
-                    "range": null,
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>You learn the <em>alarm</em> tech power. You can cast it once, without the use of a wristpad and without spending tech points, and you regain the ability to do so when you finish a long rest. Intelligence is your techcasting ability for this power.</p>\n<p><em>This part equips a droid with a small rotating sensory dish.</em></p>"
-                    },
-                    "activation": {
-                        "type": "special",
-                        "cost": 1
-                    },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    }
-                }
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-shock_arm.subtype-part": {
-        "name": "Shock Arm",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5510336+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-shock_arm.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "uncommon",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class II droid</em></p>\n<hr/>\n<p>You have a small integrated droid shock arm with which you can make unarmed strikes. You have proficiency in this shock arm, which is a vibroweapon with the reach property and deals [[/r 1d6]] lightning damage on a hit. You can use your choice of Strength or Intelligence for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<p><em>This small robotic appendage has a fork-like prod from that can release a substantial electrical discharge.</em></p>"
-            },
+            "quantity": 1,
+            "rarity": "common",
             "source": {
                 "custom": "WH"
             },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-shock_arm.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5510336+00:00",
+                "uid": "EnhancedItem.name-shock_arm.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Shock Arm",
+        "system": {
             "activities": {
                 "0damage000000000": {
                     "_id": "0damage000000000",
-                    "type": "damage",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class II droid</em></p>\n<hr/>\n<p>You have a small integrated droid shock arm with which you can make unarmed strikes. You have proficiency in this shock arm, which is a vibroweapon with the reach property and deals [[/r 1d6]] lightning damage on a hit. You can use your choice of Strength or Intelligence for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<p><em>This small robotic appendage has a fork-like prod from that can release a substantial electrical discharge.</em></p>"
-                    },
                     "activation": {
-                        "type": null,
-                        "cost": null
+                        "cost": null,
+                        "type": null
                     },
                     "damage": {
                         "critical": {
@@ -1694,392 +1670,410 @@
                         },
                         "parts": [
                             {
+                                "bonus": null,
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
                                 },
-                                "number": "1",
                                 "denomination": "6",
-                                "bonus": null,
+                                "number": "1",
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "whole",
+                                    "number": 1
+                                },
                                 "types": [
                                     "lightning"
-                                ],
-                                "scaling": {
-                                    "mode": "whole",
-                                    "number": 1,
-                                    "formula": null
-                                }
+                                ]
                             }
                         ]
                     },
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class II droid</em></p>\n<hr/>\n<p>You have a small integrated droid shock arm with which you can make unarmed strikes. You have proficiency in this shock arm, which is a vibroweapon with the reach property and deals [[/r 1d6]] lightning damage on a hit. You can use your choice of Strength or Intelligence for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<p><em>This small robotic appendage has a fork-like prod from that can release a substantial electrical discharge.</em></p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "target": {
-                        "value": null,
-                        "width": null,
+                        "type": "",
                         "units": "",
-                        "type": ""
-                    }
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "damage"
                 }
             },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-tool_integration.subtype-part": {
-        "name": "Tool Integration",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5510336+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-tool_integration.subtype-part"
-            }
-        },
-        "system": {
-            "quantity": 1,
+            "description": {
+                "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class II droid</em></p>\n<hr/>\n<p>You have a small integrated droid shock arm with which you can make unarmed strikes. You have proficiency in this shock arm, which is a vibroweapon with the reach property and deals [[/r 1d6]] lightning damage on a hit. You can use your choice of Strength or Intelligence for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<p><em>This small robotic appendage has a fork-like prod from that can release a substantial electrical discharge.</em></p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Part)</h4>\n <p>One tool of your choice in which you are proficient is integrated into your chassis.</p>"
-            },
+            "quantity": 1,
+            "rarity": "uncommon",
             "source": {
                 "custom": "WH"
             },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-uncanniness_motivator.subtype-protocol": {
-        "name": "Uncanniness Motivator",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5520347+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-uncanniness_motivator.subtype-protocol"
+            "type": {
+                "subtype": false,
+                "value": false
             }
         },
+        "type": "modification"
+    },
+    "EnhancedItem.name-tool_integration.subtype-part": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5510336+00:00",
+                "uid": "EnhancedItem.name-tool_integration.subtype-part"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Tool Integration",
         "system": {
-            "quantity": 1,
+            "description": {
+                "value": "<h4>Droid Customization (Part)</h4>\n <p>One tool of your choice in which you are proficient is integrated into your chassis.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "uncommon",
-            "identified": true,
+            "quantity": 1,
+            "rarity": "common",
+            "source": {
+                "custom": "WH"
+            },
             "type": {
-                "value": false,
-                "subtype": false
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-uncanniness_motivator.subtype-protocol": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5520347+00:00",
+                "uid": "EnhancedItem.name-uncanniness_motivator.subtype-protocol"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Uncanniness Motivator",
+        "system": {
+            "activities": {
+                "0utility00000000": {
+                    "_id": "0utility00000000",
+                    "activation": {
+                        "cost": 1,
+                        "type": "special"
+                    },
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em>Prerequisite:  Class III droid</em></p>\n<hr/>\n<p>When you or a creature you can see that can see and understand you makes an ability check, attack roll, or saving throw, you can roll a [[/r d4]] and add it to their roll (no action required). You can use this before or after the roll, but before the GM determines the roll's outcome. Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
+                    "roll": "1d4",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
             },
             "description": {
                 "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em>Prerequisite:  Class III droid</em></p>\n<hr/>\n<p>When you or a creature you can see that can see and understand you makes an ability check, attack roll, or saving throw, you can roll a [[/r d4]] and add it to their roll (no action required). You can use this before or after the roll, but before the GM determines the roll's outcome. Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
             },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "uncommon",
             "source": {
                 "custom": "WH"
             },
-            "activities": {
-                "0utility00000000": {
-                    "_id": "0utility00000000",
-                    "type": "utility",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "roll": "1d4",
-                    "range": null,
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em>Prerequisite:  Class III droid</em></p>\n<hr/>\n<p>When you or a creature you can see that can see and understand you makes an ability check, attack roll, or saving throw, you can roll a [[/r d4]] and add it to their roll (no action required). You can use this before or after the roll, but before the GM determines the roll's outcome. Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
-                    },
-                    "activation": {
-                        "type": "special",
-                        "cost": 1
-                    },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    }
-                }
-            },
-            "modificationType": "droidcustomization"
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-versatility_motivator.subtype-part": {
-        "name": "Versatility Motivator",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5520347+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5520347+00:00",
                 "uid": "EnhancedItem.name-versatility_motivator.subtype-part"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Versatility Motivator",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class I droid</em></p>\n<hr/>\n<p>Your speed increases by 5 feet, and you can now speak Binary in addition to understanding it.</p>"
             },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
             "source": {
                 "custom": "WH"
             },
-            "modificationType": "droidcustomization"
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-vocoder_basic.subtype-part": {
-        "name": "Vocoder (Basic)",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5520347+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5520347+00:00",
                 "uid": "EnhancedItem.name-vocoder_basic.subtype-part"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Vocoder (Basic)",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "common",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>A vocoder is an adjustment to a droid's speech center. The vocoder includes five languages, and grants the droid the ability to speak, read, and write each language. The languages can be changed out while interfaced with a protocol droid or appropriate computer.</p>"
             },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "common",
             "source": {
                 "custom": "WH"
             },
-            "modificationType": "droidcustomization"
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-vocoder_champion.subtype-part": {
-        "name": "Vocoder (Champion)",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5530334+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5530334+00:00",
                 "uid": "EnhancedItem.name-vocoder_champion.subtype-part"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Vocoder (Champion)",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "artifact",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>A vocoder is an adjustment to a droid's speech center. The vocoder includes all registered languages, and grants the droid the ability to speak, read, and write each language. </p>"
             },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "artifact",
             "source": {
                 "custom": "WH"
             },
-            "modificationType": "droidcustomization"
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-vocoder_exceptional.subtype-part": {
-        "name": "Vocoder (Exceptional)",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5570305+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5570305+00:00",
                 "uid": "EnhancedItem.name-vocoder_exceptional.subtype-part"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Vocoder (Exceptional)",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "legendary",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>A vocoder is an adjustment to a droid's speech center. The vocoder includes 80 languages, and grants the droid the ability to speak, read, and write each language. The languages can be changed out while interfaced with a protocol droid or appropriate computer.</p>"
             },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "legendary",
             "source": {
                 "custom": "WH"
             },
-            "modificationType": "droidcustomization"
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-vocoder_fine.subtype-part": {
-        "name": "Vocoder (Fine)",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5570305+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5570305+00:00",
                 "uid": "EnhancedItem.name-vocoder_fine.subtype-part"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Vocoder (Fine)",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "uncommon",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>A vocoder is an adjustment to a droid's speech center. The vocoder includes 10 languages, and grants the droid the ability to speak, read, and write each language. The languages can be changed out while interfaced with a protocol droid or appropriate computer.</p>"
             },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "uncommon",
             "source": {
                 "custom": "WH"
             },
-            "modificationType": "droidcustomization"
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-vocoder_improved.subtype-part": {
-        "name": "Vocoder (Improved)",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5570305+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5570305+00:00",
                 "uid": "EnhancedItem.name-vocoder_improved.subtype-part"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Vocoder (Improved)",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "rare",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>A vocoder is an adjustment to a droid's speech center. The vocoder includes 20 languages, and grants the droid the ability to speak, read, and write each language. The languages can be changed out while interfaced with a protocol droid or appropriate computer.</p>"
             },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "rare",
             "source": {
                 "custom": "WH"
             },
-            "modificationType": "droidcustomization"
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-vocoder_superior.subtype-part": {
-        "name": "Vocoder (Superior)",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5580303+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5580303+00:00",
                 "uid": "EnhancedItem.name-vocoder_superior.subtype-part"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Vocoder (Superior)",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "veryRare",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
             "description": {
                 "value": "<h4>Droid Customization (Part)</h4>\n <p>A vocoder is an adjustment to a droid's speech center. The vocoder includes 40 languages, and grants the droid the ability to speak, read, and write each language. The languages can be changed out while interfaced with a protocol droid or appropriate computer.</p>"
             },
-            "source": {
-                "custom": "WH"
-            },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-will_protocol_mk_i.subtype-protocol": {
-        "name": "Will Protocol Mk I",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5580303+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-will_protocol_mk_i.subtype-protocol"
-            }
-        },
-        "system": {
-            "attunement": "required",
-            "quantity": 1,
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "uncommon",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Charisma saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-            },
+            "quantity": 1,
+            "rarity": "veryRare",
             "source": {
                 "custom": "WH"
             },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-will_protocol_mk_i.subtype-protocol": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5580303+00:00",
+                "uid": "EnhancedItem.name-will_protocol_mk_i.subtype-protocol"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Will Protocol Mk I",
+        "system": {
             "activities": {
                 "0save00000000000": {
                     "_id": "0save00000000000",
-                    "type": "save",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
+                    "activation": {
+                        "cost": null,
+                        "type": null
                     },
-                    "range": null,
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    },
                     "description": {
                         "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Charisma saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
                     },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "save": {
                         "ability": "cha",
                         "dc": {
@@ -2087,70 +2081,70 @@
                             "formula": ""
                         }
                     },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": []
-                    },
                     "target": {
-                        "value": null,
-                        "width": null,
+                        "type": "",
                         "units": "",
-                        "type": ""
-                    }
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "save"
                 }
             },
-            "modificationType": "droidcustomization"
+            "attunement": "required",
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Charisma saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "uncommon",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     },
     "EnhancedItem.name-will_protocol_mk_ii.subtype-protocol": {
-        "name": "Will Protocol Mk II",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5580303+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5580303+00:00",
                 "uid": "EnhancedItem.name-will_protocol_mk_ii.subtype-protocol"
             }
         },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Will Protocol Mk II",
         "system": {
-            "attunement": "required",
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "veryRare",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Wisdom saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-            },
-            "source": {
-                "custom": "WH"
-            },
             "activities": {
                 "0save00000000000": {
                     "_id": "0save00000000000",
-                    "type": "save",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
+                    "activation": {
+                        "cost": null,
+                        "type": null
                     },
-                    "range": null,
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    },
                     "description": {
                         "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Wisdom saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
                     },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -2158,80 +2152,54 @@
                             "formula": ""
                         }
                     },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": []
-                    },
                     "target": {
-                        "value": null,
-                        "width": null,
+                        "type": "",
                         "units": "",
-                        "type": ""
-                    }
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "save"
                 }
             },
-            "modificationType": "droidcustomization"
-        },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
-    },
-    "EnhancedItem.name-will_protocol_mk_iii.subtype-protocol": {
-        "name": "Will Protocol Mk III",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:05.5580303+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-will_protocol_mk_iii.subtype-protocol"
-            }
-        },
-        "system": {
             "attunement": "required",
-            "quantity": 1,
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Wisdom saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "artifact",
-            "identified": true,
-            "type": {
-                "value": false,
-                "subtype": false
-            },
-            "description": {
-                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Wisdom or Charisma saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-            },
+            "quantity": 1,
+            "rarity": "veryRare",
             "source": {
                 "custom": "WH"
             },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
+        },
+        "type": "modification"
+    },
+    "EnhancedItem.name-will_protocol_mk_iii.subtype-protocol": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:05.5580303+00:00",
+                "uid": "EnhancedItem.name-will_protocol_mk_iii.subtype-protocol"
+            }
+        },
+        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
+        "name": "Will Protocol Mk III",
+        "system": {
             "activities": {
                 "0save00000000000": {
                     "_id": "0save00000000000",
-                    "type": "save",
-                    "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "range": null,
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Wisdom or Charisma saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-                    },
-                    "save": {
-                        "ability": "wis",
-                        "dc": {
-                            "calculation": "spell",
-                            "formula": ""
-                        }
-                    },
                     "activation": {
-                        "type": null,
-                        "cost": null
+                        "cost": null,
+                        "type": null
                     },
                     "damage": {
                         "critical": {
@@ -2239,18 +2207,50 @@
                         },
                         "parts": []
                     },
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Wisdom or Charisma saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": null,
+                    "save": {
+                        "ability": "wis",
+                        "dc": {
+                            "calculation": "spell",
+                            "formula": ""
+                        }
+                    },
                     "target": {
-                        "value": null,
-                        "width": null,
+                        "type": "",
                         "units": "",
-                        "type": ""
-                    }
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "save"
                 }
             },
-            "modificationType": "droidcustomization"
+            "attunement": "required",
+            "description": {
+                "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Wisdom or Charisma saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+            },
+            "identified": true,
+            "modificationType": "droidcustomization",
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "artifact",
+            "source": {
+                "custom": "WH"
+            },
+            "type": {
+                "subtype": false,
+                "value": false
+            }
         },
-        "type": "modification",
-        "img": "modules/sw5e/icons/packs/Modifications/DroidMod.webp",
-        "effects": []
+        "type": "modification"
     }
 }

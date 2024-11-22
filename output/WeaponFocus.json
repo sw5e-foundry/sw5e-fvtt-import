@@ -1,15 +1,58 @@
 {
     "WeaponFocus.name-blade_focus": {
-        "name": "Blade Focus",
+        "effects": [
+            {
+                "_id": "cCgHC6FS3lVblXlv",
+                "_stats": {
+                    "compendiumSource": null,
+                    "coreVersion": "12.330",
+                    "createdTime": null,
+                    "duplicateSource": null,
+                    "lastModifiedBy": null,
+                    "modifiedTime": null,
+                    "systemId": null,
+                    "systemVersion": null
+                },
+                "changes": [
+                    {
+                        "key": "system.bonuses.mwak.damage",
+                        "mode": 2,
+                        "priority": 20,
+                        "value": "1"
+                    }
+                ],
+                "description": "",
+                "disabled": false,
+                "duration": {
+                    "combat": null,
+                    "rounds": null,
+                    "seconds": null,
+                    "startRound": null,
+                    "startTime": null,
+                    "startTurn": null,
+                    "turns": null
+                },
+                "flags": {},
+                "img": "icons/svg/item-bag.svg",
+                "name": "Blade Focus",
+                "origin": "Compendium.sw5e.feats.Item.F8FtJ6LuwSohQgjk",
+                "sort": 0,
+                "statuses": [],
+                "system": {},
+                "tint": "#ffffff",
+                "transfer": true,
+                "type": "base"
+            }
+        ],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:06.8182992+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:06.8182992+00:00",
                 "uid": "WeaponFocus.name-blade_focus"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Feats/BladeFocus.webp",
+        "name": "Blade Focus",
         "system": {
             "description": {
                 "value": "<p>You've focused your combat training on blade weapons. You gain the following benefits while wielding any of these weapons, if you are proficient with it:</p>\n<ul>\n<li>You gain a +1 bonus to the weapon's damage rolls.</li>\n<li>When you score a critical hit with the weapon, the next attack roll the target makes before the start of your next turn has disadvantage.</li>\n<li>When you take the Attack action, you can choose to forgo one or more attacks to <strong>parry</strong>. For each attack you forgo, you gain a +1 bonus to AC until the start of your next turn.</li>"
@@ -19,71 +62,71 @@
                 "custom": "WH"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "weaponFocus"
+                "subtype": "weaponFocus",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
+        "type": "feat"
+    },
+    "WeaponFocus.name-carbine_focus": {
         "effects": [
             {
-                "name": "Blade Focus",
-                "origin": "Compendium.sw5e.feats.Item.F8FtJ6LuwSohQgjk",
-                "duration": {
-                    "startTime": null,
-                    "seconds": null,
-                    "combat": null,
-                    "rounds": null,
-                    "turns": null,
-                    "startRound": null,
-                    "startTurn": null
+                "_id": "ue8efhu7TlWHcOe3",
+                "_stats": {
+                    "compendiumSource": null,
+                    "coreVersion": "12.330",
+                    "createdTime": null,
+                    "duplicateSource": null,
+                    "lastModifiedBy": null,
+                    "modifiedTime": null,
+                    "systemId": null,
+                    "systemVersion": null
                 },
-                "transfer": true,
-                "disabled": false,
-                "_id": "cCgHC6FS3lVblXlv",
                 "changes": [
                     {
-                        "key": "system.bonuses.mwak.damage",
+                        "key": "system.bonuses.rwak.damage",
                         "mode": 2,
-                        "value": "1",
-                        "priority": 20
+                        "priority": 20,
+                        "value": "1"
                     }
                 ],
                 "description": "",
-                "statuses": [],
-                "flags": {},
-                "tint": "#ffffff",
-                "_stats": {
-                    "coreVersion": "12.330",
-                    "systemId": null,
-                    "systemVersion": null,
-                    "createdTime": null,
-                    "modifiedTime": null,
-                    "lastModifiedBy": null,
-                    "compendiumSource": null,
-                    "duplicateSource": null
+                "disabled": false,
+                "duration": {
+                    "combat": null,
+                    "rounds": null,
+                    "seconds": null,
+                    "startRound": null,
+                    "startTime": null,
+                    "startTurn": null,
+                    "turns": null
                 },
+                "flags": {},
                 "img": "icons/svg/item-bag.svg",
-                "type": "base",
+                "name": "Carbine Focus",
+                "origin": "Compendium.sw5e.feats.Item.NVg0sxmTSLXP8xJ9",
+                "sort": 0,
+                "statuses": [],
                 "system": {},
-                "sort": 0
+                "tint": "#ffffff",
+                "transfer": true,
+                "type": "base"
             }
-        ]
-    },
-    "WeaponFocus.name-carbine_focus": {
-        "name": "Carbine Focus",
+        ],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:06.8182992+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:06.8182992+00:00",
                 "uid": "WeaponFocus.name-carbine_focus"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Feats/CarbineFocus.webp",
+        "name": "Carbine Focus",
         "system": {
             "description": {
                 "value": "<p>You've focused your combat training on carbine weapons. You gain the following benefits while wielding any of these weapons, if you are proficient with it:</p>\n<ul>\n<li>You gain a +1 bonus to the weapon's damage rolls.</li>\n<li>When you score a critical hit with the weapon, the next attack roll the target makes before the start of your next turn has disadvantage.</li>\n<li>When you take the Attack action, you can choose to forgo one or more attacks to  <strong>startle</strong>. For each attack you forgo, you expend 1 ammunition and choose a creature that is no more than one size larger than you (your size or smaller if your weapon has the light property)  and is within your weapon's normal range. The creature must succeed on a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon) or become shocked until the start of your next turn.</li>"
@@ -93,71 +136,71 @@
                 "custom": "WH"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "weaponFocus"
+                "subtype": "weaponFocus",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
+        "type": "feat"
+    },
+    "WeaponFocus.name-crushing_weapon_focus": {
         "effects": [
             {
-                "name": "Carbine Focus",
-                "origin": "Compendium.sw5e.feats.Item.NVg0sxmTSLXP8xJ9",
-                "duration": {
-                    "startTime": null,
-                    "seconds": null,
-                    "combat": null,
-                    "rounds": null,
-                    "turns": null,
-                    "startRound": null,
-                    "startTurn": null
+                "_id": "QZAcpTkF31GwlnAO",
+                "_stats": {
+                    "compendiumSource": null,
+                    "coreVersion": "12.330",
+                    "createdTime": null,
+                    "duplicateSource": null,
+                    "lastModifiedBy": null,
+                    "modifiedTime": null,
+                    "systemId": null,
+                    "systemVersion": null
                 },
-                "transfer": true,
-                "disabled": false,
-                "_id": "ue8efhu7TlWHcOe3",
                 "changes": [
                     {
-                        "key": "system.bonuses.rwak.damage",
+                        "key": "system.bonuses.mpak.damage",
                         "mode": 2,
-                        "value": "1",
-                        "priority": 20
+                        "priority": 20,
+                        "value": "1"
                     }
                 ],
                 "description": "",
-                "statuses": [],
-                "flags": {},
-                "tint": "#ffffff",
-                "_stats": {
-                    "coreVersion": "12.330",
-                    "systemId": null,
-                    "systemVersion": null,
-                    "createdTime": null,
-                    "modifiedTime": null,
-                    "lastModifiedBy": null,
-                    "compendiumSource": null,
-                    "duplicateSource": null
+                "disabled": false,
+                "duration": {
+                    "combat": null,
+                    "rounds": null,
+                    "seconds": null,
+                    "startRound": null,
+                    "startTime": null,
+                    "startTurn": null,
+                    "turns": null
                 },
+                "flags": {},
                 "img": "icons/svg/item-bag.svg",
-                "type": "base",
+                "name": "Crushing Weapon Focus",
+                "origin": "Compendium.sw5e.feats.Item.4Uzb14t5qGL5T36Y",
+                "sort": 0,
+                "statuses": [],
                 "system": {},
-                "sort": 0
+                "tint": "#ffffff",
+                "transfer": true,
+                "type": "base"
             }
-        ]
-    },
-    "WeaponFocus.name-crushing_weapon_focus": {
-        "name": "Crushing Weapon Focus",
+        ],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:06.8182992+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:06.8182992+00:00",
                 "uid": "WeaponFocus.name-crushing_weapon_focus"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Feats/CrushingWeaponFocus.webp",
+        "name": "Crushing Weapon Focus",
         "system": {
             "description": {
                 "value": "<p>You've focused your combat training on crushing weapons. You gain the following benefits while wielding any of these weapons, if you are proficient with it:</p>\n<ul>\n<li>You gain a +1 bonus to the weapon's damage rolls.</li>\n<li>When you score a critical hit with the weapon, you add the attack's governing ability modifier twice, instead of once, to the attack's damage.</li>\n<li>When you take the Attack action, you can choose to forgo one or more attacks to <strong>shatter</strong> the ground. For each attack you forgo, choose a separate 5-foot square within your weapon's reach to shatter. That square becomes difficult terrain until cleared. Each 5-foot-square portion of the area requires at least 1 minute to clear by hand. Additionally, each creature other than you in an affected square must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon). On a failed save, a creature takes damage equal to the attack's governing ability modifier.</li>"
@@ -167,71 +210,71 @@
                 "custom": "WH"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "weaponFocus"
+                "subtype": "weaponFocus",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
+        "type": "feat"
+    },
+    "WeaponFocus.name-heavy_weapon_focus": {
         "effects": [
             {
-                "name": "Crushing Weapon Focus",
-                "origin": "Compendium.sw5e.feats.Item.4Uzb14t5qGL5T36Y",
-                "duration": {
-                    "startTime": null,
-                    "seconds": null,
-                    "combat": null,
-                    "rounds": null,
-                    "turns": null,
-                    "startRound": null,
-                    "startTurn": null
+                "_id": "ybtHiNdLj30EoBnq",
+                "_stats": {
+                    "compendiumSource": null,
+                    "coreVersion": "12.330",
+                    "createdTime": null,
+                    "duplicateSource": null,
+                    "lastModifiedBy": null,
+                    "modifiedTime": null,
+                    "systemId": null,
+                    "systemVersion": null
                 },
-                "transfer": true,
-                "disabled": false,
-                "_id": "QZAcpTkF31GwlnAO",
                 "changes": [
                     {
-                        "key": "system.bonuses.mpak.damage",
+                        "key": "system.bonuses.rpak.damage",
                         "mode": 2,
-                        "value": "1",
-                        "priority": 20
+                        "priority": 20,
+                        "value": "1"
                     }
                 ],
                 "description": "",
-                "statuses": [],
-                "flags": {},
-                "tint": "#ffffff",
-                "_stats": {
-                    "coreVersion": "12.330",
-                    "systemId": null,
-                    "systemVersion": null,
-                    "createdTime": null,
-                    "modifiedTime": null,
-                    "lastModifiedBy": null,
-                    "compendiumSource": null,
-                    "duplicateSource": null
+                "disabled": false,
+                "duration": {
+                    "combat": null,
+                    "rounds": null,
+                    "seconds": null,
+                    "startRound": null,
+                    "startTime": null,
+                    "startTurn": null,
+                    "turns": null
                 },
+                "flags": {},
                 "img": "icons/svg/item-bag.svg",
-                "type": "base",
+                "name": "Heavy Weapon Focus",
+                "origin": "Compendium.sw5e.feats.Item.6Dibgd4H91DFelE2",
+                "sort": 0,
+                "statuses": [],
                 "system": {},
-                "sort": 0
+                "tint": "#ffffff",
+                "transfer": true,
+                "type": "base"
             }
-        ]
-    },
-    "WeaponFocus.name-heavy_weapon_focus": {
-        "name": "Heavy Weapon Focus",
+        ],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:06.8182992+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:06.8182992+00:00",
                 "uid": "WeaponFocus.name-heavy_weapon_focus"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Feats/HeavyWeaponFocus.webp",
+        "name": "Heavy Weapon Focus",
         "system": {
             "description": {
                 "value": "<p>You've focused your combat training on heavy weapons. You gain the following benefits while wielding any of these weapons, if you are proficient with it:</p>\n<ul>\n<li>You gain a +1 bonus to the weapon's damage rolls.</li>\n<li>When you score a critical hit with the weapon, you add the attack's governing ability modifier twice, instead of once, to the attack's damage.</li>\n<li>When you take the Attack action, you can choose to forgo one or more attacks to <strong>suppress</strong>. For each attack you forgo, you expend ammunition equal to half your weapon's reload number (minimum of 2) and choose a 10-foot-cube area within your weapon's normal range. Each creature in the area that is no more than one size larger than you (your size or smaller if your weapon has the light property) must make a Wisdom saving throw (DC = 8 + your bonus to attacks with the weapon) or become frightened of you until the end of their next turn.</li>"
@@ -241,71 +284,77 @@
                 "custom": "WH"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "weaponFocus"
+                "subtype": "weaponFocus",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
+        "type": "feat"
+    },
+    "WeaponFocus.name-polearm_focus": {
         "effects": [
             {
-                "name": "Heavy Weapon Focus",
-                "origin": "Compendium.sw5e.feats.Item.6Dibgd4H91DFelE2",
-                "duration": {
-                    "startTime": null,
-                    "seconds": null,
-                    "combat": null,
-                    "rounds": null,
-                    "turns": null,
-                    "startRound": null,
-                    "startTurn": null
+                "_id": "W2L1SOlpDof34mf6",
+                "_stats": {
+                    "compendiumSource": null,
+                    "coreVersion": "12.330",
+                    "createdTime": null,
+                    "duplicateSource": null,
+                    "lastModifiedBy": null,
+                    "modifiedTime": null,
+                    "systemId": null,
+                    "systemVersion": null
                 },
-                "transfer": true,
-                "disabled": false,
-                "_id": "ybtHiNdLj30EoBnq",
                 "changes": [
                     {
-                        "key": "system.bonuses.rpak.damage",
+                        "key": "system.bonuses.mpak.damage",
                         "mode": 2,
-                        "value": "1",
-                        "priority": 20
+                        "priority": 20,
+                        "value": "1"
+                    },
+                    {
+                        "key": "flags.sw5e.meleeCriticalDamageDice",
+                        "mode": 2,
+                        "priority": 20,
+                        "value": "+1"
                     }
                 ],
                 "description": "",
-                "statuses": [],
-                "flags": {},
-                "tint": "#ffffff",
-                "_stats": {
-                    "coreVersion": "12.330",
-                    "systemId": null,
-                    "systemVersion": null,
-                    "createdTime": null,
-                    "modifiedTime": null,
-                    "lastModifiedBy": null,
-                    "compendiumSource": null,
-                    "duplicateSource": null
+                "disabled": false,
+                "duration": {
+                    "combat": null,
+                    "rounds": null,
+                    "seconds": null,
+                    "startRound": null,
+                    "startTime": null,
+                    "startTurn": null,
+                    "turns": null
                 },
+                "flags": {},
                 "img": "icons/svg/item-bag.svg",
-                "type": "base",
+                "name": "Polearm Focus",
+                "origin": "Compendium.sw5e.feats.Item.bQEGFoXpUjlJiG57",
+                "sort": 0,
+                "statuses": [],
                 "system": {},
-                "sort": 0
+                "tint": "#ffffff",
+                "transfer": true,
+                "type": "base"
             }
-        ]
-    },
-    "WeaponFocus.name-polearm_focus": {
-        "name": "Polearm Focus",
+        ],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:06.8182992+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:06.8182992+00:00",
                 "uid": "WeaponFocus.name-polearm_focus"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Feats/PolearmFocus.webp",
+        "name": "Polearm Focus",
         "system": {
             "description": {
                 "value": "<p>You've focused your combat training on polearm weapons. You gain the following benefits while wielding any of these weapons, if you are proficient with it:</p>\n<ul>\n<li>You gain a +1 bonus to the weapon's damage rolls.</li>\n<li>When you score a critical hit with the weapon, you can roll one additional weapon damage die.</li>\n<li>When you take the Attack action, you can choose to forgo one of your attacks to <strong>choke up</strong>. If you do so, your reach increases by 5 feet until the start of your next turn.</li>"
@@ -315,77 +364,77 @@
                 "custom": "WH"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "weaponFocus"
+                "subtype": "weaponFocus",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
+        "type": "feat"
+    },
+    "WeaponFocus.name-rifle_focus": {
         "effects": [
             {
-                "name": "Polearm Focus",
-                "origin": "Compendium.sw5e.feats.Item.bQEGFoXpUjlJiG57",
-                "duration": {
-                    "startTime": null,
-                    "seconds": null,
-                    "combat": null,
-                    "rounds": null,
-                    "turns": null,
-                    "startRound": null,
-                    "startTurn": null
+                "_id": "SV8wjd4RYAKdjbkE",
+                "_stats": {
+                    "compendiumSource": null,
+                    "coreVersion": "12.330",
+                    "createdTime": null,
+                    "duplicateSource": null,
+                    "lastModifiedBy": null,
+                    "modifiedTime": null,
+                    "systemId": null,
+                    "systemVersion": null
                 },
-                "transfer": true,
-                "disabled": false,
-                "_id": "W2L1SOlpDof34mf6",
                 "changes": [
                     {
-                        "key": "system.bonuses.mpak.damage",
+                        "key": "system.bonuses.rpak.damage",
                         "mode": 2,
-                        "value": "1",
-                        "priority": 20
+                        "priority": 20,
+                        "value": "1"
                     },
                     {
-                        "key": "flags.sw5e.meleeCriticalDamageDice",
+                        "key": "flags.sw5e.rangedCriticalDamageDice",
                         "mode": 2,
-                        "value": "+1",
-                        "priority": 20
+                        "priority": 20,
+                        "value": "+1"
                     }
                 ],
                 "description": "",
-                "statuses": [],
-                "flags": {},
-                "tint": "#ffffff",
-                "_stats": {
-                    "coreVersion": "12.330",
-                    "systemId": null,
-                    "systemVersion": null,
-                    "createdTime": null,
-                    "modifiedTime": null,
-                    "lastModifiedBy": null,
-                    "compendiumSource": null,
-                    "duplicateSource": null
+                "disabled": false,
+                "duration": {
+                    "combat": null,
+                    "rounds": null,
+                    "seconds": null,
+                    "startRound": null,
+                    "startTime": null,
+                    "startTurn": null,
+                    "turns": null
                 },
+                "flags": {},
                 "img": "icons/svg/item-bag.svg",
-                "type": "base",
+                "name": "Rifle Focus",
+                "origin": "Compendium.sw5e.feats.Item.ySSiGAy9312rbnI6",
+                "sort": 0,
+                "statuses": [],
                 "system": {},
-                "sort": 0
+                "tint": "#ffffff",
+                "transfer": true,
+                "type": "base"
             }
-        ]
-    },
-    "WeaponFocus.name-rifle_focus": {
-        "name": "Rifle Focus",
+        ],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:06.8192987+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:06.8192987+00:00",
                 "uid": "WeaponFocus.name-rifle_focus"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Feats/RifleFocus.webp",
+        "name": "Rifle Focus",
         "system": {
             "description": {
                 "value": "<p>You've focused your combat training on rifle weapons. You gain the following benefits while wielding any of these weapons, if you are proficient with it:</p>\n<ul>\n<li>You gain a +1 bonus to the weapon's damage rolls.</li>\n<li>When you score a critical hit with the weapon, you can roll one additional weapon damage die.</li>\n<li>When you take the Attack action, you can choose to forgo one or more attacks to  <strong>scramble</strong>. For each attack you forgo, you can move up to 10 feet without provoking opportunity attacks.</li>"
@@ -395,77 +444,71 @@
                 "custom": "WH"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "weaponFocus"
+                "subtype": "weaponFocus",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
+        "type": "feat"
+    },
+    "WeaponFocus.name-sidearm_focus": {
         "effects": [
             {
-                "name": "Rifle Focus",
-                "origin": "Compendium.sw5e.feats.Item.ySSiGAy9312rbnI6",
-                "duration": {
-                    "startTime": null,
-                    "seconds": null,
-                    "combat": null,
-                    "rounds": null,
-                    "turns": null,
-                    "startRound": null,
-                    "startTurn": null
+                "_id": "w9AuQ6aUGYdFyeBk",
+                "_stats": {
+                    "compendiumSource": null,
+                    "coreVersion": "12.330",
+                    "createdTime": null,
+                    "duplicateSource": null,
+                    "lastModifiedBy": null,
+                    "modifiedTime": null,
+                    "systemId": null,
+                    "systemVersion": null
                 },
-                "transfer": true,
-                "disabled": false,
-                "_id": "SV8wjd4RYAKdjbkE",
                 "changes": [
                     {
                         "key": "system.bonuses.rpak.damage",
                         "mode": 2,
-                        "value": "1",
-                        "priority": 20
-                    },
-                    {
-                        "key": "flags.sw5e.rangedCriticalDamageDice",
-                        "mode": 2,
-                        "value": "+1",
-                        "priority": 20
+                        "priority": 20,
+                        "value": "1"
                     }
                 ],
                 "description": "",
-                "statuses": [],
-                "flags": {},
-                "tint": "#ffffff",
-                "_stats": {
-                    "coreVersion": "12.330",
-                    "systemId": null,
-                    "systemVersion": null,
-                    "createdTime": null,
-                    "modifiedTime": null,
-                    "lastModifiedBy": null,
-                    "compendiumSource": null,
-                    "duplicateSource": null
+                "disabled": false,
+                "duration": {
+                    "combat": null,
+                    "rounds": null,
+                    "seconds": null,
+                    "startRound": null,
+                    "startTime": null,
+                    "startTurn": null,
+                    "turns": null
                 },
+                "flags": {},
                 "img": "icons/svg/item-bag.svg",
-                "type": "base",
+                "name": "Sidearm Focus",
+                "origin": "Compendium.sw5e.feats.Item.ya8OGukZiRJ9TogQ",
+                "sort": 0,
+                "statuses": [],
                 "system": {},
-                "sort": 0
+                "tint": "#ffffff",
+                "transfer": true,
+                "type": "base"
             }
-        ]
-    },
-    "WeaponFocus.name-sidearm_focus": {
-        "name": "Sidearm Focus",
+        ],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:06.8192987+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:06.8192987+00:00",
                 "uid": "WeaponFocus.name-sidearm_focus"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Feats/SidearmFocus.webp",
+        "name": "Sidearm Focus",
         "system": {
             "description": {
                 "value": "<p>You've focused your combat training on sidearm weapons. You gain the following benefits while wielding any of these weapons, if you are proficient with it:</p>\n<ul>\n<li>You gain a +1 bonus to the weapon's damage rolls.</li>\n<li>When you score a critical hit with the weapon, the next attack roll made against the target before the start of your next turn has advantage.</li>\n<li>When you take the Attack action, you can choose to forgo one or more attacks to <strong>daze</strong> a creature. For each attack you forgo, you expend 2 ammunition and choose a creature that is no more than one size larger than you (your size or smaller if your weapon has the light property), has a head, and is within your weapon's normal range. The creature must succeed on a Constitution saving throw (DC = 8 + your bonus to attacks with the weapon) or become incapacitated until the end of its next turn or until it takes damage, whichever happens first.</li>"
@@ -475,71 +518,71 @@
                 "custom": "WH"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "weaponFocus"
+                "subtype": "weaponFocus",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
+        "type": "feat"
+    },
+    "WeaponFocus.name-trip_weapon_focus": {
         "effects": [
             {
-                "name": "Sidearm Focus",
-                "origin": "Compendium.sw5e.feats.Item.ya8OGukZiRJ9TogQ",
-                "duration": {
-                    "startTime": null,
-                    "seconds": null,
-                    "combat": null,
-                    "rounds": null,
-                    "turns": null,
-                    "startRound": null,
-                    "startTurn": null
+                "_id": "3z05F0UASrZWrXQ5",
+                "_stats": {
+                    "compendiumSource": null,
+                    "coreVersion": "12.330",
+                    "createdTime": null,
+                    "duplicateSource": null,
+                    "lastModifiedBy": null,
+                    "modifiedTime": null,
+                    "systemId": null,
+                    "systemVersion": null
                 },
-                "transfer": true,
-                "disabled": false,
-                "_id": "w9AuQ6aUGYdFyeBk",
                 "changes": [
                     {
-                        "key": "system.bonuses.rpak.damage",
+                        "key": "system.bonuses.mpak.damage",
                         "mode": 2,
-                        "value": "1",
-                        "priority": 20
+                        "priority": 20,
+                        "value": "1"
                     }
                 ],
                 "description": "",
-                "statuses": [],
-                "flags": {},
-                "tint": "#ffffff",
-                "_stats": {
-                    "coreVersion": "12.330",
-                    "systemId": null,
-                    "systemVersion": null,
-                    "createdTime": null,
-                    "modifiedTime": null,
-                    "lastModifiedBy": null,
-                    "compendiumSource": null,
-                    "duplicateSource": null
+                "disabled": false,
+                "duration": {
+                    "combat": null,
+                    "rounds": null,
+                    "seconds": null,
+                    "startRound": null,
+                    "startTime": null,
+                    "startTurn": null,
+                    "turns": null
                 },
+                "flags": {},
                 "img": "icons/svg/item-bag.svg",
-                "type": "base",
+                "name": "Trip Weapon Focus",
+                "origin": "Compendium.sw5e.feats.Item.4sbgk41mcnBJOF5d",
+                "sort": 0,
+                "statuses": [],
                 "system": {},
-                "sort": 0
+                "tint": "#ffffff",
+                "transfer": true,
+                "type": "base"
             }
-        ]
-    },
-    "WeaponFocus.name-trip_weapon_focus": {
-        "name": "Trip Weapon Focus",
+        ],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:06.8192987+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:06.8192987+00:00",
                 "uid": "WeaponFocus.name-trip_weapon_focus"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Feats/TripWeaponFocus.webp",
+        "name": "Trip Weapon Focus",
         "system": {
             "description": {
                 "value": "<p>You've focused your combat training on trip weapons. You gain the following benefits while wielding any of these weapons, if you are proficient with it:</p>\n<ul>\n<li>You gain a +1 bonus to the weapon's damage rolls.</li>\n<li>When you score a critical hit with the weapon, the next attack roll made against the target before the start of your next turn has advantage.</li>\n<li>When you take the Attack action, you can choose to forgo one or more attacks to <strong>interrupt</strong>. For each attack you forgo, one creature within your reach gains no benefit to armor class from its shield until the end of its next turn.</li>"
@@ -549,58 +592,15 @@
                 "custom": "WH"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "weaponFocus"
+                "subtype": "weaponFocus",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
-        "effects": [
-            {
-                "name": "Trip Weapon Focus",
-                "origin": "Compendium.sw5e.feats.Item.4sbgk41mcnBJOF5d",
-                "duration": {
-                    "startTime": null,
-                    "seconds": null,
-                    "combat": null,
-                    "rounds": null,
-                    "turns": null,
-                    "startRound": null,
-                    "startTurn": null
-                },
-                "transfer": true,
-                "disabled": false,
-                "_id": "3z05F0UASrZWrXQ5",
-                "changes": [
-                    {
-                        "key": "system.bonuses.mpak.damage",
-                        "mode": 2,
-                        "value": "1",
-                        "priority": 20
-                    }
-                ],
-                "description": "",
-                "statuses": [],
-                "flags": {},
-                "tint": "#ffffff",
-                "_stats": {
-                    "coreVersion": "12.330",
-                    "systemId": null,
-                    "systemVersion": null,
-                    "createdTime": null,
-                    "modifiedTime": null,
-                    "lastModifiedBy": null,
-                    "compendiumSource": null,
-                    "duplicateSource": null
-                },
-                "img": "icons/svg/item-bag.svg",
-                "type": "base",
-                "system": {},
-                "sort": 0
-            }
-        ]
+        "type": "feat"
     }
 }

@@ -1241,6 +1241,6 @@ def randomID(length=16):
 	while len(ID) < length: ID += rnd()
 	return ID[:length]
 
-def nonRandomID(content, length=16):
+def nonRandomID(content, length=16, fill='0'):
 	content = str(content)
-	return content[:length].ljust(length, '0')
+	return content[:length].ljust(length, fill)

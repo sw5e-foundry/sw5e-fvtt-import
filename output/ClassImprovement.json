@@ -1,15 +1,15 @@
 {
     "ClassImprovement.name-berserker": {
-        "name": "Berserker",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.7832026+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.7832026+00:00",
                 "uid": "ClassImprovement.name-berserker"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Classes/Berserker.webp",
+        "name": "Berserker",
         "system": {
             "description": {
                 "value": "<p>When a creature ends its turn within 15 feet of you, you can use your reaction to move up to half your speed to a space closer to the creature. This movement doesn't provoke opportunity attacks.</p>"
@@ -19,28 +19,28 @@
                 "custom": "EC"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "classImprovement"
+                "subtype": "classImprovement",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
-        "effects": []
+        "type": "feat"
     },
     "ClassImprovement.name-consular": {
-        "name": "Consular",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.7832026+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.7832026+00:00",
                 "uid": "ClassImprovement.name-consular"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Classes/Consular.webp",
+        "name": "Consular",
         "system": {
             "description": {
                 "value": "<p>When you complete a long rest, you can choose one of the force powers you know and replace it with another force power, as long as that power is not of a higher level than your Max Power Level. </p>"
@@ -50,28 +50,28 @@
                 "custom": "EC"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "classImprovement"
+                "subtype": "classImprovement",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
-        "effects": []
+        "type": "feat"
     },
     "ClassImprovement.name-engineer": {
-        "name": "Engineer",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.7832026+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.7832026+00:00",
                 "uid": "ClassImprovement.name-engineer"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Classes/Engineer.webp",
+        "name": "Engineer",
         "system": {
             "description": {
                 "value": "<p>When a creature has a Potent Aptitude die from you and casts a power, they can roll the die and add the number rolled to one damage or healing roll of the power. If the power would damage or heal multiple targets, this bonus only applies to one of them. The Potent Aptitude die is then lost.</p>"
@@ -81,28 +81,28 @@
                 "custom": "EC"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "classImprovement"
+                "subtype": "classImprovement",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
-        "effects": []
+        "type": "feat"
     },
     "ClassImprovement.name-fighter": {
-        "name": "Fighter",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.7832026+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.7832026+00:00",
                 "uid": "ClassImprovement.name-fighter"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Classes/Fighter.webp",
+        "name": "Fighter",
         "system": {
             "description": {
                 "value": "<p>Whenever you complete a long rest, you can replace a fighting style you know with another style available. You can't take a Fighting Style option more than once, even if you later get to choose again.</p>"
@@ -112,28 +112,28 @@
                 "custom": "EC"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "classImprovement"
+                "subtype": "classImprovement",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
-        "effects": []
+        "type": "feat"
     },
     "ClassImprovement.name-guardian": {
-        "name": "Guardian",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.7832026+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.7832026+00:00",
                 "uid": "ClassImprovement.name-guardian"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Classes/Guardian.webp",
+        "name": "Guardian",
         "system": {
             "description": {
                 "value": "<p>As a bonus action, you can expend a use of your Channel the Force to regain 2 force points. You can use this feature a number of times equal to your proficiency bonus, as shown in the guardian table. You regain all expended uses when you complete a long rest.</p>"
@@ -143,28 +143,28 @@
                 "custom": "EC"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "classImprovement"
+                "subtype": "classImprovement",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": "@attributes.prof",
-                "per": "lr"
+                "per": "lr",
+                "value": null
             }
         },
-        "effects": []
+        "type": "feat"
     },
     "ClassImprovement.name-monk": {
-        "name": "Monk",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.7842023+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.7842023+00:00",
                 "uid": "ClassImprovement.name-monk"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Classes/Monk.webp",
+        "name": "Monk",
         "system": {
             "description": {
                 "value": "<p>As an action, you can spend 2 focus points and a roll a Martial Arts die. You regain a number of hit points equal to the amount rolled + your Wisdom or Charisma modifier (your choice, a minimum of one).</p>"
@@ -174,28 +174,28 @@
                 "custom": "EC"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "classImprovement"
+                "subtype": "classImprovement",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
-        "effects": []
+        "type": "feat"
     },
     "ClassImprovement.name-operative": {
-        "name": "Operative",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.7842023+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.7842023+00:00",
                 "uid": "ClassImprovement.name-operative"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Classes/Operative.webp",
+        "name": "Operative",
         "system": {
             "description": {
                 "value": "<p>You can use the bonus action granted by your Cunning Action to carefully aim your next attack. You gain advantage on your next attack roll before the end of your current turn. You can't use this feature if you have moved during this turn, and using this feature reduces your speed to 0 until the end of your current turn.</p>"
@@ -205,28 +205,28 @@
                 "custom": "EC"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "classImprovement"
+                "subtype": "classImprovement",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
-        "effects": []
+        "type": "feat"
     },
     "ClassImprovement.name-scholar": {
-        "name": "Scholar",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.7842023+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.7842023+00:00",
                 "uid": "ClassImprovement.name-scholar"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Classes/Scholar.webp",
+        "name": "Scholar",
         "system": {
             "description": {
                 "value": "<p>When you complete a long rest, you can choose one of the maneuvers you know and replace it with another one.</p>"
@@ -236,28 +236,28 @@
                 "custom": "EC"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "classImprovement"
+                "subtype": "classImprovement",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
-        "effects": []
+        "type": "feat"
     },
     "ClassImprovement.name-scout": {
-        "name": "Scout",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.7842023+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.7842023+00:00",
                 "uid": "ClassImprovement.name-scout"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Classes/Scout.webp",
+        "name": "Scout",
         "system": {
             "description": {
                 "value": "<p>As an action, you can reduce your exhaustion level by 1 and give yourself a number of temporary hit points equal to [[/r 1d10]] + your scout level. </p>\n<p>Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
@@ -267,28 +267,28 @@
                 "custom": "EC"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "classImprovement"
+                "subtype": "classImprovement",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": 1,
-                "per": "sr"
+                "per": "sr",
+                "value": null
             }
         },
-        "effects": []
+        "type": "feat"
     },
     "ClassImprovement.name-sentinel": {
-        "name": "Sentinel",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.7842023+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.7842023+00:00",
                 "uid": "ClassImprovement.name-sentinel"
             }
         },
-        "type": "feat",
         "img": "modules/sw5e/icons/packs/Classes/Sentinel.webp",
+        "name": "Sentinel",
         "system": {
             "description": {
                 "value": "<p>Once per turn, when you roll a Kinetic Combat die, you can roll the die with advantage.</p>"
@@ -298,15 +298,15 @@
                 "custom": "EC"
             },
             "type": {
-                "value": "customizationOption",
-                "subtype": "classImprovement"
+                "subtype": "classImprovement",
+                "value": "customizationOption"
             },
             "uses": {
-                "value": null,
                 "max": null,
-                "per": null
+                "per": null,
+                "value": null
             }
         },
-        "effects": []
+        "type": "feat"
     }
 }

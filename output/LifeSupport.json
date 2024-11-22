@@ -1,605 +1,605 @@
 {
     "Loot.name-emergency_shelter.equipmentCategory-lifesupport": {
-        "name": "Emergency shelter",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:54.5993849+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:51:54.5993849+00:00",
                 "uid": "Loot.name-emergency_shelter.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/EmergencyShelter.webp",
+        "name": "Emergency shelter",
         "system": {
-            "quantity": 1,
-            "weight": 15,
-            "price": {
-                "value": 600,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "gear",
-                "baseItem": "emergencyshelter"
-            },
             "description": {
                 "value": "<p>This shelter comes packed in a 2-foot-long tube. When activated, the shelter deploys, expanding to full size in 1 minute. The shelter is 8 feet long, 8 feet wide, and 6 feet tall, and can house up to six Medium creatures. The shelter includes spikes that automatically mount to the ground, provided they can find purchase. The shelter comes with an integrated power generator, faint glowing lights in the interior which provide dim light, and creatures in the shelter are protected from the elements, including hot and cold climates, as described in chapter 5 of the Dungeon Master's Guide. The shelter's power generator lasts for seven days, after which it stops providing light. The shelter can be collapsed and restored over the course of 10 minutes.</p>"
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 600
+            },
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "PHB"
-            }
+            },
+            "type": {
+                "baseItem": "emergencyshelter",
+                "value": "gear"
+            },
+            "weight": 15
         },
-        "type": "loot",
-        "img": "modules/sw5e/icons/packs/Life%20Support/EmergencyShelter.webp",
-        "effects": []
+        "type": "loot"
     },
     "Equipment.name-respirator.equipmentCategory-lifesupport": {
-        "name": "Respirator",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:51:54.5993849+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:51:54.5993849+00:00",
                 "uid": "Equipment.name-respirator.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/Respirator.webp",
+        "name": "Respirator",
         "system": {
-            "quantity": 1,
-            "weight": 1,
-            "price": {
-                "value": 200,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "trinket",
-                "baseItem": "respirator"
+            "armor": {
+                "dex": null,
+                "magicalBonus": 0,
+                "value": null
             },
             "description": {
                 "value": "<p>A respirator, or breath mask, is a portable device that includes 1 hour's worth of oxygen. The respirator is designed to function in all environments.</p>"
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 200
+            },
+            "proficient": null,
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "PHB"
             },
-            "armor": {
-                "value": null,
-                "dex": null,
-                "magicalBonus": 0
-            },
             "strength": null,
-            "proficient": null
+            "type": {
+                "baseItem": "respirator",
+                "value": "trinket"
+            },
+            "weight": 1
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Life%20Support/Respirator.webp",
-        "effects": []
+        "type": "equipment"
     },
     "Equipment.name-underwater_respirator.equipmentCategory-lifesupport": {
-        "name": "Underwater respirator",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:06.0627376+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:06.0627376+00:00",
                 "uid": "Equipment.name-underwater_respirator.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/UnderwaterRespirator.webp",
+        "name": "Underwater respirator",
         "system": {
-            "quantity": 1,
-            "price": {
-                "value": 300,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "trinket",
-                "baseItem": "underwaterrespirator"
+            "armor": {
+                "dex": null,
+                "magicalBonus": 0,
+                "value": null
             },
             "description": {
                 "value": "<p>Underwater respirators are worn over the mouth and lower face. While worn, you can breath underwater, as the respirator filters the water to create breathable oxygen. The respirator functions for 1 hour per power cell (to a maximum of 2 hours) and can be recharged by a power source or replacing the power cells.</p>"
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 300
+            },
+            "proficient": null,
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "WH"
             },
-            "armor": {
-                "value": null,
-                "dex": null,
-                "magicalBonus": 0
-            },
             "strength": null,
-            "proficient": null
+            "type": {
+                "baseItem": "underwaterrespirator",
+                "value": "trinket"
+            }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Life%20Support/UnderwaterRespirator.webp",
-        "effects": []
+        "type": "equipment"
     },
     "Equipment.name-water_suit.equipmentCategory-lifesupport": {
-        "name": "Water suit",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:06.0627376+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:06.0627376+00:00",
                 "uid": "Equipment.name-water_suit.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/WaterSuit.webp",
+        "name": "Water suit",
         "system": {
-            "quantity": 1,
-            "weight": 20,
-            "price": {
-                "value": 1500,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "trinket",
-                "baseItem": "watersuit"
+            "armor": {
+                "dex": null,
+                "magicalBonus": 0,
+                "value": null
             },
             "description": {
                 "value": "<p>Water suits are sealed suits that prevent water from getting in or out. Additionally, while wearing a water suit, you can breath underwater, as the suit filters the water to create breathable oxygen.</p>"
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 1500
+            },
+            "proficient": null,
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "WH"
             },
-            "armor": {
-                "value": null,
-                "dex": null,
-                "magicalBonus": 0
-            },
             "strength": null,
-            "proficient": null
+            "type": {
+                "baseItem": "watersuit",
+                "value": "trinket"
+            },
+            "weight": 20
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Life%20Support/WaterSuit.webp",
-        "effects": []
+        "type": "equipment"
     },
     "Equipment.name-chemical_suit.equipmentCategory-lifesupport": {
-        "name": "Chemical suit",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4664447+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4664447+00:00",
                 "uid": "Equipment.name-chemical_suit.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/ChemicalSuit.webp",
+        "name": "Chemical suit",
         "system": {
-            "quantity": 1,
-            "weight": 15,
-            "price": {
-                "value": 3000,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "trinket",
-                "baseItem": "chemicalsuit"
+            "armor": {
+                "dex": null,
+                "magicalBonus": 0,
+                "value": null
             },
             "description": {
                 "value": ""
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 3000
+            },
+            "proficient": null,
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "EC"
             },
-            "armor": {
-                "value": null,
-                "dex": null,
-                "magicalBonus": 0
-            },
             "strength": null,
-            "proficient": null
+            "type": {
+                "baseItem": "chemicalsuit",
+                "value": "trinket"
+            },
+            "weight": 15
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Life%20Support/ChemicalSuit.webp",
-        "effects": []
+        "type": "equipment"
     },
     "Equipment.name-conductive_suit.equipmentCategory-lifesupport": {
-        "name": "Conductive suit",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4664447+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4664447+00:00",
                 "uid": "Equipment.name-conductive_suit.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/ConductiveSuit.webp",
+        "name": "Conductive suit",
         "system": {
-            "quantity": 1,
-            "price": {
-                "value": 3600,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "trinket",
-                "baseItem": "conductivesuit"
+            "armor": {
+                "dex": null,
+                "magicalBonus": 0,
+                "value": null
             },
             "description": {
                 "value": ""
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 3600
+            },
+            "proficient": null,
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "EC"
             },
-            "armor": {
-                "value": null,
-                "dex": null,
-                "magicalBonus": 0
-            },
             "strength": null,
-            "proficient": null
+            "type": {
+                "baseItem": "conductivesuit",
+                "value": "trinket"
+            }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Life%20Support/ConductiveSuit.webp",
-        "effects": []
+        "type": "equipment"
     },
     "Equipment.name-dampening_suit.equipmentCategory-lifesupport": {
-        "name": "Dampening suit",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4274678+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4274678+00:00",
                 "uid": "Equipment.name-dampening_suit.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/DampeningSuit.webp",
+        "name": "Dampening suit",
         "system": {
-            "quantity": 1,
-            "weight": 18,
-            "price": {
-                "value": 2500,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "trinket",
-                "baseItem": "dampeningsuit"
+            "armor": {
+                "dex": null,
+                "magicalBonus": 0,
+                "value": null
             },
             "description": {
                 "value": ""
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 2500
+            },
+            "proficient": null,
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "EC"
             },
-            "armor": {
-                "value": null,
-                "dex": null,
-                "magicalBonus": 0
-            },
             "strength": null,
-            "proficient": null
+            "type": {
+                "baseItem": "dampeningsuit",
+                "value": "trinket"
+            },
+            "weight": 18
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Life%20Support/DampeningSuit.webp",
-        "effects": []
+        "type": "equipment"
     },
     "Equipment.name-diving_suit.equipmentCategory-lifesupport": {
-        "name": "Diving suit",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4274678+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4274678+00:00",
                 "uid": "Equipment.name-diving_suit.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/DivingSuit.webp",
+        "name": "Diving suit",
         "system": {
-            "quantity": 1,
-            "price": {
-                "value": 2000,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "trinket",
-                "baseItem": "divingsuit"
+            "armor": {
+                "dex": null,
+                "magicalBonus": 0,
+                "value": null
             },
             "description": {
                 "value": ""
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 2000
+            },
+            "proficient": null,
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "EC"
             },
-            "armor": {
-                "value": null,
-                "dex": null,
-                "magicalBonus": 0
-            },
             "strength": null,
-            "proficient": null
+            "type": {
+                "baseItem": "divingsuit",
+                "value": "trinket"
+            }
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Life%20Support/DivingSuit.webp",
-        "effects": []
+        "type": "equipment"
     },
     "Loot.name-emergency_raft.equipmentCategory-lifesupport": {
-        "name": "Emergency raft",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4654454+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4654454+00:00",
                 "uid": "Loot.name-emergency_raft.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/EmergencyRaft.webp",
+        "name": "Emergency raft",
         "system": {
-            "quantity": 1,
-            "weight": 10,
-            "price": {
-                "value": 250,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "gear",
-                "baseItem": "emergencyraft"
-            },
             "description": {
                 "value": "<p>This raft comes packed in a 2-foot-long tube. When activated, the raft quickly deploys, expanding to full size in six seconds. The raft is 6 feet long and 3 feet wide, and can hold up to four Medium creatures not exceeding 800 lb. It comes with two collapsible oars with which to row. The raft can be collapsed and restored over the course of 1 minute.</p>"
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 250
+            },
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "EC"
-            }
+            },
+            "type": {
+                "baseItem": "emergencyraft",
+                "value": "gear"
+            },
+            "weight": 10
         },
-        "type": "loot",
-        "img": "modules/sw5e/icons/packs/Life%20Support/EmergencyRaft.webp",
-        "effects": []
+        "type": "loot"
     },
     "Consumable.name-emergency_rations_one_days.equipmentCategory-lifesupport": {
-        "name": "Emergency rations (one day's)",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4664447+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4664447+00:00",
                 "uid": "Consumable.name-emergency_rations_one_days.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/EmergencyRations-OneDayS.webp",
+        "name": "Emergency rations (one day's)",
         "system": {
-            "quantity": 1,
-            "weight": 0,
-            "price": {
-                "value": 25,
-                "denomination": "gp"
-            },
-            "rarity": "",
             "identified": true,
-            "type": {
-                "value": "food",
-                "baseItem": "emergencyrations"
+            "price": {
+                "denomination": "gp",
+                "value": 25
             },
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "EC"
-            }
+            },
+            "type": {
+                "baseItem": "emergencyrations",
+                "value": "food"
+            },
+            "weight": 0
         },
-        "type": "consumable",
-        "img": "modules/sw5e/icons/packs/Life%20Support/EmergencyRations-OneDayS.webp",
-        "effects": []
+        "type": "consumable"
     },
     "Equipment.name-flame_proof_suit.equipmentCategory-lifesupport": {
-        "name": "Flame-proof suit",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4274678+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4274678+00:00",
                 "uid": "Equipment.name-flame_proof_suit.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/Flame-ProofSuit.webp",
+        "name": "Flame-proof suit",
         "system": {
-            "quantity": 1,
-            "weight": 20,
-            "price": {
-                "value": 2250,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "trinket",
-                "baseItem": "flame-proofsuit"
+            "armor": {
+                "dex": null,
+                "magicalBonus": 0,
+                "value": null
             },
             "description": {
                 "value": ""
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 2250
+            },
+            "proficient": null,
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "EC"
             },
-            "armor": {
-                "value": null,
-                "dex": null,
-                "magicalBonus": 0
-            },
             "strength": null,
-            "proficient": null
+            "type": {
+                "baseItem": "flame-proofsuit",
+                "value": "trinket"
+            },
+            "weight": 20
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Life%20Support/Flame-ProofSuit.webp",
-        "effects": []
+        "type": "equipment"
     },
     "Equipment.name-hazard_suit.equipmentCategory-lifesupport": {
-        "name": "Hazard suit",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4284665+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4284665+00:00",
                 "uid": "Equipment.name-hazard_suit.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/HazardSuit.webp",
+        "name": "Hazard suit",
         "system": {
-            "quantity": 1,
-            "weight": 24,
-            "price": {
-                "value": 1875,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "trinket",
-                "baseItem": "hazardsuit"
+            "armor": {
+                "dex": null,
+                "magicalBonus": 0,
+                "value": null
             },
             "description": {
                 "value": ""
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 1875
+            },
+            "proficient": null,
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "EC"
             },
-            "armor": {
-                "value": null,
-                "dex": null,
-                "magicalBonus": 0
-            },
             "strength": null,
-            "proficient": null
+            "type": {
+                "baseItem": "hazardsuit",
+                "value": "trinket"
+            },
+            "weight": 24
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Life%20Support/HazardSuit.webp",
-        "effects": []
+        "type": "equipment"
     },
     "Equipment.name-mind_shielding_suit.equipmentCategory-lifesupport": {
-        "name": "Mind-shielding suit",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4284665+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4284665+00:00",
                 "uid": "Equipment.name-mind_shielding_suit.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/Mind-ShieldingSuit.webp",
+        "name": "Mind-shielding suit",
         "system": {
-            "quantity": 1,
-            "weight": 10,
-            "price": {
-                "value": 4500,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "trinket",
-                "baseItem": "mind-shieldingsuit"
+            "armor": {
+                "dex": null,
+                "magicalBonus": 0,
+                "value": null
             },
             "description": {
                 "value": ""
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 4500
+            },
+            "proficient": null,
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "EC"
             },
-            "armor": {
-                "value": null,
-                "dex": null,
-                "magicalBonus": 0
-            },
             "strength": null,
-            "proficient": null
+            "type": {
+                "baseItem": "mind-shieldingsuit",
+                "value": "trinket"
+            },
+            "weight": 10
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Life%20Support/Mind-ShieldingSuit.webp",
-        "effects": []
+        "type": "equipment"
     },
     "Equipment.name-space_suit.equipmentCategory-lifesupport": {
-        "name": "Space suit",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4284665+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4284665+00:00",
                 "uid": "Equipment.name-space_suit.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/SpaceSuit.webp",
+        "name": "Space suit",
         "system": {
-            "quantity": 1,
-            "weight": 30,
-            "price": {
-                "value": 1500,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "trinket",
-                "baseItem": "spacesuit"
+            "armor": {
+                "dex": null,
+                "magicalBonus": 0,
+                "value": null
             },
             "description": {
                 "value": ""
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 1500
+            },
+            "proficient": null,
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "EC"
             },
-            "armor": {
-                "value": null,
-                "dex": null,
-                "magicalBonus": 0
-            },
             "strength": null,
-            "proficient": null
+            "type": {
+                "baseItem": "spacesuit",
+                "value": "trinket"
+            },
+            "weight": 30
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Life%20Support/SpaceSuit.webp",
-        "effects": []
+        "type": "equipment"
     },
     "Equipment.name-stabilizer_suit.equipmentCategory-lifesupport": {
-        "name": "Stabilizer suit",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:13.4284665+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:13.4284665+00:00",
                 "uid": "Equipment.name-stabilizer_suit.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/StabilizerSuit.webp",
+        "name": "Stabilizer suit",
         "system": {
-            "quantity": 1,
-            "weight": 25,
-            "price": {
-                "value": 1800,
-                "denomination": "gp"
-            },
-            "rarity": "",
-            "identified": true,
-            "type": {
-                "value": "trinket",
-                "baseItem": "stabilizersuit"
+            "armor": {
+                "dex": null,
+                "magicalBonus": 0,
+                "value": null
             },
             "description": {
                 "value": ""
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp",
+                "value": 1800
+            },
+            "proficient": null,
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "EC"
             },
-            "armor": {
-                "value": null,
-                "dex": null,
-                "magicalBonus": 0
-            },
             "strength": null,
-            "proficient": null
+            "type": {
+                "baseItem": "stabilizersuit",
+                "value": "trinket"
+            },
+            "weight": 25
         },
-        "type": "equipment",
-        "img": "modules/sw5e/icons/packs/Life%20Support/StabilizerSuit.webp",
-        "effects": []
+        "type": "equipment"
     },
     "Loot.name-oxygen_tank.equipmentCategory-lifesupport": {
-        "name": "Oxygen tank",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-05-30T20:15:25.5177592+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-05-30T20:15:25.5177592+00:00",
                 "uid": "Loot.name-oxygen_tank.equipmentCategory-lifesupport"
             }
         },
+        "img": "modules/sw5e/icons/packs/Life%20Support/OxygenTank.webp",
+        "name": "Oxygen tank",
         "system": {
-            "quantity": 1,
-            "weight": 20,
-            "price": {
-                "value": 100,
-                "denomination": "gp"
-            },
-            "rarity": "",
             "identified": true,
-            "type": {
-                "value": "gear",
-                "baseItem": "oxygentank"
+            "price": {
+                "denomination": "gp",
+                "value": 100
             },
+            "quantity": 1,
+            "rarity": "",
             "source": {
                 "custom": "EC"
-            }
+            },
+            "type": {
+                "baseItem": "oxygentank",
+                "value": "gear"
+            },
+            "weight": 20
         },
-        "type": "loot",
-        "img": "modules/sw5e/icons/packs/Life%20Support/OxygenTank.webp",
-        "effects": []
+        "type": "loot"
     }
 }

@@ -1,83 +1,83 @@
 {
     "EnhancedItem.name-ship_shield_fine.subtype-any": {
-        "name": "Ship Shield (Fine)",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.4274096+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.4274096+00:00",
                 "uid": "EnhancedItem.name-ship_shield_fine.subtype-any"
             }
         },
+        "img": "icons/svg/item-bag.svg",
+        "name": "Ship Shield (Fine)",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "uncommon",
-            "identified": true,
             "description": {
                 "value": "<h4>Ship Shield (Any)</h4>\n <p>Your ship has a +1 bonus to Strength, Dexterity, and Constitution saving throws while this shield is installed. </p>"
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "uncommon",
             "source": {
                 "custom": "EC"
             }
         },
-        "type": "loot",
-        "img": "icons/svg/item-bag.svg",
-        "effects": []
+        "type": "loot"
     },
     "EnhancedItem.name-ship_shield_improved.subtype-any": {
-        "name": "Ship Shield (Improved)",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.4274096+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.4274096+00:00",
                 "uid": "EnhancedItem.name-ship_shield_improved.subtype-any"
             }
         },
+        "img": "icons/svg/item-bag.svg",
+        "name": "Ship Shield (Improved)",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "rare",
-            "identified": true,
             "description": {
                 "value": "<h4>Ship Shield (Any)</h4>\n <p>Your ship has a +2 bonus to Strength, Dexterity, and Constitution saving throws while this shield is installed. </p>"
             },
-            "source": {
-                "custom": "EC"
-            }
-        },
-        "type": "loot",
-        "img": "icons/svg/item-bag.svg",
-        "effects": []
-    },
-    "EnhancedItem.name-ship_shield_superior.subtype-any": {
-        "name": "Ship Shield (Superior)",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.4274096+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-ship_shield_superior.subtype-any"
-            }
-        },
-        "system": {
-            "quantity": 1,
+            "identified": true,
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "veryRare",
-            "identified": true,
-            "description": {
-                "value": "<h4>Ship Shield (Any)</h4>\n <p>Your ship has a +3 bonus to Strength, Dexterity, and Constitution saving throws while this shield is installed. </p>"
-            },
+            "quantity": 1,
+            "rarity": "rare",
             "source": {
                 "custom": "EC"
             }
         },
-        "type": "loot",
+        "type": "loot"
+    },
+    "EnhancedItem.name-ship_shield_superior.subtype-any": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.4274096+00:00",
+                "uid": "EnhancedItem.name-ship_shield_superior.subtype-any"
+            }
+        },
         "img": "icons/svg/item-bag.svg",
-        "effects": []
+        "name": "Ship Shield (Superior)",
+        "system": {
+            "description": {
+                "value": "<h4>Ship Shield (Any)</h4>\n <p>Your ship has a +3 bonus to Strength, Dexterity, and Constitution saving throws while this shield is installed. </p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "veryRare",
+            "source": {
+                "custom": "EC"
+            }
+        },
+        "type": "loot"
     }
 }

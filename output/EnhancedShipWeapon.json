@@ -1,83 +1,83 @@
 {
     "EnhancedItem.name-ship_weapon_fine.subtype-any": {
-        "name": "Ship Weapon (Fine)",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.4274096+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.4274096+00:00",
                 "uid": "EnhancedItem.name-ship_weapon_fine.subtype-any"
             }
         },
+        "img": "icons/svg/item-bag.svg",
+        "name": "Ship Weapon (Fine)",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "uncommon",
-            "identified": true,
             "description": {
                 "value": "<h4>Ship Weapon (Any)</h4>\n <p>Your ship has a +1 bonus to attack and damage rolls made with this enhanced ship weapon.</p>"
             },
+            "identified": true,
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "uncommon",
             "source": {
                 "custom": "EC"
             }
         },
-        "type": "loot",
-        "img": "icons/svg/item-bag.svg",
-        "effects": []
+        "type": "loot"
     },
     "EnhancedItem.name-ship_weapon_improved.subtype-any": {
-        "name": "Ship Weapon (Improved)",
+        "effects": [],
         "flags": {
             "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.4284109+00:00",
                 "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.4284109+00:00",
                 "uid": "EnhancedItem.name-ship_weapon_improved.subtype-any"
             }
         },
+        "img": "icons/svg/item-bag.svg",
+        "name": "Ship Weapon (Improved)",
         "system": {
-            "quantity": 1,
-            "price": {
-                "denomination": "gp"
-            },
-            "rarity": "rare",
-            "identified": true,
             "description": {
                 "value": "<h4>Ship Weapon (Any)</h4>\n <p>Your ship has a +2 bonus to attack and damage rolls made with this enhanced ship weapon.</p>"
             },
-            "source": {
-                "custom": "EC"
-            }
-        },
-        "type": "loot",
-        "img": "icons/svg/item-bag.svg",
-        "effects": []
-    },
-    "EnhancedItem.name-ship_weapon_superior.subtype-any": {
-        "name": "Ship Weapon (Superior)",
-        "flags": {
-            "sw5e-importer": {
-                "timestamp": "2023-03-09T01:52:20.4284109+00:00",
-                "importer_version": 3,
-                "uid": "EnhancedItem.name-ship_weapon_superior.subtype-any"
-            }
-        },
-        "system": {
-            "quantity": 1,
+            "identified": true,
             "price": {
                 "denomination": "gp"
             },
-            "rarity": "veryRare",
-            "identified": true,
-            "description": {
-                "value": "<h4>Ship Weapon (Any)</h4>\n <p>Your ship has a +3 bonus to attack and damage rolls made with this enhanced ship weapon.</p>"
-            },
+            "quantity": 1,
+            "rarity": "rare",
             "source": {
                 "custom": "EC"
             }
         },
-        "type": "loot",
+        "type": "loot"
+    },
+    "EnhancedItem.name-ship_weapon_superior.subtype-any": {
+        "effects": [],
+        "flags": {
+            "sw5e-importer": {
+                "importer_version": 3,
+                "timestamp": "2023-03-09T01:52:20.4284109+00:00",
+                "uid": "EnhancedItem.name-ship_weapon_superior.subtype-any"
+            }
+        },
         "img": "icons/svg/item-bag.svg",
-        "effects": []
+        "name": "Ship Weapon (Superior)",
+        "system": {
+            "description": {
+                "value": "<h4>Ship Weapon (Any)</h4>\n <p>Your ship has a +3 bonus to attack and damage rolls made with this enhanced ship weapon.</p>"
+            },
+            "identified": true,
+            "price": {
+                "denomination": "gp"
+            },
+            "quantity": 1,
+            "rarity": "veryRare",
+            "source": {
+                "custom": "EC"
+            }
+        },
+        "type": "loot"
     }
 }
