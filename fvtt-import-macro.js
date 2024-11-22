@@ -150,6 +150,16 @@ for (const type of Object.keys(item_types)) {
 			if (pack_item.flags.importer_version) importer_item.flags["-=importer_version"] = null;
 			if (pack_item.flags.timestamp) importer_item.flags["-=timestamp"] = null;
 			importer_item._id = pack_item._id;
+
+			// Remove old activities
+			if (pack_item?.system?.activities && importer_item?.system?.activities) {
+				for (const id of pack_item.system.activities) {
+					if (importer_item.system.activities[id] === undefined) {
+						importer_item.system.activities[`-=${id}`] = null;
+					}
+				}
+			}
+
 			to_update.push(importer_item);
 
 			importer_data[uid] = null;
