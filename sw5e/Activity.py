@@ -7,7 +7,7 @@ class Activity():
 	def __init__(self, data=None, idx=None):
 		self.raw_data = copy.deepcopy(data) or {}
 		self.data = copy.deepcopy(data) or {}
-		self.id = utils.text.nonRandomID(str(idx) + self.__class__.__name__.lower()) if idx != None else utils.text.randomID()
+		self.id = utils.text.nonRandomID('sw5e' + str(idx) + self.__class__.__name__.lower()) if idx != None else utils.text.randomID()
 
 		self.process()
 

@@ -4,7 +4,7 @@ import re, json
 class Advancement():
 	def __init__(self, idx=None):
 		abbreviation = ''.join(c for c in self.__class__.__name__ if c.isupper()).lower()
-		self.id = utils.text.nonRandomID(str(idx) + abbreviation) if idx != None else utils.text.randomID()
+		self.id = utils.text.nonRandomID('sw5e' + str(idx) + abbreviation) if idx != None else utils.text.randomID()
 	def getType(self):
 		return self.__class__.__name__
 	def getData(self, importer):
