@@ -48,8 +48,8 @@ class Tool(sw5e.Equipment.Equipment):
 		tools = {
 			"GamingSet": 'game',
 			"MusicalInstrument": 'music',
-			"ArtisanImplements": 'artisan',
-			"SpecialistsKit": 'specialist',
+			"ArtisanImplements": 'art',
+			"SpecialistsKit": 'kit',
 		}
 		category = self.raw_equipmentCategory
 		if self.name.find('implements') != -1: category = 'ArtisanImplements'
