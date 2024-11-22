@@ -2,11 +2,14 @@ import utils.text
 import re, json
 
 class Advancement():
+	def __init__(self, idx=None):
+		abbreviation = ''.join(c for c in self.__class__.__name__ if c.isupper()).lower()
+		self.id = utils.text.nonRandomID(str(idx) + abbreviation) if idx != None else utils.text.randomID()
 	def getType(self):
 		return self.__class__.__name__
 	def getData(self, importer):
 		data = {
-			"_id": utils.text.randomID(),
+			"_id": self.id,
 			"type": self.getType(),
 			"configuration": {},
 			"value": {},
@@ -14,7 +17,8 @@ class Advancement():
 		return data
 
 class AbilityScoreImprovement(Advancement):
-	def __init__(self, name=None, level=1, class_restriction="", points=2, fixed=[]):
+	def __init__(self, name=None, level=1, class_restriction="", points=2, fixed=[], idx=None):
+		super().__init__(idx=idx)
 		self.name = name
 		self.level = level
 		self.class_restriction = class_restriction
@@ -53,7 +57,9 @@ class ItemChoice(Advancement):
 		restriction_type="",
 		restriction_subtype="",
 		restriction_level="",
+		idx=None
 	):
+		super().__init__(idx=idx)
 		self.name = name
 		self.class_restriction = class_restriction
 		self.configuration = {
@@ -87,7 +93,8 @@ class ItemChoice(Advancement):
 		return data
 
 class ItemGrant(Advancement):
-	def __init__(self, name=None, level=1, class_restriction="", uids=[], optional=False):
+	def __init__(self, name=None, level=1, class_restriction="", uids=[], optional=False, idx=None):
+		super().__init__(idx=idx)
 		self.name = name
 		self.level = level
 		self.class_restriction = class_restriction
@@ -107,7 +114,8 @@ class ItemGrant(Advancement):
 		return data
 
 class ScaleValue(Advancement):
-	def __init__(self, name="Scale Value", values={}):
+	def __init__(self, name="Scale Value", values={}, idx=None):
+		super().__init__(idx=idx)
 		self.name = name
 		values, value_type, distance = self.processValues(values)
 		self.configuration = {
@@ -180,7 +188,8 @@ class ScaleValue(Advancement):
 		return data
 
 class Size(Advancement):
-	def __init__(self, name=None, level=0, class_restriction="", choices=["med"]):
+	def __init__(self, name=None, level=0, class_restriction="", choices=["med"], idx=None):
+		super().__init__(idx=idx)
 		self.name = name
 		self.level = level
 		self.class_restriction = class_restriction
@@ -197,7 +206,8 @@ class Size(Advancement):
 		return data
 
 class Trait(Advancement):
-	def __init__(self, name=None, level=0, class_restriction="", choices=[], grants=[], mode="default", allow_replacements=False):
+	def __init__(self, name=None, level=0, class_restriction="", choices=[], grants=[], mode="default", allow_replacements=False, idx=None):
+		super().__init__(idx=idx)
 		self.name = name
 		self.level = level
 		self.class_restriction = class_restriction

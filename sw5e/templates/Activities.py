@@ -12,11 +12,11 @@ class Activities(Template):
 		activities = []
 		if action_type := data.get('action_type'):
 			if action_type == 'save':
-				activities.append(sw5e.Activity.Save(data))
+				activities.append(sw5e.Activity.Save(data, idx=len(activities)))
 			elif action_type in ['msak', 'mwak', 'rsak', 'rwak']:
 				utils.object.setProperty(data, 'attack.type', 'melee' if action_type.startswith('m') else 'ranged', force=True)
 				utils.object.setProperty(data, 'attack.classification', 'spell' if action_type[1] == 's' else 'weapon', force=True)
-				attackActivity = sw5e.Activity.Attack(data)
+				attackActivity = sw5e.Activity.Attack(data, idx=len(activities))
 				activities.append(attackActivity)
 				if properties := data.get('properties'):
 					if (properties.get("burst")):
@@ -30,7 +30,7 @@ class Activities(Template):
 							utils.object.setProperty(burst_data, 'save.scaling', 'dex')
 						# TODO: set 'consume' to the ammount of ammo burst uses
 						# burst_data = self.getAutoTargetData(burst_data, burst_or_rapid=True)
-						activities.append(sw5e.Activity.Save(burst_data))
+						activities.append(sw5e.Activity.Save(burst_data, idx=len(activities)))
 					if (properties.get("rapid")):
 						rapid_data = copy.deepcopy(data)
 						utils.object.setProperty(rapid_data, 'name', 'Rapid Attack')
@@ -42,18 +42,18 @@ class Activities(Template):
 							dmg.number = dmg.number * 2
 						# TODO: set 'consume' to the ammount of ammo rapid uses
 						# rapid_data = self.getAutoTargetData(burst_data, burst_or_rapid=True)
-						activities.append(sw5e.Activity.Save(rapid_data))
+						activities.append(sw5e.Activity.Save(rapid_data, idx=len(activities)))
 					if (properties.get("auto")):
 						activities.remove(attackActivity)
 			elif action_type == 'other':
 				if "damage" in data and len(data["damage"].parts):
-					activities.append(sw5e.Activity.Damage(data))
+					activities.append(sw5e.Activity.Damage(data, idx=len(activities)))
 				elif utils.object.getProperty(data, 'activation.type'):
-					activities.append(sw5e.Activity.Utility(data))
+					activities.append(sw5e.Activity.Utility(data, idx=len(activities)))
 			elif action_type == 'abil':
-				activities.append(sw5e.Activity.Check(data))
+				activities.append(sw5e.Activity.Check(data, idx=len(activities)))
 		if healing := data.get('healing'):
-			activities.append(sw5e.Activity.Heal(data))
+			activities.append(sw5e.Activity.Heal(data, idx=len(activities)))
 		return activities
 
 	def getActivitiesData(self):

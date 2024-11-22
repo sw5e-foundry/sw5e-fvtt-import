@@ -4,14 +4,15 @@ import re, json, copy
 _no = {}
 
 class Activity():
-	def __init__(self, data=None):
+	def __init__(self, data=None, idx=None):
 		self.raw_data = copy.deepcopy(data) or {}
 		self.data = copy.deepcopy(data) or {}
+		self.id = utils.text.nonRandomID(str(idx) + self.__class__.__name__.lower()) if idx != None else utils.text.randomID()
 
 		self.process()
 
 	def process(self):
-		self.id = utils.text.randomID()
+		pass
 
 	def getType(self):
 		return self.__class__.__name__.lower()

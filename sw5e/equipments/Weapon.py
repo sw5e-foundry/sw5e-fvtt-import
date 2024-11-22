@@ -1,4 +1,4 @@
-import sw5e.Equipment, sw5e.Activity, sw5e.templates, sw5e.Damage, utils.config, utils.object, utils.text
+import sw5e.Equipment, sw5e.templates, sw5e.Damage, utils.config, utils.object, utils.text
 import re, json, copy
 
 class Weapon(

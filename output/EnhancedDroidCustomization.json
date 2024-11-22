@@ -58,29 +58,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "UOxoxmBx7qr1i90K": {
-                    "_id": "UOxoxmBx7qr1i90K",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": null,
                         "units": "inst"
+                    },
+                    "roll": "",
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>You can now integrate a single simple or martial blaster into your droid chassis. Over the course of a short or long rest, you can insert and integrate this blaster into your frame. As a bonus action, you can open or close a small hatch located somewhere on your droid body, permitting you to wield and fire the weapon normally when you want to attack with it. While the hatch is open, your hands are not considered occupied by this blaster. All other rules and conditions apply normally as if you were wielding this blaster in either one or two hands (your choice). </p>"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>You can now integrate a single simple or martial blaster into your droid chassis. Over the course of a short or long rest, you can insert and integrate this blaster into your frame. As a bonus action, you can open or close a small hatch located somewhere on your droid body, permitting you to wield and fire the weapon normally when you want to attack with it. While the hatch is open, your hands are not considered occupied by this blaster. All other rules and conditions apply normally as if you were wielding this blaster in either one or two hands (your choice). </p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -245,10 +245,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1QXbQZluUo8lHIPj": {
-                    "_id": "1QXbQZluUo8lHIPj",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Strength saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -256,11 +264,9 @@
                             "formula": ""
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -268,18 +274,12 @@
                         },
                         "parts": []
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Strength saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -316,10 +316,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "JcfDJwYrViU605kl": {
-                    "_id": "JcfDJwYrViU605kl",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Constitution saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -327,11 +335,9 @@
                             "formula": ""
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -339,18 +345,12 @@
                         },
                         "parts": []
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Constitution saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -387,10 +387,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1xP2syGpbTVHZGh1": {
-                    "_id": "1xP2syGpbTVHZGh1",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Strength or Constitution saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -398,11 +406,9 @@
                             "formula": ""
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -410,18 +416,12 @@
                         },
                         "parts": []
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Strength or Constitution saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -777,10 +777,22 @@
                 "custom": "WH"
             },
             "activities": {
-                "18pmYKD64s941IWm": {
-                    "_id": "18pmYKD64s941IWm",
+                "0heal00000000000": {
+                    "_id": "0heal00000000000",
                     "type": "heal",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": "5",
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>As an action, you can activate the repair tools, choosing one of the following options:</p>\n<ul>\n<li>You can stabilize a droid within 5 feet of you that has 0 hit points, without needing to make an Intelligence (Technology) check.</li>\n<li>You can restore [[/r 2d4+2]] hit points to a droid or construct within 5 feet.</li>\n</ul>\n<p>You can use each feature once. You regain all expended uses when you complete a long rest.</p>\n<p><em>This part equips the droid with a series of machine repair tools.</em></p>"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "healing": {
                         "custom": {
                             "enabled": false,
@@ -803,19 +815,7 @@
                         "width": null,
                         "units": "",
                         "type": ""
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>As an action, you can activate the repair tools, choosing one of the following options:</p>\n<ul>\n<li>You can stabilize a droid within 5 feet of you that has 0 hit points, without needing to make an Intelligence (Technology) check.</li>\n<li>You can restore [[/r 2d4+2]] hit points to a droid or construct within 5 feet.</li>\n</ul>\n<p>You can use each feature once. You regain all expended uses when you complete a long rest.</p>\n<p><em>This part equips the droid with a series of machine repair tools.</em></p>"
-                    },
-                    "range": "5"
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -851,10 +851,22 @@
                 "custom": "WH"
             },
             "activities": {
-                "1gyxozMtfmBG1BCv": {
-                    "_id": "1gyxozMtfmBG1BCv",
+                "0heal00000000000": {
+                    "_id": "0heal00000000000",
                     "type": "heal",
                     "img": null,
+                    "duration": {
+                        "value": "1",
+                        "units": "hour"
+                    },
+                    "range": "5",
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>As an action, you can activate the medical kit, choosing one of the following options:</p>\n<ul>\n<li>You can stabilize a creature within 5 feet of you that has 0 hit points, without needing to make a Wisdom (Medicine) check.</li>\n<li>You can restore [[/r 1d4+1]] hit points to a creature within 5 feet.</li>\n<li>You can cure a target of one poison affecting them or to give them advantage on saving throws against poison for 1 hour.</li>\n</ul>\n<p>This medical kit has no effect on droids or constructs. You can use each feature once. You regain all expended uses when you complete a long rest.</p>\n<p><em>This part equips the droid with a compact medical kit.</em></p>"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
                     "healing": {
                         "custom": {
                             "enabled": false,
@@ -877,19 +889,7 @@
                         "width": null,
                         "units": "",
                         "type": ""
-                    },
-                    "duration": {
-                        "value": "1",
-                        "units": "hour"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    },
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>As an action, you can activate the medical kit, choosing one of the following options:</p>\n<ul>\n<li>You can stabilize a creature within 5 feet of you that has 0 hit points, without needing to make a Wisdom (Medicine) check.</li>\n<li>You can restore [[/r 1d4+1]] hit points to a creature within 5 feet.</li>\n<li>You can cure a target of one poison affecting them or to give them advantage on saving throws against poison for 1 hour.</li>\n</ul>\n<p>This medical kit has no effect on droids or constructs. You can use each feature once. You regain all expended uses when you complete a long rest.</p>\n<p><em>This part equips the droid with a compact medical kit.</em></p>"
-                    },
-                    "range": "5"
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -990,10 +990,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "u5QEkdaKxT61KZ3H": {
-                    "_id": "u5QEkdaKxT61KZ3H",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Intelligence saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+                    },
                     "save": {
                         "ability": "int",
                         "dc": {
@@ -1001,11 +1009,9 @@
                             "formula": ""
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1013,18 +1019,12 @@
                         },
                         "parts": []
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Intelligence saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -1061,10 +1061,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "to2B83ATJD3qF4U5": {
-                    "_id": "to2B83ATJD3qF4U5",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1072,11 +1080,9 @@
                             "formula": ""
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1084,18 +1090,12 @@
                         },
                         "parts": []
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -1132,10 +1132,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "SZiM5IB7tEz1hxZf": {
-                    "_id": "SZiM5IB7tEz1hxZf",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Dexterity or Intelligence saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1143,11 +1151,9 @@
                             "formula": ""
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1155,18 +1161,12 @@
                         },
                         "parts": []
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Dexterity or Intelligence saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -1234,29 +1234,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "15iyqWgtTTvnMJe1": {
-                    "_id": "15iyqWgtTTvnMJe1",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 25 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 25 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -1292,29 +1292,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "JcmQH5xVMp614g1C": {
-                    "_id": "JcmQH5xVMp614g1C",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 50 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 50 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -1350,29 +1350,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "15SL40Obfjc81ftO": {
-                    "_id": "15SL40Obfjc81ftO",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 45 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 45 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -1408,29 +1408,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "IlnANqxikW91Ckni": {
-                    "_id": "IlnANqxikW91Ckni",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 30 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 30 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -1466,29 +1466,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "Hj82QDSbwdS17TIU": {
-                    "_id": "Hj82QDSbwdS17TIU",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 35 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 35 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -1524,29 +1524,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1t0UcO0kmVsv16SI": {
-                    "_id": "1t0UcO0kmVsv16SI",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 40 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>Repulsor lifts are a form of rocket propulsion affixed to the lower part of a droid's chassis. Activating or deactivating the repulsors requires a bonus action and, while active, you have a flying speed of 40 feet. The repulsor lifts last for 1 minute. Once they've been used, they can't be used again until an hour has passed.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -1614,29 +1614,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1a9ioXE3V6MLIA9M": {
-                    "_id": "1a9ioXE3V6MLIA9M",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": null,
                         "units": "inst"
+                    },
+                    "roll": "",
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p>You learn the <em>alarm</em> tech power. You can cast it once, without the use of a wristpad and without spending tech points, and you regain the ability to do so when you finish a long rest. Intelligence is your techcasting ability for this power.</p>\n<p><em>This part equips a droid with a small rotating sensory dish.</em></p>"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p>You learn the <em>alarm</em> tech power. You can cast it once, without the use of a wristpad and without spending tech points, and you regain the ability to do so when you finish a long rest. Intelligence is your techcasting ability for this power.</p>\n<p><em>This part equips a droid with a small rotating sensory dish.</em></p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -1672,15 +1672,21 @@
                 "custom": "WH"
             },
             "activities": {
-                "l0No1phx7APTtoHH": {
-                    "_id": "l0No1phx7APTtoHH",
+                "0damage000000000": {
+                    "_id": "0damage000000000",
                     "type": "damage",
                     "img": null,
-                    "target": {
+                    "duration": {
                         "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class II droid</em></p>\n<hr/>\n<p>You have a small integrated droid shock arm with which you can make unarmed strikes. You have proficiency in this shock arm, which is a vibroweapon with the reach property and deals [[/r 1d6]] lightning damage on a hit. You can use your choice of Strength or Intelligence for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<p><em>This small robotic appendage has a fork-like prod from that can release a substantial electrical discharge.</em></p>"
+                    },
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1706,18 +1712,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<h4>Droid Customization (Part)</h4>\n <p><em>Prerequisite:  Class II droid</em></p>\n<hr/>\n<p>You have a small integrated droid shock arm with which you can make unarmed strikes. You have proficiency in this shock arm, which is a vibroweapon with the reach property and deals [[/r 1d6]] lightning damage on a hit. You can use your choice of Strength or Intelligence for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<p><em>This small robotic appendage has a fork-like prod from that can release a substantial electrical discharge.</em></p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -1785,29 +1785,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "6BzIsMwZMof48xYI": {
-                    "_id": "6BzIsMwZMof48xYI",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "1d4",
                     "duration": {
                         "value": null,
                         "units": "inst"
+                    },
+                    "roll": "1d4",
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em>Prerequisite:  Class III droid</em></p>\n<hr/>\n<p>When you or a creature you can see that can see and understand you makes an ability check, attack roll, or saving throw, you can roll a [[/r d4]] and add it to their roll (no action required). You can use this before or after the roll, but before the GM determines the roll's outcome. Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em>Prerequisite:  Class III droid</em></p>\n<hr/>\n<p>When you or a creature you can see that can see and understand you makes an ability check, attack roll, or saving throw, you can roll a [[/r d4]] and add it to their roll (no action required). You can use this before or after the roll, but before the GM determines the roll's outcome. Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -2068,10 +2068,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "19qPn3f2Dk6KNvVe": {
-                    "_id": "19qPn3f2Dk6KNvVe",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Charisma saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+                    },
                     "save": {
                         "ability": "cha",
                         "dc": {
@@ -2079,11 +2087,9 @@
                             "formula": ""
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -2091,18 +2097,12 @@
                         },
                         "parts": []
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Charisma saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -2139,10 +2139,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1KrARDCnNkkd1OZM": {
-                    "_id": "1KrARDCnNkkd1OZM",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Wisdom saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -2150,11 +2158,9 @@
                             "formula": ""
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -2162,18 +2168,12 @@
                         },
                         "parts": []
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Wisdom saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"
@@ -2210,10 +2210,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "7uhFpmWfbPI1HSJE": {
-                    "_id": "7uhFpmWfbPI1HSJE",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Wisdom or Charisma saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -2221,11 +2229,9 @@
                             "formula": ""
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -2233,18 +2239,12 @@
                         },
                         "parts": []
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<h4>Droid Customization (Protocol)</h4>\n <p><em><strong>Requires attunement</strong></em></p>\n<hr/>\n<p>When you are subjected to an effect that allows you to make a Wisdom or Charisma saving throw to take only half damage, you instead take no damage if you succeed on a saving throw, and only half damage if you fail.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             },
             "modificationType": "droidcustomization"

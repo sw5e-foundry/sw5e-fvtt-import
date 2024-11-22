@@ -29,10 +29,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1rbce2yYsYEn1GSG": {
-                    "_id": "1rbce2yYsYEn1GSG",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking [[/r 1d8]] acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized. </p>"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -40,11 +48,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -70,18 +76,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>A corrosive cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw, taking [[/r 1d8]] acid damage on a failed save or half as much on a successful one. If you reduce a creature to 0 hit points with the loaded weapon, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything unenhanced it is wearing or carrying are reduced to a pile of fine gray dust. A creature destroyed in this way can not be revitalized. </p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -119,10 +119,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1qbh674BSSNt1Ply": {
-                    "_id": "1qbh674BSSNt1Ply",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": "1",
+                        "units": "hour"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes [[/r 1d4]] cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn't slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour.</p>"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -130,11 +138,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -160,18 +166,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "hour"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>A cryo cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals cold damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes [[/r 1d4]] cold damage and gains 1 slowed level until the end of its next turn. On a successful save, a creature takes half damage and isn't slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -209,15 +209,21 @@
                 "custom": "PHB"
             },
             "activities": {
-                "11lpOXpINnJQz33v": {
-                    "_id": "11lpOXpINnJQz33v",
+                "0damage000000000": {
+                    "_id": "0damage000000000",
                     "type": "damage",
                     "img": null,
-                    "target": {
+                    "duration": {
                         "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit.</p>"
+                    },
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -243,18 +249,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -292,29 +292,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1i3kc6lTHLeACnXH": {
-                    "_id": "1i3kc6lTHLeACnXH",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": "5",
+                    "description": {
+                        "value": "<p>As an action, you can apply this calibrator to one vibroweapon or pair of handwraps within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon. Additionally, for the duration, the weapon gains the sonorous 13 property. If it already has the sonorous property, its sonorous number increases by 1, to a maximum of 18.</p>"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<p>As an action, you can apply this calibrator to one vibroweapon or pair of handwraps within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon. Additionally, for the duration, the weapon gains the sonorous 13 property. If it already has the sonorous property, its sonorous number increases by 1, to a maximum of 18.</p>"
-                    },
-                    "range": "5"
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -352,10 +352,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1g4Mvo0qK17hDWss": {
-                    "_id": "1g4Mvo0qK17hDWss",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>A deafening cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals sonic damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes [[/r 1d6]] sonic damage and is deafened until the start of your next turn. On a successful save, a creature takes half damage and isn't deafened. </p>"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -363,11 +371,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -393,18 +399,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>A deafening cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals sonic damage instead of its normal damage type, and when you hit with a shot the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes [[/r 1d6]] sonic damage and is deafened until the start of your next turn. On a successful save, a creature takes half damage and isn't deafened. </p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -442,29 +442,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1QJUsCmAWO5StMg8": {
-                    "_id": "1QJUsCmAWO5StMg8",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": "5",
+                    "description": {
+                        "value": "<p>As an action, you can apply this collimator to one lightweapon within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon. Additionally, for the duration, the weapon gains the sonorous 13 property. If it already has the sonorous property, its sonorous number increases by 1, to a maximum of 18.</p>"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<p>As an action, you can apply this collimator to one lightweapon within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon. Additionally, for the duration, the weapon gains the sonorous 13 property. If it already has the sonorous property, its sonorous number increases by 1, to a maximum of 18.</p>"
-                    },
-                    "range": "5"
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -502,10 +502,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "CED43iq5xCM1hVnV": {
-                    "_id": "CED43iq5xCM1hVnV",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Constitution saving throw, taking [[/r 1d4]] sonic damage on a failed save. </p>\n<p>Additionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -513,11 +521,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -560,18 +566,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Constitution saving throw, taking [[/r 1d4]] sonic damage on a failed save. </p>\n<p>Additionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -609,29 +609,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1xcj0Ejvw1S71gRU": {
-                    "_id": "1xcj0Ejvw1S71gRU",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": "5",
+                    "description": {
+                        "value": "<p>As an action, you can apply this calibrator to one vibroweapon or pair of handwraps within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon. Additionally, for the duration, the weapon gains the shocking 13 property. If it already has the shocking property, its shocking number increases by 1, to a maximum of 18.</p>"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<p>As an action, you can apply this calibrator to one vibroweapon or pair of handwraps within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon. Additionally, for the duration, the weapon gains the shocking 13 property. If it already has the shocking property, its shocking number increases by 1, to a maximum of 18.</p>"
-                    },
-                    "range": "5"
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -669,10 +669,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "orYTbbUbotlw97aM": {
-                    "_id": "orYTbbUbotlw97aM",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn't shocked.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -680,11 +688,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -710,18 +716,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>An electrifying cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn. On a successful save, a creature takes half damage and isn't shocked.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -759,29 +759,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "R13vK5EIigR1QdV4": {
-                    "_id": "R13vK5EIigR1QdV4",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": "5",
+                    "description": {
+                        "value": "<p>As an action, you can apply this collimator to one lightweapon within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon. Additionally, for the duration, the weapon gains the shocking 13 property. If it already has the shocking property, its shocking number increases by 1, to a maximum of 18.</p>"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<p>As an action, you can apply this collimator to one lightweapon within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon. Additionally, for the duration, the weapon gains the shocking 13 property. If it already has the shocking property, its shocking number increases by 1, to a maximum of 18.</p>"
-                    },
-                    "range": "5"
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -819,10 +819,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "wvQYB6acygKkVYPh": {
-                    "_id": "wvQYB6acygKkVYPh",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Dexterity saving throw, taking [[/r 1d4]] lightning damage on a failed save. </p>\n<p>Additionally, on a failed save, a creature is shocked for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -830,11 +838,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -877,18 +883,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Dexterity saving throw, taking [[/r 1d4]] lightning damage on a failed save. </p>\n<p>Additionally, on a failed save, a creature is shocked for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -926,10 +926,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1KTK2n9DiI1UyIFL": {
-                    "_id": "1KTK2n9DiI1UyIFL",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>When triggered, this wrist launcher ammunition fires a volley of kinetic flechette rounds in a short line 15 feet long and 5 feet wide or a long line 45 feet long and 5 feet wide. A single flechette clip holds enough ammunition for three attacks in a short line or one attack in a long line. Each creature must make a DC 14 Dexterity saving throw. A creature takes [[/r 1d10]] kinetic damage on a failed save, or half as much as on a successful one. If you lack proficiency in the wrist launcher, you have disadvantage on damage rolls with it</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -937,11 +945,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -967,18 +973,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>When triggered, this wrist launcher ammunition fires a volley of kinetic flechette rounds in a short line 15 feet long and 5 feet wide or a long line 45 feet long and 5 feet wide. A single flechette clip holds enough ammunition for three attacks in a short line or one attack in a long line. Each creature must make a DC 14 Dexterity saving throw. A creature takes [[/r 1d10]] kinetic damage on a failed save, or half as much as on a successful one. If you lack proficiency in the wrist launcher, you have disadvantage on damage rolls with it</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -1016,10 +1016,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "xmpTbWGuaZZ3JErv": {
-                    "_id": "xmpTbWGuaZZ3JErv",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>When triggered, this wrist launcher ammunition fires a volley of ion flechette rounds in a short line 15 feet long and 5 feet wide or a long line 45 feet long and 5 feet wide. A single flechette clip holds enough ammunition for three attacks in a short line or one attack in a long line. Each creature must make a DC 14 Dexterity saving throw. A creature takes [[/r 1d6]] ion damage on a failed save, or half as much as on a successful one. Any electronics within the blast radius that aren't being worn or carried are disabled until rebooted. If you lack proficiency in the wrist launcher, you have disadvantage on damage rolls with it</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1027,11 +1035,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1057,18 +1063,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>When triggered, this wrist launcher ammunition fires a volley of ion flechette rounds in a short line 15 feet long and 5 feet wide or a long line 45 feet long and 5 feet wide. A single flechette clip holds enough ammunition for three attacks in a short line or one attack in a long line. Each creature must make a DC 14 Dexterity saving throw. A creature takes [[/r 1d6]] ion damage on a failed save, or half as much as on a successful one. Any electronics within the blast radius that aren't being worn or carried are disabled until rebooted. If you lack proficiency in the wrist launcher, you have disadvantage on damage rolls with it</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -1106,10 +1106,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1vkff3vDDGOzUb4X": {
-                    "_id": "1vkff3vDDGOzUb4X",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>When triggered, this wrist launcher ammunition fires a volley of energy flechette rounds in a short line 15 feet long and 5 feet wide or a long line 45 feet long and 5 feet wide. A single flechette clip holds enough ammunition for three attacks in a short line or one attack in a long line. Each creature must make a DC 14 Dexterity saving throw. A creature takes [[/r 1d10]] energy damage on a failed save, or half as much as on a successful one. If you lack proficiency in the wrist launcher, you have disadvantage on damage rolls with it</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1117,11 +1125,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1147,18 +1153,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>When triggered, this wrist launcher ammunition fires a volley of energy flechette rounds in a short line 15 feet long and 5 feet wide or a long line 45 feet long and 5 feet wide. A single flechette clip holds enough ammunition for three attacks in a short line or one attack in a long line. Each creature must make a DC 14 Dexterity saving throw. A creature takes [[/r 1d10]] energy damage on a failed save, or half as much as on a successful one. If you lack proficiency in the wrist launcher, you have disadvantage on damage rolls with it</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -1196,10 +1196,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1MJLcBsYhCWEniJt": {
-                    "_id": "1MJLcBsYhCWEniJt",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>When triggered, this flechette cannon ammunition fires a volley of kinetic flechette rounds in a short line 15 feet long and 5 feet wide or a long line 45 feet long and 5 feet wide. A single flechette mag holds enough ammunition for three attacks in a short line or one attack in a long line. Each creature must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d10]] kinetic damage on a failed save, or half as much as on a successful one. </p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1207,11 +1215,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1237,18 +1243,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>When triggered, this flechette cannon ammunition fires a volley of kinetic flechette rounds in a short line 15 feet long and 5 feet wide or a long line 45 feet long and 5 feet wide. A single flechette mag holds enough ammunition for three attacks in a short line or one attack in a long line. Each creature must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d10]] kinetic damage on a failed save, or half as much as on a successful one. </p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -1286,10 +1286,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1Gl8Co7GEfZX1xhE": {
-                    "_id": "1Gl8Co7GEfZX1xhE",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>When triggered, this flechette cannon ammunition fires a volley of ion flechette rounds in a short line 15 feet long and 5 feet wide or a long line 45 feet long and 5 feet wide. A single flechette mag holds enough ammunition for three attacks in a short line or one attack in a long line. Each creature must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d6]] ion damage on a failed save, or half as much as on a successful one. Any electronics within the blast radius that aren't being worn or carried are disabled until rebooted.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1297,11 +1305,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1327,18 +1333,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>When triggered, this flechette cannon ammunition fires a volley of ion flechette rounds in a short line 15 feet long and 5 feet wide or a long line 45 feet long and 5 feet wide. A single flechette mag holds enough ammunition for three attacks in a short line or one attack in a long line. Each creature must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d6]] ion damage on a failed save, or half as much as on a successful one. Any electronics within the blast radius that aren't being worn or carried are disabled until rebooted.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -1376,10 +1376,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "i5oSAfsp2VPM89mV": {
-                    "_id": "i5oSAfsp2VPM89mV",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>When triggered, this flechette cannon ammunition fires a volley of energy flechette rounds in a short line 15 feet long and 5 feet wide or a long line 45 feet long and 5 feet wide. A single flechette mag holds enough ammunition for three attacks in a short line or one attack in a long line. Each creature must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d10]] energy damage on a failed save, or half as much as on a successful one. </p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1387,11 +1395,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1417,18 +1423,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>When triggered, this flechette cannon ammunition fires a volley of energy flechette rounds in a short line 15 feet long and 5 feet wide or a long line 45 feet long and 5 feet wide. A single flechette mag holds enough ammunition for three attacks in a short line or one attack in a long line. Each creature must make a DC 14 Dexterity saving throw. A creature takes [[/r 2d10]] energy damage on a failed save, or half as much as on a successful one. </p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -1466,29 +1466,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "167BpG5nynaoaFSC": {
-                    "_id": "167BpG5nynaoaFSC",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": "5",
+                    "description": {
+                        "value": "<p>As an action, you can apply this collimator to one lightweapon within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon.</p>"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<p>As an action, you can apply this collimator to one lightweapon within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon.</p>"
-                    },
-                    "range": "5"
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -1526,10 +1526,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1ob2kMj5mGmX1kCp": {
-                    "_id": "1ob2kMj5mGmX1kCp",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes [[/r 1d6]] poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn't poisoned.</p>"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -1537,11 +1545,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1567,18 +1573,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>A gas cartridge is a specialized slug cartridge for use with blaster weapons that deal kinetic damage. When you hit with a shot with the loaded weapon, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes [[/r 1d6]] poison damage and is poisoned until the start of its next turn. On a successful save, a creature takes half damage and isn't poisoned.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -1616,10 +1616,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "LT9FPBSmZ1g1uFTr": {
-                    "_id": "LT9FPBSmZ1g1uFTr",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>An incendiary cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals fire damage instead of its normal damage type, and when you hit with a shot it sets the ground beneath it in a 5-foot square ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes [[/r 1d8]] fire damage or half as much on a successful one. A construct makes this save with disadvantage.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1627,11 +1635,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": 5,
-                        "width": null,
-                        "units": "ft",
-                        "type": "square"
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1657,18 +1663,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>An incendiary cell is a specialized power cell for use with blaster weapons that deal acid, energy, fire, ion, or sonic damage. The loaded weapon deals fire damage instead of its normal damage type, and when you hit with a shot it sets the ground beneath it in a 5-foot square ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes [[/r 1d8]] fire damage or half as much on a successful one. A construct makes this save with disadvantage.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": 5,
+                        "width": null,
+                        "units": "ft",
+                        "type": "square"
+                    }
                 }
             }
         },
@@ -1705,10 +1705,18 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1gSNrA8QdvLW1ntJ": {
-                    "_id": "1gSNrA8QdvLW1ntJ",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": "5",
+                    "description": {
+                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit. Additionally, hit or miss, the missile then explodes. The target and each creature within 5 feet must make a DC 14 Dexterity saving throw, taking [[/r 1d10]] kinetic damage on a failed save or half as much on a successful one.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1716,11 +1724,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": 5,
-                        "width": null,
-                        "units": "ft",
-                        "type": "radius"
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1763,18 +1769,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit. Additionally, hit or miss, the missile then explodes. The target and each creature within 5 feet must make a DC 14 Dexterity saving throw, taking [[/r 1d10]] kinetic damage on a failed save or half as much on a successful one.</p>"
-                    },
-                    "range": "5"
+                    "target": {
+                        "value": 5,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    }
                 }
             }
         },
@@ -1811,10 +1811,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "aKHsUMzlmTHBFHxD": {
-                    "_id": "aKHsUMzlmTHBFHxD",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit. Additionally, hit or miss, the missile then explodes, setting the ground beneath it in a 15 foot radius ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes [[/r 1d8]] fire damage or half as much on a successful one. A construct makes this save with disadvantage.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1822,11 +1830,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1869,18 +1875,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit. Additionally, hit or miss, the missile then explodes, setting the ground beneath it in a 15 foot radius ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes [[/r 1d8]] fire damage or half as much on a successful one. A construct makes this save with disadvantage.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -1917,10 +1917,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1gZ7wBM4OMTq12Zs": {
-                    "_id": "1gZ7wBM4OMTq12Zs",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": "5",
+                    "description": {
+                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit. Additionally, hit or miss, the missile then explodes. The target and each creature within 5 feet must make a DC 14 Dexterity saving throw, taking [[/r 1d6]] ion damage on a failed save or half as much on a successful one. Any electronics within the blast radius that aren't being worn or carried are disabled until rebooted.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1928,11 +1936,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": 5,
-                        "width": null,
-                        "units": "ft",
-                        "type": "radius"
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -1975,18 +1981,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit. Additionally, hit or miss, the missile then explodes. The target and each creature within 5 feet must make a DC 14 Dexterity saving throw, taking [[/r 1d6]] ion damage on a failed save or half as much on a successful one. Any electronics within the blast radius that aren't being worn or carried are disabled until rebooted.</p>"
-                    },
-                    "range": "5"
+                    "target": {
+                        "value": 5,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    }
                 }
             }
         },
@@ -2024,29 +2024,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1kWGCVo3uwpA1t89": {
-                    "_id": "1kWGCVo3uwpA1t89",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": "5",
+                    "description": {
+                        "value": "<p>As an action, you can apply this calibrator to one vibroweapon or pair of handwraps within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon.</p>"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<p>As an action, you can apply this calibrator to one vibroweapon or pair of handwraps within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon.</p>"
-                    },
-                    "range": "5"
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -2084,29 +2084,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "yj6A6IbJEL4kzlx9": {
-                    "_id": "yj6A6IbJEL4kzlx9",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": "5",
+                    "description": {
+                        "value": "<p>As an action, you can apply this calibrator to one vibroweapon or pair of handwraps within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon. Additionally, for the duration, the weapon gains the neuralizing 13 property. If it already has the neuralizing property, its neuralizing number increases by 1, to a maximum of 18.</p>"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<p>As an action, you can apply this calibrator to one vibroweapon or pair of handwraps within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon. Additionally, for the duration, the weapon gains the neuralizing 13 property. If it already has the neuralizing property, its neuralizing number increases by 1, to a maximum of 18.</p>"
-                    },
-                    "range": "5"
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -2144,29 +2144,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "MUsBwTCqqfB28Dxx": {
-                    "_id": "MUsBwTCqqfB28Dxx",
+                "0utility00000000": {
+                    "_id": "0utility00000000",
                     "type": "utility",
                     "img": null,
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "roll": "",
                     "duration": {
                         "value": "1",
                         "units": "minute"
+                    },
+                    "roll": "",
+                    "range": "5",
+                    "description": {
+                        "value": "<p>As an action, you can apply this collimator to one lightweapon within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon. Additionally, for the duration, the weapon gains the neuralizing 13 property. If it already has the neuralizing property, its neuralizing number increases by 1, to a maximum of 18.</p>"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
                     },
-                    "description": {
-                        "value": "<p>As an action, you can apply this collimator to one lightweapon within 5 feet, granting it a +1 bonus to damage rolls for 1 minute. This bonus is in addition to any bonuses granted by the weapon. Additionally, for the duration, the weapon gains the neuralizing 13 property. If it already has the neuralizing property, its neuralizing number increases by 1, to a maximum of 18.</p>"
-                    },
-                    "range": "5"
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -2204,10 +2204,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "bCiigwjB3881wJRw": {
-                    "_id": "bCiigwjB3881wJRw",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Wisdom saving throw, taking [[/r 1d4]] psychic damage on a failed save. </p>\n<p>Additionally, on a failed save, a creature becomes frightened of you for 1 minute. At the start of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -2215,11 +2223,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -2262,18 +2268,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>This wrist launcher ammunition deals [[/r 1d6]] kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Wisdom saving throw, taking [[/r 1d4]] psychic damage on a failed save. </p>\n<p>Additionally, on a failed save, a creature becomes frightened of you for 1 minute. At the start of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -2379,10 +2379,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "qO6s43LkWN71TWPj": {
-                    "_id": "qO6s43LkWN71TWPj",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>When triggered, this wrist launcher ammunition produces a spray of acid in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel canister holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Constitution saving throw. On a failed save, a creature takes [[/r 1d6]] acid damage, and the first attack it makes before the end of its next turn has disadvantage. On a successful save, a creature takes half damage and isn't disadvantaged. If this damage reduces a creature to 0 hit points, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything it is wearing and carrying are reduced to a pile of fine gray dust. If you lack proficiency in the wrist launcher, you have disadvantage on damage rolls with it</p>"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -2390,11 +2398,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": 15,
-                        "width": null,
-                        "units": "ft",
-                        "type": "cone"
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -2420,18 +2426,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>When triggered, this wrist launcher ammunition produces a spray of acid in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel canister holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Constitution saving throw. On a failed save, a creature takes [[/r 1d6]] acid damage, and the first attack it makes before the end of its next turn has disadvantage. On a successful save, a creature takes half damage and isn't disadvantaged. If this damage reduces a creature to 0 hit points, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything it is wearing and carrying are reduced to a pile of fine gray dust. If you lack proficiency in the wrist launcher, you have disadvantage on damage rolls with it</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "cone"
+                    }
                 }
             }
         },
@@ -2469,10 +2469,18 @@
                 "custom": "PHB"
             },
             "activities": {
-                "12MenJ9L8oYrb92A": {
-                    "_id": "12MenJ9L8oYrb92A",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": "1",
+                        "units": "hour"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>When triggered, this wrist launcher ammunition produces a beam of carbonite energy in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel canister holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Constitution saving throw. On a failed save, a creature takes [[/r 1d4]] cold damage and gains 1 slowed level until the end of your next turn. On a successful save, a creature takes half damage and isn't slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour. If you lack proficiency in the wrist launcher, you must roll the damage dice twice and take the lesser total.</p>"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -2480,11 +2488,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": 15,
-                        "width": null,
-                        "units": "ft",
-                        "type": "cone"
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -2510,18 +2516,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "hour"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>When triggered, this wrist launcher ammunition produces a beam of carbonite energy in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel canister holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Constitution saving throw. On a failed save, a creature takes [[/r 1d4]] cold damage and gains 1 slowed level until the end of your next turn. On a successful save, a creature takes half damage and isn't slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour. If you lack proficiency in the wrist launcher, you must roll the damage dice twice and take the lesser total.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "cone"
+                    }
                 }
             }
         },
@@ -2559,10 +2559,18 @@
                 "custom": "PHB"
             },
             "activities": {
-                "dvfEknvxJQ1M3OLR": {
-                    "_id": "dvfEknvxJQ1M3OLR",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>When triggered, this wrist launcher ammunition produces a burst of flame in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel canister holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Dexterity saving throw, taking [[/r 1d8]] fire damage or half as much on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried. If you lack proficiency in the wrist launcher, you must roll the damage dice twice and take the lesser total.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -2570,11 +2578,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": 15,
-                        "width": null,
-                        "units": "ft",
-                        "type": "cone"
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -2600,18 +2606,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>When triggered, this wrist launcher ammunition produces a burst of flame in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel canister holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Dexterity saving throw, taking [[/r 1d8]] fire damage or half as much on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried. If you lack proficiency in the wrist launcher, you must roll the damage dice twice and take the lesser total.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "cone"
+                    }
                 }
             }
         },
@@ -2649,10 +2649,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "oCMdr6WaYok1RMBQ": {
-                    "_id": "oCMdr6WaYok1RMBQ",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>When triggered, this vapor projector ammunition produces a spray of acid in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel tank holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Constitution saving throw. On a failed save, a creature takes [[/r 2d6]] acid damage, and the first attack it makes before the end of its next turn has disadvantage. On a successful save, a creature takes half damage and isn't disadvantaged. If this damage reduces a creature to 0 hit points, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything it is wearing and carrying are reduced to a pile of fine gray dust. </p>"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -2660,11 +2668,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": 15,
-                        "width": null,
-                        "units": "ft",
-                        "type": "cone"
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -2690,18 +2696,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>When triggered, this vapor projector ammunition produces a spray of acid in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel tank holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Constitution saving throw. On a failed save, a creature takes [[/r 2d6]] acid damage, and the first attack it makes before the end of its next turn has disadvantage. On a successful save, a creature takes half damage and isn't disadvantaged. If this damage reduces a creature to 0 hit points, it must make a DC 13 Constitution saving throw. On a failed save, it dies immediately without making death saving throws. A disintegrated creature and everything it is wearing and carrying are reduced to a pile of fine gray dust. </p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "cone"
+                    }
                 }
             }
         },
@@ -2739,10 +2739,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "pbypkaLfiRo1R5mg": {
-                    "_id": "pbypkaLfiRo1R5mg",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": "1",
+                        "units": "hour"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>When triggered, this vapor projector ammunition produces a beam of carbonite energy in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel tank holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Constitution saving throw. On a failed save, a creature takes [[/r 2d4]] cold damage and gains 1 slowed level until the end of your next turn. On a successful save, a creature takes half damage and isn't slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour.</p>"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -2750,11 +2758,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": 15,
-                        "width": null,
-                        "units": "ft",
-                        "type": "cone"
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -2780,18 +2786,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "hour"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>When triggered, this vapor projector ammunition produces a beam of carbonite energy in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel tank holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Constitution saving throw. On a failed save, a creature takes [[/r 2d4]] cold damage and gains 1 slowed level until the end of your next turn. On a successful save, a creature takes half damage and isn't slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "cone"
+                    }
                 }
             }
         },
@@ -2829,10 +2829,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "kIK97F7uIRKt5uSi": {
-                    "_id": "kIK97F7uIRKt5uSi",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>When triggered, this vapor projector ammunition produces a burst of flame in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel tank holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Dexterity saving throw, taking [[/r 2d8]] fire damage or half as much on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -2840,11 +2848,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": 15,
-                        "width": null,
-                        "units": "ft",
-                        "type": "cone"
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -2870,18 +2876,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>When triggered, this vapor projector ammunition produces a burst of flame in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel tank holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Dexterity saving throw, taking [[/r 2d8]] fire damage or half as much on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "cone"
+                    }
                 }
             }
         },
@@ -2919,10 +2919,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1mZnGgzfehQn17j5": {
-                    "_id": "1mZnGgzfehQn17j5",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": "15",
+                    "description": {
+                        "value": "<p>This rocket launcher ammunition deals [[/r 2d6]] kinetic damage on a hit. Additionally, hit or miss, the rocket then explodes. The target and each creature within 15 feet must make a DC 14 Dexterity saving throw, taking [[/r 2d10]] kinetic damage on a failed save or half as much on a successful one.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -2930,11 +2938,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": 15,
-                        "width": null,
-                        "units": "ft",
-                        "type": "radius"
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -2977,18 +2983,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>This rocket launcher ammunition deals [[/r 2d6]] kinetic damage on a hit. Additionally, hit or miss, the rocket then explodes. The target and each creature within 15 feet must make a DC 14 Dexterity saving throw, taking [[/r 2d10]] kinetic damage on a failed save or half as much on a successful one.</p>"
-                    },
-                    "range": "15"
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    }
                 }
             }
         },
@@ -3026,10 +3026,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1nvuCg5G4rVVofLB": {
-                    "_id": "1nvuCg5G4rVVofLB",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>This rocket launcher ammunition deals [[/r 2d6]] kinetic damage on a hit. Additionally, hit or miss, the rocket then explodes, setting the ground beneath it in a 15 foot radius ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes [[/r 2d8]] fire damage or half as much on a successful one. A construct makes this save with disadvantage.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -3037,11 +3045,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -3084,18 +3090,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>This rocket launcher ammunition deals [[/r 2d6]] kinetic damage on a hit. Additionally, hit or miss, the rocket then explodes, setting the ground beneath it in a 15 foot radius ablaze for 1 minute. When a creature enters the fire or starts its turn there it must make a DC 14 Dexterity saving throw. On a failed save, the creature takes [[/r 2d8]] fire damage or half as much on a successful one. A construct makes this save with disadvantage.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -3133,10 +3133,18 @@
                 "custom": "WH"
             },
             "activities": {
-                "1LdpdcxCBjezpE0l": {
-                    "_id": "1LdpdcxCBjezpE0l",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": "15",
+                    "description": {
+                        "value": "<p>This rocket launcher ammunition deals [[/r 2d6]] kinetic damage on a hit. Additionally, hit or miss, the rocket then explodes. The target and each creature within 15 feet must make a DC 14 Dexterity saving throw, taking [[/r 2d6]] ion damage on a failed save or half as much on a successful one. Any electronics within the blast radius that aren't being worn or carried are disabled until rebooted.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -3144,11 +3152,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": 15,
-                        "width": null,
-                        "units": "ft",
-                        "type": "radius"
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -3191,18 +3197,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>This rocket launcher ammunition deals [[/r 2d6]] kinetic damage on a hit. Additionally, hit or miss, the rocket then explodes. The target and each creature within 15 feet must make a DC 14 Dexterity saving throw, taking [[/r 2d6]] ion damage on a failed save or half as much on a successful one. Any electronics within the blast radius that aren't being worn or carried are disabled until rebooted.</p>"
-                    },
-                    "range": "15"
+                    "target": {
+                        "value": 15,
+                        "width": null,
+                        "units": "ft",
+                        "type": "radius"
+                    }
                 }
             }
         },
@@ -3274,15 +3274,21 @@
                 "custom": "WH"
             },
             "activities": {
-                "189ho7H7ycoaSQaE": {
-                    "_id": "189ho7H7ycoaSQaE",
+                "0damage000000000": {
+                    "_id": "0damage000000000",
                     "type": "damage",
                     "img": null,
-                    "target": {
+                    "duration": {
                         "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>When hit by this wrist launcher ammunition, a Medium or smaller creature is restrained until it is freed. A snare has no effect on formless or Large or larger creatures. A creature can use its action to make a DC 13 Strength or Dexterity check (the target chooses the ability to use), freeing itself or another creature within its reach on a success. The snare has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the snare frees the creature without harming it and immediately ends the snare's effects.</p>"
+                    },
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -3308,18 +3314,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>When hit by this wrist launcher ammunition, a Medium or smaller creature is restrained until it is freed. A snare has no effect on formless or Large or larger creatures. A creature can use its action to make a DC 13 Strength or Dexterity check (the target chooses the ability to use), freeing itself or another creature within its reach on a success. The snare has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the snare frees the creature without harming it and immediately ends the snare's effects.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -3391,10 +3391,18 @@
                 "custom": "EC"
             },
             "activities": {
-                "1l1GKV4Rd1Tz1gKN": {
-                    "_id": "1l1GKV4Rd1Tz1gKN",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>A combustive arrow is a specialized arrow for use with bow weapons. When the arrow hits another creature, object, or surface it detonates. Each creature within 5ft of the arrows detonation must make a DC 14 Dexterity saving throw or take [[/r 1d8]] fire damage. On a successful save, a creature takes half damage. Once the arrow hits a target, it no longer gives a bonus.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -3402,11 +3410,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -3432,18 +3438,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>A combustive arrow is a specialized arrow for use with bow weapons. When the arrow hits another creature, object, or surface it detonates. Each creature within 5ft of the arrows detonation must make a DC 14 Dexterity saving throw or take [[/r 1d8]] fire damage. On a successful save, a creature takes half damage. Once the arrow hits a target, it no longer gives a bonus.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -3481,10 +3481,18 @@
                 "custom": "EC"
             },
             "activities": {
-                "LhwaqzUBYgV1GF6M": {
-                    "_id": "LhwaqzUBYgV1GF6M",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>An electroshock arrow is a specialized arrow for use with bow weapons. When you hit a creature with this arrow, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes [[/r 1d3]] ion damage and becomes stunned until the start of its next turn. On a successful save, a creature takes half damage and isn't stunned. Once the arrow hits a target, it no longer gives a bonus.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -3492,11 +3500,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -3522,18 +3528,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>An electroshock arrow is a specialized arrow for use with bow weapons. When you hit a creature with this arrow, the creature must make a DC 14 Dexterity saving throw. On a failed save, the creature takes [[/r 1d3]] ion damage and becomes stunned until the start of its next turn. On a successful save, a creature takes half damage and isn't stunned. Once the arrow hits a target, it no longer gives a bonus.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -3571,10 +3571,18 @@
                 "custom": "EC"
             },
             "activities": {
-                "1qRHrYrzAEXW1km0": {
-                    "_id": "1qRHrYrzAEXW1km0",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>A noisemaker arrow is a specialized arrow for use with bow weapons. When the arrow hits another creature, object, or surface it generates an explosion of sound that can be heard up to 100 feet away. If the target of the attack is a creature, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes [[/r 1d6]] sonic damage and is deafened until the end of its next turn. Once the arrow hits a target, it no longer gives a bonus.</p>"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -3582,11 +3590,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -3612,18 +3618,12 @@
                             }
                         ]
                     },
-                    "duration": {
+                    "target": {
                         "value": null,
-                        "units": "inst"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>A noisemaker arrow is a specialized arrow for use with bow weapons. When the arrow hits another creature, object, or surface it generates an explosion of sound that can be heard up to 100 feet away. If the target of the attack is a creature, the creature must make a DC 14 Constitution saving throw. On a failed save, the creature takes [[/r 1d6]] sonic damage and is deafened until the end of its next turn. Once the arrow hits a target, it no longer gives a bonus.</p>"
-                    },
-                    "range": null
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -3695,10 +3695,18 @@
                 "custom": "EC"
             },
             "activities": {
-                "H6BOiWtXH6qYbJqX": {
-                    "_id": "H6BOiWtXH6qYbJqX",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>This bolt-thrower ammunition deals [[/r 2d6]] kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Constitution saving throw, taking [[/r 2d4]] sonic damage on a failed save.</p>\n<p>Additionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -3706,11 +3714,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -3753,18 +3759,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>This bolt-thrower ammunition deals [[/r 2d6]] kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Constitution saving throw, taking [[/r 2d4]] sonic damage on a failed save.</p>\n<p>Additionally, on a failed save, a creature is deafened for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -3802,10 +3802,18 @@
                 "custom": "EC"
             },
             "activities": {
-                "CQv186filFs1nHnH": {
-                    "_id": "CQv186filFs1nHnH",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>This bolt-thrower ammunition deals [[/r 2d6]] kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Dexterity saving throw, taking [[/r 2d4]] lightning damage on a failed save.</p>\n<p>Additionally, on a failed save, a creature is shocked for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -3813,11 +3821,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -3860,18 +3866,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>This bolt-thrower ammunition deals [[/r 2d6]] kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Dexterity saving throw, taking [[/r 2d4]] lightning damage on a failed save.</p>\n<p>Additionally, on a failed save, a creature is shocked for 1 minute. At the end of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },
@@ -3909,10 +3909,18 @@
                 "custom": "EC"
             },
             "activities": {
-                "lgapZuqRGa163o7O": {
-                    "_id": "lgapZuqRGa163o7O",
+                "0save00000000000": {
+                    "_id": "0save00000000000",
                     "type": "save",
                     "img": null,
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
+                    },
+                    "range": null,
+                    "description": {
+                        "value": "<p>This bolt-thrower ammunition deals [[/r 2d6]] kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Wisdom saving throw, taking [[/r 2d4]] psychic damage on a failed save.</p>\n<p>Additionally, on a failed save, a creature becomes frightened of you for 1 minute. At the start of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -3920,11 +3928,9 @@
                             "formula": 14
                         }
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": null,
+                        "cost": null
                     },
                     "damage": {
                         "critical": {
@@ -3967,18 +3973,12 @@
                             }
                         ]
                     },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
-                    "activation": {
-                        "type": null,
-                        "cost": null
-                    },
-                    "description": {
-                        "value": "<p>This bolt-thrower ammunition deals [[/r 2d6]] kinetic damage on a hit. Also on a hit, the creature must make a DC 14 Wisdom saving throw, taking [[/r 2d4]] psychic damage on a failed save.</p>\n<p>Additionally, on a failed save, a creature becomes frightened of you for 1 minute. At the start of an affected creature's turn, it can repeat this save, ending the effect on a success.</p>"
-                    },
-                    "range": null
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    }
                 }
             }
         },

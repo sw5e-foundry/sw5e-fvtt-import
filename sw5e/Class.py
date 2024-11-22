@@ -281,42 +281,43 @@ class Class(sw5e.Entity.Item):
 		return grants
 
 	def loadAdvancements(self):
-		advancements = [ sw5e.Advancement.HitPoints() ]
+		advancements = [ sw5e.Advancement.HitPoints(idx=0) ]
 
 		for formula in self.formulas.values():
-			advancements.append( sw5e.Advancement.ScaleValue(name=formula["name"], values=formula["values"]) )
+			advancements.append( sw5e.Advancement.ScaleValue(name=formula["name"], values=formula["values"], idx=len(advancements)) )
 
 		for level in self.asi:
-			advancements.append( sw5e.Advancement.AbilityScoreImprovement(level=level) )
+			advancements.append( sw5e.Advancement.AbilityScoreImprovement(level=level, idx=len(advancements)) )
 
 		if self.armorProficiencies:
 			advancements.append( sw5e.Advancement.Trait(level=1, grants=[
 				f'armor:{arm}' for arm in self.armorProficiencies
-			], class_restriction='primary') )
+			], class_restriction='primary', idx=len(advancements)) )
 
 		if self.weaponProficiencies:
-			advancements.append( sw5e.Advancement.Trait(level=1, grants=self.weaponProficiencies, class_restriction='primary') )
+			advancements.append( sw5e.Advancement.Trait(level=1, grants=self.weaponProficiencies, class_restriction='primary', idx=len(advancements)) )
 
 		if self.toolProficiencies["choices"] or self.toolProficiencies["grants"]:
 			advancements.append( sw5e.Advancement.Trait(level=1, 
 				grants=self.toolProficiencies["grants"],
 				choices=self.toolProficiencies["choices"],
-				class_restriction='primary'
+				class_restriction='primary',
+				idx=len(advancements),
 			) )
 
 		if self.raw_savingThrows:
 			advancements.append( sw5e.Advancement.Trait(level=1, grants=[
 				f'saves:{save.lower()[:3]}' for save in self.raw_savingThrows
-			], class_restriction='primary') )
+			], class_restriction='primary', idx=len(advancements)) )
 
 		if self.skillChoices:
 			advancements.append( sw5e.Advancement.Trait(level=1, choices=[{
 				"count": self.raw_numSkillChoices,
 				"pool": self.skillChoices,
-			}], allow_replacements=True, class_restriction='primary') )
+			}], allow_replacements=True, class_restriction='primary', idx=len(advancements)) )
 
 		if self.multiclassProficiencies:
-			advancements.append( sw5e.Advancement.Trait(name='Multiclass Proficiencies',level=1, grants=self.multiclassProficiencies, class_restriction='secondary') )
+			advancements.append( sw5e.Advancement.Trait(name='Multiclass Proficiencies',level=1, grants=self.multiclassProficiencies, class_restriction='secondary', idx=len(advancements)) )
 
 		return advancements
 
@@ -412,14 +413,14 @@ class Class(sw5e.Entity.Item):
 				if 'foundry_id' in feature: uids.append(f'Compendium.sw5e.classfeatures.{feature["foundry_id"]}')
 				else: self.broken_links += [f'missing foundry_id for {feature["name"]}']
 			if len(uids):
-				self.advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
+				self.advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level, idx=len(self.advancements)) )
 
 		# Feature Traits
 		for level, features in self.features.items():
 			for name, feature in features.items():
 				choices, grants = feature["traits"]
 				if choices or grants:
-					self.advancements.append( sw5e.Advancement.Trait(level=level, choices=choices, grants=grants) )
+					self.advancements.append( sw5e.Advancement.Trait(level=level, choices=choices, grants=grants, idx=len(self.advancements)) )
 
 		# Choose Invocations
 		for invocation_category, invocations in self.invocations.items():
@@ -465,7 +466,8 @@ class Class(sw5e.Entity.Item):
 				item_type='feat',
 				pool=uids,
 				restriction_type='class',
-				restriction_subtype=f'{self.name.lower()}Invocation'
+				restriction_subtype=f'{self.name.lower()}Invocation',
+				idx=len(self.advancements),
 			) )
 
 		# Choose Archetype
@@ -483,6 +485,7 @@ class Class(sw5e.Entity.Item):
 				choices=choices,
 				item_type='archetype',
 				pool=uids,
+				idx=len(self.advancements),
 			) )
 
 

@@ -123,7 +123,7 @@ class Species(sw5e.Entity.Item):
 		advancements = []
 
 		uids = [ f'Compendium.sw5e.speciesfeatures.{feature.foundry_id}' for feature in self.features if feature.foundry_id ]
-		if len(uids): advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=0, optional=True) )
+		if len(uids): advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=0, optional=True, idx=len(advancements)) )
 
 		# TODO: Change this once/if we get the ability to restrict the choices you can spend points on
 		fixed = {
@@ -140,15 +140,15 @@ class Species(sw5e.Entity.Item):
 			for abl in self.raw_abilitiesIncreased[0]
 			if len(abl["abilities"]) == 1 and abl["abilities"][0][:3].lower() == 'any'
 		])
-		advancements.append( sw5e.Advancement.AbilityScoreImprovement(level=0, fixed=fixed, points=points) )
+		advancements.append( sw5e.Advancement.AbilityScoreImprovement(level=0, fixed=fixed, points=points, idx=len(advancements)) )
 
 		size_table = { full: abr for (abr, full) in utils.config.actor_sizes.items() }
 		size = size_table[self.raw_size or "Medium"]
-		advancements.append( sw5e.Advancement.Size(choices=[size]))
+		advancements.append( sw5e.Advancement.Size(choices=[size], idx=len(advancements)))
 
 		# TODO: support non default traits
 		if self.traits["choices"] or self.traits["grants"]:
-			advancements.append( sw5e.Advancement.Trait(choices=self.traits["choices"], grants=self.traits["grants"]) )
+			advancements.append( sw5e.Advancement.Trait(choices=self.traits["choices"], grants=self.traits["grants"], idx=len(advancements)) )
 
 		return advancements
 

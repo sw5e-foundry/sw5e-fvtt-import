@@ -105,6 +105,7 @@ class Background(sw5e.Entity.Item):
 				item_type='feat',
 				restriction_type='feat',
 				pool=uids,
+				idx=len(self.advancements),
 			) )
 
 	def getFeatOptionsText(self):

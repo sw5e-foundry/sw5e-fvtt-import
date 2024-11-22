@@ -179,7 +179,7 @@ class Archetype(sw5e.Entity.Item):
 		advancements = []
 
 		for formula in self.formulas.values():
-			advancements.append( sw5e.Advancement.ScaleValue(name=formula.name, values=formula.values) )
+			advancements.append( sw5e.Advancement.ScaleValue(name=formula.name, values=formula.values, idx=len(advancements)) )
 
 		return advancements
 
@@ -275,14 +275,14 @@ class Archetype(sw5e.Entity.Item):
 		for level, features in self.features.items():
 			uids = [ f'Compendium.sw5e.archetypefeatures.{feature["foundry_id"]}' for feature in features.values() if "foundry_id" in feature ]
 			if len(uids):
-				self.advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level) )
+				self.advancements.append( sw5e.Advancement.ItemGrant(name="Features", uids=uids, level=level, idx=len(self.advancements)) )
 
 		# Feature Traits
 		for level, features in self.features.items():
 			for name, feature in features.items():
 				choices, grants = feature["traits"]
 				if choices or grants:
-					self.advancements.append( sw5e.Advancement.Trait(level=level, choices=choices, grants=grants) )
+					self.advancements.append( sw5e.Advancement.Trait(level=level, choices=choices, grants=grants, idx=len(self.advancements)) )
 
 		# Choose Invocations
 		for invocation_category, invocations in self.invocations.items():
@@ -331,7 +331,8 @@ class Archetype(sw5e.Entity.Item):
 				item_type='feat',
 				pool=uids,
 				restriction_type='class',
-				restriction_subtype=f'{self.name.lower()}Invocation'
+				restriction_subtype=f'{self.name.lower()}Invocation',
+				idx=len(self.advancements)
 			) )
 
 
