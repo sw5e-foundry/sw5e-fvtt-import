@@ -247,7 +247,7 @@ class Power(
 			"save": {
 				"ability": self.save,
 				"dc": {
-					"calculation": "" if self.save_dc else "spell",
+					"calculation": "" if self.save_dc else "spellcasting",
 					"formula": self.save_dc or ""
 				}
 			},
