@@ -99,21 +99,14 @@ class EnhancedItem(
 		return utils.text.getUses(self.raw_text, self.raw_name, default=default)
 
 	def getAction(self, text):
-		default=(
-			self.base_item.action_type,
-			self.base_item.damage,
-			self.base_item.formula,
-			self.base_item.save,
-			self.base_item.save_dc,
-			{}
-		) if self.base_item else (
-			'',
-			{ "base": { "parts": [] }, "versatile": { "parts": [] } },
-			'',
-			'',
-			None,
-			{ "mode": 'none'}
-		)
+		default={
+			"action_type": self.base_item.action_type,
+			"damage": self.base_item.damage,
+			"formula": self.base_item.formula,
+			"save": self.base_item.save,
+			"save_dc": self.base_item.save_dc,
+		} if self.base_item else {}
+
 		action_type, damage, other_formula, save, save_dc, scaling = utils.text.getAction(text, self.raw_name, default=default)
 		return action_type, damage, other_formula, save, save_dc, scaling
 
@@ -380,7 +373,12 @@ class EnhancedItem(
 				pass
 			elif item_type == 'weapon':
 				utils.object.setProperty(data, 'system.weaponClass', self.base_item.weapon_class, force=True)
-				utils.object.setProperty(data, 'system.damage', self.base_item.damage, force=True)
+				if (base := self.base_item.wpn_damage["base"]).valid():
+					utils.object.setProperty(data, 'system.damage.base', base.getData(), force=True)
+				elif len(self.damage.parts) and (dmg := self.damage.parts[0]).valid():
+					utils.object.setProperty(data, 'system.damage.base', dmg.getData(), force=True)
+				if (vers := self.base_item.wpn_damage["versatile"]).valid():
+					utils.object.setProperty(data, 'system.damage.versatile', vers.getData(), force=True)
 				utils.object.setProperty(data, 'flags.sw5e.reload.types', self.base_item.ammo_types, force=True)
 
 
@@ -478,6 +476,9 @@ class EnhancedItem(
 	def getActivitiesData(self):
 		return {}
 	def processActivitiesData(self, importer):
+		damage, healing = self.damage.splitTypes(['healing', 'temphp'])
+		healing = healing.parts[0] if len(healing.parts) else None
+
 		data = {
 			"action_type": self.action_type,
 			# "name": "",
@@ -516,14 +517,10 @@ class EnhancedItem(
 					"formula": "",
 				}
 			},
-			"damage": {
-				"critical": { "allow": True },
-				"parts": [dmg for dmg in self.damage["base"]["parts"] if dmg[1] not in ('healing', 'temphp')] if self.damage else [],
-			},
-			"versatile": self.damage["versatile"] if self.damage else {},
+			"damage": damage,
 			"effects": {},
 			"enchant": {},
-			"healing": [heal for heal in self.damage["base"]["parts"] if heal[1] in ('healing', 'temphp')] if self.damage else [],
+			"healing": healing,
 			"save": {
 				"ability": self.save,
 				"dc": {

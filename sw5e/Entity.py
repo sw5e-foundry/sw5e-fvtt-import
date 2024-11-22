@@ -23,7 +23,7 @@ class Entity:
 		self.processed = False
 		self.foundry_id = None
 
-		self.load(raw_entity)
+		self._load(raw_entity)
 
 	def getAttrs(self):
 		return [
@@ -42,10 +42,15 @@ class Entity:
 	def getJsonAttrs(self):
 		return []
 
-	def load(self, raw_entity):
+	def _load(self, raw_entity):
+		self.loadAttrs(raw_entity)
+		self.load(raw_entity)
+
+	def loadAttrs(self, raw_entity):
 		for attr in self.getAttrs(): setattr(self, f'raw_{attr}', utils.text.clean(raw_entity, attr))
 		for attr in self.getJsonAttrs(): setattr(self, f'raw_{attr}', utils.text.cleanJson(raw_entity, attr))
 
+	def load(self, raw_entity):
 		self.name = self.raw_name
 
 	def _process(self, importer):

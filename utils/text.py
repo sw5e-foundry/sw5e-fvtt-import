@@ -1,4 +1,4 @@
-import re, json, random, math, string, utils.config, copy
+import re, json, random, math, string, copy, utils.config
 
 def ncapt(patt): return f'(?:{patt})'
 def capt(patt, name=None): return f'(?P<{name}>{patt})' if name else f'({patt})'
@@ -367,15 +367,17 @@ def getRange(text, name, default=(None, '')):
 
 	return default
 
-def getAction(text, name, scale=None, rolled_formula='@ROLLED', default=(
-		'',
-		{ "base": { "parts": [] }, "versatile": { "parts": [] } },
-		'',
-		'',
-		None,
-		{ "mode": 'none'}
-	)):
-	action_type, damage, other_formula, save, save_dc, scaling = copy.deepcopy(default)
+def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
+	import sw5e.Damage
+	_default_ = {
+		"action_type": '',
+		"damage": sw5e.Damage.DamageGroup([]),
+		"other_formula": '',
+		"save": '',
+		"save_dc": None,
+		"scaling": { "mode": 'none'}
+	}
+	action_type,damage,other_formula,save,save_dc,scaling = [ copy.deepcopy(default.get(key, val)) for (key,val) in _default_.items() ]
 
 	has_rolled = False
 	damage_type = ''
@@ -480,7 +482,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default=(
 			if formula:
 				temp = match['temp']
 				action_type = action_type or 'heal'
-				damage["base"]["parts"].append([ formula, 'temphp' if temp else 'healing' ])
+				damage.parts.append(sw5e.Damage.Damage.fromOldFormat([ formula, 'temphp' if temp else 'healing' ]))
 				return 'FORMULA'
 			else:
 				return match.group(0)
@@ -550,8 +552,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default=(
 				if dmg_type == '' and formula == rolled_formula:
 					other_formula = formula
 				else:
-					damage["base"]["parts"].append([ formula, dmg_type ])
-					if damage_type == None: damage_type = dmg_type
+					damage.parts.append(sw5e.Damage.Damage.fromOldFormat([ formula, dmg_type ]))
 				return 'FORMULA'
 			else:
 				return match.group(0)
@@ -562,10 +563,10 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default=(
 		patterns += [fr', or \d+ \({p_formula}\)(?= [^.]+ damage)']
 		patterns += [fr', or {p_formula}(?= [^.]+ damage)']
 		def versatile(match):
-			nonlocal damage, damage_type
+			nonlocal damage
 
 			formula = get_formula(match)
-			damage["versatile"]["parts"].append([ formula, damage_type ])
+			damage.parts.append(sw5e.Damage.Damage.fromOldFormat([ formula, 'versatile' ]))
 		for pat in patterns: text = re.sub(pat, versatile, text)
 
 		## Other dice
@@ -601,7 +602,8 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default=(
 				action_type = action_type or 'other'
 				if other_formula == formula: pass
 				elif other_formula == '': other_formula = formula
-				else: damage["base"]["parts"].append([ formula, '' ])
+				else:
+					damage.parts.append(sw5e.Damage.Damage.fromOldFormat([ formula, '' ]))
 				return 'FORMULA'
 			else:
 				return match.group(0)
@@ -654,12 +656,14 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default=(
 		scale = scale.lower()
 		scaling["mode"] = "level" if re.search(r'force potency|overcharge tech', scale) else "atwill"
 
-		if scaling["mode"] == "atwill" and len(damage["base"]["parts"]) == 1:
-			if initial_match := re.search(r'd(?P<die>\d+)', damage["base"]["parts"][0][0]):
-				initial_die = int(initial_match["die"])
+		if scaling["mode"] == "atwill" and len(damage.parts) == 1:
+			dmg = damage.parts[0]
+			if denomination := dmg.denomination:
+
 				first_change, prev, prevdiff, cur, diff = None, None, None, None, None
 				pattern = fr'a d(?P<die>\d+) at (?P<lvl>\d+)(?:st|nd|rd|th) level'
 				if re.search(pattern, scale):
+					print(name, scale)
 					for match in re.finditer(pattern, scale):
 						cur = int(match["die"]), int(match["lvl"])
 						if not first_change: first_change = cur[1]
@@ -669,11 +673,15 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default=(
 						prev = cur
 					else:
 						die_diff, level_diff = prevdiff
-						scaled_die = f'd({initial_die}+{die_diff}*floor((@details.level+{level_diff - first_change})/{level_diff}))'
-						damage["base"]["parts"][0][0] = re.sub(fr'd{initial_die}', scaled_die, damage["base"]["parts"][0][0], 1)
+						scaled_die = f'd({denomination}+{die_diff}*floor(@scaling.increase/{level_diff}))'
+						dmg.custom = re.sub(fr'd{denomination}', scaled_die, repr(dmg), 1)
 
 		pattern = r'increases by (?P<die>\d*d\d+) for each slot level above'
-		if match := re.search(pattern, scale): scaling["formula"] = match["die"]
+		if match := re.search(pattern, scale):
+			if len(damage.parts) == 0: damage.parts.append(sw5e.Damage.Damage.fromOldFormat([ '', '' ], validate=False))
+			damage.parts[0].scaling_mode = 'whole'
+			damage.parts[0].scaling_number = 1
+			damage.parts[0].scaling_formula = match["die"]
 
 	return action_type, damage, other_formula, save, save_dc, scaling
 

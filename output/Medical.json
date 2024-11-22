@@ -28,27 +28,29 @@
                 "custom": "PHB"
             },
             "activities": {
-                "YUKixJt0ePR1UTOH": {
+                "QoqMLxmkvxLbHLE9": {
+                    "_id": "QoqMLxmkvxLbHLE9",
                     "type": "utility",
-                    "_id": "YUKixJt0ePR1UTOH",
                     "img": null,
-                    "duration": {
-                        "value": "1",
-                        "units": "hour"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<p>An antitoxkit contained a variety of wide-spectrum antidote hypospray injectors that were designed to neutralize all known poisons. A kit has five charges. As an action, you can administer a charge of the kit to cure a target of one poison affecting them or to give them advantage on saving throws against poison for 1 hour. It confers no benefit to droids or constructs.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": "1",
+                        "units": "hour"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<p>An antitoxkit contained a variety of wide-spectrum antidote hypospray injectors that were designed to neutralize all known poisons. A kit has five charges. As an action, you can administer a charge of the kit to cure a target of one poison affecting them or to give them advantage on saving throws against poison for 1 hour. It confers no benefit to droids or constructs.</p>"
+                    },
+                    "range": null
                 }
             }
         },
@@ -165,27 +167,29 @@
                 "custom": "PHB"
             },
             "activities": {
-                "cRsQQprEtAy9xuj3": {
+                "13IM9jc1eDelARM5": {
+                    "_id": "13IM9jc1eDelARM5",
                     "type": "utility",
-                    "_id": "cRsQQprEtAy9xuj3",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<p>All non-expendable droids need recharging as they are used. The battery has ten uses. As an action, you can expend one use of the battery to stabilize a droid that has 0 hit points, without needing to make an Intelligence (Technology) check.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<p>All non-expendable droids need recharging as they are used. The battery has ten uses. As an action, you can expend one use of the battery to stabilize a droid that has 0 hit points, without needing to make an Intelligence (Technology) check.</p>"
+                    },
+                    "range": null
                 }
             }
         },
@@ -461,28 +465,29 @@
                 "custom": "PHB"
             },
             "activities": {
-                "iu9w00DAQJuNU2Iy": {
+                "ATdalP5nNhI1u6wj": {
+                    "_id": "ATdalP5nNhI1u6wj",
                     "type": "utility",
-                    "_id": "iu9w00DAQJuNU2Iy",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "range": "5",
-                    "description": {
-                        "value": "<p>A medpac is a quick-acting syringe filled with a concentrated dose of kolto. As an action, you can use this medpac to restore hit points to a beast or humanoid within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal to the amount rolled + their Constitution modifier (minimum of one hit point). If the creature has Hit Dice of different sizes, use whichever Hit Die size they have the most of.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<p>A medpac is a quick-acting syringe filled with a concentrated dose of kolto. As an action, you can use this medpac to restore hit points to a beast or humanoid within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal to the amount rolled + their Constitution modifier (minimum of one hit point). If the creature has Hit Dice of different sizes, use whichever Hit Die size they have the most of.</p>"
+                    },
+                    "range": "5"
                 }
             }
         },
@@ -518,25 +523,10 @@
                 "custom": "PHB"
             },
             "activities": {
-                "R70LtvSybla1933s": {
+                "16pIZ5xCacji6XVn": {
+                    "_id": "16pIZ5xCacji6XVn",
                     "type": "save",
-                    "_id": "R70LtvSybla1933s",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "2d4",
-                                "poison"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -550,13 +540,42 @@
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<p>As an action, you can use the poison in this vial to coat one vibroweapon, one slug cartridge, or one wrist launcher dart. A creature hit by the poisoned weapon must make a DC 14 Constitution saving throw, taking [[/r 2d4]] poison damage on a failed save or half as much on a successful one. Once applied, the poison retains potency for 1 minute before drying.</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "2",
+                                "denomination": "4",
+                                "bonus": null,
+                                "types": [
+                                    "poison"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<p>As an action, you can use the poison in this vial to coat one vibroweapon, one slug cartridge, or one wrist launcher dart. A creature hit by the poisoned weapon must make a DC 14 Constitution saving throw, taking [[/r 2d4]] poison damage on a failed save or half as much on a successful one. Once applied, the poison retains potency for 1 minute before drying.</p>"
+                    },
+                    "range": null
                 }
             }
         },
@@ -594,28 +613,29 @@
                 "custom": "PHB"
             },
             "activities": {
-                "TmFBckIGmhsvqIYN": {
+                "1kkDgIuG5Nl216jr": {
+                    "_id": "1kkDgIuG5Nl216jr",
                     "type": "utility",
-                    "_id": "TmFBckIGmhsvqIYN",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "range": "5",
-                    "description": {
-                        "value": "<p>A repair kit included the basic tools needed to repair a droid or construct after being damaged in combat. The kit has three uses. As an action, you can expend one use of the kit to restore hit points to a droid or construct within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal </p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<p>A repair kit included the basic tools needed to repair a droid or construct after being damaged in combat. The kit has three uses. As an action, you can expend one use of the kit to restore hit points to a droid or construct within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal </p>"
+                    },
+                    "range": "5"
                 }
             }
         },
@@ -732,10 +752,28 @@
                 "custom": "PHB"
             },
             "activities": {
-                "TQQtPgnImz81zxYT": {
+                "fQID27SsW6IupNlL": {
+                    "_id": "fQID27SsW6IupNlL",
                     "type": "check",
-                    "_id": "TQQtPgnImz81zxYT",
                     "img": null,
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
+                    },
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
+                    },
+                    "description": {
+                        "value": "<p>A common traumakit is stocked with essentials for the treatment of wounds. A traumakit has five uses. As an action, you can expend a use of the kit to stabilize a creature that has 0 hit points, without needing to make a Wisdom (Medicine) check. </p>"
+                    },
+                    "range": null,
                     "check": {
                         "ability": "",
                         "associated": [],
@@ -743,23 +781,6 @@
                             "calculation": "",
                             "formula": ""
                         }
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "description": {
-                        "value": "<p>A common traumakit is stocked with essentials for the treatment of wounds. A traumakit has five uses. As an action, you can expend a use of the kit to stabilize a creature that has 0 hit points, without needing to make a Wisdom (Medicine) check. </p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
                     }
                 }
             }

@@ -14,15 +14,10 @@ class Activities(Template):
 			if action_type == 'save':
 				activities.append(sw5e.Activity.Save(data))
 			elif action_type in ['msak', 'mwak', 'rsak', 'rwak']:
-				if action_type.startswith('r'): utils.object.setProperty(data, 'attack.type', 'ranged', force=True)
-				if action_type[1] == 'w': utils.object.setProperty(data, 'attack.classification', 'weapon', force=True)
+				utils.object.setProperty(data, 'attack.type', 'melee' if action_type.startswith('m') else 'ranged', force=True)
+				utils.object.setProperty(data, 'attack.classification', 'spell' if action_type[1] == 's' else 'weapon', force=True)
 				attackActivity = sw5e.Activity.Attack(data)
 				activities.append(attackActivity)
-				if versatile := data.get('versatile'):
-					versatile_data = copy.deepcopy(data)
-					utils.object.setProperty(versatile_data, 'name', 'Versatile Damage')
-					utils.object.setProperty(versatile_data, 'damage.parts', [versatile["parts"]])
-					activities.append(sw5e.Activity.Attack(data))
 				if properties := data.get('properties'):
 					if (properties.get("burst")):
 						burst_data = copy.deepcopy(data)
@@ -42,16 +37,16 @@ class Activities(Template):
 						utils.object.setProperty(rapid_data, 'save.ability', 'dex')
 						if utils.object.getProperty(rapid_data, 'save.dc') == None:
 							utils.object.setProperty(rapid_data, 'save.scaling', 'dex')
-						for dmg in rapid_data["damage"].values():
-							if (dmg1 := utils.object.getProperty(dmg, 'parts.0')) and len(dmg1):
-								dmg1[0] = re.sub(r'^(\d+)d', lambda m: f'{int(m[1])*2}d', dmg1[0])
+						if len(rapid_data["damage"].parts) >= 1:
+							dmg = rapid_data["damage"].parts[0]
+							dmg.number = dmg.number * 2
 						# TODO: set 'consume' to the ammount of ammo rapid uses
 						# rapid_data = self.getAutoTargetData(burst_data, burst_or_rapid=True)
 						activities.append(sw5e.Activity.Save(rapid_data))
 					if (properties.get("auto")):
 						activities.remove(attackActivity)
 			elif action_type == 'other':
-				if len(utils.object.getProperty(data, 'damage.parts')):
+				if "damage" in data and len(data["damage"].parts):
 					activities.append(sw5e.Activity.Damage(data))
 				elif utils.object.getProperty(data, 'activation.type'):
 					activities.append(sw5e.Activity.Utility(data))

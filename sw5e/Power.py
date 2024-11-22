@@ -198,6 +198,9 @@ class Power(
 	def getActivitiesData(self):
 		return {}
 	def processActivitiesData(self, importer):
+		damage, healing = self.damage.splitTypes(['healing', 'temphp'])
+		healing = healing.parts[0] if len(healing.parts) else None
+
 		return {
 			"action_type": self.action_type,
 			# "name": "",
@@ -237,13 +240,10 @@ class Power(
 					"formula": "",
 				}
 			},
-			"damage": {
-				"critical": { "allow": True },
-				"parts": [dmg for dmg in self.damage["base"]["parts"] if dmg[1] not in ('healing', 'temphp')] if self.damage else [],
-			},
+			"damage": damage,
 			"effects": {},
 			"enchant": {},
-			"healing": [heal for heal in self.damage["base"]["parts"] if heal[1] in ('healing', 'temphp')] if self.damage else [],
+			"healing": healing,
 			"save": {
 				"ability": self.save,
 				"dc": {

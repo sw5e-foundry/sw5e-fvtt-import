@@ -27,7 +27,7 @@ class Importer:
 		'fightingStyle',
 		'lightsaberForm',
 		'maneuvers',
-		'monster',
+		# 'monster',
 		'power',
 		# 'referenceTable',
 		# 'skills',
@@ -317,4 +317,6 @@ class Importer:
 			print(f'	{file}')
 			with open(f'{self.__output_path}{file}.json', 'w+', encoding='utf8') as output_file:
 				if data[file]:
+					## Use the 2nd one when getting 'TypeError: Object of type ??? is not JSON serializable' errors
 					json.dump(data[file], output_file, indent=4, sort_keys=False, ensure_ascii=False)
+					# json.dump(data[file], output_file, indent=4, sort_keys=False, ensure_ascii=False, default=vars)

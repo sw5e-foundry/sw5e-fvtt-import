@@ -91,7 +91,7 @@ let journal_entry_types = {
 }
 
 let actor_types = {
-	'monsters_temp': ['Monster']
+	// 'monsters_temp': ['Monster']
 }
 
 // item_types = {};
@@ -103,7 +103,7 @@ const allow_delete = true;
 const allow_update = true;
 const allow_create = true;
 const slow_delete = false;
-const slow_update = true;
+const slow_update = false;
 const slow_create = false;
 const verbose = true;
 

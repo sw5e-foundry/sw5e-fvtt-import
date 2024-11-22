@@ -1,4 +1,4 @@
-import sw5e.Equipment, sw5e.Activity, sw5e.templates, utils.config, utils.object, utils.text
+import sw5e.Equipment, sw5e.Activity, sw5e.templates, sw5e.Damage, utils.config, utils.object, utils.text
 import re, json, copy
 
 class Weapon(
@@ -6,9 +6,11 @@ class Weapon(
 	# sw5e.templates.Mountable, # NotImplemented
 ):
 	def load(self, raw_item):
+		self.wpn_damage = self.getDamage()
 		super().load(raw_item)
 
 	def process(self, importer):
+
 		super().process(importer)
 
 		self.weapon_class = self.getWeaponClass()
@@ -31,7 +33,7 @@ class Weapon(
 		return short_range, long_range, 'ft'
 
 	def getAction(self):
-		return self.getActionType(), self.getDamage(), None, None, None, None
+		return self.getActionType(), sw5e.Damage.DamageGroup([self.wpn_damage["base"]]), None, None, None, None
 
 	def getImg(self, importer=None):
 		kwargs = {
@@ -49,29 +51,27 @@ class Weapon(
 			return 'mwak'
 
 	def getDamage(self):
-		if (not self.raw_damageNumberOfDice) or (not self.raw_damageDieType):
-			return {
-				"base": { "parts": [] },
-				"versatile": { "parts": [] },
-			}
+		base, versatile = sw5e.Damage.Damage(validate=False), sw5e.Damage.Damage(validate=False)
 
-		die = self.raw_damageNumberOfDice
+		base.number = self.raw_damageNumberOfDice or 1
 		if self.raw_damageDieType == -1:
-			_, damage, other_formula, _, _, _ = utils.text.getAction(self.raw_description, self.name)
-			die = other_formula or damage["parts"][0][0]
-		elif self.raw_damageDieType > 1:
-			die = f'{die}d{self.raw_damageDieType}'
-		elif self.raw_damageDieType != 1:
-			raise ValueError
-		die = f'{die} + @mod'
+			_, damage, other_formula, _, _, _ = utils.text.getAction(self.raw_description, self.raw_name)
+			base = sw5e.Damage.Damage.fromOldFormat(other_formula) or damage.parts[0]
+			if len(damage.parts) == 2: versatile = damage.parts[1]
+		elif self.raw_damageDieType >= 1:
+			denomination = self.raw_damageDieType
 
-		damage_type = self.raw_damageType.lower() if self.raw_damageType != 'Unknown' else ''
-		if damage_type == 'sonic': damage_type = 'thunder'
-		versatile = utils.text.getProperty('Versatile', self.raw_propertiesMap) or ''
+		if (dType := self.raw_damageType.lower()) != 'unknown': base.types = ['thunder' if dType == 'sonic' else dType]
+
+		versatile_prop = utils.text.getProperty('Versatile', self.raw_propertiesMap) or ''
+		if match := re.search(r'(?P<number>\d*)d(?P<denom>\d+)', versatile_prop):
+			versatile.number = match["number"] or base.number
+			versatile.denomination = match["denom"] or base.number
+			versatile.types = base.types
 
 		return {
-			"base": { "parts": [[ die, damage_type ]] },
-			"versatile": { "parts": [[ f'{versatile} +  @mod' if versatile else '', damage_type ]] },
+			"base": base,
+			"versatile": versatile,
 		}
 
 	def getWeaponClass(self):
@@ -171,7 +171,10 @@ class Weapon(
 		data = super().getData(importer)[0]
 
 		utils.object.setProperty(data, 'system.weaponClass', self.weapon_class, force=True)
-		utils.object.setProperty(data, 'system.damage', self.damage, force=True)
+		if (base := self.wpn_damage["base"]).valid():
+			utils.object.setProperty(data, 'system.damage.base', base.getData(), force=True)
+		if (vers := self.wpn_damage["versatile"]).valid():
+			utils.object.setProperty(data, 'system.damage.versatile', vers.getData(), force=True)
 
 		utils.object.setProperty(data, 'flags.sw5e.reload.types', self.ammo_types, force=True)
 

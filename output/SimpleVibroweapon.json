@@ -37,84 +37,58 @@
                 "custom": "WH"
             },
             "activities": {
-                "1SxnKrFNRWg2128z": {
+                "1yZszr0nfzxXZTU7": {
+                    "_id": "1yZszr0nfzxXZTU7",
                     "type": "attack",
-                    "_id": "1SxnKrFNRWg2128z",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "bscy0C2E1Jf1i7Md": {
-                    "type": "attack",
-                    "_id": "bscy0C2E1Jf1i7Md",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Dire 1</h3>\n<p>Before you make a weapon attack with a weapon with the dire property, you can choose to suffer a penalty to the attack roll up to the dire number. If you do so and you hit with it, you gain an equivalent bonus to the damage roll.</p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>"
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -123,25 +97,7 @@
                 "dire",
                 "hvy"
             ],
-            "weaponClass": "blade",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d6 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "blade"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Diresword.webp",
@@ -185,84 +141,58 @@
                 "custom": "WH"
             },
             "activities": {
-                "1RGIF2y51IJTolTf": {
+                "qwT3pgCqWE6HVnYi": {
+                    "_id": "qwT3pgCqWE6HVnYi",
                     "type": "attack",
-                    "_id": "1RGIF2y51IJTolTf",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d4 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Neuralizing 13</h3>\n<p>When you hit a creature with a weapon with the neuralizing property, you can force it to make a Wisdom saving throw, DC equal to the neuralizing number. On a failed save, the creature takes an additional [[/r 1d4]] psychic damage and becomes frightened of you until the start of its next turn.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "1kRxkn7AD3n81zxD": {
-                    "type": "attack",
-                    "_id": "1kRxkn7AD3n81zxD",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d4 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Neuralizing 13</h3>\n<p>When you hit a creature with a weapon with the neuralizing property, you can force it to make a Wisdom saving throw, DC equal to the neuralizing number. On a failed save, the creature takes an additional [[/r 1d4]] psychic damage and becomes frightened of you until the start of its next turn.</p>"
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -270,25 +200,7 @@
                 "disruptive",
                 "neuralizing"
             ],
-            "weaponClass": "trip",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d4 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "trip"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Nervebaton.webp",
@@ -332,86 +244,58 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1PNc5ClfRIkV1Icm": {
+                "nnQJaGetcnNVfl0I": {
+                    "_id": "nnQJaGetcnNVfl0I",
                     "type": "attack",
-                    "_id": "1PNc5ClfRIkV1Icm",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "range": 25,
-                    "description": {
-                        "value": "<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 25/75)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "1Ub4p3s4878g7m4q": {
-                    "type": "attack",
-                    "_id": "1Ub4p3s4878g7m4q",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
-                    },
-                    "range": 25,
-                    "description": {
-                        "value": "<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 25/75)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
-                    },
                     "activation": {
                         "type": "action",
                         "cost": 1
+                    },
+                    "description": {
+                        "value": "<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 25/75)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
+                    },
+                    "range": 25,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -419,25 +303,7 @@
                 "lgt",
                 "range"
             ],
-            "weaponClass": "crushing",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d6 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "crushing"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Techaxe.webp",
@@ -481,86 +347,58 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1z3Wqz0UFkLxun5i": {
+                "1Mn119m9M4Rn1F8m": {
+                    "_id": "1Mn119m9M4Rn1F8m",
                     "type": "attack",
-                    "_id": "1z3Wqz0UFkLxun5i",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d4 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "range": 20,
-                    "description": {
-                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "J1YQbIsxgN61bRiK": {
-                    "type": "attack",
-                    "_id": "J1YQbIsxgN61bRiK",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d4 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
-                    },
-                    "range": 20,
-                    "description": {
-                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
-                    },
                     "activation": {
                         "type": "action",
                         "cost": 1
+                    },
+                    "description": {
+                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>"
+                    },
+                    "range": 20,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -569,25 +407,7 @@
                 "lgt",
                 "range"
             ],
-            "weaponClass": "trip",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d4 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "trip"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrodagger.webp",
@@ -631,86 +451,58 @@
                 "custom": "PHB"
             },
             "activities": {
-                "4gj6qIlmRdL8JUfb": {
+                "hOjlUx9341JYHus2": {
+                    "_id": "hOjlUx9341JYHus2",
                     "type": "attack",
-                    "_id": "4gj6qIlmRdL8JUfb",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d4 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "range": 20,
-                    "description": {
-                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Special</h3>\n<p>Due to their diminutive size, vibrodarts make ineffective melee weapons. Melee attack rolls made with them are made at disadvantage.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "kvrMluySFw8YjJTQ": {
-                    "type": "attack",
-                    "_id": "kvrMluySFw8YjJTQ",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d4 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
-                    },
-                    "range": 20,
-                    "description": {
-                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Special</h3>\n<p>Due to their diminutive size, vibrodarts make ineffective melee weapons. Melee attack rolls made with them are made at disadvantage.</p>"
-                    },
                     "activation": {
                         "type": "action",
                         "cost": 1
+                    },
+                    "description": {
+                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Thrown (range 20/60)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Special</h3>\n<p>Due to their diminutive size, vibrodarts make ineffective melee weapons. Melee attack rolls made with them are made at disadvantage.</p>"
+                    },
+                    "range": 20,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -719,25 +511,7 @@
                 "special",
                 "range"
             ],
-            "weaponClass": "trip",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d4 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "trip"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrodart.webp",
@@ -780,84 +554,58 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1QE3eQxqbS9C1crD": {
+                "TRl4TW7Yl2E16mkh": {
+                    "_id": "TRl4TW7Yl2E16mkh",
                     "type": "attack",
-                    "_id": "1QE3eQxqbS9C1crD",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "oaIqBHGcuu1dk1nb": {
-                    "type": "attack",
-                    "_id": "oaIqBHGcuu1dk1nb",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h3>Hidden</h3>\n<p>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -865,25 +613,7 @@
                 "hidden",
                 "lgt"
             ],
-            "weaponClass": "trip",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d6 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "trip"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibroknuckler.webp",
@@ -928,84 +658,58 @@
                 "custom": "PHB"
             },
             "activities": {
-                "ImyCak5Zeh8BOLj9": {
+                "isafmT1PMYHGnP6H": {
+                    "_id": "isafmT1PMYHGnP6H",
                     "type": "attack",
-                    "_id": "ImyCak5Zeh8BOLj9",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d10 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "1TZo1m03lqRe1L2B": {
-                    "type": "attack",
-                    "_id": "1TZo1m03lqRe1L2B",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d10 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -1014,25 +718,7 @@
                 "hvy",
                 "two"
             ],
-            "weaponClass": "crushing",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d10 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "crushing"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibromace.webp",
@@ -1076,84 +762,58 @@
                 "custom": "WH"
             },
             "activities": {
-                "1dPXH2FPHYJFXwxE": {
+                "ihQG4XiZ1iW1i4fg": {
+                    "_id": "ihQG4XiZ1iW1i4fg",
                     "type": "attack",
-                    "_id": "1dPXH2FPHYJFXwxE",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Keen 1</h3>\n<p>When you make a weapon attack with a weapon with the keen property, the critical hit range increases by an amount equal to the keen number.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "1557w5xJmYGk128g": {
-                    "type": "attack",
-                    "_id": "1557w5xJmYGk128g",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>\n<h3>Keen 1</h3>\n<p>When you make a weapon attack with a weapon with the keen property, the critical hit range increases by an amount equal to the keen number.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -1162,25 +822,7 @@
                 "keen",
                 "lgt"
             ],
-            "weaponClass": "blade",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d6 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "blade"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrosabre.webp",
@@ -1224,86 +866,58 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1mxdmZcS01yLYXbl": {
+                "zti65WbHhSSu12kN": {
+                    "_id": "zti65WbHhSSu12kN",
                     "type": "attack",
-                    "_id": "1mxdmZcS01yLYXbl",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "range": 25,
-                    "description": {
-                        "value": "<h3>Thrown (range 25/75)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "1R1JzCPPWPXj1cFa": {
-                    "type": "attack",
-                    "_id": "1R1JzCPPWPXj1cFa",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
-                    },
-                    "range": 25,
-                    "description": {
-                        "value": "<h3>Thrown (range 25/75)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
-                    },
                     "activation": {
                         "type": "action",
                         "cost": 1
+                    },
+                    "description": {
+                        "value": "<h3>Thrown (range 25/75)</h3>\n<p>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.</p>\n<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
+                    },
+                    "range": 25,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -1313,21 +927,22 @@
             ],
             "weaponClass": "polearm",
             "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d6 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
                 "versatile": {
-                    "parts": [
-                        [
-                            "2d4 +  @mod",
-                            "kinetic"
-                        ]
-                    ]
+                    "custom": {
+                        "enabled": false,
+                        "formula": null
+                    },
+                    "number": "2",
+                    "denomination": "4",
+                    "bonus": null,
+                    "types": [
+                        "kinetic"
+                    ],
+                    "scaling": {
+                        "mode": "whole",
+                        "number": 1,
+                        "formula": null
+                    }
                 }
             }
         },
@@ -1372,84 +987,58 @@
                 "custom": "PHB"
             },
             "activities": {
-                "1vPvOhadSrXm1q1H": {
+                "9tMr6CcgSjpEDtnV": {
+                    "_id": "9tMr6CcgSjpEDtnV",
                     "type": "attack",
-                    "_id": "1vPvOhadSrXm1q1H",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": "<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "1k4dILqOtzq5LeKG": {
-                    "type": "attack",
-                    "_id": "1k4dILqOtzq5LeKG",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h3>Versatile ([[/r 2d4]])</h3>\n<p>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.\t</p>"
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -1458,21 +1047,22 @@
             ],
             "weaponClass": "polearm",
             "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d6 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
                 "versatile": {
-                    "parts": [
-                        [
-                            "2d4 +  @mod",
-                            "kinetic"
-                        ]
-                    ]
+                    "custom": {
+                        "enabled": false,
+                        "formula": null
+                    },
+                    "number": "2",
+                    "denomination": "4",
+                    "bonus": null,
+                    "types": [
+                        "kinetic"
+                    ],
+                    "scaling": {
+                        "mode": "whole",
+                        "number": 1,
+                        "formula": null
+                    }
                 }
             }
         },
@@ -1518,84 +1108,58 @@
                 "custom": "EC"
             },
             "activities": {
-                "N1kQZvsh2Q5wMbMo": {
+                "BSnDDCB9QJpXy5V1": {
+                    "_id": "BSnDDCB9QJpXy5V1",
                     "type": "attack",
-                    "_id": "N1kQZvsh2Q5wMbMo",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": "<h3>Disguised</h3>\n<p>You have advantage on Charisma (Deception) checks made to hide the nature of a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Special</h3>\n<p>This specialized gungan club can be used to throw grenades or similar objects at long distances. If you are wielding this weapon, as part of the action to throw a grenade, you can instead throw it using an atlatl you are holding. The grenade can be thrown at a short distance of 30ft and a long distance of 120ft. When throwing a grenade at long range, creatures within the radius of the grenade's explosion have advantage on the saving throw.  If you lack proficiency in the atlatl, you must roll the damage dice twice and take the lesser total.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "14a7QJ8dh9Io1AhB": {
-                    "type": "attack",
-                    "_id": "14a7QJ8dh9Io1AhB",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h3>Disguised</h3>\n<p>You have advantage on Charisma (Deception) checks made to hide the nature of a weapon with this property.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>\n<h3>Special</h3>\n<p>This specialized gungan club can be used to throw grenades or similar objects at long distances. If you are wielding this weapon, as part of the action to throw a grenade, you can instead throw it using an atlatl you are holding. The grenade can be thrown at a short distance of 30ft and a long distance of 120ft. When throwing a grenade at long range, creatures within the radius of the grenade's explosion have advantage on the saving throw.  If you lack proficiency in the atlatl, you must roll the damage dice twice and take the lesser total.</p>"
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -1604,25 +1168,7 @@
                 "lgt",
                 "special"
             ],
-            "weaponClass": "crushing",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d6 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "crushing"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Atlatl.webp",
@@ -1667,84 +1213,58 @@
                 "custom": "EC"
             },
             "activities": {
-                "1V36nQmptgoZyGri": {
+                "1trfRiVp7ysz14jd": {
+                    "_id": "1trfRiVp7ysz14jd",
                     "type": "attack",
-                    "_id": "1V36nQmptgoZyGri",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d8 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "GlU9CLSRCJepGHfh": {
-                    "type": "attack",
-                    "_id": "GlU9CLSRCJepGHfh",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d8 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>"
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -1753,25 +1273,7 @@
                 "shocking",
                 "two"
             ],
-            "weaponClass": "polearm",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d8 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "polearm"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Electroprod.webp",
@@ -1816,86 +1318,58 @@
                 "custom": "EC"
             },
             "activities": {
-                "fiiwxoXD0HyRPdKM": {
+                "5J79ggMXt4M1Q4Ul": {
+                    "_id": "5J79ggMXt4M1Q4Ul",
                     "type": "attack",
-                    "_id": "fiiwxoXD0HyRPdKM",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d8 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "range": 10,
-                    "description": {
-                        "value": "<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>\n<h3>Special</h3>\n<p>When you would make a Strength (Athletics) check to attempt to grapple a creature while wielding a weapon with the grappling property, you can instead make a melee weapon attack with it. If the attack hits, the creature becomes grappled by you, and it takes damage equal to your Strength modifier of the same type as the weapon's damage.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "1vPFZmDWuGQRJKFo": {
-                    "type": "attack",
-                    "_id": "1vPFZmDWuGQRJKFo",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d8 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
-                    },
-                    "range": 10,
-                    "description": {
-                        "value": "<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>\n<h3>Special</h3>\n<p>When you would make a Strength (Athletics) check to attempt to grapple a creature while wielding a weapon with the grappling property, you can instead make a melee weapon attack with it. If the attack hits, the creature becomes grappled by you, and it takes damage equal to your Strength modifier of the same type as the weapon's damage.</p>"
-                    },
                     "activation": {
                         "type": "action",
                         "cost": 1
+                    },
+                    "description": {
+                        "value": "<h3>Reach</h3>\n<p>A weapon with this property adds 5 feet to your reach with it.</p>\n<h3>Two-handed</h3>\n<p>A weapon with this property requires two hands to use.</p>\n<h3>Special</h3>\n<p>When you would make a Strength (Athletics) check to attempt to grapple a creature while wielding a weapon with the grappling property, you can instead make a melee weapon attack with it. If the attack hits, the creature becomes grappled by you, and it takes damage equal to your Strength modifier of the same type as the weapon's damage.</p>"
+                    },
+                    "range": 10,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -1904,25 +1378,7 @@
                 "special",
                 "two"
             ],
-            "weaponClass": "trip",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d8 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "trip"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Mancatcher.webp",
@@ -1966,84 +1422,58 @@
                 "custom": "EC"
             },
             "activities": {
-                "1u8Z5FCYx4ytP2hx": {
+                "5NFt6iME1vf1gJbS": {
+                    "_id": "5NFt6iME1vf1gJbS",
                     "type": "attack",
-                    "_id": "1u8Z5FCYx4ytP2hx",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d4 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "1mMMpIaIUMaF7apf": {
-                    "type": "attack",
-                    "_id": "1mMMpIaIUMaF7apf",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d4 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h3>Disruptive</h3>\n<p>When a creature is forced to make a Constitution saving throw to maintain concentration due to taking damage from a weapon with the disruptive property, the DC for the check equals 10 or the full damage taken, whichever number is higher, instead of only half.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Shocking 13</h3>\n<p>When you hit a creature with a weapon with the shocking property, you can force it to make a Dexterity saving throw, DC equal to the shocking number. On a failed save, the creature takes an additional [[/r 1d4]] lightning damage and becomes shocked until the end of its next turn.</p>"
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -2052,25 +1482,7 @@
                 "fixed",
                 "shocking"
             ],
-            "weaponClass": "crushing",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d4 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "crushing"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/StunGauntlet.webp",
@@ -2114,84 +1526,58 @@
                 "custom": "EC"
             },
             "activities": {
-                "9TydgkuQNlL1S8wB": {
+                "1LlO5rNisys6U81A": {
+                    "_id": "1LlO5rNisys6U81A",
                     "type": "attack",
-                    "_id": "9TydgkuQNlL1S8wB",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d4 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "1v4lXE05sF4PLxCn": {
-                    "type": "attack",
-                    "_id": "1v4lXE05sF4PLxCn",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d4 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p>\n<h3>Fixed</h3>\n<p>A weapon with this property does not fill the hand, but you can't use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</p>\n<h3>Light</h3>\n<p>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</p>"
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -2200,25 +1586,7 @@
                 "fixed",
                 "lgt"
             ],
-            "weaponClass": "blade",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d4 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "blade"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibroclaw.webp",
@@ -2261,109 +1629,65 @@
                 "custom": "EC"
             },
             "activities": {
-                "1QpfrfC9xn8uhKWb": {
+                "hiAajFIh6rE1CLTz": {
+                    "_id": "hiAajFIh6rE1CLTz",
                     "type": "attack",
-                    "_id": "1QpfrfC9xn8uhKWb",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "2d4 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "1NjRRjn6K7G51JBK": {
-                    "type": "attack",
-                    "_id": "1NjRRjn6K7G51JBK",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "2d4 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 2,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h3>Dexterity 11</h3>\n<p>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement. </p>"
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
             "properties": [
                 "dexRq"
             ],
-            "weaponClass": "blade",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "2d4 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "blade"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrocutlass.webp",
@@ -2406,109 +1730,65 @@
                 "custom": "EC"
             },
             "activities": {
-                "1NAUFgAqySizz2Dq": {
+                "1RKBLmyIpkrg13Xz": {
+                    "_id": "1RKBLmyIpkrg13Xz",
                     "type": "attack",
-                    "_id": "1NAUFgAqySizz2Dq",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": "<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "1rxfmjGzkET01dU8": {
-                    "type": "attack",
-                    "_id": "1rxfmjGzkET01dU8",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d6 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h3>Heavy</h3>\n<p>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</p>"
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
             "properties": [
                 "hvy"
             ],
-            "weaponClass": "blade",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1d6 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": "blade"
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Simple%20Vibroweapons/Vibrocutter.webp",

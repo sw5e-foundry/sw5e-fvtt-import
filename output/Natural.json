@@ -33,106 +33,62 @@
                 "custom": "WH"
             },
             "activities": {
-                "IsOiIaGVFmGnBc0i": {
+                "1fwqVzifyr5d15Go": {
+                    "_id": "1fwqVzifyr5d15Go",
                     "type": "attack",
-                    "_id": "IsOiIaGVFmGnBc0i",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": ""
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "rtf2Ni1glSr1A9iZ": {
-                    "type": "attack",
-                    "_id": "rtf2Ni1glSr1A9iZ",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": 1,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": ""
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
-            "weaponClass": "",
-            "damage": {
-                "base": {
-                    "parts": [
-                        [
-                            "1 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
-                }
-            }
+            "weaponClass": ""
         },
         "type": "weapon",
         "img": "modules/sw5e/icons/packs/Naturals/UnarmedStrike.webp",
@@ -175,84 +131,58 @@
                 "custom": "WH"
             },
             "activities": {
-                "1inSowWLPsSU1b92": {
+                "17jwBBX0Kygh1xiS": {
+                    "_id": "17jwBBX0Kygh1xiS",
                     "type": "attack",
-                    "_id": "1inSowWLPsSU1b92",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d4 + @mod",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 1,
                         "width": null,
                         "units": "",
                         "type": "enemy"
                     },
-                    "description": {
-                        "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p><h3>Description</h3>\n<p><em><strong>Monk:</strong> 1st level</em> </p>\n<ul>\n<li>Your unarmed strikes and monk weapons gain the finesse property.</li>\n<li>You can roll a [[/r d4]] in place of the normal damage of your unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of the monk table.</li>\n<li>When you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one unarmed strike as a bonus action.</li>"
-                    },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
-                    }
-                },
-                "qT4HT4TsqvNpP6BF": {
-                    "type": "attack",
-                    "_id": "qT4HT4TsqvNpP6BF",
-                    "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "weapon",
-                        "flat": false,
-                        "type": "melee"
-                    },
                     "damage": {
                         "critical": {
                             "allow": true
                         },
                         "parts": [
-                            [
-                                "1d4 + @mod",
-                                "kinetic"
-                            ]
+                            {
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "1"
+                                },
+                                "number": null,
+                                "denomination": null,
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
                         ]
                     },
                     "duration": {
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": 1,
-                        "width": null,
-                        "units": "",
-                        "type": "enemy"
+                    "activation": {
+                        "type": "action",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h3>Finesse</h3>\n<p>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</p><h3>Description</h3>\n<p><em><strong>Monk:</strong> 1st level</em> </p>\n<ul>\n<li>Your unarmed strikes and monk weapons gain the finesse property.</li>\n<li>You can roll a [[/r d4]] in place of the normal damage of your unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of the monk table.</li>\n<li>When you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one unarmed strike as a bonus action.</li>"
                     },
-                    "activation": {
-                        "type": "action",
-                        "cost": 1
+                    "range": null,
+                    "attack": {
+                        "ability": "",
+                        "bonus": "",
+                        "classification": "weapon",
+                        "flat": false,
+                        "type": "melee"
                     }
                 }
             },
@@ -262,20 +192,21 @@
             "weaponClass": "",
             "damage": {
                 "base": {
-                    "parts": [
-                        [
-                            "1d4 + @mod",
-                            "kinetic"
-                        ]
-                    ]
-                },
-                "versatile": {
-                    "parts": [
-                        [
-                            "",
-                            "kinetic"
-                        ]
-                    ]
+                    "custom": {
+                        "enabled": true,
+                        "formula": "1"
+                    },
+                    "number": null,
+                    "denomination": null,
+                    "bonus": null,
+                    "types": [
+                        "kinetic"
+                    ],
+                    "scaling": {
+                        "mode": "whole",
+                        "number": 1,
+                        "formula": null
+                    }
                 }
             }
         },

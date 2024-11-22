@@ -2266,27 +2266,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1BzL0If4qA63chsl": {
+                "FZ1Q3xdo6jP1TsCA": {
+                    "_id": "FZ1Q3xdo6jP1TsCA",
                     "type": "utility",
-                    "_id": "1BzL0If4qA63chsl",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Armor</em></p>\n<hr/>\n<p>You install an artificial intelligence into this armor. While wearing this armor, when you make an ability check, this armor's artificial intelligence can take the Help action.</p>\n<p>You can use this feature twice. You regain all expended uses when you complete a short or long rest.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Armor</em></p>\n<hr/>\n<p>You install an artificial intelligence into this armor. While wearing this armor, when you make an ability check, this armor's artificial intelligence can take the Help action.</p>\n<p>You can use this feature twice. You regain all expended uses when you complete a short or long rest.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -2770,38 +2772,52 @@
                 "custom": "WH"
             },
             "activities": {
-                "1BseKzCsHnloAt83": {
+                "VSrWsNBA2rXUFtbM": {
+                    "_id": "VSrWsNBA2rXUFtbM",
                     "type": "damage",
-                    "_id": "1BseKzCsHnloAt83",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>You affix a short blade to the barrel of this weapon, allowing you to make a melee weapon attack with it. The blade is a melee weapon with the finesse property that you are proficient with, and deals [[/r 1d6]] kinetic damage.</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "6",
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": null,
                         "cost": null
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>You affix a short blade to the barrel of this weapon, allowing you to make a melee weapon attack with it. The blade is a melee weapon with the finesse property that you are proficient with, and deals [[/r 1d6]] kinetic damage.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -2997,25 +3013,10 @@
                 "custom": "WH"
             },
             "activities": {
-                "1fqFw8W5tyFNlmXp": {
+                "1kgjB3EevkhY1cjt": {
+                    "_id": "1kgjB3EevkhY1cjt",
                     "type": "save",
-                    "_id": "1fqFw8W5tyFNlmXp",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d10",
-                                "lightning"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -3029,13 +3030,42 @@
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>A security system is installed into the hilt of your lightweapon. When a creature other than you attempts to activate your lightweapon, the activation fails. Additionally, the creature attempting to activate it must make a DC 13 Constitution saving throw. On a failed save, a creature takes [[/r 1d10]] lightning damage and is shocked until the end of its next turn. On a successful save the creature takes half damage and isn't shocked. On a success or failure, the creature then drops the weapon.</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "10",
+                                "bonus": null,
+                                "types": [
+                                    "lightning"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": null,
                         "cost": null
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>A security system is installed into the hilt of your lightweapon. When a creature other than you attempts to activate your lightweapon, the activation fails. Additionally, the creature attempting to activate it must make a DC 13 Constitution saving throw. On a failed save, a creature takes [[/r 1d10]] lightning damage and is shocked until the end of its next turn. On a successful save the creature takes half damage and isn't shocked. On a success or failure, the creature then drops the weapon.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -5663,27 +5693,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1ng8uyMVM56fvbEv": {
+                "1j8hPSzkde9c1fVx": {
+                    "_id": "1j8hPSzkde9c1fVx",
                     "type": "utility",
-                    "_id": "1ng8uyMVM56fvbEv",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Armor)</h4>\n <p>This armor can collapse into a case for easy storage. When transformed this way the armor is indistinguishable from a normal case and weighs 1/3 its normal weight. As an action you can don or doff the armor, allowing it to transform as needed.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Armor)</h4>\n <p>This armor can collapse into a case for easy storage. When transformed this way the armor is indistinguishable from a normal case and weighs 1/3 its normal weight. As an action you can don or doff the armor, allowing it to transform as needed.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -7543,27 +7575,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1DeJMOHYU2ryscg9": {
+                "13cH6QO08Mux1Jy3": {
+                    "_id": "13cH6QO08Mux1Jy3",
                     "type": "utility",
-                    "_id": "1DeJMOHYU2ryscg9",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p><em>Prerequisite:  The ability to cast tech powers</em></p>\n<hr/>\n<p>When you score a critical hit or reduce a creature to 0 hit points with a ranged attack using this weapon, you can regain a number of tech points equal to your Intelligence modifier (a minimum of one, no action required).  Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p><em>Prerequisite:  The ability to cast tech powers</em></p>\n<hr/>\n<p>When you score a critical hit or reduce a creature to 0 hit points with a ranged attack using this weapon, you can regain a number of tech points equal to your Intelligence modifier (a minimum of one, no action required).  Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -9423,25 +9457,10 @@
                 "custom": "WH"
             },
             "activities": {
-                "NNjo8iTMMcVBgiLR": {
+                "1lpZj10ybpQk12LT": {
+                    "_id": "1lpZj10ybpQk12LT",
                     "type": "save",
-                    "_id": "NNjo8iTMMcVBgiLR",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d8",
-                                "lightning"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -9455,13 +9474,42 @@
                         "units": "ft",
                         "type": "cone"
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>When you hit with the weapon, you can create an electronic burst. Each creature in a 15-foot cone centered on the creature you hit must make a DC 15 Dexterity saving throw, taking [[/r 1d8]] lightning damage on a failed save or half as much on a successful one.</p>\n<p>Once you've used this feature, you must complete a long rest before you can use it again.</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "8",
+                                "bonus": null,
+                                "types": [
+                                    "lightning"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>When you hit with the weapon, you can create an electronic burst. Each creature in a 15-foot cone centered on the creature you hit must make a DC 15 Dexterity saving throw, taking [[/r 1d8]] lightning damage on a failed save or half as much on a successful one.</p>\n<p>Once you've used this feature, you must complete a long rest before you can use it again.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -9881,27 +9929,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1qvuhaXxK4wKyUsH": {
+                "1LDcLeFqu9KsVLcR": {
+                    "_id": "1LDcLeFqu9KsVLcR",
                     "type": "utility",
-                    "_id": "1qvuhaXxK4wKyUsH",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Armor)</h4>\n <p>You can use your reaction to reduce any falling damage you would take by half.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "reaction",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Armor)</h4>\n <p>You can use your reaction to reduce any falling damage you would take by half.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -10193,27 +10243,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "yHO2H19WBBZ1zCxx": {
+                "1I4HpF0MYPuH17Y1": {
+                    "_id": "1I4HpF0MYPuH17Y1",
                     "type": "utility",
-                    "_id": "yHO2H19WBBZ1zCxx",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Armor</em></p>\n<hr/>\n<p>When you are reduced to 0 hit points while wearing this armor but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Armor</em></p>\n<hr/>\n<p>When you are reduced to 0 hit points while wearing this armor but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -10633,27 +10685,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "60tUvOz8Sn3n5ZQN": {
+                "19b0LHEv67VmwR1P": {
+                    "_id": "19b0LHEv67VmwR1P",
                     "type": "utility",
-                    "_id": "60tUvOz8Sn3n5ZQN",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>Once on each of your turns, you can reload this weapon once without using an action. You can't use this feature again until you reload the weapon with an action.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>Once on each of your turns, you can reload this weapon once without using an action. You can't use this feature again until you reload the weapon with an action.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -10689,27 +10743,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1Fx6EaiCnCGu6EIx": {
+                "eKWOFcG2vdK1NqJP": {
+                    "_id": "eKWOFcG2vdK1NqJP",
                     "type": "utility",
-                    "_id": "1Fx6EaiCnCGu6EIx",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>Once on each of your turns, you can reload this weapon once without using an action. You can use this feature six times. You regain all expended uses when you reload the weapon with an action.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>Once on each of your turns, you can reload this weapon once without using an action. You can use this feature six times. You regain all expended uses when you reload the weapon with an action.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -10745,27 +10801,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "OAUBYTbvA8TllPaB": {
+                "9RT2uqHmGgiEHVr8": {
+                    "_id": "9RT2uqHmGgiEHVr8",
                     "type": "utility",
-                    "_id": "OAUBYTbvA8TllPaB",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>Once on each of your turns, you can reload this weapon once without using an action. You can use this feature five times. You regain all expended uses when you reload the weapon with an action.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>Once on each of your turns, you can reload this weapon once without using an action. You can use this feature five times. You regain all expended uses when you reload the weapon with an action.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -10801,27 +10859,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1STSDKNZJQFX1fPe": {
+                "15zOKU5ugowe15NJ": {
+                    "_id": "15zOKU5ugowe15NJ",
                     "type": "utility",
-                    "_id": "1STSDKNZJQFX1fPe",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>Once on each of your turns, you can reload this weapon once without using an action. You can use this feature twice times. You regain all expended uses when you reload the weapon with an action.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>Once on each of your turns, you can reload this weapon once without using an action. You can use this feature twice times. You regain all expended uses when you reload the weapon with an action.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -10857,27 +10917,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "WDpagMMsJ0qRG011": {
+                "1vG1MU3Z4dMIIWxz": {
+                    "_id": "1vG1MU3Z4dMIIWxz",
                     "type": "utility",
-                    "_id": "WDpagMMsJ0qRG011",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>Once on each of your turns, you can reload this weapon once without using an action. You can use this feature three times. You regain all expended uses when you reload the weapon with an action.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>Once on each of your turns, you can reload this weapon once without using an action. You can use this feature three times. You regain all expended uses when you reload the weapon with an action.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -10913,27 +10975,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1PJvVLQOgXQANYHF": {
+                "ZnfaxpIpu2D1ecAD": {
+                    "_id": "ZnfaxpIpu2D1ecAD",
                     "type": "utility",
-                    "_id": "1PJvVLQOgXQANYHF",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>Once on each of your turns, you can reload this weapon once without using an action. You can use this feature four times. You regain all expended uses when you reload the weapon with an action.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>Once on each of your turns, you can reload this weapon once without using an action. You can use this feature four times. You regain all expended uses when you reload the weapon with an action.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -13369,27 +13433,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "6zknjsp0re8mVTdN": {
+                "13pTLM9119uJkSgn": {
+                    "_id": "13pTLM9119uJkSgn",
                     "type": "utility",
-                    "_id": "6zknjsp0re8mVTdN",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 60,
                         "width": null,
                         "units": "ft",
                         "type": "cone"
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>You affix a targeted light to this weapon. As a bonus action, you can toggle the light on or off. While on, this weapon sheds bright light in a 60-foot cone.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>You affix a targeted light to this weapon. As a bonus action, you can toggle the light on or off. While on, this weapon sheds bright light in a 60-foot cone.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -13425,27 +13491,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1IycrNOCqmuZu5ou": {
+                "1ft9wrBRIT29HKAA": {
+                    "_id": "1ft9wrBRIT29HKAA",
                     "type": "utility",
-                    "_id": "1IycrNOCqmuZu5ou",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 60,
                         "width": null,
                         "units": "ft",
                         "type": "cone"
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>You affix a targeted light to this weapon. As a bonus action, you can toggle the light on or off. While on, this weapon sheds bright light in a 60-foot cone.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>You affix a targeted light to this weapon. As a bonus action, you can toggle the light on or off. While on, this weapon sheds bright light in a 60-foot cone.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -13577,27 +13645,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1jW9ssqP6tUWBBMZ": {
+                "17U9ase8YHaB1Lyt": {
+                    "_id": "17U9ase8YHaB1Lyt",
                     "type": "utility",
-                    "_id": "1jW9ssqP6tUWBBMZ",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>The simple scope allows you to use a bonus action to take aim at a target you can see. The next attack you make before the end of your next turn does not suffer disadvantage due to being made at long range.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>The simple scope allows you to use a bonus action to take aim at a target you can see. The next attack you make before the end of your next turn does not suffer disadvantage due to being made at long range.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -13921,38 +13991,52 @@
                 "custom": "WH"
             },
             "activities": {
-                "10LYLxs5o5SB1nDZ": {
+                "bnOFvDv1Fxi1gOCV": {
+                    "_id": "bnOFvDv1Fxi1gOCV",
                     "type": "damage",
-                    "_id": "10LYLxs5o5SB1nDZ",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Armor</em></p>\n<hr/>\n<p>This armor gains an integrated grappling harpoon set into your gauntlet. With this harpoon, you can make a ranged weapon attack with a range of 30/60. On a hit, it deals [[/r 1d6]] kinetic damage. This attack can target a surface, object, or creature.</p>\n<p>A creature struck by this attack is impaled by the harpoon. As an action, a creature can attempt to remove the harpoon. Removing the harpoon requires a DC 15 Strength check. While the harpoon is stuck in the target, you are connected to the target by a 60 foot cable.</p>\n<p>While the harpoon is deployed, you can use your bonus action to activate the reel, pulling yourself to the location if the target is larger than you. A creature or object your size or smaller is pulled to you. Alternatively, you can opt to release the cable (no action required).</p>\n<p>Once you've used this feature, you can't use it again until you recover and reinsert the harpoon as an action.</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "6",
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Armor</em></p>\n<hr/>\n<p>This armor gains an integrated grappling harpoon set into your gauntlet. With this harpoon, you can make a ranged weapon attack with a range of 30/60. On a hit, it deals [[/r 1d6]] kinetic damage. This attack can target a surface, object, or creature.</p>\n<p>A creature struck by this attack is impaled by the harpoon. As an action, a creature can attempt to remove the harpoon. Removing the harpoon requires a DC 15 Strength check. While the harpoon is stuck in the target, you are connected to the target by a 60 foot cable.</p>\n<p>While the harpoon is deployed, you can use your bonus action to activate the reel, pulling yourself to the location if the target is larger than you. A creature or object your size or smaller is pulled to you. Alternatively, you can opt to release the cable (no action required).</p>\n<p>Once you've used this feature, you can't use it again until you recover and reinsert the harpoon as an action.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -14308,38 +14392,52 @@
                 "custom": "WH"
             },
             "activities": {
-                "1rczgFhSujO51k1Z": {
+                "fce4IpKQqBMOsTPh": {
+                    "_id": "fce4IpKQqBMOsTPh",
                     "type": "damage",
-                    "_id": "1rczgFhSujO51k1Z",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>You install a secondary firemode that launches a harpoon attached to a tightly coiled cord. With this harpoon, you can make a ranged weapon attack with a range of 30/60. On a hit, it deals [[/r 1d6]] kinetic damage. This attack can target a surface, object, or creature.</p>\n<p>A creature struck by this attack is impaled by the harpoon. As an action, a creature can attempt to remove the harpoon. Removing the harpoon requires a DC 15 Strength check. While the harpoon is stuck in the target, you are connected to the target by a 60 foot cable.</p>\n<p>While connected in this manner, you can use your bonus action to activate the reel, pulling yourself to the location if the target is your size or larger. A creature or object smaller than you is pulled to you. Alternatively, you can opt to release the cable (no action required).</p>\n<p>Once you've used this feature, you can't use it again until you recover and reinsert the harpoon as an action.</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "6",
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>You install a secondary firemode that launches a harpoon attached to a tightly coiled cord. With this harpoon, you can make a ranged weapon attack with a range of 30/60. On a hit, it deals [[/r 1d6]] kinetic damage. This attack can target a surface, object, or creature.</p>\n<p>A creature struck by this attack is impaled by the harpoon. As an action, a creature can attempt to remove the harpoon. Removing the harpoon requires a DC 15 Strength check. While the harpoon is stuck in the target, you are connected to the target by a 60 foot cable.</p>\n<p>While connected in this manner, you can use your bonus action to activate the reel, pulling yourself to the location if the target is your size or larger. A creature or object smaller than you is pulled to you. Alternatively, you can opt to release the cable (no action required).</p>\n<p>Once you've used this feature, you can't use it again until you recover and reinsert the harpoon as an action.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -14375,38 +14473,52 @@
                 "custom": "WH"
             },
             "activities": {
-                "1o4CsFJNrQn7GNhe": {
+                "NZEl9QiqRS4Qc8PV": {
+                    "_id": "NZEl9QiqRS4Qc8PV",
                     "type": "damage",
-                    "_id": "1o4CsFJNrQn7GNhe",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6",
-                                "kinetic"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>You install a secondary firemode that launches a harpoon attached to a tightly coiled cord. With this harpoon, you can make a ranged weapon attack with a range of 30/60. On a hit, it deals [[/r 1d6]] kinetic damage. This attack can target a surface, object, or creature.</p>\n<p>A creature struck by this attack is impaled by the harpoon. As an action, a creature can attempt to remove the harpoon. Removing the harpoon requires a DC 15 Strength check. While the harpoon is stuck in the target, you are connected to the target by a 60 foot cable.</p>\n<p>While connected in this manner, you can use your bonus action to activate the reel, pulling yourself to the location if the target is your size or larger. A creature or object smaller than you is pulled to you. Alternatively, you can opt to release the cable (no action required).</p>\n<p>Once you've used this feature, you can't use it again until you recover and reinsert the harpoon as an action.</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "6",
+                                "bonus": null,
+                                "types": [
+                                    "kinetic"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>You install a secondary firemode that launches a harpoon attached to a tightly coiled cord. With this harpoon, you can make a ranged weapon attack with a range of 30/60. On a hit, it deals [[/r 1d6]] kinetic damage. This attack can target a surface, object, or creature.</p>\n<p>A creature struck by this attack is impaled by the harpoon. As an action, a creature can attempt to remove the harpoon. Removing the harpoon requires a DC 15 Strength check. While the harpoon is stuck in the target, you are connected to the target by a 60 foot cable.</p>\n<p>While connected in this manner, you can use your bonus action to activate the reel, pulling yourself to the location if the target is your size or larger. A creature or object smaller than you is pulled to you. Alternatively, you can opt to release the cable (no action required).</p>\n<p>Once you've used this feature, you can't use it again until you recover and reinsert the harpoon as an action.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -14506,27 +14618,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "s25caAQRWuE1vuCE": {
+                "1L2wG8HOtXwv1yD7": {
+                    "_id": "1L2wG8HOtXwv1yD7",
                     "type": "utility",
-                    "_id": "s25caAQRWuE1vuCE",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Armor</em></p>\n<hr/>\n<p>You enhance this armor, making it difficult to move. As a bonus action, you can anchor or deanchor your feet to the ground. While anchored, your speed is 0, you have advantage on Strength checks and Strength saving throws, and your carrying capacity and the weight you can push, drag, or lift doubles. If it would already double, it instead triples.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Armor</em></p>\n<hr/>\n<p>You enhance this armor, making it difficult to move. As a bonus action, you can anchor or deanchor your feet to the ground. While anchored, your speed is 0, you have advantage on Strength checks and Strength saving throws, and your carrying capacity and the weight you can push, drag, or lift doubles. If it would already double, it instead triples.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -14562,27 +14676,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1f5Tcu9sYC3gg8gU": {
+                "lNDnrAqe2hdhqGM1": {
+                    "_id": "lNDnrAqe2hdhqGM1",
                     "type": "utility",
-                    "_id": "1f5Tcu9sYC3gg8gU",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p><em>Prerequisite:  Double property</em></p>\n<hr/>\n<p>As a bonus action, you can activate the attachment. While active, you have a 30-foot flying speed, and whenever you take damage you must make a concentration check as if concentrating on a power. On a failure, you immediately fall to the ground.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p><em>Prerequisite:  Double property</em></p>\n<hr/>\n<p>As a bonus action, you can activate the attachment. While active, you have a 30-foot flying speed, and whenever you take damage you must make a concentration check as if concentrating on a power. On a failure, you immediately fall to the ground.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -14618,38 +14734,52 @@
                 "custom": "WH"
             },
             "activities": {
-                "1h0AMxVS4Kuf1dgs": {
+                "1n8nx2NRyyGaIh0n": {
+                    "_id": "1n8nx2NRyyGaIh0n",
                     "type": "damage",
-                    "_id": "1h0AMxVS4Kuf1dgs",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d4",
-                                "energy"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>You convert this weapon's hilt into a small blaster. The blaster is a ranged weapon with the range 20/60 and reload 6 properties that you are proficient with, and deals [[/r 1d4]] energy damage.</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "4",
+                                "bonus": null,
+                                "types": [
+                                    "energy"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": null,
                         "cost": null
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>You convert this weapon's hilt into a small blaster. The blaster is a ranged weapon with the range 20/60 and reload 6 properties that you are proficient with, and deals [[/r 1d4]] energy damage.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -16765,27 +16895,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "10ffXcJ7Fx6Q8VLG": {
+                "scKNBiCyf8faUFBN": {
+                    "_id": "scKNBiCyf8faUFBN",
                     "type": "utility",
-                    "_id": "10ffXcJ7Fx6Q8VLG",
                     "img": null,
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Armor</em></p>\n<hr/>\n<p>This armor has a jetpack built in. Activating or deactivating the jetpack requires a bonus action and, while active, you have a flying speed of 30 feet. The jetpack last for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells. </p>"
+                    "roll": "",
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Armor</em></p>\n<hr/>\n<p>This armor has a jetpack built in. Activating or deactivating the jetpack requires a bonus action and, while active, you have a flying speed of 30 feet. The jetpack last for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells. </p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -20373,38 +20505,52 @@
                 "custom": "WH"
             },
             "activities": {
-                "wm138btAUqC1KCnh": {
+                "1fxMmjP3rqSImPtY": {
+                    "_id": "1fxMmjP3rqSImPtY",
                     "type": "damage",
-                    "_id": "wm138btAUqC1KCnh",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d4",
-                                "acid"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d4]] acid, cold, fire, lightning, poison, or sonic damage (chosen by the GM when generating this item).</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "4",
+                                "bonus": null,
+                                "types": [
+                                    "acid"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": null,
                         "cost": null
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d4]] acid, cold, fire, lightning, poison, or sonic damage (chosen by the GM when generating this item).</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -20440,38 +20586,52 @@
                 "custom": "WH"
             },
             "activities": {
-                "1d7aEJ9GKOpJimbu": {
+                "1JbZ0VM5eH91miOp": {
+                    "_id": "1JbZ0VM5eH91miOp",
                     "type": "damage",
-                    "_id": "1d7aEJ9GKOpJimbu",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d8",
-                                "acid"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d8]] acid, cold, fire, lightning, poison, or sonic damage (chosen by the GM when generating this item).</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "8",
+                                "bonus": null,
+                                "types": [
+                                    "acid"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": null,
                         "cost": null
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d8]] acid, cold, fire, lightning, poison, or sonic damage (chosen by the GM when generating this item).</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -20507,38 +20667,52 @@
                 "custom": "WH"
             },
             "activities": {
-                "1wcFnA7ZTlwd1OhO": {
+                "13xT3CKA0uS7HJHv": {
+                    "_id": "13xT3CKA0uS7HJHv",
                     "type": "damage",
-                    "_id": "1wcFnA7ZTlwd1OhO",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6",
-                                "acid"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d6]] acid, cold, fire, lightning, poison, or sonic damage (chosen by the GM when generating this item).</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "6",
+                                "bonus": null,
+                                "types": [
+                                    "acid"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": null,
                         "cost": null
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d6]] acid, cold, fire, lightning, poison, or sonic damage (chosen by the GM when generating this item).</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -20574,38 +20748,52 @@
                 "custom": "WH"
             },
             "activities": {
-                "4yZ7NmsIm4H9RRCT": {
+                "1s9A3dctrm1eHYzn": {
+                    "_id": "1s9A3dctrm1eHYzn",
                     "type": "damage",
-                    "_id": "4yZ7NmsIm4H9RRCT",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d4",
-                                "acid"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d4]] acid, cold, fire, lightning, poison, or sonic damage (chosen by the GM when generating this item).</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "4",
+                                "bonus": null,
+                                "types": [
+                                    "acid"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": null,
                         "cost": null
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d4]] acid, cold, fire, lightning, poison, or sonic damage (chosen by the GM when generating this item).</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -20641,38 +20829,52 @@
                 "custom": "WH"
             },
             "activities": {
-                "1b21q3BzOYVHcViD": {
+                "1avKKSBtW18Eussk": {
+                    "_id": "1avKKSBtW18Eussk",
                     "type": "damage",
-                    "_id": "1b21q3BzOYVHcViD",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6",
-                                "acid"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d6]] acid, cold, fire, lightning, poison, or sonic damage (chosen by the GM when generating this item).</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "6",
+                                "bonus": null,
+                                "types": [
+                                    "acid"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": null,
                         "cost": null
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d6]] acid, cold, fire, lightning, poison, or sonic damage (chosen by the GM when generating this item).</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -20708,38 +20910,52 @@
                 "custom": "WH"
             },
             "activities": {
-                "CpjGImAUlpQv8Bo3": {
+                "A61mtcmlZ6A40wyR": {
+                    "_id": "A61mtcmlZ6A40wyR",
                     "type": "damage",
-                    "_id": "CpjGImAUlpQv8Bo3",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d8",
-                                "acid"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d8]] acid, cold, fire, lightning, poison, or sonic damage (chosen by the GM when generating this item).</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "8",
+                                "bonus": null,
+                                "types": [
+                                    "acid"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": null,
                         "cost": null
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d8]] acid, cold, fire, lightning, poison, or sonic damage (chosen by the GM when generating this item).</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -21031,20 +21247,10 @@
                 "custom": "WH"
             },
             "activities": {
-                "NYjcpAMTyFPe77KS": {
+                "1O2LIFM0z0ccnYdv": {
+                    "_id": "1O2LIFM0z0ccnYdv",
                     "type": "save",
-                    "_id": "NYjcpAMTyFPe77KS",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": []
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -21058,14 +21264,24 @@
                         "units": "",
                         "type": ""
                     },
-                    "range": "5",
-                    "description": {
-                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Shield generator</em></p>\n<hr/>\n<p>You modify this shield generator to overload. As an action you can overload this shield. Each Large or smaller creature within 5 feet of you must make a DC 13 Dexterity or Strength saving throw (their choice). On a failed save, they are pushed back 5 feet and knocked prone.</p>\n<p>You can use this feature twice. You regain all expended uses when you complete a short or long rest.</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Shield generator</em></p>\n<hr/>\n<p>You modify this shield generator to overload. As an action you can overload this shield. Each Large or smaller creature within 5 feet of you must make a DC 13 Dexterity or Strength saving throw (their choice). On a failed save, they are pushed back 5 feet and knocked prone.</p>\n<p>You can use this feature twice. You regain all expended uses when you complete a short or long rest.</p>"
+                    },
+                    "range": "5"
                 }
             },
             "modificationItemType": "equipment"
@@ -21101,27 +21317,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "1hWp4QAbbABT106U": {
+                "1gFrVQFJrUOETIyP": {
+                    "_id": "1gFrVQFJrUOETIyP",
                     "type": "utility",
-                    "_id": "1hWp4QAbbABT106U",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>You can apply poisons to this weapon as a bonus action, instead of an action.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>You can apply poisons to this weapon as a bonus action, instead of an action.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -25925,27 +26143,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "15x8hcKPU5Diztcl": {
+                "8CdoXoDsaHK1BiZa": {
+                    "_id": "8CdoXoDsaHK1BiZa",
                     "type": "utility",
-                    "_id": "15x8hcKPU5Diztcl",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>When you take the Attack action and hit a target with a ranged attack with this weapon, you can repeat the attack against another creature up to 15 feet from the target in a direct line from you (no action required). Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Blaster)</h4>\n <p>When you take the Attack action and hit a target with a ranged attack with this weapon, you can repeat the attack against another creature up to 15 feet from the target in a direct line from you (no action required). Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -26333,28 +26553,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "rxSyg59SJnE1BqMv": {
+                "1HM0wGRKaVfZjMLg": {
+                    "_id": "1HM0wGRKaVfZjMLg",
                     "type": "utility",
-                    "_id": "rxSyg59SJnE1BqMv",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": 5,
                         "width": null,
                         "units": "ft",
                         "type": "radius"
                     },
-                    "range": "5",
-                    "description": {
-                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Shield generator</em></p>\n<hr/>\n<p>You modify this shield generator to project outward. As a bonus action you can amplify this shield until the start of your next turn. Each creature within 5 feet of you gains a bonus to AC equal to this shield's bonus.</p>\n<p>You can use this feature twice. You regain all expended uses when you complete a short or long rest.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Shield generator</em></p>\n<hr/>\n<p>You modify this shield generator to project outward. As a bonus action you can amplify this shield until the start of your next turn. Each creature within 5 feet of you gains a bonus to AC equal to this shield's bonus.</p>\n<p>You can use this feature twice. You regain all expended uses when you complete a short or long rest.</p>"
+                    },
+                    "range": "5"
                 }
             },
             "modificationItemType": "equipment"
@@ -27670,20 +27891,10 @@
                 "custom": "WH"
             },
             "activities": {
-                "1K9ZUuJj82lmHWJH": {
+                "ulwrspM0DGi1CaiD": {
+                    "_id": "ulwrspM0DGi1CaiD",
                     "type": "save",
-                    "_id": "1K9ZUuJj82lmHWJH",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": []
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -27697,13 +27908,24 @@
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>When you hit with the weapon, you can force the target to make a DC 13 Strength saving throw. On a failed save, the creature is pushed back 10 feet and knocked prone.</p>\n<p>Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>When you hit with the weapon, you can force the target to make a DC 13 Strength saving throw. On a failed save, the creature is pushed back 10 feet and knocked prone.</p>\n<p>Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -30619,25 +30841,10 @@
                 "custom": "WH"
             },
             "activities": {
-                "nzyoxpA8nJk17LRz": {
+                "1SPwGTWk71Aw1xSt": {
+                    "_id": "1SPwGTWk71Aw1xSt",
                     "type": "save",
-                    "_id": "nzyoxpA8nJk17LRz",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d10",
-                                "poison"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": "1",
-                        "units": "minute"
-                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -30651,13 +30858,42 @@
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>As a bonus action, you can coat this weapon in a thin layer of poison for 1 minute. The next time you hit with the weapon, the creature must make a DC 15 Constitution saving throw. On a failed save, a creature takes [[/r 1d10]] poison damage and becomes poisoned for 1 minute.</p>\n<p>Once you've used this feature, you must complete a long rest before you can use it again.</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "10",
+                                "bonus": null,
+                                "types": [
+                                    "poison"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": "1",
+                        "units": "minute"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Vibroweapon)</h4>\n <p>As a bonus action, you can coat this weapon in a thin layer of poison for 1 minute. The next time you hit with the weapon, the creature must make a DC 15 Constitution saving throw. On a failed save, a creature takes [[/r 1d10]] poison damage and becomes poisoned for 1 minute.</p>\n<p>Once you've used this feature, you must complete a long rest before you can use it again.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -30693,28 +30929,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "Ub8zAYlCzG5Q95aN": {
+                "IuEYLuaGZ3blZdDs": {
+                    "_id": "IuEYLuaGZ3blZdDs",
                     "type": "utility",
-                    "_id": "Ub8zAYlCzG5Q95aN",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "range": "5",
-                    "description": {
-                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>When you take the Attack action and hit a creature with this weapon, you can repeat the attack against another creature within 5 feet, no action required. Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>When you take the Attack action and hit a creature with this weapon, you can repeat the attack against another creature within 5 feet, no action required. Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
+                    },
+                    "range": "5"
                 }
             },
             "modificationItemType": "weapon"
@@ -31326,27 +31563,29 @@
                 "custom": "WH"
             },
             "activities": {
-                "ntWDcW8LeLFUzOss": {
+                "FOaQ3GKWD8I1eJTF": {
+                    "_id": "FOaQ3GKWD8I1eJTF",
                     "type": "utility",
-                    "_id": "ntWDcW8LeLFUzOss",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Armor</em></p>\n<hr/>\n<p>This armor has 3 charges. As an action, you can spend 1 or more charges to cast the <em>voltaic shielding</em> tech power, 1 charge per level. All expended charges are regained after you complete a long rest.</p>\n<p><em>This armoring grants access to renowned engineer Viir Agathys's signature tech power.</em></p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "action",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Armor)</h4>\n <p><em>Prerequisite:  Armor</em></p>\n<hr/>\n<p>This armor has 3 charges. As an action, you can spend 1 or more charges to cast the <em>voltaic shielding</em> tech power, 1 charge per level. All expended charges are regained after you complete a long rest.</p>\n<p><em>This armoring grants access to renowned engineer Viir Agathys's signature tech power.</em></p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -33462,38 +33701,52 @@
                 "custom": "EC"
             },
             "activities": {
-                "1eE0b1rLsTlWt0NS": {
+                "1bT2tWqtABnc1pWD": {
+                    "_id": "1bT2tWqtABnc1pWD",
                     "type": "damage",
-                    "_id": "1eE0b1rLsTlWt0NS",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d6",
-                                "force"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d6]] force, lightning, necrotic, poison, psychic, or sonic damage (chosen by the GM when generating this item).</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "6",
+                                "bonus": null,
+                                "types": [
+                                    "force"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": null,
                         "cost": null
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d6]] force, lightning, necrotic, poison, psychic, or sonic damage (chosen by the GM when generating this item).</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -33529,38 +33782,52 @@
                 "custom": "EC"
             },
             "activities": {
-                "1NZuUJGxWCLpYUty": {
+                "M8UeTyvw8nh1ijyR": {
+                    "_id": "M8UeTyvw8nh1ijyR",
                     "type": "damage",
-                    "_id": "1NZuUJGxWCLpYUty",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d8",
-                                "force"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d8]] force, lightning, necrotic, poison, psychic, or sonic damage (chosen by the GM when generating this item).</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "8",
+                                "bonus": null,
+                                "types": [
+                                    "force"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": null,
                         "cost": null
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d8]] force, lightning, necrotic, poison, psychic, or sonic damage (chosen by the GM when generating this item).</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -33596,38 +33863,52 @@
                 "custom": "EC"
             },
             "activities": {
-                "eLJGabIJCSfmv4TS": {
+                "1Jb7SbPGkbgx1t1M": {
+                    "_id": "1Jb7SbPGkbgx1t1M",
                     "type": "damage",
-                    "_id": "eLJGabIJCSfmv4TS",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d4",
-                                "force"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d4]] force, lightning, necrotic, poison, psychic, or sonic damage (chosen by the GM when generating this item).</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "4",
+                                "bonus": null,
+                                "types": [
+                                    "force"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": null,
                         "cost": null
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>When you deal damage with this weapon, you deal an additional [[/r 1d4]] force, lightning, necrotic, poison, psychic, or sonic damage (chosen by the GM when generating this item).</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -33663,38 +33944,52 @@
                 "custom": "EC"
             },
             "activities": {
-                "12kMwNgtnLh01AvQ": {
+                "1S4yZEs3cw4V1bhS": {
+                    "_id": "1S4yZEs3cw4V1bhS",
                     "type": "damage",
-                    "_id": "12kMwNgtnLh01AvQ",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            [
-                                "1d8",
-                                "lightning"
-                            ]
-                        ]
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>When you cast a force power or use a class feature that requires a melee weapon attack, you can spend 1 force point to change the weapon's damage type to lightning and deal an additional [[/r 1d8]] lightning damage.</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "custom": {
+                                    "enabled": false,
+                                    "formula": null
+                                },
+                                "number": "1",
+                                "denomination": "8",
+                                "bonus": null,
+                                "types": [
+                                    "lightning"
+                                ],
+                                "scaling": {
+                                    "mode": "whole",
+                                    "number": 1,
+                                    "formula": null
+                                }
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": null,
                         "cost": null
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Lightweapon)</h4>\n <p>When you cast a force power or use a class feature that requires a melee weapon attack, you can spend 1 force point to change the weapon's damage type to lightning and deal an additional [[/r 1d8]] lightning damage.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "weapon"
@@ -33730,27 +34025,29 @@
                 "custom": "EC"
             },
             "activities": {
-                "yJ58QVsmGB11bfTt": {
+                "16F6WQeXad9JgIBK": {
+                    "_id": "16F6WQeXad9JgIBK",
                     "type": "utility",
-                    "_id": "yJ58QVsmGB11bfTt",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that forces other creatures to make a saving throw, you can protect some of those creatures from the power's full force. To do so, you spend 1 additional tech point and choose a number of those creatures up to your Intelligence modifier (minimum of one). A chosen creature automatically succeeds on its saving throw against the power.</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that forces other creatures to make a saving throw, you can protect some of those creatures from the power's full force. To do so, you spend 1 additional tech point and choose a number of those creatures up to your Intelligence modifier (minimum of one). A chosen creature automatically succeeds on its saving throw against the power.</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -33786,27 +34083,29 @@
                 "custom": "EC"
             },
             "activities": {
-                "Ur5nWslQQ3u1DRhD": {
+                "1J6pfUwnMPiU1KI8": {
+                    "_id": "1J6pfUwnMPiU1KI8",
                     "type": "utility",
-                    "_id": "Ur5nWslQQ3u1DRhD",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that has a range of 5 feet or greater, you can spend 1 additional tech point to double the range of the power.</p>\n<p>Alternatively, when you cast a power that has a range of touch, you can spend 1 additional tech point to make the range of the power 30 feet.</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that has a range of 5 feet or greater, you can spend 1 additional tech point to double the range of the power.</p>\n<p>Alternatively, when you cast a power that has a range of touch, you can spend 1 additional tech point to make the range of the power 30 feet.</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -33842,27 +34141,29 @@
                 "custom": "EC"
             },
             "activities": {
-                "h8qXTTpo6TUBqWTe": {
+                "1iSKXNr1iykMMPcg": {
+                    "_id": "1iSKXNr1iykMMPcg",
                     "type": "utility",
-                    "_id": "h8qXTTpo6TUBqWTe",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that has a duration of 1 minute or longer, you can spend 1 additional tech point to double its duration, to a maximum duration of 24 hours. </p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that has a duration of 1 minute or longer, you can spend 1 additional tech point to double its duration, to a maximum duration of 24 hours. </p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -33898,27 +34199,29 @@
                 "custom": "EC"
             },
             "activities": {
-                "MR0gkQ7Oa5L3i2uP": {
+                "JhA6Ru9gfYkcHJ1C": {
+                    "_id": "JhA6Ru9gfYkcHJ1C",
                     "type": "utility",
-                    "_id": "MR0gkQ7Oa5L3i2uP",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that forces a creature to make a saving throw to resist its effects, you can spend 3 additional tech points to give one target of the power disadvantage on its first saving throw made against the power. </p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus (minimum of once). You regain the ability to do so when you complete a long rest.</p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that forces a creature to make a saving throw to resist its effects, you can spend 3 additional tech points to give one target of the power disadvantage on its first saving throw made against the power. </p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus (minimum of once). You regain the ability to do so when you complete a long rest.</p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -33954,27 +34257,29 @@
                 "custom": "EC"
             },
             "activities": {
-                "pUzYqrh9A0e1jLD8": {
+                "1D9KMkQ3b9h4rCsw": {
+                    "_id": "1D9KMkQ3b9h4rCsw",
                     "type": "utility",
-                    "_id": "pUzYqrh9A0e1jLD8",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you roll damage for a power, you can spend 1 additional tech point to reroll a number of the damage dice up to your Intelligence modifier (minimum of one). You must use the new rolls.</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use Improved Subroutine even if you have already used a different Subroutine modification during the casting of the power.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you roll damage for a power, you can spend 1 additional tech point to reroll a number of the damage dice up to your Intelligence modifier (minimum of one). You must use the new rolls.</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use Improved Subroutine even if you have already used a different Subroutine modification during the casting of the power.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -34010,27 +34315,29 @@
                 "custom": "EC"
             },
             "activities": {
-                "1sSa2d1affKoWvnU": {
+                "vYyXvBy1hkS1PMlt": {
+                    "_id": "vYyXvBy1hkS1PMlt",
                     "type": "utility",
-                    "_id": "1sSa2d1affKoWvnU",
                     "img": null,
-                    "duration": {
-                        "value": 1,
-                        "units": "turn"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>WWhen you cast a power that requires concentration to maintain you can choose to spend 3 additional tech points. If you do, when you lose concentration on the power, the power will not end until the end of your next turn.</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus (minimum of once). You regain the ability to do so when you complete a long rest.</p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": 1,
+                        "units": "turn"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>WWhen you cast a power that requires concentration to maintain you can choose to spend 3 additional tech points. If you do, when you lose concentration on the power, the power will not end until the end of your next turn.</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus (minimum of once). You regain the ability to do so when you complete a long rest.</p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -34066,16 +34373,15 @@
                 "custom": "EC"
             },
             "activities": {
-                "jFPEYozSHk61R0RW": {
+                "1R8D4FJenYSgKawV": {
+                    "_id": "1R8D4FJenYSgKawV",
                     "type": "attack",
-                    "_id": "jFPEYozSHk61R0RW",
                     "img": null,
-                    "attack": {
-                        "ability": "",
-                        "bonus": "",
-                        "classification": "spell",
-                        "flat": false,
-                        "type": "ranged"
+                    "target": {
+                        "value": null,
+                        "width": null,
+                        "units": "",
+                        "type": ""
                     },
                     "damage": {
                         "critical": {
@@ -34087,53 +34393,20 @@
                         "value": null,
                         "units": "inst"
                     },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
+                    "activation": {
+                        "type": "special",
+                        "cost": 1
                     },
                     "description": {
                         "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that allows you to force creatures in an area to make a saving throw you can instead spend 1 tech point and make a ranged tech attack against a single target that would be in the range. On a hit the target suffers the effects as though they failed their saving throw. </p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
                     },
-                    "activation": {
-                        "type": "special",
-                        "cost": 1
-                    }
-                },
-                "1LDrO4AXoXfGOo67": {
-                    "type": "attack",
-                    "_id": "1LDrO4AXoXfGOo67",
-                    "img": null,
+                    "range": null,
                     "attack": {
                         "ability": "",
                         "bonus": "",
                         "classification": "spell",
                         "flat": false,
                         "type": "ranged"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": []
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
-                    "target": {
-                        "value": null,
-                        "width": null,
-                        "units": "",
-                        "type": ""
-                    },
-                    "description": {
-                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that allows you to force creatures in an area to make a saving throw you can instead spend 1 tech point and make a ranged tech attack against a single target that would be in the range. On a hit the target suffers the effects as though they failed their saving throw. </p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
-                    },
-                    "activation": {
-                        "type": "special",
-                        "cost": 1
                     }
                 }
             },
@@ -34170,27 +34443,29 @@
                 "custom": "EC"
             },
             "activities": {
-                "PK17jfBxQV1b1A1d": {
+                "41qzWAmZlXfVgEoi": {
+                    "_id": "41qzWAmZlXfVgEoi",
                     "type": "utility",
-                    "_id": "PK17jfBxQV1b1A1d",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that has a casting time of 1 action, you can spend 2 additional tech points to change the casting time to 1 bonus action for this casting. </p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "bonus",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that has a casting time of 1 action, you can spend 2 additional tech points to change the casting time to 1 bonus action for this casting. </p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -34226,20 +34501,10 @@
                 "custom": "EC"
             },
             "activities": {
-                "18aCDqyqSJAnnTVA": {
+                "sRI0dNp5rCR1rT0i": {
+                    "_id": "sRI0dNp5rCR1rT0i",
                     "type": "save",
-                    "_id": "18aCDqyqSJAnnTVA",
                     "img": null,
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": []
-                    },
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -34253,13 +34518,24 @@
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you are forced to make a Constitution saving throw to maintain concentration on a power you can use your reaction and spend 2 tech points to automatically succeed on the saving throw.</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use Refocused Subroutine even if you have already used a different Subroutine modification during the casting of the power.</p>"
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    },
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "reaction",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you are forced to make a Constitution saving throw to maintain concentration on a power you can use your reaction and spend 2 tech points to automatically succeed on the saving throw.</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use Refocused Subroutine even if you have already used a different Subroutine modification during the casting of the power.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -34295,27 +34571,29 @@
                 "custom": "EC"
             },
             "activities": {
-                "8KT278XLIpo1IDlq": {
+                "DgxxS00ykpoonS9w": {
+                    "_id": "DgxxS00ykpoonS9w",
                     "type": "utility",
-                    "_id": "8KT278XLIpo1IDlq",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>If you miss with a tech power that calls for an attack roll, you can spend 2 tech points to reroll the attack. You must use the new roll.</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use Seeking Subroutine even if you have already used a different Subroutine modificatio during the casting of the power.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>If you miss with a tech power that calls for an attack roll, you can spend 2 tech points to reroll the attack. You must use the new roll.</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use Seeking Subroutine even if you have already used a different Subroutine modificatio during the casting of the power.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
@@ -34351,27 +34629,29 @@
                 "custom": "EC"
             },
             "activities": {
-                "1Qg51m0csjnbH8eK": {
+                "5bBPFAHbrGs18PAF": {
+                    "_id": "5bBPFAHbrGs18PAF",
                     "type": "utility",
-                    "_id": "1Qg51m0csjnbH8eK",
                     "img": null,
-                    "duration": {
-                        "value": null,
-                        "units": "inst"
-                    },
                     "target": {
                         "value": null,
                         "width": null,
                         "units": "",
                         "type": ""
                     },
-                    "description": {
-                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that can only have one target and doesn't have a range of self, you can spend a number of additional tech points equal to the power's level to choose a second target in range with the same power (1 tech point if the power is at-will).</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    "roll": "",
+                    "duration": {
+                        "value": null,
+                        "units": "inst"
                     },
                     "activation": {
                         "type": "special",
                         "cost": 1
-                    }
+                    },
+                    "description": {
+                        "value": "<h4>Item Modification (Wristpad)</h4>\n <p>When you cast a power that can only have one target and doesn't have a range of self, you can spend a number of additional tech points equal to the power's level to choose a second target in range with the same power (1 tech point if the power is at-will).</p>\n<p>You can only spend a number of tech points in this way equal to your proficiency bonus. You regain the ability to do so when you complete a long rest. </p>\n<p>You can use only one Subroutine modification on a power when you cast it, unless otherwise noted.</p>"
+                    },
+                    "range": null
                 }
             },
             "modificationItemType": "equipment"
