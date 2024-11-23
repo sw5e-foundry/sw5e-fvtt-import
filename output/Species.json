@@ -1113,7 +1113,9 @@
                                 ]
                             }
                         ],
-                        "grants": [],
+                        "grants": [
+                            "damage:poison"
+                        ],
                         "mode": "default"
                     },
                     "level": 0,
@@ -1357,7 +1359,14 @@
                                 ]
                             }
                         ],
-                        "grants": [],
+                        "grants": [
+                            "damage:necrotic",
+                            "damage:poison",
+                            "damage:psychic",
+                            "damage:poison",
+                            "condition:diseased",
+                            "damage:ion"
+                        ],
                         "mode": "default"
                     },
                     "level": 0,
@@ -1614,7 +1623,14 @@
                                 ]
                             }
                         ],
-                        "grants": [],
+                        "grants": [
+                            "damage:necrotic",
+                            "damage:poison",
+                            "damage:psychic",
+                            "damage:poison",
+                            "condition:diseased",
+                            "damage:ion"
+                        ],
                         "mode": "default"
                     },
                     "level": 0,
@@ -1839,6 +1855,12 @@
                         "allow_replacements": false,
                         "choices": [],
                         "grants": [
+                            "damage:necrotic",
+                            "damage:poison",
+                            "damage:psychic",
+                            "damage:poison",
+                            "condition:diseased",
+                            "damage:ion",
                             "skills:lor"
                         ],
                         "mode": "default"
@@ -2075,6 +2097,12 @@
                             }
                         ],
                         "grants": [
+                            "damage:necrotic",
+                            "damage:poison",
+                            "damage:psychic",
+                            "damage:poison",
+                            "condition:diseased",
+                            "damage:ion",
                             "armor:lgt",
                             "armor:med"
                         ],
@@ -2316,6 +2344,12 @@
                             }
                         ],
                         "grants": [
+                            "damage:necrotic",
+                            "damage:poison",
+                            "damage:psychic",
+                            "damage:poison",
+                            "condition:diseased",
+                            "damage:ion",
                             "skills:ath"
                         ],
                         "mode": "default"
@@ -3836,6 +3870,21 @@
                     "level": 0,
                     "type": "Size",
                     "value": {}
+                },
+                {
+                    "_id": "sw5e3t0000000000",
+                    "classRestriction": "",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "damage:necrotic"
+                        ],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
                 }
             ],
             "colorScheme": {
@@ -4017,7 +4066,9 @@
                                 ]
                             }
                         ],
-                        "grants": [],
+                        "grants": [
+                            "damage:cold"
+                        ],
                         "mode": "default"
                     },
                     "level": 0,
@@ -5159,7 +5210,8 @@
                             }
                         ],
                         "grants": [
-                            "skills:prf"
+                            "skills:prf",
+                            "damage:poison"
                         ],
                         "mode": "default"
                     },
@@ -6115,6 +6167,21 @@
                     },
                     "level": 0,
                     "type": "Size",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e3t0000000000",
+                    "classRestriction": "",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "damage:fire"
+                        ],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
                     "value": {}
                 }
             ],
@@ -8004,7 +8071,8 @@
                         "allow_replacements": false,
                         "choices": [],
                         "grants": [
-                            "tool:spicerskit"
+                            "tool:spicerskit",
+                            "damage:poison"
                         ],
                         "mode": "default"
                     },
@@ -9028,6 +9096,21 @@
                     },
                     "level": 0,
                     "type": "Size",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e3t0000000000",
+                    "classRestriction": "",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "damage:poison"
+                        ],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
                     "value": {}
                 }
             ],
@@ -10238,7 +10321,8 @@
                         "allow_replacements": false,
                         "choices": [],
                         "grants": [
-                            "skills:itm"
+                            "skills:itm",
+                            "damage:necrotic"
                         ],
                         "mode": "default"
                     },
@@ -12163,6 +12247,21 @@
                     "level": 0,
                     "type": "Size",
                     "value": {}
+                },
+                {
+                    "_id": "sw5e3t0000000000",
+                    "classRestriction": "",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "damage:poison"
+                        ],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
                 }
             ],
             "colorScheme": {
@@ -12668,7 +12767,8 @@
                         "choices": [],
                         "grants": [
                             "skills:pil",
-                            "skills:tec"
+                            "skills:tec",
+                            "damage:cold"
                         ],
                         "mode": "default"
                     },
@@ -14212,7 +14312,9 @@
                                 ]
                             }
                         ],
-                        "grants": [],
+                        "grants": [
+                            "damage:poison"
+                        ],
                         "mode": "default"
                     },
                     "level": 0,
@@ -17753,7 +17855,9 @@
                                 ]
                             }
                         ],
-                        "grants": [],
+                        "grants": [
+                            "damage:fire"
+                        ],
                         "mode": "default"
                     },
                     "level": 0,
@@ -18259,6 +18363,21 @@
                     },
                     "level": 0,
                     "type": "Size",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e3t0000000000",
+                    "classRestriction": "",
+                    "configuration": {
+                        "allow_replacements": false,
+                        "choices": [],
+                        "grants": [
+                            "damage:necrotic"
+                        ],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
                     "value": {}
                 }
             ],
@@ -19270,6 +19389,7 @@
                             }
                         ],
                         "grants": [
+                            "damage:lightning",
                             "skills:tec"
                         ],
                         "mode": "default"
@@ -22919,7 +23039,9 @@
                                 ]
                             }
                         ],
-                        "grants": [],
+                        "grants": [
+                            "damage:necrotic"
+                        ],
                         "mode": "default"
                     },
                     "level": 0,
@@ -23506,6 +23628,7 @@
                             }
                         ],
                         "grants": [
+                            "damage:acid",
                             "tool:tinkersimplements"
                         ],
                         "mode": "default"
@@ -23647,7 +23770,9 @@
                                 ]
                             }
                         ],
-                        "grants": [],
+                        "grants": [
+                            "damage:poison"
+                        ],
                         "mode": "default"
                     },
                     "level": 0,
@@ -24875,7 +25000,9 @@
                                 ]
                             }
                         ],
-                        "grants": [],
+                        "grants": [
+                            "damage:poison"
+                        ],
                         "mode": "default"
                     },
                     "level": 0,
