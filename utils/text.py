@@ -827,6 +827,7 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 	_text = text
 	choices, grants = [], []
 
+	# Proficiencies
 	if text:
 		types = {
 			"skills": { skl["name"].lower(): skl for skl in utils.config.skills },
@@ -1159,9 +1160,336 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 			print('Unprocessed proficiency:', text, '\n', _text)
 			a = b
 
-	# if name == 'Anzellan' and (choices or grants): print(f'{choices=} {grants=}')
+	## Resistance/vulnerability/immunity
+	if text:
+		text = removeTemporary(_text)
+
+		## To avoid confusion between force power and force damage
+		text = text.replace('force power', 'forc-power')
+		text = text.replace('tech power', 'tec-power')
+		## Because 'ithorian' species features never use 'you'
+		text = text.replace('ithorians', 'you')
+		## To avoid confusion with poion damage
+		# text = text.replace('poison and disease', 'poisoned, diseased')
+
+		trait_types = (
+			{
+				"name": 'resistance',
+				"adj": 'resistant',
+				"act": 'resist',
+				"applies": ['damages'],
+			}, {
+				"name": 'vulnerability',
+				"adj": 'vulnerable',
+				"act": None,
+				"applies": ['damages'],
+			}, {
+				"name": 'immunity',
+				"adj": 'immune',
+				"act": None,
+				"applies": ['damages', 'conditions'],
+			}
+		)
+		for trait_type in trait_types:
+			letter = trait_type["name"][0]
+			types = {}
+			if "conditions" in trait_type["applies"]:
+				types["conditions"] = { condition["name"].lower(): condition for condition in utils.config.conditions }
+				types["conditions"]["poison"] = types["conditions"]["poisoned"]
+				types["conditions"]["disease"] = types["conditions"]["diseased"]
+			if "damages" in trait_type["applies"]:
+				types["damages"] = { damage["name"].lower(): damage for damage in utils.config.damage_types }
+
+			for t in types:
+				for trait in dict(types[t]):
+					types[t][getPlural(trait)] = types[t][trait]
+
+			generic_types = None
+
+			types_ids = { t: f'{t[0]}{letter}' for t in types }
+			if "conditions" in trait_type["applies"]: types_ids["conditions"] = f'c{letter}'
+			if "damages" in trait_type["applies"]: types_ids["damages"] = f'd{letter}'
+
+			p_types = {}
+			cp_types = {}
+			for k in types:
+				if restrict_types and k not in restrict_types: continue
+				values = [ f'{trait}' for trait in reversed(types[k]) ]
+				p_types[k] = ncapt(ncapt('|'.join(values)) + fr'(?: {k}?)?')
+				cp_types[k] = ncapt(capt('|'.join(values), name=f'type_{k}') + fr'(?: {k}?)?')
+
+			p_types["all"] = ncapt('|'.join([p_types[k] for k in p_types]))
+			cp_types["all"] = ncapt('|'.join([cp_types[k] for k in cp_types]))
+
+			p_trait_types = ncapt('|'.join(f'{t}?' for t in types))
+
+			p_number = ncapt(fr'one|two|three|four|five|six|seven|eight|nine|ten|\d+')
+			cp_number = capt(fr'one|two|three|four|five|six|seven|eight|nine|ten|\d+', name='number')
+
+			p_choice = ncapt(fr'(?: your choice of| any combination of)?')
+			p_sep = ncapt(fr',? or,?|,? and,?|,? as well as|,') + p_choice
+			cp_sep = capt(fr',? or,?|,? and,?|,? as well as|,', name='sep') + p_choice
+
+			p_following = ncapt(fr'{p_number}(?: of)?(?: the)?(?: following {p_trait_types}(?: of your choice)?:)?')
+			cp_following = ncapt(fr'{cp_number}(?: of)?(?: the)?(?: following {p_trait_types}(?: of your choice)?:)?')
+
+			p_prepo = ncapt(fr'the(?: chosen)?|an?|that|these|{p_following}') + ncapt(fr'(?: set of)?')
+			cp_prepo = ncapt(fr'the(?: chosen)?|an?|that|these|{cp_following}') + ncapt(fr'(?: set of)?')
+
+			p_prefix1 = ncapt(fr'(?:you (?:also )?(?:have|gain)|(?:grants?|gives?|giving) you| and) {trait_type["name"]}')
+			p_prefix2 = ncapt(fr'(?:you (?:also )?(?:are|become)|(?:makes?|making) you| and(?: are)?) {trait_type["adj"]}')
+			p_prefix = ncapt(fr'(?:{p_prefix1}|{p_prefix2}) (?:in|with|to|against)(?: the)?') + p_choice
+
+			p_posfix = ncapt(fr'\(your choice\)|of your choice')
+
+			p_1trait = ncapt(fr'(?:{p_prefix} )(?:{p_prepo} )?' + p_types["all"] + fr'(?: {p_posfix})?')
+			p_trait = ncapt(fr'(?:{p_prefix} )?(?:{p_prepo} )?' + p_types["all"] + fr'(?: {p_posfix})?')
+			cp_trait = ncapt(fr'(?:{p_prefix} )?(?:{cp_prepo} )?' + cp_types["all"] + fr'(?: {p_posfix})?')
+
+			p_traits = ncapt(fr'{p_1trait if require_prefix else p_trait}(?:(?:{p_sep} {p_trait})*)')
+			cp_traits = ncapt(fr'(?:{cp_sep} )?{cp_trait}(?P<rest>(?:{p_sep} {p_trait})*)')
+
+			def process_group(group, mode):
+				nonlocal choices, grants
+				# print('processing group')
+				# print(f'{group=}')
+				# print(f'{mode=}')
+
+				for t in group:
+					if t["generic"]:
+						if t["trait"] not in generic_types[t["trait_type"]] and getPlural(t["trait"]) in generic_types[t["trait_type"]]:
+							t["trait"] = getPlural(t["trait"])
+						cfg = generic_types[t["trait_type"]][t["trait"]]
+						if "id" in cfg:
+							if t["generic"] == 'all':
+								if cfg["id"] == '*':
+									t["disabled"] = True
+									traits = [ {
+										"trait_type": t["trait_type"],
+										"trait": new_t["name"].lower(),
+										"id": new_t["id"],
+										"number": t["number"],
+										"generic": False,
+										"disabled": False,
+									} for new_t in types[t["trait_type"]].values() ]
+									traits = { trait["id"]: trait for trait in traits }.values()
+									if mode == 'and':
+										group += traits
+									elif mode == 'or':
+										raise ValueError('Multiple traits with generic=\'all\' on \'or\' mode', group, traits, mode, generic)
+								elif cfg["id"].endswith(':*'): t["id"] = cfg["id"][:-2]
+								else: t["id"] = cfg["id"]
+							elif cfg["id"].endswith(':*'):
+								if mode == 'or':
+									t["id"] = cfg["id"]
+								elif mode == 'and':
+									process_group([t], 'or')
+									t["disabled"] = True
+							else:
+								t["id"] = cfg["id"]
+						else:
+							t["disabled"] = True
+							traits = []
+							if "ids" in cfg:
+								traits = [ {
+									"trait_type": t["trait_type"],
+									"trait": t["trait"],
+									"id": t_id,
+									"number": t["number"],
+									"generic": False,
+									"disabled": False,
+								} for t_id in cfg["ids"] ]
+							else:
+								traits = [ {
+									"trait_type": t["trait_type"],
+									"trait": new_t["name"].lower(),
+									"id": new_t["id"],
+									"number": t["number"],
+									"generic": False,
+									"disabled": False,
+								} for new_t in types[t["trait_type"]].values() if cfg["foo"](t["trait"], new_t) ]
+								traits = { trait["id"]: trait for trait in traits }.values()
+
+							if t["generic"] == 'all':
+								for trait in traits:
+									if trait["id"].endswith(':*'):
+										trait["id"] = trait["id"][:-2]
+								if mode == 'and':
+									group += traits
+								elif mode == 'or':
+									raise ValueError('Multiple traits with generic=\'all\' on \'or\' mode', group, traits, mode, generic)
+							else:
+								if mode == 'or':
+									group += traits
+								elif mode == 'and':
+									process_group(traits, 'or')
+					elif not "id" in t:
+						if t["trait"] in types[t["trait_type"]]:
+							t["id"] = types[t["trait_type"]][t["trait"]]["id"]
+						else:
+							raise ValueError(t, group, mode)
+					t["type_id"] = types_ids[t["trait_type"]]
+					if not t["disabled"] and "id" not in t: raise ValueError(t, group, mode)
+
+				number = ([ t["number"] for t in group if t["number"] ]+[1])[0]
+				group = [ t for t in group if not t["disabled"] ]
+
+				if mode == 'or':
+					choices.append({
+						"count": number or 1,
+						"pool": [ f'{t["type_id"]}:{t["id"]}' for t in group ],
+					})
+				elif mode == 'and':
+					grants.extend([ f'{t["type_id"]}:{t["id"]}' for t in group if not t["generic"] ])
+					for t in group:
+						if not t["generic"]: continue
+						choices.append({
+							"count": t["number"] or 1,
+							"pool": [ f'{t["type_id"]}:{t["id"]}' ],
+						})
+				else:
+					raise ValueError(mode, group, mode)
+
+			def get_traits(match):
+				subtext = match[0]
+				current = []
+
+				# print(f'{_text=}')
+				# print(f'{text=}')
+				# print(f'{subtext=}')
+
+				while subtext:
+					submatch = re.search(cp_traits, f'{subtext}')
+					if not submatch: break
+
+					number = toInt(submatch.groupdict().get('number') or '', allowWords=True, default=None)
+					rest = submatch.groupdict().get('rest') or ''
+					sep = submatch.groupdict().get('sep') or ''
+
+					trait_type = [ t for t in types if submatch.groupdict().get(f'type_{t}') ]
+					if len(trait_type):
+						trait_type = trait_type[0]
+						trait = submatch.groupdict().get(f'type_{trait_type}')
+
+
+						mode = None
+						if re.search(r'or', sep): mode = 'or'
+						if re.search(r'and|as well as', sep): mode = 'and'
+
+						# print(f'{subtext=}')
+						# print(f'{number=} {trait=} {trait_type=} {sep=} {rest=} {mode=}')
+
+						trait = {
+							"trait_type": trait_type,
+							"trait": trait,
+							"number": number,
+							"generic": False,
+							"disabled": False,
+						}
+
+						if mode == 'or':
+							current.append(trait)
+							process_group(current, 'or')
+							current = []
+						elif mode == 'and':
+							process_group(current, 'and')
+							current = []
+							current.append(trait)
+						else:
+							current.append(trait)
+
+					subtext = rest
+
+				if len(current):
+					process_group(current, 'and')
+
+				return 'PROCESSED'
+			text = re.sub(p_traits, get_traits, text)
+
+			patterns = [
+				fr'for 1 minute:\n- you have resistance to all damage',
+				fr'your familiar has an ac equal to your universal force save dc, 1 hit point, and immunity to all conditions',
+				fr'whether resistance or immunity',
+				fr'has any damage immunities, resistances, or vulnerabilities',
+				fr'overcoming resistance and immunity',
+				fr'normally have immunity or resistance',
+				fr'loses that immunity or resistance',
+				fr'treat immunity as resistance',
+				fr'#### {trait_type["adj"]}',
+				fr'especially {trait_type["adj"]} to',
+				fr'creature to become {trait_type["adj"]}',
+				fr'becomes {trait_type["adj"]}',
+				fr'makes? them {trait_type["adj"]}',
+				fr'made them {trait_type["adj"]}',
+				fr'if it is {trait_type["adj"]}',
+				fr'can become {trait_type["adj"]}',
+				fr'{trait_type["adj"]} to most pain',
+				fr'{trait_type["adj"]} to being',
+				fr'{trait_type["adj"]} to this',
+				fr'{trait_type["adj"]} to the damage',
+				fr'{trait_type["adj"]} to it',
+				fr'{trait_type["adj"]} to (?:all )?effects',
+				fr'{trait_type["name"]} (?:to|against) falling damage',
+				fr'{trait_type["name"]} (?:to|against) damage from',
+				fr'{trait_type["name"]} (?:to|against) the chosen',
+				fr'{trait_type["name"]} (?:to|against) (?:the )?damage dealt by',
+				fr'{trait_type["name"]} (?:to|against) damage types',
+				fr'{trait_type["name"]} (?:to|against) damage of the chosen type',
+				fr'{trait_type["name"]} (?:to|against) one type of damage',
+				fr'{trait_type["name"]} (?:to|against) that type of damage',
+				fr'{trait_type["name"]} (?:to|against) the triggering damage',
+				fr'{trait_type["name"]} (?:to|against) that damage',
+				fr'{trait_type["name"]} (?:to|against) the damage of (?:forc|tec)-powers',
+				fr'{trait_type["name"]}\* (?:forc|tec)-power',
+				fr'structures have {trait_type["name"]}',
+				fr'one of your damage {trait_type["name"]}',
+				fr'- (?:damage|condition) {trait_type["name"]}',
+				fr'(?:it|the creature) (?:also )?gains? {trait_type["name"]}',
+				fr'your \w+ has {trait_type["name"]}',
+				fr'ignores? {trait_type["name"]}',
+				fr'loses {trait_type["name"]}',
+				fr'treated as {trait_type["name"]}',
+				fr'the target has {trait_type["name"]}',
+				fr'instead grant them {trait_type["name"]}',
+				fr'during that time, you also have {trait_type["name"]}',
+			]
+			for pat in patterns: text = re.sub(pat, "PROCESSED", text)
+
+			if re.search(f'{trait_type["name"]}|{trait_type["adj"]}', text):
+				print(f'Unprocessed {trait_type["name"]}:', text, '\n', _text)
+				a = b
+
 
 	return choices, grants
+
+def removeTemporary(text, removed='PROCESSED'):
+	_text = text
+	if text:
+		## These patterns mean the whole feature is temporary
+		patterns = [
+			fr'when you complete a short or long rest, you can choose one of the following features',
+			fr'you(?: can)? gain the following benefits for \d+ (?:turn|round|minute|hour|day|week)s?',
+			fr'while \w+,? you gain the following benefits',
+		]
+		for pat in patterns:
+			if re.search(pat, text): return removed
+
+		## These patterns mean the sentence is temporary
+		separators = r'\.#'
+		for it in re.finditer(fr'[^{separators}]+', text):
+			sentence = it[0]
+			patterns = [
+				fr'for \d+ (?:turn|round|minute|hour|day|week)s?',
+				fr'until the (?:beginning|start|end) of (?:your|it\'s|their)(?: next)? turn',
+				fr'during that time',
+				fr'while this ability is active',
+				fr'(?:when|after) you (?:expend a )?use',
+			]
+			for pat in patterns:
+				if re.search(pat, sentence) != None:
+					_text = _text.replace(sentence, removed)
+					break
+	return _text
 
 def lowerCase(word):
 	return word[:1].lower() + word[1:]
