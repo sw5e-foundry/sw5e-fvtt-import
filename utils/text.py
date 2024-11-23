@@ -1162,7 +1162,7 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 
 	## Resistance/vulnerability/immunity
 	if text:
-		text = _text
+		text = removeTemporary(_text)
 		trait_types = (
 			{
 				"name": 'resistance',
@@ -1449,6 +1449,24 @@ def getTraits(text, name, require_prefix=True, restrict_types=None):
 
 
 	return choices, grants
+
+def removeTemporary(text, removed='PROCESSED'):
+	_text = text
+	if text:
+		separators = r'\.#'
+		for it in re.finditer(fr'[^{separators}]+', text):
+			sentence = it[0]
+			patterns = [
+				fr'for \d+ (?:turn|round|minute|hour|day|week)s?',
+				fr'until the (?:beginning|end) of (?:your|it\'s|their)(?: next)? turn',
+				fr'during that time',
+				fr'(?:when|after) you (?:expend a )?use',
+			]
+			for pat in patterns:
+				if re.search(pat, sentence) != None:
+					_text = _text.replace(sentence, removed)
+					break
+	return _text
 
 def lowerCase(word):
 	return word[:1].lower() + word[1:]
