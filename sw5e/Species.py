@@ -140,7 +140,8 @@ class Species(sw5e.Entity.Item):
 			for abl in self.raw_abilitiesIncreased[0]
 			if len(abl["abilities"]) == 1 and abl["abilities"][0][:3].lower() == 'any'
 		])
-		advancements.append( sw5e.Advancement.AbilityScoreImprovement(level=0, fixed=fixed, points=points, idx=len(advancements)) )
+		if points == 0 and len(fixed.items()) == 0: points = 3
+		advancements.append( sw5e.Advancement.AbilityScoreImprovement(level=0, cap=2, fixed=fixed, points=points, idx=len(advancements)) )
 
 		size_table = { full: abr for (abr, full) in utils.config.actor_sizes.items() }
 		size = size_table[self.raw_size or "Medium"]

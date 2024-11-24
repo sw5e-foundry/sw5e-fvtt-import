@@ -17,14 +17,16 @@ class Advancement():
 		return data
 
 class AbilityScoreImprovement(Advancement):
-	def __init__(self, name=None, level=1, class_restriction="", points=2, fixed=[], idx=None):
+	def __init__(self, name=None, level=1, class_restriction="", points=2, fixed=[], idx=None, locked=None, cap=None):
 		super().__init__(idx=idx)
 		self.name = name
 		self.level = level
 		self.class_restriction = class_restriction
 		self.configuration = {
+			"cap": cap,
 			"fixed": fixed,
-			"points": points
+			"locked": locked,
+			"points": points,
 		}
 
 	def getData(self, importer):
