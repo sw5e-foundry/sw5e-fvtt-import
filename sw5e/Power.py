@@ -143,7 +143,7 @@ class Power(
 			"spellSlot": False,
 			"targets": [
 				{
-					"scale": {
+					"scaling": {
 						"formula": '',
 						"mode": 'amount',
 					},
