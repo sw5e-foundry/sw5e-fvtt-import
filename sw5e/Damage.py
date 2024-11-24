@@ -7,7 +7,7 @@ class Damage():
 		'denomination': None,
 		'bonus': None,
 		'types': [],
-		'scaling_mode': 'whole',
+		'scaling_mode': '',
 		'scaling_number': 1,
 		'scaling_formula': None,
 	}

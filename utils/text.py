@@ -656,7 +656,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 		scale = scale.lower()
 		scaling["mode"] = "level" if re.search(r'force potency|overcharge tech', scale) else "atwill"
 
-		if scaling["mode"] == "atwill" and len(damage.parts) == 1:
+		if scaling["mode"] == "atwill" and len(damage.parts) >= 1:
 			dmg = damage.parts[0]
 			if denomination := dmg.denomination:
 
@@ -676,12 +676,18 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 						scaled_die = f'd({denomination}+{die_diff}*floor(@scaling.increase/{level_diff}))'
 						dmg.custom = re.sub(fr'd{denomination}', scaled_die, repr(dmg), 1)
 
-		pattern = r'increases by (?P<die>\d*d\d+) for each slot level above'
+		pattern = r'(?P<both>\(both initial and later\) )?increases by (?P<number>\d*)d(?P<die>\d+) for each slot level above'
 		if match := re.search(pattern, scale):
 			if len(damage.parts) == 0: damage.parts.append(sw5e.Damage.Damage.fromOldFormat([ '', '' ], validate=False))
-			damage.parts[0].scaling_mode = 'whole'
-			damage.parts[0].scaling_number = 1
-			damage.parts[0].scaling_formula = match["die"]
+			dmgs = 2 if (match["both"] and len(damage.parts) >= 2) else 1
+			for dmg in damage.parts[:dmgs]:
+				dmg.scaling_mode = 'whole'
+				if int(match["die"]) == int(dmg.denomination or '0'):
+					dmg.scaling_number = int(match["number"] or '1')
+					dmg.scaling_formula = None
+				else:
+					dmg.scaling_number = 0
+					dmg.scaling_formula = f'{match["number"]}d{match["die"]}'
 
 	return action_type, damage, other_formula, save, save_dc, scaling
 
