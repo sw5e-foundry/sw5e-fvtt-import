@@ -136,10 +136,22 @@ class Power(
 	def getConsume(self):
 		if self.raw_level == 0: return None
 		return {
-			"amount": self.raw_level + 1,
-			"scale": True,
-			"target": f'powercasting.{"tech" if self.school == "tec" else "force"}.points.value',
-			"type": 'attribute',
+			"scaling": {
+				"allowed": False,
+				"max": None,
+			},
+			"spellSlot": False,
+			"targets": [
+				{
+					"scale": {
+						"formula": '',
+						"mode": 'amount',
+					},
+					"target": f'powercasting.{"tech" if self.school == "tec" else "force"}.points.value',
+					"type": 'attribute',
+					"value": self.raw_level + 1,
+				},
+			],
 		}
 
 	def getImg(self, importer=None):
@@ -209,7 +221,7 @@ class Power(
 				"cost": self.activation_num,
 				"condition": self.activation_condition,
 			},
-			# "consumption": {},
+			"consumption": self.consume or {},
 			"description": { "value": self.description },
 			"duration": {
 				"value": self.duration_value,
