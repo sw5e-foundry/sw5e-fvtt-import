@@ -39,7 +39,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -146,7 +150,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -247,7 +255,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -317,9 +329,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "melee"
+                        "type": {
+                            "classification": "spell",
+                            "value": "melee"
+                        }
                     },
                     "consumption": {
                         "scaling": {
@@ -371,7 +388,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -480,7 +501,11 @@
                         ]
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -596,7 +621,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -690,7 +719,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "radius",
@@ -809,7 +842,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "radius",
                         "units": "ft",
@@ -885,7 +922,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -986,7 +1027,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "cha",
                         "dc": {
@@ -1087,7 +1132,11 @@
                         "value": "8"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -1180,7 +1229,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -1275,7 +1328,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -1376,7 +1433,11 @@
                         "value": "24"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -1499,7 +1560,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -1606,7 +1671,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1705,7 +1774,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -1804,7 +1877,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -1903,7 +1980,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -2037,7 +2118,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "target": {
                         "type": "radius",
                         "units": "ft",
@@ -2137,7 +2222,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "cha",
                         "dc": {
@@ -2262,7 +2351,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -2361,7 +2454,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "90",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "90"
+                    },
                     "roll": "5d8",
                     "target": {
                         "type": "",
@@ -2460,7 +2557,11 @@
                         "value": "8"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -2561,7 +2662,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -2654,7 +2759,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -2773,7 +2882,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -2896,7 +3009,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -3001,7 +3118,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "cha",
                         "dc": {
@@ -3102,7 +3223,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -3219,7 +3344,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -3337,7 +3466,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -3455,7 +3588,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -3554,7 +3691,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "roll": "",
                     "target": {
                         "type": "sphere",
@@ -3673,7 +3814,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "90",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "90"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -3778,7 +3923,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -3858,7 +4007,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "cha",
                         "dc": {
@@ -3965,7 +4118,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -4090,7 +4247,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "90",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "90"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -4208,7 +4369,11 @@
                         ]
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -4300,7 +4465,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -4401,7 +4570,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -4508,7 +4681,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -4633,7 +4810,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -4709,9 +4890,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "ranged"
+                        "type": {
+                            "classification": "spell",
+                            "value": "ranged"
+                        }
                     },
                     "consumption": {
                         "scaling": {
@@ -4763,7 +4949,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -4863,7 +5053,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -5022,7 +5216,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "500",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "500"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -5146,7 +5344,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -5269,7 +5471,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -5374,7 +5580,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -5481,7 +5691,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "int",
                         "dc": {
@@ -5597,7 +5811,11 @@
                         ]
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -5695,7 +5913,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -5794,7 +6016,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "6d10",
                     "target": {
                         "type": "cone",
@@ -5887,7 +6113,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -5982,7 +6212,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -6075,7 +6309,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -6168,7 +6406,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -6287,7 +6529,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "150",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "150"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -6386,7 +6632,11 @@
                         "value": "24"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -6485,7 +6735,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -6610,7 +6864,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -6697,7 +6955,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -6813,7 +7075,11 @@
                         ]
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -6931,7 +7197,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -7007,7 +7277,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -7100,7 +7374,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -7195,7 +7473,11 @@
                         "value": "8"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -7288,7 +7570,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -7363,7 +7649,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -7480,7 +7770,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -7603,7 +7897,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -7702,7 +8000,11 @@
                         "value": "24"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -7795,7 +8097,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -7888,7 +8194,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -7998,7 +8308,11 @@
                         ]
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -8090,7 +8404,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -8209,7 +8527,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -8314,7 +8636,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -8390,9 +8716,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "ranged"
+                        "type": {
+                            "classification": "spell",
+                            "value": "ranged"
+                        }
                     },
                     "consumption": {
                         "scaling": {
@@ -8444,7 +8775,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -8560,7 +8895,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -8700,7 +9039,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -8805,7 +9148,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -8904,7 +9251,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -9023,7 +9374,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "150",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "150"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -9124,7 +9479,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "roll": "",
                     "target": {
                         "type": "creature",
@@ -9223,7 +9582,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -9339,7 +9702,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "90",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "90"
+                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -9438,7 +9805,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -9531,7 +9902,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "roll": "1d20",
                     "target": {
                         "type": "",
@@ -9624,7 +9999,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -9701,7 +10080,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -9794,7 +10177,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -9869,7 +10256,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -9962,7 +10353,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -10081,7 +10476,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "save": {
                         "ability": "int",
                         "dc": {
@@ -10197,7 +10596,11 @@
                         ]
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "target": {
                         "type": "creature",
                         "units": "",
@@ -10330,7 +10733,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -10472,7 +10879,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -10550,9 +10961,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "ranged"
+                        "type": {
+                            "classification": "spell",
+                            "value": "ranged"
+                        }
                     },
                     "consumption": {
                         "scaling": {
@@ -10638,7 +11054,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -10712,7 +11132,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "1d4",
                     "target": {
                         "type": "",
@@ -10831,7 +11255,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -10949,7 +11377,11 @@
                         ]
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -11041,7 +11473,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -11151,7 +11587,11 @@
                         ]
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -11269,7 +11709,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "90",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "90"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -11369,7 +11813,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -11494,7 +11942,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -11601,7 +12053,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "cha",
                         "dc": {
@@ -11743,7 +12199,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "150",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "150"
+                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -11868,7 +12328,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "int",
                         "dc": {
@@ -11984,7 +12448,11 @@
                         ]
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -12076,7 +12544,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -12171,7 +12643,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "radius",
@@ -12266,7 +12742,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "1d4",
                     "target": {
                         "type": "",
@@ -12402,7 +12882,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -12518,7 +13002,11 @@
                         ]
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "target": {
                         "type": "sphere",
                         "units": "ft",
@@ -12587,9 +13075,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "ranged"
+                        "type": {
+                            "classification": "spell",
+                            "value": "ranged"
+                        }
                     },
                     "consumption": {
                         "scaling": {
@@ -12658,7 +13151,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "150",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "150"
+                    },
                     "target": {
                         "type": "sphere",
                         "units": "ft",
@@ -12729,9 +13226,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "melee"
+                        "type": {
+                            "classification": "spell",
+                            "value": "melee"
+                        }
                     },
                     "consumption": {
                         "scaling": {
@@ -12783,7 +13285,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -12875,7 +13381,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -12994,7 +13504,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -13093,7 +13607,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -13186,7 +13704,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -13256,9 +13778,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "ranged"
+                        "type": {
+                            "classification": "spell",
+                            "value": "ranged"
+                        }
                     },
                     "consumption": {
                         "scaling": {
@@ -13327,7 +13854,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -13425,7 +13956,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -13550,7 +14085,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -13642,7 +14181,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -13776,7 +14319,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -13877,7 +14424,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -13972,7 +14523,11 @@
                         "value": "8"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "radius",
@@ -14071,7 +14626,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -14163,7 +14722,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -14258,7 +14821,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -14377,7 +14944,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": "150",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "150"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -14484,7 +15055,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -14677,7 +15252,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -14777,7 +15356,11 @@
                         "value": "24"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -14900,7 +15483,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -15007,7 +15594,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -15114,7 +15705,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "cha",
                         "dc": {
@@ -15239,7 +15834,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "90",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "90"
+                    },
                     "save": {
                         "ability": "int",
                         "dc": {
@@ -15344,7 +15943,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -15445,7 +16048,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "sphere",
@@ -15581,7 +16188,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -15680,7 +16291,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -15779,7 +16394,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -15904,7 +16523,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "150",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "150"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -16003,7 +16626,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -16137,7 +16764,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -16236,7 +16867,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -16331,7 +16966,11 @@
                         "value": "24"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -16482,7 +17121,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "int",
                         "dc": {
@@ -16607,7 +17250,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -16714,7 +17361,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "cha",
                         "dc": {
@@ -16803,7 +17454,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -16904,7 +17559,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -17003,7 +17662,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -17072,9 +17735,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "melee"
+                        "type": {
+                            "classification": "spell",
+                            "value": "melee"
+                        }
                     },
                     "damage": {
                         "critical": {
@@ -17108,7 +17776,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -17182,7 +17854,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -17299,7 +17975,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -17393,7 +18073,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -17492,7 +18176,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -17593,7 +18281,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "150",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "150"
+                    },
                     "roll": "",
                     "target": {
                         "type": "radius",
@@ -17686,7 +18378,11 @@
                         "value": "8"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -17820,7 +18516,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -17945,7 +18645,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -18043,7 +18747,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -18135,7 +18843,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -18234,7 +18946,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "300",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "300"
+                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -18341,7 +19057,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -18466,7 +19186,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -18532,7 +19256,11 @@
                         ]
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -18603,9 +19331,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "melee"
+                        "type": {
+                            "classification": "spell",
+                            "value": "melee"
+                        }
                     },
                     "damage": {
                         "critical": {
@@ -18673,7 +19406,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -18765,7 +19502,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -18858,7 +19599,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -18933,7 +19678,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "1d4",
                     "target": {
                         "type": "",
@@ -19028,7 +19777,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -19127,7 +19880,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "cha",
                         "dc": {
@@ -19228,7 +19985,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -19327,7 +20088,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -19467,7 +20232,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -19590,7 +20359,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -19715,7 +20488,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -19791,9 +20568,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "ranged"
+                        "type": {
+                            "classification": "spell",
+                            "value": "ranged"
+                        }
                     },
                     "damage": {
                         "critical": {
@@ -19809,7 +20591,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -19925,7 +20711,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -20048,7 +20838,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -20124,9 +20918,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "ranged"
+                        "type": {
+                            "classification": "spell",
+                            "value": "ranged"
+                        }
                     },
                     "damage": {
                         "critical": {
@@ -20160,7 +20959,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -20234,7 +21037,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -20333,7 +21140,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -20409,9 +21220,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "melee"
+                        "type": {
+                            "classification": "spell",
+                            "value": "melee"
+                        }
                     },
                     "consumption": {
                         "scaling": {
@@ -20463,7 +21279,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -20561,7 +21381,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -20644,7 +21468,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -20737,7 +21565,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -20832,7 +21664,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -20927,7 +21763,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -21022,7 +21862,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -21115,7 +21959,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -21232,7 +22080,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -21301,9 +22153,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "ranged"
+                        "type": {
+                            "classification": "spell",
+                            "value": "ranged"
+                        }
                     },
                     "damage": {
                         "critical": {
@@ -21337,7 +22194,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -21453,7 +22314,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -21569,7 +22434,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -21721,7 +22590,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -21822,7 +22695,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -21905,7 +22782,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "15",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "15"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -22004,7 +22885,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -22103,7 +22988,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -22177,7 +23066,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -22252,7 +23145,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -22322,9 +23219,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "melee"
+                        "type": {
+                            "classification": "spell",
+                            "value": "melee"
+                        }
                     },
                     "damage": {
                         "critical": {
@@ -22358,7 +23260,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -22456,7 +23362,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "90",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "90"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -22563,7 +23473,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "120",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "120"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -22670,7 +23584,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "wis",
                         "dc": {
@@ -22795,7 +23713,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -22873,9 +23795,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "ranged"
+                        "type": {
+                            "classification": "spell",
+                            "value": "ranged"
+                        }
                     },
                     "consumption": {
                         "scaling": {
@@ -22944,7 +23871,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -23038,7 +23969,11 @@
                         "value": "24"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -23137,7 +24072,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": "90",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "90"
+                    },
                     "save": {
                         "ability": "str",
                         "dc": {
@@ -23262,7 +24201,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -23340,9 +24283,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "ranged"
+                        "type": {
+                            "classification": "spell",
+                            "value": "ranged"
+                        }
                     },
                     "consumption": {
                         "scaling": {
@@ -23411,7 +24359,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -23529,7 +24481,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -23654,7 +24610,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "150",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "150"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -23753,7 +24713,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -23846,7 +24810,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "touch",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -23965,7 +24933,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "10",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "10"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -24064,7 +25036,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -24163,7 +25139,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -24262,7 +25242,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "30",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "30"
+                    },
                     "roll": "1d4",
                     "target": {
                         "type": "",
@@ -24381,7 +25365,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -24479,7 +25467,11 @@
                         "value": "8"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {
@@ -24562,7 +25554,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "roll": "",
                     "target": {
                         "type": "",
@@ -24679,7 +25675,11 @@
                         "value": "10"
                     },
                     "img": null,
-                    "range": "90",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "90"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -24804,7 +25804,11 @@
                         "value": "1"
                     },
                     "img": null,
-                    "range": "300",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "300"
+                    },
                     "save": {
                         "ability": "dex",
                         "dc": {
@@ -24929,7 +25933,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": null,
+                    "range": {
+                        "long": null,
+                        "units": "self",
+                        "value": null
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -24998,9 +26006,14 @@
                     "attack": {
                         "ability": "",
                         "bonus": "",
-                        "classification": "spell",
+                        "critical": {
+                            "threshold": null
+                        },
                         "flat": false,
-                        "type": "ranged"
+                        "type": {
+                            "classification": "spell",
+                            "value": "ranged"
+                        }
                     },
                     "consumption": {
                         "scaling": {
@@ -25052,7 +26065,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "target": {
                         "type": "",
                         "units": "",
@@ -25168,7 +26185,11 @@
                         "value": null
                     },
                     "img": null,
-                    "range": "60",
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": "60"
+                    },
                     "save": {
                         "ability": "con",
                         "dc": {

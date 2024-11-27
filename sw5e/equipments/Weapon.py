@@ -106,25 +106,6 @@ class Weapon(
 
 		return utils.object.applyType(properties, properties_list)
 
-	def getAutoTargetData(self, data, burst_or_rapid=False):
-		if 'smr' in self.p_properties and type(smr := self.p_properties["smr"].split('/')) == list:
-			mod = (int(smr[0]) - 10) // 2
-			prof = int(smr[1])
-
-			if burst_or_rapid:
-				data["system"]["save"] = {
-					"dc": 8 + mod + prof,
-					"scaling": 'flat'
-				}
-			else:
-				data["system"]["attack"] = {
-					"bonus": f'{mod} + {prof}',
-					"flat": True
-				}
-
-			data["system"]["damage"]["parts"][0][0] = f'{self.raw_damageNumberOfDice}d{self.raw_damageDieType} + {mod}'
-		return data
-
 	def getItemVariations(self, original_data, importer):
 		data = []
 
@@ -170,12 +151,22 @@ class Weapon(
 	def getData(self, importer):
 		data = super().getData(importer)[0]
 
-		utils.object.setProperty(data, 'system.weaponClass', self.weapon_class, force=True)
-		if (base := self.wpn_damage["base"]).valid():
-			utils.object.setProperty(data, 'system.damage.base', base.getData(), force=True)
-		if (vers := self.wpn_damage["versatile"]).valid():
-			utils.object.setProperty(data, 'system.damage.versatile', vers.getData(), force=True)
+		# ammunition
+		# damage
+		if (base := self.wpn_damage["base"]).valid(): utils.object.setProperty(data, 'system.damage.base', base.getData(), force=True)
+		if (vers := self.wpn_damage["versatile"]).valid(): utils.object.setProperty(data, 'system.damage.versatile', vers.getData(), force=True)
+		# magicalBonus
+		# mastery
+		# properties
+		## done in Equipment.py
+		# proficient
+		# range
+		utils.object.setProperty(data, 'system.range.value', self.range_short, force=True)
+		utils.object.setProperty(data, 'system.range.long', self.range_long or None, force=True)
+		utils.object.setProperty(data, 'system.range.units', self.range_unit or 'ft', force=True)
 
+		# sw5e specific stuff
+		utils.object.setProperty(data, 'system.weaponClass', self.weapon_class, force=True)
 		utils.object.setProperty(data, 'flags.sw5e.reload.types', self.ammo_types, force=True)
 
 		return self.getItemVariations(data, importer)
@@ -188,6 +179,10 @@ class Weapon(
 	############################
 
 	# templates.Activities
+	def processActivitiesData(self, importer):
+		data = super().processActivitiesData(importer)
+		if "reach" in self.p_properties: data["range"]["reach"] = 10
+		return data
 
 	# templates.ItemDescription
 	def getDescription(self):

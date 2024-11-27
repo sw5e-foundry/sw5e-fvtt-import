@@ -372,13 +372,23 @@ class EnhancedItem(
 			elif item_type == 'tool':
 				pass
 			elif item_type == 'weapon':
+				# ammunition
+				# damage
+				if (base := self.base_item.wpn_damage["base"]).valid(): utils.object.setProperty(data, 'system.damage.base', base.getData(), force=True)
+				elif len(self.damage.parts) and (dmg := self.damage.parts[0]).valid(): utils.object.setProperty(data, 'system.damage.base', dmg.getData(), force=True)
+				if (vers := self.base_item.wpn_damage["versatile"]).valid(): utils.object.setProperty(data, 'system.damage.versatile', vers.getData(), force=True)
+				# magicalBonus
+				# mastery
+				# properties
+				## done in Equipment.py
+				# proficient
+				# range
+				utils.object.setProperty(data, 'system.range.value', self.base_item.range_short, force=True)
+				utils.object.setProperty(data, 'system.range.long', self.base_item.range_long or None, force=True)
+				utils.object.setProperty(data, 'system.range.units', self.base_item.range_unit or 'ft', force=True)
+
+				# sw5e specific stuff
 				utils.object.setProperty(data, 'system.weaponClass', self.base_item.weapon_class, force=True)
-				if (base := self.base_item.wpn_damage["base"]).valid():
-					utils.object.setProperty(data, 'system.damage.base', base.getData(), force=True)
-				elif len(self.damage.parts) and (dmg := self.damage.parts[0]).valid():
-					utils.object.setProperty(data, 'system.damage.base', dmg.getData(), force=True)
-				if (vers := self.base_item.wpn_damage["versatile"]).valid():
-					utils.object.setProperty(data, 'system.damage.versatile', vers.getData(), force=True)
 				utils.object.setProperty(data, 'flags.sw5e.reload.types', self.base_item.ammo_types, force=True)
 
 
@@ -493,7 +503,11 @@ class EnhancedItem(
 				"units": self.duration_unit
 			},
 			# "effects": {},
-			"range": self.range_short,
+			"range": {
+				"value": self.range_short,
+				"long": self.range_long or None,
+				"units": self.range_unit or 'ft',
+			},
 			"target": {
 				"value": self.target_value,
 				"width": None,
@@ -505,9 +519,12 @@ class EnhancedItem(
 			"attack": {
 				"ability": "",
 				"bonus": "",
-				"classification": "spell",
+				"critical": { "threshold": None },
 				"flat": False,
-				"type": "melee",
+				"type": {
+					"value": 'melee',
+					"classification": 'spell',
+				},
 			},
 			"check": {
 				"ability": "",

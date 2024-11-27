@@ -14,8 +14,8 @@ class Activities(Template):
 			if action_type == 'save':
 				activities.append(sw5e.Activity.Save(data, idx=len(activities)))
 			elif action_type in ['msak', 'mwak', 'rsak', 'rwak']:
-				utils.object.setProperty(data, 'attack.type', 'melee' if action_type.startswith('m') else 'ranged', force=True)
-				utils.object.setProperty(data, 'attack.classification', 'spell' if action_type[1] == 's' else 'weapon', force=True)
+				utils.object.setProperty(data, 'attack.type.value', 'melee' if action_type.startswith('m') else 'ranged', force=True)
+				utils.object.setProperty(data, 'attack.type.classification', 'spell' if action_type[1] == 's' else 'weapon', force=True)
 				attackActivity = sw5e.Activity.Attack(data, idx=len(activities))
 				activities.append(attackActivity)
 				if properties := data.get('properties'):
