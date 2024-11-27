@@ -59,7 +59,7 @@ class Weapon(
 			base = sw5e.Damage.Damage.fromOldFormat(other_formula) or damage.parts[0]
 			if len(damage.parts) == 2: versatile = damage.parts[1]
 		elif self.raw_damageDieType >= 1:
-			denomination = self.raw_damageDieType
+			base.denomination = self.raw_damageDieType
 
 		if (dType := self.raw_damageType.lower()) != 'unknown': base.types = ['thunder' if dType == 'sonic' else dType]
 
