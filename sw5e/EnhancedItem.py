@@ -382,7 +382,6 @@ class EnhancedItem(
 				# ammunition
 				# damage
 				if (base := self.base_item.wpn_damage["base"]).valid(): utils.object.setProperty(data, 'system.damage.base', base.getData(), force=True)
-				elif len(self.damage.parts) and (dmg := self.damage.parts[0]).valid(): utils.object.setProperty(data, 'system.damage.base', dmg.getData(), force=True)
 				if (vers := self.base_item.wpn_damage["versatile"]).valid(): utils.object.setProperty(data, 'system.damage.versatile', vers.getData(), force=True)
 				# magicalBonus
 				# mastery

@@ -33,7 +33,7 @@ class Weapon(
 		return short_range, long_range, 'ft'
 
 	def getAction(self):
-		return self.getActionType(), sw5e.Damage.DamageGroup([self.wpn_damage["base"]]), None, None, None, None
+		return self.getActionType(), sw5e.Damage.DamageGroup([]), None, None, None, None
 
 	def getImg(self, importer=None):
 		kwargs = {
