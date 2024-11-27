@@ -99,13 +99,20 @@ class EnhancedItem(
 		return utils.text.getUses(self.raw_text, self.raw_name, default=default)
 
 	def getAction(self, text):
-		default={
-			"action_type": self.base_item.action_type,
-			"damage": self.base_item.damage,
-			"formula": self.base_item.formula,
-			"save": self.base_item.save,
-			"save_dc": self.base_item.save_dc,
-		} if self.base_item else {}
+		default={}
+		if self.base_item:
+			default={
+				"action_type": self.base_item.action_type,
+				"damage": self.base_item.damage,
+				"formula": self.base_item.formula,
+				"save": self.base_item.save,
+				"save_dc": self.base_item.save_dc,
+			}
+		elif self.raw_type == 'Weapon':
+			if self.raw_subtypeType in ('Any', 'AnyWithProperty'): default["action_type"] = 'mwak'
+			elif self.raw_subtypeType in ('AnyBlaster', 'AnyBlasterWithProperty'): default["action_type"] = 'rwak'
+			elif self.raw_subtypeType in ('AnyVibroweapon', 'AnyVibroweaponWithProperty'): default["action_type"] = 'mwak'
+			elif self.raw_subtypeType in ('AnyLightweapon', 'AnyLightweaponWithProperty'): default["action_type"] = 'mwak'
 
 		action_type, damage, other_formula, save, save_dc, scaling = utils.text.getAction(text, self.raw_name, default=default)
 		return action_type, damage, other_formula, save, save_dc, scaling
@@ -433,26 +440,6 @@ class EnhancedItem(
 		elif self.raw_type == 'Weapon':
 			utils.object.setPropertyWeak(data, 'system.activation', { "type": 'action', "cost": 1 })
 			utils.object.setPropertyWeak(data, 'system.target', { "value": 1 , "type": 'enemy' })
-
-			if self.raw_subtypeType in ('AnyWithProperty', 'AnyBlasterWithProperty', 'AnyVibroweaponWithProperty', 'AnyLightweaponWithProperty'):
-				print(f"	'{self.raw_subtypeType}' enhanced weapon detected. This kind of item is not supported since there currently no examples to know what they should look like.")
-				print(f'{self.raw_name=}')
-				print(f'{self.raw_type=}')
-				print(f'{self.raw_subtype=}')
-				print(f'{self.raw_subtypeType=}')
-				print(f'{self.raw_text=}')
-
-			if self.raw_subtypeType in ('Any', 'AnyWithProperty'):
-				if data["system"]["actionType"] == 'other':
-					data["system"]["actionType"] = 'mwak'
-			elif self.raw_subtypeType in ('AnyBlaster', 'AnyBlasterWithProperty'):
-				data["system"]["actionType"] = 'rwak'
-			elif self.raw_subtypeType in ('AnyVibroweapon', 'AnyVibroweaponWithProperty'):
-				data["system"]["actionType"] = 'mwak'
-			elif self.raw_subtypeType in ('AnyLightweapon', 'AnyLightweaponWithProperty'):
-				data["system"]["actionType"] = 'mwak'
-			else:
-				raise ValueError(self.raw_name, self.raw_type, self.raw_subtype, self.raw_subtypeType)
 		elif self.raw_type == 'Valuable':
 			print("	'Valuable' enhanced item detected. This kind of item is not supported since there currently no examples to know what they should look like.")
 			print(f'{self.raw_name=}')

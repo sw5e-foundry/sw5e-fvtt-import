@@ -45,7 +45,7 @@ class Weapon(
 		return super().getImg(importer=importer, **kwargs)
 
 	def getActionType(self):
-		if self.category in ('simpleB', 'martialB'):
+		if self.category in ('simpleBL', 'martialBL'):
 			return 'rwak'
 		else:
 			return 'mwak'
