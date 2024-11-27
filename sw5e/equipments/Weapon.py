@@ -24,12 +24,12 @@ class Weapon(
 
 	def getRange(self):
 		short_range, long_range = None, None
-		if rang := (utils.text.getProperty('Ammunition', self.raw_propertiesMap) or utils.text.getProperty('Range', self.raw_propertiesMap)):
-			if rang == 'special': pass
-			elif type(rang) == list: short_range, long_range = rang
-			else: short_range = int(rang)
-		elif utils.text.getProperty('Reach', self.raw_propertiesMap):
-			short_range = 10
+		rang = None
+		for prop in ('Power Cell', 'Slug Cartridge', 'Thrown', 'Range', 'Special'): rang = rang or utils.text.getProperty(prop, self.raw_propertiesMap)
+		if not rang or rang == 'special': pass
+		elif type(rang) == list: short_range, long_range = rang
+		else: short_range = int(rang)
+
 		return short_range, long_range, 'ft'
 
 	def getAction(self):
