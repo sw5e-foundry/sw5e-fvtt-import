@@ -246,7 +246,13 @@ class Feature(BaseFeature):
 
 	def processSubfeatures(self, importer):
 		for feature in self.subFeatures:
-			if entity := importer.get(self.getSourceType(), data={ "name": feature["name"] }):
+			data = {
+				"name": feature["name"],
+				"source": self.raw_source,
+				"sourceName": self.raw_sourceName,
+				"level": self.raw_level
+			}
+			if entity := importer.get('Feature', data=data):
 				feature["fid"] = entity.foundry_id
 				feature["uid"] = entity.uid
 
