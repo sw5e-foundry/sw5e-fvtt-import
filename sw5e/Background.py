@@ -110,7 +110,7 @@ class Background(sw5e.Entity.Item):
 
 	def getFeatOptionsText(self):
 		def getLink(feat):
-			return f'@Compendium[sw5e.feats.{feat.get("foundry_id", None)}]{{{feat["name"].capitalize()}}}'
+			return f'@UUID[Compendium.sw5e.feats.Item.{feat.get("foundry_id", None)}]{{{feat["name"].capitalize()}}}'
 
 		content = [ (
 			opt["roll"],

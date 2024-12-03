@@ -344,7 +344,7 @@ class Archetype(sw5e.Entity.Item):
 			for name, invocation in invocations.items():
 				if name.startswith('_'): continue
 				if "foundry_id" in invocation:
-					output += [f'<li>@Compendium[sw5e.invocations.{invocation["foundry_id"]}]{{{invocation["name"].capitalize()}}}</li>']
+					output += [f'<li>@UUID[Compendium.sw5e.invocations.Item.{invocation["foundry_id"]}]{{{invocation["name"].capitalize()}}}</li>']
 				else: self.broken_links += ['no foundry id']
 			output += ['</ul>']
 

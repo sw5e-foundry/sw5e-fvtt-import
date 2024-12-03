@@ -386,7 +386,7 @@ class Class(sw5e.Entity.Item):
 
 		if len(self.archetypes) > 0:
 			output += ['<ul>']
-			output += [f'<li>@Compendium[sw5e.archetypes.{arch["fid"]}]{{{arch["name"].capitalize()}}}</li>' for arch in self.archetypes]
+			output += [f'<li>@UUID[Compendium.sw5e.archetypes.Item.{arch["fid"]}]{{{arch["name"].capitalize()}}}</li>' for arch in self.archetypes]
 			output += ['</ul>']
 
 		self.archetypesFlavor = "\n".join(output)
@@ -399,7 +399,7 @@ class Class(sw5e.Entity.Item):
 			for name, invocation in invocations.items():
 				if name.startswith('_'): continue
 				if "foundry_id" in invocation:
-					output += [f'<li>@Compendium[sw5e.invocations.{invocation["foundry_id"]}]{{{invocation["name"].capitalize()}}}</li>']
+					output += [f'<li>@UUID[Compendium.sw5e.invocations.Item.{invocation["foundry_id"]}]{{{invocation["name"].capitalize()}}}</li>']
 				else: self.broken_links += ['no foundry id']
 			output += ['</ul>']
 

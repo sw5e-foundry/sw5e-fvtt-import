@@ -286,7 +286,7 @@ class Feature(BaseFeature):
 					for name, invocation in source_item.invocations[name].items():
 						if name.startswith('_'): continue
 						if "foundry_id" in invocation:
-							link = f'@Compendium[sw5e.invocations.{invocation["foundry_id"]}]{{{invocation["name"]}}}'
+							link = f'@UUID[Compendium.sw5e.invocations.Item.{invocation["foundry_id"]}]{{{invocation["name"]}}}'
 							text = re.sub(fr'#### {invocation["name"]}\r?\n', fr'#### {link}\n', text)
 						else:
 							self.broken_links += ['no feature or foundry id']
@@ -294,7 +294,7 @@ class Feature(BaseFeature):
 		if processing:
 			for sf in self.subFeatures:
 				if "fid" in sf and "comp" in sf:
-					link = f'@Compendium[sw5e.{sf["comp"]}.{sf["fid"]}]{{{sf["name"]}}}'
+					link = f'@UUID[Compendium.sw5e.{sf["comp"]}.Item.{sf["fid"]}]{{{sf["name"]}}}'
 					text = re.sub(fr'#### {sf["name"]}\r?\n', f'#### {link}\n', text)
 
 		return utils.text.markdownToHtml(text)

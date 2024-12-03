@@ -18,7 +18,7 @@ class Feat(sw5e.Feature.BaseFeature):
 			for uid in storage:
 				text = storage[uid].name
 				if storage[uid].foundry_id:
-					text = f'@Compendium[sw5e.feats.{storage[uid].foundry_id}]{{{text}}}'
+					text = f'@UUID[Compendium.sw5e.feats.Item.{storage[uid].foundry_id}]{{{text}}}'
 				else:
 					self.broken_links += ['no foundry id']
 				extra_text += f'\n- {text}'
