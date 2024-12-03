@@ -294,7 +294,7 @@ class Feature(BaseFeature):
 		if processing:
 			for sf in self.subFeatures:
 				if "fid" in sf and "comp" in sf:
-					link = f'@UUID[Compendium.sw5e.{sf["comp"]}.Item.{sf["fid"]}]{{{sf["name"]}}}'
+					link = f'@UUID[Compendium.sw5e.{sf["comp"].lower()}.Item.{sf["fid"]}]{{{sf["name"]}}}'
 					text = re.sub(fr'#### {sf["name"]}\r?\n', f'#### {link}\n', text)
 
 		return utils.text.markdownToHtml(text)
