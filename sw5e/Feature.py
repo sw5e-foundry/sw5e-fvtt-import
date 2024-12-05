@@ -160,7 +160,7 @@ class BaseFeature(
 
 class Feature(BaseFeature):
 	def getAttrs(self):
-		return super().getAttrs() + [ "level", "sourceEnum", "source", "sourceName", "metadata" ]
+		return super().getAttrs() + [ "level", "sourceEnum", "source", "sourceName", "metadata", "subtypeOverride" ]
 
 	def load(self, raw_item):
 		super().load(raw_item)
@@ -270,9 +270,9 @@ class Feature(BaseFeature):
 		if self.raw_source in ('ArchetypeInvocation', 'ClassInvocation'):
 			return 'class', f'{self.class_name.lower()}Invocation'
 		if self.raw_source in ('Archetype', 'Class'):
-			return 'class', None
+			return 'class', (self.raw_subtypeOverride or None)
 		if self.raw_source == 'Species':
-			return 'species', None
+			return 'species', (self.raw_subtypeOverride or None)
 
 	def getDescription(self, importer, processing=False):
 		text = self.raw_text
@@ -302,6 +302,13 @@ class Feature(BaseFeature):
 	def getSubEntities(self, importer):
 		sub_items = []
 
+		feature_types = {
+			subf["name"].lower(): subf["id"]
+			for feat in utils.config.feature_types
+			for subf in (feat["subtypes"] if "subtypes" in feat else ())
+		}
+		subtype = feature_types.get(self.name.lower(), None)
+
 		for feature in self.subFeatures:
 			data = {}
 
@@ -322,6 +329,7 @@ class Feature(BaseFeature):
 
 			data["name"] = feature["name"]
 			data["text"] = feature["text"]
+			if subtype: data["subtypeOverride"] = subtype
 
 			sub_items.append((data, 'feature'))
 

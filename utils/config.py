@@ -594,132 +594,310 @@ damage_types = (
 	},
 )
 
+feature_types = (
+	{
+		"name": "Background Feature",
+		"id": "background",
+	}, {
+		"name": "Class Feature",
+		"id": "class",
+		"subtypes": (
+			{
+				"name": "Berserker Instinct",
+				"id": "berserkerInvocation",
+			}, {
+				"name": "Channel the Force",
+				"id": "guardianCTF",
+			}, {
+				"name": "Discovery",
+				"id": "scholarInvocation",
+			}, {
+				"name": "Fighter Strategy",
+				"id": "fighterInvocation",
+			}, {
+				"name": "Focus Feature",
+				"id": "monkFocus",
+			}, {
+				"name": "Force Affinity",
+				"id": "consularForceAffinity",
+			}, {
+				"name": "Force-Empowered Casting",
+				"id": "consularInvocation",
+			}, {
+				"name": "Force-Empowered Self",
+				"id": "sentinelFES",
+			}, {
+				"name": "Guardian Aura",
+				"id": "guardianInvocation",
+			}, {
+				"name": "Modification",
+				"id": "engineerInvocation",
+			}, {
+				"name": "Monastic Vow",
+				"id": "monkInvocation",
+			}, {
+				"name": "Multiattack",
+				"id": "multiattack",
+			}, {
+				"name": "Operative Exploit",
+				"id": "operativeInvocation",
+			}, {
+				"name": "Scout Routine",
+				"id": "scoutInvocation",
+			}, {
+				"name": "Sentinel Ideal",
+				"id": "sentinelInvocation",
+			},
+		),
+	}, {
+		"name": "Monster Feature",
+		"id": "monster",
+	}, {
+		"name": "Species Feature",
+		"id": "race",
+	}, {
+		"name": "Enchantment",
+		"id": "enchantment",
+		"subtypes": (
+			{
+				"name": "Artificer Infusion",
+				"id": "artificerInfusion",
+			}, {
+				"name": "Rune",
+				"id": "rune",
+			}
+		)
+	}, {
+		"name": "Feat",
+		"id": "feat",
+		"subtypes": (
+			{
+				"name": "Epic Boon Feat",
+				"id": "epicBoon",
+			}, {
+				"name": "Fighting Style Feat",
+				"id": "fightingStyle",
+			}, {
+				"name": "General Feat",
+				"id": "general",
+			}, {
+				"name": "Origin Feat",
+				"id": "origin",
+			},
+		)
+	}, {
+		"name": "Supernatural Gift",
+		"id": "supernaturalGift",
+		"subtypes": (
+			{
+				"name": "Blessing",
+				"id": "blessing",
+			}, {
+				"name": "Charm",
+				"id": "charm",
+			}, {
+				"name": "Epic Boon",
+				"id": "epicBoon",
+			},
+		)
+	}, {
+		"name": "Customization Option",
+		"id": "customizationOption",
+		"subtypes": (
+			{
+				"name": "Class Improvement",
+				"id": "classImprovement",
+			}, {
+				"name": "Fighting Mastery",
+				"id": "fightingMastery",
+			}, {
+				"name": "Fighting Style",
+				"id": "fightingStyle",
+			}, {
+				"name": "Lightsaber Form",
+				"id": "lightsaberForm",
+			}, {
+				"name": "Multiclass Improvement",
+				"id": "multiclassImprovement",
+			}, {
+				"name": "Splashclass Improvement",
+				"id": "splashclassImprovement",
+			}, {
+				"name": "Weapon Focus",
+				"id": "weaponFocus",
+			}, {
+				"name": "Weapon Supremacy",
+				"id": "weaponSupremacy",
+			},
+		)
+	}, {
+		"name": "Deployment Feature",
+		"id": "deployment",
+		"subtypes": (
+			{
+				"name": "Venture",
+				"id": "venture",
+			},
+		)
+	}, {
+		"name": "Starship Feature",
+		"id": "starship",
+		"subtypes": (
+			{
+				"name": "Role",
+				"id": "role",
+			}, {
+				"name": "Role Mastery",
+				"id": "roleMastery",
+			}, {
+				"name": "Role Specialization",
+				"id": "roleSpecialization",
+			},
+		)
+	}, {
+		"name": "Starship Action",
+		"id": "starshipAction",
+		"subtypes": (
+			{
+				"name": "Crew Action",
+				"id": "crew",
+			}, {
+				"name": "Passenger Action",
+				"id": "passenger",
+			}, {
+				"name": "Pilot Action",
+				"id": "pilot",
+			},
+		)
+	}
+)
+
 conditions = (
-    {
-        "name": 'Bleeding',
-        "id": 'bleeding',
-        "levels": False,
-    }, {
-        "name": 'Blinded',
-        "id": 'blinded',
-        "levels": False,
-    }, {
-        "name": 'Burning',
-        "id": 'burning',
-        "levels": False,
-    }, {
-        "name": 'Charmed',
-        "id": 'charmed',
-        "levels": False,
-    }, {
-        "name": 'Corroded',
-        "id": 'corroded',
-        "levels": False,
-    }, {
-        "name": 'Cursed',
-        "id": 'cursed',
-        "levels": False,
-    }, {
-        "name": 'Deafened',
-        "id": 'deafened',
-        "levels": False,
-    }, {
-        "name": 'Dehydration',
-        "id": 'dehydration',
-        "levels": False,
-    }, {
-        "name": 'Diseased',
-        "id": 'diseased',
-        "levels": False,
-    }, {
-        "name": 'Exhaustion',
-        "id": 'exhaustion',
-        "levels": 6,
-    }, {
-        "name": 'Falling',
-        "id": 'falling',
-        "levels": False,
-    }, {
-        "name": 'Frightened',
-        "id": 'frightened',
-        "levels": False,
-    }, {
-        "name": 'Grappled',
-        "id": 'grappled',
-        "levels": False,
-    }, {
-        "name": 'Ignited',
-        "id": 'ignited',
-        "levels": False,
-    }, {
-        "name": 'Incapacitated',
-        "id": 'incapacitated',
-        "levels": False,
-    }, {
-        "name": 'Invisible',
-        "id": 'invisible',
-        "levels": False,
-    }, {
-        "name": 'Malnutrition',
-        "id": 'malnutrition',
-        "levels": False,
-    }, {
-        "name": 'Paralyzed',
-        "id": 'paralyzed',
-        "levels": False,
-    }, {
-        "name": 'Petrified',
-        "id": 'petrified',
-        "levels": False,
-    }, {
-        "name": 'Poisoned',
-        "id": 'poisoned',
-        "levels": False,
-    }, {
-        "name": 'Prone',
-        "id": 'prone',
-        "levels": False,
-    }, {
-        "name": 'Restrained',
-        "id": 'restrained',
-        "levels": False,
-    }, {
-        "name": 'Shocked',
-        "id": 'shocked',
-        "levels": False,
-    }, {
-        "name": 'Silenced',
-        "id": 'silenced',
-        "levels": False,
-    }, {
-        "name": 'Slowed',
-        "id": 'slowed',
-        "levels": 4,
-    }, {
-        "name": 'Stunned',
-        "id": 'stunned',
-        "levels": False,
-    }, {
-        "name": 'Suffocation',
-        "id": 'suffocation',
-        "levels": False,
-    }, {
-        "name": 'Surprised',
-        "id": 'surprised',
-        "levels": False,
-    }, {
-        "name": 'Transformed',
-        "id": 'transformed',
-        "levels": False,
-    }, {
-        "name": 'Unconscious',
-        "id": 'unconscious',
-        "levels": False,
-    }, {
-        "name": 'Weakened',
-        "id": 'weakened',
-        "levels": False,
-    },
+	{
+		"name": 'Bleeding',
+		"id": 'bleeding',
+		"levels": False,
+	}, {
+		"name": 'Blinded',
+		"id": 'blinded',
+		"levels": False,
+	}, {
+		"name": 'Burning',
+		"id": 'burning',
+		"levels": False,
+	}, {
+		"name": 'Charmed',
+		"id": 'charmed',
+		"levels": False,
+	}, {
+		"name": 'Corroded',
+		"id": 'corroded',
+		"levels": False,
+	}, {
+		"name": 'Cursed',
+		"id": 'cursed',
+		"levels": False,
+	}, {
+		"name": 'Deafened',
+		"id": 'deafened',
+		"levels": False,
+	}, {
+		"name": 'Dehydration',
+		"id": 'dehydration',
+		"levels": False,
+	}, {
+		"name": 'Diseased',
+		"id": 'diseased',
+		"levels": False,
+	}, {
+		"name": 'Exhaustion',
+		"id": 'exhaustion',
+		"levels": 6,
+	}, {
+		"name": 'Falling',
+		"id": 'falling',
+		"levels": False,
+	}, {
+		"name": 'Frightened',
+		"id": 'frightened',
+		"levels": False,
+	}, {
+		"name": 'Grappled',
+		"id": 'grappled',
+		"levels": False,
+	}, {
+		"name": 'Ignited',
+		"id": 'ignited',
+		"levels": False,
+	}, {
+		"name": 'Incapacitated',
+		"id": 'incapacitated',
+		"levels": False,
+	}, {
+		"name": 'Invisible',
+		"id": 'invisible',
+		"levels": False,
+	}, {
+		"name": 'Malnutrition',
+		"id": 'malnutrition',
+		"levels": False,
+	}, {
+		"name": 'Paralyzed',
+		"id": 'paralyzed',
+		"levels": False,
+	}, {
+		"name": 'Petrified',
+		"id": 'petrified',
+		"levels": False,
+	}, {
+		"name": 'Poisoned',
+		"id": 'poisoned',
+		"levels": False,
+	}, {
+		"name": 'Prone',
+		"id": 'prone',
+		"levels": False,
+	}, {
+		"name": 'Restrained',
+		"id": 'restrained',
+		"levels": False,
+	}, {
+		"name": 'Shocked',
+		"id": 'shocked',
+		"levels": False,
+	}, {
+		"name": 'Silenced',
+		"id": 'silenced',
+		"levels": False,
+	}, {
+		"name": 'Slowed',
+		"id": 'slowed',
+		"levels": 4,
+	}, {
+		"name": 'Stunned',
+		"id": 'stunned',
+		"levels": False,
+	}, {
+		"name": 'Suffocation',
+		"id": 'suffocation',
+		"levels": False,
+	}, {
+		"name": 'Surprised',
+		"id": 'surprised',
+		"levels": False,
+	}, {
+		"name": 'Transformed',
+		"id": 'transformed',
+		"levels": False,
+	}, {
+		"name": 'Unconscious',
+		"id": 'unconscious',
+		"levels": False,
+	}, {
+		"name": 'Weakened',
+		"id": 'weakened',
+		"levels": False,
+	},
 )
 
 enhanced_item_no_icons = (
