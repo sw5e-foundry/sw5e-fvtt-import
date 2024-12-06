@@ -2,18 +2,34 @@ import sw5e.Feature, utils.text
 import re, json
 
 class Feat(sw5e.Feature.BaseFeature):
+	############################
+	#      Load Functions      #
+	############################
+
 	def getAttrs(self):
 		return super().getAttrs() + [ "attributesIncreased" ]
+
+	def loadFeatType(self):
+		return 'feat', None
+
+	############################
+	#    Process Functions     #
+	############################
 
 	def process(self, importer):
 		super().process(importer)
 
-	def getFeatType(self):
-		return 'feat', None
+	############################
+	#      Other Functions     #
+	############################
 
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)
 		return f'modules/sw5e/icons/packs/Feats/{name}.webp'
+
+	############################
+	#    Template Functions    #
+	############################
 
 	# templates.ItemDescription
 	def processDescription(self, importer):

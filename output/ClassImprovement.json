@@ -11,6 +11,37 @@
         "img": "modules/sw5e/icons/packs/Classes/Berserker.webp",
         "name": "Berserker",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "reaction"
+                    },
+                    "description": {
+                        "value": "<p>When a creature ends its turn within 15 feet of you, you can use your reaction to move up to half your speed to a space closer to the creature. This movement doesn't provoke opportunity attacks.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "15"
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>When a creature ends its turn within 15 feet of you, you can use your reaction to move up to half your speed to a space closer to the creature. This movement doesn't provoke opportunity attacks.</p>"
             },
@@ -135,6 +166,37 @@
         "img": "modules/sw5e/icons/packs/Classes/Guardian.webp",
         "name": "Guardian",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<p>As a bonus action, you can expend a use of your Channel the Force to regain 2 force points. You can use this feature a number of times equal to your proficiency bonus, as shown in the guardian table. You regain all expended uses when you complete a long rest.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>As a bonus action, you can expend a use of your Channel the Force to regain 2 force points. You can use this feature a number of times equal to your proficiency bonus, as shown in the guardian table. You regain all expended uses when you complete a long rest.</p>"
             },
@@ -166,6 +228,53 @@
         "img": "modules/sw5e/icons/packs/Classes/Monk.webp",
         "name": "Monk",
         "system": {
+            "activities": {
+                "sw5e0heal0000000": {
+                    "_id": "sw5e0heal0000000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "action"
+                    },
+                    "description": {
+                        "value": "<p>As an action, you can spend 2 focus points and a roll a Martial Arts die. You regain a number of hit points equal to the amount rolled + your Wisdom or Charisma modifier (your choice, a minimum of one).</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "healing": {
+                        "bonus": null,
+                        "custom": {
+                            "enabled": true,
+                            "formula": "@mod"
+                        },
+                        "denomination": null,
+                        "number": null,
+                        "scaling": {
+                            "formula": null,
+                            "mode": "",
+                            "number": 1
+                        },
+                        "types": [
+                            "healing"
+                        ]
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "heal"
+                }
+            },
             "description": {
                 "value": "<p>As an action, you can spend 2 focus points and a roll a Martial Arts die. You regain a number of hit points equal to the amount rolled + your Wisdom or Charisma modifier (your choice, a minimum of one).</p>"
             },
@@ -197,6 +306,37 @@
         "img": "modules/sw5e/icons/packs/Classes/Operative.webp",
         "name": "Operative",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<p>You can use the bonus action granted by your Cunning Action to carefully aim your next attack. You gain advantage on your next attack roll before the end of your current turn. You can't use this feature if you have moved during this turn, and using this feature reduces your speed to 0 until the end of your current turn.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You can use the bonus action granted by your Cunning Action to carefully aim your next attack. You gain advantage on your next attack roll before the end of your current turn. You can't use this feature if you have moved during this turn, and using this feature reduces your speed to 0 until the end of your current turn.</p>"
             },
@@ -259,6 +399,53 @@
         "img": "modules/sw5e/icons/packs/Classes/Scout.webp",
         "name": "Scout",
         "system": {
+            "activities": {
+                "sw5e0heal0000000": {
+                    "_id": "sw5e0heal0000000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "action"
+                    },
+                    "description": {
+                        "value": "<p>As an action, you can reduce your exhaustion level by 1 and give yourself a number of temporary hit points equal to [[/r 1d10]] + your scout level. </p>\n<p>Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "healing": {
+                        "bonus": " + @classes.scout.levels",
+                        "custom": {
+                            "enabled": false,
+                            "formula": null
+                        },
+                        "denomination": "10",
+                        "number": "1",
+                        "scaling": {
+                            "formula": null,
+                            "mode": "",
+                            "number": 1
+                        },
+                        "types": [
+                            "temphp"
+                        ]
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "heal"
+                }
+            },
             "description": {
                 "value": "<p>As an action, you can reduce your exhaustion level by 1 and give yourself a number of temporary hit points equal to [[/r 1d10]] + your scout level. </p>\n<p>Once you've used this feature, you must complete a short or long rest before you can use it again.</p>"
             },

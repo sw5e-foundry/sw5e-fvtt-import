@@ -112,6 +112,11 @@ def getActivation(text, uses, recharge, default=None):
 	if text:
 		text = text.lower()
 
+		patterns = [
+			f'no longer requires your bonus action',
+		]
+		for pat in patterns: text = re.sub(pat, 'NOPE', text)
+
 		if re.search(r'as a reaction|you can use your reaction|using your reaction|you can use this special reaction|reaction on your turn', text):
 			return 'reaction'
 		elif re.search(r'bonus action', text):
@@ -385,6 +390,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 	if text:
 		text = text.lower()
 		text, _ = getStatblocks(text)
+		_text = text
 
 		## Power Attack
 		pattern = r'(make|making) a (?P<range>ranged|melee) (force|tech) attack'
@@ -435,7 +441,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 			prof_bonus = match.groupdict().get('prof_bonus')
 
 			if dice and dice.startswith('d'): dice = f'1{dice}'
-			if dice or rolled or flat or ability_mod or class_lvl:
+			if dice or rolled or flat or ability_mod or char_lvl or class_lvl or ability_mod2 or prof_bonus:
 				formula = dice
 				if rolled and not has_rolled and rolled_formula != '@ROLLED':
 					has_rolled = True
@@ -522,26 +528,30 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 		for pat in patterns: text = re.sub(pat, ability_check, text)
 
 		## Damage
-		opt1 = fr'(?:takes?|taking|deals?|dealing|do|suffer)(?:(?: an)? (?:extra|additional)| up to)?'
-		opt2 = fr','
-		opt3 = fr'(?:and|plus|weapon\'s damage dice \+)(?: another| an extra)?'
-		prefix1 = fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)?'
-		prefix2 = fr'(?:{opt1})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)'
-		posfix1 = fr'(?:of )?(?:(?P<type2>\w+)?(?:,(?: or)? \w+)*)?(?: ?damage| (?=[^.]+ damage))'
+		opt1 = ncapt(fr'(?:takes?|taking|deals?|dealing|do|suffer)(?:(?: an)? (?:extra|additional)| up to)?')
+		opt2 = ncapt(fr',')
+		opt3 = ncapt(fr'(?:and|plus|weapon\'s damage dice \+)(?: another| an extra)?')
+		prefix1_ = ncapt(fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)')
+		prefix1 = ncapt(fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)?')
+		prefix2 = ncapt(fr'(?:{opt1})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)')
+		posfix1 = ncapt(fr'(?:of )?(?:(?P<type2>\w+)?(?:,(?: or)? \w+)*)?(?: ?damage| (?=[^.]+ damage))')
 
-		opt1 = fr'the (?P<type>\w+ )?damage (?:also )?increases by'
-		opt2 = fr'increase the damage by'
-		opt3 = fr'(?:base|the additional|the extra) damage is'
-		opt4 = fr'damage die becomes a'
-		prefix3 = fr'(?:{opt1}|{opt2}|{opt3}|{opt4})'
+		opt5 = ncapt(fr'the (?P<type>\w+ )?damage (?:also )?increases by')
+		opt6 = ncapt(fr'increase the damage by')
+		opt7 = ncapt(fr'(?:base|the additional|the extra) damage is')
+		opt8 = ncapt(fr'damage die becomes a')
+		prefix3 = ncapt(fr'(?:{opt5}|{opt6}|{opt7}|{opt8})')
 
-		patterns = [fr'{prefix1} \d+ \({p_formula}\) {posfix1}']
+		patterns = []
+		patterns += [fr'{prefix1} \d+ \({p_formula}\) {posfix1}']
 		patterns += [fr'{prefix2} \d+ \({p_formula}\)']
 		patterns += [fr'{prefix3} \d+ \({p_formula}\)']
 		patterns += [fr'{prefix1} {p_formula} {posfix1}']
 		patterns += [fr'{prefix2} {p_formula}']
 		patterns += [fr'{prefix3} {p_formula}']
 		patterns += [fr'the (?P<type>\w+) damage (?:equals|is equal to) {p_formula}']
+		patterns += [fr'{prefix1_} \d+ \({p_formula}\) ?{posfix1}?']
+		patterns += [fr'{prefix1_} {p_formula} ?{posfix1}?']
 		def dmg(match):
 			nonlocal action_type, damage, other_formula, damage_type
 
@@ -645,7 +655,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 			if re.search(pattern_ignore, text):
 				return formula
 			else:
-				raise ValueError(f'Unprocessed dice {formula} in {name}', text)
+				raise ValueError(f'Unprocessed dice {formula} in {name}', text, _text)
 
 			return 'FORMULA'
 		text = re.sub(pattern, unprocessed, text)

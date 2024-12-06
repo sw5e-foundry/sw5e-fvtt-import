@@ -6,6 +6,10 @@ class BaseFeature(
 	sw5e.templates.Activities,
 	sw5e.templates.ItemDescription,
 ):
+	############################
+	#      Load Functions      #
+	############################
+
 	def getType(self):
 		return 'feat'
 
@@ -28,48 +32,54 @@ class BaseFeature(
 
 		self.raw_text = self.raw_text or self.raw_description
 		self.raw_requirements = self.raw_requirements or self.raw_prerequisite
+
 		self.traits = self.loadTraits()
+		self.duration_value, self.duration_unit = self.loadDuration()
+		self.target_val, self.target_unit, self.target_type = self.loadTarget()
+		self.range_val, self.range_unit = self.loadRange()
+		self.uses, self.recharge = self.loadUses()
+		self.action_type, self.damage, self.formula, self.save, self.save_dc, _ = self.loadAction()
+		self.activation_type, self.activation_num, self.activation_condition = self.loadActivation()
+		self.featType, self.featSubtype = self.loadFeatType()
+		self.consume = self.loadConsume()
 
 	def loadTraits(self):
 		return utils.text.getTraits(self.raw_text.lower(), self.name)
 
+	def loadDuration(self):
+		return utils.text.getDuration(self.raw_text, self.name)
 
+	def loadUses(self):
+		return utils.text.getUses(self.raw_text, self.name)
+
+	def loadTarget(self):
+		return utils.text.getTarget(self.raw_text, self.name)
+
+	def loadRange(self):
+		return utils.text.getRange(self.raw_text, self.name)
+
+	def loadAction(self):
+		return utils.text.getAction(self.raw_text, self.name)
+
+	def loadConsume(self):
+		return {}
+
+	def loadActivation(self):
+		return utils.text.getActivation(self.raw_text, self.uses, self.recharge), 1, None
+
+	def loadFeatType(self):
+		raise NotImplementedError
+
+	############################
+	#    Process Functions     #
+	############################
 
 	def process(self, importer):
 		super().process(importer)
 
-		self.duration_value, self.duration_unit = self.getDuration()
-		self.target_val, self.target_unit, self.target_type = self.getTarget()
-		self.range = self.getRange()
-		self.uses, self.recharge = self.getUses()
-		self.action_type, self.damage, self.formula, self.save, self.save_dc, _ = self.getAction()
-		self.activation = self.getActivation()
-		self.featType, self.featSubtype = self.getFeatType()
-
-	def getActivation(self):
-		return utils.text.getActivation(self.raw_text, self.uses, self.recharge)
-
-	def getDuration(self):
-		return utils.text.getDuration(self.raw_text, self.name)
-
-	def getTarget(self):
-		return utils.text.getTarget(self.raw_text, self.name)
-
-	def getRange(self):
-		value, unit = utils.text.getRange(self.raw_text, self.name)
-		return {
-			'value': value,
-			'unit': unit
-		}
-
-	def getUses(self):
-		return utils.text.getUses(self.raw_text, self.name)
-
-	def getAction(self):
-		return utils.text.getAction(self.raw_text, self.name)
-
-	def getFeatType(self):
-		raise NotImplementedError
+	############################
+	#      Other Functions     #
+	############################
 
 	def getImg(self, importer=None):
 		raise NotImplementedError
@@ -103,22 +113,30 @@ class BaseFeature(
 	# templates.Activities
 	def getActivitiesData(self):
 		return None
+	def processActivitiesData(self, importer):
+		damage, healing = self.damage.splitTypes(['healing', 'temphp'])
+		healing = healing.parts[0] if len(healing.parts) else None
+
 		return {
 			"action_type": self.action_type,
-
 			# "name": "",
 			"activation": {
-				"type": self.activation,
-				"cost": 1 if self.activation else None
+				"type": self.activation_type,
+				"cost": self.activation_num,
+				"condition": self.activation_condition,
 			},
-			# "consumption": {},
+			"consumption": self.consume or {},
 			"description": { "value": self.description },
 			"duration": {
 				"value": self.duration_value,
 				"units": self.duration_unit
 			},
 			# "effects": {},
-			"range": self.range,
+			"range": {
+				"value": self.range_val,
+				"long": None,
+				"units": self.range_unit or 'ft',
+			},
 			"target": {
 				"value": self.target_val,
 				"width": None,
@@ -130,9 +148,12 @@ class BaseFeature(
 			"attack": {
 				"ability": "",
 				"bonus": "",
-				"classification": "spell",
+				"critical": { "threshold": None },
 				"flat": False,
-				"type": "melee",
+				"type": {
+					"value": 'melee',
+					"classification": 'spell',
+				},
 			},
 			"check": {
 				"ability": "",
@@ -142,25 +163,19 @@ class BaseFeature(
 					"formula": "",
 				}
 			},
-			"damage": {
-				"critical": { "allow": True },
-				"parts": self.damage["parts"],
-			},
-			"versatile": self.damage["versatile"],
+			"damage": damage,
 			"effects": {},
 			"enchant": {},
-			"healing": self.damage["parts"],
+			"healing": healing,
 			"save": {
 				"ability": self.save,
 				"dc": {
-					"calculation": "" if self.save_dc else "spell",
+					"calculation": "" if self.save_dc else "spellcasting",
 					"formula": self.save_dc or ""
 				}
 			},
 			"roll": self.formula,
 		}
-	def processActivitiesData(self, importer):
-		pass
 
 	# templates.ItemDescription
 	def getDescription(self):
@@ -174,13 +189,43 @@ class BaseFeature(
 class Feature(
 	BaseFeature
 ):
+	############################
+	#      Load Functions      #
+	############################
+
 	def getAttrs(self):
 		return super().getAttrs() + [ "level", "sourceEnum", "source", "sourceName", "metadata", "subtypeOverride" ]
 
 	def load(self, raw_item):
 		super().load(raw_item)
 
-		self.subFeatures = self.getSubfeatures()
+		self.subFeatures = self.loadSubfeatures()
+
+	def loadFeatType(self):
+		if self.raw_source in ('ArchetypeInvocation', 'ClassInvocation'):
+			return 'class', (self.raw_subtypeOverride or None)
+		if self.raw_source in ('Archetype', 'Class'):
+			return 'class', (self.raw_subtypeOverride or None)
+		if self.raw_source == 'Species':
+			return 'species', (self.raw_subtypeOverride or None)
+
+	def loadSubfeatures(self):
+		subFeatures = []
+
+		for text in re.split(r'(?<!#)####(?!#)', self.raw_text)[1:]:
+			lines = text.strip().split('\n')
+			data = {
+				"name": lines[0],
+				"text": '\n'.join(lines[1:]),
+				"comp": f'{self.getSourceType()}features',
+			}
+			subFeatures.append(data)
+
+		return subFeatures
+
+	############################
+	#    Process Functions     #
+	############################
 
 	def process(self, importer):
 		self.class_name = self.getClassName(importer)
@@ -191,31 +236,7 @@ class Feature(
 		self.raw_contentType, self.raw_contentTypeEnum = self.getContentType(importer)
 		self.raw_contentSource, self.raw_contentSourceEnum = self.getContentSource(importer)
 		self.processSubfeatures(importer)
-
-	def getImg(self, importer=None):
-		if self.raw_source in ['Class', 'Archetype', 'ClassInvocation', 'ArchetypeInvocation']:
-
-			class_abbr = { c["name"]: c["id"] for c in utils.config.classes }.get(self.class_name or self.raw_sourceName, 'BSKR')
-			activation = {
-				'bonus': 'Bonus',
-				'action': 'Action',
-				'reaction': 'Reaction',
-				'special': 'Action',
-				'none': 'Passive',
-				None: 'Passive',
-			}.get(self.activation, 'Passive')
-			return f'modules/sw5e/icons/packs/Class%20Features/{class_abbr}{"-ARCH" if self.raw_source == "Archetype" else ""}-{activation}.webp'
-		else:
-			return f'modules/sw5e/icons/packs/{self.raw_source}/{utils.text.slugify(self.raw_sourceName)}.webp'
-
-	def getClassName(self, importer):
-		if self.raw_source in ('Archetype', 'ArchetypeInvocation'):
-			if archetype := self.getSourceItem(importer):
-				return archetype.raw_className
-			else:
-				self.broken_links += ['cant find class name']
-		elif self.raw_source in ('Class', 'ClassInvocation'):
-			return self.raw_sourceName
+		self.processFeatType(importer)
 
 	def getRequirements(self, importer):
 		req = self.raw_sourceName
@@ -225,10 +246,6 @@ class Feature(
 		if self.raw_requirements: req += f', {self.raw_requirements}'
 
 		return req
-
-	def getFile(self, importer):
-		if self.raw_source in ('ClassInvocation', 'ArchetypeInvocation'): return 'ClassInvocation'
-		return f'{self.raw_source}Feature'
 
 	def getContentType(self, importer):
 		if self.raw_contentType and self.raw_contentTypeEnum: return self.raw_contentType, self.raw_contentTypeEnum
@@ -244,20 +261,6 @@ class Feature(
 			return sourceItem.raw_contentSource, sourceItem.raw_contentSourceEnum
 		return '', 0
 
-	def getSubfeatures(self):
-		subFeatures = []
-
-		for text in re.split(r'(?<!#)####(?!#)', self.raw_text)[1:]:
-			lines = text.strip().split('\n')
-			data = {
-				"name": lines[0],
-				"text": '\n'.join(lines[1:]),
-				"comp": f'{self.getSourceType()}features',
-			}
-			subFeatures.append(data)
-
-		return subFeatures
-
 	def processSubfeatures(self, importer):
 		for feature in self.subFeatures:
 			data = {
@@ -270,6 +273,43 @@ class Feature(
 				feature["fid"] = entity.foundry_id
 				feature["uid"] = entity.uid
 
+	def processFeatType(self, importer):
+		if self.raw_source in ('ArchetypeInvocation', 'ClassInvocation'):
+			self.subtype = f'{self.class_name.lower()}Invocation'
+
+	############################
+	#      Other Functions     #
+	############################
+
+	def getImg(self, importer=None):
+		if self.raw_source in ['Class', 'Archetype', 'ClassInvocation', 'ArchetypeInvocation']:
+
+			class_abbr = { c["name"]: c["id"] for c in utils.config.classes }.get(self.class_name or self.raw_sourceName, 'BSKR')
+			activation = {
+				'bonus': 'Bonus',
+				'action': 'Action',
+				'reaction': 'Reaction',
+				'special': 'Action',
+				'none': 'Passive',
+				None: 'Passive',
+			}.get(self.activation_type, 'Passive')
+			return f'modules/sw5e/icons/packs/Class%20Features/{class_abbr}{"-ARCH" if self.raw_source == "Archetype" else ""}-{activation}.webp'
+		else:
+			return f'modules/sw5e/icons/packs/{self.raw_source}/{utils.text.slugify(self.raw_sourceName)}.webp'
+
+	def getClassName(self, importer):
+		if self.raw_source in ('Archetype', 'ArchetypeInvocation'):
+			if archetype := self.getSourceItem(importer):
+				return archetype.raw_className
+			else:
+				self.broken_links += ['cant find class name']
+		elif self.raw_source in ('Class', 'ClassInvocation'):
+			return self.raw_sourceName
+
+	def getFile(self, importer):
+		if self.raw_source in ('ClassInvocation', 'ArchetypeInvocation'): return 'ClassInvocation'
+		return f'{self.raw_source}Feature'
+
 	def getSourceType(self):
 		if self.raw_source in ('Archetype', 'ArchetypeInvocation'): return 'Archetype'
 		elif self.raw_source in ('Class', 'ClassInvocation'): return 'Class'
@@ -279,14 +319,6 @@ class Feature(
 		if importer and (item := importer.get(self.getSourceType(), data={ "name": self.raw_sourceName })):
 			return item
 		else: self.broken_links += ['cant get source item']
-
-	def getFeatType(self):
-		if self.raw_source in ('ArchetypeInvocation', 'ClassInvocation'):
-			return 'class', f'{self.class_name.lower()}Invocation'
-		if self.raw_source in ('Archetype', 'Class'):
-			return 'class', (self.raw_subtypeOverride or None)
-		if self.raw_source == 'Species':
-			return 'species', (self.raw_subtypeOverride or None)
 
 	def getSubEntities(self, importer):
 		sub_items = []
@@ -359,7 +391,7 @@ class Feature(
 
 
 class CustomizationOption(BaseFeature):
-	def getFeatType(self):
+	def loadFeatType(self):
 		subtype = self.__class__.__name__
 		subtype = ''.join((subtype[0].lower(), subtype[1:]))
 		return 'customizationOption', subtype

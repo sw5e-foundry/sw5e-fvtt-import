@@ -2,14 +2,26 @@ import sw5e.Feature, utils.text
 import re, json
 
 class Maneuvers(sw5e.Feature.BaseFeature):
+	############################
+	#      Load Functions      #
+	############################
+
 	def getAttrs(self):
 		return super().getAttrs() + [ "metadata", "type", "eTag" ]
 
+	def loadFeatType(self):
+		return None, None
+
+	############################
+	#    Process Functions     #
+	############################
+
+	############################
+	#      Other Functions     #
+	############################
+
 	def getType(self):
 		return "sw5e.maneuver"
-
-	def getFeatType(self):
-		return None, None
 
 	def getImg(self, importer=None):
 		name = utils.text.slugify(self.name)
@@ -32,3 +44,7 @@ class Maneuvers(sw5e.Feature.BaseFeature):
 
 	def getFile(self, importer):
 		return f'Maneuver'
+
+	############################
+	#    Template Functions    #
+	############################

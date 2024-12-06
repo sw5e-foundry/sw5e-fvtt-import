@@ -11,6 +11,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/AreaStyle.webp",
         "name": "Area Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled with weapons that affect an area. You gain the following benefits:</p>\n<ul>\n<li>When a creature successfully saves against your projector canister, you can use your bonus action to force them to repeat the save.</li>\n<li>When a creature rolls a 1 on the saving throw against a projector canister you control, they treat the effect's damage as if it had rolled the maximum.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled with weapons that affect an area. You gain the following benefits:</p>\n<ul>\n<li>When a creature successfully saves against your projector canister, you can use your bonus action to force them to repeat the save.</li>\n<li>When a creature rolls a 1 on the saving throw against a projector canister you control, they treat the effect's damage as if it had rolled the maximum.</li>"
             },
@@ -42,6 +73,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/AssistingStyle.webp",
         "name": "Assisting Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "reaction"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at enabling your allies. You gain the following benefits:</p>\n<ul>\n<li>You can take the Help action as a bonus action. If you could already take the Help action as a bonus action, you can instead take it as a reaction on your turn.</li>\n<li>Creatures benefiting from your Help action can't have disadvantage on the affected ability check or attack roll.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at enabling your allies. You gain the following benefits:</p>\n<ul>\n<li>You can take the Help action as a bonus action. If you could already take the Help action as a bonus action, you can instead take it as a reaction on your turn.</li>\n<li>Creatures benefiting from your Help action can't have disadvantage on the affected ability check or attack roll.</li>"
             },
@@ -73,6 +135,60 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/BerserkStyle.webp",
         "name": "Berserk Style",
         "system": {
+            "activities": {
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "@abilities.str.mod"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    "if"
+                                ]
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at returning pain to those who deliver it. You gain the following benefits: </p>\n<ul>\n<li>When you hit with a melee weapon attack using Strength, you deal additional damage equal to your Strength modifier if that creature dealt damage to you since the start of your last turn.</li>\n<li>When you choose to let an attack that would miss you hit you instead, the creature rolls the damage as normal instead of choosing the maximum.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "damage"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at returning pain to those who deliver it. You gain the following benefits: </p>\n<ul>\n<li>When you hit with a melee weapon attack using Strength, you deal additional damage equal to your Strength modifier if that creature dealt damage to you since the start of your last turn.</li>\n<li>When you choose to let an attack that would miss you hit you instead, the creature rolls the damage as normal instead of choosing the maximum.</li>"
             },
@@ -104,6 +220,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/BlindfightingStyle.webp",
         "name": "Blindfighting Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at fighting without sight. You gain the following benefits:</p>\n<ul>\n<li>You gain blindsight out to 10 feet. If you already have blindsight, it instead increases by 10 feet.</li>\n<li>You can use your bonus action to double the range of your blindsight until the start of your next turn.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at fighting without sight. You gain the following benefits:</p>\n<ul>\n<li>You gain blindsight out to 10 feet. If you already have blindsight, it instead increases by 10 feet.</li>\n<li>You can use your bonus action to double the range of your blindsight until the start of your next turn.</li>"
             },
@@ -135,6 +282,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/BrawlerStyle.webp",
         "name": "Brawler Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at using your weight to your advantage. You gain the following benefits:</p>\n<ul>\n<li>You are proficient with improvised weapons.</li>\n<li>Your damage die for your unarmed strikes and natural weapons increases by one step (from 1 to [[/r d4]], [[/r d4]] to [[/r d6]], or [[/r d6]] to [[/r d8]]).</li>\n<li>When you take the Attack action and attempt to grapple, shove, or trip a creature, or make an attack against a creature with an unarmed strike or a weapon wielded in one hand on your turn, you can use your bonus action to make an unarmed strike, grapple, shove, or trip against the same creature.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at using your weight to your advantage. You gain the following benefits:</p>\n<ul>\n<li>You are proficient with improvised weapons.</li>\n<li>Your damage die for your unarmed strikes and natural weapons increases by one step (from 1 to [[/r d4]], [[/r d4]] to [[/r d6]], or [[/r d6]] to [[/r d8]]).</li>\n<li>When you take the Attack action and attempt to grapple, shove, or trip a creature, or make an attack against a creature with an unarmed strike or a weapon wielded in one hand on your turn, you can use your bonus action to make an unarmed strike, grapple, shove, or trip against the same creature.</li>"
             },
@@ -166,6 +344,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/CounterstrikeStyle.webp",
         "name": "Counterstrike Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at returning attacks at those who dare strike you. You gain the following benefits:</p>\n<ul>\n<li>When you would provoke an opportunity attack on your turn, you can use your bonus action to force the creature to make the opportunity attack, if it can.</li>\n<li>Creatures who make opportunity attacks against you provoke opportunity attacks from you.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at returning attacks at those who dare strike you. You gain the following benefits:</p>\n<ul>\n<li>When you would provoke an opportunity attack on your turn, you can use your bonus action to force the creature to make the opportunity attack, if it can.</li>\n<li>Creatures who make opportunity attacks against you provoke opportunity attacks from you.</li>"
             },
@@ -197,6 +406,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/CovertStyle.webp",
         "name": "Covert Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "reaction"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at fighting from unseen angles. You gain the following benefits:</p>\n<ul>\n<li>You can take the Hide action as a bonus action. If you could already take the Hide action as a bonus action, you can instead take it as a reaction on your turn.</li>\n<li>Creatures you've dealt damage to since the start of your last turn have disadvantage on Wisdom (Perception) checks made to find you.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at fighting from unseen angles. You gain the following benefits:</p>\n<ul>\n<li>You can take the Hide action as a bonus action. If you could already take the Hide action as a bonus action, you can instead take it as a reaction on your turn.</li>\n<li>Creatures you've dealt damage to since the start of your last turn have disadvantage on Wisdom (Perception) checks made to find you.</li>"
             },
@@ -228,6 +468,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/DefenseStyle.webp",
         "name": "Defense Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at the art of defending yourself. You gain the following benefits:</p>\n<ul>\n<li>While you are wearing medium or heavy armor with which you are proficient, you can use your bonus action to mark a target within 30 feet that you can see until the end of your next turn. When you do so, damage dealt to you by the target is reduced by an amount equal to half your Strength or Constitution modifier (your choice, minimum of one) while marked. If this would reduce the damage to 0, the damage is instead reduced to 1. You can only have one creature marked in this way at a time.</li>\n<li>You have advantage on Strength checks and Strength saving throws to avoid being moved.</li>"
+                    },
+                    "duration": {
+                        "units": "turn",
+                        "value": 1
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "30"
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at the art of defending yourself. You gain the following benefits:</p>\n<ul>\n<li>While you are wearing medium or heavy armor with which you are proficient, you can use your bonus action to mark a target within 30 feet that you can see until the end of your next turn. When you do so, damage dealt to you by the target is reduced by an amount equal to half your Strength or Constitution modifier (your choice, minimum of one) while marked. If this would reduce the damage to 0, the damage is instead reduced to 1. You can only have one creature marked in this way at a time.</li>\n<li>You have advantage on Strength checks and Strength saving throws to avoid being moved.</li>"
             },
@@ -259,6 +530,49 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/DisruptionStyle.webp",
         "name": "Disruption Style",
         "system": {
+            "activities": {
+                "sw5e0save0000000": {
+                    "_id": "sw5e0save0000000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": []
+                    },
+                    "description": {
+                        "value": "<p>Choose one from force- or tech-casting. You are skilled at fighting and interfering with casters of the chosen type. You gain the following benefits:</p>\n<ul>\n<li>When you force a creature to make a Constitution saving throw to maintain concentration on your turn, and they succeed on the save, you can use your bonus action to force them to reroll the save. They must use the new roll.</li>\n<li>Once per round, when a hostile creature attempts to cast a power while within 5 feet of you, they must first make a Constitution saving throw as if to maintain concentration (DC = 10 + the power's level). On a failure, the power isn't cast and any points are wasted.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "5"
+                    },
+                    "save": {
+                        "ability": "con",
+                        "dc": {
+                            "calculation": "spellcasting",
+                            "formula": ""
+                        }
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "save"
+                }
+            },
             "description": {
                 "value": "<p>Choose one from force- or tech-casting. You are skilled at fighting and interfering with casters of the chosen type. You gain the following benefits:</p>\n<ul>\n<li>When you force a creature to make a Constitution saving throw to maintain concentration on your turn, and they succeed on the save, you can use your bonus action to force them to reroll the save. They must use the new roll.</li>\n<li>Once per round, when a hostile creature attempts to cast a power while within 5 feet of you, they must first make a Constitution saving throw as if to maintain concentration (DC = 10 + the power's level). On a failure, the power isn't cast and any points are wasted.</li>"
             },
@@ -321,6 +635,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/DuelistStyle.webp",
         "name": "Duelist Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled in the art of fighting with a single weapon. You gain the following benefits:</p>\n<ul>\n<li>While you are wielding a weapon in one hand with which you are proficient and no other weapons, you can use your bonus action to feint. If you do so, you must make a Dexterity (Sleight of Hand) or Charisma (Deception) check (your choice) contested by the target's Wisdom (Insight) check. On a success, you have advantage on the first attack roll you make against them before the start of your next turn.</li>\n<li>While you are wielding a weapon in one hand with which you are proficient and no other weapons, when you miss with a weapon attack on your turn, you can use your bonus action to repeat the attack against the same target. Any modifications to the original attack roll, such as advantage, disadvantage, or without your proficiency bonus, also affect this attack roll.</li>\n<li>Once on each of your turns, drawing or stowing a one-handed weapon no longer requires your object interaction.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled in the art of fighting with a single weapon. You gain the following benefits:</p>\n<ul>\n<li>While you are wielding a weapon in one hand with which you are proficient and no other weapons, you can use your bonus action to feint. If you do so, you must make a Dexterity (Sleight of Hand) or Charisma (Deception) check (your choice) contested by the target's Wisdom (Insight) check. On a success, you have advantage on the first attack roll you make against them before the start of your next turn.</li>\n<li>While you are wielding a weapon in one hand with which you are proficient and no other weapons, when you miss with a weapon attack on your turn, you can use your bonus action to repeat the attack against the same target. Any modifications to the original attack roll, such as advantage, disadvantage, or without your proficiency bonus, also affect this attack roll.</li>\n<li>Once on each of your turns, drawing or stowing a one-handed weapon no longer requires your object interaction.</li>"
             },
@@ -352,6 +697,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/EquilibriumStyle.webp",
         "name": "Equilibrium Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at fighting without the confines of armor. You gain the following benefits:</p>\n<ul>\n<li>While you are wearing light or no armor and not wielding a shield, you can use your bonus action to mark a target within 30 feet that you can see until the end of your next turn. When you do so, you gain a bonus to AC and Dexterity saving throws against effects the target controls equal to half your Dexterity modifier (minimum of +1) while marked. You can only have one creature marked in this way at a time.</li>\n<li>You have advantage on Dexterity checks and Dexterity saving throws to avoid being moved.</li>"
+                    },
+                    "duration": {
+                        "units": "turn",
+                        "value": 1
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "30"
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at fighting without the confines of armor. You gain the following benefits:</p>\n<ul>\n<li>While you are wearing light or no armor and not wielding a shield, you can use your bonus action to mark a target within 30 feet that you can see until the end of your next turn. When you do so, you gain a bonus to AC and Dexterity saving throws against effects the target controls equal to half your Dexterity modifier (minimum of +1) while marked. You can only have one creature marked in this way at a time.</li>\n<li>You have advantage on Dexterity checks and Dexterity saving throws to avoid being moved.</li>"
             },
@@ -383,6 +759,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/ExplosivesStyle.webp",
         "name": "Explosives Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "reaction"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at fighting with explosives. You gain the following benefits:</p>\n<ul>\n<li>You can throw grenades and set mines with your bonus action, instead of your action. If you could already throw grenades and set mines as a bonus action, you can instead do so as a reaction on your turn.</li>\n<li>When a creature rolls a 1 on the saving throw against a grenade, mine, or missile you control, they treat the effect's damage as if it had rolled the maximum.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at fighting with explosives. You gain the following benefits:</p>\n<ul>\n<li>You can throw grenades and set mines with your bonus action, instead of your action. If you could already throw grenades and set mines as a bonus action, you can instead do so as a reaction on your turn.</li>\n<li>When a creature rolls a 1 on the saving throw against a grenade, mine, or missile you control, they treat the effect's damage as if it had rolled the maximum.</li>"
             },
@@ -414,6 +821,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/FormationStyle.webp",
         "name": "Formation Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "reaction"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at fighting with a partner. You gain the following benefits:</p>\n<ul>\n<li>You can take the Guard action as a bonus action. If you could already take the Guard action as a bonus action, you can instead take it as a reaction on your turn.</li>\n<li>When you move on your turn, you can use a bonus action to allow a willing ally within 5 feet of you to move with you (no action required by the ally). The ally must end this movement within 5 feet of you, and this movement can't exceed the ally's speed.</li>\n<li>When you choose to let an attack that would hit a guarded ally hit you instead, the creature rolls the damage as normal instead of choosing the maximum.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "5"
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at fighting with a partner. You gain the following benefits:</p>\n<ul>\n<li>You can take the Guard action as a bonus action. If you could already take the Guard action as a bonus action, you can instead take it as a reaction on your turn.</li>\n<li>When you move on your turn, you can use a bonus action to allow a willing ally within 5 feet of you to move with you (no action required by the ally). The ally must end this movement within 5 feet of you, and this movement can't exceed the ally's speed.</li>\n<li>When you choose to let an attack that would hit a guarded ally hit you instead, the creature rolls the damage as normal instead of choosing the maximum.</li>"
             },
@@ -507,6 +945,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/GuerrillaStyle.webp",
         "name": "Guerrilla Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "reaction"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at maneuvering across the battlefield. You gain the following benefits:</p>\n<ul>\n<li>You can take the Disengage action as a bonus action. If you could already take the Disengage action as a bonus action, you can instead take it as a reaction on your turn.</li>\n<li>When you take the Disengage action, you ignore unenhanced difficult terrain, and you have advantage on the first ability check or saving throw to avoid an effect that impairs your movement speed or forces you to move before the start of your next turn.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at maneuvering across the battlefield. You gain the following benefits:</p>\n<ul>\n<li>You can take the Disengage action as a bonus action. If you could already take the Disengage action as a bonus action, you can instead take it as a reaction on your turn.</li>\n<li>When you take the Disengage action, you ignore unenhanced difficult terrain, and you have advantage on the first ability check or saving throw to avoid an effect that impairs your movement speed or forces you to move before the start of your next turn.</li>"
             },
@@ -600,6 +1069,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/OnslaughtStyle.webp",
         "name": "Onslaught Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "reaction"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at using your momentum to your advantage. You gain the following benefits:</p>\n<ul>\n<li>You can take the Dash action as a bonus action. If you could already take the Dash action as a bonus action, you can instead take it as a reaction on your turn.</li>\n<li>When you would make an ability check to attempt to shove or trip a creature, you can make a melee weapon attack against the target's AC instead of a contested check. If you are wielding your weapon in two hands, you make this attack roll with advantage.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at using your momentum to your advantage. You gain the following benefits:</p>\n<ul>\n<li>You can take the Dash action as a bonus action. If you could already take the Dash action as a bonus action, you can instead take it as a reaction on your turn.</li>\n<li>When you would make an ability check to attempt to shove or trip a creature, you can make a melee weapon attack against the target's AC instead of a contested check. If you are wielding your weapon in two hands, you make this attack roll with advantage.</li>"
             },
@@ -631,6 +1131,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/PoisonerStyle.webp",
         "name": "Poisoner Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "reaction"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at with the subtlety of poisons. You gain the following benefits:</p>\n<ul>\n<li>You can apply poisons with your bonus action, instead of your action. If you could already apply poisons as a bonus action, you can instead do so as a reaction on your turn.</li>\n<li>When a creature rolls a 1 on the saving throw against a poison you control, they treat the effect's damage as if it had rolled the maximum.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at with the subtlety of poisons. You gain the following benefits:</p>\n<ul>\n<li>You can apply poisons with your bonus action, instead of your action. If you could already apply poisons as a bonus action, you can instead do so as a reaction on your turn.</li>\n<li>When a creature rolls a 1 on the saving throw against a poison you control, they treat the effect's damage as if it had rolled the maximum.</li>"
             },
@@ -724,6 +1255,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/SharpshooterStyle.webp",
         "name": "Sharpshooter Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled with firing at distant targets. You gain the following benefits:</p>\n<ul>\n<li>You can use your bonus action to mark a target greater than 30 feet from you that you can see. If you do so, and that target moves at least 5 feet before the start of your next turn, they provoke an opportunity attack from you, and you can make a ranged weapon attack with a blaster weapon for that opportunity attack.</li>\n<li>Your ranged weapon attacks reduce partial cover by one step (from three-quarters to half or half to one-quarter) against targets greater than 30 feet from you. If the target has one-quarter cover, you ignore it entirely.</li>\n<li>Grasping a two-handed weapon you are wielding in only one hand with your other hand no longer requires your object interaction.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled with firing at distant targets. You gain the following benefits:</p>\n<ul>\n<li>You can use your bonus action to mark a target greater than 30 feet from you that you can see. If you do so, and that target moves at least 5 feet before the start of your next turn, they provoke an opportunity attack from you, and you can make a ranged weapon attack with a blaster weapon for that opportunity attack.</li>\n<li>Your ranged weapon attacks reduce partial cover by one step (from three-quarters to half or half to one-quarter) against targets greater than 30 feet from you. If the target has one-quarter cover, you ignore it entirely.</li>\n<li>Grasping a two-handed weapon you are wielding in only one hand with your other hand no longer requires your object interaction.</li>"
             },
@@ -755,6 +1317,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/ShieldStyle.webp",
         "name": "Shield Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at using your shield to defend your allies as well as yourself. You gain the following benefits:</p>\n<ul>\n<li>You are no longer restricted to wielding light weapons while wielding a heavy shield.</li>\n<li>You can use a bonus action to try to shove or trip a creature within 5 feet of you with your shield.</li>\n<li>When you use a shield as an improvised weapon, you are considered proficient in it, light shields are considered to have the light and fixed weapon properties, and heavy shields are considered to have the heavy weapon property.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "5"
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at using your shield to defend your allies as well as yourself. You gain the following benefits:</p>\n<ul>\n<li>You are no longer restricted to wielding light weapons while wielding a heavy shield.</li>\n<li>You can use a bonus action to try to shove or trip a creature within 5 feet of you with your shield.</li>\n<li>When you use a shield as an improvised weapon, you are considered proficient in it, light shields are considered to have the light and fixed weapon properties, and heavy shields are considered to have the heavy weapon property.</li>"
             },
@@ -848,6 +1441,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/SpottingStyle.webp",
         "name": "Spotting Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "reaction"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at keeping track of your surroundings. You gain the following benefits:</p>\n<ul>\n<li>You can take the Search action as a bonus action. If you could already take the Search action as a bonus action, you can instead take it as a reaction on your turn.</li>\n<li>You have advantage on ability checks and saving throws to determine the nature of illusions. If you would already have advantage, you can instead reroll one of the dice once.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at keeping track of your surroundings. You gain the following benefits:</p>\n<ul>\n<li>You can take the Search action as a bonus action. If you could already take the Search action as a bonus action, you can instead take it as a reaction on your turn.</li>\n<li>You have advantage on ability checks and saving throws to determine the nature of illusions. If you would already have advantage, you can instead reroll one of the dice once.</li>"
             },
@@ -879,6 +1503,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/SuperiorityStyle.webp",
         "name": "Superiority Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "special"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at utilizing maneuvers to enhance your skills on the battlefield. You gain the following benefits:</p>\n<ul>\n<li>You learn one maneuver, detailed in Chapter 13. Your maneuver ability is Strength, Dexterity, or Constitution for physical maneuvers (your choice), Intelligence, Wisdom, or Charisma for mental maneuvers (your choice), and an ability of your choice for general maneuvers. </li>\n<li>You gain one superiority die, which is a [[/r d4]]. This die changes as you gain levels: to [[/r d6]] at 5th level, to [[/r d8]] at 9th level, to [[/r d10]] at 13th level, and to [[/r d12]] at 17th level. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at utilizing maneuvers to enhance your skills on the battlefield. You gain the following benefits:</p>\n<ul>\n<li>You learn one maneuver, detailed in Chapter 13. Your maneuver ability is Strength, Dexterity, or Constitution for physical maneuvers (your choice), Intelligence, Wisdom, or Charisma for mental maneuvers (your choice), and an ability of your choice for general maneuvers. </li>\n<li>You gain one superiority die, which is a [[/r d4]]. This die changes as you gain levels: to [[/r d6]] at 5th level, to [[/r d8]] at 9th level, to [[/r d10]] at 13th level, and to [[/r d12]] at 17th level. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest.</li>"
             },
@@ -910,6 +1565,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/ThrowingStyle.webp",
         "name": "Throwing Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled with the techniques of throwing weapons. You gain the following benefits:</p>\n<ul>\n<li>Whenever you make a ranged attack with a thrown weapon, you can immediately draw another weapon.</li>\n<li>Whenever you make a ranged attack with a thrown weapon, you can move up to 5 feet without provoking opportunity attacks.</li>\n<li>When you miss with a ranged attack with a thrown weapon, you can use your bonus action to repeat the attack against a creature within 15 feet and behind your initial target. Any modifications to the original attack roll, such as advantage, disadvantage, or without your proficiency bonus, also affect this attack roll.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "15"
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled with the techniques of throwing weapons. You gain the following benefits:</p>\n<ul>\n<li>Whenever you make a ranged attack with a thrown weapon, you can immediately draw another weapon.</li>\n<li>Whenever you make a ranged attack with a thrown weapon, you can move up to 5 feet without provoking opportunity attacks.</li>\n<li>When you miss with a ranged attack with a thrown weapon, you can use your bonus action to repeat the attack against a creature within 15 feet and behind your initial target. Any modifications to the original attack roll, such as advantage, disadvantage, or without your proficiency bonus, also affect this attack roll.</li>"
             },
@@ -972,6 +1658,37 @@
         "img": "modules/sw5e/icons/packs/Fighting%20Styles%20and%20Masteries/VersatileStyle.webp",
         "name": "Versatile Style",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": "bonus"
+                    },
+                    "description": {
+                        "value": "<p>You are skilled at using weapons in different ways. You gain the following benefits:</p>\n<ul>\n<li>When you miss with a melee weapon attack on your turn while wielding a versatile weapon with which you are proficient in two hands, you can use your bonus action to repeat the attack roll against the same target using one hand. Any modifications to the original attack roll, such as advantage, disadvantage, or without your proficiency bonus, also affect this attack roll.</li>\n<li>When you miss with a melee weapon attack on your turn while wielding a versatile weapon with which you are proficient in one hand, you can use your bonus action to attempt to shove or trip that creature. Any modifications to the original attack roll, such as advantage, disadvantage, or without your proficiency bonus, also affect this ability check.</li>\n<li>Grasping a versatile weapon you are wielding in only one hand with your other hand no longer requires your object interaction.</li>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>You are skilled at using weapons in different ways. You gain the following benefits:</p>\n<ul>\n<li>When you miss with a melee weapon attack on your turn while wielding a versatile weapon with which you are proficient in two hands, you can use your bonus action to repeat the attack roll against the same target using one hand. Any modifications to the original attack roll, such as advantage, disadvantage, or without your proficiency bonus, also affect this attack roll.</li>\n<li>When you miss with a melee weapon attack on your turn while wielding a versatile weapon with which you are proficient in one hand, you can use your bonus action to attempt to shove or trip that creature. Any modifications to the original attack roll, such as advantage, disadvantage, or without your proficiency bonus, also affect this ability check.</li>\n<li>Grasping a versatile weapon you are wielding in only one hand with your other hand no longer requires your object interaction.</li>"
             },

@@ -108,6 +108,7 @@ class EnhancedItem(
 				"save": self.base_item.save,
 				"save_dc": self.base_item.save_dc,
 			}
+			if self.base_item.damage == None: default.pop("damage")
 		elif self.raw_type == 'Weapon':
 			if self.raw_subtypeType in ('Any', 'AnyWithProperty'): default["action_type"] = 'mwak'
 			elif self.raw_subtypeType in ('AnyBlaster', 'AnyBlasterWithProperty'): default["action_type"] = 'rwak'
