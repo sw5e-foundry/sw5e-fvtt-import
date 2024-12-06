@@ -8,6 +8,15 @@ class Feat(sw5e.Feature.BaseFeature):
 	def process(self, importer):
 		super().process(importer)
 
+	def getFeatType(self):
+		return 'feat', None
+
+	def getImg(self, importer=None):
+		name = utils.text.slugify(self.name)
+		return f'modules/sw5e/icons/packs/Feats/{name}.webp'
+
+	# templates.ItemDescription
+	def processDescription(self, importer):
 		if self.name in ('Class Improvement', 'Multiclass Improvement', 'Splashclass Improvement', 'Weapon Focused', 'Weapon Supremacist'):
 			extra_text = ''
 			name = self.name
@@ -27,10 +36,3 @@ class Feat(sw5e.Feature.BaseFeature):
 				self.description += f'\n{utils.text.markdownToHtml(extra_text)}'
 			else:
 				self.broken_links += 'cant find improvement feature'
-
-	def getFeatType(self):
-		return 'feat', None
-
-	def getImg(self, importer=None):
-		name = utils.text.slugify(self.name)
-		return f'modules/sw5e/icons/packs/Feats/{name}.webp'

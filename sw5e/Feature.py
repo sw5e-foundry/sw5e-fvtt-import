@@ -3,7 +3,8 @@ import re, json
 
 class BaseFeature(
 	sw5e.Entity.Item,
-	# sw5e.templates.Activities,
+	sw5e.templates.Activities,
+	sw5e.templates.ItemDescription,
 ):
 	def getType(self):
 		return 'feat'
@@ -43,7 +44,6 @@ class BaseFeature(
 		self.uses, self.recharge = self.getUses()
 		self.action_type, self.damage, self.formula, self.save, self.save_dc, _ = self.getAction()
 		self.activation = self.getActivation()
-		self.description = self.getDescription(importer)
 		self.featType, self.featSubtype = self.getFeatType()
 
 	def getActivation(self):
@@ -71,14 +71,38 @@ class BaseFeature(
 	def getFeatType(self):
 		raise NotImplementedError
 
-	def getDescription(self, importer):
-		return utils.text.markdownToHtml(self.raw_text)
-
 	def getImg(self, importer=None):
 		raise NotImplementedError
 
+	def getData(self, importer):
+		data = super().getData(importer)[0]
+
+		# templates.Activities
+		data["system"]["uses"] = {
+			"value": None,
+			"max": self.uses,
+			"per": self.recharge
+		}
+		# templates.ItemDescription
+
+		# data["system"]["enchant"] = {}
+		if self.getType() == 'feat': data["system"]["type"] = {
+			"value": self.featType or "",
+			"subtype": self.featSubtype or ""
+		}
+		# data["system"]["prerequisites"] = { "level": ? }
+		# data["system"]["properties"] = []
+		data["system"]["requirements"] = self.raw_requirements
+
+		return [data]
+
+	############################
+	#    Template Functions    #
+	############################
+
+	# templates.Activities
 	def getActivitiesData(self):
-		return {}
+		return None
 		return {
 			"action_type": self.action_type,
 
@@ -135,30 +159,21 @@ class BaseFeature(
 			},
 			"roll": self.formula,
 		}
+	def processActivitiesData(self, importer):
+		pass
 
-	def getData(self, importer):
-		data = super().getData(importer)[0]
+	# templates.ItemDescription
+	def getDescription(self):
+		return utils.text.markdownToHtml(self.raw_text)
+	def processDescription(self, importer):
+		self.description = utils.text.markdownToHtml(self.raw_text)
+	def processSource(self, importer):
+		self.source = self.raw_contentSource
 
-		data["system"]["description"] = { "value": self.description }
-		# data["system"]["enchant"] = {}
-		# data["system"]["identifier"] = ?
-		# data["system"]["prerequisites"] = { "level": ? }
-		# data["system"]["properties"] = []
-		data["system"]["requirements"] = self.raw_requirements
-		data["system"]["source"] = { "custom": self.raw_contentSource }
-		if self.getType() == 'feat': data["system"]["type"] = {
-			"value": self.featType or "",
-			"subtype": self.featSubtype or ""
-		}
-		data["system"]["uses"] = {
-			"value": None,
-			"max": self.uses,
-			"per": self.recharge
-		}
 
-		return [data]
-
-class Feature(BaseFeature):
+class Feature(
+	BaseFeature
+):
 	def getAttrs(self):
 		return super().getAttrs() + [ "level", "sourceEnum", "source", "sourceName", "metadata", "subtypeOverride" ]
 
@@ -176,7 +191,6 @@ class Feature(BaseFeature):
 		self.raw_contentType, self.raw_contentTypeEnum = self.getContentType(importer)
 		self.raw_contentSource, self.raw_contentSourceEnum = self.getContentSource(importer)
 		self.processSubfeatures(importer)
-		self.description = self.getDescription(importer, processing=True)
 
 	def getImg(self, importer=None):
 		if self.raw_source in ['Class', 'Archetype', 'ClassInvocation', 'ArchetypeInvocation']:
@@ -274,31 +288,6 @@ class Feature(BaseFeature):
 		if self.raw_source == 'Species':
 			return 'species', (self.raw_subtypeOverride or None)
 
-	def getDescription(self, importer, processing=False):
-		text = self.raw_text
-
-		if self.raw_source in ('Class', 'Archetype'):
-			if source_item := self.getSourceItem(importer):
-				name = self.name
-				if (plural := utils.text.getPlural(name)) in source_item.invocations: name = plural
-				elif re.match(r'\w+ Superiority|Additional Maneuvers', name) and 'Maneuvers' in source_item.invocations: name = 'Maneuvers'
-				if name in source_item.invocations:
-					for name, invocation in source_item.invocations[name].items():
-						if name.startswith('_'): continue
-						if "foundry_id" in invocation:
-							link = f'@UUID[Compendium.sw5e.invocations.Item.{invocation["foundry_id"]}]{{{invocation["name"]}}}'
-							text = re.sub(fr'#### {invocation["name"]}\r?\n', fr'#### {link}\n', text)
-						else:
-							self.broken_links += ['no feature or foundry id']
-
-		if processing:
-			for sf in self.subFeatures:
-				if "fid" in sf and "comp" in sf:
-					link = f'@UUID[Compendium.sw5e.{sf["comp"].lower()}.Item.{sf["fid"]}]{{{sf["name"]}}}'
-					text = re.sub(fr'#### {sf["name"]}\r?\n', f'#### {link}\n', text)
-
-		return utils.text.markdownToHtml(text)
-
 	def getSubEntities(self, importer):
 		sub_items = []
 
@@ -338,6 +327,36 @@ class Feature(BaseFeature):
 	def isValid(self):
 		if self.raw_name == "Ability Score Improvement": return False
 		return super().isValid()
+
+	############################
+	#    Template Functions    #
+	############################
+
+	# templates.ItemDescription
+	def processDescription(self, importer):
+		text = self.raw_text
+
+		if self.raw_source in ('Class', 'Archetype'):
+			if source_item := self.getSourceItem(importer):
+				name = self.name
+				if (plural := utils.text.getPlural(name)) in source_item.invocations: name = plural
+				elif re.match(r'\w+ Superiority|Additional Maneuvers', name) and 'Maneuvers' in source_item.invocations: name = 'Maneuvers'
+				if name in source_item.invocations:
+					for name, invocation in source_item.invocations[name].items():
+						if name.startswith('_'): continue
+						if "foundry_id" in invocation:
+							link = f'@UUID[Compendium.sw5e.invocations.Item.{invocation["foundry_id"]}]{{{invocation["name"]}}}'
+							text = re.sub(fr'#### {invocation["name"]}\r?\n', fr'#### {link}\n', text)
+						else:
+							self.broken_links += ['no feature or foundry id']
+
+		for sf in self.subFeatures:
+			if "fid" in sf and "comp" in sf:
+				link = f'@UUID[Compendium.sw5e.{sf["comp"].lower()}.Item.{sf["fid"]}]{{{sf["name"]}}}'
+				text = re.sub(fr'#### {sf["name"]}\r?\n', f'#### {link}\n', text)
+
+		self.description = utils.text.markdownToHtml(text)
+
 
 class CustomizationOption(BaseFeature):
 	def getFeatType(self):

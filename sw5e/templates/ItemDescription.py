@@ -7,7 +7,7 @@ class ItemDescription(Template):
 			**super().dataMap(),
 			'system.description.value': 'description',
 			'system.identifier': 'identifier',
-			'system.source': 'source',
+			'system.source.custom': 'source',
 		}
 
 	def getDescription(self):
@@ -15,7 +15,7 @@ class ItemDescription(Template):
 	def getIdentifier(self):
 		return None
 	def getSource(self):
-		return { "custom": self.raw_contentSource }
+		return self.raw_contentSource
 
 	def processDescription(self, importer):
 		pass

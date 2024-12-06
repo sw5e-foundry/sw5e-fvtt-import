@@ -10,6 +10,7 @@ class Activities(Template):
 
 	def activitiesHelper(self, data):
 		activities = []
+		data = data or {}
 		if action_type := data.get('action_type'):
 			if action_type == 'save':
 				activities.append(sw5e.Activity.Save(data, idx=len(activities)))
