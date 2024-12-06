@@ -9,6 +9,26 @@ class Maneuvers(sw5e.Feature.BaseFeature):
 	def getAttrs(self):
 		return super().getAttrs() + [ "metadata", "type", "eTag" ]
 
+	def loadConsume(self):
+		return {
+			"scaling": {
+				"allowed": False,
+				"max": None,
+			},
+			"spellSlot": False,
+			"targets": [
+				{
+					"scaling": {
+						"formula": '',
+						"mode": '',
+					},
+					"target": 'superiority.dice.value',
+					"type": 'attribute',
+					"value": 1,
+				},
+			],
+		}
+
 	def loadFeatType(self):
 		return None, None
 
@@ -34,11 +54,6 @@ class Maneuvers(sw5e.Feature.BaseFeature):
 		data = super().getData(importer)[0]
 
 		data["system"]["type"] = { "value": self.raw_type.lower() }
-		data["system"]["consume"] = {
-			"amount": 1,
-			"target": 'superiority.dice.value',
-			"type": 'attribute',
-		}
 
 		return [data]
 

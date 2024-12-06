@@ -8771,6 +8771,55 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/SNTL-Passive.webp",
         "name": "Deflection",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "consumption": {
+                        "scaling": {
+                            "allowed": false,
+                            "max": null
+                        },
+                        "spellSlot": false,
+                        "targets": [
+                            {
+                                "scaling": {
+                                    "formula": "",
+                                    "mode": ""
+                                },
+                                "target": "powercasting.force.points.value",
+                                "type": "attribute",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p>When you are the target of an attack, you can roll a Kinetic Combat die and add it to your AC (no action required). You can do so before or after the attack is made, but you must choose to do so before the GM determines if the attack hits.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>When you are the target of an attack, you can roll a Kinetic Combat die and add it to your AC (no action required). You can do so before or after the attack is made, but you must choose to do so before the GM determines if the attack hits.</p>"
             },
@@ -8802,6 +8851,55 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/SNTL-Passive.webp",
         "name": "Double Strike",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "consumption": {
+                        "scaling": {
+                            "allowed": false,
+                            "max": null
+                        },
+                        "spellSlot": false,
+                        "targets": [
+                            {
+                                "scaling": {
+                                    "formula": "",
+                                    "mode": ""
+                                },
+                                "target": "powercasting.force.points.value",
+                                "type": "attribute",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p>When you hit a creature with a weapon attack, you can roll a Kinetic Combat die and deal additional damage of the same type equal to the amount rolled.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>When you hit a creature with a weapon attack, you can roll a Kinetic Combat die and deal additional damage of the same type equal to the amount rolled.</p>"
             },
@@ -8833,6 +8931,55 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/SNTL-Passive.webp",
         "name": "Slow Time",
         "system": {
+            "activities": {
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "consumption": {
+                        "scaling": {
+                            "allowed": false,
+                            "max": null
+                        },
+                        "spellSlot": false,
+                        "targets": [
+                            {
+                                "scaling": {
+                                    "formula": "",
+                                    "mode": ""
+                                },
+                                "target": "powercasting.force.points.value",
+                                "type": "attribute",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p>When you move on your turn, you can roll a Kinetic Combat die to increase your speed by 5 x the amount rolled until the end of your turn.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "roll": "",
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "utility"
+                }
+            },
             "description": {
                 "value": "<p>When you move on your turn, you can roll a Kinetic Combat die to increase your speed by 5 x the amount rolled until the end of your turn.</p>"
             },

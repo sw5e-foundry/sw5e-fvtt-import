@@ -62,6 +62,25 @@ class BaseFeature(
 		return utils.text.getAction(self.raw_text, self.name)
 
 	def loadConsume(self):
+		if self.featSubtype == 'sentinelFES':
+			return {
+				"scaling": {
+					"allowed": False,
+					"max": None,
+				},
+				"spellSlot": False,
+				"targets": [
+					{
+						"scaling": {
+							"formula": '',
+							"mode": '',
+						},
+						"target": 'powercasting.force.points.value',
+						"type": 'attribute',
+						"value": 1,
+					},
+				],
+			}
 		return {}
 
 	def loadActivation(self):

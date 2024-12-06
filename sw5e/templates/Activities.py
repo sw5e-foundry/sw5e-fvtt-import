@@ -49,7 +49,7 @@ class Activities(Template):
 			elif action_type == 'other':
 				if "damage" in data and len(data["damage"].parts):
 					activities.append(sw5e.Activity.Damage(data, idx=len(activities)))
-				elif utils.object.getProperty(data, 'activation.type'):
+				elif utils.object.getProperty(data, 'activation.type') or utils.object.getProperty(data, 'consumption'):
 					activities.append(sw5e.Activity.Utility(data, idx=len(activities)))
 			elif action_type == 'abil':
 				activities.append(sw5e.Activity.Check(data, idx=len(activities)))
