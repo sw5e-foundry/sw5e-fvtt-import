@@ -294,7 +294,7 @@ class Feature(
 
 	def processFeatType(self, importer):
 		if self.raw_source in ('ArchetypeInvocation', 'ClassInvocation'):
-			self.subtype = f'{self.class_name.lower()}Invocation'
+			self.featSubtype = f'{self.class_name.lower()}Invocation'
 
 	############################
 	#      Other Functions     #
