@@ -110,15 +110,15 @@ class Background(sw5e.Entity.Item):
 
 		# Skill proficiencies
 		if self.skills:
-			advancements.append( sw5e.Advancement.Trait(level=0, choices=[self.skills], allow_replacements=True, class_restriction='primary', idx=len(advancements)) )
+			advancements.append( sw5e.Advancement.Trait(level=0, choices=[self.skills], allow_replacements=True, idx=len(advancements)) )
 
 		# Tool proficiencies
 		if self.tools:
-			advancements.append( sw5e.Advancement.Trait(level=0, choices=[self.tools], allow_replacements=True, class_restriction='primary', idx=len(advancements)) )
+			advancements.append( sw5e.Advancement.Trait(level=0, choices=[self.tools], allow_replacements=True, idx=len(advancements)) )
 
 		# Languages
 		if self.languages:
-			advancements.append( sw5e.Advancement.Trait(level=0, choices=self.languages["choices"], grants=self.languages["grants"], allow_replacements=True, class_restriction='primary', idx=len(advancements)) )
+			advancements.append( sw5e.Advancement.Trait(level=0, choices=self.languages["choices"], grants=self.languages["grants"], allow_replacements=True, idx=len(advancements)) )
 
 		return advancements
 
