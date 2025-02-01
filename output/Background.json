@@ -1,49 +1,6 @@
 {
     "Background.name-agent": {
-        "effects": [
-            {
-                "_id": "hPQt2pjlK4Smc8cx",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Agent"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Agent.webp",
-                "name": "Agent",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -56,7 +13,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:inv",
+                                    "skills:lor",
+                                    "skills:per"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -166,50 +166,7 @@
         "type": "background"
     },
     "Background.name-bounty_hunter": {
-        "effects": [
-            {
-                "_id": "AES1kmGDANS8qc5O",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Bounty Hunter"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/BountyHunter.webp",
-                "name": "Bounty Hunter",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -222,7 +179,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:per",
+                                    "skills:ste"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -332,50 +332,7 @@
         "type": "background"
     },
     "Background.name-criminal": {
-        "effects": [
-            {
-                "_id": "CBjlNw7fMiCaFVq5",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Criminal"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Criminal.webp",
-                "name": "Criminal",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -388,7 +345,43 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:itm",
+                                    "skills:slt",
+                                    "skills:ste"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -513,12 +506,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Entertainer"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -566,7 +553,43 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:acr",
+                                    "skills:ins",
+                                    "skills:prf",
+                                    "skills:slt"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -676,50 +699,7 @@
         "type": "background"
     },
     "Background.name-force_adept": {
-        "effects": [
-            {
-                "_id": "uJ1cnO49Ohql0wlv",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Force Adept"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/ForceAdept.webp",
-                "name": "Force Adept",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -732,7 +712,43 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:prc",
+                                    "skills:per"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -857,12 +873,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Gambler"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -904,7 +914,43 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:itm",
+                                    "skills:slt"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -1014,50 +1060,7 @@
         "type": "background"
     },
     "Background.name-investigator": {
-        "effects": [
-            {
-                "_id": "aKDNPThH7s8K5G8Y",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Investigator"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Investigator.webp",
-                "name": "Investigator",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -1070,7 +1073,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:inv",
+                                    "skills:prc",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -1195,12 +1241,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Jedi"
-                    },
-                    {
                         "key": "system.tools.artificersimplements.prof",
                         "mode": 0,
                         "priority": 20,
@@ -1242,7 +1282,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:inv",
+                                    "skills:lor",
+                                    "skills:per"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -1352,56 +1435,7 @@
         "type": "background"
     },
     "Background.name-mandalorian": {
-        "effects": [
-            {
-                "_id": "Ak1vZkXH57KiTblz",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Mandalorian"
-                    },
-                    {
-                        "key": "system.traits.languages.value",
-                        "mode": 2,
-                        "priority": 20,
-                        "value": "mandoa"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Mandalorian.webp",
-                "name": "Mandalorian",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -1414,7 +1448,45 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ath",
+                                    "skills:itm",
+                                    "skills:pil",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [],
+                        "grants": [
+                            "languages:standard:mandoa"
+                        ],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -1539,12 +1611,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Mercenary"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -1586,7 +1652,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ath",
+                                    "skills:inv",
+                                    "skills:per",
+                                    "skills:pil"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -1711,12 +1820,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Noble"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -1758,7 +1861,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:lor",
+                                    "skills:per"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -1883,12 +2029,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Nomad"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -1930,7 +2070,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ani",
+                                    "skills:ath",
+                                    "skills:med",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -2055,12 +2238,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Outlaw"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -2102,7 +2279,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:acr",
+                                    "skills:ath",
+                                    "skills:ins",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -2227,12 +2447,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Pirate"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -2274,7 +2488,43 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ath",
+                                    "skills:dec",
+                                    "skills:itm",
+                                    "skills:pil"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -2384,50 +2634,7 @@
         "type": "background"
     },
     "Background.name-scientist": {
-        "effects": [
-            {
-                "_id": "K7ZiRe5yiOulgEIy",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Scientist"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Scientist.webp",
-                "name": "Scientist",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -2440,7 +2647,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:lor",
+                                    "skills:med",
+                                    "skills:nat",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -2565,12 +2815,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Scoundrel"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -2618,7 +2862,43 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:prf",
+                                    "skills:slt"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -2743,12 +3023,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Sith"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -2790,7 +3064,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:itm",
+                                    "skills:lor"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -2915,12 +3232,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Smuggler"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -2962,7 +3273,43 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:pil",
+                                    "skills:slt",
+                                    "skills:ste"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -3072,50 +3419,7 @@
         "type": "background"
     },
     "Background.name-soldier": {
-        "effects": [
-            {
-                "_id": "50FJ87E6jpgibwLx",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Soldier"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Soldier.webp",
-                "name": "Soldier",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -3128,7 +3432,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ath",
+                                    "skills:itm",
+                                    "skills:per",
+                                    "skills:pil"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -3238,50 +3585,7 @@
         "type": "background"
     },
     "Background.name-spacer": {
-        "effects": [
-            {
-                "_id": "P2R1BJSV5j400pV3",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Spacer"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Spacer.webp",
-                "name": "Spacer",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -3294,7 +3598,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:inv",
+                                    "skills:pil",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -3404,50 +3751,7 @@
         "type": "background"
     },
     "Background.name-unretired_adventurer": {
-        "effects": [
-            {
-                "_id": "21y2muk4TLqvNhpR",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "(Un)Retired Adventurer"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Un-RetiredAdventurer.webp",
-                "name": "(Un)Retired Adventurer",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -3460,7 +3764,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ath",
+                                    "skills:ins",
+                                    "skills:lor",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -3570,50 +3917,7 @@
         "type": "background"
     },
     "Background.name-addict": {
-        "effects": [
-            {
-                "_id": "8CglKXcVxBkb79Dg",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Addict"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Addict.webp",
-                "name": "Addict",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -3626,7 +3930,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:prf",
+                                    "skills:per",
+                                    "skills:slt"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -3749,7 +4096,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:inv",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -3872,7 +4262,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:inv",
+                                    "skills:lor",
+                                    "skills:prc",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -3982,50 +4415,7 @@
         "type": "background"
     },
     "Background.name-barbarian": {
-        "effects": [
-            {
-                "_id": "ODRxYdzp4EFEgpTg",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Barbarian"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Barbarian.webp",
-                "name": "Barbarian",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -4038,7 +4428,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ani",
+                                    "skills:ath",
+                                    "skills:nat",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -4161,7 +4594,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:itm",
+                                    "skills:med",
+                                    "skills:per"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -4284,7 +4760,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:inv",
+                                    "skills:lor",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -4407,7 +4926,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ath",
+                                    "skills:ins",
+                                    "skills:inv",
+                                    "skills:prc"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -4517,50 +5079,7 @@
         "type": "background"
     },
     "Background.name-city_watch": {
-        "effects": [
-            {
-                "_id": "ccy1OO6PwsSoWbte",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "City Watch"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/CityWatch.webp",
-                "name": "City Watch",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -4573,7 +5092,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ath",
+                                    "skills:ins",
+                                    "skills:inv",
+                                    "skills:prc"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -4683,50 +5245,7 @@
         "type": "background"
     },
     "Background.name-clone": {
-        "effects": [
-            {
-                "_id": "0j3DdcBsllbba2Tu",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Clone"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Clone.webp",
-                "name": "Clone",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -4739,7 +5258,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ath",
+                                    "skills:lor",
+                                    "skills:slt",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -4849,50 +5411,7 @@
         "type": "background"
     },
     "Background.name-clone_trooper": {
-        "effects": [
-            {
-                "_id": "db9s1qhtskgWjc2Z",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Clone Trooper"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/CloneTrooper.webp",
-                "name": "Clone Trooper",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -4905,7 +5424,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ath",
+                                    "skills:med",
+                                    "skills:prc",
+                                    "skills:pil"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -5015,50 +5577,7 @@
         "type": "background"
     },
     "Background.name-companion": {
-        "effects": [
-            {
-                "_id": "vkjxLXTTqcu51mT0",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Companion"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Companion.webp",
-                "name": "Companion",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -5071,7 +5590,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:acr",
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:prf"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -5181,50 +5743,7 @@
         "type": "background"
     },
     "Background.name-courtier": {
-        "effects": [
-            {
-                "_id": "J2pXAY3HF4uS6AiR",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Courtier"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Courtier.webp",
-                "name": "Courtier",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -5237,7 +5756,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:prf",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -5347,50 +5909,7 @@
         "type": "background"
     },
     "Background.name-crime_lord": {
-        "effects": [
-            {
-                "_id": "LLE0jXL2Pxlkz1pH",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Crime Lord"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/CrimeLord.webp",
-                "name": "Crime Lord",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -5403,7 +5922,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:itm",
+                                    "skills:per"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -5528,12 +6090,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Dathomir Witch"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 0,
                         "priority": 20,
@@ -5575,7 +6131,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:acr",
+                                    "skills:ani",
+                                    "skills:lor",
+                                    "skills:nat"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -5698,7 +6297,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:itm",
+                                    "skills:inv",
+                                    "skills:lor"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -5808,50 +6450,7 @@
         "type": "background"
     },
     "Background.name-faction_adventurer": {
-        "effects": [
-            {
-                "_id": "7OyIWtpW5O5MsJyt",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Faction Adventurer"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/FactionAdventurer.webp",
-                "name": "Faction Adventurer",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -5864,7 +6463,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ath",
+                                    "skills:inv",
+                                    "skills:nat",
+                                    "skills:sur"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -5974,50 +6616,7 @@
         "type": "background"
     },
     "Background.name-faction_artisan": {
-        "effects": [
-            {
-                "_id": "XLWkOngF0epU9QvV",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Faction Artisan"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/FactionArtisan.webp",
-                "name": "Faction Artisan",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -6030,7 +6629,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ath",
+                                    "skills:ins",
+                                    "skills:per",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -6140,50 +6782,7 @@
         "type": "background"
     },
     "Background.name-faction_merchant": {
-        "effects": [
-            {
-                "_id": "htF1pjUGahRpbqxy",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Faction Merchant"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/FactionMerchant.webp",
-                "name": "Faction Merchant",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -6196,7 +6795,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:prf",
+                                    "skills:per"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -6306,50 +6948,7 @@
         "type": "background"
     },
     "Background.name-far_traveler": {
-        "effects": [
-            {
-                "_id": "rYKZAqQqtPCw5t64",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Far Traveler"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/FarTraveler.webp",
-                "name": "Far Traveler",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -6362,7 +6961,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:inv",
+                                    "skills:prc",
+                                    "skills:per"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -6487,12 +7129,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Farmer"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -6534,7 +7170,43 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ani",
+                                    "skills:nat",
+                                    "skills:per",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -6644,50 +7316,7 @@
         "type": "background"
     },
     "Background.name-folk_hero": {
-        "effects": [
-            {
-                "_id": "vT9EY11Z0B58gu83",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Folk Hero"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/FolkHero.webp",
-                "name": "Folk Hero",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -6700,7 +7329,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ani",
+                                    "skills:ath",
+                                    "skills:nat",
+                                    "skills:prf"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -6825,12 +7497,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Gladiator"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -6872,7 +7538,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:acr",
+                                    "skills:ath",
+                                    "skills:itm",
+                                    "skills:prf"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -6997,12 +7706,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Hermit"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -7044,7 +7747,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ani",
+                                    "skills:lor",
+                                    "skills:med",
+                                    "skills:nat"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -7154,50 +7900,7 @@
         "type": "background"
     },
     "Background.name-holonet_technician": {
-        "effects": [
-            {
-                "_id": "39CFIfrRCO58Z3zM",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Holonet Technician"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/HolonetTechnician.webp",
-                "name": "Holonet Technician",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -7210,7 +7913,43 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:inv",
+                                    "skills:ste",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -7335,12 +8074,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Imperial Knight"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 4,
                         "priority": 20,
@@ -7388,7 +8121,43 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ath",
+                                    "skills:itm",
+                                    "skills:prc",
+                                    "skills:pil"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -7511,7 +8280,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ath",
+                                    "skills:med",
+                                    "skills:per",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -7634,7 +8446,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:per",
+                                    "skills:ste",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -7759,12 +8614,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Jensaari"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -7806,7 +8655,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:itm",
+                                    "skills:lor",
+                                    "skills:prc"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -7929,7 +8821,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:prf",
+                                    "skills:per",
+                                    "skills:slt"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -8054,12 +8989,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Laborer"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -8101,7 +9030,43 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ani",
+                                    "skills:ath",
+                                    "skills:sur",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -8211,50 +9176,7 @@
         "type": "background"
     },
     "Background.name-lawyer": {
-        "effects": [
-            {
-                "_id": "DSwb2coYtzmub2Zz",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Lawyer"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Lawyer.webp",
-                "name": "Lawyer",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -8267,7 +9189,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:inv",
+                                    "skills:prf",
+                                    "skills:per"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -8392,12 +9357,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Office Worker"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -8439,7 +9398,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:inv",
+                                    "skills:lor",
+                                    "skills:prc"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -8562,7 +9564,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:itm",
+                                    "skills:prf",
+                                    "skills:per"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -8672,50 +9717,7 @@
         "type": "background"
     },
     "Background.name-racer": {
-        "effects": [
-            {
-                "_id": "DEgaT0vZNnQAfYnp",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Racer"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Racer.webp",
-                "name": "Racer",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -8728,7 +9730,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ani",
+                                    "skills:nat",
+                                    "skills:pil",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -8838,50 +9883,7 @@
         "type": "background"
     },
     "Background.name-scavenger": {
-        "effects": [
-            {
-                "_id": "8CglKXcVxBkb79Dg",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Scavenger"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Scavenger.webp",
-                "name": "Scavenger",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -8894,7 +9896,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:per",
+                                    "skills:slt",
+                                    "skills:sur",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -9004,50 +10049,7 @@
         "type": "background"
     },
     "Background.name-servant": {
-        "effects": [
-            {
-                "_id": "meA1PscX391ozjlU",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Servant"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Servant.webp",
-                "name": "Servant",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -9060,7 +10062,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:lor",
+                                    "skills:prf",
+                                    "skills:per"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -9170,50 +10215,7 @@
         "type": "background"
     },
     "Background.name-student": {
-        "effects": [
-            {
-                "_id": "m9GimK5lM9wkGQl3",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Student"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Student.webp",
-                "name": "Student",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -9226,7 +10228,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:ins",
+                                    "skills:lor",
+                                    "skills:inv",
+                                    "skills:nat"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -9349,7 +10394,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:inv",
+                                    "skills:lor",
+                                    "skills:sur",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -9459,50 +10547,7 @@
         "type": "background"
     },
     "Background.name-teacher": {
-        "effects": [
-            {
-                "_id": "Z7oI1Zoo2YU4XNfI",
-                "_stats": {
-                    "compendiumSource": null,
-                    "coreVersion": "12.330",
-                    "createdTime": null,
-                    "duplicateSource": null,
-                    "lastModifiedBy": null,
-                    "modifiedTime": null,
-                    "systemId": null,
-                    "systemVersion": null
-                },
-                "changes": [
-                    {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Teacher"
-                    }
-                ],
-                "description": "",
-                "disabled": false,
-                "duration": {
-                    "combat": null,
-                    "rounds": null,
-                    "seconds": null,
-                    "startRound": null,
-                    "startTime": null,
-                    "startTurn": null,
-                    "turns": null
-                },
-                "flags": {},
-                "img": "modules/sw5e/icons/packs/Backgrounds/Teacher.webp",
-                "name": "Teacher",
-                "origin": null,
-                "sort": 0,
-                "statuses": [],
-                "system": {},
-                "tint": "#ffffff",
-                "transfer": true,
-                "type": "base"
-            }
-        ],
+        "effects": [],
         "flags": {
             "sw5e-importer": {
                 "importer_version": 3,
@@ -9515,7 +10560,50 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:lor",
+                                    "skills:nat",
+                                    "skills:prf",
+                                    "skills:tec"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 1,
+                                "pool": [
+                                    "languages:*"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,
@@ -9640,12 +10728,6 @@
                 },
                 "changes": [
                     {
-                        "key": "system.details.background",
-                        "mode": 5,
-                        "priority": 20,
-                        "value": "Urchin"
-                    },
-                    {
                         "key": "system.traits.toolProf.value",
                         "mode": 2,
                         "priority": 20,
@@ -9693,7 +10775,43 @@
         "system": {
             "advancement": [
                 {
-                    "_id": "sw5e0ic000000000",
+                    "_id": "sw5e0t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [
+                            {
+                                "count": 2,
+                                "pool": [
+                                    "skills:dec",
+                                    "skills:ins",
+                                    "skills:slt",
+                                    "skills:ste"
+                                ]
+                            }
+                        ],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e1t0000000000",
+                    "classRestriction": "primary",
+                    "configuration": {
+                        "allow_replacements": true,
+                        "choices": [],
+                        "grants": [],
+                        "mode": "default"
+                    },
+                    "level": 0,
+                    "type": "Trait",
+                    "value": {}
+                },
+                {
+                    "_id": "sw5e2ic000000000",
                     "classRestriction": "",
                     "configuration": {
                         "allowDrops": true,

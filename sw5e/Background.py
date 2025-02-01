@@ -43,6 +43,9 @@ class Background(sw5e.Entity.Item):
 		self.bondOptions = utils.text.makeRollTable(self.raw_bondOptions, 'Bond')
 
 		self.featOptions = self.loadFeatOptions()
+		self.skills = self.loadProficienciesSkills()
+		self.tools = self.loadProficienciesTools()
+		self.languages = self.loadProficienciesLanguages()
 		self.advancements = self.loadAdvancements()
 
 	def loadFlavorText(self):
@@ -68,8 +71,55 @@ class Background(sw5e.Entity.Item):
 
 		return feats
 
+	def loadProficienciesSkills(self):
+		def skillName(skill):
+			if match := re.match(r'(?:choose two (?:of|from)|and|or) (?P<name>(?: ?\w+)+)', skill):
+				return match.group("name")
+			return skill
+
+		mapping = { skl["name"].lower(): skl["id"] for skl in utils.config.skills }
+		skills = self.raw_skillProficiencies.replace(' and ', ', and ').lower().split(',')
+		skills = [ skillName(skill.strip()) for skill in skills if skill ]
+		skills = [ f'skills:{mapping[skill]}' for skill in skills ]
+		return {
+			"count": 2,
+			"pool": skills
+		}
+
+	def loadProficienciesTools(self):
+		# TODO: Read tool proficiencies from self.raw_toolProficiencies
+		return None
+
+	def loadProficienciesLanguages(self):
+		languages = { "choices": [], "grants": [] }
+		if self.raw_languages:
+			if match := re.match(r'(?P<number>one|two) of your choice', self.raw_languages.lower()):
+				number = 1 if match.group("number") == 'one' else 2
+				languages["choices"].append({
+					"count": number,
+					"pool": ["languages:*"]
+				})
+			else:
+				name = re.sub(r'[^\w-]', '', self.raw_languages.lower())
+				if name in ('galactic basic', 'basic'): name = 'common'
+				languages["grants"].append(f'languages:standard:{name}')
+		return languages
+
 	def loadAdvancements(self):
 		advancements = []
+
+		# Skill proficiencies
+		if self.skills:
+			advancements.append( sw5e.Advancement.Trait(level=0, choices=[self.skills], allow_replacements=True, class_restriction='primary', idx=len(advancements)) )
+
+		# Tool proficiencies
+		if self.tools:
+			advancements.append( sw5e.Advancement.Trait(level=0, choices=[self.tools], allow_replacements=True, class_restriction='primary', idx=len(advancements)) )
+
+		# Languages
+		if self.languages:
+			advancements.append( sw5e.Advancement.Trait(level=0, choices=self.languages["choices"], grants=self.languages["grants"], allow_replacements=True, class_restriction='primary', idx=len(advancements)) )
+
 		return advancements
 
 	def process(self, importer):
