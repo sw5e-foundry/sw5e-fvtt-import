@@ -8704,6 +8704,60 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/SNTL-Passive.webp",
         "name": "Force-Empowered Self",
         "system": {
+            "activities": {
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "@scale.sentinel.kinetic-combat.die"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    ""
+                                ]
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p><em><strong>Sentinel:</strong> 2nd level</em></p>\n<p>Your training allows you to harness the mystical energy of the Force throughout your body. You learn three effects: Deflection, Double Strike, and Slow Time. Each effect costs 1 force point and uses a [[/r d4]], which changes as you gain sentinel levels, as shown in the Kinetic Combat column of the sentinel table. You can only use each effect once per round.</p>\n<h3>@UUID[Compendium.sw5e.classfeatures.Item.DkeBmqxtDGB5IS25]{Deflection}</h3>\n<p>When you are the target of an attack, you can roll a Kinetic Combat die and add it to your AC (no action required). You can do so before or after the attack is made, but you must choose to do so before the GM determines if the attack hits.</p>\n<h3>@UUID[Compendium.sw5e.classfeatures.Item.xdVUUvvy1WQNS8HB]{Double Strike}</h3>\n<p>When you hit a creature with a weapon attack, you can roll a Kinetic Combat die and deal additional damage of the same type equal to the amount rolled.</p>\n<h3>@UUID[Compendium.sw5e.classfeatures.Item.A87ImRq8O2Ftebxa]{Slow Time}</h3>\n<p>When you move on your turn, you can roll a Kinetic Combat die to increase your speed by 5 x the amount rolled until the end of your turn.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "damage"
+                }
+            },
             "description": {
                 "value": "<p><em><strong>Sentinel:</strong> 2nd level</em></p>\n<p>Your training allows you to harness the mystical energy of the Force throughout your body. You learn three effects: Deflection, Double Strike, and Slow Time. Each effect costs 1 force point and uses a [[/r d4]], which changes as you gain sentinel levels, as shown in the Kinetic Combat column of the sentinel table. You can only use each effect once per round.</p>\n<h3>@UUID[Compendium.sw5e.classfeatures.Item.DkeBmqxtDGB5IS25]{Deflection}</h3>\n<p>When you are the target of an attack, you can roll a Kinetic Combat die and add it to your AC (no action required). You can do so before or after the attack is made, but you must choose to do so before the GM determines if the attack hits.</p>\n<h3>@UUID[Compendium.sw5e.classfeatures.Item.xdVUUvvy1WQNS8HB]{Double Strike}</h3>\n<p>When you hit a creature with a weapon attack, you can roll a Kinetic Combat die and deal additional damage of the same type equal to the amount rolled.</p>\n<h3>@UUID[Compendium.sw5e.classfeatures.Item.A87ImRq8O2Ftebxa]{Slow Time}</h3>\n<p>When you move on your turn, you can roll a Kinetic Combat die to increase your speed by 5 x the amount rolled until the end of your turn.</p>"
             },
@@ -8816,8 +8870,8 @@
         "name": "Double Strike",
         "system": {
             "activities": {
-                "sw5e0utility0000": {
-                    "_id": "sw5e0utility0000",
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
                     "activation": {
                         "condition": null,
                         "cost": 1,
@@ -8841,6 +8895,30 @@
                             }
                         ]
                     },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "@scale.sentinel.kinetic-combat.die"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    ""
+                                ]
+                            }
+                        ]
+                    },
                     "description": {
                         "value": "<p>When you hit a creature with a weapon attack, you can roll a Kinetic Combat die and deal additional damage of the same type equal to the amount rolled.</p>"
                     },
@@ -8854,14 +8932,13 @@
                         "units": "ft",
                         "value": null
                     },
-                    "roll": "",
                     "target": {
                         "type": "",
                         "units": "",
                         "value": null,
                         "width": null
                     },
-                    "type": "utility"
+                    "type": "damage"
                 }
             },
             "description": {

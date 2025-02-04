@@ -437,7 +437,6 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}, sour
 			mult = match.groupdict().get('mult')
 			dice = match.groupdict().get('dice')
 			rolled = match.groupdict().get('rolled')
-			die_name = match.groupdict().get('die_name')
 			flat = match.groupdict().get('flat')
 			ability_mod = match.groupdict().get('ability_mod')
 			half_ability_mod = match.groupdict().get('half_ability_mod')
@@ -458,15 +457,6 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}, sour
 						has_rolled = True
 						if formula: formula = f'{formula} + {rolled_formula}'
 						else: formula = rolled_formula
-					elif die_name:
-						die_slug = utils.text.slugifyDND5E(die_name)
-						source_slug = utils.text.slugifyDND5E(source)
-						if source_slug:
-							if formula: formula = f'{formula} + @scale.{source_slug}.{die_slug}.die'
-							else: formula = f'@scale.{source_slug}.{die_slug}.die'
-						else:
-							if formula: formula = f'{formula} + @scale.{die_slug}.die'
-							else: formula = f'@scale.{die_slug}.die'
 				if flat:
 					if formula: formula = f'{formula} + {flat}'
 					else: formula = flat
@@ -501,6 +491,22 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}, sour
 					else: formula = bonus
 				if formula and mult: formula = f'{mult} * ({formula})'
 				return formula
+
+		## Find Scale Dice
+		patterns = [ p_rolled ]
+		def scaled_dice(match):
+			nonlocal rolled_formula
+
+			if die_name := match.groupdict().get('die_name'):
+				die_slug = utils.text.slugifyDND5E(die_name)
+				source_slug = utils.text.slugifyDND5E(source)
+				if source_slug:
+					rolled_formula = f'@scale.{source_slug}.{die_slug}.die'
+				else:
+					rolled_formula = f'@scale.{die_slug}.die'
+			return match[0]
+		for pat in patterns: re.sub(pat, scaled_dice, text)
+
 
 		## Healing
 		patterns = [fr'(?:(?:(?:re)?gains?|restores|gaining|a number of|granting them|grant a number of creatures? (?:up|equal) to(?: \w+)+?|give yourself or that friendly creature) (?P<temp>temporary )?hit points equal to |hit points increase by ){p_formula}']
@@ -561,7 +567,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}, sour
 		prefix1_a = ncapt(fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>{p_dmg_type})? ?damage(?: to the creature)? equal to)')
 		prefix1_b = ncapt(fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>{p_dmg_type})? ?damage(?: to the creature)? equal to)?')
 		prefix1_c = ncapt(fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>{p_dmg_type}) ?damage(?: to the creature)? equal to)')
-		prefix2 = ncapt(fr'(?:{opt1})(?: (?P<type>{p_dmg_type})? ?damage(?: to the creature)? equal to)')
+		prefix2 = ncapt(fr'(?:{opt1})(?: (?P<type>{p_dmg_type})? ?damage(?: of the same type)?(?: to the creature)? equal to)')
 		posfix1 = ncapt(fr'(?:of )?(?:additional )?(?:(?P<type2>{p_dmg_type})?(?:,(?: or)? {p_dmg_type})*)?(?: ?damage| (?=[^.]+ damage))')
 
 		opt5 = ncapt(fr'the (?P<type>{p_dmg_type} )?damage (?:also )?increases by')
@@ -588,10 +594,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}, sour
 			if formula:
 				dmg_type = match.groupdict().get('type') or match.groupdict().get('type2') or ''
 				action_type = action_type or 'other'
-				if dmg_type == '' and formula == rolled_formula:
-					other_formula = formula
-				else:
-					damage.parts.append(sw5e.Damage.Damage.fromOldFormat([ formula, dmg_type ]))
+				damage.parts.append(sw5e.Damage.Damage.fromOldFormat([ formula, dmg_type ]))
 				return 'FORMULA'
 			else:
 				return match.group(0)
