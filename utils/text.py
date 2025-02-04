@@ -628,6 +628,8 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}, sour
 		patterns += [fr'move (?:to a(?:n unoccupied)? space (?:you can see )?up to )?(?:a(?:n additional)? distance|a number of feet) equal to {p_dformula}']
 		patterns += [fr'speed increases by {p_dformula}']
 		patterns += [fr'{p_dformula} to it\'?s movement speed']
+		patterns += [fr'{p_dformula} and add it to your ac']
+		patterns += [fr'increase your speed by {p_dformula}']
 		patterns += [fr'a number of rounds equal to {p_dformula}']
 		patterns += [fr'bonus to (?:any|all|every|the next) {p_roll_types}(?: (?:you|they|it) makes?)? equal to {p_dformula}']
 		patterns += [fr'(?:add|subtract)(?:ing|s)? {p_dformula} (?:to|from) (?:any|all|every|(?:both )?the(?: next)?|their|your|it\'s) {p_roll_types}(?: (?:you|they|it) makes?)?']
