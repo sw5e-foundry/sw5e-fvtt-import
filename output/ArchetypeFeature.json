@@ -1046,7 +1046,7 @@
                                     "number": 1
                                 },
                                 "types": [
-                                    "damage"
+                                    ""
                                 ]
                             }
                         ]
@@ -1162,7 +1162,7 @@
                                     "number": 1
                                 },
                                 "types": [
-                                    "damage"
+                                    ""
                                 ]
                             }
                         ]
@@ -1278,7 +1278,7 @@
                                     "number": 1
                                 },
                                 "types": [
-                                    "damage"
+                                    ""
                                 ]
                             }
                         ]
@@ -1363,7 +1363,7 @@
                                     "number": 1
                                 },
                                 "types": [
-                                    "damage"
+                                    ""
                                 ]
                             }
                         ]
@@ -1856,8 +1856,8 @@
         "name": "Enthralling Vigor",
         "system": {
             "activities": {
-                "sw5e0utility0000": {
-                    "_id": "sw5e0utility0000",
+                "sw5e0heal0000000": {
+                    "_id": "sw5e0heal0000000",
                     "activation": {
                         "condition": null,
                         "cost": 1,
@@ -1870,20 +1870,36 @@
                         "units": "inst",
                         "value": null
                     },
+                    "healing": {
+                        "bonus": null,
+                        "custom": {
+                            "enabled": true,
+                            "formula": "((@classes.operative.levels)/2) + @abilities.cha.mod"
+                        },
+                        "denomination": null,
+                        "number": null,
+                        "scaling": {
+                            "formula": null,
+                            "mode": "",
+                            "number": 1
+                        },
+                        "types": [
+                            "temphp"
+                        ]
+                    },
                     "img": null,
                     "range": {
                         "long": null,
                         "units": "ft",
                         "value": null
                     },
-                    "roll": "",
                     "target": {
                         "type": "",
                         "units": "",
                         "value": null,
                         "width": null
                     },
-                    "type": "utility"
+                    "type": "heal"
                 }
             },
             "description": {
@@ -6137,7 +6153,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": null,
+                                "bonus": "((@classes.fighter.levels)/2)",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -9238,6 +9254,60 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/SNTL-ARCH-Passive.webp",
         "name": "Voltaic Slash",
         "system": {
+            "activities": {
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@mod)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    "lightning"
+                                ]
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p><em><strong>Path of Aggression:</strong> 3rd level</em></p>\n<p>Starting when you choose this calling at 3rd level, you learn the <em>lightning charge</em> force power, which does not count against your total powers known. Additionally, you can use Wisdom or Charisma as your forcecasting ability for it, and when you deal lightning damage with the <em>lightning charge</em> force power, you deal additional lightning damage equal to half your Wisdom or Charisma modifier (your choice, minimum of one) if it doesn't already include that modifier.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "damage"
+                }
+            },
             "description": {
                 "value": "<p><em><strong>Path of Aggression:</strong> 3rd level</em></p>\n<p>Starting when you choose this calling at 3rd level, you learn the <em>lightning charge</em> force power, which does not count against your total powers known. Additionally, you can use Wisdom or Charisma as your forcecasting ability for it, and when you deal lightning damage with the <em>lightning charge</em> force power, you deal additional lightning damage equal to half your Wisdom or Charisma modifier (your choice, minimum of one) if it doesn't already include that modifier.</p>"
             },
@@ -10324,6 +10394,60 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/SNTL-ARCH-Passive.webp",
         "name": "Phasethrow",
         "system": {
+            "activities": {
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@mod)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    ""
+                                ]
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p><em><strong>Path of the Forceblade:</strong> 3rd level</em></p>\n<p>You learn the <em>saber throw</em> force power, which does not count against your total powers known. Additionally, you no longer have disadvantage on the attack roll with it if you are within 5 feet of a hostile creature, and you can use the Double Strike Force-Empowered Self options when you cast it as your action and hit a target. Finally, when you hit a creature with the <em>saber throw</em> force power, you deal additional damage equal to half your Wisdom or Charisma modifier (your choice, minimum of +1) if it doesn't already include that modifier.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "5"
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "damage"
+                }
+            },
             "description": {
                 "value": "<p><em><strong>Path of the Forceblade:</strong> 3rd level</em></p>\n<p>You learn the <em>saber throw</em> force power, which does not count against your total powers known. Additionally, you no longer have disadvantage on the attack roll with it if you are within 5 feet of a hostile creature, and you can use the Double Strike Force-Empowered Self options when you cast it as your action and hit a target. Finally, when you hit a creature with the <em>saber throw</em> force power, you deal additional damage equal to half your Wisdom or Charisma modifier (your choice, minimum of +1) if it doesn't already include that modifier.</p>"
             },
@@ -14859,6 +14983,53 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/BSKR-ARCH-Passive.webp",
         "name": "Inspiring Presence",
         "system": {
+            "activities": {
+                "sw5e0heal0000000": {
+                    "_id": "sw5e0heal0000000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "description": {
+                        "value": "<p><em><strong>Warchief Approach:</strong> 6th level</em></p>\n<p>Your mere presence on the battlefield rallies your allies. When you rage, choose up to 3 allies that you can see within 30 feet of you. Each creature gains temporary hit points equal to half your berserker level + your Charisma modifier (minimum of +1).</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "healing": {
+                        "bonus": null,
+                        "custom": {
+                            "enabled": true,
+                            "formula": "((@classes.berserker.levels)/2) + @abilities.cha.mod"
+                        },
+                        "denomination": null,
+                        "number": null,
+                        "scaling": {
+                            "formula": null,
+                            "mode": "",
+                            "number": 1
+                        },
+                        "types": [
+                            "temphp"
+                        ]
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "30"
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "heal"
+                }
+            },
             "description": {
                 "value": "<p><em><strong>Warchief Approach:</strong> 6th level</em></p>\n<p>Your mere presence on the battlefield rallies your allies. When you rage, choose up to 3 allies that you can see within 30 feet of you. Each creature gains temporary hit points equal to half your berserker level + your Charisma modifier (minimum of +1).</p>"
             },
@@ -15152,7 +15323,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": null,
+                                "bonus": "@classes.consular.levels",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -15165,7 +15336,7 @@
                                     "number": 1
                                 },
                                 "types": [
-                                    "plus"
+                                    "lightning"
                                 ]
                             }
                         ]
@@ -15244,7 +15415,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": null,
+                                "bonus": "@classes.consular.levels",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -15257,7 +15428,7 @@
                                     "number": 1
                                 },
                                 "types": [
-                                    "plus"
+                                    "lightning"
                                 ]
                             }
                         ]
@@ -15336,7 +15507,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": null,
+                                "bonus": "@classes.consular.levels",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -15349,7 +15520,7 @@
                                     "number": 1
                                 },
                                 "types": [
-                                    "plus"
+                                    "lightning"
                                 ]
                             }
                         ]
@@ -18301,7 +18472,7 @@
                         "value": "1"
                     },
                     "healing": {
-                        "bonus": " + @classes.berserker.levels",
+                        "bonus": "@classes.berserker.levels",
                         "custom": {
                             "enabled": false,
                             "formula": null
@@ -18379,7 +18550,7 @@
                         "value": null
                     },
                     "healing": {
-                        "bonus": " + @classes.berserker.levels",
+                        "bonus": "@classes.berserker.levels",
                         "custom": {
                             "enabled": false,
                             "formula": null
@@ -20580,12 +20751,36 @@
         "name": "Electronic Warfare Platform",
         "system": {
             "activities": {
-                "sw5e0utility0000": {
-                    "_id": "sw5e0utility0000",
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
                     "activation": {
                         "condition": null,
                         "cost": 1,
                         "type": "bonus"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@classes.engineer.levels)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    "ion"
+                                ]
+                            }
+                        ]
                     },
                     "description": {
                         "value": "<p><em><strong>Astrotech Engineering:</strong> 3rd, 9th, and 17th level</em></p>\n<p>You learn to modify your astrotech's implements into a mobile electronic warfare platform. Over the course of a long rest, you can modify your astrotech's implements. You must have astrotech's implements in order to perform this modification.</p>\n<p>Your electronic warfare platform is enhanced, requires attunement, can only be used by you, and counts as a tech focus for your tech powers while you are attuned to it. Your electronic warfare platform has 4 modification slots, and it gains more at higher levels, as shown in the Modification Slots column of the engineer table. For each modification installed in excess of your proficiency bonus, your tech point maximum is reduced by 1. Over the course of a long rest, you can install, replace, or remove a number of modifications up to your Intelligence modifier (minimum of one).</p>\n<p>Some modification effects require saving throws. When you use such an effect from this class, the DC equals your tech save DC.</p>\n<p>Your electronic warfare platform comes equipped with electromagnetic projection and sensing systems, enabling three fields: ionizing, jamming, and targeting. As a bonus action, you can activate a field, which lasts for 1 minute, causing an effect determined by the field. Only one field can be active at a time, and you can end your field at any time on your turn, no action required. The range of your barriers increases to 15 feet at 9th level and 30 feet at 17th level. You can use these fields a combined number of times equal to your proficiency bonus, as shown in the engineer table. You regain all expended uses when you complete a long rest.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.lFqLBUFCX5IeXtWn]{Ionizing Field}</h3>\n<p>Whenever a droid or construct other than you starts its turn within 5 feet of you, it gains 4 slowed levels and takes ion damage equal to half your engineer level. </p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.cs9eJeHn6PqqmpDk]{Jamming Field}</h3>\n<p>Whenever you or a friendly creature within 10 feet of you are forced to make a saving throw by a tech power, the creature gains a bonus to the saving throw equal to your Intelligence modifier (minimum of +1). </p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.b9QDTLRLPu8DE6Tc]{Targeting Field}</h3>\n<p>You and friendly creatures within 5 feet of you gain a bonus to the first ranged weapon damage rolls you </p>\n<p>make each round equal to your Intelligence modifier (minimum of +1). </p>"
@@ -20600,14 +20795,13 @@
                         "units": "feet",
                         "value": "5"
                     },
-                    "roll": "",
                     "target": {
                         "type": "",
                         "units": "",
                         "value": null,
                         "width": null
                     },
-                    "type": "utility"
+                    "type": "damage"
                 }
             },
             "description": {
@@ -20641,6 +20835,60 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-ARCH-Passive.webp",
         "name": "Ionizing Field",
         "system": {
+            "activities": {
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@classes.engineer.levels)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    "ion"
+                                ]
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p>Whenever a droid or construct other than you starts its turn within 5 feet of you, it gains 4 slowed levels and takes ion damage equal to half your engineer level.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "5"
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "damage"
+                }
+            },
             "description": {
                 "value": "<p>Whenever a droid or construct other than you starts its turn within 5 feet of you, it gains 4 slowed levels and takes ion damage equal to half your engineer level.</p>"
             },
@@ -20735,12 +20983,36 @@
         "name": "Electronic Warfare Platform",
         "system": {
             "activities": {
-                "sw5e0utility0000": {
-                    "_id": "sw5e0utility0000",
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
                     "activation": {
                         "condition": null,
                         "cost": 1,
                         "type": "bonus"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@classes.engineer.levels)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    "ion"
+                                ]
+                            }
+                        ]
                     },
                     "description": {
                         "value": "<p><em><strong>Astrotech Engineering:</strong> 3rd, 9th, and 17th level</em></p>\n<p>You learn to modify your astrotech's implements into a mobile electronic warfare platform. Over the course of a long rest, you can modify your astrotech's implements. You must have astrotech's implements in order to perform this modification.</p>\n<p>Your electronic warfare platform is enhanced, requires attunement, can only be used by you, and counts as a tech focus for your tech powers while you are attuned to it. Your electronic warfare platform has 4 modification slots, and it gains more at higher levels, as shown in the Modification Slots column of the engineer table. For each modification installed in excess of your proficiency bonus, your tech point maximum is reduced by 1. Over the course of a long rest, you can install, replace, or remove a number of modifications up to your Intelligence modifier (minimum of one).</p>\n<p>Some modification effects require saving throws. When you use such an effect from this class, the DC equals your tech save DC.</p>\n<p>Your electronic warfare platform comes equipped with electromagnetic projection and sensing systems, enabling three fields: ionizing, jamming, and targeting. As a bonus action, you can activate a field, which lasts for 1 minute, causing an effect determined by the field. Only one field can be active at a time, and you can end your field at any time on your turn, no action required. The range of your barriers increases to 15 feet at 9th level and 30 feet at 17th level. You can use these fields a combined number of times equal to your proficiency bonus, as shown in the engineer table. You regain all expended uses when you complete a long rest.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.xybm1hIjz9h1kyvB]{Ionizing Field}</h3>\n<p>Whenever a droid or construct other than you starts its turn within 5 feet of you, it gains 4 slowed levels and takes ion damage equal to half your engineer level. </p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.WCcShyIGO85g5T1i]{Jamming Field}</h3>\n<p>Whenever you or a friendly creature within 10 feet of you are forced to make a saving throw by a tech power, the creature gains a bonus to the saving throw equal to your Intelligence modifier (minimum of +1). </p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.pzQ5enV0IlLBnSLd]{Targeting Field}</h3>\n<p>You and friendly creatures within 5 feet of you gain a bonus to the first ranged weapon damage rolls you </p>\n<p>make each round equal to your Intelligence modifier (minimum of +1). </p>"
@@ -20755,14 +21027,13 @@
                         "units": "feet",
                         "value": "5"
                     },
-                    "roll": "",
                     "target": {
                         "type": "",
                         "units": "",
                         "value": null,
                         "width": null
                     },
-                    "type": "utility"
+                    "type": "damage"
                 }
             },
             "description": {
@@ -20796,6 +21067,60 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-ARCH-Passive.webp",
         "name": "Ionizing Field",
         "system": {
+            "activities": {
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@classes.engineer.levels)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    "ion"
+                                ]
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p>Whenever a droid or construct other than you starts its turn within 5 feet of you, it gains 4 slowed levels and takes ion damage equal to half your engineer level.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "5"
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "damage"
+                }
+            },
             "description": {
                 "value": "<p>Whenever a droid or construct other than you starts its turn within 5 feet of you, it gains 4 slowed levels and takes ion damage equal to half your engineer level.</p>"
             },
@@ -20890,12 +21215,36 @@
         "name": "Electronic Warfare Platform",
         "system": {
             "activities": {
-                "sw5e0utility0000": {
-                    "_id": "sw5e0utility0000",
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
                     "activation": {
                         "condition": null,
                         "cost": 1,
                         "type": "bonus"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@classes.engineer.levels)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    "ion"
+                                ]
+                            }
+                        ]
                     },
                     "description": {
                         "value": "<p><em><strong>Astrotech Engineering:</strong> 3rd, 9th, and 17th level</em></p>\n<p>You learn to modify your astrotech's implements into a mobile electronic warfare platform. Over the course of a long rest, you can modify your astrotech's implements. You must have astrotech's implements in order to perform this modification.</p>\n<p>Your electronic warfare platform is enhanced, requires attunement, can only be used by you, and counts as a tech focus for your tech powers while you are attuned to it. Your electronic warfare platform has 4 modification slots, and it gains more at higher levels, as shown in the Modification Slots column of the engineer table. For each modification installed in excess of your proficiency bonus, your tech point maximum is reduced by 1. Over the course of a long rest, you can install, replace, or remove a number of modifications up to your Intelligence modifier (minimum of one).</p>\n<p>Some modification effects require saving throws. When you use such an effect from this class, the DC equals your tech save DC.</p>\n<p>Your electronic warfare platform comes equipped with electromagnetic projection and sensing systems, enabling three fields: ionizing, jamming, and targeting. As a bonus action, you can activate a field, which lasts for 1 minute, causing an effect determined by the field. Only one field can be active at a time, and you can end your field at any time on your turn, no action required. The range of your barriers increases to 15 feet at 9th level and 30 feet at 17th level. You can use these fields a combined number of times equal to your proficiency bonus, as shown in the engineer table. You regain all expended uses when you complete a long rest.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.6WPu9M7lRW0Wyf8x]{Ionizing Field}</h3>\n<p>Whenever a droid or construct other than you starts its turn within 5 feet of you, it gains 4 slowed levels and takes ion damage equal to half your engineer level. </p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.upaZ1wMwyxK59bnk]{Jamming Field}</h3>\n<p>Whenever you or a friendly creature within 10 feet of you are forced to make a saving throw by a tech power, the creature gains a bonus to the saving throw equal to your Intelligence modifier (minimum of +1). </p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.1BeCOSjmNOqGHeDH]{Targeting Field}</h3>\n<p>You and friendly creatures within 5 feet of you gain a bonus to the first ranged weapon damage rolls you </p>\n<p>make each round equal to your Intelligence modifier (minimum of +1). </p>"
@@ -20910,14 +21259,13 @@
                         "units": "feet",
                         "value": "5"
                     },
-                    "roll": "",
                     "target": {
                         "type": "",
                         "units": "",
                         "value": null,
                         "width": null
                     },
-                    "type": "utility"
+                    "type": "damage"
                 }
             },
             "description": {
@@ -20951,6 +21299,60 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/ENGR-ARCH-Passive.webp",
         "name": "Ionizing Field",
         "system": {
+            "activities": {
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@classes.engineer.levels)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    "ion"
+                                ]
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p>Whenever a droid or construct other than you starts its turn within 5 feet of you, it gains 4 slowed levels and takes ion damage equal to half your engineer level.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "5"
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "damage"
+                }
+            },
             "description": {
                 "value": "<p>Whenever a droid or construct other than you starts its turn within 5 feet of you, it gains 4 slowed levels and takes ion damage equal to half your engineer level.</p>"
             },
@@ -22849,7 +23251,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -22866,7 +23268,7 @@
                                 ]
                             },
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -22927,7 +23329,7 @@
                         "value": 1
                     },
                     "healing": {
-                        "bonus": " + @abilities.int.mod",
+                        "bonus": "@abilities.int.mod",
                         "custom": {
                             "enabled": false,
                             "formula": null
@@ -23003,7 +23405,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -23090,7 +23492,7 @@
                         "value": 1
                     },
                     "healing": {
-                        "bonus": " + @abilities.int.mod",
+                        "bonus": "@abilities.int.mod",
                         "custom": {
                             "enabled": false,
                             "formula": null
@@ -23166,7 +23568,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -28651,7 +29053,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -28743,7 +29145,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -28835,7 +29237,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -29224,23 +29626,6 @@
                             "allow": true
                         },
                         "parts": [
-                            {
-                                "bonus": null,
-                                "custom": {
-                                    "enabled": false,
-                                    "formula": null
-                                },
-                                "denomination": "4",
-                                "number": "1",
-                                "scaling": {
-                                    "formula": null,
-                                    "mode": "",
-                                    "number": 1
-                                },
-                                "types": [
-                                    "to"
-                                ]
-                            },
                             {
                                 "bonus": null,
                                 "custom": {
@@ -30193,7 +30578,7 @@
                         "value": null
                     },
                     "healing": {
-                        "bonus": " + @abilities.cha.mod",
+                        "bonus": "@abilities.cha.mod",
                         "custom": {
                             "enabled": false,
                             "formula": null
@@ -31797,7 +32182,7 @@
                                     "number": 1
                                 },
                                 "types": [
-                                    "damage"
+                                    ""
                                 ]
                             }
                         ]
@@ -31944,7 +32329,7 @@
                                     "number": 1
                                 },
                                 "types": [
-                                    "damage"
+                                    ""
                                 ]
                             }
                         ]
@@ -32202,7 +32587,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": null,
+                                "bonus": "((@classes.scout.levels)/2)",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -32986,6 +33371,53 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/BSKR-ARCH-Passive.webp",
         "name": "Painkiller",
         "system": {
+            "activities": {
+                "sw5e0heal0000000": {
+                    "_id": "sw5e0heal0000000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "description": {
+                        "value": "<p><em><strong>Industrial Approach:</strong> 10th level</em></p>\n<p>Whenever you cast a tech power of 1st-level or higher, or deal damage using your Explosive Resilience feature, you can cause a friendly creature you can see within 30 feet to gain temporary hit points equal to half your berserker level + your Intelligence modifier. Additionally, while they have these temporary hit points, they have advantage on saving throws against effects that would cause them to be frightened.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "healing": {
+                        "bonus": null,
+                        "custom": {
+                            "enabled": true,
+                            "formula": "((@classes.berserker.levels)/2) + @abilities.int.mod"
+                        },
+                        "denomination": null,
+                        "number": null,
+                        "scaling": {
+                            "formula": null,
+                            "mode": "",
+                            "number": 1
+                        },
+                        "types": [
+                            "temphp"
+                        ]
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "30"
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "heal"
+                }
+            },
             "description": {
                 "value": "<p><em><strong>Industrial Approach:</strong> 10th level</em></p>\n<p>Whenever you cast a tech power of 1st-level or higher, or deal damage using your Explosive Resilience feature, you can cause a friendly creature you can see within 30 feet to gain temporary hit points equal to half your berserker level + your Intelligence modifier. Additionally, while they have these temporary hit points, they have advantage on saving throws against effects that would cause them to be frightened.</p>"
             },
@@ -37463,7 +37895,25 @@
                         "critical": {
                             "allow": true
                         },
-                        "parts": []
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@mod)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    ""
+                                ]
+                            }
+                        ]
                     },
                     "description": {
                         "value": "<p><em><strong>Kro Var Order:</strong> 3rd, 11th, and 17th level</em></p>\n<p>You gain the ability to bend the elements to your will. As an action, you can manipulate these forces to create one of the following effects of your choice at a space within 10 feet of you:</p>\n<ul>\n<li>Create a harmless, instantaneous sensory effect related to air, earth, fire, or water, such as a shower of sparks, a puff of wind, a spray of light mist, or a gentle rumbling of stone.</li>\n<li>Instantaneously light or snuff out a candle, a torch, or a small campfire.</li>\n<li>Chill or warm up to 1 pound of nonliving material for up to 1 hour.</li>\n<li>Cause earth, fire, water, or mist that can fit within a 1-foot cube to shape itself into a crude form you designate for 1 minute.</li>\n</ul>\n<p>This range increases to 30 feet at 11th level and 60 feet at 17th level.</p>\n<p>Additionally, as a bonus action on your turn, you can spend 1 focus point to conjure a weapon made of one of the four elements—air, earth, fire, or water—which lasts for 1 minute. Your weapon takes an appearance of your choice, it can only be used by you, and you can't be disarmed of it while you are conscious. You are proficient in this weapon, which counts as a monk weapon for you and uses your Martial Arts die for its damage rolls. You can only have one of these weapons at a time, and if you summon a new one the old one immediately disappears.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.tXCulH2AzL3Vco7t]{Air}</h3>\n<p>Your whistling weapon has the returning property, the thrown property with a range of 20/60, and deals sonic damage on a hit. Additionally, when you hit a creature with the weapon, it is deafened until the end of its next turn.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.NHegjvdTLy56S2tM]{Earth}</h3>\n<p>Your earthen weapon takes the form of stone, and deals kinetic damage on a hit. Additionally, when you hit a creature with it, you can force the target to make a Strength saving throw. On a failed save, the target is pushed back 5 feet. Lastly, while active, you can use Strength instead of Dexterity when determining your AC, as long as it doesn't already include that modifier.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.Yr4Fk6BDoCyf0VTA]{Fire}</h3>\n<p>Your flaming weapon sheds bright light in a 10-foot radius and dim light for an additional 10 feet, deals fire damage, and when you hit a creature with it, the creature takes additional damage equal to half your focus ability modifier (minimum of one).</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.xDZTmDvKNvbhufV0]{Water}</h3>\n<p>Your watery weapon has the reach property, deals cold damage on a hit, and you can use your focus ability modifier instead of Dexterity or Strength for its attack and damage rolls. You must use the same modifier for both rolls. Additionally, when you would make a melee weapon attack, you can instead use your weapon to wet a 5-foot square within your weapon's reach. The affected area is difficult terrain. Each creature who starts its turn in the square or enters it for the first time must make a Dexterity saving throw, falling prone on a failed save.</p>"
@@ -37630,6 +38080,60 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/MNK-ARCH-Passive.webp",
         "name": "Fire",
         "system": {
+            "activities": {
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@mod)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    ""
+                                ]
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p>Your flaming weapon sheds bright light in a 10-foot radius and dim light for an additional 10 feet, deals fire damage, and when you hit a creature with it, the creature takes additional damage equal to half your focus ability modifier (minimum of one).</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "target": {
+                        "type": "radius",
+                        "units": "ft",
+                        "value": 10,
+                        "width": null
+                    },
+                    "type": "damage"
+                }
+            },
             "description": {
                 "value": "<p>Your flaming weapon sheds bright light in a 10-foot radius and dim light for an additional 10 feet, deals fire damage, and when you hit a creature with it, the creature takes additional damage equal to half your focus ability modifier (minimum of one).</p>"
             },
@@ -37747,7 +38251,25 @@
                         "critical": {
                             "allow": true
                         },
-                        "parts": []
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@mod)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    ""
+                                ]
+                            }
+                        ]
                     },
                     "description": {
                         "value": "<p><em><strong>Kro Var Order:</strong> 3rd, 11th, and 17th level</em></p>\n<p>You gain the ability to bend the elements to your will. As an action, you can manipulate these forces to create one of the following effects of your choice at a space within 10 feet of you:</p>\n<ul>\n<li>Create a harmless, instantaneous sensory effect related to air, earth, fire, or water, such as a shower of sparks, a puff of wind, a spray of light mist, or a gentle rumbling of stone.</li>\n<li>Instantaneously light or snuff out a candle, a torch, or a small campfire.</li>\n<li>Chill or warm up to 1 pound of nonliving material for up to 1 hour.</li>\n<li>Cause earth, fire, water, or mist that can fit within a 1-foot cube to shape itself into a crude form you designate for 1 minute.</li>\n</ul>\n<p>This range increases to 30 feet at 11th level and 60 feet at 17th level.</p>\n<p>Additionally, as a bonus action on your turn, you can spend 1 focus point to conjure a weapon made of one of the four elements—air, earth, fire, or water—which lasts for 1 minute. Your weapon takes an appearance of your choice, it can only be used by you, and you can't be disarmed of it while you are conscious. You are proficient in this weapon, which counts as a monk weapon for you and uses your Martial Arts die for its damage rolls. You can only have one of these weapons at a time, and if you summon a new one the old one immediately disappears.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.xZSEHJqe42FjstfR]{Air}</h3>\n<p>Your whistling weapon has the returning property, the thrown property with a range of 20/60, and deals sonic damage on a hit. Additionally, when you hit a creature with the weapon, it is deafened until the end of its next turn.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.poa07DUpcoIFVUJS]{Earth}</h3>\n<p>Your earthen weapon takes the form of stone, and deals kinetic damage on a hit. Additionally, when you hit a creature with it, you can force the target to make a Strength saving throw. On a failed save, the target is pushed back 5 feet. Lastly, while active, you can use Strength instead of Dexterity when determining your AC, as long as it doesn't already include that modifier.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.QuxU8RZBpXirGxsj]{Fire}</h3>\n<p>Your flaming weapon sheds bright light in a 10-foot radius and dim light for an additional 10 feet, deals fire damage, and when you hit a creature with it, the creature takes additional damage equal to half your focus ability modifier (minimum of one).</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.lNiP3hAz6VqleEVA]{Water}</h3>\n<p>Your watery weapon has the reach property, deals cold damage on a hit, and you can use your focus ability modifier instead of Dexterity or Strength for its attack and damage rolls. You must use the same modifier for both rolls. Additionally, when you would make a melee weapon attack, you can instead use your weapon to wet a 5-foot square within your weapon's reach. The affected area is difficult terrain. Each creature who starts its turn in the square or enters it for the first time must make a Dexterity saving throw, falling prone on a failed save.</p>"
@@ -37914,6 +38436,60 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/MNK-ARCH-Passive.webp",
         "name": "Fire",
         "system": {
+            "activities": {
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@mod)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    ""
+                                ]
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p>Your flaming weapon sheds bright light in a 10-foot radius and dim light for an additional 10 feet, deals fire damage, and when you hit a creature with it, the creature takes additional damage equal to half your focus ability modifier (minimum of one).</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "target": {
+                        "type": "radius",
+                        "units": "ft",
+                        "value": 10,
+                        "width": null
+                    },
+                    "type": "damage"
+                }
+            },
             "description": {
                 "value": "<p>Your flaming weapon sheds bright light in a 10-foot radius and dim light for an additional 10 feet, deals fire damage, and when you hit a creature with it, the creature takes additional damage equal to half your focus ability modifier (minimum of one).</p>"
             },
@@ -38031,7 +38607,25 @@
                         "critical": {
                             "allow": true
                         },
-                        "parts": []
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@mod)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    ""
+                                ]
+                            }
+                        ]
                     },
                     "description": {
                         "value": "<p><em><strong>Kro Var Order:</strong> 3rd, 11th, and 17th level</em></p>\n<p>You gain the ability to bend the elements to your will. As an action, you can manipulate these forces to create one of the following effects of your choice at a space within 10 feet of you:</p>\n<ul>\n<li>Create a harmless, instantaneous sensory effect related to air, earth, fire, or water, such as a shower of sparks, a puff of wind, a spray of light mist, or a gentle rumbling of stone.</li>\n<li>Instantaneously light or snuff out a candle, a torch, or a small campfire.</li>\n<li>Chill or warm up to 1 pound of nonliving material for up to 1 hour.</li>\n<li>Cause earth, fire, water, or mist that can fit within a 1-foot cube to shape itself into a crude form you designate for 1 minute.</li>\n</ul>\n<p>This range increases to 30 feet at 11th level and 60 feet at 17th level.</p>\n<p>Additionally, as a bonus action on your turn, you can spend 1 focus point to conjure a weapon made of one of the four elements—air, earth, fire, or water—which lasts for 1 minute. Your weapon takes an appearance of your choice, it can only be used by you, and you can't be disarmed of it while you are conscious. You are proficient in this weapon, which counts as a monk weapon for you and uses your Martial Arts die for its damage rolls. You can only have one of these weapons at a time, and if you summon a new one the old one immediately disappears.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.1JEwbfSBdCjsS7up]{Air}</h3>\n<p>Your whistling weapon has the returning property, the thrown property with a range of 20/60, and deals sonic damage on a hit. Additionally, when you hit a creature with the weapon, it is deafened until the end of its next turn.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.zSWfLVSWOFNkcLWo]{Earth}</h3>\n<p>Your earthen weapon takes the form of stone, and deals kinetic damage on a hit. Additionally, when you hit a creature with it, you can force the target to make a Strength saving throw. On a failed save, the target is pushed back 5 feet. Lastly, while active, you can use Strength instead of Dexterity when determining your AC, as long as it doesn't already include that modifier.</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.M2Vld1EFmOV7OMRx]{Fire}</h3>\n<p>Your flaming weapon sheds bright light in a 10-foot radius and dim light for an additional 10 feet, deals fire damage, and when you hit a creature with it, the creature takes additional damage equal to half your focus ability modifier (minimum of one).</p>\n<h3>@UUID[Compendium.sw5e.archetypefeatures.Item.CfQVHKDsyj7TlOjV]{Water}</h3>\n<p>Your watery weapon has the reach property, deals cold damage on a hit, and you can use your focus ability modifier instead of Dexterity or Strength for its attack and damage rolls. You must use the same modifier for both rolls. Additionally, when you would make a melee weapon attack, you can instead use your weapon to wet a 5-foot square within your weapon's reach. The affected area is difficult terrain. Each creature who starts its turn in the square or enters it for the first time must make a Dexterity saving throw, falling prone on a failed save.</p>"
@@ -38198,6 +38792,60 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/MNK-ARCH-Passive.webp",
         "name": "Fire",
         "system": {
+            "activities": {
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@mod)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    ""
+                                ]
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p>Your flaming weapon sheds bright light in a 10-foot radius and dim light for an additional 10 feet, deals fire damage, and when you hit a creature with it, the creature takes additional damage equal to half your focus ability modifier (minimum of one).</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "target": {
+                        "type": "radius",
+                        "units": "ft",
+                        "value": 10,
+                        "width": null
+                    },
+                    "type": "damage"
+                }
+            },
             "description": {
                 "value": "<p>Your flaming weapon sheds bright light in a 10-foot radius and dim light for an additional 10 feet, deals fire damage, and when you hit a creature with it, the creature takes additional damage equal to half your focus ability modifier (minimum of one).</p>"
             },
@@ -50147,7 +50795,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -50239,7 +50887,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -50331,7 +50979,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -50423,7 +51071,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -50515,7 +51163,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -50996,7 +51644,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -51088,7 +51736,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -51180,7 +51828,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -51272,7 +51920,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -51364,7 +52012,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @abilities.int.mod",
+                                "bonus": "@abilities.int.mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -53419,7 +54067,7 @@
                         "bonus": null,
                         "custom": {
                             "enabled": true,
-                            "formula": "@mod"
+                            "formula": "@mod + ((@classes.monk.levels)/2)"
                         },
                         "denomination": null,
                         "number": null,
@@ -57442,6 +58090,53 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/CSLR-ARCH-Passive.webp",
         "name": "Manipulate Life Force",
         "system": {
+            "activities": {
+                "sw5e0heal0000000": {
+                    "_id": "sw5e0heal0000000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "description": {
+                        "value": "<p><em><strong>Way of Confluence:</strong> 3rd level</em></p>\n<p>When you reduce a hostile creature to 0 hit points with a force power, or restore hit points to a creature with 0 hit points with a force power, you gain temporary hit points equal to half your consular level + your Wisdom or Charisma modifier (your choice, minimum of one).</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "healing": {
+                        "bonus": null,
+                        "custom": {
+                            "enabled": true,
+                            "formula": "((@classes.consular.levels)/2) + @mod"
+                        },
+                        "denomination": null,
+                        "number": null,
+                        "scaling": {
+                            "formula": null,
+                            "mode": "",
+                            "number": 1
+                        },
+                        "types": [
+                            "temphp"
+                        ]
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "ft",
+                        "value": null
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "heal"
+                }
+            },
             "description": {
                 "value": "<p><em><strong>Way of Confluence:</strong> 3rd level</em></p>\n<p>When you reduce a hostile creature to 0 hit points with a force power, or restore hit points to a creature with 0 hit points with a force power, you gain temporary hit points equal to half your consular level + your Wisdom or Charisma modifier (your choice, minimum of one).</p>"
             },
@@ -58149,7 +58844,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @mod",
+                                "bonus": "@mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -58246,7 +58941,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @mod",
+                                "bonus": "@mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -58343,7 +59038,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @mod",
+                                "bonus": "@mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -58440,7 +59135,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + @mod",
+                                "bonus": "@mod",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -58511,6 +59206,60 @@
         "img": "modules/sw5e/icons/packs/Class%20Features/CSLR-ARCH-Passive.webp",
         "name": "Conflux",
         "system": {
+            "activities": {
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
+                    "activation": {
+                        "condition": null,
+                        "cost": 1,
+                        "type": null
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@classes.consular.levels)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    "force"
+                                ]
+                            }
+                        ]
+                    },
+                    "description": {
+                        "value": "<p><em><strong>Way of Negation:</strong> 14th level</em></p>\n<p>When you use your Force Deflection feature, you can cause a ripple in the Force to expand from you. Up to three creatures of your choice that you can see within 60 feet of you each take force damage equal to half your consular level.</p>"
+                    },
+                    "duration": {
+                        "units": "inst",
+                        "value": null
+                    },
+                    "img": null,
+                    "range": {
+                        "long": null,
+                        "units": "feet",
+                        "value": "60"
+                    },
+                    "target": {
+                        "type": "",
+                        "units": "",
+                        "value": null,
+                        "width": null
+                    },
+                    "type": "damage"
+                }
+            },
             "description": {
                 "value": "<p><em><strong>Way of Negation:</strong> 14th level</em></p>\n<p>When you use your Force Deflection feature, you can cause a ripple in the Force to expand from you. Up to three creatures of your choice that you can see within 60 feet of you each take force damage equal to half your consular level.</p>"
             },
@@ -68979,7 +69728,7 @@
                                     "number": 1
                                 },
                                 "types": [
-                                    "additional"
+                                    "psychic"
                                 ]
                             },
                             {
@@ -68996,7 +69745,7 @@
                                     "number": 1
                                 },
                                 "types": [
-                                    "additional"
+                                    "psychic"
                                 ]
                             }
                         ]

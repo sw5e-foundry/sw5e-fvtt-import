@@ -23231,12 +23231,36 @@
         "name": "Luminescent Aura",
         "system": {
             "activities": {
-                "sw5e0utility0000": {
-                    "_id": "sw5e0utility0000",
+                "sw5e0damage00000": {
+                    "_id": "sw5e0damage00000",
                     "activation": {
                         "condition": null,
                         "cost": 1,
                         "type": "bonus"
+                    },
+                    "damage": {
+                        "critical": {
+                            "allow": true
+                        },
+                        "parts": [
+                            {
+                                "bonus": null,
+                                "custom": {
+                                    "enabled": true,
+                                    "formula": "((@details.level)/2)"
+                                },
+                                "denomination": null,
+                                "number": null,
+                                "scaling": {
+                                    "formula": null,
+                                    "mode": "",
+                                    "number": 1
+                                },
+                                "types": [
+                                    "psychic"
+                                ]
+                            }
+                        ]
                     },
                     "description": {
                         "value": "<p>Starting at 3rd level, you can use your action to amplify your radiant aura, causing a searing light to radiate from you. Your transformation lasts for 1 minute or until you end it as a bonus action. During it, you shed bright light in a 10-foot radius and dim light for an additional 10 feet, and at the end of each of your turns, you and each creature within 10 feet of you take psychic damage equal to half your level (rounded up). In addition, once on each of your turns, you can deal extra psychic damage to one target when you deal damage to it with an attack or a power. The extra psychic damage equals your level.</p>"
@@ -23251,14 +23275,13 @@
                         "units": "feet",
                         "value": "10"
                     },
-                    "roll": "",
                     "target": {
                         "type": "radius",
                         "units": "ft",
                         "value": 10,
                         "width": null
                     },
-                    "type": "utility"
+                    "type": "damage"
                 }
             },
             "description": {
@@ -24269,36 +24292,12 @@
         "name": "Fury of the Small",
         "system": {
             "activities": {
-                "sw5e0damage00000": {
-                    "_id": "sw5e0damage00000",
+                "sw5e0utility0000": {
+                    "_id": "sw5e0utility0000",
                     "activation": {
                         "condition": null,
                         "cost": 1,
                         "type": "special"
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            {
-                                "bonus": null,
-                                "custom": {
-                                    "enabled": true,
-                                    "formula": "@details.level"
-                                },
-                                "denomination": null,
-                                "number": null,
-                                "scaling": {
-                                    "formula": null,
-                                    "mode": "",
-                                    "number": 1
-                                },
-                                "types": [
-                                    "extra"
-                                ]
-                            }
-                        ]
                     },
                     "description": {
                         "value": "<p>When you damage a creature with an attack or a power and the creature's size is larger than yours, you can cause the attack or power to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest.</p>"
@@ -24313,13 +24312,14 @@
                         "units": "ft",
                         "value": null
                     },
+                    "roll": "",
                     "target": {
                         "type": "",
                         "units": "",
                         "value": null,
                         "width": null
                     },
-                    "type": "damage"
+                    "type": "utility"
                 }
             },
             "description": {

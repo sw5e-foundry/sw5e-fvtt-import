@@ -755,7 +755,7 @@
                         "value": null
                     },
                     "healing": {
-                        "bonus": " + @mod",
+                        "bonus": "@mod",
                         "custom": {
                             "enabled": false,
                             "formula": null
@@ -1448,7 +1448,7 @@
                         "value": "1"
                     },
                     "healing": {
-                        "bonus": " + @mod",
+                        "bonus": "@mod",
                         "custom": {
                             "enabled": false,
                             "formula": null
@@ -1916,7 +1916,7 @@
                         "value": "1"
                     },
                     "healing": {
-                        "bonus": " + 4",
+                        "bonus": "4",
                         "custom": {
                             "enabled": false,
                             "formula": null
@@ -2595,7 +2595,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + 20",
+                                "bonus": "20",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -6111,7 +6111,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + 40",
+                                "bonus": "40",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -11222,7 +11222,7 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + 1",
+                                "bonus": "1",
                                 "custom": {
                                     "enabled": false,
                                     "formula": null
@@ -13275,7 +13275,7 @@
                         "value": null
                     },
                     "healing": {
-                        "bonus": " + @mod",
+                        "bonus": "@mod",
                         "custom": {
                             "enabled": false,
                             "formula": null
@@ -13616,7 +13616,7 @@
                         "value": null
                     },
                     "healing": {
-                        "bonus": " + @mod",
+                        "bonus": "@mod",
                         "custom": {
                             "enabled": false,
                             "formula": null
@@ -14406,7 +14406,7 @@
                         "value": null
                     },
                     "healing": {
-                        "bonus": " + @mod",
+                        "bonus": "@mod",
                         "custom": {
                             "enabled": false,
                             "formula": null
@@ -17817,7 +17817,7 @@
                         "value": null
                     },
                     "healing": {
-                        "bonus": " + @mod",
+                        "bonus": "@mod",
                         "custom": {
                             "enabled": false,
                             "formula": null
@@ -20772,13 +20772,13 @@
                         },
                         "parts": [
                             {
-                                "bonus": " + 1",
+                                "bonus": null,
                                 "custom": {
-                                    "enabled": false,
-                                    "formula": null
+                                    "enabled": true,
+                                    "formula": "2d8 + 1d6"
                                 },
-                                "denomination": "8",
-                                "number": "2",
+                                "denomination": null,
+                                "number": null,
                                 "scaling": {
                                     "formula": null,
                                     "mode": "",
@@ -20905,7 +20905,7 @@
                                     "number": 1
                                 },
                                 "types": [
-                                    "damage"
+                                    ""
                                 ]
                             }
                         ]
@@ -24144,7 +24144,7 @@
                         "value": null
                     },
                     "healing": {
-                        "bonus": " + @mod",
+                        "bonus": "@mod",
                         "custom": {
                             "enabled": false,
                             "formula": null
@@ -24895,25 +24895,7 @@
                         "critical": {
                             "allow": true
                         },
-                        "parts": [
-                            {
-                                "bonus": null,
-                                "custom": {
-                                    "enabled": true,
-                                    "formula": "10"
-                                },
-                                "denomination": null,
-                                "number": null,
-                                "scaling": {
-                                    "formula": null,
-                                    "mode": "",
-                                    "number": 1
-                                },
-                                "types": [
-                                    "hit"
-                                ]
-                            }
-                        ]
+                        "parts": []
                     },
                     "description": {
                         "value": "<p>You produce up to 4 wires, which bind creatures of your choice that you can see within range. A creature can be targeted by more than one wire. </p>\n<p>Each target must make a Dexterity saving throw for each wire that targets it. On a failed save, the creature is restrained and falls prone as it is wrapped securely by the wire.</p>\n<p>A creature restrained by a wire can use its action to make a Strength or Dexterity check (its choice) against your tech save DC. On a success, it is no longer restrained by that wire. A wire can also be destroyed; each one has AC 15 and 10 hit points, and has immunity to all damage not dealt by melee weapons.</p>\n<p>A wire that misses its target or is escaped falls slack and disintegrates, as do all remaining wires when the power ends.</p>"

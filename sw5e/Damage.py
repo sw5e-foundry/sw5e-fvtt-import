@@ -24,11 +24,15 @@ class Damage():
 		kwargs = {}
 		main_pattern = r'(?P<number>\d*)d(?P<denom>\d+)'
 		bonus_pattern = r'\s*(?:\+|\-)?\s*(?:\d+|@(?:\.?\w+)*)'
-		full_pattern = fr'{main_pattern}(?P<bonus>(?:{bonus_pattern})+)?'
-		if match := re.match(full_pattern, old_part[0]):
+		bonus_pattern_half = r'\s*(?:\+|\-)?\s*\(\((?:\d+|@(?:\.?\w+)*)\)\/\d+\)'
+		full_pattern = fr'{main_pattern}(?P<bonus>(?:{bonus_pattern}|{bonus_pattern_half})+)?'
+		if match := re.fullmatch(full_pattern, old_part[0]):
 			kwargs['number'] = match.group('number') or 1
 			kwargs['denomination'] = match.group('denom')
-			kwargs['bonus'] = match.group('bonus')
+			if match.group('bonus') == None:
+				kwargs['bonus'] = None
+			else:
+				kwargs['bonus'] = re.sub(r'^\s*\+\s*', '', str(match.group('bonus'))) # Remove starting +
 		else:
 			kwargs['custom'] = old_part[0]
 		if len(old_part) == 2:

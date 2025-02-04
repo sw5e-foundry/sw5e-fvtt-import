@@ -3400,59 +3400,6 @@
         "img": "modules/sw5e/icons/packs/Ammunition/Snare.webp",
         "name": "Snare",
         "system": {
-            "activities": {
-                "sw5e0damage00000": {
-                    "_id": "sw5e0damage00000",
-                    "activation": {
-                        "cost": null,
-                        "type": null
-                    },
-                    "damage": {
-                        "critical": {
-                            "allow": true
-                        },
-                        "parts": [
-                            {
-                                "bonus": null,
-                                "custom": {
-                                    "enabled": true,
-                                    "formula": "5"
-                                },
-                                "denomination": null,
-                                "number": null,
-                                "scaling": {
-                                    "formula": null,
-                                    "mode": "",
-                                    "number": 1
-                                },
-                                "types": [
-                                    "hit"
-                                ]
-                            }
-                        ]
-                    },
-                    "description": {
-                        "value": "<p>When hit by this wrist launcher ammunition, a Medium or smaller creature is restrained until it is freed. A snare has no effect on formless or Large or larger creatures. A creature can use its action to make a DC 13 Strength or Dexterity check (the target chooses the ability to use), freeing itself or another creature within its reach on a success. The snare has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the snare frees the creature without harming it and immediately ends the snare's effects.</p>"
-                    },
-                    "duration": {
-                        "units": "inst",
-                        "value": null
-                    },
-                    "img": null,
-                    "range": {
-                        "long": null,
-                        "units": "ft",
-                        "value": null
-                    },
-                    "target": {
-                        "type": "",
-                        "units": "",
-                        "value": null,
-                        "width": null
-                    },
-                    "type": "damage"
-                }
-            },
             "description": {
                 "value": "<p>When hit by this wrist launcher ammunition, a Medium or smaller creature is restrained until it is freed. A snare has no effect on formless or Large or larger creatures. A creature can use its action to make a DC 13 Strength or Dexterity check (the target chooses the ability to use), freeing itself or another creature within its reach on a success. The snare has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the snare frees the creature without harming it and immediately ends the snare's effects.</p>"
             },

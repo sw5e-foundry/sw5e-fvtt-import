@@ -372,7 +372,7 @@ def getRange(text, name, default=(None, '')):
 
 	return default
 
-def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
+def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}, source=None):
 	import sw5e.Damage
 	_default_ = {
 		"action_type": '',
@@ -390,6 +390,9 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 	if text:
 		text = text.lower()
 		text, _ = getStatblocks(text)
+		text = re.sub(r'\bplus\b', '+', text)
+		text = re.sub(r'\bminus\b', '-', text)
+		text = re.sub(r'\btimes\b', '*', text)
 		_text = text
 
 		## Power Attack
@@ -413,17 +416,18 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 		text = re.sub(pattern, saving_throw, text)
 
 		## Dice formula
+		p_half = lambda id: fr'(?P<{id}>\s?half\s+)'
 		p_plus = r'(?:\s*\+\s*)'
-		p_mult = r'(?:(?P<mult>\d+) (?:times|x|\*)\s+)'
+		p_mult = r'(?:(?P<mult>\d+) (?:x|\*)\s+)'
 		p_dice = r'(?P<dice>\d*d\d+(?:\s*\+\s*\d*d\d+)*)'
-		p_rolled = r'(?P<rolled>(?:the )?(?:number|amount) (?:rolled|you roll)(?: on (?:the|your) \w+ die)?|(?:the|your) \w+ die|the (?:\w+ )?die roll(?:ed)?|the (?:(?:result of the )?roll|result))'
+		p_rolled = r'(?P<rolled>(?:the )?(?:number|amount) (?:rolled|you roll)(?: on (?:the|your) \w+ die)?|(?:the|your) \w+ die|the (?:\w+ )?die roll(?:ed)?|the (?:(?:result of the )?roll|result)|you can roll (?:a|your) (?P<die_name>(?: ?\w+){3}) dic?e)'
 		p_dice = fr'(?:{p_dice}|{p_rolled})'
 		p_flat = fr'(?:{p_plus}?(?P<flat>\d+))'
-		p_mod = fr'(?:{p_plus}?your (?P<ability_mod>\w[\w ]*?)(?: ability)? modifier)'
-		p_charlvl = fr'(?:{p_plus}?(?P<char_level>your level))'
-		p_classlvl = fr'(?:{p_plus}?your (?P<class_level>\w[\w ]*?)(?: class)? level)'
-		p_mod2 = fr'(?:{p_plus}?your (?P<ability_mod2>\w[\w ]*?)(?: ability)? modifier)'
-		p_prof = fr'(?P<prof_bonus>{p_plus}?your proficiency bonus)'
+		p_mod = fr'(?:{p_plus}?{p_half("half_ability_mod")}?your (?P<ability_mod>\w[\w ]*?)(?: ability)? modifier)'
+		p_charlvl = fr'(?:{p_plus}?{p_half("half_char_level")}?(?P<char_level>your level))'
+		p_classlvl = fr'(?:{p_plus}?{p_half("half_class_level")}?your (?P<class_level>\w[\w ]*?)(?: class)? level)'
+		p_mod2 = fr'(?:{p_plus}?{p_half("half_ability_mod2")}?your (?P<ability_mod2>\w[\w ]*?)(?: ability)? modifier)'
+		p_prof = fr'(?P<prof_bonus>{p_plus}?{p_half("half_prof_bonus")}?your proficiency bonus)'
 
 		p_formula = fr'{p_mult}?{p_dice}?{p_flat}?{p_mod}?{p_charlvl}?{p_classlvl}?{p_mod2}?{p_prof}?'
 		p_dformula = fr'{p_mult}?{p_dice}{p_flat}?{p_mod}?{p_charlvl}?{p_classlvl}?{p_mod2}?{p_prof}?'
@@ -433,20 +437,36 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 			mult = match.groupdict().get('mult')
 			dice = match.groupdict().get('dice')
 			rolled = match.groupdict().get('rolled')
+			die_name = match.groupdict().get('die_name')
 			flat = match.groupdict().get('flat')
 			ability_mod = match.groupdict().get('ability_mod')
+			half_ability_mod = match.groupdict().get('half_ability_mod')
 			char_lvl = match.groupdict().get('char_level')
+			half_char_lvl = match.groupdict().get('half_char_level')
 			class_lvl = match.groupdict().get('class_level')
+			half_class_lvl = match.groupdict().get('half_class_level')
 			ability_mod2 = match.groupdict().get('ability_mod2')
+			half_ability_mod2 = match.groupdict().get('half_ability_mod2')
 			prof_bonus = match.groupdict().get('prof_bonus')
+			half_prof_bonus = match.groupdict().get('half_prof_bonus')
 
 			if dice and dice.startswith('d'): dice = f'1{dice}'
 			if dice or rolled or flat or ability_mod or char_lvl or class_lvl or ability_mod2 or prof_bonus:
 				formula = dice
-				if rolled and not has_rolled and rolled_formula != '@ROLLED':
-					has_rolled = True
-					if formula: formula = f'{formula} + {rolled_formula}'
-					else: formula = rolled_formula
+				if rolled and not has_rolled:
+					if rolled_formula != '@ROLLED':
+						has_rolled = True
+						if formula: formula = f'{formula} + {rolled_formula}'
+						else: formula = rolled_formula
+					elif die_name:
+						die_slug = utils.text.slugifyDND5E(die_name)
+						source_slug = utils.text.slugifyDND5E(source)
+						if source_slug:
+							if formula: formula = f'{formula} + @scale.{source_slug}.{die_slug}.die'
+							else: formula = f'@scale.{source_slug}.{die_slug}.die'
+						else:
+							if formula: formula = f'{formula} + @scale.{die_slug}.die'
+							else: formula = f'@scale.{die_slug}.die'
 				if flat:
 					if formula: formula = f'{formula} + {flat}'
 					else: formula = flat
@@ -454,24 +474,29 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 					mod = '@mod'
 					if ability_mod in ('strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'):
 						mod = f'@abilities.{ability_mod[:3]}.mod'
+					if half_ability_mod: mod = f'(({mod})/2)'
 					if formula: formula = f'{formula} + {mod}'
 					else: formula = mod
 				if char_lvl:
 					lvl = f'@details.level'
+					if half_char_lvl: lvl = f'(({lvl})/2)'
 					if formula: formula = f'{formula} + {lvl}'
 					else: formula = lvl
 				if class_lvl:
 					lvl = f'@classes.{class_lvl.lower()}.levels'
+					if half_class_lvl: lvl = f'(({lvl})/2)'
 					if formula: formula = f'{formula} + {lvl}'
 					else: formula = lvl
 				if ability_mod2:
 					mod = '@mod'
 					if ability_mod2 in ('strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'):
 						mod = f'@abilities.{ability_mod2[:3]}.mod'
+					if half_ability_mod2: mod = f'(({mod})/2)'
 					if formula: formula = f'{formula} + {mod}'
 					else: formula = mod
 				if prof_bonus:
 					bonus = '@prof'
+					if half_prof_bonus: bonus = f'(({bonus})/2)'
 					if formula: formula = f'{formula} + {bonus}'
 					else: formula = bonus
 				if formula and mult: formula = f'{mult} * ({formula})'
@@ -528,30 +553,34 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 		for pat in patterns: text = re.sub(pat, ability_check, text)
 
 		## Damage
-		opt1 = ncapt(fr'(?:takes?|taking|deals?|dealing|do|suffer)(?:(?: an)? (?:extra|additional)| up to)?')
-		opt2 = ncapt(fr',')
-		opt3 = ncapt(fr'(?:and|plus|weapon\'s damage dice \+)(?: another| an extra)?')
-		prefix1_ = ncapt(fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)')
-		prefix1 = ncapt(fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)?')
-		prefix2 = ncapt(fr'(?:{opt1})(?: (?P<type>\w+)? ?damage(?: to the creature)? equal to)')
-		posfix1 = ncapt(fr'(?:of )?(?:(?P<type2>\w+)?(?:,(?: or)? \w+)*)?(?: ?damage| (?=[^.]+ damage))')
+		p_dmg_type = ncapt('|'.join(['true']+[type["name"].lower() for type in utils.config.damage_types]))
 
-		opt5 = ncapt(fr'the (?P<type>\w+ )?damage (?:also )?increases by')
+		opt1 = ncapt(fr'(?:takes?|taking|deals?|dealing|do|suffer)(?:(?: an)? (?:extra|additional)| up to)?')
+		opt2 = ncapt(fr',|\+')
+		opt3 = ncapt(fr'(?:and|\+|weapon\'s damage dice \+)(?: another| an extra)?')
+		prefix1_a = ncapt(fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>{p_dmg_type})? ?damage(?: to the creature)? equal to)')
+		prefix1_b = ncapt(fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>{p_dmg_type})? ?damage(?: to the creature)? equal to)?')
+		prefix1_c = ncapt(fr'(?:{opt1}|{opt2}|{opt3})(?: (?P<type>{p_dmg_type}) ?damage(?: to the creature)? equal to)')
+		prefix2 = ncapt(fr'(?:{opt1})(?: (?P<type>{p_dmg_type})? ?damage(?: to the creature)? equal to)')
+		posfix1 = ncapt(fr'(?:of )?(?:additional )?(?:(?P<type2>{p_dmg_type})?(?:,(?: or)? {p_dmg_type})*)?(?: ?damage| (?=[^.]+ damage))')
+
+		opt5 = ncapt(fr'the (?P<type>{p_dmg_type} )?damage (?:also )?increases by')
 		opt6 = ncapt(fr'increase the damage by')
 		opt7 = ncapt(fr'(?:base|the additional|the extra) damage is')
 		opt8 = ncapt(fr'damage die becomes a')
 		prefix3 = ncapt(fr'(?:{opt5}|{opt6}|{opt7}|{opt8})')
 
 		patterns = []
-		patterns += [fr'{prefix1} \d+ \({p_formula}\) {posfix1}']
+		patterns += [fr'{prefix1_b} \d+ \({p_formula}\) {posfix1}']
 		patterns += [fr'{prefix2} \d+ \({p_formula}\)']
 		patterns += [fr'{prefix3} \d+ \({p_formula}\)']
-		patterns += [fr'{prefix1} {p_formula} {posfix1}']
+		patterns += [fr'{prefix1_b} {p_formula} {posfix1}']
+		patterns += [fr'{prefix1_c} {p_formula}']
 		patterns += [fr'{prefix2} {p_formula}']
 		patterns += [fr'{prefix3} {p_formula}']
-		patterns += [fr'the (?P<type>\w+) damage (?:equals|is equal to) {p_formula}']
-		patterns += [fr'{prefix1_} \d+ \({p_formula}\) ?{posfix1}?']
-		patterns += [fr'{prefix1_} {p_formula} ?{posfix1}?']
+		patterns += [fr'the (?P<type>{p_dmg_type}) damage (?:equals|is equal to) {p_formula}']
+		patterns += [fr'{prefix1_a} \d+ \({p_formula}\) ?{posfix1}?']
+		patterns += [fr'{prefix1_a} {p_formula} ?{posfix1}?']
 		def dmg(match):
 			nonlocal action_type, damage, other_formula, damage_type
 
@@ -599,10 +628,10 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 		patterns += [fr'a number of rounds equal to {p_dformula}']
 		patterns += [fr'bonus to (?:any|all|every|the next) {p_roll_types}(?: (?:you|they|it) makes?)? equal to {p_dformula}']
 		patterns += [fr'(?:add|subtract)(?:ing|s)? {p_dformula} (?:to|from) (?:any|all|every|(?:both )?the(?: next)?|their|your|it\'s) {p_roll_types}(?: (?:you|they|it) makes?)?']
-		patterns += [fr'the result of (?:your|their|it\'s) {p_roll_types} (?:plus|minus) {p_dformula}']
+		patterns += [fr'the result of (?:your|their|it\'s) {p_roll_types} (?:\+|\-) {p_dformula}']
 		patterns += [fr'(?P<rolled>(?:expend|roll) (?:a|one|the) \w+ die(?: and roll it)?,? (?:and |to )?add(?:ing)? (?:it )?to the {p_roll_types})']
 		patterns += [fr'(?P<rolled>up to the result of the roll)']
-		patterns += [fr'(?P<rolled>roll(?:ing)? (?:the|a)(?: \w+)? die and (?:(?:add|subtract)(?:ing|\'s)?|plus|minus) (?:it|the (?:(?:amount|number) rolled|rolled (?:amount|number)|result)) (?:from|to|is))']
+		patterns += [fr'(?P<rolled>roll(?:ing)? (?:the|a)(?: \w+)? die and (?:(?:add|subtract)(?:ing|\'s)?|\+|\-) (?:it|the (?:(?:amount|number) rolled|rolled (?:amount|number)|result)) (?:from|to|is))']
 		patterns += [fr'(?P<rolled>the (?:\w+ die|(?:amount|number) (?:you )?rolled|rolled (?:amount|number)|result) is (?:added|subtracted) (?:from|to))']
 		def simple(match):
 			nonlocal action_type, damage, other_formula
@@ -639,7 +668,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 			pattern_ignore += fr'|increases by {dice} when you reach \d+th level' ## increases by 1d8 when you reach 11th level
 			pattern_ignore += fr'|(?:recovers|regains) {dice} charges'
 			pattern_ignore += fr'|it contains {dice}(?: [+-] \d+)? levels'
-			pattern_ignore += fr'|plus {dice} for each slot level'
+			pattern_ignore += fr'|\+ {dice} for each slot level'
 			pattern_ignore += fr'|to a maximum of {dice}'
 			pattern_ignore += fr'|more than {dice} additional damage'
 			pattern_ignore += fr'|instead of restoring {dice} hit points'
@@ -648,6 +677,7 @@ def getAction(text, name, scale=None, rolled_formula='@ROLLED', default={}):
 			pattern_ignore += fr'|rolls(?: a)? {dice} and subtracts the number rolled'
 			pattern_ignore += fr'|instead of its {dice}\.'
 			pattern_ignore += fr'|becomes {dice}\.'
+			pattern_ignore += fr'|, ?\+ ?(?:an extra )?{dice}'
 
 			if dice and dice.startswith('d'): dice = f'1{dice}'
 			formula = dice
@@ -1563,6 +1593,13 @@ def slugify(text, capitalized=True, space=''):
 	text = re.sub(r'^\(([^)]*)\)', r'\1-', text)
 	text = re.sub(r'-*\(([^)]*)\)', r'-\1', text)
 	text = re.sub(fr'[^-\w{space}]', r'', text)
+	return text
+
+def slugifyDND5E(text):
+	text = text.lower()
+	text = text.replace('\'', '')
+	text = re.sub(r'[^a-z0-9]', ' ', text)
+	text = re.sub(r'[\s-]+', '-', text)
 	return text
 
 def toBase(number, base=10, alphabet=(string.digits+string.ascii_letters)):

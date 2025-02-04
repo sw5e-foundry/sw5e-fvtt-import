@@ -220,6 +220,9 @@ class Feature(
 
 		self.subFeatures = self.loadSubfeatures()
 
+	def loadAction(self):
+		return utils.text.getAction(self.raw_text, self.name, source=self.raw_sourceName)
+
 	def loadFeatType(self):
 		if self.raw_source in ('ArchetypeInvocation', 'ClassInvocation'):
 			return 'class', (self.raw_subtypeOverride or None)
