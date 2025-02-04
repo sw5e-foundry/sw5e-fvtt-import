@@ -270,7 +270,7 @@ class Power(
 					"formula": self.save_dc or ""
 				}
 			},
-			"roll": self.formula,
+			"roll": { "formula": self.formula },
 		}
 
 	# templates.ItemDescription

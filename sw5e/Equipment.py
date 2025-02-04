@@ -231,7 +231,7 @@ class Equipment(
 					"formula": self.save_dc or ""
 				}
 			},
-			"roll": self.formula,
+			"roll": { "formula": self.formula },
 			"properties": self.p_properties,
 		}
 
