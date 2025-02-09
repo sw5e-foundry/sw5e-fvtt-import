@@ -1332,6 +1332,33 @@ enhanced_equipment_mappings = {
 	"Weapon-any vibroweapon": ('Weapon',),
 }
 
+distance_units = (
+	{
+		"id": 'any',
+		"name": 'any',
+	},{
+		"id": 'ft',
+		"name": 'feet',
+	},{
+		"id": 'km',
+		"name": 'kilometers',
+	},{
+		"id": 'm',
+		"name": 'meters',
+	},{
+		"id": 'mi',
+		"name": 'miles',
+	},{
+		"id": 'self',
+		"name": 'self',
+	},{
+		"id": 'spec',
+		"name": 'special',
+	},{
+		"id": 'touch',
+		"name": 'touch',
+	},
+)
 
 # TODO: Remove this info from here once it is added to the API
 weapon_classes = {

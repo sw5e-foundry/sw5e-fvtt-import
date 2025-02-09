@@ -229,15 +229,27 @@ class Power(
 			},
 			# "effects": {},
 			"range": {
-				"value": self.range_val,
-				"long": None,
+				# "override": False,
+				# "special": None,
 				"units": self.range_unit or 'ft',
+				"value": self.range_val,
 			},
 			"target": {
-				"value": self.target_val,
-				"width": None,
-				"units": self.target_unit,
-				"type": self.target_type
+				"affects": {
+					# "choice": False,
+					# "count": "",
+					# "special": "",
+					# "type": "",
+				},
+				"template": {
+					# "contiguous": False
+					# "count": "",
+					# "height": None,
+					"size": self.target_val,
+					"type": self.target_type,
+					"units": self.target_unit,
+					"width": None,
+				},
 			},
 			# "uses": {},
 

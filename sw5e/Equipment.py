@@ -190,15 +190,27 @@ class Equipment(
 			},
 			# "effects": {},
 			"range": {
-				"value": self.range_short,
-				"long": self.range_long or None,
+				# "override": False,
+				# "special": None,
 				"units": self.range_unit or 'ft',
+				"value": self.range_short,
 			},
 			"target": {
-				"value": self.target_value,
-				"width": None,
-				"units": self.target_unit,
-				"type": self.target_type
+				"affects": {
+					# "choice": False,
+					# "count": "",
+					# "special": "",
+					# "type": "",
+				},
+				"template": {
+					# "contiguous": False
+					# "count": "",
+					# "height": None,
+					"size": self.target_value,
+					"type": self.target_type,
+					"units": self.target_unit,
+					"width": None,
+				},
 			},
 			# "uses": {},
 

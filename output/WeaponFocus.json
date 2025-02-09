@@ -151,7 +151,6 @@
                     },
                     "img": null,
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
@@ -163,10 +162,13 @@
                         }
                     },
                     "target": {
-                        "type": "creature",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "creature",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -268,7 +270,6 @@
                     },
                     "img": null,
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
@@ -280,10 +281,13 @@
                         }
                     },
                     "target": {
-                        "type": "square",
-                        "units": "ft",
-                        "value": 5,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 5,
+                            "type": "square",
+                            "units": "ft",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -385,7 +389,6 @@
                     },
                     "img": null,
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
@@ -397,10 +400,13 @@
                         }
                     },
                     "target": {
-                        "type": "cube",
-                        "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 10,
+                            "type": "cube",
+                            "units": "ft",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -662,7 +668,6 @@
                     },
                     "img": null,
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
@@ -674,10 +679,13 @@
                         }
                     },
                     "target": {
-                        "type": "creature",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "creature",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }

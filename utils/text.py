@@ -365,9 +365,14 @@ def getTarget(text, name, default=(None, '', '')):
 
 	return default
 
-def getRange(text, name, default=(None, '')):
-	pattern = r'within (?P<value>\d+) (?P<unit>\w+)'
-	if match := re.search(pattern, text):
+def getRange(text, name, unitOrID='id', default=(None, '')):
+	pat_units = '|'.join([f'{unit["id"]}|{unit["name"]}' for unit in utils.config.distance_units])
+	pattern = fr'within (?P<value>\d+) (?P<unit>{pat_units})'
+	if match := re.search(pattern, text.lower()):
+		if unitOrID in ('unit', 'id'):
+			for unit in utils.config.distance_units:
+				if match["unit"] in (unit["name"], unit["id"]):
+					return match["value"], unit[unitOrID]
 		return match["value"], match["unit"]
 
 	return default

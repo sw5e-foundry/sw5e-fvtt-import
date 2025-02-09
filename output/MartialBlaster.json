@@ -59,15 +59,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 360,
                         "units": "ft",
                         "value": 90
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -93,7 +95,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 360,
                         "units": "ft",
                         "value": 90
                     },
@@ -105,10 +106,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 }
@@ -218,7 +225,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 480,
                         "units": "ft",
                         "value": 120
                     },
@@ -230,10 +236,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 }
@@ -354,15 +366,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 600,
                         "units": "ft",
                         "value": 150
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -478,15 +492,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 420,
                         "units": "ft",
                         "value": 105
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -591,7 +607,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 360,
                         "units": "ft",
                         "value": 90
                     },
@@ -603,10 +618,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -715,7 +733,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 320,
                         "units": "ft",
                         "value": 80
                     },
@@ -727,10 +744,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -840,7 +860,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 300,
                         "units": "ft",
                         "value": 75
                     },
@@ -852,10 +871,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 }
@@ -974,15 +999,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 200,
                         "units": "ft",
                         "value": 50
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -1099,15 +1126,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 360,
                         "units": "ft",
                         "value": 90
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -1133,7 +1162,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 360,
                         "units": "ft",
                         "value": 90
                     },
@@ -1145,10 +1173,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -1265,15 +1296,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -1390,15 +1423,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 480,
                         "units": "ft",
                         "value": 120
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -1515,15 +1550,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -1620,15 +1657,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -1726,15 +1765,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 200,
                         "units": "ft",
                         "value": 50
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -1852,15 +1893,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 160,
                         "units": "ft",
                         "value": 40
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -1976,15 +2019,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 100,
                         "units": "ft",
                         "value": 25
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -2101,15 +2146,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 400,
                         "units": "ft",
                         "value": 100
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -2135,7 +2182,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 400,
                         "units": "ft",
                         "value": 100
                     },
@@ -2147,10 +2193,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -2268,15 +2317,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 360,
                         "units": "ft",
                         "value": 90
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -2302,7 +2353,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 360,
                         "units": "ft",
                         "value": 90
                     },
@@ -2314,10 +2364,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 }
@@ -2434,15 +2490,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -2468,7 +2526,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
@@ -2480,10 +2537,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -2597,15 +2657,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 180,
                         "units": "ft",
                         "value": 45
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -2711,7 +2773,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 320,
                         "units": "ft",
                         "value": 80
                     },
@@ -2723,10 +2784,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 },
@@ -2752,7 +2819,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 320,
                         "units": "ft",
                         "value": 80
                     },
@@ -2764,10 +2830,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -2887,15 +2956,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -2921,7 +2992,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
@@ -2933,10 +3003,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 }
@@ -3051,15 +3127,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 120,
                         "units": "ft",
                         "value": 30
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -3085,7 +3163,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 120,
                         "units": "ft",
                         "value": 30
                     },
@@ -3097,10 +3174,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -3214,15 +3294,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 500,
                         "units": "ft",
                         "value": 125
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -3340,15 +3422,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 320,
                         "units": "ft",
                         "value": 80
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -3467,15 +3551,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 480,
                         "units": "ft",
                         "value": 120
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -3583,7 +3669,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 360,
                         "units": "ft",
                         "value": 90
                     },
@@ -3595,10 +3680,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 }
@@ -3714,15 +3805,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 320,
                         "units": "ft",
                         "value": 80
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -3838,15 +3931,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -3964,15 +4059,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 600,
                         "units": "ft",
                         "value": 150
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -4081,7 +4178,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 300,
                         "units": "ft",
                         "value": 75
                     },
@@ -4093,10 +4189,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 },
@@ -4122,7 +4224,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 300,
                         "units": "ft",
                         "value": 75
                     },
@@ -4134,10 +4235,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -4256,15 +4360,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -4352,7 +4458,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 300,
                         "units": "ft",
                         "value": 75
                     },
@@ -4364,10 +4469,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -4485,15 +4593,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 160,
                         "units": "ft",
                         "value": 40
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -4519,7 +4629,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 160,
                         "units": "ft",
                         "value": 40
                     },
@@ -4531,10 +4640,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -4643,7 +4755,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
@@ -4655,10 +4766,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 }
@@ -4775,15 +4892,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 420,
                         "units": "ft",
                         "value": 105
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -4890,7 +5009,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 300,
                         "units": "ft",
                         "value": 75
                     },
@@ -4902,10 +5020,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 },
@@ -4931,7 +5055,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 300,
                         "units": "ft",
                         "value": 75
                     },
@@ -4943,10 +5066,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -5067,15 +5193,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 160,
                         "units": "ft",
                         "value": 40
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -5101,7 +5229,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 160,
                         "units": "ft",
                         "value": 40
                     },
@@ -5113,10 +5240,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -5234,15 +5364,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 600,
                         "units": "ft",
                         "value": 150
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -5348,7 +5480,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 120,
                         "units": "ft",
                         "value": 30
                     },
@@ -5360,10 +5491,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -5481,15 +5615,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -5588,15 +5724,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -5622,7 +5760,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
@@ -5634,10 +5771,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 },
@@ -5663,7 +5806,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
@@ -5675,10 +5817,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -5798,15 +5943,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 360,
                         "units": "ft",
                         "value": 90
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -5832,7 +5979,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 360,
                         "units": "ft",
                         "value": 90
                     },
@@ -5844,10 +5990,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -6046,15 +6195,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 720,
                         "units": "ft",
                         "value": 180
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -6160,7 +6311,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
@@ -6172,10 +6322,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 },
@@ -6201,7 +6357,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
@@ -6213,10 +6368,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -6334,15 +6492,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -6439,15 +6599,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -6644,15 +6806,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -6768,15 +6932,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 500,
                         "units": "ft",
                         "value": 125
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -6891,15 +7057,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 600,
                         "units": "ft",
                         "value": 150
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -6996,15 +7164,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 500,
                         "units": "ft",
                         "value": 125
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -7114,7 +7284,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 300,
                         "units": "ft",
                         "value": 75
                     },
@@ -7126,10 +7295,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 }
@@ -7248,15 +7423,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -7282,7 +7459,6 @@
                     "img": null,
                     "name": "Rapid Attack",
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
@@ -7294,10 +7470,13 @@
                         }
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "save"
                 }
@@ -7412,15 +7591,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -7518,15 +7699,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 160,
                         "units": "ft",
                         "value": 40
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -7552,7 +7735,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 160,
                         "units": "ft",
                         "value": 40
                     },
@@ -7564,10 +7746,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 }
@@ -7685,15 +7873,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": null,
                         "units": "ft",
                         "value": null
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -7802,7 +7992,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 300,
                         "units": "ft",
                         "value": 75
                     },
@@ -7814,10 +8003,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 }
@@ -7937,15 +8132,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 400,
                         "units": "ft",
                         "value": 100
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -8053,7 +8250,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 360,
                         "units": "ft",
                         "value": 90
                     },
@@ -8065,10 +8261,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 }
@@ -8187,15 +8389,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 320,
                         "units": "ft",
                         "value": 80
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -8312,15 +8516,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 280,
                         "units": "ft",
                         "value": 70
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -8438,15 +8644,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 400,
                         "units": "ft",
                         "value": 100
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 },
@@ -8472,7 +8680,6 @@
                     "img": null,
                     "name": "Burst Attack",
                     "range": {
-                        "long": 400,
                         "units": "ft",
                         "value": 100
                     },
@@ -8484,10 +8691,16 @@
                         }
                     },
                     "target": {
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        },
                         "type": "cube",
                         "units": "ft",
-                        "value": 10,
-                        "width": null
+                        "value": 10
                     },
                     "type": "save"
                 }
@@ -8604,15 +8817,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 420,
                         "units": "ft",
                         "value": 105
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -8728,15 +8943,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 600,
                         "units": "ft",
                         "value": 150
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -8851,15 +9068,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 3600,
                         "units": "ft",
                         "value": 1200
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
@@ -8954,15 +9173,17 @@
                     },
                     "img": null,
                     "range": {
-                        "long": 240,
                         "units": "ft",
                         "value": 60
                     },
                     "target": {
-                        "type": "enemy",
-                        "units": "",
-                        "value": 1,
-                        "width": null
+                        "affects": {},
+                        "template": {
+                            "size": 1,
+                            "type": "enemy",
+                            "units": "",
+                            "width": null
+                        }
                     },
                     "type": "attack"
                 }
